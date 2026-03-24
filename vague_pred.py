@@ -121,7 +121,7 @@ def interactive_mode(model, tokenizer, device):
             break
         if not text:
             continue
-
+    
         result = predict_passage(text, model, tokenizer, device)
         bar    = "█" * int(result["vague_prob"] * 30)
         print(f"  Label:      {result['label']}")
