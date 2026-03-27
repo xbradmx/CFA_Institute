@@ -8,3 +8,8 @@ scikit-learn>=1.4.0
 pandas>=2.0.0
 numpy>=1.26.0
 accelerate>=0.27.0       # required by HuggingFace Trainer
+
+openai>=1.0.0
+pandas>=2.0.0
+numpy>=1.26.0
+scikit-learn>=1.4.0
