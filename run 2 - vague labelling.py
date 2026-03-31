@@ -34,6 +34,9 @@ import json
 import pandas as pd
 import numpy as np
 from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ---------------------------------------------------------------------------
 # CONFIG
