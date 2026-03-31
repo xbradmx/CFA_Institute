@@ -32,13 +32,17 @@ import hashlib
 import pandas as pd
 from neo4j import GraphDatabase
 from itertools import combinations
+from dotenv import load_dotenv
+
 
 # ---------------------------------------------------------------------------
 # CONFIG
 # ---------------------------------------------------------------------------
+load_dotenv()
+
 NEO4J_URI      = "neo4j://127.0.0.1:7687"
 NEO4J_USER     = "neo4j"
-NEO4J_PASSWORD = os.environ.get("NEO4J_PASSWORD", "TTPPassword!#") # TTPPassword!#
+NEO4J_PASSWORD = os.environ.get("NEO4J_PASSWORD") # TTPPassword!#
 INPUT_CSV      = "data/passages.csv"
 BATCH_SIZE     = 500    # rows per transaction batch
 # ---------------------------------------------------------------------------

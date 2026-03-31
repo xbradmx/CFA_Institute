@@ -34,13 +34,17 @@ import tiktoken
 from neo4j import GraphDatabase
 from openai import OpenAI
 import anthropic
+from dotenv import load_dotenv
 
 # ---------------------------------------------------------------------------
 # CONFIG
 # ---------------------------------------------------------------------------
+load_dotenv()
+
+
 NEO4J_URI      = "neo4j://127.0.0.1:7687"
 NEO4J_USER     = "neo4j"
-NEO4J_PASSWORD = os.environ.get("NEO4J_PASSWORD", "TTPPassword!#")
+NEO4J_PASSWORD = os.environ.get("NEO4J_PASSWORD")
 
 SCREENING_MODEL   = "gpt-4o-mini"
 DEEP_ANALYSIS_MODEL = "claude-opus-4-6"
