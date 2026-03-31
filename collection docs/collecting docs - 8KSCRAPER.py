@@ -34,10 +34,13 @@ from openpyxl.styles import Font, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
 from tqdm import tqdm
 
+
+from dotenv import load_dotenv
+load_dotenv()
 # ── Configuration ──────────────────────────────────────────────────────────
 
 # !! Must match ddds_data_collector.py !!
-USER_AGENT = "connorokeeffe07@gmail.com"
+USER_AGENT = os.environ.get("SEC_USER_AGENT") #"connorokeeffe07@gmail.com" "connorokeeffe07@gmail.com"
 
 BASE_DIR = Path("DDDS/Companies")
 EXCEL_PATH = Path("DDDS/company_filing_summary.xlsx")

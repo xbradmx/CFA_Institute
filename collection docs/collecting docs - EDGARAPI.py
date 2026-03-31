@@ -2,8 +2,14 @@ import requests
 import json
 import time
 import csv
+import os
 
-headers = {"User-Agent": "DDDS Research connor@lancaster.ac.uk"}
+from dotenv import load_dotenv
+
+load_dotenv()
+EDGAR_USER_AGENT = os.environ.get("EDGAR_USER_AGENT")
+
+headers = {"User-Agent": EDGAR_USER_AGENT}
 
 print("Fetching company list...")
 tickers = requests.get("https://www.sec.gov/files/company_tickers.json", headers=headers).json()

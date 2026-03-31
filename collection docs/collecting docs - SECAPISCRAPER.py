@@ -37,10 +37,14 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from tqdm import tqdm
 
+from dotenv import load_dotenv
+load_dotenv()
+
+
 # ── Configuration ──────────────────────────────────────────────────────────
 
 # !! UPDATE THIS with your real name and email — SEC requires it !!
-USER_AGENT = "connorokeeffe07@gmail.com"
+USER_AGENT = os.environ.get("SEC_USER_AGENT") #"connorokeeffe07@gmail.com"
 
 ANCHOR_DATE = "2025-10-01"
 WINDOW_START = "2024-10-01"
