@@ -50,9 +50,9 @@ warnings.filterwarnings("ignore")
 # CONFIG  -  edit these paths before running
 # ---------------------------------------------------------------------------
 BASE_MODEL      = "ProsusAI/finbert"           # FinBERT base checkpoint
-TRAIN_CSV       = "SC_data/train.csv"             # labelled training data
-VAL_CSV         = "SC_data/val.csv"               # validation data
-TEST_CSV        = "SC_data/test.csv"              # held-out test set (or None)
+TRAIN_CSV       = "data/training/complexity/train.csv"
+VAL_CSV         = "data/training/complexity/val.csv"
+TEST_CSV        = "data/training/complexity/test.csv"           # held-out test set (or None)
 OUTPUT_DIR      = "outputs/complexity_model"   # where the fine-tuned model is saved
 MAX_LENGTH      = 512                          # FinBERT max token length
 BATCH_SIZE      = 16                           # reduce to 8 if OOM on GPU

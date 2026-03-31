@@ -47,8 +47,8 @@ warnings.filterwarnings("ignore")
 # ---------------------------------------------------------------------------
 # CONFIG
 # ---------------------------------------------------------------------------
-INPUT_DIR   = "data/filings"
-OUTPUT_CSV  = "data/passages.csv"
+INPUT_DIR  = "data/ALL SEC FILINGS"
+OUTPUT_CSV = "data/passages.csv"
 MIN_CHARS   = 200     # minimum characters for a passage to be kept
 MAX_CHARS   = 8000    # maximum characters per passage (long sections are split)
 # ---------------------------------------------------------------------------

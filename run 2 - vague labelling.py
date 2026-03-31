@@ -320,7 +320,7 @@ def print_summary(labelled_df: pd.DataFrame, review_df: pd.DataFrame):
 
 def main():
     parser = argparse.ArgumentParser(description="DDDS GPT-4o Vagueness Labelling Pipeline")
-    parser.add_argument("--input",      default=INPUT_DIR, help="Path to input CSV of passages")
+    parser.add_argument("--input",      default=INPUT_CSV, help="Path to input CSV of passages")
     parser.add_argument("--output-dir", default=OUTPUT_DIR, help="Directory for output CSVs")
     args = parser.parse_args()
 

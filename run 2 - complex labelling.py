@@ -146,7 +146,7 @@ def call_gpt4o(client: OpenAI, text: str, risk_category: str) -> dict | None:
                 messages=[
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user",   "content": user_prompt},
-                ]
+                ],
             )
             raw = response.choices[0].message.content
             result = json.loads(raw)
