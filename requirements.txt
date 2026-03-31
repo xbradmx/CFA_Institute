@@ -14,4 +14,6 @@ pandas>=2.0.0
 numpy>=1.26.0
 scikit-learn>=1.4.0
 
+geodatasets
+
 # pip install neo4j llama-index llama-index-graph-stores-neo4j anthropic openai tiktoken
