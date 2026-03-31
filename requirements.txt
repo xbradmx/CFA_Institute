@@ -35,3 +35,9 @@ shapely>=2.0.0
 
 # ── Environment & Utilities ──────────────────────────────────────────────────
 python-dotenv>=1.0.0
+
+
+# ── backtesting (run 11) ─────────────────────────────────────────────────────
+
+scipy>=1.12.0    # for p-value calculation in regression
+yfinance>=0.2.0  # fallback earnings fetch if XBRL unavailable
