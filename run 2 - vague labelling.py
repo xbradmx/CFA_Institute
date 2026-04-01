@@ -80,6 +80,14 @@ VAGUE (1): Language that is deliberately non-committal, evasive, or imprecise in
 
 SPECIFIC (0): Language that provides concrete, verifiable information. This includes specific figures, defined timelines, named counterparties, quantified risks, or clear causal explanations.
 
+NOT CLASSIFIABLE (2): The sentence is not substantive disclosure content and should be excluded from training data. Use this label ONLY for:
+- Navigational or cross-reference sentences ("see Note 8", "as described below", "refer to Part II")
+- Section headings, table headers, or formatting artefacts
+- Transitional sentences that simply introduce content elsewhere in the filing ("We have discussed our results using the measures described below")
+- Fragments or incomplete sentences from document parsing
+
+CRITICAL: Label 2 is NOT an escape for borderline cases. Any sentence that substantively discusses risks, operations, financial performance, strategy, or outlook MUST receive a 0 or 1, even if you find it difficult to classify. Reserve label 2 strictly for sentences that carry no analytical content whatsoever.
+
 VAGUENESS INDICATORS - language is likely VAGUE if it:
 - Uses hedging phrases with no substantive content: "may", "might", "could potentially", "there can be no assurance", "we cannot predict"
 - Replaces specific figures with qualitative descriptions: "significant", "material", "substantial", "considerable" without quantification
@@ -113,6 +121,12 @@ Reason: Named figure, named cause, named plan, quantified driver.
 SPECIFIC: "We have a $200 million revolving credit facility maturing in March 2027, of which $85 million was drawn as of the filing date."
 Reason: Specific amount, specific instrument, specific maturity, specific utilisation.
 
+NOT CLASSIFIABLE: "You should read the following discussion and analysis of our financial condition and results of operations together with our consolidated financial statements."
+Reason: Navigational sentence directing the reader, carries no analytical content.
+
+NOT CLASSIFIABLE: "Quantitative and Qualitative Disclosures About Market Risk 41 Item 8."
+Reason: Section heading and page number, not a substantive disclosure sentence.
+
 BORDERLINE GUIDANCE
 -------------------
 If a sentence mixes specific and vague elements, classify based on the dominant character. If a sentence contains one specific figure embedded in otherwise entirely evasive language, lean VAGUE. If a sentence is technically hedged but provides substantive specific context, lean SPECIFIC.
@@ -127,7 +141,7 @@ Respond ONLY with a valid JSON object containing a "results" array. Each element
   "results": [
     {"sentence": 1, "label": 0, "confidence": "high", "reason": "Contains specific dollar amounts and named facility"},
     {"sentence": 2, "label": 1, "confidence": "high", "reason": "Pure boilerplate hedge with no specific content"},
-    {"sentence": 3, "label": 0, "confidence": "medium", "reason": "Names specific geography and product line"}
+    {"sentence": 3, "label": 2, "confidence": "high", "reason": "Navigational sentence referencing another section"}
   ]
 }"""
 
@@ -168,7 +182,7 @@ def generate_batch_jsonl(df: pd.DataFrame, output_path: str, run_id: str) -> int
             "url": "/v1/chat/completions",
             "body": {
                 "model": MODEL,
-                "temperature": 0.0,
+                "temperature": 0.2,
                 "response_format": {"type": "json_object"},
                 "messages": [
                     {"role": "system", "content": SYSTEM_PROMPT},
@@ -295,7 +309,7 @@ def parse_batch_results(results: list[dict], df: pd.DataFrame,
             row_idx = batch_start + sentence_num - 1
             if row_idx < len(df):
                 label_val = sr.get("label")
-                if label_val not in [0, 1]:
+                if label_val not in [0, 1, 2]:
                     label_val = None
                 labels[row_idx] = {
                     "label":      label_val,
@@ -350,15 +364,22 @@ def export_outputs(df: pd.DataFrame, consensus_df: pd.DataFrame,
     """
     Merges original data with consensus results and exports
     the three output CSVs in the format run_3 and run_4 expect.
+
+    Label 2 (NOT_CLASSIFIABLE) sentences are excluded from all outputs
+    since they are not useful for FinBERT training.
     """
     merged = pd.concat([df.reset_index(drop=True), consensus_df], axis=1)
     os.makedirs(output_dir, exist_ok=True)
 
+    # --- Count and remove NOT_CLASSIFIABLE (label 2) ---
+    skipped_df = merged[merged["label"] == 2].copy()
+    merged = merged[merged["label"] != 2].copy()
+
     # --- needs_review: consensus failed ---
     review_df = merged[merged["needs_review"] == True].copy()
 
-    # --- labelled: consensus passed ---
-    labelled_df = merged[merged["consensus"] == True].copy()
+    # --- labelled: consensus passed (only labels 0 and 1) ---
+    labelled_df = merged[(merged["consensus"] == True) & (merged["label"].isin([0, 1]))].copy()
 
     # --- validation subset: 20% random sample from labelled ---
     np.random.seed(SEED)
@@ -396,15 +417,18 @@ def export_outputs(df: pd.DataFrame, consensus_df: pd.DataFrame,
     else:
         print(f"  Needs review:       0 sentences (full consensus)")
 
+    print(f"  Not classifiable:   {len(skipped_df)} sentences (excluded from training)")
     print(f"  Labelled:           {len(labelled_df)} sentences  ->  {labelled_path}")
     print(f"  Validation subset:  {len(val_export)} sentences  ->  {val_path}")
 
-    return labelled_df, val_export, review_df
+    return labelled_df, val_export, review_df, skipped_df
 
 
-def print_summary(labelled_df: pd.DataFrame, review_df: pd.DataFrame):
-    total     = len(labelled_df) + len(review_df)
+def print_summary(labelled_df: pd.DataFrame, review_df: pd.DataFrame,
+                   skipped_df: pd.DataFrame):
+    total     = len(labelled_df) + len(review_df) + len(skipped_df)
     consensus = len(labelled_df)
+    skipped   = len(skipped_df)
     vague     = (labelled_df["label"] == 1).sum()
     specific  = (labelled_df["label"] == 0).sum()
     high_conf = (labelled_df["confidence"] == "high").sum()
@@ -415,6 +439,7 @@ def print_summary(labelled_df: pd.DataFrame, review_df: pd.DataFrame):
     print(f"  Vagueness Labelling Summary")
     print(f"{'='*55}")
     print(f"  Total sentences:     {total}")
+    print(f"  Not classifiable:    {skipped}  ({100*skipped/max(total,1):.1f}%)")
     print(f"  Consensus reached:   {consensus}  ({100*consensus/max(total,1):.1f}%)")
     print(f"  Flagged for review:  {len(review_df)}  ({100*len(review_df)/max(total,1):.1f}%)")
     print(f"\n  Label distribution (consensus sentences):")
@@ -637,8 +662,8 @@ def main():
 
     # --- Export ---
     print("  Exporting outputs...\n")
-    labelled, validation, review = export_outputs(df, consensus_df, args.output_dir)
-    print_summary(labelled, review)
+    labelled, validation, review, skipped = export_outputs(df, consensus_df, args.output_dir)
+    print_summary(labelled, review, skipped)
 
     print("[Done] Vagueness labelling complete.")
     print(f"\nNext step: have all three team members independently fill in the")
