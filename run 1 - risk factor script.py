@@ -1,3 +1,45 @@
+
+
+
+
+
+#CONNOR O'KEEFFE NOTES ---------------------------------------------------------------------------------------------------
+
+
+
+
+
+#We dont need this script right now. Not for FinBERT. Need to label risk topics for the LLM later
+#For FinBERT
+# - Take Risk Factor & MD&A Sentences from run 0
+# - Label them vague vs specific, and simple vs complex using openai API
+# - Take a specific subset of the vague and complex sentences 
+# - Once we have a 2.5K per model set, we can analyse 250 sentences per model manually
+# - If agreement high enough, we can then finetune FinBERT with this data
+
+
+# For the LLM
+# Run analysis on all the MD&A Sections and Risk Factor sections for all companies
+# We pass these to OpenAI gpt 4o-mini, and it labels each sentence as a specific risk topic
+# These risk topics are collated for each company, and this is used for the Graph RAG
+# When comparison is done, the Graph RAG shows, here is this companies "political risk" for 2024, and here is their "political risk" for 2025. 
+#This allows the temporal analysis to be done of just the specific language around each risk, rather than on everything (which would include boiler plate noise)
+#Same thing for peer analysis done here aswell. 
+
+
+
+
+
+
+
+#END OF NOTE --------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 """
 DDDS - Document Ingestion & Section Extraction Pipeline
 ========================================================
