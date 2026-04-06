@@ -289,13 +289,30 @@ def main(train_csv: str, val_csv: str, test_csv: str | None):
     )
 
     # --- Trainer ---
-    trainer = Trainer(
-        model           = model,
-        args            = training_args,
-        train_dataset   = train_dataset,
-        eval_dataset    = val_dataset,
-        compute_metrics = compute_metrics,
-        callbacks       = [EarlyStoppingCallback(early_stopping_patience=2)],
+    # --- Weighted Trainer (applies class weights to CrossEntropyLoss) ---
+    class WeightedTrainer(Trainer):
+        def __init__(self, class_weights, **kwargs):
+            super().__init__(**kwargs)
+            self.class_weights = class_weights
+
+        def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
+            labels = inputs.get("labels")
+            outputs = model(**inputs)
+            logits = outputs.get("logits")
+            loss_fn = torch.nn.CrossEntropyLoss(
+                weight=self.class_weights.to(logits.device)
+            )
+            loss = loss_fn(logits, labels)
+            return (loss, outputs) if return_outputs else loss
+
+    trainer = WeightedTrainer(
+        class_weights=class_weights,
+        model=model,
+        args=training_args,
+        train_dataset=train_dataset,
+        eval_dataset=val_dataset,
+        compute_metrics=compute_metrics,
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=2)],
     )
 
     # --- Train ---
