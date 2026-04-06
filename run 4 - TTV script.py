@@ -1,23 +1,31 @@
 """
-DDDS - Training Data Preparation
-=================================
-Bridges Stage 3 (labelling) and Stage 1 (fine-tuning) by taking the
-labelled.csv output from either label_vagueness.py or label_complexity.py,
-selecting the required columns, and splitting into train/val/test CSVs
-ready for the corresponding fine-tuning pipeline.
+prepare_training_data.py
+========================
+Prepares the final 3,000-sentence training dataset for each FinBERT classifier
+and splits it 70/15/15 into train/val/test.
 
-Keeps vagueness and complexity splits entirely separate so each
-classifier trains on its own independently validated dataset.
+Sampling strategy
+-----------------
+All 300 human-validated sentences are always included.
+The remaining 2,700 are sampled from the GPT-labelled pool, stratified by label
+to preserve class balance.
+
+Split strategy
+--------------
+The 70/15/15 split is stratified on a combined key (label, human_validated),
+guaranteeing that both class balance and human-validated representation are
+preserved across train, val, and test.
+
+Expected split composition (approximate)
+-----------------------------------------
+    Train (70%, 2,100 rows):  ~210 human-validated + ~1,890 GPT-labelled
+    Val   (15%,   450 rows):  ~ 45 human-validated +   ~405 GPT-labelled
+    Test  (15%,   450 rows):  ~ 45 human-validated +   ~405 GPT-labelled
 
 Usage
 -----
-    python prepare_training_data.py --classifier vagueness \\
-        --input  data/labelled/vagueness/labelled.csv \\
-        --output-dir data/training/vagueness
-
-    python prepare_training_data.py --classifier complexity \\
-        --input  data/labelled/complexity/labelled.csv \\
-        --output-dir data/training/complexity
+    python prepare_training_data.py --classifier vagueness
+    python prepare_training_data.py --classifier complexity
 """
 
 import argparse
@@ -34,9 +42,13 @@ VAGUENESS_OUTPUT_DIR = "data/training/vagueness"
 COMPLEXITY_INPUT      = "data/labelled/complexity/labelled.csv"
 COMPLEXITY_OUTPUT_DIR = "data/training/complexity"
 
+TOTAL_SAMPLE = 3000   # total sentences per classifier
+HUMAN_N      = 300    # human-validated rows — always all included
+GPT_N        = TOTAL_SAMPLE - HUMAN_N   # 2,700 sampled from GPT pool
+
 TRAIN_FRAC = 0.70
 VAL_FRAC   = 0.15
-TEST_FRAC  = 0.15     # must equal 1 - TRAIN_FRAC - VAL_FRAC
+# TEST_FRAC is implicitly 0.15
 
 SEED = 42
 # ---------------------------------------------------------------------------
@@ -60,88 +72,122 @@ CLASSIFIER_CONFIG = {
 def load_and_validate(path: str, classifier: str) -> pd.DataFrame:
     df = pd.read_csv(path)
 
-    # Required columns from labelled.csv
-    required = {"text", "label"}
+    required = {"text", "label", "human_validated"}
     missing  = required - set(df.columns)
     if missing:
         raise ValueError(
-            f"Input CSV is missing required columns: {missing}\n"
+            f"labelled.csv is missing required columns: {missing}\n"
             f"Found: {list(df.columns)}\n"
-            f"Make sure you are pointing at labelled.csv from label_{classifier}.py"
+            f"Run merge_human_labels.py before this script — it adds the "
+            f"'human_validated' column needed for stratified sampling."
         )
 
-    # Select only the columns needed for fine-tuning
-    # Keep risk_category if present for traceability, but don't require it
-    cols = ["text", "label"]
+    cols = ["text", "label", "human_validated"]
+    if "sentence_id" in df.columns:
+        cols.append("sentence_id")
     if "risk_category" in df.columns:
         cols.append("risk_category")
     df = df[cols].copy()
 
-    # Coerce and validate labels
     df["label"] = pd.to_numeric(df["label"], errors="coerce")
     invalid = df[~df["label"].isin([0, 1])]
     if len(invalid):
         raise ValueError(
-            f"label column contains values other than 0 or 1 after coercion.\n"
+            f"label column contains values other than 0 or 1.\n"
             f"Found: {invalid['label'].unique()}\n"
-            f"This may indicate None values from failed consensus rows. "
-            f"Check needs_review.csv and remove or resolve these rows."
+            f"Check needs_review.csv and resolve any failed consensus rows."
         )
+    df["label"]           = df["label"].astype(int)
+    df["human_validated"] = df["human_validated"].astype(int)
 
-    df["label"] = df["label"].astype(int)
-
-    # Drop missing text
     before = len(df)
-    df = df.dropna(subset=["text"])
+    df = df.dropna(subset=["text"]).reset_index(drop=True)
     dropped = before - len(df)
     if dropped:
         print(f"  [!] Dropped {dropped} rows with missing text")
 
     df["text"] = df["text"].astype(str).str.strip()
-    df = df.reset_index(drop=True)
     return df
 
 
-def split_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+def sample_dataset(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Stratified 70/15/15 split.
-    Stratification preserves the label distribution across all three splits
-    so class balance is consistent between train, val, and test.
+    Include all human-validated rows.
+    Sample GPT_N rows from the remaining GPT-labelled pool, stratified by label.
     """
-    # First cut: split off 30% as temp (will become val + test)
-    train, temp = train_test_split(
-        df,
-        test_size=(1 - TRAIN_FRAC),
-        stratify=df["label"],
+    human = df[df["human_validated"] == 1].copy()
+    gpt   = df[df["human_validated"] == 0].copy()
+
+    actual_human = len(human)
+    if actual_human != HUMAN_N:
+        print(f"  [!] Expected {HUMAN_N} human-validated rows, found {actual_human}. "
+              f"Proceeding with all {actual_human}.")
+
+    if len(gpt) < GPT_N:
+        raise ValueError(
+            f"GPT-labelled pool has only {len(gpt)} rows but {GPT_N} are needed. "
+            f"Reduce TOTAL_SAMPLE or increase the labelled dataset."
+        )
+
+    gpt_sample, _ = train_test_split(
+        gpt,
+        train_size=GPT_N,
+        stratify=gpt["label"],
         random_state=SEED,
     )
 
-    # Second cut: split temp equally into val and test (50/50 of the 30%)
+    combined = pd.concat([human, gpt_sample], ignore_index=True)
+    combined = combined.sample(frac=1, random_state=SEED).reset_index(drop=True)
+
+    print(f"  Human-validated rows included:  {actual_human}")
+    print(f"  GPT-labelled rows sampled:      {len(gpt_sample)}")
+    print(f"  Total dataset size:             {len(combined)}")
+    return combined
+
+
+def split_dataset(df: pd.DataFrame):
+    """
+    Stratified 70/15/15 split on combined key (label, human_validated).
+    This guarantees both class balance and human-validated representation
+    are preserved across all three splits.
+    """
+    strat_key = df["label"].astype(str) + "_" + df["human_validated"].astype(str)
+
+    train, temp = train_test_split(
+        df,
+        test_size=(1 - TRAIN_FRAC),
+        stratify=strat_key,
+        random_state=SEED,
+    )
+
+    strat_key_temp = temp["label"].astype(str) + "_" + temp["human_validated"].astype(str)
+
     val, test = train_test_split(
         temp,
         test_size=0.50,
-        stratify=temp["label"],
+        stratify=strat_key_temp,
         random_state=SEED,
     )
 
     return train, val, test
 
 
-def print_split_summary(train, val, test, label_0: str, label_1: str):
+def print_summary(train, val, test, label_0, label_1):
     total = len(train) + len(val) + len(test)
-
-    print(f"\n  {'Split':<8}  {'Total':>6}  {label_0:>10}  {label_1:>10}  {'% of data':>10}")
-    print(f"  {'-'*50}")
-
+    print(f"\n  {'Split':<8}  {'N':>5}  {'%':>5}  "
+          f"{'Human':>6}  {'GPT':>6}  {label_0:>10}  {label_1:>10}")
+    print(f"  {'-'*60}")
     for name, df in [("Train", train), ("Val", val), ("Test", test)]:
-        n       = len(df)
-        n0      = (df["label"] == 0).sum()
-        n1      = (df["label"] == 1).sum()
-        pct     = 100 * n / total
-        print(f"  {name:<8}  {n:>6}  {n0:>10}  {n1:>10}  {pct:>9.1f}%")
-
-    print(f"  {'-'*50}")
-    print(f"  {'Total':<8}  {total:>6}")
+        n      = len(df)
+        pct    = 100 * n / total
+        human  = df["human_validated"].sum()
+        gpt    = n - human
+        n0     = (df["label"] == 0).sum()
+        n1     = (df["label"] == 1).sum()
+        print(f"  {name:<8}  {n:>5}  {pct:>4.1f}%  "
+              f"{human:>6}  {gpt:>6}  {n0:>10}  {n1:>10}")
+    print(f"  {'-'*60}")
+    print(f"  {'Total':<8}  {total:>5}")
 
 
 def main():
@@ -152,16 +198,8 @@ def main():
         choices=["vagueness", "complexity"],
         help="Which classifier to prepare data for"
     )
-    parser.add_argument(
-        "--input",
-        default=None,
-        help="Path to labelled.csv (overrides default for chosen classifier)"
-    )
-    parser.add_argument(
-        "--output-dir",
-        default=None,
-        help="Directory to write train/val/test CSVs (overrides default)"
-    )
+    parser.add_argument("--input",      default=None, help="Override input labelled.csv path")
+    parser.add_argument("--output-dir", default=None, help="Override output directory")
     args = parser.parse_args()
 
     config     = CLASSIFIER_CONFIG[args.classifier]
@@ -170,31 +208,28 @@ def main():
     label_0    = config["label_0"]
     label_1    = config["label_1"]
 
-    print(f"\n[DDDS] Training Data Preparation  --  {args.classifier.capitalize()} Classifier")
-    print(f"  Input:      {input_path}")
-    print(f"  Output dir: {output_dir}")
-    print(f"  Split:      {int(TRAIN_FRAC*100)}/{int(VAL_FRAC*100)}/{int(TEST_FRAC*100)}  "
-          f"(train/val/test)\n")
+    print(f"\n[DDDS] Training Data Preparation — {args.classifier.capitalize()} Classifier")
+    print(f"  Input:       {input_path}")
+    print(f"  Output dir:  {output_dir}")
+    print(f"  Total rows:  {TOTAL_SAMPLE}  ({HUMAN_N} human + {GPT_N} GPT-sampled)")
+    print(f"  Split:       70 / 15 / 15  (train / val / test)")
+    print(f"  Stratify on: label + human_validated\n")
 
-    # --- Load ---
     print("[1/3] Loading and validating labelled data...")
     df = load_and_validate(input_path, args.classifier)
-    print(f"  {len(df)} passages loaded")
-    print(f"  {label_1}: {(df['label']==1).sum()}  |  "
-          f"{label_0}: {(df['label']==0).sum()}")
+    print(f"  Total rows in labelled.csv:     {len(df)}")
+    print(f"  Human-validated:                {df['human_validated'].sum()}")
+    print(f"  GPT-labelled:                   {(df['human_validated'] == 0).sum()}")
+    print(f"  {label_1}:  {(df['label'] == 1).sum()}  |  {label_0}: {(df['label'] == 0).sum()}")
 
-    # Warn if dataset is very small
-    if len(df) < 100:
-        print(f"\n  [!] Warning: only {len(df)} passages. "
-              f"Fine-tuning on fewer than 100 samples may produce unreliable results.")
+    print("\n[2/3] Sampling 3,000-sentence dataset...")
+    sampled = sample_dataset(df)
 
-    # --- Split ---
-    print("\n[2/3] Splitting into train / val / test...")
-    train, val, test = split_data(df)
-    print_split_summary(train, val, test, label_0, label_1)
+    print("\n[3/3] Splitting into train / val / test...")
+    train, val, test = split_dataset(sampled)
+    print_summary(train, val, test, label_0, label_1)
 
-    # --- Save ---
-    print(f"\n[3/3] Saving splits to '{output_dir}'...")
+    print(f"\n[4/4] Saving to '{output_dir}'...")
     os.makedirs(output_dir, exist_ok=True)
 
     train_path = os.path.join(output_dir, "train.csv")
@@ -205,18 +240,10 @@ def main():
     val.to_csv(val_path,     index=False)
     test.to_csv(test_path,   index=False)
 
-    print(f"  train.csv  ->  {train_path}")
-    print(f"  val.csv    ->  {val_path}")
-    print(f"  test.csv   ->  {test_path}")
-
-    print(f"\n[Done] Data ready for fine-tuning.")
-    print(f"\n  Run:")
-    classifier_dir = "vagueness_classifier" if args.classifier == "vagueness" else "complexity_classifier"
-    print(f"    cd ../{classifier_dir}")
-    print(f"    python train.py \\")
-    print(f"        --train {train_path} \\")
-    print(f"        --val   {val_path}   \\")
-    print(f"        --test  {test_path}")
+    print(f"  train.csv → {train_path}")
+    print(f"  val.csv   → {val_path}")
+    print(f"  test.csv  → {test_path}")
+    print(f"\n✓ Done. Ready for Run 5 (FinBERT fine-tuning).")
 
 
 if __name__ == "__main__":
