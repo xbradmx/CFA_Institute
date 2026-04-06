@@ -380,50 +380,9 @@ def build_section_2_changes(doc: Document, temporal_analysis: dict, flagged_item
                 add_quote_block(doc, f"Current ({curr_p})", curr_text + "...")
 
 
-def build_section_3_contradictions(doc: Document, contradiction_analysis: dict):
-    """Section 3: Cross-document contradictions."""
-    add_section_heading(doc, "3. Cross-Document Contradictions")
-
-    if not contradiction_analysis:
-        add_body_paragraph(doc, "No contradiction analysis available.")
-        return
-
-    detected = contradiction_analysis.get("contradiction_detected", False)
-
-    if not detected:
-        add_body_paragraph(
-            doc,
-            "No material contradictions detected between SEC filings and earnings call "
-            "transcripts for the periods analysed."
-        )
-        return
-
-    # Contradiction detail
-    detail = contradiction_analysis.get("contradiction_detail", "")
-    if detail:
-        p = doc.add_paragraph()
-        p.paragraph_format.space_after = Pt(6)
-        flag_run = p.add_run("CONTRADICTION DETECTED: ")
-        flag_run.bold = True
-        flag_run.font.size = Pt(9)
-        flag_run.font.name = "Arial"
-        flag_run.font.color.rgb = COLOUR_RED
-        detail_run = p.add_run(detail)
-        detail_run.font.size = Pt(9)
-        detail_run.font.name = "Arial"
-
-    # Parallel quotes
-    evidence = contradiction_analysis.get("supporting_evidence", [])
-    if len(evidence) >= 2:
-        add_quote_block(doc, "10-K Filing", str(evidence[0]))
-        add_quote_block(doc, "Earnings Call", str(evidence[1]))
-    elif len(evidence) == 1:
-        add_quote_block(doc, "Filing", str(evidence[0]))
-
-
-def build_section_4_peer(doc: Document, peer_analysis: dict):
-    """Section 4: Peer context vs sector average."""
-    add_section_heading(doc, "4. Peer Context & Sector Benchmarking")
+def build_section_3_peer(doc: Document, peer_analysis: dict):
+    """Section 3: Peer context vs sector average."""
+    add_section_heading(doc, "3. Peer Context & Sector Benchmarking")
 
     if not peer_analysis:
         add_body_paragraph(doc, "No peer analysis available.")
@@ -465,9 +424,9 @@ def build_section_4_peer(doc: Document, peer_analysis: dict):
             r.font.color.rgb = COLOUR_RED
 
 
-def build_section_5_signal(doc: Document, overall_signal: dict):
-    """Section 5: Overall signal and analyst actions."""
-    add_section_heading(doc, "5. Overall Assessment & Analyst Actions")
+def build_section_4_signal(doc: Document, overall_signal: dict):
+    """Section 4: Overall signal and analyst actions."""
+    add_section_heading(doc, "4. Overall Assessment & Analyst Actions")
 
     if not overall_signal:
         add_body_paragraph(doc, "No overall signal assessment available.")
@@ -502,8 +461,8 @@ def build_section_5_signal(doc: Document, overall_signal: dict):
     add_horizontal_rule(doc, "CCCCCC", 4)
     prov_rows = [
         ("Tier 1 screening",   f"{SCREENING_MODEL} — material change detection"),
-        ("Tier 2 analysis",    f"{DEEP_ANALYSIS_MODEL} — temporal, contradiction, peer analysis"),
-        ("Data source",        "SEC EDGAR public filings (10-K, 10-Q, 8-K transcripts)"),
+        ("Tier 2 analysis",    f"{DEEP_ANALYSIS_MODEL} — temporal and peer analysis"),
+        ("Data source",        "SEC EDGAR public filings (10-K, 10-Q)"),
         ("Confidence basis",   "Consensus dual-call GPT-4o-mini screening (threshold ≥ 0.70)"),
     ]
     add_key_value_table(doc, prov_rows)
@@ -544,7 +503,6 @@ def generate_memo(findings: dict, output_path: str):
     deep_analysis   = findings.get("deep_analysis", {})
 
     temporal        = deep_analysis.get("temporal_analysis", {})
-    contradiction   = deep_analysis.get("contradiction_analysis", {})
     peer            = deep_analysis.get("peer_analysis", {})
     overall_signal  = deep_analysis.get("overall_signal", {})
     signal_strength = overall_signal.get("signal_strength", "UNKNOWN")
@@ -556,9 +514,8 @@ def generate_memo(findings: dict, output_path: str):
     build_header(doc, company, signal_strength, flags_count)
     build_section_1_trends(doc, flagged_items)
     build_section_2_changes(doc, temporal, flagged_items)
-    build_section_3_contradictions(doc, contradiction)
-    build_section_4_peer(doc, peer)
-    build_section_5_signal(doc, overall_signal)
+    build_section_3_peer(doc, peer)
+    build_section_4_signal(doc, overall_signal)
     add_disclaimer(doc)
 
     os.makedirs(Path(output_path).parent, exist_ok=True)

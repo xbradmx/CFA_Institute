@@ -152,23 +152,7 @@ class GraphQuerier:
                 period=period
             )]
 
-    def get_same_quarter_transcript(self, identifier: str,
-                                     period: str) -> list[dict]:
-        """
-        Returns transcript RiskFactor nodes for the same company and period,
-        used for cross-document contradiction detection.
-        """
-        query = """
-        MATCH (c:Company {identifier: $identifier})
-              -[:HAS_FILING]->(f:Filing {period: $period, filing_type: 'earnings_transcript'})
-              -[:HAS_RISK_FACTOR]->(r:RiskFactor)
-        RETURN r.text AS text, r.risk_category AS risk_category
-        ORDER BY r.risk_category
-        """
-        with self.driver.session() as session:
-            return [dict(r) for r in session.run(
-                query, identifier=identifier, period=period
-            )]
+
 
 
 # ---------------------------------------------------------------------------
@@ -261,16 +245,12 @@ A) TEMPORAL ANALYSIS
    - Whether changes represent deterioration, improvement, or obfuscation
    - Whether specific metrics were removed or replaced with vague language
 
-B) CROSS-DOCUMENT CONTRADICTION
-   - Whether the 10-K risk language is consistent with earnings call language
-   - Flag any instances where management downplayed in the call what was disclosed in the filing
-
-C) PEER-RELATIVE ASSESSMENT
+B) PEER-RELATIVE ASSESSMENT
    - Whether this company's disclosure is more or less specific than peers
    - Whether this company omits risks that peers uniformly disclose
    - Whether vagueness scores deviate significantly from peer averages
 
-D) OVERALL SIGNAL
+C) OVERALL SIGNAL
    - Summarise whether this represents a meaningful disclosure degradation signal
    - Rate signal strength: HIGH / MEDIUM / LOW
    - State what an analyst should investigate further
@@ -284,11 +264,6 @@ Respond in the following JSON structure:
     "deterioration_assessment": "...",
     "metric_removal": true or false,
     "metric_removal_detail": "..."
-  },
-  "contradiction_analysis": {
-    "contradiction_detected": true or false,
-    "contradiction_detail": "...",
-    "supporting_evidence": ["filing quote", "transcript quote"]
   },
   "peer_analysis": {
     "peer_comparison": "...",
@@ -353,23 +328,6 @@ def build_deep_analysis_context(company: dict,
                            f"in {flag['curr_period']}:")
             for p in peers[:3]:
                 sections.append(f"\n  [{p['peer_id']}] {p['text'][:500]}")
-
-    # Transcript context
-    sections.append("\n" + "=" * 60)
-    sections.append("EARNINGS CALL TRANSCRIPT CONTEXT")
-    sections.append("=" * 60)
-
-    periods_checked = set()
-    for flag in screened_flags:
-        if flag["curr_period"] not in periods_checked:
-            transcript = graph.get_same_quarter_transcript(
-                company["identifier"], flag["curr_period"]
-            )
-            if transcript:
-                sections.append(f"\nTranscript passages for {flag['curr_period']}:")
-                for t in transcript[:5]:
-                    sections.append(f"\n  [{t['risk_category']}] {t['text'][:500]}")
-            periods_checked.add(flag["curr_period"])
 
     context = "\n".join(sections)
 
