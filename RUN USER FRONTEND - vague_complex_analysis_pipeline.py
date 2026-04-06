@@ -23,7 +23,13 @@ import customtkinter as ctk
 # ── Resolve analyst_pipeline from same directory as this script ───────────────
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, _HERE)
-import analyst_pipeline as pipeline
+import importlib.util, os
+_spec = importlib.util.spec_from_file_location(
+    "pipeline",
+    os.path.join(_HERE, "RUN USER BACKEND - vague_complex_analysis_pipeline.py")
+)
+pipeline = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(pipeline)
 
 # =============================================================================
 # Colour palette  (mirrors the HTML demo)
@@ -352,14 +358,18 @@ class DDDSApp(ctk.CTk):
         logo_frame = ctk.CTkFrame(inner, fg_color="transparent")
         logo_frame.pack(side="left", pady=0, fill="y")
 
+        badge_frame = ctk.CTkFrame(
+            logo_frame, fg_color="transparent",
+            corner_radius=4, border_width=1, border_color=AMBER
+        )
+        badge_frame.pack(side="left", anchor="center")
         badge = ctk.CTkLabel(
-            logo_frame, text="DDDS",
+            badge_frame, text="DDDS",
             font=ctk.CTkFont(family="Courier", size=12, weight="bold"),
             text_color=AMBER, fg_color="transparent",
-            corner_radius=4, padx=8, pady=3,
-            border_width=1, border_color=AMBER
+            corner_radius=4
         )
-        badge.pack(side="left", anchor="center")
+        badge.pack(padx=8, pady=3)
         ctk.CTkFrame(logo_frame, fg_color="transparent", width=12).pack(side="left")
         make_label(logo_frame, "Disclosure Degradation Detection System",
                    size=14, color=TXT, weight="normal").pack(side="left", anchor="center")
