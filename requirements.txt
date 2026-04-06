@@ -1,7 +1,28 @@
 # DDDS - Full Pipeline Dependencies
+# Disclosure Degradation Detection System | The Transparency Project
+# Lancaster University | CFA AI Investment Challenge 2026
+#
 # Install with: pip install -r requirements.txt
+#
+# Run map:
+#   Run 0   — SEC EDGAR data collection
+#   Run 1   — Risk factor extraction
+#   Run 2   — GPT-4o consensus labelling (vagueness + complexity, separate scripts)
+#   Run 2a/b — Label testing scripts
+#   Run 3   — Human agreement checker (Cohen's Kappa)
+#   Run 3a  — Validation sheet generation
+#   Run 3b  — Human label merging
+#   Run 4   — Train/val/test splitting
+#   Run 5   — FinBERT fine-tuning (vagueness + complexity, separate scripts)
+#   Run 6   — Inference / prediction (vagueness + complexity, separate scripts)
+#   Run 7   — Neo4j graph ingestion
+#   Run 8   — Graph-RAG two-tier LLM analysis
+#   Run 9   — Investment memo generation
+#   Run 10  — Geographic risk heatmap
+#   Run 11  — Backtesting (Li 2008 earnings persistence regression)
+#   RUN USER BACKEND - vague_complex_analysis_pipeline.py — Standalone analyst tool (wraps Runs 1 + 6)
 
-# ── NLP / Model Training (Runs 2, 5, 6) ─────────────────────────────────────
+# ── NLP / Model Training (Runs 5, 6, RUN USER BACKEND analyst_pipeline) ───────────────────────
 torch>=2.0.0
 transformers>=4.40.0
 datasets>=2.18.0
@@ -12,32 +33,40 @@ pandas>=2.0.0
 numpy>=1.26.0
 scikit-learn>=1.4.0
 
-# ── LLM APIs (Runs 2, 8) ────────────────────────────────────────────────────
-openai>=1.0.0
-anthropic>=0.25.0
-tiktoken>=0.7.0
+# ── LLM APIs (Runs 2, 8) ─────────────────────────────────────────────────────
+openai>=1.0.0           # GPT-4o consensus labelling + Batch API (Run 2); GPT-4o-mini screening (Run 8)
+anthropic>=0.25.0       # Claude Opus deep analysis tier (Run 8)
+tiktoken>=0.7.0         # Token counting pre-submission to prevent context overflow (Run 8)
 
 # ── Graph Database (Runs 7, 8) ───────────────────────────────────────────────
-neo4j>=5.0.0
+neo4j>=5.0.0            # Neo4j Desktop driver; DBMS at neo4j://127.0.0.1:7687
 
-# ── Document Parsing (Run 1) ─────────────────────────────────────────────────
-pdfplumber>=0.10.0
-beautifulsoup4>=4.12.0
+# ── Document Parsing (Run 1, RUN USER BACKEND analyst_pipeline) ───────────────────────────────
+beautifulsoup4>=4.12.0  # HTML section extraction from EDGAR filings
+lxml>=5.0.0             # BeautifulSoup HTML parser backend (faster than html.parser)
+pdfplumber>=0.10.0      # PDF text extraction (analyst_pipeline multi-format input)
+
+# ── Excel / Spreadsheet (Runs 3, 3a, 3b) ─────────────────────────────────────
+openpyxl>=3.1.0         # Read/write .xlsx validation annotation sheets
+
+# ── HTTP / Data Collection (Run 0) ───────────────────────────────────────────
+requests>=2.31.0        # SEC EDGAR API programmatic filing retrieval
 
 # ── Document Generation (Run 9) ──────────────────────────────────────────────
-python-docx>=1.1.0
+python-docx>=1.1.0      # Automated two-page investment memo generation
 
 # ── Visualisation (Run 10) ───────────────────────────────────────────────────
-geopandas>=0.14.0
-geodatasets>=2023.12.0
-matplotlib>=3.8.0
-shapely>=2.0.0
+geopandas>=0.14.0       # Geographic heatmap rendering
+geodatasets>=2023.12.0  # Boundary data for US state/county maps
+matplotlib>=3.8.0       # Plot rendering
+shapely>=2.0.0          # Geometric operations for geographic layers
+
+# ── Orchestration ─────────────────────────────────────────────────────────────
+prefect>=2.14.0         # Pipeline orchestration and run scheduling
 
 # ── Environment & Utilities ──────────────────────────────────────────────────
-python-dotenv>=1.0.0
+python-dotenv>=1.0.0    # .env credential management (Neo4j password, API keys, EDGAR user agent)
 
-
-# ── backtesting (run 11) ─────────────────────────────────────────────────────
-
-scipy>=1.12.0    # for p-value calculation in regression
-yfinance>=0.2.0  # fallback earnings fetch if XBRL unavailable
+# ── Backtesting (Run 11) ─────────────────────────────────────────────────────
+scipy>=1.12.0           # p-value calculation in Li (2008) earnings persistence regression
+yfinance>=0.2.0         # Fallback earnings fetch if XBRL data unavailable

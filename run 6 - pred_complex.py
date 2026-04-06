@@ -150,8 +150,14 @@ def main():
         simple_count  = (df_out["predicted_label"] == "SIMPLE").sum()
         print(f"\n  Results:  COMPLEX={complex_count}  SIMPLE={simple_count}")
         print(f"  Mean complex probability: {df_out['complex_prob'].mean():.4f}")
+        print(f"  STD complex probability: {df_out['complex_prob'].std():.4f}")
+        print(f"  Min complex probability: {df_out['complex_prob'].min():.4f}")
+        print(f"  Max complex probability: {df_out['complex_prob'].max():.4f}")
+        # print(f"  Range complex probability: {df_out['complex_prob'].range():.4f}")
 
-        out_path = args.output or args.input.replace(".csv", "_predictions.csv")
+
+
+        out_path = args.output or "data/predictions_complexity.csv"
         df_out.to_csv(out_path, index=False)
         print(f"  Saved to: {out_path}")
 

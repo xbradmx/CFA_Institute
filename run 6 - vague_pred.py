@@ -150,8 +150,13 @@ def main():
         specific_count = (df_out["predicted_label"] == "SPECIFIC").sum()
         print(f"\n  Results:  VAGUE={vague_count}  SPECIFIC={specific_count}")
         print(f"  Mean vague probability: {df_out['vague_prob'].mean():.4f}")
+        print(f"  STD vague probability: {df_out['vague_prob'].std():.4f}")
+        print(f"  Min vague probability: {df_out['vague_prob'].min():.4f}")
+        print(f"  Max vague probability: {df_out['vague_prob'].max():.4f}")
+        # print(f"  Range vague probability: {df_out['vague_prob'].range():.4f}")
 
-        out_path = args.output or args.input.replace(".csv", "_predictions.csv")
+
+        out_path = args.output or "data/predictions_vagueness.csv"
         df_out.to_csv(out_path, index=False)
         print(f"  Saved to: {out_path}")
 
