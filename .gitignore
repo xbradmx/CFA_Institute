@@ -1,1 +1,16 @@
-*outputs/
+# Models
+outputs/
+
+# Training data and cache
+data/labelled/
+data/training_sentences/cache/
+data/training_sentences/filings/
+data/ALL SEC FILINGS/
+data/analyst_outputs/
+
+# Prediction outputs
+data/predictions_vagueness.csv
+data/predictions_complexity.csv
+
+# Environment
+.env
