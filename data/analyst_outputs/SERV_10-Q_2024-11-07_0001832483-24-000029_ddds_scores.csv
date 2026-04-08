@@ -1,0 +1,14 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\SERV\10-Q\SERV_10-Q_2024-11-07_0001832483-24-000029.html
+Filing Type,10-Q
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+Risk Factors,3,0.0682,-0.4631,0.6203,0.5484
+MD&A,1,0.0363,-0.3227,0.9984,0.8791
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+SERV_10-Q_2024-11-07_0001832483-24-000029_Risk Factors_0000,Risk Factors,"RISK FACTORS There have been no material changes to the risk factors as disclosed in (i) Part I, Item 1A. “Risk Factors” beginning on page 18 of our Annual Report on Form 10-K for the year ended December 31, 2023, (ii) Part II, Item 1A ""Risk Factors"" beginning on page 27 on the Form 10-Q filed for the quarter ended March 31, 2024, and (iii) Part II, Item 1A ""Risk Factors"" beginning on page 31 on the Form 10-Q filed for the quarter ended June 30, 2024.",0.0177,SPECIFIC,-0.5136,0.8657,COMPLEX,0.7938,False
+SERV_10-Q_2024-11-07_0001832483-24-000029_Risk Factors_0001,Risk Factors,UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS Unregistered Sales of Equity Securities Please refer to Item 15.,0.1581,SPECIFIC,-0.3732,0.0039,SIMPLE,-0.068,False
+SERV_10-Q_2024-11-07_0001832483-24-000029_Risk Factors_0002,Risk Factors,"Recent Sales of Unregistered Securities contained in our registration statement on Form S-1 filed on July 31, 2024 for the information required by",0.0289,SPECIFIC,-0.5024,0.9914,COMPLEX,0.9195,False
+SERV_10-Q_2024-11-07_0001832483-24-000029_MD&A_0000,MD&A,"Item 701 of Regulation S-K, which is incorporated herein by reference, as to all equity securities that we issued during the period covered by this report that were not registered under the Securities Act.",0.0363,SPECIFIC,-0.3227,0.9984,COMPLEX,0.8791,False

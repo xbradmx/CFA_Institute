@@ -1,0 +1,18 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\TGEN\10-Q\TGEN_10-Q_2025-05-13_0001537435-25-000037.html
+Filing Type,10-Q
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+MD&A,7,0.8965,0.5375,0.1404,0.0211
+Risk Factors,1,0.0162,-0.5151,0.9975,0.9256
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+TGEN_10-Q_2025-05-13_0001537435-25-000037_MD&A_0000,MD&A,"Management's Discussion and Analysis of Financial Condition and Results of Operations This Management’s Discussion and Analysis of Financial Condition and Results of Operations and other parts of this Quarterly Report on Form 10-Q (“Form 10-Q”) contain forward-looking statements, within the meaning of the Private Securities Litigation Reform Act of 1995, that involve risks and uncertainties.",0.801,VAGUE,0.442,0.964,COMPLEX,0.8447,False
+TGEN_10-Q_2025-05-13_0001537435-25-000037_MD&A_0001,MD&A,Any statements contained herein that are not statements of historical fact may be deemed to be forward-looking statements.,0.9774,VAGUE,0.6184,0.0033,SIMPLE,-0.116,False
+TGEN_10-Q_2025-05-13_0001537435-25-000037_MD&A_0002,MD&A,Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact.,0.9768,VAGUE,0.6178,0.003,SIMPLE,-0.1163,False
+TGEN_10-Q_2025-05-13_0001537435-25-000037_MD&A_0003,MD&A,"Forward-looking statements can also be identified by words such as “future,” “anticipates,” “believes,” “estimates,” “expects,” “intends,” “plans,” “predicts,” “will,” “would,” “could,” “can,” “may,” and similar terms.",0.7051,VAGUE,0.3461,0.0024,SIMPLE,-0.1169,False
+TGEN_10-Q_2025-05-13_0001537435-25-000037_MD&A_0004,MD&A,Forward-looking statements are not guarantees of future performance and our actual results may differ significantly from the results discussed in the forward-looking statements.,0.9722,VAGUE,0.6132,0.0006,SIMPLE,-0.1187,False
+TGEN_10-Q_2025-05-13_0001537435-25-000037_MD&A_0005,MD&A,"Such forward-looking statements include, among other things, demand for our products and services, the availability of incentives, rebates, and tax benefits relating to our products, changes in the regulatory environment relating to our products, competing technological developments, and the availability of financing to fund our operations and growth.",0.943,VAGUE,0.584,0.0008,SIMPLE,-0.1185,False
+TGEN_10-Q_2025-05-13_0001537435-25-000037_MD&A_0006,MD&A,"Factors that might cause such differences include, but are not limited to, those discussed in Part I,",0.8999,VAGUE,0.5409,0.0087,SIMPLE,-0.1106,False
+TGEN_10-Q_2025-05-13_0001537435-25-000037_Risk Factors_0000,Risk Factors,"Item 1A of our Annual Report on Form 10-K for the year ended December 31, 2024 (“2024 Form 10-K”), as supplemented, and Part II, Item 1A of this Form 10-Q, in each case under the heading “Risk Factors.” The following discussion should be read in conjunction with the 2024 Form 10-K filed with the Securities and Exchange Commission (“SEC”) and the condensed consolidated financial statements and accompanying notes included in Part I,",0.0162,SPECIFIC,-0.5151,0.9975,COMPLEX,0.9256,True

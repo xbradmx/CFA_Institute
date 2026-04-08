@@ -1,0 +1,15 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\WRAP\10-K\WRAP_10-K_2024-08-28_0001437749-24-027942.html
+Filing Type,10-K
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+MD&A,6,0.5025,0.1595,0.1666,-0.0617
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+WRAP_10-K_2024-08-28_0001437749-24-027942_MD&A_0000,MD&A,Management’s Discussion and Analysis of Financial Condition and Results of Operations” in this Annual Report.,0.9213,VAGUE,0.5783,0.001,SIMPLE,-0.2273,False
+WRAP_10-K_2024-08-28_0001437749-24-027942_MD&A_0001,MD&A,"TRADEMARKS, TRADE NAMES AND SERVICE MARKS Our trademarks include Wrap, the Wrap logo, BolaWrap®, and Wrap Reality™, Intrensic, and Evidence on A Cloud, some of which are registered trademarks in the US and certain other jurisdictions.",0.0348,SPECIFIC,-0.3082,0.001,SIMPLE,-0.2273,False
+WRAP_10-K_2024-08-28_0001437749-24-027942_MD&A_0002,MD&A,"They, along with our other common law trademarks, service marks or trade names appearing in this Annual Report are the property of the Company.",0.2125,SPECIFIC,-0.1305,0.0012,SIMPLE,-0.2271,False
+WRAP_10-K_2024-08-28_0001437749-24-027942_MD&A_0003,MD&A,"Other trademarks, service marks or trade names appearing in this Annual Report are the property of their owners.",0.5322,VAGUE,0.1892,0.0007,SIMPLE,-0.2276,False
+WRAP_10-K_2024-08-28_0001437749-24-027942_MD&A_0004,MD&A,"We do not intend our use or display of other companies’ trade names or trademarks to imply a relationship with, or endorsement of or sponsorship of us by, any other companies.",0.8799,VAGUE,0.5369,0.0008,SIMPLE,-0.2275,False
+WRAP_10-K_2024-08-28_0001437749-24-027942_MD&A_0005,MD&A,"Solely for convenience, we have omitted the ® and ™ designations, as applicable, for the trademarks used in this Annual Report, but such references are not intended to indicate in any way that we will not assert, to the fullest extent under applicable law, our rights to these trademarks and trade names. - 1 - Table of Contents PART I",0.4345,SPECIFIC,0.0915,0.9951,COMPLEX,0.7668,False

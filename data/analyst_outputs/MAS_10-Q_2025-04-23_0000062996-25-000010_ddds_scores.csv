@@ -1,0 +1,18 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\MAS\10-Q\MAS_10-Q_2025-04-23_0000062996-25-000010.html
+Filing Type,10-Q
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+Risk Factors,9,0.5038,-0.0275,0.2255,0.1536
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+MAS_10-Q_2025-04-23_0000062996-25-000010_Risk Factors_0000,Risk Factors,"Item 1A. ""Risk Factors"" in our most recent Annual Report on Form 10-K, as well as in other filings we make with the Securities and Exchange Commission.",0.1127,SPECIFIC,-0.4186,0.0035,SIMPLE,-0.0684,False
+MAS_10-Q_2025-04-23_0000062996-25-000010_Risk Factors_0001,Risk Factors,Any forward-looking statement made by us speaks only as of the date on which it was made.,0.9299,VAGUE,0.3986,0.0011,SIMPLE,-0.0708,False
+MAS_10-Q_2025-04-23_0000062996-25-000010_Risk Factors_0002,Risk Factors,"Factors or events that could cause our actual results to differ may emerge from time to time, and it is not possible for us to predict all of them.",0.9748,VAGUE,0.4435,0.0007,SIMPLE,-0.0712,False
+MAS_10-Q_2025-04-23_0000062996-25-000010_Risk Factors_0003,Risk Factors,"Unless required by law, we undertake no obligation to update publicly any forward-looking statements as a result of new information, future events or otherwise. 19 a.",0.7838,VAGUE,0.2525,0.002,SIMPLE,-0.0699,False
+MAS_10-Q_2025-04-23_0000062996-25-000010_Risk Factors_0004,Risk Factors,"The Company's Principal Executive Officer and Principal Financial Officer have concluded, based on an evaluation of the Company's disclosure controls and procedures (as defined in the Securities Exchange Act of 1934 Rules 13a-15(e) or 15d-15(e)) as required by paragraph (b) of Exchange Act Rules 13a-15 or 15d-15 that, as of March 31, 2025, the Company's disclosure controls and procedures were effective. b.",0.0158,SPECIFIC,-0.5155,0.9984,COMPLEX,0.9265,True
+MAS_10-Q_2025-04-23_0000062996-25-000010_Risk Factors_0005,Risk Factors,"In connection with the evaluation of the Company's internal control over financial reporting that occurred during the quarter ended March 31, 2025, which is required under the Securities Exchange Act of 1934 by paragraph (d) of Exchange Rules 13a-15 or 15d-15 (as defined in paragraph (f) of Rule 13a-15), management determined that there was no change that materially affected or is reasonably likely to materially affect internal control over financial reporting.",0.2181,SPECIFIC,-0.3132,0.9986,COMPLEX,0.9267,True
+MAS_10-Q_2025-04-23_0000062996-25-000010_Risk Factors_0006,Risk Factors,"During the second quarter of 2025, we plan to upgrade the enterprise resource planning system in one of our operating units within our Plumbing Products segment.",0.0272,SPECIFIC,-0.5041,0.0008,SIMPLE,-0.0711,False
+MAS_10-Q_2025-04-23_0000062996-25-000010_Risk Factors_0007,Risk Factors,The current system will be upgraded to a newer version and is not in response to any identified deficiency or weakness in the Company's internal control over financial reporting.,0.5708,VAGUE,0.0395,0.0013,SIMPLE,-0.0706,False
+MAS_10-Q_2025-04-23_0000062996-25-000010_Risk Factors_0008,Risk Factors,"However, this upgrade may involve complexities that could result in modification to certain internal controls at the operating unit. 20 MASCO CORPORATION PART II.",0.9015,VAGUE,0.3702,0.0229,SIMPLE,-0.049,False

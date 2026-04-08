@@ -1,0 +1,11 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\PAR\10-K\PAR_10-K_2025-03-03_0000708821-25-000015.html
+Filing Type,10-K
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+MD&A,2,0.8458,0.5028,0.2295,0.0012
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+PAR_10-K_2025-03-03_0000708821-25-000015_MD&A_0000,MD&A,Management’s Discussion and Analysis of Financial Condition and Results of Operations” and elsewhere in this Annual Report and in our other filings with the Securities and Exchange Commission (the “SEC”).,0.8754,VAGUE,0.5324,0.0013,SIMPLE,-0.227,False
+PAR_10-K_2025-03-03_0000708821-25-000015_MD&A_0001,MD&A,"We undertake no obligation to update or revise any forward-looking statements, whether as a result of new information, future events, or otherwise, except as may be required under applicable securities law. 3 Table of Contents PART I",0.8162,VAGUE,0.4732,0.4577,SIMPLE,0.2294,False

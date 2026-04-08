@@ -1,0 +1,10 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\IR\10-Q\IR_10-Q_2024-11-01_0001628280-24-044749.html
+Filing Type,10-Q
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+MD&A,1,0.0173,-0.3417,0.0387,-0.0806
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+IR_10-Q_2024-11-01_0001628280-24-044749_MD&A_0000,MD&A,"Management’s Discussion and Analysis of Financial Condition and Results of Operations” in our Annual Report on Form 10-K for the fiscal year ended December 31, 2023 (the “2023 Annual Report”) and under “Part I,",0.0173,SPECIFIC,-0.3417,0.0387,SIMPLE,-0.0806,False

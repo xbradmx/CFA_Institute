@@ -1,0 +1,12 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\SYM\10-K\SYM_10-K_2024-12-04_0001837240-24-000232.html
+Filing Type,10-K
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+MD&A,3,0.7474,0.4044,0.0038,-0.2245
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+SYM_10-K_2024-12-04_0001837240-24-000232_MD&A_0000,MD&A,Item 7 “Management’s Discussion and Analysis of Financial Condition and Results of Operations”.,0.6175,VAGUE,0.2745,0.0017,SIMPLE,-0.2266,False
+SYM_10-K_2024-12-04_0001837240-24-000232_MD&A_0001,MD&A,These risk factors will be important to consider in determining future results and should be reviewed in their entirety.,0.9783,VAGUE,0.6353,0.0017,SIMPLE,-0.2266,False
+SYM_10-K_2024-12-04_0001837240-24-000232_MD&A_0002,MD&A,"Annualized and estimated numbers are used for illustrative purpose only, are not forecasts and may not reflect actual results. 2 Table of Contents PART I",0.6464,VAGUE,0.3034,0.008,SIMPLE,-0.2203,False

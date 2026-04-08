@@ -1,0 +1,20 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\TRS\10-Q\TRS_10-Q_2024-11-04_0000842633-24-000078.html
+Filing Type,10-Q
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+Risk Factors,7,0.7899,0.2586,0.0072,-0.0647
+MD&A,3,0.6462,0.2872,0.0015,-0.1178
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+TRS_10-Q_2024-11-04_0000842633-24-000078_Risk Factors_0000,Risk Factors,"Item 1A, ""Risk Factors,"" in our Annual Report on Form 10-K for the year ended December 31, 2023 and elsewhere in this report.",0.0283,SPECIFIC,-0.503,0.0088,SIMPLE,-0.0631,False
+TRS_10-Q_2024-11-04_0000842633-24-000078_Risk Factors_0001,Risk Factors,The risks described in our Annual Report on Form 10-K and elsewhere in this report are not the only risks facing our Company.,0.7844,VAGUE,0.2531,0.0008,SIMPLE,-0.0711,False
+TRS_10-Q_2024-11-04_0000842633-24-000078_Risk Factors_0002,Risk Factors,"Additional risks and uncertainties not currently known to us or that we currently deemed to be immaterial also may materially adversely affect our business, financial position and results of operations or cash flows.",0.9797,VAGUE,0.4484,0.0009,SIMPLE,-0.071,False
+TRS_10-Q_2024-11-04_0000842633-24-000078_Risk Factors_0003,Risk Factors,The cautionary statements set forth above should be considered in connection with any subsequent written or oral forward-looking statements that we or persons acting on our behalf may issue.,0.9726,VAGUE,0.4413,0.0018,SIMPLE,-0.0701,False
+TRS_10-Q_2024-11-04_0000842633-24-000078_Risk Factors_0004,Risk Factors,"We caution readers not to place undue reliance on the statements, which speak only as of the date of this report.",0.9396,VAGUE,0.4083,0.0126,SIMPLE,-0.0593,False
+TRS_10-Q_2024-11-04_0000842633-24-000078_Risk Factors_0005,Risk Factors,"We do not undertake any obligation to review or confirm analysts' expectations or estimates or to release publicly any revisions to any forward-looking statement to reflect events or circumstances after the date of this report or to reflect the occurrence of unanticipated events, except as required by law.",0.8523,VAGUE,0.321,0.0243,SIMPLE,-0.0476,False
+TRS_10-Q_2024-11-04_0000842633-24-000078_Risk Factors_0006,Risk Factors,"We disclose important factors that could cause our actual results to differ materially from our expectations implied by our forward-looking statements under Part II,",0.9726,VAGUE,0.4413,0.0011,SIMPLE,-0.0708,False
+TRS_10-Q_2024-11-04_0000842633-24-000078_MD&A_0000,MD&A,"Item 7, ""Management's Discussion and Analysis of Financial Condition and Results of Operations,"" in our Annual Report on Form 10-K for the year ended December 31, 2023 and elsewhere in this report.",0.0482,SPECIFIC,-0.3108,0.0022,SIMPLE,-0.1171,False
+TRS_10-Q_2024-11-04_0000842633-24-000078_MD&A_0001,MD&A,These cautionary statements qualify all forward-looking statements attributed to us or persons acting on our behalf.,0.9691,VAGUE,0.6101,0.0009,SIMPLE,-0.1184,True
+TRS_10-Q_2024-11-04_0000842633-24-000078_MD&A_0002,MD&A,"When we indicate that an event, condition or circumstance could or would have an adverse effect on us, we mean to include effects upon our business, financial and other conditions, results of operations, prospects and ability to service our debt. 2 Table of Contents PART I.",0.9214,VAGUE,0.5624,0.0013,SIMPLE,-0.118,False
