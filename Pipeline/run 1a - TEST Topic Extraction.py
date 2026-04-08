@@ -35,7 +35,7 @@ load_dotenv()
 # ---------------------------------------------------------------------------
 FILINGS_DIR     = Path("data/Filings by company")
 OUTPUT_DOCX     = Path("data/test_topic_highlights.docx")
-MODEL           = "gpt-5-mini"
+MODEL           = "gpt-4o-mini"
 TEMPERATURE     = 1
 BATCH_SIZE      = 10        # sentences per API call (labelled)
 CONTEXT_WINDOW  = 2         # context sentences shown on each side

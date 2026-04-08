@@ -153,123 +153,99 @@ def clean_text(text: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# SECTION EXTRACTION
+# SECTION EXTRACTION (full-text search on collapsed whitespace)
 # ---------------------------------------------------------------------------
 
 SECTION_START = {
     "Risk Factors": [
-        r"item\s+1a\.?\s*[-\u2013\u2014.:\s]*risk\s+factors",
-        r"item\s+1a\.?\s*$",
+        r"item\s+1a\.?\s*[.\-\u2013\u2014:)]*\s*risk\s+factors",
+        r"risk\s+factors\s*$",
     ],
     "MD&A": [
-        r"item\s+7\.?\s*[-\u2013\u2014.:\s]*management.s\s+discussion",
-        r"item\s+2\.?\s*[-\u2013\u2014.:\s]*management.s\s+discussion",
-        r"item\s+7\.?\s*$",
-        r"item\s+2\.?\s*$",
+        r"item\s+7\.?\s*[.\-\u2013\u2014:)]*\s*management.{1,5}s\s+discussion",
+        r"item\s+2\.?\s*[.\-\u2013\u2014:)]*\s*management.{1,5}s\s+discussion",
+        r"management.{1,5}s\s+discussion\s+and\s+analysis\s+of\s+financial\s+condition",
     ],
 }
 
 SECTION_END = {
     "Risk Factors": {
         "10-K": [
-            r"item\s+1b.*unresolved\s+staff\s+comments",
-            r"item\s+1c.*cybersecurity",
-            r"item\s+2.*properties",
+            r"item\s+1b\.?\s*[.\-\u2013\u2014:)]*\s*unresolved\s+staff",
+            r"item\s+1c\.?\s*[.\-\u2013\u2014:)]*\s*cybersecurity",
+            r"item\s+2\.?\s*[.\-\u2013\u2014:)]*\s*properties",
         ],
         "10-Q": [
-            r"item\s+2.*unregistered\s+sales",
-            r"item\s+2.*management.s\s+discussion",
+            r"item\s+2\.?\s*[.\-\u2013\u2014:)]*\s*unregistered\s+sales",
+            r"item\s+2\.?\s*[.\-\u2013\u2014:)]*\s*management.s\s+discussion",
         ],
     },
     "MD&A": {
         "10-K": [
-            r"item\s+7a.*quantitative\s+and\s+qualitative",
+            r"item\s+7a\.?\s*[.\-\u2013\u2014:)]*\s*quantitative\s+and\s+qualitative",
         ],
         "10-Q": [
-            r"item\s+3.*quantitative\s+and\s+qualitative",
+            r"item\s+3\.?\s*[.\-\u2013\u2014:)]*\s*quantitative\s+and\s+qualitative",
         ],
     },
 }
 
-# Debug search terms — when a section isn't found, search for these
-# to show what the text actually contains
-DEBUG_SEARCH = {
-    "Risk Factors": ["item 1a", "risk factor", "item 1b", "unresolved"],
-    "MD&A": ["item 7", "item 2", "management", "discussion", "item 7a", "item 3", "quantitative"],
-}
 
-
-def debug_section_not_found(text: str, section_name: str, ticker: str,
-                            filing_type: str, filing_date: str):
-    """When a section isn't found, prints what the text actually contains
-    so we can diagnose the issue."""
-    if not DEBUG:
-        return
-
-    lines = text.split("\n")
-    search_terms = DEBUG_SEARCH.get(section_name, [])
-
-    print(f"         [DEBUG] {ticker} {filing_type} {filing_date} — {section_name} NOT FOUND")
-    print(f"         [DEBUG] Total lines in filing: {len(lines)}")
-
-    for term in search_terms:
-        matches = []
-        for i, line in enumerate(lines):
-            if term in line.lower():
-                matches.append((i, line.strip()))
-
-        if matches:
-            print(f"         [DEBUG] Lines containing '{term}':")
-            for line_num, line_text in matches[:5]:  # max 5 per term
-                # Truncate long lines for readability
-                display = line_text[:120] + "..." if len(line_text) > 120 else line_text
-                print(f"           Line {line_num}: [{repr(display)}]")
-        else:
-            print(f"         [DEBUG] No lines containing '{term}'")
-
-    print()
+def collapse_whitespace(text: str) -> str:
+    """Collapse all whitespace (including newlines, \\xa0, \\u200b) into
+    single spaces so that headers split across lines become matchable."""
+    text = text.replace("\u200b", " ").replace("\xa0", " ")
+    return re.sub(r"\s+", " ", text)
 
 
 def extract_section(text: str, section_name: str, filing_type: str) -> str | None:
-    """Extracts a named section. Keeps longest match to skip TOC entries."""
+    """Extracts a named section by searching the full collapsed text.
+
+    1. Collapse all whitespace so split headers become one string
+    2. Find ALL candidate start positions via regex
+    3. For each start, find the nearest end boundary
+    4. Return the longest section found (naturally skips TOC entries)
+    """
     start_patterns = SECTION_START.get(section_name, [])
     end_patterns = SECTION_END.get(section_name, {}).get(filing_type, [])
 
     if not end_patterns:
         return None
 
-    lines = text.split("\n")
+    collapsed = collapse_whitespace(text)
+
+    # --- Find all candidate start positions ---
+    starts = []
+    for pattern in start_patterns:
+        for match in re.finditer(pattern, collapsed, re.IGNORECASE):
+            starts.append((match.start(), match.end()))
+
+    if not starts:
+        return None
+
+    # --- For each start, find the nearest end boundary ---
     best_section = None
     best_length = 0
 
-    for start_pattern in start_patterns:
-        for i, line in enumerate(lines):
-            if not re.search(start_pattern, line, re.IGNORECASE):
-                continue
+    for start_pos, header_end in starts:
+        # Search for end boundary after the header text
+        search_from = header_end
+        end_pos = len(collapsed)
 
-            end_line = len(lines)
-            found_end = False
+        for end_pattern in end_patterns:
+            match = re.search(end_pattern, collapsed[search_from:], re.IGNORECASE)
+            if match:
+                candidate_end = search_from + match.start()
+                if candidate_end < end_pos:
+                    end_pos = candidate_end
 
-            for j in range(i + 5, min(i + 3000, len(lines))):
-                line_j = lines[j].strip()
-                if len(line_j) < 5:
-                    continue
-                for end_pattern in end_patterns:
-                    if re.search(end_pattern, line_j, re.IGNORECASE):
-                        end_line = j
-                        found_end = True
-                        break
-                if found_end:
-                    break
+        section_text = collapsed[start_pos:end_pos].strip()
 
-            section_text = "\n".join(lines[i:end_line]).strip()
-            if len(section_text) > best_length:
-                best_length = len(section_text)
-                best_section = section_text
+        if len(section_text) > best_length:
+            best_length = len(section_text)
+            best_section = section_text
 
-    if best_section and best_length > 500:
-        return best_section
-    return None
+    return best_section
 
 
 # ---------------------------------------------------------------------------
@@ -354,6 +330,8 @@ def run_extract():
     companies = sorted([d for d in FILINGS_DIR.iterdir() if d.is_dir()])
     print(f"  Found {len(companies)} company folders")
 
+    failed_extractions = []
+
     for comp_idx, comp_dir in enumerate(companies):
         ticker = comp_dir.name
 
@@ -371,6 +349,7 @@ def run_extract():
                 raw_text = extract_text_from_html(filepath)
                 if not raw_text or len(raw_text) < 500:
                     print(f"  [!] {ticker} {filing_type} {filing_date}: no text extracted")
+                    failed_extractions.append((ticker, filing_type, filing_date, "no text"))
                     continue
 
                 raw_text = clean_text(raw_text)
@@ -379,7 +358,7 @@ def run_extract():
                     section_text = extract_section(raw_text, section_name, filing_type)
                     if not section_text:
                         print(f"  [!] {ticker} {filing_type} {filing_date}: {section_name} not found")
-                        debug_section_not_found(raw_text, section_name, ticker, filing_type, filing_date)
+                        failed_extractions.append((ticker, filing_type, filing_date, section_name))
                         continue
 
                     sentences = split_into_sentences(section_text)
@@ -419,6 +398,10 @@ def run_extract():
     print(f"  By section:")
     for sec, count in df["section"].value_counts().items():
         print(f"    {sec:<20} {count:>6,}")
+    if failed_extractions:
+        print(f"\n  Failed extractions: {len(failed_extractions)}")
+        for ticker, ft, fd, reason in failed_extractions:
+            print(f"    {ticker} {ft} {fd}: {reason}")
     print(f"\n  Output: {SENTENCES_CSV}")
     print(f"{'='*60}")
 
@@ -687,14 +670,11 @@ def main():
                         help="Batch job ID (required for status/download)")
     args = parser.parse_args()
 
-    print(f"\n[DDDS] Risk Topic Extraction Pipeline")
+    print(f"\n[DDDS] Risk Topic Extraction Pipeline Test")
     print(f"  Model:      {MODEL}")
     print(f"  Batch size: {BATCH_SIZE}")
     print(f"  Mode:       {args.mode}")
-    if DEBUG:
-        print(f"  Debug:      ON (set DEBUG=False to suppress)\n")
-    else:
-        print()
+    print()
 
     if args.mode == "extract":
         run_extract()
