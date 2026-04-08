@@ -1,0 +1,2452 @@
+{
+  "320193": {
+    "cik": "320193",
+    "ticker": "AAPL",
+    "name": "Apple Inc.",
+    "sic": "3571",
+    "sic_description": "Electronic Computers",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "937966": {
+    "cik": "937966",
+    "ticker": "ASML",
+    "name": "ASML HOLDING NV",
+    "sic": "3559",
+    "sic_description": "Special Industry Machinery, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | OTC",
+    "category": "Large accelerated filer"
+  },
+  "18230": {
+    "cik": "18230",
+    "ticker": "CAT",
+    "name": "CATERPILLAR INC",
+    "sic": "3531",
+    "sic_description": "Construction Machinery & Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "858877": {
+    "cik": "858877",
+    "ticker": "CSCO",
+    "name": "CISCO SYSTEMS, INC.",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "707549": {
+    "cik": "707549",
+    "ticker": "LRCX",
+    "name": "LAM RESEARCH CORP",
+    "sic": "3559",
+    "sic_description": "Special Industry Machinery, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "51143": {
+    "cik": "51143",
+    "ticker": "IBM",
+    "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+    "sic": "3570",
+    "sic_description": "Computer & office Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1596532": {
+    "cik": "1596532",
+    "ticker": "ANET",
+    "name": "Arista Networks, Inc.",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "315189": {
+    "cik": "315189",
+    "ticker": "DE",
+    "name": "DEERE & CO",
+    "sic": "3523",
+    "sic_description": "Farm Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1551182": {
+    "cik": "1551182",
+    "ticker": "ETN",
+    "name": "Eaton Corp plc",
+    "sic": "3590",
+    "sic_description": "Misc Industrial & Commercial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1327567": {
+    "cik": "1327567",
+    "ticker": "PANW",
+    "name": "Palo Alto Networks Inc",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "2046954": {
+    "cik": "2046954",
+    "ticker": "UTX",
+    "name": "Ultratrex Inc.",
+    "sic": "3531",
+    "sic_description": "Construction Machinery & Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Unknown",
+    "category": ""
+  },
+  "1571996": {
+    "cik": "1571996",
+    "ticker": "DELL",
+    "name": "Dell Technologies Inc.",
+    "sic": "3571",
+    "sic_description": "Electronic Computers",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "76334": {
+    "cik": "76334",
+    "ticker": "PH",
+    "name": "Parker-Hannifin Corp",
+    "sic": "3490",
+    "sic_description": "Miscellaneous Fabricated Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "2023554": {
+    "cik": "2023554",
+    "ticker": "SNDK",
+    "name": "Sandisk Corp",
+    "sic": "3572",
+    "sic_description": "Computer Storage Devices",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer"
+  },
+  "106040": {
+    "cik": "106040",
+    "ticker": "WDC",
+    "name": "WESTERN DIGITAL CORP",
+    "sic": "3572",
+    "sic_description": "Computer Storage Devices",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1137789": {
+    "cik": "1137789",
+    "ticker": "STX",
+    "name": "Seagate Technology Holdings plc",
+    "sic": "3572",
+    "sic_description": "Computer Storage Devices",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "833444": {
+    "cik": "833444",
+    "ticker": "JCI",
+    "name": "Johnson Controls International plc",
+    "sic": "3585",
+    "sic_description": "Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "26172": {
+    "cik": "26172",
+    "ticker": "CMI",
+    "name": "CUMMINS INC",
+    "sic": "3510",
+    "sic_description": "Engines & Turbines",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "49826": {
+    "cik": "49826",
+    "ticker": "ITW",
+    "name": "ILLINOIS TOOL WORKS INC",
+    "sic": "3560",
+    "sic_description": "General Industrial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1262039": {
+    "cik": "1262039",
+    "ticker": "FTNT",
+    "name": "Fortinet, Inc.",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1701605": {
+    "cik": "1701605",
+    "ticker": "BKR",
+    "name": "Baker Hughes Co",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1783180": {
+    "cik": "1783180",
+    "ticker": "CARR",
+    "name": "CARRIER GLOBAL Corp",
+    "sic": "3585",
+    "sic_description": "Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1069183": {
+    "cik": "1069183",
+    "ticker": "AXON",
+    "name": "AXON ENTERPRISE, INC.",
+    "sic": "3480",
+    "sic_description": "Ordnance & Accessories, (No Vehicles/Guided Missiles)",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1645590": {
+    "cik": "1645590",
+    "ticker": "HPE",
+    "name": "Hewlett Packard Enterprise Co",
+    "sic": "3570",
+    "sic_description": "Computer & office Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE | NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1837240": {
+    "cik": "1837240",
+    "ticker": "SYM",
+    "name": "Symbotic Inc.",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1699150": {
+    "cik": "1699150",
+    "ticker": "IR",
+    "name": "Ingersoll Rand Inc.",
+    "sic": "3560",
+    "sic_description": "General Industrial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1524472": {
+    "cik": "1524472",
+    "ticker": "XYL",
+    "name": "Xylem Inc.",
+    "sic": "3561",
+    "sic_description": "Pumps & Pumping Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1681459": {
+    "cik": "1681459",
+    "ticker": "FTI",
+    "name": "TechnipFMC plc",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "29905": {
+    "cik": "29905",
+    "ticker": "DOV",
+    "name": "DOVER Corp",
+    "sic": "3530",
+    "sic_description": "Construction, Mining & Materials Handling Machinery & Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "26324": {
+    "cik": "26324",
+    "ticker": "CW",
+    "name": "CURTISS WRIGHT CORP",
+    "sic": "3590",
+    "sic_description": "Misc Industrial & Commercial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1474432": {
+    "cik": "1474432",
+    "ticker": "PSTG",
+    "name": "Everpure, Inc.",
+    "sic": "3572",
+    "sic_description": "Computer Storage Devices",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1002047": {
+    "cik": "1002047",
+    "ticker": "NTAP",
+    "name": "NetApp, Inc.",
+    "sic": "3572",
+    "sic_description": "Computer Storage Devices",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1486957": {
+    "cik": "1486957",
+    "ticker": "BWXT",
+    "name": "BWX Technologies, Inc.",
+    "sic": "3510",
+    "sic_description": "Engines & Turbines",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1720635": {
+    "cik": "1720635",
+    "ticker": "NVT",
+    "name": "nVent Electric plc",
+    "sic": "3550",
+    "sic_description": "Special Industry Machinery (No Metalworking Machinery)",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "91440": {
+    "cik": "91440",
+    "ticker": "SNA",
+    "name": "Snap-on Inc",
+    "sic": "3420",
+    "sic_description": "Cutlery, Handtools & General Hardware",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "47217": {
+    "cik": "47217",
+    "ticker": "HPQ",
+    "name": "HP INC",
+    "sic": "3570",
+    "sic_description": "Computer & office Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "216228": {
+    "cik": "216228",
+    "ticker": "ITT",
+    "name": "ITT INC.",
+    "sic": "3561",
+    "sic_description": "Pumps & Pumping Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1324948": {
+    "cik": "1324948",
+    "ticker": "RBC",
+    "name": "RBC Bearings INC",
+    "sic": "3562",
+    "sic_description": "Ball & Roller Bearings",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1048695": {
+    "cik": "1048695",
+    "ticker": "FFIV",
+    "name": "F5, INC.",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "9389": {
+    "cik": "9389",
+    "ticker": "BALL",
+    "name": "BALL Corp",
+    "sic": "3411",
+    "sic_description": "Metal Cans",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1069202": {
+    "cik": "1069202",
+    "ticker": "LII",
+    "name": "LENNOX INTERNATIONAL INC",
+    "sic": "3585",
+    "sic_description": "Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "72331": {
+    "cik": "72331",
+    "ticker": "NDSN",
+    "name": "NORDSON CORP",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "832101": {
+    "cik": "832101",
+    "ticker": "IEX",
+    "name": "IDEX CORP /DE/",
+    "sic": "3561",
+    "sic_description": "Pumps & Pumping Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "42888": {
+    "cik": "42888",
+    "ticker": "GGG",
+    "name": "GRACO INC",
+    "sic": "3561",
+    "sic_description": "Pumps & Pumping Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "77360": {
+    "cik": "77360",
+    "ticker": "PNR",
+    "name": "PENTAIR plc",
+    "sic": "3550",
+    "sic_description": "Special Industry Machinery (No Metalworking Machinery)",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1375365": {
+    "cik": "1375365",
+    "ticker": "SMCI",
+    "name": "Super Micro Computer, Inc.",
+    "sic": "3571",
+    "sic_description": "Electronic Computers",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1032975": {
+    "cik": "1032975",
+    "ticker": "LOGI",
+    "name": "LOGITECH INTERNATIONAL S.A.",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "59527": {
+    "cik": "59527",
+    "ticker": "LECO",
+    "name": "LINCOLN ELECTRIC HOLDINGS INC",
+    "sic": "3540",
+    "sic_description": "Metalworkg Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1567094": {
+    "cik": "1567094",
+    "ticker": "CNH",
+    "name": "CNH Industrial N.V.",
+    "sic": "3531",
+    "sic_description": "Construction Machinery & Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "82811": {
+    "cik": "82811",
+    "ticker": "RRX",
+    "name": "REGAL REXNORD CORP",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "62996": {
+    "cik": "62996",
+    "ticker": "MAS",
+    "name": "MASCO CORP /DE/",
+    "sic": "3430",
+    "sic_description": "Heating Equip, Except Elec & Warm Air; & Plumbing Fixtures",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1219601": {
+    "cik": "1219601",
+    "ticker": "CCK",
+    "name": "CROWN HOLDINGS, INC.",
+    "sic": "3411",
+    "sic_description": "Metal Cans",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "93556": {
+    "cik": "93556",
+    "ticker": "SWK",
+    "name": "STANLEY BLACK & DECKER, INC.",
+    "sic": "3420",
+    "sic_description": "Cutlery, Handtools & General Hardware",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "877212": {
+    "cik": "877212",
+    "ticker": "ZBRA",
+    "name": "ZEBRA TECHNOLOGIES CORP",
+    "sic": "3560",
+    "sic_description": "General Industrial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "892553": {
+    "cik": "892553",
+    "ticker": "GTLS",
+    "name": "CHART INDUSTRIES INC",
+    "sic": "3443",
+    "sic_description": "Fabricated Plate Work (Boiler Shops)",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "29644": {
+    "cik": "29644",
+    "ticker": "DCI",
+    "name": "DONALDSON Co INC",
+    "sic": "3564",
+    "sic_description": "Industrial & Commercial Fans & Blowers & Air Purifing Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "88205": {
+    "cik": "88205",
+    "ticker": "SPXC",
+    "name": "SPX Technologies, Inc.",
+    "sic": "3540",
+    "sic_description": "Metalworkg Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1944013": {
+    "cik": "1944013",
+    "ticker": "CR",
+    "name": "Crane Co",
+    "sic": "3490",
+    "sic_description": "Miscellaneous Fabricated Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "795403": {
+    "cik": "795403",
+    "ticker": "WTS",
+    "name": "WATTS WATER TECHNOLOGIES INC",
+    "sic": "3490",
+    "sic_description": "Miscellaneous Fabricated Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "30625": {
+    "cik": "30625",
+    "ticker": "FLS",
+    "name": "FLOWSERVE CORP",
+    "sic": "3561",
+    "sic_description": "Pumps & Pumping Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "67887": {
+    "cik": "67887",
+    "ticker": "MOG-A",
+    "name": "MOOG INC.",
+    "sic": "3590",
+    "sic_description": "Misc Industrial & Commercial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE | NYSE",
+    "category": "Large accelerated filer"
+  },
+  "737758": {
+    "cik": "737758",
+    "ticker": "TTC",
+    "name": "TORO CO",
+    "sic": "3524",
+    "sic_description": "Lawn & Garden Tractors & Home Lawn & Gardens Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "880266": {
+    "cik": "880266",
+    "ticker": "AGCO",
+    "name": "AGCO CORP /DE",
+    "sic": "3523",
+    "sic_description": "Farm Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "102729": {
+    "cik": "102729",
+    "ticker": "VMI",
+    "name": "VALMONT INDUSTRIES INC",
+    "sic": "3440",
+    "sic_description": "Fabricated Structural Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1439288": {
+    "cik": "1439288",
+    "ticker": "ZWS",
+    "name": "Zurn Elkay Water Solutions Corp",
+    "sic": "3560",
+    "sic_description": "General Industrial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "98362": {
+    "cik": "98362",
+    "ticker": "TKR",
+    "name": "TIMKEN CO",
+    "sic": "3562",
+    "sic_description": "Ball & Roller Bearings",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "920371": {
+    "cik": "920371",
+    "ticker": "SSD",
+    "name": "Simpson Manufacturing Co., Inc.",
+    "sic": "3420",
+    "sic_description": "Cutlery, Handtools & General Hardware",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1021860": {
+    "cik": "1021860",
+    "ticker": "NOV",
+    "name": "NOV Inc.",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1603923": {
+    "cik": "1603923",
+    "ticker": "WFRD",
+    "name": "Weatherford International plc",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "97216": {
+    "cik": "97216",
+    "ticker": "TEX",
+    "name": "TEREX CORP",
+    "sic": "3537",
+    "sic_description": "Industrial Trucks, Tractors, Trailors & Stackers",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "769520": {
+    "cik": "769520",
+    "ticker": "MIDD",
+    "name": "MIDDLEBY Corp",
+    "sic": "3580",
+    "sic_description": "Refrigeration & Service Industry Machinery",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "824142": {
+    "cik": "824142",
+    "ticker": "AAON",
+    "name": "AAON, INC.",
+    "sic": "3585",
+    "sic_description": "Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1433660": {
+    "cik": "1433660",
+    "ticker": "JBTM",
+    "name": "JBT MAREL Corp",
+    "sic": "3550",
+    "sic_description": "Special Industry Machinery (No Metalworking Machinery)",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1877322": {
+    "cik": "1877322",
+    "ticker": "ESAB",
+    "name": "ESAB Corp",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1718512": {
+    "cik": "1718512",
+    "ticker": "GTES",
+    "name": "Gates Industrial Corp plc",
+    "sic": "3560",
+    "sic_description": "General Industrial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1739445": {
+    "cik": "1739445",
+    "ticker": "ACA",
+    "name": "Arcosa, Inc.",
+    "sic": "3440",
+    "sic_description": "Fabricated Structural Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1697500": {
+    "cik": "1697500",
+    "ticker": "SEI",
+    "name": "Solaris Energy Infrastructure, Inc.",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "14930": {
+    "cik": "14930",
+    "ticker": "BC",
+    "name": "BRUNSWICK CORP",
+    "sic": "3510",
+    "sic_description": "Engines & Turbines",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE | NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1317685": {
+    "cik": "1317685",
+    "ticker": "ALH",
+    "name": "Alliance Laundry Holdings Inc.",
+    "sic": "3580",
+    "sic_description": "Refrigeration & Service Industry Machinery",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Non-accelerated filer"
+  },
+  "1350593": {
+    "cik": "1350593",
+    "ticker": "MWA",
+    "name": "Mueller Water Products, Inc.",
+    "sic": "3490",
+    "sic_description": "Miscellaneous Fabricated Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "849869": {
+    "cik": "849869",
+    "ticker": "SLGN",
+    "name": "SILGAN HOLDINGS INC",
+    "sic": "3411",
+    "sic_description": "Metal Cans",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "43920": {
+    "cik": "43920",
+    "ticker": "GEF",
+    "name": "GREIF, INC",
+    "sic": "3412",
+    "sic_description": "Metal Shipping Barrels, Drums, Kegs & Pails",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE | NYSE",
+    "category": "Large accelerated filer"
+  },
+  "8947": {
+    "cik": "8947",
+    "ticker": "AZZ",
+    "name": "AZZ INC",
+    "sic": "3470",
+    "sic_description": "Coating, Engraving & Allied Services",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "886346": {
+    "cik": "886346",
+    "ticker": "KAI",
+    "name": "KADANT INC",
+    "sic": "3550",
+    "sic_description": "Special Industry Machinery (No Metalworking Machinery)",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "50725": {
+    "cik": "50725",
+    "ticker": "GFF",
+    "name": "GRIFFON CORP",
+    "sic": "3442",
+    "sic_description": "Metal Doors, Sash, Frames, Moldings & Trim",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1699136": {
+    "cik": "1699136",
+    "ticker": "WHD",
+    "name": "Cactus, Inc.",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1861737": {
+    "cik": "1861737",
+    "ticker": "HSAI",
+    "name": "Hesai Group",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | OTC",
+    "category": "Accelerated filer<br>Emerging growth company"
+  },
+  "1822966": {
+    "cik": "1822966",
+    "ticker": "SMR",
+    "name": "NUSCALE POWER Corp",
+    "sic": "3443",
+    "sic_description": "Fabricated Plate Work (Boiler Shops)",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1974138": {
+    "cik": "1974138",
+    "ticker": "NATL",
+    "name": "NCR Atleos Corp",
+    "sic": "3578",
+    "sic_description": "Calculating & Accounting Machines (No Electronic Computers)",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "310354": {
+    "cik": "310354",
+    "ticker": "SXI",
+    "name": "STANDEX INTERNATIONAL CORP/DE/",
+    "sic": "3580",
+    "sic_description": "Refrigeration & Service Industry Machinery",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1104657": {
+    "cik": "1104657",
+    "ticker": "MTRN",
+    "name": "MATERION Corp",
+    "sic": "3460",
+    "sic_description": "Metal Forgings & Stampings",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1113232": {
+    "cik": "1113232",
+    "ticker": "ACLS",
+    "name": "AXCELIS TECHNOLOGIES INC",
+    "sic": "3559",
+    "sic_description": "Special Industry Machinery, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1834622": {
+    "cik": "1834622",
+    "ticker": "HAYW",
+    "name": "Hayward Holdings, Inc.",
+    "sic": "3580",
+    "sic_description": "Refrigeration & Service Industry Machinery",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "28823": {
+    "cik": "28823",
+    "ticker": "DBD",
+    "name": "DIEBOLD NIXDORF, Inc",
+    "sic": "3578",
+    "sic_description": "Calculating & Accounting Machines (No Electronic Computers)",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1394832": {
+    "cik": "1394832",
+    "ticker": "ATS",
+    "name": "ATS Corp /ATS",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": ""
+  },
+  "55242": {
+    "cik": "55242",
+    "ticker": "KMT",
+    "name": "KENNAMETAL INC",
+    "sic": "3541",
+    "sic_description": "Machine Tools, Metal Cutting Types",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1680062": {
+    "cik": "1680062",
+    "ticker": "ACMR",
+    "name": "ACM Research, Inc.",
+    "sic": "3559",
+    "sic_description": "Special Industry Machinery, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1904856": {
+    "cik": "1904856",
+    "ticker": "EFXT",
+    "name": "Enerflex Ltd.",
+    "sic": "3560",
+    "sic_description": "General Industrial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": ""
+  },
+  "1845097": {
+    "cik": "1845097",
+    "ticker": "AMBP",
+    "name": "Ardagh Metal Packaging S.A.",
+    "sic": "3411",
+    "sic_description": "Metal Cans",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE | OTC",
+    "category": "Accelerated filer"
+  },
+  "25445": {
+    "cik": "25445",
+    "ticker": "CXT",
+    "name": "Crane NXT, Co.",
+    "sic": "3490",
+    "sic_description": "Miscellaneous Fabricated Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1599617": {
+    "cik": "1599617",
+    "ticker": "DNOW",
+    "name": "DNOW Inc.",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1024795": {
+    "cik": "1024795",
+    "ticker": "HLIO",
+    "name": "HELIOS TECHNOLOGIES, INC.",
+    "sic": "3490",
+    "sic_description": "Miscellaneous Fabricated Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "3197": {
+    "cik": "3197",
+    "ticker": "CECO",
+    "name": "CECO ENVIRONMENTAL CORP",
+    "sic": "3564",
+    "sic_description": "Industrial & Commercial Fans & Blowers & Air Purifing Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "2035149": {
+    "cik": "2035149",
+    "ticker": "FLOC",
+    "name": "Flowco Holdings Inc.",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "<br>Emerging growth company"
+  },
+  "1630805": {
+    "cik": "1630805",
+    "ticker": "BW",
+    "name": "Babcock & Wilcox Enterprises, Inc.",
+    "sic": "3433",
+    "sic_description": "Heating Equipment, Except Electric & Warm Air Furnaces",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE | NYSE | NYSE",
+    "category": "Accelerated filer<br>Smaller reporting company"
+  },
+  "103145": {
+    "cik": "103145",
+    "ticker": "VECO",
+    "name": "VEECO INSTRUMENTS INC",
+    "sic": "3559",
+    "sic_description": "Special Industry Machinery, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1078271": {
+    "cik": "1078271",
+    "ticker": "EXTR",
+    "name": "EXTREME NETWORKS INC",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "897077": {
+    "cik": "897077",
+    "ticker": "ALG",
+    "name": "ALAMO GROUP INC",
+    "sic": "3523",
+    "sic_description": "Farm Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "854775": {
+    "cik": "854775",
+    "ticker": "DGII",
+    "name": "DIGI INTERNATIONAL INC",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "6955": {
+    "cik": "6955",
+    "ticker": "EPAC",
+    "name": "ENERPAC TOOL GROUP CORP",
+    "sic": "3590",
+    "sic_description": "Misc Industrial & Commercial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1580808": {
+    "cik": "1580808",
+    "ticker": "ATEN",
+    "name": "A10 Networks, Inc.",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1042893": {
+    "cik": "1042893",
+    "ticker": "INVX",
+    "name": "Innovex International, Inc.",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "78814": {
+    "cik": "78814",
+    "ticker": "PBI",
+    "name": "PITNEY BOWES INC /DE/",
+    "sic": "3579",
+    "sic_description": "Office Machines, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE | NYSE",
+    "category": "Large accelerated filer"
+  },
+  "42682": {
+    "cik": "42682",
+    "ticker": "GRC",
+    "name": "GORMAN RUPP CO",
+    "sic": "3561",
+    "sic_description": "Pumps & Pumping Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1822492": {
+    "cik": "1822492",
+    "ticker": "HLMN",
+    "name": "Hillman Solutions Corp.",
+    "sic": "3420",
+    "sic_description": "Cutlery, Handtools & General Hardware",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1137091": {
+    "cik": "1137091",
+    "ticker": "PSIX",
+    "name": "POWER SOLUTIONS INTERNATIONAL, INC.",
+    "sic": "3510",
+    "sic_description": "Engines & Turbines",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer<br>Smaller reporting company"
+  },
+  "926326": {
+    "cik": "926326",
+    "ticker": "OMCL",
+    "name": "OMNICELL, INC.",
+    "sic": "3571",
+    "sic_description": "Electronic Computers",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "932695": {
+    "cik": "932695",
+    "ticker": "CYD",
+    "name": "CHINA YUCHAI INTERNATIONAL LTD",
+    "sic": "3510",
+    "sic_description": "Engines & Turbines",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Accelerated filer"
+  },
+  "842633": {
+    "cik": "842633",
+    "ticker": "TRS",
+    "name": "TRIMAS CORP",
+    "sic": "3460",
+    "sic_description": "Metal Forgings & Stampings",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1443669": {
+    "cik": "1443669",
+    "ticker": "PRLB",
+    "name": "Proto Labs Inc",
+    "sic": "3440",
+    "sic_description": "Fabricated Structural Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "792987": {
+    "cik": "792987",
+    "ticker": "ASTE",
+    "name": "ASTEC INDUSTRIES INC",
+    "sic": "3531",
+    "sic_description": "Construction Machinery & Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "97134": {
+    "cik": "97134",
+    "ticker": "TNC",
+    "name": "TENNANT CO",
+    "sic": "3580",
+    "sic_description": "Refrigeration & Service Industry Machinery",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1816581": {
+    "cik": "1816581",
+    "ticker": "OUST",
+    "name": "Ouster, Inc.",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1767258": {
+    "cik": "1767258",
+    "ticker": "XPEL",
+    "name": "XPEL, Inc.",
+    "sic": "3470",
+    "sic_description": "Coating, Engraving & Allied Services",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "836157": {
+    "cik": "836157",
+    "ticker": "LNN",
+    "name": "LINDSAY CORP",
+    "sic": "3523",
+    "sic_description": "Farm Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1805385": {
+    "cik": "1805385",
+    "ticker": "EVLV",
+    "name": "Evolv Technologies Holdings, Inc.",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "933974": {
+    "cik": "933974",
+    "ticker": "AZTA",
+    "name": "Azenta, Inc.",
+    "sic": "3559",
+    "sic_description": "Special Industry Machinery, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "80172": {
+    "cik": "80172",
+    "ticker": "NPK",
+    "name": "NATIONAL PRESTO INDUSTRIES INC",
+    "sic": "3480",
+    "sic_description": "Ordnance & Accessories, (No Vehicles/Guided Missiles)",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Accelerated filer"
+  },
+  "1287213": {
+    "cik": "1287213",
+    "ticker": "PLOW",
+    "name": "DOUGLAS DYNAMICS, INC",
+    "sic": "3531",
+    "sic_description": "Construction Machinery & Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Accelerated filer"
+  },
+  "716314": {
+    "cik": "716314",
+    "ticker": "GHM",
+    "name": "GRAHAM CORP",
+    "sic": "3560",
+    "sic_description": "General Industrial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Accelerated filer"
+  },
+  "70866": {
+    "cik": "70866",
+    "ticker": "VYX",
+    "name": "NCR Voyix Corp",
+    "sic": "3578",
+    "sic_description": "Calculating & Accounting Machines (No Electronic Computers)",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE | OTC",
+    "category": "Large accelerated filer"
+  },
+  "1828962": {
+    "cik": "1828962",
+    "ticker": "CRCT",
+    "name": "Cricut, Inc.",
+    "sic": "3559",
+    "sic_description": "Special Industry Machinery, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer"
+  },
+  "2021880": {
+    "cik": "2021880",
+    "ticker": "HMH",
+    "name": "HMH Holding Inc",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Unknown",
+    "category": "<br>Emerging growth company"
+  },
+  "896429": {
+    "cik": "896429",
+    "ticker": "CTLP",
+    "name": "CANTALOUPE, INC.",
+    "sic": "3578",
+    "sic_description": "Calculating & Accounting Machines (No Electronic Computers)",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | OTC",
+    "category": "Accelerated filer"
+  },
+  "2048519": {
+    "cik": "2048519",
+    "ticker": "AEBI",
+    "name": "Aebi Schmidt Holding AG",
+    "sic": "3531",
+    "sic_description": "Construction Machinery & Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer"
+  },
+  "1517396": {
+    "cik": "1517396",
+    "ticker": "SSYS",
+    "name": "STRATASYS LTD.",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1625791": {
+    "cik": "1625791",
+    "ticker": "KRNT",
+    "name": "Kornit Digital Ltd.",
+    "sic": "3555",
+    "sic_description": "Printing Trades Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1839839": {
+    "cik": "1839839",
+    "ticker": "JBI",
+    "name": "Janus International Group, Inc.",
+    "sic": "3442",
+    "sic_description": "Metal Doors, Sash, Frames, Moldings & Trim",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1121484": {
+    "cik": "1121484",
+    "ticker": "OIS",
+    "name": "OIL STATES INTERNATIONAL, INC",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Accelerated filer"
+  },
+  "1401257": {
+    "cik": "1401257",
+    "ticker": "FET",
+    "name": "FORUM ENERGY TECHNOLOGIES, INC.",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Accelerated filer<br>Smaller reporting company"
+  },
+  "1092796": {
+    "cik": "1092796",
+    "ticker": "SWBI",
+    "name": "SMITH & WESSON BRANDS, INC.",
+    "sic": "3480",
+    "sic_description": "Ordnance & Accessories, (No Vehicles/Guided Missiles)",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer"
+  },
+  "2019804": {
+    "cik": "2019804",
+    "ticker": "IMSR",
+    "name": "Terrestrial Energy Inc. /DE/",
+    "sic": "3443",
+    "sic_description": "Fabricated Plate Work (Boiler Shops)",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company<br>Emerging growth company"
+  },
+  "95029": {
+    "cik": "95029",
+    "ticker": "RGR",
+    "name": "STURM RUGER & CO INC",
+    "sic": "3480",
+    "sic_description": "Ordnance & Accessories, (No Vehicles/Guided Missiles)",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1832483": {
+    "cik": "1832483",
+    "ticker": "SERV",
+    "name": "Serve Robotics Inc. /DE/",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company<br>Emerging growth company"
+  },
+  "807863": {
+    "cik": "807863",
+    "ticker": "MITK",
+    "name": "MITEK SYSTEMS INC",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer"
+  },
+  "1743759": {
+    "cik": "1743759",
+    "ticker": "CRSR",
+    "name": "Corsair Gaming, Inc.",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer"
+  },
+  "1173514": {
+    "cik": "1173514",
+    "ticker": "HY",
+    "name": "HYSTER-YALE, INC.",
+    "sic": "3537",
+    "sic_description": "Industrial Trucks, Tractors, Trailors & Stackers",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Accelerated filer"
+  },
+  "708821": {
+    "cik": "708821",
+    "ticker": "PAR",
+    "name": "PAR TECHNOLOGY CORP",
+    "sic": "3578",
+    "sic_description": "Calculating & Accounting Machines (No Electronic Computers)",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Large accelerated filer"
+  },
+  "1421517": {
+    "cik": "1421517",
+    "ticker": "ERII",
+    "name": "Energy Recovery, Inc.",
+    "sic": "3559",
+    "sic_description": "Special Industry Machinery, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1963685": {
+    "cik": "1963685",
+    "ticker": "RR",
+    "name": "RICHTECH ROBOTICS INC.",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "<br>Emerging growth company"
+  },
+  "61986": {
+    "cik": "61986",
+    "ticker": "MTW",
+    "name": "MANITOWOC CO INC",
+    "sic": "3531",
+    "sic_description": "Construction Machinery & Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Accelerated filer"
+  },
+  "1005229": {
+    "cik": "1005229",
+    "ticker": "CMCO",
+    "name": "COLUMBUS MCKINNON CORP",
+    "sic": "3531",
+    "sic_description": "Construction Machinery & Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1766368": {
+    "cik": "1766368",
+    "ticker": "MEC",
+    "name": "Mayville Engineering Company, Inc.",
+    "sic": "3460",
+    "sic_description": "Metal Forgings & Stampings",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Accelerated filer"
+  },
+  "1365767": {
+    "cik": "1365767",
+    "ticker": "ALLT",
+    "name": "Allot Ltd.",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer"
+  },
+  "76282": {
+    "cik": "76282",
+    "ticker": "PKOH",
+    "name": "PARK OHIO HOLDINGS CORP",
+    "sic": "3460",
+    "sic_description": "Metal Forgings & Stampings",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer"
+  },
+  "1866030": {
+    "cik": "1866030",
+    "ticker": "AZ",
+    "name": "A2Z CUST2MATE SOLUTIONS CORP.",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "1317945": {
+    "cik": "1317945",
+    "ticker": "OFLX",
+    "name": "Omega Flex, Inc.",
+    "sic": "3430",
+    "sic_description": "Heating Equip, Except Elec & Warm Air; & Plumbing Fixtures",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer<br>Smaller reporting company"
+  },
+  "2067627": {
+    "cik": "2067627",
+    "ticker": "NKLR",
+    "name": "Terra Innovatum Global N.V.",
+    "sic": "3443",
+    "sic_description": "Fabricated Plate Work (Boiler Shops)",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "<br>Emerging growth company"
+  },
+  "1987240": {
+    "cik": "1987240",
+    "ticker": "SHMD",
+    "name": "SCHMID Group N.V.",
+    "sic": "3590",
+    "sic_description": "Misc Industrial & Commercial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "1825079": {
+    "cik": "1825079",
+    "ticker": "VELO",
+    "name": "Velo3D, Inc.",
+    "sic": "3559",
+    "sic_description": "Special Industry Machinery, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | OTC",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1049606": {
+    "cik": "1049606",
+    "ticker": "CIX",
+    "name": "COMPX INTERNATIONAL INC",
+    "sic": "3420",
+    "sic_description": "Cutlery, Handtools & General Hardware",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Non-accelerated filer"
+  },
+  "914122": {
+    "cik": "914122",
+    "ticker": "PPIH",
+    "name": "Perma-Pipe International Holdings, Inc.",
+    "sic": "3564",
+    "sic_description": "Industrial & Commercial Fans & Blowers & Air Purifing Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1015383": {
+    "cik": "1015383",
+    "ticker": "POWW",
+    "name": "Outdoor Holding Co",
+    "sic": "3480",
+    "sic_description": "Ordnance & Accessories, (No Vehicles/Guided Missiles)",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "Accelerated filer<br>Smaller reporting company"
+  },
+  "100378": {
+    "cik": "100378",
+    "ticker": "TWIN",
+    "name": "TWIN DISC INC",
+    "sic": "3560",
+    "sic_description": "General Industrial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer<br>Smaller reporting company"
+  },
+  "64472": {
+    "cik": "64472",
+    "ticker": "GENC",
+    "name": "GENCOR INDUSTRIES INC",
+    "sic": "3531",
+    "sic_description": "Construction Machinery & Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Accelerated filer<br>Smaller reporting company"
+  },
+  "1114925": {
+    "cik": "1114925",
+    "ticker": "LTRX",
+    "name": "LANTRONIX INC",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer<br>Smaller reporting company"
+  },
+  "1016838": {
+    "cik": "1016838",
+    "ticker": "RDCM",
+    "name": "RADCOM LTD",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer"
+  },
+  "1606242": {
+    "cik": "1606242",
+    "ticker": "VTIX",
+    "name": "Virtuix Holdings Inc.",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "<br>Emerging growth company"
+  },
+  "2012219": {
+    "cik": "2012219",
+    "ticker": "OMSE",
+    "name": "OMS Energy Technologies Inc.",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "1394056": {
+    "cik": "1394056",
+    "ticker": "OSS",
+    "name": "ONE STOP SYSTEMS, INC.",
+    "sic": "3571",
+    "sic_description": "Electronic Computers",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1058811": {
+    "cik": "1058811",
+    "ticker": "IMMR",
+    "name": "IMMERSION CORP",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1855474": {
+    "cik": "1855474",
+    "ticker": "AIRJ",
+    "name": "AirJoule Technologies Corp.",
+    "sic": "3585",
+    "sic_description": "Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company<br>Emerging growth company"
+  },
+  "96536": {
+    "cik": "96536",
+    "ticker": "TAYD",
+    "name": "TAYLOR DEVICES, INC.",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "720500": {
+    "cik": "720500",
+    "ticker": "ASYS",
+    "name": "AMTECH SYSTEMS INC",
+    "sic": "3559",
+    "sic_description": "Special Industry Machinery, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1720446": {
+    "cik": "1720446",
+    "ticker": "ZEPP",
+    "name": "Zepp Health Corp",
+    "sic": "3571",
+    "sic_description": "Electronic Computers",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Non-accelerated filer"
+  },
+  "2098": {
+    "cik": "2098",
+    "ticker": "ACU",
+    "name": "ACME UNITED CORP",
+    "sic": "3420",
+    "sic_description": "Cutlery, Handtools & General Hardware",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Accelerated filer<br>Smaller reporting company"
+  },
+  "1770450": {
+    "cik": "1770450",
+    "ticker": "XRX",
+    "name": "Xerox Holdings Corp",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "Large accelerated filer"
+  },
+  "1884516": {
+    "cik": "1884516",
+    "ticker": "DTI",
+    "name": "Drilling Tools International Corp",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company<br>Emerging growth company"
+  },
+  "6176": {
+    "cik": "6176",
+    "ticker": "AP",
+    "name": "AMPCO PITTSBURGH CORP",
+    "sic": "3561",
+    "sic_description": "Pumps & Pumping Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "874396": {
+    "cik": "874396",
+    "ticker": "LCUT",
+    "name": "LIFETIME BRANDS, INC",
+    "sic": "3420",
+    "sic_description": "Cutlery, Handtools & General Hardware",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer<br>Smaller reporting company"
+  },
+  "916793": {
+    "cik": "916793",
+    "ticker": "SILC",
+    "name": "SILICOM LTD.",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer"
+  },
+  "1941506": {
+    "cik": "1941506",
+    "ticker": "ZJK",
+    "name": "ZJK Industrial Co., Ltd.",
+    "sic": "3452",
+    "sic_description": "Bolts, Nuts, Screws, Rivets & Washers",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "31107": {
+    "cik": "31107",
+    "ticker": "EML",
+    "name": "EASTERN CO",
+    "sic": "3420",
+    "sic_description": "Cutlery, Handtools & General Hardware",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer<br>Smaller reporting company"
+  },
+  "1006837": {
+    "cik": "1006837",
+    "ticker": "VATE",
+    "name": "INNOVATE Corp.",
+    "sic": "3440",
+    "sic_description": "Fabricated Structural Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "NYSE",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1687451": {
+    "cik": "1687451",
+    "ticker": "ZKIN",
+    "name": "ZK International Group Co., Ltd.",
+    "sic": "3490",
+    "sic_description": "Miscellaneous Fabricated Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer"
+  },
+  "1036044": {
+    "cik": "1036044",
+    "ticker": "INVE",
+    "name": "Identiv, Inc.",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1537435": {
+    "cik": "1537435",
+    "ticker": "TGEN",
+    "name": "TECOGEN INC.",
+    "sic": "3585",
+    "sic_description": "Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1985139": {
+    "cik": "1985139",
+    "ticker": "LSE",
+    "name": "Leishen Energy Holding Co., Ltd.",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "1702924": {
+    "cik": "1702924",
+    "ticker": "WRAP",
+    "name": "WRAP TECHNOLOGIES, INC.",
+    "sic": "3480",
+    "sic_description": "Ordnance & Accessories, (No Vehicles/Guided Missiles)",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "709283": {
+    "cik": "709283",
+    "ticker": "QMCO",
+    "name": "QUANTUM CORP /DE/",
+    "sic": "3572",
+    "sic_description": "Computer Storage Devices",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "875582": {
+    "cik": "875582",
+    "ticker": "NTIC",
+    "name": "NORTHERN TECHNOLOGIES INTERNATIONAL CORP",
+    "sic": "3470",
+    "sic_description": "Coating, Engraving & Allied Services",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "918541": {
+    "cik": "918541",
+    "ticker": "NNBR",
+    "name": "NN INC",
+    "sic": "3540",
+    "sic_description": "Metalworkg Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1991592": {
+    "cik": "1991592",
+    "ticker": "INLF",
+    "name": "INLIF Ltd",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "8146": {
+    "cik": "8146",
+    "ticker": "ALOT",
+    "name": "AstroNova, Inc.",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Accelerated filer<br>Smaller reporting company"
+  },
+  "806172": {
+    "cik": "806172",
+    "ticker": "SOTK",
+    "name": "SONO TEK CORP",
+    "sic": "3559",
+    "sic_description": "Special Industry Machinery, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1855557": {
+    "cik": "1855557",
+    "ticker": "HLP",
+    "name": "Hongli Group Inc.",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "1972234": {
+    "cik": "1972234",
+    "ticker": "VHUB",
+    "name": "VenHub Global, Inc.",
+    "sic": "3590",
+    "sic_description": "Misc Industrial & Commercial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company<br>Emerging growth company"
+  },
+  "1868395": {
+    "cik": "1868395",
+    "ticker": "YIBO",
+    "name": "Planet Image International Ltd",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "1992818": {
+    "cik": "1992818",
+    "ticker": "ZOOZ",
+    "name": "ZOOZ Strategy Ltd.",
+    "sic": "3590",
+    "sic_description": "Misc Industrial & Commercial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "896493": {
+    "cik": "896493",
+    "ticker": "GPUS",
+    "name": "Hyperscale Data, Inc.",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE | NYSE",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "732026": {
+    "cik": "732026",
+    "ticker": "TRT",
+    "name": "TRIO-TECH INTERNATIONAL",
+    "sic": "3559",
+    "sic_description": "Special Industry Machinery, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "828146": {
+    "cik": "828146",
+    "ticker": "LINK",
+    "name": "INTERLINK ELECTRONICS INC",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "2013807": {
+    "cik": "2013807",
+    "ticker": "FOXX",
+    "name": "Foxx Development Holdings Inc.",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company<br>Emerging growth company"
+  },
+  "846913": {
+    "cik": "846913",
+    "ticker": "FTEK",
+    "name": "FUEL TECH, INC.",
+    "sic": "3564",
+    "sic_description": "Industrial & Commercial Fans & Blowers & Air Purifing Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1017303": {
+    "cik": "1017303",
+    "ticker": "TACT",
+    "name": "TRANSACT TECHNOLOGIES INC",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1549084": {
+    "cik": "1549084",
+    "ticker": "EKSO",
+    "name": "EKSO BIONICS HOLDINGS, INC.",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1370416": {
+    "cik": "1370416",
+    "ticker": "WPRT",
+    "name": "WESTPORT FUEL SYSTEMS INC.",
+    "sic": "3510",
+    "sic_description": "Engines & Turbines",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": ""
+  },
+  "1328792": {
+    "cik": "1328792",
+    "ticker": "TPCS",
+    "name": "TECHPRECISION CORP",
+    "sic": "3440",
+    "sic_description": "Fabricated Structural Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "766792": {
+    "cik": "766792",
+    "ticker": "CVV",
+    "name": "CVD EQUIPMENT CORP",
+    "sic": "3559",
+    "sic_description": "Special Industry Machinery, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1005516": {
+    "cik": "1005516",
+    "ticker": "BOSC",
+    "name": "BOS BETTER ONLINE SOLUTIONS LTD",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer"
+  },
+  "1940674": {
+    "cik": "1940674",
+    "ticker": "SMX",
+    "name": "SMX (Security Matters) Public Ltd Co",
+    "sic": "3590",
+    "sic_description": "Misc Industrial & Commercial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "2002453": {
+    "cik": "2002453",
+    "ticker": "STAK",
+    "name": "STAK Inc.",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "2028293": {
+    "cik": "2028293",
+    "ticker": "RAIN",
+    "name": "Rain Enhancement Technologies Holdco, Inc.",
+    "sic": "3590",
+    "sic_description": "Misc Industrial & Commercial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "<br>Emerging growth company"
+  },
+  "1943444": {
+    "cik": "1943444",
+    "ticker": "TRSG",
+    "name": "Tungray Technologies Inc",
+    "sic": "3530",
+    "sic_description": "Construction, Mining & Materials Handling Machinery & Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "1307579": {
+    "cik": "1307579",
+    "ticker": "LIQT",
+    "name": "LIQTECH INTERNATIONAL INC",
+    "sic": "3590",
+    "sic_description": "Misc Industrial & Commercial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "736012": {
+    "cik": "736012",
+    "ticker": "INTZ",
+    "name": "INTRUSION INC",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1995116": {
+    "cik": "1995116",
+    "ticker": "RECT",
+    "name": "Rectitude Holdings Ltd.",
+    "sic": "3420",
+    "sic_description": "Cutlery, Handtools & General Hardware",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "1735041": {
+    "cik": "1735041",
+    "ticker": "GTEC",
+    "name": "Greenland Technologies Holding Corp.",
+    "sic": "3560",
+    "sic_description": "General Industrial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1826660": {
+    "cik": "1826660",
+    "ticker": "WETH",
+    "name": "Wetouch Technology Inc.",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "<br>Emerging growth company"
+  },
+  "1708441": {
+    "cik": "1708441",
+    "ticker": "MYND",
+    "name": "Mynd.ai, Inc.",
+    "sic": "3577",
+    "sic_description": "Computer Peripheral Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Non-accelerated filer"
+  },
+  "1926293": {
+    "cik": "1926293",
+    "ticker": "GCDT",
+    "name": "Green Circle Decarbonize Technology Ltd",
+    "sic": "3585",
+    "sic_description": "Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": ""
+  },
+  "1964314": {
+    "cik": "1964314",
+    "ticker": "JBDI",
+    "name": "JBDI Holdings Ltd",
+    "sic": "3412",
+    "sic_description": "Metal Shipping Barrels, Drums, Kegs & Pails",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "7623": {
+    "cik": "7623",
+    "ticker": "ARTW",
+    "name": "ARTS WAY MANUFACTURING CO INC",
+    "sic": "3523",
+    "sic_description": "Farm Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "19871": {
+    "cik": "19871",
+    "ticker": "CVR",
+    "name": "CHICAGO RIVET & MACHINE CO",
+    "sic": "3540",
+    "sic_description": "Metalworkg Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "NYSE",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1819794": {
+    "cik": "1819794",
+    "ticker": "HTOO",
+    "name": "Fusion Fuel Green PLC",
+    "sic": "3590",
+    "sic_description": "Misc Industrial & Commercial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "1864943": {
+    "cik": "1864943",
+    "ticker": "FGI",
+    "name": "FGI Industries Ltd.",
+    "sic": "3430",
+    "sic_description": "Heating Equip, Except Elec & Warm Air; & Plumbing Fixtures",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "<br>Emerging growth company"
+  },
+  "944075": {
+    "cik": "944075",
+    "ticker": "SCKT",
+    "name": "SOCKET MOBILE, INC.",
+    "sic": "3571",
+    "sic_description": "Electronic Computers",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1557798": {
+    "cik": "1557798",
+    "ticker": "CIIT",
+    "name": "Tianci International, Inc.",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1887673": {
+    "cik": "1887673",
+    "ticker": "WLDS",
+    "name": "Wearable Devices Ltd.",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "1026785": {
+    "cik": "1026785",
+    "ticker": "HIHO",
+    "name": "HIGHWAY HOLDINGS LTD",
+    "sic": "3490",
+    "sic_description": "Miscellaneous Fabricated Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer"
+  },
+  "1849820": {
+    "cik": "1849820",
+    "ticker": "KITT",
+    "name": "Nauticus Robotics, Inc.",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "<br>Emerging growth company"
+  },
+  "1603993": {
+    "cik": "1603993",
+    "ticker": "AIOS",
+    "name": "AIOS Tech Inc.",
+    "sic": "3490",
+    "sic_description": "Miscellaneous Fabricated Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer"
+  },
+  "1648087": {
+    "cik": "1648087",
+    "ticker": "AREB",
+    "name": "AMERICAN REBEL HOLDINGS INC",
+    "sic": "3490",
+    "sic_description": "Miscellaneous Fabricated Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq | Nasdaq",
+    "category": "Non-accelerated filer<br>Smaller reporting company"
+  },
+  "1901215": {
+    "cik": "1901215",
+    "ticker": "BNRG",
+    "name": "Brenmiller Energy Ltd.",
+    "sic": "3433",
+    "sic_description": "Heating Equipment, Except Electric & Warm Air Furnaces",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "1948099": {
+    "cik": "1948099",
+    "ticker": "MTEN",
+    "name": "Mingteng International Corp Inc.",
+    "sic": "3442",
+    "sic_description": "Metal Doors, Sash, Frames, Moldings & Trim",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "1905660": {
+    "cik": "1905660",
+    "ticker": "HUBC",
+    "name": "Hub Cyber Security Ltd.",
+    "sic": "3576",
+    "sic_description": "Computer Communications Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq | Nasdaq | Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "1896425": {
+    "cik": "1896425",
+    "ticker": "LBGJ",
+    "name": "Li Bang International Corp Inc.",
+    "sic": "3580",
+    "sic_description": "Refrigeration & Service Industry Machinery",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": "Non-accelerated filer<br>Emerging growth company"
+  },
+  "2101698": {
+    "cik": "2101698",
+    "ticker": "ELMT",
+    "name": "Elmet Group Co.",
+    "sic": "3490",
+    "sic_description": "Miscellaneous Fabricated Metal Products",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Unknown",
+    "category": ""
+  },
+  "2097702": {
+    "cik": "2097702",
+    "ticker": "GOW",
+    "name": "GOWell Energy Technology",
+    "sic": "3533",
+    "sic_description": "Oil & Gas Field Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Unknown",
+    "category": ""
+  },
+  "2089778": {
+    "cik": "2089778",
+    "ticker": "PNIG",
+    "name": "Pacipic Nexus IntelliTech Group",
+    "sic": "3569",
+    "sic_description": "General Industrial Machinery & Equipment, NEC",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Unknown",
+    "category": ""
+  },
+  "2045907": {
+    "cik": "2045907",
+    "ticker": "KOKO",
+    "name": "KOKOBOTS GROUP",
+    "sic": "3590",
+    "sic_description": "Misc Industrial & Commercial Machinery & Equipment",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Unknown",
+    "category": ""
+  },
+  "2098430": {
+    "cik": "2098430",
+    "ticker": "MAIR",
+    "name": "Madison Air Solutions Corp",
+    "sic": "3564",
+    "sic_description": "Industrial & Commercial Fans & Blowers & Air Purifing Equip",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Unknown",
+    "category": ""
+  },
+  "2088896": {
+    "cik": "2088896",
+    "ticker": "XE",
+    "name": "X-Energy, Inc.",
+    "sic": "3443",
+    "sic_description": "Fabricated Plate Work (Boiler Shops)",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Unknown",
+    "category": ""
+  },
+  "2069858": {
+    "cik": "2069858",
+    "ticker": "APEX",
+    "name": "APEX Global Solutions Ltd",
+    "sic": "3470",
+    "sic_description": "Coating, Engraving & Allied Services",
+    "sector": "Fabricated Metal Products",
+    "exchange": "Unknown",
+    "category": ""
+  },
+  "2097163": {
+    "cik": "2097163",
+    "ticker": "XNDU",
+    "name": "Xanadu Quantum Technologies Ltd",
+    "sic": "3571",
+    "sic_description": "Electronic Computers",
+    "sector": "Industrial & Commercial Machinery",
+    "exchange": "Nasdaq",
+    "category": ""
+  }
+}
