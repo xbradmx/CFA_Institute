@@ -1,0 +1,11 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\PAR\10-K\PAR_10-K_2024-02-27_0000708821-24-000014.html
+Filing Type,10-K
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+MD&A,2,0.7295,0.3865,0.498,0.2698
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+PAR_10-K_2024-02-27_0000708821-24-000014_MD&A_0000,MD&A,Management’s Discussion and Analysis of Financial Condition and Results of Operations” and elsewhere in this Annual Report and in our other filings with the Securities and Exchange Commission (the “SEC”).,0.8754,VAGUE,0.5324,0.0013,SIMPLE,-0.227,False
+PAR_10-K_2024-02-27_0000708821-24-000014_MD&A_0001,MD&A,"The forward-looking statements in this Annual Report are made as of the date of this filing and PAR assumes no obligation to update or revise these forward-looking statements, whether as a result of new information, future events, or otherwise, except as may be required under applicable securities law. 2 Table of Contents PART I",0.5836,VAGUE,0.2406,0.9948,COMPLEX,0.7665,False

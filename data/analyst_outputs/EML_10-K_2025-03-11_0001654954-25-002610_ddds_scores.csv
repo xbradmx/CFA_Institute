@@ -1,0 +1,14 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\EML\10-K\EML_10-K_2025-03-11_0001654954-25-002610.html
+Filing Type,10-K
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+MD&A,5,0.7052,0.3622,0.2463,0.018
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+EML_10-K_2025-03-11_0001654954-25-002610_MD&A_0000,MD&A,"Item 7, Management’s Discussion and Analysis of Financial Condition and Results of Operations , of this Form 10-K and that may be identified from time to time in our quarterly reports on Form 10-Q, current reports on Form 8-K and other filings we make with the Securities and Exchange Commission (the “SEC”).",0.6051,VAGUE,0.2621,0.2295,SIMPLE,0.0012,False
+EML_10-K_2025-03-11_0001654954-25-002610_MD&A_0001,MD&A,"Although the Company believes it has an appropriate business strategy and the resources necessary for its operations, future revenue and margin trends cannot be reliably predicted and the Company may alter its business strategies to address changing conditions.",0.9745,VAGUE,0.6315,0.0009,SIMPLE,-0.2274,False
+EML_10-K_2025-03-11_0001654954-25-002610_MD&A_0002,MD&A,"Also, the Company makes estimates and assumptions that may materially affect reported amounts and disclosures.",0.9781,VAGUE,0.6351,0.0007,SIMPLE,-0.2276,False
+EML_10-K_2025-03-11_0001654954-25-002610_MD&A_0003,MD&A,"These relate to valuation allowances for accounts receivable and excess and obsolete inventories, accruals for pensions and other postretirement benefits (including forecasted future cost increases and returns on plan assets), provisions for depreciation (estimating useful lives), uncertain tax positions, and, on occasion, accruals for contingent losses.",0.0471,SPECIFIC,-0.2959,0.9987,COMPLEX,0.7704,False
+EML_10-K_2025-03-11_0001654954-25-002610_MD&A_0004,MD&A,"The Company undertakes no obligation to update, alter, or otherwise revise any forward-looking statements, whether written or oral, that may be made from time to time, whether because of new information, future events, or otherwise, except as required by law.",0.9212,VAGUE,0.5782,0.0019,SIMPLE,-0.2264,False

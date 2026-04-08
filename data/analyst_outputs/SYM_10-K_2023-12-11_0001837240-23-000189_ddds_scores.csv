@@ -1,0 +1,18 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\SYM\10-K\SYM_10-K_2023-12-11_0001837240-23-000189.html
+Filing Type,10-K
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+MD&A,9,0.8579,0.5149,0.0191,-0.2092
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+SYM_10-K_2023-12-11_0001837240-23-000189_MD&A_0000,MD&A,Item 7 “Management’s Discussion and Analysis of Financial Condition and Results of Operations”.,0.6175,VAGUE,0.2745,0.0017,SIMPLE,-0.2266,False
+SYM_10-K_2023-12-11_0001837240-23-000189_MD&A_0001,MD&A,These risk factors will be important to consider in determining future results and should be reviewed in their entirety.,0.9783,VAGUE,0.6353,0.0017,SIMPLE,-0.2266,False
+SYM_10-K_2023-12-11_0001837240-23-000189_MD&A_0002,MD&A,"These forward-looking statements are expressed in good faith, and we believe there is a reasonable basis for them.",0.9749,VAGUE,0.6319,0.0015,SIMPLE,-0.2268,False
+SYM_10-K_2023-12-11_0001837240-23-000189_MD&A_0003,MD&A,"However, there can be no assurance that the events, results or trends identified in these forward-looking statements will occur or be achieved.",0.9787,VAGUE,0.6357,0.0009,SIMPLE,-0.2274,False
+SYM_10-K_2023-12-11_0001837240-23-000189_MD&A_0004,MD&A,"Forward-looking statements are provided for the purposes of assisting the reader in understanding our financial performance, financial position and cash flows as of and for periods ended on certain dates and to present information about management’s current expectations and plans relating to the future, and the reader is cautioned not to place undue reliance on these forward-looking statements because of their inherent uncertainty and to appreciate the limited purposes for which they are being used by management.",0.875,VAGUE,0.532,0.1371,SIMPLE,-0.0912,False
+SYM_10-K_2023-12-11_0001837240-23-000189_MD&A_0005,MD&A,"While we believe that the assumptions and expectations reflected in the forward-looking statements are reasonable based on information currently available to management, there is no assurance that such assumptions and expectations will prove to have been correct.",0.9611,VAGUE,0.6181,0.0012,SIMPLE,-0.2271,False
+SYM_10-K_2023-12-11_0001837240-23-000189_MD&A_0006,MD&A,"The forward-looking statements made in this Annual Report on Form 10-K relate only to events as of the date on which the statements are made and are based on the beliefs, estimates, expectations and opinions of management on that date.",0.8384,VAGUE,0.4954,0.0039,SIMPLE,-0.2244,False
+SYM_10-K_2023-12-11_0001837240-23-000189_MD&A_0007,MD&A,"We are not under any obligation, and expressly disclaim any obligation, to update, alter or otherwise revise any forward-looking statements made in this Annual Report on Form 10-K, whether as a result of new information, future events or otherwise, except as required by law.",0.8505,VAGUE,0.5075,0.017,SIMPLE,-0.2113,False
+SYM_10-K_2023-12-11_0001837240-23-000189_MD&A_0008,MD&A,"Annualized, projected and estimated numbers are used for illustrative purpose only, are not forecasts and may not reflect actual results. 2 Table of Contents PART I",0.6468,VAGUE,0.3038,0.0073,SIMPLE,-0.221,False

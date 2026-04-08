@@ -1,0 +1,16 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\RGR\10-Q\RGR_10-Q_2025-07-30_0001174947-25-001113.html
+Filing Type,10-Q
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+Risk Factors,7,0.1067,-0.4246,0.315,0.2431
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+RGR_10-Q_2025-07-30_0001174947-25-001113_Risk Factors_0000,Risk Factors,"Risk Factors included in the Company’s Annual Report on Form 10-K for the year ended December 31, 2024, and in Part II, Item 1A Risk Factors included in the Company’s Quarterly Report on Form 10-Q for the quarterly period ended March 29, 2025. 31 Share repurchase activity during the six months ended June 28, 2025 was as follows.",0.0128,SPECIFIC,-0.5185,0.2574,SIMPLE,0.1855,False
+RGR_10-Q_2025-07-30_0001174947-25-001113_Risk Factors_0001,Risk Factors,These purchases were funded with cash on hand.,0.5707,VAGUE,0.0394,0.0008,SIMPLE,-0.0711,False
+RGR_10-Q_2025-07-30_0001174947-25-001113_Risk Factors_0002,Risk Factors,Issuer Purchases of Equity Securities All of these purchases were made with cash held by the Company and no debt was incurred.,0.0912,SPECIFIC,-0.4401,0.0011,SIMPLE,-0.0708,False
+RGR_10-Q_2025-07-30_0001174947-25-001113_Risk Factors_0003,Risk Factors,"The Company was authorized by the Board of Directors to repurchase up to $100 million of the Company’s common stock under a share repurchase program announced on May 8, 2017.",0.013,SPECIFIC,-0.5183,0.0009,SIMPLE,-0.071,False
+RGR_10-Q_2025-07-30_0001174947-25-001113_Risk Factors_0004,Risk Factors,"As of June 28, 2025, $75.9 million had been used and approximately $24.1 million remained authorized for share repurchases.",0.0091,SPECIFIC,-0.5222,0.0007,SIMPLE,-0.0712,False
+RGR_10-Q_2025-07-30_0001174947-25-001113_Risk Factors_0005,Risk Factors,"Not applicable Not applicable 32 Rule 10b5-1 Trading Plans There were no contracts, instructions or written plans for the purchase and sale of the Company’s securities, intended to satisfy the affirmative defense conditions of Rule 10b5-1(c) under the Exchange Act (“Rule 10b5-1 Plan”), adopted or terminated by the Company’s Section 16 officers or directors during the three months ended June 28, 2025.",0.0162,SPECIFIC,-0.5151,0.9984,COMPLEX,0.9265,True
+RGR_10-Q_2025-07-30_0001174947-25-001113_Risk Factors_0006,Risk Factors,None of the Company’s directors or Section 16 officers adopted or terminated a “non-Rule 10b5-1 trading arrangement” as defined in,0.0336,SPECIFIC,-0.4977,0.9456,COMPLEX,0.8737,False

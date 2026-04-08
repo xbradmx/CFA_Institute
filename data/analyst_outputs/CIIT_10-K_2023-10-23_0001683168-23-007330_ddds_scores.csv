@@ -1,0 +1,10 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\CIIT\10-K\CIIT_10-K_2023-10-23_0001683168-23-007330.html
+Filing Type,10-K
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+Risk Factors,1,0.9661,0.2626,0.0015,-0.0794
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+CIIT_10-K_2023-10-23_0001683168-23-007330_Risk Factors_0000,Risk Factors,"Because these and other risks may cause the Company’s actual results to differ from those anticipated by Management, the reader should not place undue reliance on any forward-looking statements that appear in this Report.",0.9661,VAGUE,0.2626,0.0015,SIMPLE,-0.0794,False

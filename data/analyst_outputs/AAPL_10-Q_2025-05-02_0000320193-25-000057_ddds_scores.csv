@@ -1,0 +1,20 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\AAPL\10-Q\AAPL_10-Q_2025-05-02_0000320193-25-000057.html
+Filing Type,10-Q
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+MD&A,6,0.8953,0.5363,0.0768,-0.0425
+Risk Factors,4,0.1913,-0.34,0.281,0.2092
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+AAPL_10-Q_2025-05-02_0000320193-25-000057_MD&A_0000,MD&A,"Management’s Discussion and Analysis of Financial Condition and Results of Operations This Item and other sections of this Quarterly Report on Form 10-Q (“Form 10-Q”) contain forward-looking statements, within the meaning of the Private Securities Litigation Reform Act of 1995, that involve risks and uncertainties.",0.9109,VAGUE,0.5519,0.4453,SIMPLE,0.326,False
+AAPL_10-Q_2025-05-02_0000320193-25-000057_MD&A_0001,MD&A,Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact.,0.9768,VAGUE,0.6178,0.003,SIMPLE,-0.1163,False
+AAPL_10-Q_2025-05-02_0000320193-25-000057_MD&A_0002,MD&A,"For example, statements in this Form 10-Q regarding the potential future impact of macroeconomic conditions and tariffs and other trade measures on the Company’s business and results of operations are forward-looking statements .",0.9144,VAGUE,0.5554,0.0009,SIMPLE,-0.1184,False
+AAPL_10-Q_2025-05-02_0000320193-25-000057_MD&A_0003,MD&A,"Forward-looking statements can also be identified by words such as “future,” “anticipates,” “believes,” “estimates,” “expects,” “intends,” “plans,” “predicts,” “will,” “would,” “could,” “can,” “may,” and similar terms.",0.7051,VAGUE,0.3461,0.0024,SIMPLE,-0.1169,False
+AAPL_10-Q_2025-05-02_0000320193-25-000057_MD&A_0004,MD&A,Forward-looking statements are not guarantees of future performance and the Company’s actual results may differ significantly from the results discussed in the forward-looking statements.,0.9649,VAGUE,0.6059,0.0006,SIMPLE,-0.1187,False
+AAPL_10-Q_2025-05-02_0000320193-25-000057_MD&A_0005,MD&A,"Factors that might cause such differences include, but are not limited to, those discussed in Part I,",0.8999,VAGUE,0.5409,0.0087,SIMPLE,-0.1106,False
+AAPL_10-Q_2025-05-02_0000320193-25-000057_Risk Factors_0000,Risk Factors,"Item 1A of the 2024 Form 10-K and Part II, Item 1A of this Form 10-Q, in each case under the heading “Risk Factors.” The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.",0.08,SPECIFIC,-0.4513,0.1072,SIMPLE,0.0353,False
+AAPL_10-Q_2025-05-02_0000320193-25-000057_Risk Factors_0001,Risk Factors,"Unless otherwise stated, all information presented herein is based on the Company’s fiscal calendar, and references to particular years, quarters, months or periods refer to the Company’s fiscal years ended in September and the associated quarters, months and periods of those fiscal years.",0.4767,SPECIFIC,-0.0546,0.0034,SIMPLE,-0.0685,False
+AAPL_10-Q_2025-05-02_0000320193-25-000057_Risk Factors_0002,Risk Factors,The following discussion should be read in conjunction with the 2024 Form 10-K filed with the U.S.,0.1734,SPECIFIC,-0.3579,0.0401,SIMPLE,-0.0318,False
+AAPL_10-Q_2025-05-02_0000320193-25-000057_Risk Factors_0003,Risk Factors,"Securities and Exchange Commission (the “SEC”) and the condensed consolidated financial statements and accompanying notes included in Part I,",0.0352,SPECIFIC,-0.4961,0.9735,COMPLEX,0.9016,True

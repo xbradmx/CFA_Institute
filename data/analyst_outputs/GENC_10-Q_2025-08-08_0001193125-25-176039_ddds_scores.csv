@@ -1,0 +1,16 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\GENC\10-Q\GENC_10-Q_2025-08-08_0001193125-25-176039.html
+Filing Type,10-Q
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+Risk Factors,1,0.0673,-0.464,0.0848,0.0129
+MD&A,5,0.6769,0.3179,0.0733,-0.046
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+GENC_10-Q_2025-08-08_0001193125-25-176039_Risk Factors_0000,Risk Factors,"Item 1A, “Risk Factors” and (b) Part II,",0.0673,SPECIFIC,-0.464,0.0848,SIMPLE,0.0129,False
+GENC_10-Q_2025-08-08_0001193125-25-176039_MD&A_0000,MD&A,"Item 7, “Management’s Discussion and Analysis of Financial Condition and Results of Operations”.",0.5213,VAGUE,0.1623,0.002,SIMPLE,-0.1173,False
+GENC_10-Q_2025-08-08_0001193125-25-176039_MD&A_0001,MD&A,"However, other factors besides those referenced could adversely affect the Company’s results of operations, and you should not consider any such list of factors to be a complete set of all potential risks or uncertainties.",0.9743,VAGUE,0.6153,0.0013,SIMPLE,-0.118,False
+GENC_10-Q_2025-08-08_0001193125-25-176039_MD&A_0002,MD&A,Any forward-looking statement made by the Company herein speaks as of the date of this Quarterly Report.,0.9683,VAGUE,0.6093,0.001,SIMPLE,-0.1183,False
+GENC_10-Q_2025-08-08_0001193125-25-176039_MD&A_0003,MD&A,"The Company does not undertake to update any forward-looking statements, except as required by law.",0.8474,VAGUE,0.4884,0.0014,SIMPLE,-0.1179,False
+GENC_10-Q_2025-08-08_0001193125-25-176039_MD&A_0004,MD&A,"Unless the context otherwise indicates, all references in this Quarterly Report to the “Company,” “Gencor,” “we,” “us,” or “our,” or similar words are to Gencor Industries, Inc. and its subsidiaries. 3 P3Y P4Y Part I.",0.0732,SPECIFIC,-0.2858,0.3607,SIMPLE,0.2414,False

@@ -1,0 +1,16 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\CW\10-K\CW_10-K_2025-02-13_0000026324-25-000015.html
+Filing Type,10-K
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+Risk Factors,2,0.9194,0.2158,0.0039,-0.077
+MD&A,4,0.6986,0.3556,0.0024,-0.2259
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+CW_10-K_2025-02-13_0000026324-25-000015_Risk Factors_0000,Risk Factors,"Risk Factors” and elsewhere, and may further be described in our prior and future filings with the Securities and Exchange Commission and other written and oral statements made or released by us.",0.9716,VAGUE,0.2681,0.0008,SIMPLE,-0.0801,False
+CW_10-K_2025-02-13_0000026324-25-000015_Risk Factors_0001,Risk Factors,"Such forward-looking statements in this Annual Report on Form 10-K include, without limitation, those contained in Item 1.",0.8671,VAGUE,0.1636,0.007,SIMPLE,-0.0739,False
+CW_10-K_2025-02-13_0000026324-25-000015_MD&A_0000,MD&A,"Management’s Discussion and Analysis of Financial Condition and Results of Operations, and Item 8.",0.6452,VAGUE,0.3022,0.0016,SIMPLE,-0.2267,False
+CW_10-K_2025-02-13_0000026324-25-000015_MD&A_0001,MD&A,"Financial Statements and Supplementary Data, including, without limitation, the Notes to Consolidated Financial Statements.",0.3601,SPECIFIC,0.0171,0.0028,SIMPLE,-0.2255,False
+CW_10-K_2025-02-13_0000026324-25-000015_MD&A_0002,MD&A,"Given these risks and uncertainties, you are cautioned not to place undue reliance on such forward-looking statements.",0.9663,VAGUE,0.6233,0.0025,SIMPLE,-0.2258,True
+CW_10-K_2025-02-13_0000026324-25-000015_MD&A_0003,MD&A,"These forward-looking statements speak only as of the date they were made, and we assume no obligation to update forward-looking statements to reflect actual results or changes in or additions to the factors affecting such forward-looking statements.",0.8226,VAGUE,0.4796,0.0026,SIMPLE,-0.2257,False

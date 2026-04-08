@@ -1,0 +1,14 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\CVR\10-Q\CVR_10-Q_2024-11-12_0000950170-24-125575.html
+Filing Type,10-Q
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+Risk Factors,5,0.6129,0.0816,0.0304,-0.0415
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+CVR_10-Q_2024-11-12_0000950170-24-125575_Risk Factors_0000,Risk Factors,"Risk Factors” in our Annual Report on Form 10-K for the year ended December 31, 2023, and in other fillings we make with the Securities and Exchange Commission.",0.0485,SPECIFIC,-0.4828,0.0011,SIMPLE,-0.0708,False
+CVR_10-Q_2024-11-12_0000950170-24-125575_Risk Factors_0001,Risk Factors,"These factors include, among other things: risk related to conditions in the domestic and international automotive industry, upon which we rely for sales revenue, the intense competition in our markets, the concentration of 14 our sales with major customers, risks related to export sales, the price and availability of raw materials, supply chain disruptions, labor relations issues and rising costs, losses related to product liability, warranty and recall claims, costs relating to compliance with environmental laws and regulations, information systems disruptions and the threat of cyber attacks, and the loss of the services of our key employees.",0.4036,SPECIFIC,-0.1277,0.0023,SIMPLE,-0.0696,False
+CVR_10-Q_2024-11-12_0000950170-24-125575_Risk Factors_0002,Risk Factors,Many of these factors are beyond our ability to control or predict.,0.9769,VAGUE,0.4456,0.0007,SIMPLE,-0.0712,False
+CVR_10-Q_2024-11-12_0000950170-24-125575_Risk Factors_0003,Risk Factors,Readers are cautioned not to place undue reliance on these forward-looking statements.,0.9701,VAGUE,0.4388,0.0014,SIMPLE,-0.0705,False
+CVR_10-Q_2024-11-12_0000950170-24-125575_Risk Factors_0004,Risk Factors,We undertake no obligation to publish revised forward-looking statements to reflect events or circumstances after the date hereof or to reflect the occurrence of unanticipated events unless required under the federal securities laws. 15 CHICAGO RIVET & MACHINE CO.,0.6654,VAGUE,0.1341,0.1466,SIMPLE,0.0747,False

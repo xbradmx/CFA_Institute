@@ -1,0 +1,23 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\OMCL\10-K\OMCL_10-K_2024-02-28_0000926326-24-000008.html
+Filing Type,10-K
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+Risk Factors,1,0.1385,-0.565,0.0189,-0.062
+MD&A,12,0.6243,0.2813,0.1058,-0.1225
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+OMCL_10-K_2024-02-28_0000926326-24-000008_Risk Factors_0000,Risk Factors,Item 1A. “Risk Factors” and Part II -,0.1385,SPECIFIC,-0.565,0.0189,SIMPLE,-0.062,False
+OMCL_10-K_2024-02-28_0000926326-24-000008_MD&A_0000,MD&A,"Item 7. “Management’s Discussion and Analysis of Financial Condition and Results of Operations.” Given these risks and uncertainties, you are cautioned not to place undue reliance on these forward-looking statements.",0.9464,VAGUE,0.6034,0.0019,SIMPLE,-0.2264,False
+OMCL_10-K_2024-02-28_0000926326-24-000008_MD&A_0001,MD&A,Forward-looking statements should be considered in light of these risks and uncertainties.,0.9792,VAGUE,0.6362,0.0007,SIMPLE,-0.2276,False
+OMCL_10-K_2024-02-28_0000926326-24-000008_MD&A_0002,MD&A,"You should carefully read this Annual Report and the documents 4 Table of Contents that we reference in this Annual Report and have filed as exhibits, as well as other documents we file with, or furnish to, the U.S.",0.3789,SPECIFIC,0.0359,0.0072,SIMPLE,-0.2211,False
+OMCL_10-K_2024-02-28_0000926326-24-000008_MD&A_0003,MD&A,"Securities and Exchange Commission (“SEC”) from time to time, with the understanding that our actual future results may be materially different from what we expect.",0.9676,VAGUE,0.6246,0.0007,SIMPLE,-0.2276,False
+OMCL_10-K_2024-02-28_0000926326-24-000008_MD&A_0004,MD&A,The forward-looking statements in this Annual Report represent our current estimates and assumptions and speak only as of the date of this Annual Report.,0.9662,VAGUE,0.6232,0.0009,SIMPLE,-0.2274,False
+OMCL_10-K_2024-02-28_0000926326-24-000008_MD&A_0005,MD&A,"Except as required by law, we assume no obligation to update any forward-looking statements publicly, or to update the reasons actual results could differ materially from those expressed or implied in any forward-looking statements, whether as a result of changed circumstances, future events, even if new information becomes available in the future, or otherwise.",0.871,VAGUE,0.528,0.0021,SIMPLE,-0.2262,False
+OMCL_10-K_2024-02-28_0000926326-24-000008_MD&A_0006,MD&A,"Other Information All references in this Annual Report to “Omnicell,” “our,” “us,” “we,” or “the Company” collectively refer to Omnicell, Inc., a Delaware corporation, and its subsidiaries.",0.2105,SPECIFIC,-0.1325,0.2531,SIMPLE,0.0248,False
+OMCL_10-K_2024-02-28_0000926326-24-000008_MD&A_0007,MD&A,"The term “Omnicell, Inc.” refers only to Omnicell, Inc., excluding its subsidiaries.",0.0985,SPECIFIC,-0.2445,0.005,SIMPLE,-0.2233,False
+OMCL_10-K_2024-02-28_0000926326-24-000008_MD&A_0008,MD&A,"We own various registered and unregistered trademarks and service marks used in our business, some of which appear in this Annual Report, including Omnicell ® .",0.1854,SPECIFIC,-0.1576,0.0007,SIMPLE,-0.2276,False
+OMCL_10-K_2024-02-28_0000926326-24-000008_MD&A_0009,MD&A,This Annual Report may also include the trademarks and service marks of other companies.,0.9737,VAGUE,0.6307,0.0008,SIMPLE,-0.2275,False
+OMCL_10-K_2024-02-28_0000926326-24-000008_MD&A_0010,MD&A,Such trademarks and service marks are the marks of their respective owners.,0.755,VAGUE,0.412,0.0009,SIMPLE,-0.2274,False
+OMCL_10-K_2024-02-28_0000926326-24-000008_MD&A_0011,MD&A,"Information posted on or accessible through websites referenced in this Annual Report is not incorporated by reference or otherwise included in this Annual Report, and any references to these websites are intended to be inactive textual references only. 5 Table of Contents PART I",0.159,SPECIFIC,-0.184,0.9961,COMPLEX,0.7678,False

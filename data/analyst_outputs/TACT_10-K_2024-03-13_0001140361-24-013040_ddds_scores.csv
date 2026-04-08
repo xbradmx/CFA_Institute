@@ -1,0 +1,12 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\TACT\10-K\TACT_10-K_2024-03-13_0001140361-24-013040.html
+Filing Type,10-K
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+MD&A,3,0.8554,0.5124,0.1482,-0.0801
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+TACT_10-K_2024-03-13_0001140361-24-013040_MD&A_0000,MD&A,"Item 7, Management’s Discussion and Analysis of Financial Condition and Results of Operations, of this Form 10-K and that may be detailed from time to time in the Company’s other reports filed with the Securities and Exchange Commission (the “SEC”).",0.747,VAGUE,0.404,0.1135,SIMPLE,-0.1148,False
+TACT_10-K_2024-03-13_0001140361-24-013040_MD&A_0001,MD&A,"We caution readers not to place undue reliance on forward-looking statements, which speak only as of the date of this Form 10-K.",0.9008,VAGUE,0.5578,0.3273,SIMPLE,0.099,False
+TACT_10-K_2024-03-13_0001140361-24-013040_MD&A_0002,MD&A,"We undertake no obligation to publicly or otherwise revise any forward-looking statements, whether as a result of new information, future events or other factors, except where we are expressly required to do so by applicable law.",0.9183,VAGUE,0.5753,0.0038,SIMPLE,-0.2245,False

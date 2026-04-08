@@ -1,0 +1,23 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\BKR\10-Q\BKR_10-Q_2025-07-23_0001701605-25-000107.html
+Filing Type,10-Q
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+MD&A,8,0.7234,0.3644,0.2358,0.1165
+Risk Factors,5,0.5876,0.0563,0.0021,-0.0698
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+BKR_10-Q_2025-07-23_0001701605-25-000107_MD&A_0000,MD&A,"Item 7 of Part II, ""Management's discussion and analysis of financial condition and results of operations"" of our 2024 Annual Report.",0.1516,SPECIFIC,-0.2074,0.0018,SIMPLE,-0.1175,False
+BKR_10-Q_2025-07-23_0001701605-25-000107_MD&A_0001,MD&A,"FORWARD-LOOKING STATEMENTS This Quarterly Report on Form 10-Q, contains forward-looking statements within the meaning of Section 27A of the Securities Act of 1933, as amended, and Section 21E of the Exchange Act of 1934, as amended, (each a ""forward-looking statement"").",0.0472,SPECIFIC,-0.3118,0.9973,COMPLEX,0.878,True
+BKR_10-Q_2025-07-23_0001701605-25-000107_MD&A_0002,MD&A,"All statements, other than historical facts, including statements regarding the presentation of the Company's operations in future reports and any assumptions underlying any of the foregoing, are forward-looking statements.",0.9685,VAGUE,0.6095,0.0011,SIMPLE,-0.1182,False
+BKR_10-Q_2025-07-23_0001701605-25-000107_MD&A_0003,MD&A,"Forward-looking statements concern future circumstances and results and other statements that are not historical facts and are sometimes identified by the words ""may,"" ""will,"" ""should,"" ""potential,"" ""intend,"" ""expect,"" ""would,"" ""seek,"" ""anticipate,"" ""estimate,"" ""overestimate,"" ""underestimate,"" ""believe,"" ""could,"" ""project,"" ""predict,"" ""continue,"" ""target,"" ""goal"" or other similar words or expressions.",0.7871,VAGUE,0.4281,0.0045,SIMPLE,-0.1148,False
+BKR_10-Q_2025-07-23_0001701605-25-000107_MD&A_0004,MD&A,"Forward-looking statements are based upon current plans, estimates and expectations that are subject to risks, uncertainties and assumptions.",0.9766,VAGUE,0.6176,0.0007,SIMPLE,-0.1186,False
+BKR_10-Q_2025-07-23_0001701605-25-000107_MD&A_0005,MD&A,"Should one or more of these risks or uncertainties materialize, or should underlying assumptions prove incorrect, actual results may vary materially from those indicated or anticipated by such forward-looking statements.",0.979,VAGUE,0.62,0.0007,SIMPLE,-0.1186,False
+BKR_10-Q_2025-07-23_0001701605-25-000107_MD&A_0006,MD&A,"The inclusion of such statements should not be regarded as a representation that such plans, estimates or expectations will be achieved.",0.9616,VAGUE,0.6026,0.0012,SIMPLE,-0.1181,False
+BKR_10-Q_2025-07-23_0001701605-25-000107_MD&A_0007,MD&A,"Important factors that could cause actual results to differ materially from such plans, estimates or expectations include, among others, the risk factors identified in the ""Risk Factors"" section of Part II of",0.9154,VAGUE,0.5564,0.8788,COMPLEX,0.7595,True
+BKR_10-Q_2025-07-23_0001701605-25-000107_Risk Factors_0000,Risk Factors,Item 1A of this report and Part 1 of Item 1A of our 2024 Annual Report and those set forth from time-to-time in other filings by the Company with the SEC.,0.0765,SPECIFIC,-0.4548,0.0024,SIMPLE,-0.0695,False
+BKR_10-Q_2025-07-23_0001701605-25-000107_Risk Factors_0001,Risk Factors,These documents are available through our website or through the SEC's Electronic Data Gathering and Analysis Retrieval (EDGAR) system at http://www.sec.gov.,0.0374,SPECIFIC,-0.4939,0.003,SIMPLE,-0.0689,False
+BKR_10-Q_2025-07-23_0001701605-25-000107_Risk Factors_0002,Risk Factors,Any forward-looking statements speak only as of the date of this Quarterly Report on Form 10-Q.,0.9403,VAGUE,0.409,0.0021,SIMPLE,-0.0698,False
+BKR_10-Q_2025-07-23_0001701605-25-000107_Risk Factors_0003,Risk Factors,"The Company does not undertake any obligation to update any forward-looking statements, whether as a result of new information or developments, future events or otherwise, except as required by law.",0.9137,VAGUE,0.3824,0.0017,SIMPLE,-0.0702,False
+BKR_10-Q_2025-07-23_0001701605-25-000107_Risk Factors_0004,Risk Factors,Readers are cautioned not to place undue reliance on any of these forward-looking statements.,0.97,VAGUE,0.4387,0.0014,SIMPLE,-0.0705,False

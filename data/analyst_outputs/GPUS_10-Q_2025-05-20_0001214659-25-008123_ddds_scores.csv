@@ -1,0 +1,12 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\GPUS\10-Q\GPUS_10-Q_2025-05-20_0001214659-25-008123.html
+Filing Type,10-Q
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+Risk Factors,3,0.8965,0.3652,0.3211,0.2492
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+GPUS_10-Q_2025-05-20_0001214659-25-008123_Risk Factors_0000,Risk Factors,"Given these risks and uncertainties, readers are cautioned not to place undue reliance on such forward-looking statements.",0.9691,VAGUE,0.4378,0.0013,SIMPLE,-0.0706,False
+GPUS_10-Q_2025-05-20_0001214659-25-008123_Risk Factors_0001,Risk Factors,"The forward-looking statements in this Quarterly Report on Form 10-Q do not reflect the potential impact of any divestitures, mergers, acquisitions, or other business combinations that had not been completed as of the date of filing of this Quarterly Report on Form 10-Q.",0.86,VAGUE,0.3287,0.001,SIMPLE,-0.0709,False
+GPUS_10-Q_2025-05-20_0001214659-25-008123_Risk Factors_0002,Risk Factors,"In addition, the forward-looking statements in this Quarterly Report on Form 10-Q are made as of the date of this filing, and we do not undertake, and expressly disclaim any duty to update such statements, whether as a result of new information, new developments or otherwise, except to the extent that disclosure may be required by law.",0.8603,VAGUE,0.329,0.9611,COMPLEX,0.8892,False

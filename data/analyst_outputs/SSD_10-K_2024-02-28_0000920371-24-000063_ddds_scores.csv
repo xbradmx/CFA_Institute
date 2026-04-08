@@ -1,0 +1,14 @@
+DOCUMENT SUMMARY
+File,C:\Users\bradd\PycharmProjects\CFA_Institute\data\Filings by company\SSD\10-K\SSD_10-K_2024-02-28_0000920371-24-000063.html
+Filing Type,10-K
+
+Section,Sentences,Mean Vague (Raw),Mean Vague (Δbaseline),Mean Complex (Raw),Mean Complex (Δbaseline)
+MD&A,5,0.7386,0.3956,0.0089,-0.2194
+
+SENTENCE LEVEL DETAIL
+sentence_id,section,text,vague_prob,vague_label,demeaned_vague,complex_prob,complex_label,demeaned_complex,outlier
+SSD_10-K_2024-02-28_0000920371-24-000063_MD&A_0000,MD&A,"Management’s Discussion and Analysis of Financial Condition and Results of Operations in our Annual Report on Form 10-K for the fiscal year ended December 31, 2023.",0.1441,SPECIFIC,-0.1989,0.0017,SIMPLE,-0.2266,False
+SSD_10-K_2024-02-28_0000920371-24-000063_MD&A_0001,MD&A,"Additional risks include: the cyclicality and impact of general economic conditions; changing conditions in global markets including the impact of sanctions and tariffs, quotas and other trade actions and import restrictions; the impact of pandemics, epidemics or other public health emergencies; volatile supply and demand conditions affecting prices and volumes in the markets for both our products and raw materials we purchase; the impact of foreign currency fluctuations; potential limitations on our ability to access capital resources and borrowings under our existing credit agreement; restrictions on our business and financial covenants under our credit agreement; reliance on employees subject to collective bargaining agreements; and or ability to repurchase shares of our common stock and the amounts and timing of repurchases, if any.",0.8095,VAGUE,0.4665,0.0083,SIMPLE,-0.22,False
+SSD_10-K_2024-02-28_0000920371-24-000063_MD&A_0002,MD&A,"We caution that you should not place undue reliance on these forward-looking statements, which speak only as of the date of this report.",0.9642,VAGUE,0.6212,0.0026,SIMPLE,-0.2257,False
+SSD_10-K_2024-02-28_0000920371-24-000063_MD&A_0003,MD&A,"We undertake no obligation to publicly update any forward-looking statement, whether as a result of new information, future developments or otherwise, except as may be required by law.",0.9408,VAGUE,0.5978,0.0008,SIMPLE,-0.2275,False
+SSD_10-K_2024-02-28_0000920371-24-000063_MD&A_0004,MD&A,"Readers are urged to carefully review and consider the various disclosures made by us in this report and in our other reports filed with the Securities and Exchange Commission (the ""SEC"") that advise of the risks and factors that may affect our business. 4 PART I",0.8342,VAGUE,0.4912,0.0311,SIMPLE,-0.1972,False
