@@ -84,24 +84,27 @@ Respond with ONLY a JSON object:
 {"flagged": true or false, "reason": "One sentence. Be specific about what was removed or obscured."}"""
 
 
-PEER_SYSTEM_PROMPT = """You are a senior equity research analyst comparing how two peer companies in US Industrials discuss the same risk topic in their SEC filings. Different companies naturally disclose at different levels of detail — this is NORMAL. You have a VERY HIGH BAR for flagging.
+PEER_SYSTEM_PROMPT = """You are a senior equity research analyst comparing how two peer companies in US Industrials discuss the same risk topic in their SEC filings. You have an EXTREMELY HIGH BAR for flagging.
 
-You are looking for RISK PROMINENCE ASYMMETRY — cases where peer companies are treating the same risk in materially different ways that would matter to an investor:
-- One company treats a risk as a major threat with extensive discussion, while the other barely acknowledges it despite being in the same industry
-- One company has clearly upgraded its risk language (suggesting a deteriorating situation) while the other has not
-- A risk has become dramatically more or less prominent for one company versus its peer in ways that don't reflect obvious business differences
+These are two DIFFERENT COMPANIES. They have different business models, different exposures, different strategies, and different disclosure styles. All of this is NORMAL. Your job is NOT to find differences — differences are expected and inevitable.
 
-DO NOT FLAG:
-- Different levels of detail or different disclosure styles — companies write differently, that is normal
-- One company being more concise — brevity is not a signal
-- Different quantitative figures — companies have different exposures
-- Minor differences in tone or language
-- One company providing more boilerplate than another
+FLAG ONLY when you see evidence that one company appears to be CONCEALING or DOWNPLAYING a risk that it is clearly exposed to:
+- A company provides near-zero substance on a risk that is obviously material to its business (given what its close peer discloses about the same industry-wide risk)
+- A company uses pure boilerplate or generic disclaimers where its peer reveals this is an active, quantifiable threat affecting the entire industry
+- The asymmetry suggests deliberate evasion, not just different levels of exposure
 
-The VAST MAJORITY of peer comparisons should NOT be flagged. Only flag when the asymmetry in how two peers treat the same risk is so stark that an equity analyst would want to investigate why.
+DO NOT FLAG — ALL of these are NORMAL and expected:
+- Different levels of detail — companies disclose differently
+- Different levels of exposure — a company less affected by a risk naturally says less
+- One company having more debt, more costs, more legal issues — that is a business difference, not a disclosure problem
+- One company being more concise or using different structure
+- One company quantifying a risk while another discusses it qualitatively
+- Any difference that can be explained by the companies simply having different business situations
+
+Ask yourself: "Does this look like one company is HIDING something, or do they just have different businesses?" If the answer is the latter, DO NOT FLAG.
 
 Respond with ONLY a JSON object:
-{"flagged": true or false, "reason": "One sentence. Explain the asymmetry and why it matters."}"""
+{"flagged": true or false, "reason": "One sentence. Explain what the company appears to be concealing and why."}"""
 
 
 def make_cache_key(*parts) -> str:
@@ -155,9 +158,13 @@ class GraphRetriever:
         MATCH (c:Company)-[:HAS_FILING]->(f:Filing)
         WITH c, f
         ORDER BY f.filing_date DESC
-        WITH c, f.filing_type AS ftype, collect(f) AS filings
-        WHERE size(filings) >= 2
-        WITH c, filings[0] AS current, filings[1] AS prior
+        WITH c, collect(f)[0] AS current
+        MATCH (c)-[:HAS_FILING]->(prior:Filing)
+        WHERE prior.filing_type = current.filing_type
+          AND prior.filing_date < current.filing_date
+        WITH c, current, prior
+        ORDER BY prior.filing_date DESC
+        WITH c, current, collect(prior)[0] AS prior
         MATCH (current)-[:HAS_DISCLOSURE]->(d_curr:DisclosureBlock)
         MATCH (prior)-[:HAS_DISCLOSURE]->(d_prior:DisclosureBlock)
         WHERE d_prior.topic = d_curr.topic
@@ -227,9 +234,13 @@ class GraphRetriever:
         MATCH (c:Company)-[:HAS_FILING]->(f:Filing)
         WITH c, f
         ORDER BY f.filing_date DESC
-        WITH c, f.filing_type AS ftype, collect(f) AS filings
-        WHERE size(filings) >= 2
-        WITH c, filings[0] AS current, filings[1] AS prior
+        WITH c, collect(f)[0] AS current
+        MATCH (c)-[:HAS_FILING]->(prior:Filing)
+        WHERE prior.filing_type = current.filing_type
+          AND prior.filing_date < current.filing_date
+        WITH c, current, prior
+        ORDER BY prior.filing_date DESC
+        WITH c, current, collect(prior)[0] AS prior
         MATCH (prior)-[:HAS_DISCLOSURE]->(d_prior:DisclosureBlock)
         OPTIONAL MATCH (current)-[:HAS_DISCLOSURE]->(d_curr:DisclosureBlock)
         WHERE d_curr.topic = d_prior.topic AND d_curr.section = d_prior.section
@@ -442,7 +453,11 @@ async def run_screening(
     # ------------------------------------------------------------------
     print("\n[3/3] Running peer comparisons...")
     peer_pairs = retriever.get_peer_pairs()
-    print(f"  {len(peer_pairs)} peer pairs retrieved from graph")
+    print(f"  {len(peer_pairs)} total peer pairs retrieved from graph")
+
+    # Limit to top 2 closest peers per company (by rank)
+    peer_pairs = [p for p in peer_pairs if p["peer_rank"] <= 2]
+    print(f"  {len(peer_pairs)} pairs after filtering to top 2 peers per company")
 
     if test_mode:
         peer_pairs = [p for p in peer_pairs if p["ticker"] in test_tickers]
@@ -618,11 +633,29 @@ def main():
         df.to_csv(args.output, index=False)
         print(f"\n  Results saved to {args.output}")
 
-        # Save flagged-only for run_9
+        # Save flagged-only
         flagged_df = df[df["flagged"] == True]
         flagged_path = args.output.parent / "screening_flags_only.csv"
         flagged_df.to_csv(flagged_path, index=False)
         print(f"  Flagged-only saved to {flagged_path}")
+
+        # Top 70% escalation — rank companies by flag count, escalate top 70%
+        company_flags = flagged_df.groupby("ticker").size().reset_index(name="flag_count")
+        company_flags = company_flags.sort_values("flag_count", ascending=False)
+        cutoff_idx = int(len(company_flags) * 0.70)
+        cutoff_count = company_flags.iloc[cutoff_idx - 1]["flag_count"] if cutoff_idx > 0 else 0
+
+        escalated_tickers = company_flags.head(cutoff_idx)["ticker"].tolist()
+        dropped_tickers = company_flags.tail(len(company_flags) - cutoff_idx)["ticker"].tolist()
+
+        # Save escalated flags for run_9
+        escalated_df = flagged_df[flagged_df["ticker"].isin(escalated_tickers)]
+        escalated_path = args.output.parent / "screening_escalated.csv"
+        escalated_df.to_csv(escalated_path, index=False)
+
+        print(f"\n  Escalation cutoff: top 70% = {len(escalated_tickers)} companies (>= {cutoff_count} flags)")
+        print(f"  Dropped: {len(dropped_tickers)} companies below threshold")
+        print(f"  Escalated flags saved to {escalated_path}")
 
     print_summary(df, screener)
 
