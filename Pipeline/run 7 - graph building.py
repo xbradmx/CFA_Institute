@@ -1,55 +1,83 @@
 """
-DDDS - Neo4j Graph Schema & Ingestion Pipeline
-===============================================
-Reads the passages CSV produced by Run 1 (extract_sections.py) and
-populates a Neo4j knowledge graph with Company, Filing, and RiskFactor
-nodes connected by temporal, peer, and risk-topic edges.
+DDDS - Neo4j Graph Builder (v2)
+================================
+Reads topic_labelled.csv (from run_1) and peer_selections.csv to build
+a knowledge graph optimised for period-over-period disclosure comparison.
 
 Graph Schema
 ------------
 Nodes:
-    (:Company)      {identifier, name, sector}
-    (:Filing)       {filing_id, company_id, filing_type, period, filename}
-    (:RiskFactor)   {rf_id, filing_id, section, risk_category, text,
-                     vague_label, vague_prob, complex_label, complex_prob}
+    (:Company)          {ticker, sector}
+    (:Filing)           {filing_id, ticker, filing_type, filing_date}
+    (:Topic)            {name}
+    (:DisclosureBlock)  {block_id, ticker, filing_date, filing_type,
+                         section, topic, sentence_count, text}
 
 Edges:
     (:Company)-[:HAS_FILING]->(:Filing)
-    (:Filing)-[:HAS_RISK_FACTOR]->(:RiskFactor)
-    (:Filing)-[:NEXT_PERIOD]->(:Filing)          # temporal edge
-    (:Company)-[:PEER_OF]->(:Company)            # peer edge (same sector)
-    (:RiskFactor)-[:SHARES_TOPIC]->(:RiskFactor) # risk-topic edge (same category)
+    (:Filing)-[:HAS_DISCLOSURE]->(:DisclosureBlock)
+    (:DisclosureBlock)-[:ABOUT_TOPIC]->(:Topic)
+    (:Filing)-[:NEXT_PERIOD]->(:Filing)
+    (:Company)-[:PEER_OF {distance, rank, sic_level}]->(:Company)
+
+Key design decisions:
+    - DisclosureBlock = all sentences for one (company, filing, section, topic)
+      concatenated into a single text field. This is the unit of analysis
+      for GPT-4o-mini period-over-period comparison.
+    - Topic is a first-class node (not just a string property) so you can
+      traverse Company → Filing → DisclosureBlock → Topic across periods.
+    - PEER_OF edges come from peer_selections.csv (not Cartesian product).
+    - 'other' topic sentences are excluded from the graph — they're boilerplate.
+    - Temporal edges link filings by filing_date order per company.
 
 Usage
 -----
-    python build_graph.py --input data/passages.csv
-    python build_graph.py --input data/passages.csv --wipe
+    python run_7_graph_building.py
+    python run_7_graph_building.py --wipe
+    python run_7_graph_building.py --input path/to/topic_labelled.csv
+
+Pipeline position
+-----------------
+    run_0 (EDGAR download)
+        → run_1 (topic extraction → topic_labelled.csv)
+            → run_5/6 (FinBERT training + prediction)
+                → **run_7 (Neo4j graph building)**  ← YOU ARE HERE
+                    → run_8 (Graph-RAG analysis)
 """
 
 import argparse
-import os
 import hashlib
-import pandas as pd
-from neo4j import GraphDatabase
-from itertools import combinations
-from dotenv import load_dotenv
+import os
+import re
+from pathlib import Path
 
+import pandas as pd
+from dotenv import load_dotenv
+from neo4j import GraphDatabase
+
+load_dotenv()
 
 # ---------------------------------------------------------------------------
 # CONFIG
 # ---------------------------------------------------------------------------
-load_dotenv()
+NEO4J_URI       = "neo4j://127.0.0.1:7687"
+NEO4J_USER      = "neo4j"
+NEO4J_PASSWORD  = os.environ.get("NEO4J_PASSWORD")
+INPUT_CSV       = Path("data/labelled/topics/topic_labelled.csv")
+PEERS_CSV       = Path("data/Graph RAG/peer_selections.csv")
+BATCH_SIZE      = 500
 
-NEO4J_URI      = "neo4j://127.0.0.1:7687"
-NEO4J_USER     = "neo4j"
-NEO4J_PASSWORD = os.environ.get("NEO4J_PASSWORD")
-INPUT_CSV      = "data/passages.csv"
-BATCH_SIZE     = 500    # rows per transaction batch
+VALID_TOPICS = {
+    "liquidity_solvency", "debt_financing", "cost_margin_pressure",
+    "supply_chain", "revenue_future_performance", "geopolitical_macro",
+    "regulatory_legal", "operational_product", "cybersecurity_technology",
+    "human_capital", "financial_sustainability", "accounting_audit",
+}
 # ---------------------------------------------------------------------------
 
 
 def make_id(*parts) -> str:
-    """Deterministic ID from concatenated string parts."""
+    """Deterministic short ID from string parts."""
     return hashlib.md5("_".join(str(p) for p in parts).encode()).hexdigest()[:16]
 
 
@@ -64,157 +92,181 @@ class GraphBuilder:
 
     def verify_connection(self):
         with self.driver.session() as session:
-            result = session.run("RETURN 1 AS ok")
-            result.single()
+            session.run("RETURN 1 AS ok").single()
 
-    # -----------------------------------------------------------------------
+    # ------------------------------------------------------------------
     # SCHEMA
-    # -----------------------------------------------------------------------
+    # ------------------------------------------------------------------
 
     def create_constraints(self):
-        """
-        Creates uniqueness constraints and indexes.
-        Must be run before ingestion.
-        """
-        constraints = [
-            "CREATE CONSTRAINT company_id IF NOT EXISTS FOR (c:Company) REQUIRE c.identifier IS UNIQUE",
+        stmts = [
+            "CREATE CONSTRAINT company_ticker IF NOT EXISTS FOR (c:Company) REQUIRE c.ticker IS UNIQUE",
             "CREATE CONSTRAINT filing_id IF NOT EXISTS FOR (f:Filing) REQUIRE f.filing_id IS UNIQUE",
-            "CREATE CONSTRAINT rf_id IF NOT EXISTS FOR (r:RiskFactor) REQUIRE r.rf_id IS UNIQUE",
-        ]
-        indexes = [
-            "CREATE INDEX company_sector IF NOT EXISTS FOR (c:Company) ON (c.sector)",
-            "CREATE INDEX rf_category IF NOT EXISTS FOR (r:RiskFactor) ON (r.risk_category)",
-            "CREATE INDEX filing_period IF NOT EXISTS FOR (f:Filing) ON (f.period)",
-            "CREATE INDEX filing_company IF NOT EXISTS FOR (f:Filing) ON (f.company_id)",
+            "CREATE CONSTRAINT topic_name IF NOT EXISTS FOR (t:Topic) REQUIRE t.name IS UNIQUE",
+            "CREATE CONSTRAINT block_id IF NOT EXISTS FOR (d:DisclosureBlock) REQUIRE d.block_id IS UNIQUE",
+            "CREATE INDEX filing_ticker IF NOT EXISTS FOR (f:Filing) ON (f.ticker)",
+            "CREATE INDEX filing_date IF NOT EXISTS FOR (f:Filing) ON (f.filing_date)",
+            "CREATE INDEX block_topic IF NOT EXISTS FOR (d:DisclosureBlock) ON (d.topic)",
         ]
         with self.driver.session() as session:
-            for stmt in constraints + indexes:
+            for s in stmts:
                 try:
-                    session.run(stmt)
+                    session.run(s)
                 except Exception as e:
-                    print(f"    [!] Schema statement skipped: {e}")
-        print("  Schema constraints and indexes applied")
+                    print(f"    [!] {e}")
+        print("  Schema applied")
 
-    def wipe_database(self):
-        """Deletes all nodes and relationships. Use with caution."""
+    def wipe(self):
         with self.driver.session() as session:
             session.run("MATCH (n) DETACH DELETE n")
         print("  Database wiped")
 
-    # -----------------------------------------------------------------------
-    # NODE INGESTION
-    # -----------------------------------------------------------------------
+    # ------------------------------------------------------------------
+    # TOPIC NODES (static — 12 topics)
+    # ------------------------------------------------------------------
 
-    def ingest_companies(self, df: pd.DataFrame):
-        """
-        Creates Company nodes from unique identifiers.
-        Uses sector derived from risk_category distribution as a proxy
-        until SEC sector metadata is available.
-        """
-        companies = df.groupby("identifier").agg(
-            name=("company", "first"),
-        ).reset_index()
-
+    def ingest_topics(self):
         query = """
-        UNWIND $rows AS row
-        MERGE (c:Company {identifier: row.identifier})
-        SET c.name   = row.name,
-            c.sector = 'US Industrials'
+        UNWIND $names AS name
+        MERGE (:Topic {name: name})
         """
         with self.driver.session() as session:
-            session.run(query, rows=companies.to_dict("records"))
+            session.run(query, names=list(VALID_TOPICS))
+        print(f"  Topics:            {len(VALID_TOPICS)} nodes")
 
-        print(f"  Companies:    {len(companies)} nodes")
+    # ------------------------------------------------------------------
+    # COMPANY NODES
+    # ------------------------------------------------------------------
+
+    def ingest_companies(self, df: pd.DataFrame):
+        tickers = df["ticker"].unique().tolist()
+        query = """
+        UNWIND $rows AS row
+        MERGE (c:Company {ticker: row.ticker})
+        SET c.sector = 'US Industrials'
+        """
+        rows = [{"ticker": t} for t in tickers]
+        with self.driver.session() as session:
+            session.run(query, rows=rows)
+        print(f"  Companies:         {len(tickers)} nodes")
+
+    # ------------------------------------------------------------------
+    # FILING NODES + HAS_FILING edges
+    # ------------------------------------------------------------------
 
     def ingest_filings(self, df: pd.DataFrame):
-        """
-        Creates Filing nodes. Each unique (identifier, filename) pair
-        is treated as one filing. Period is extracted from filename where
-        possible, otherwise left as 'unknown'.
-        """
-        filings = df.groupby(["identifier", "filename"]).agg(
-            filing_type=("filing_type", "first"),
-        ).reset_index()
-
-        filings["filing_id"] = filings.apply(
-            lambda r: make_id(r["identifier"], r["filename"]), axis=1
+        filings = (
+            df.groupby(["ticker", "filing_type", "filing_date"])
+            .size()
+            .reset_index(name="_count")
         )
-        filings["period"] = filings["filename"].apply(self._extract_period)
+        filings["filing_id"] = filings.apply(
+            lambda r: make_id(r["ticker"], r["filing_type"], r["filing_date"]),
+            axis=1,
+        )
 
         query = """
         UNWIND $rows AS row
         MERGE (f:Filing {filing_id: row.filing_id})
-        SET f.company_id  = row.identifier,
-            f.filename    = row.filename,
+        SET f.ticker      = row.ticker,
             f.filing_type = row.filing_type,
-            f.period      = row.period
+            f.filing_date = row.filing_date
         WITH f, row
-        MATCH (c:Company {identifier: row.identifier})
+        MATCH (c:Company {ticker: row.ticker})
         MERGE (c)-[:HAS_FILING]->(f)
         """
-        with self.driver.session() as session:
-            session.run(query, rows=filings.to_dict("records"))
-
-        print(f"  Filings:      {len(filings)} nodes")
-        return filings
-
-    def ingest_risk_factors(self, df: pd.DataFrame):
-        """
-        Creates RiskFactor nodes from passage rows.
-        Includes FinBERT classifier outputs if present.
-        """
-        df = df.copy()
-        df["rf_id"] = df.apply(
-            lambda r: make_id(r["identifier"], r["filename"], r.name), axis=1
-        )
-        df["filing_id"] = df.apply(
-            lambda r: make_id(r["identifier"], r["filename"]), axis=1
-        )
-
-        # Optional classifier columns — default to None if not yet run
-        for col in ["vague_label", "vague_prob", "complex_label", "complex_prob"]:
-            if col not in df.columns:
-                df[col] = None
-
-        query = """
-        UNWIND $rows AS row
-        MERGE (r:RiskFactor {rf_id: row.rf_id})
-        SET r.filing_id     = row.filing_id,
-            r.section       = row.section,
-            r.risk_category = row.risk_category,
-            r.text          = row.text,
-            r.vague_label   = row.vague_label,
-            r.vague_prob    = row.vague_prob,
-            r.complex_label = row.complex_label,
-            r.complex_prob  = row.complex_prob
-        WITH r, row
-        MATCH (f:Filing {filing_id: row.filing_id})
-        MERGE (f)-[:HAS_RISK_FACTOR]->(r)
-        """
-        cols = ["rf_id", "filing_id", "section", "risk_category", "text",
-                "vague_label", "vague_prob", "complex_label", "complex_prob"]
-
-        rows = df[cols].where(pd.notnull(df[cols]), None).to_dict("records")
-
+        rows = filings[["filing_id", "ticker", "filing_type", "filing_date"]].to_dict("records")
         with self.driver.session() as session:
             for i in range(0, len(rows), BATCH_SIZE):
                 session.run(query, rows=rows[i:i + BATCH_SIZE])
 
-        print(f"  RiskFactors:  {len(df)} nodes")
+        print(f"  Filings:           {len(filings)} nodes")
+        return filings
 
-    # -----------------------------------------------------------------------
-    # EDGE CREATION
-    # -----------------------------------------------------------------------
+    # ------------------------------------------------------------------
+    # DISCLOSURE BLOCK NODES + edges to Filing and Topic
+    # ------------------------------------------------------------------
 
-    def create_temporal_edges(self, filings: pd.DataFrame):
+    def ingest_disclosure_blocks(self, df: pd.DataFrame):
         """
-        Creates NEXT_PERIOD edges between consecutive filings for
-        the same company, ordered by period string (lexicographic).
-        Works for YYYY, YYYYQ1 style period strings.
+        Groups sentences by (ticker, filing_type, filing_date, section, topic_label)
+        and concatenates text into one DisclosureBlock node.
+        Excludes 'other' topic.
+        """
+        # Filter to real topics only
+        df = df[df["topic_label"].isin(VALID_TOPICS)].copy()
+
+        grouped = (
+            df.sort_values("sentence_num")
+            .groupby(["ticker", "filing_type", "filing_date", "section", "topic_label"])
+            .agg(
+                text=("text", "\n".join),
+                sentence_count=("text", "size"),
+            )
+            .reset_index()
+        )
+
+        grouped["block_id"] = grouped.apply(
+            lambda r: make_id(r["ticker"], r["filing_type"], r["filing_date"],
+                              r["section"], r["topic_label"]),
+            axis=1,
+        )
+        grouped["filing_id"] = grouped.apply(
+            lambda r: make_id(r["ticker"], r["filing_type"], r["filing_date"]),
+            axis=1,
+        )
+
+        # Create DisclosureBlock + link to Filing
+        query_block = """
+        UNWIND $rows AS row
+        MERGE (d:DisclosureBlock {block_id: row.block_id})
+        SET d.ticker         = row.ticker,
+            d.filing_date    = row.filing_date,
+            d.filing_type    = row.filing_type,
+            d.section        = row.section,
+            d.topic          = row.topic_label,
+            d.sentence_count = row.sentence_count,
+            d.text           = row.text
+        WITH d, row
+        MATCH (f:Filing {filing_id: row.filing_id})
+        MERGE (f)-[:HAS_DISCLOSURE]->(d)
+        """
+
+        rows = grouped[[
+            "block_id", "filing_id", "ticker", "filing_date", "filing_type",
+            "section", "topic_label", "sentence_count", "text",
+        ]].to_dict("records")
+
+        with self.driver.session() as session:
+            for i in range(0, len(rows), BATCH_SIZE):
+                session.run(query_block, rows=rows[i:i + BATCH_SIZE])
+
+        # Link DisclosureBlock → Topic
+        query_topic = """
+        UNWIND $rows AS row
+        MATCH (d:DisclosureBlock {block_id: row.block_id})
+        MATCH (t:Topic {name: row.topic_label})
+        MERGE (d)-[:ABOUT_TOPIC]->(t)
+        """
+        topic_rows = grouped[["block_id", "topic_label"]].to_dict("records")
+        with self.driver.session() as session:
+            for i in range(0, len(topic_rows), BATCH_SIZE):
+                session.run(query_topic, rows=topic_rows[i:i + BATCH_SIZE])
+
+        print(f"  DisclosureBlocks:  {len(grouped):,} nodes")
+
+    # ------------------------------------------------------------------
+    # TEMPORAL EDGES (NEXT_PERIOD)
+    # ------------------------------------------------------------------
+
+    def create_temporal_edges(self):
+        """
+        Links consecutive filings per company ordered by filing_date.
+        Uses Cypher ordering which works for YYYY-MM-DD strings.
         """
         query = """
         MATCH (c:Company)-[:HAS_FILING]->(f:Filing)
-        WITH c, f ORDER BY f.period ASC
+        WITH c, f ORDER BY f.filing_date ASC
         WITH c, collect(f) AS filings
         UNWIND range(0, size(filings)-2) AS i
         WITH filings[i] AS f1, filings[i+1] AS f2
@@ -224,150 +276,160 @@ class GraphBuilder:
             session.run(query)
         print("  Temporal edges:    NEXT_PERIOD created")
 
-    def create_peer_edges(self):
+    # ------------------------------------------------------------------
+    # PEER EDGES (from peer_selections.csv)
+    # ------------------------------------------------------------------
+
+    def create_peer_edges(self, peers_path: Path):
         """
-        Creates PEER_OF edges between all companies in the same sector.
-        Relationship is bidirectional — created once per pair.
+        Creates PEER_OF edges from peer_selections.csv.
+        Each row = one directed edge with distance, rank, sic_level.
         """
+        if not peers_path.exists():
+            print(f"  [!] {peers_path} not found — skipping peer edges")
+            return
+
+        peers = pd.read_csv(peers_path)
+
+        # Only create edges for companies that exist in the graph
         query = """
-        MATCH (c1:Company), (c2:Company)
-        WHERE c1.sector = c2.sector
-          AND c1.identifier < c2.identifier
-        MERGE (c1)-[:PEER_OF]->(c2)
-        MERGE (c2)-[:PEER_OF]->(c1)
+        UNWIND $rows AS row
+        MATCH (c1:Company {ticker: row.target_ticker})
+        MATCH (c2:Company {ticker: row.peer_ticker})
+        MERGE (c1)-[r:PEER_OF]->(c2)
+        SET r.distance  = row.distance,
+            r.rank      = row.rank,
+            r.sic_level = row.sic_level
         """
+        rows = peers[["target_ticker", "peer_ticker", "distance", "rank", "sic_level"]].to_dict("records")
+
+        created = 0
         with self.driver.session() as session:
-            session.run(query)
-        print("  Peer edges:        PEER_OF created")
+            for i in range(0, len(rows), BATCH_SIZE):
+                batch = rows[i:i + BATCH_SIZE]
+                result = session.run(query, rows=batch)
+                summary = result.consume()
+                created += summary.counters.relationships_created
 
-    def create_risk_topic_edges(self):
-        """
-        Creates SHARES_TOPIC edges between RiskFactor nodes that share
-        the same risk_category. Limited to within the same filing period
-        to avoid creating an unmanageably dense graph.
-        Edges connect risk factors from different companies only.
-        """
-        query = """
-        MATCH (r1:RiskFactor)<-[:HAS_RISK_FACTOR]-(f1:Filing)<-[:HAS_FILING]-(c1:Company)
-        MATCH (r2:RiskFactor)<-[:HAS_RISK_FACTOR]-(f2:Filing)<-[:HAS_FILING]-(c2:Company)
-        WHERE r1.risk_category = r2.risk_category
-          AND f1.period = f2.period
-          AND c1.identifier < c2.identifier
-          AND r1.rf_id < r2.rf_id
-        MERGE (r1)-[:SHARES_TOPIC]->(r2)
-        """
-        with self.driver.session() as session:
-            session.run(query)
-        print("  Risk-topic edges:  SHARES_TOPIC created")
+        print(f"  Peer edges:        {created:,} PEER_OF created (from {len(peers):,} rows)")
 
-    # -----------------------------------------------------------------------
-    # UTILITIES
-    # -----------------------------------------------------------------------
+    # ------------------------------------------------------------------
+    # SUMMARY
+    # ------------------------------------------------------------------
 
-    @staticmethod
-    def _extract_period(filename: str) -> str:
-        """
-        Attempts to extract a period string from a filename.
-        Falls back to 'unknown' if no recognisable pattern found.
-        Examples: '2024Q3', '2024', 'unknown'
-        """
-        import re
-        # Match YYYY Q patterns
-        m = re.search(r"(20\d{2})[_\-\s]?[Qq]?([1-4])?", filename)
-        if m:
-            year = m.group(1)
-            quarter = m.group(2)
-            return f"{year}Q{quarter}" if quarter else year
-        return "unknown"
-
-    def print_graph_summary(self):
+    def print_summary(self):
         queries = {
-            "Companies":   "MATCH (c:Company) RETURN count(c) AS n",
-            "Filings":     "MATCH (f:Filing) RETURN count(f) AS n",
-            "RiskFactors": "MATCH (r:RiskFactor) RETURN count(r) AS n",
-            "HAS_FILING":  "MATCH ()-[r:HAS_FILING]->() RETURN count(r) AS n",
-            "HAS_RF":      "MATCH ()-[r:HAS_RISK_FACTOR]->() RETURN count(r) AS n",
-            "NEXT_PERIOD": "MATCH ()-[r:NEXT_PERIOD]->() RETURN count(r) AS n",
-            "PEER_OF":     "MATCH ()-[r:PEER_OF]->() RETURN count(r) AS n",
-            "SHARES_TOPIC":"MATCH ()-[r:SHARES_TOPIC]->() RETURN count(r) AS n",
+            "Companies":        "MATCH (c:Company) RETURN count(c) AS n",
+            "Filings":          "MATCH (f:Filing) RETURN count(f) AS n",
+            "Topics":           "MATCH (t:Topic) RETURN count(t) AS n",
+            "DisclosureBlocks": "MATCH (d:DisclosureBlock) RETURN count(d) AS n",
+            "HAS_FILING":       "MATCH ()-[r:HAS_FILING]->() RETURN count(r) AS n",
+            "HAS_DISCLOSURE":   "MATCH ()-[r:HAS_DISCLOSURE]->() RETURN count(r) AS n",
+            "ABOUT_TOPIC":      "MATCH ()-[r:ABOUT_TOPIC]->() RETURN count(r) AS n",
+            "NEXT_PERIOD":      "MATCH ()-[r:NEXT_PERIOD]->() RETURN count(r) AS n",
+            "PEER_OF":          "MATCH ()-[r:PEER_OF]->() RETURN count(r) AS n",
         }
-        print(f"\n{'='*45}")
+        print(f"\n{'='*50}")
         print(f"  Graph Summary")
-        print(f"{'='*45}")
+        print(f"{'='*50}")
         with self.driver.session() as session:
             for label, q in queries.items():
                 n = session.run(q).single()["n"]
-                print(f"  {label:<20} {n:>8,}")
-        print(f"{'='*45}\n")
+                print(f"  {label:<25} {n:>8,}")
+        print(f"{'='*50}\n")
 
 
-def load_csv(path: str) -> pd.DataFrame:
+# ---------------------------------------------------------------------------
+# DATA LOADING
+# ---------------------------------------------------------------------------
+
+def load_labelled_csv(path: Path) -> pd.DataFrame:
     df = pd.read_csv(path)
-    required = {"text", "risk_category", "identifier", "filename",
-                "filing_type", "section", "company"}
+    required = {"ticker", "filing_type", "filing_date", "section",
+                "sentence_num", "text", "topic_label"}
     missing = required - set(df.columns)
     if missing:
-        raise ValueError(
-            f"Input CSV missing required columns: {missing}\n"
-            f"Found: {list(df.columns)}\n"
-            f"Make sure you are using the output of run_1_-_risk_factor_script.py"
-        )
-    df = df.dropna(subset=["text", "identifier"])
-    df["identifier"] = df["identifier"].astype(str).str.strip()
-    df["filename"]   = df["filename"].astype(str).str.strip()
-    df["text"]       = df["text"].astype(str).str.strip()
-    return df.reset_index(drop=True)
+        raise ValueError(f"Missing columns: {missing}")
 
+    df = df.dropna(subset=["text", "ticker"])
+    df["ticker"]     = df["ticker"].astype(str).str.strip()
+    df["text"]       = df["text"].astype(str).str.strip()
+
+    # Normalise filing_date to YYYY-MM-DD
+    def normalise_date(d):
+        d = str(d).strip()
+        m = re.match(r"(\d{2})/(\d{2})/(\d{4})", d)
+        if m:
+            return f"{m.group(3)}-{m.group(2)}-{m.group(1)}"
+        return d
+
+    df["filing_date"] = df["filing_date"].apply(normalise_date)
+
+    print(f"  {len(df):,} sentences loaded")
+    print(f"  {df['ticker'].nunique()} companies")
+    print(f"  {df.groupby(['ticker', 'filing_type', 'filing_date']).ngroups} filings")
+
+    topic_counts = df["topic_label"].value_counts()
+    substantive = df[df["topic_label"].isin(VALID_TOPICS)]
+    print(f"  {len(substantive):,} substantive sentences (excl. 'other')")
+
+    return df
+
+
+# ---------------------------------------------------------------------------
+# MAIN
+# ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description="DDDS Neo4j Graph Ingestion")
-    parser.add_argument("--input",    default=INPUT_CSV, help="Path to passages CSV")
-    parser.add_argument("--wipe",     action="store_true", help="Wipe database before ingestion")
-    parser.add_argument("--uri",      default=NEO4J_URI)
-    parser.add_argument("--user",     default=NEO4J_USER)
+    parser = argparse.ArgumentParser(description="DDDS Neo4j Graph Builder v2")
+    parser.add_argument("--input", type=Path, default=INPUT_CSV)
+    parser.add_argument("--peers", type=Path, default=PEERS_CSV)
+    parser.add_argument("--wipe",  action="store_true")
+    parser.add_argument("--uri",   default=NEO4J_URI)
+    parser.add_argument("--user",  default=NEO4J_USER)
     parser.add_argument("--password", default=NEO4J_PASSWORD)
     args = parser.parse_args()
 
-    print(f"\n[DDDS] Neo4j Graph Ingestion")
-    print(f"  Input:    {args.input}")
-    print(f"  Neo4j:    {args.uri}\n")
+    print(f"\n[DDDS] Neo4j Graph Builder v2")
+    print(f"  Input:  {args.input}")
+    print(f"  Peers:  {args.peers}")
+    print(f"  Neo4j:  {args.uri}\n")
 
-    print("[1/7] Connecting to Neo4j...")
+    print("[1/8] Connecting...")
     builder = GraphBuilder(args.uri, args.user, args.password)
     builder.verify_connection()
 
     if args.wipe:
-        print("\n  [!] --wipe flag set. Deleting all existing data...")
-        builder.wipe_database()
+        print("\n  [!] Wiping database...")
+        builder.wipe()
 
-    print("\n[2/7] Applying schema constraints...")
+    print("\n[2/8] Schema...")
     builder.create_constraints()
 
-    print("\n[3/7] Loading CSV...")
-    df = load_csv(args.input)
-    print(f"  {len(df)} passages loaded")
-    print(f"  {df['identifier'].nunique()} unique companies")
-    print(f"  {df['filename'].nunique()} unique filings")
+    print("\n[3/8] Loading CSV...")
+    df = load_labelled_csv(args.input)
 
-    print("\n[4/7] Ingesting Company nodes...")
+    print("\n[4/8] Topic nodes...")
+    builder.ingest_topics()
+
+    print("\n[5/8] Company nodes...")
     builder.ingest_companies(df)
 
-    print("\n[5/7] Ingesting Filing nodes...")
-    filings = builder.ingest_filings(df)
+    print("\n[6/8] Filing nodes...")
+    builder.ingest_filings(df)
 
-    print("\n[6/7] Ingesting RiskFactor nodes...")
-    builder.ingest_risk_factors(df)
+    print("\n[7/8] DisclosureBlock nodes...")
+    builder.ingest_disclosure_blocks(df)
 
-    print("\n[7/7] Creating edges...")
-    builder.create_temporal_edges(filings)
-    builder.create_peer_edges()
-    builder.create_risk_topic_edges()
+    print("\n[8/8] Edges...")
+    builder.create_temporal_edges()
+    builder.create_peer_edges(args.peers)
 
-    builder.print_graph_summary()
+    builder.print_summary()
     builder.close()
 
     print("[Done] Graph built successfully.")
-    print("  Next: run graph_rag.py to start the analysis pipeline")
+    print("  Next: run_8 (Graph-RAG analysis)")
 
 
 if __name__ == "__main__":

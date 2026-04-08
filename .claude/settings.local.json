@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python \"run 3a - generate validation sheet.py\")"
+      "Bash(python \"run 3a - generate validation sheet.py\")",
+      "Bash(python generate_technical_summary.py)"
     ]
   }
 }

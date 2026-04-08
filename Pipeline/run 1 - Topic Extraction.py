@@ -2,7 +2,7 @@
 DDDS - Risk Topic Extraction Pipeline (Production)
 ====================================================
 Walks the company filings folder, extracts Risk Factors and MD&A sections
-from each HTML filing, splits into sentences, and sends to GPT-5-mini
+from each HTML filing, splits into sentences, and sends to GPT-4o-mini
 for topic classification via the OpenAI Batch API.
 
 Outputs a master sentence-level CSV with columns that allow downstream
@@ -20,6 +20,7 @@ Modes
     --mode extract      Extract sections + sentences from HTMLs → sentences CSV
     --mode batch        Prepare + submit Batch API job for topic labelling
     --mode status       Check batch job status
+    --mode watch        Auto-poll batch status every 60s, download when complete
     --mode download     Download results + merge into final labelled CSV
 
 Usage
@@ -27,6 +28,7 @@ Usage
     python "run 1 - Topic Extraction.py" --mode extract
     python "run 1 - Topic Extraction.py" --mode batch
     python "run 1 - Topic Extraction.py" --mode status --batch-id batch_xxx
+    python "run 1 - Topic Extraction.py" --mode watch --batch-id batch_xxx
     python "run 1 - Topic Extraction.py" --mode download --batch-id batch_xxx
 
 Output CSV columns
@@ -40,7 +42,7 @@ Output CSV columns
     text             : sentence text
     topic_label      : one of 12 topic codes or 'other'
     topic_confidence : high | medium | low
-    topic_reason     : one-sentence explanation from GPT-5-mini
+    topic_reason     : one-sentence explanation from GPT-4o-mini
 """
 
 import argparse
@@ -48,6 +50,7 @@ import json
 import os
 import re
 import time
+from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
@@ -65,12 +68,13 @@ OUTPUT_DIR      = Path("data/labelled/topics")
 SENTENCES_CSV   = OUTPUT_DIR / "sentences_extracted.csv"
 LABELLED_CSV    = OUTPUT_DIR / "topic_labelled.csv"
 BATCH_JSONL     = OUTPUT_DIR / "topic_batch_requests.jsonl"
-MODEL           = "gpt-5-mini"
+MODEL           = "gpt-4o-mini"
 BATCH_SIZE      = 10
 CONTEXT_WINDOW  = 2
 MAX_RETRIES     = 3
 RETRY_DELAY     = 5
-DEBUG           = True       # Set to False to suppress debug output
+WATCH_INTERVAL  = 60         # seconds between status checks in watch mode
+MAX_PER_BATCH   = 15000      # max requests per batch submission (40M token enqueue limit)
 
 VALID_LABELS = {
     "liquidity_solvency", "debt_financing", "cost_margin_pressure",
@@ -159,7 +163,6 @@ def clean_text(text: str) -> str:
 SECTION_START = {
     "Risk Factors": [
         r"item\s+1a\.?\s*[.\-\u2013\u2014:)]*\s*risk\s+factors",
-        r"risk\s+factors\s*$",
     ],
     "MD&A": [
         r"item\s+7\.?\s*[.\-\u2013\u2014:)]*\s*management.{1,5}s\s+discussion",
@@ -228,7 +231,6 @@ def extract_section(text: str, section_name: str, filing_type: str) -> str | Non
     best_length = 0
 
     for start_pos, header_end in starts:
-        # Search for end boundary after the header text
         search_from = header_end
         end_pos = len(collapsed)
 
@@ -411,7 +413,8 @@ def run_extract():
 # ---------------------------------------------------------------------------
 
 def run_batch():
-    """Reads the sentences CSV, builds batch requests, submits to OpenAI."""
+    """Builds JSONL files, submits batches ONE AT A TIME, polls each to
+    completion before submitting the next. Auto-downloads at the end."""
     print("[1/3] Loading sentences...")
     df = pd.read_csv(SENTENCES_CSV)
     print(f"  {len(df):,} sentences from {df['ticker'].nunique()} companies")
@@ -485,93 +488,276 @@ You MUST return exactly {num_expected} results.
             all_requests.append(request)
             request_idx += 1
 
+    print(f"  {len(all_requests):,} total batch requests")
+
+    # --- Split into chunks ---
+    chunks = []
+    for i in range(0, len(all_requests), MAX_PER_BATCH):
+        chunks.append(all_requests[i:i + MAX_PER_BATCH])
+
+    print(f"  Splitting into {len(chunks)} batch(es) of up to {MAX_PER_BATCH:,} requests each")
+
+    # --- Write JSONL files ---
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    with open(BATCH_JSONL, "w", encoding="utf-8") as f:
-        for req in all_requests:
-            f.write(json.dumps(req, ensure_ascii=False) + "\n")
+    jsonl_paths = []
+    for chunk_idx, chunk in enumerate(chunks):
+        jsonl_path = OUTPUT_DIR / f"topic_batch_requests_{chunk_idx+1}.jsonl"
+        with open(jsonl_path, "w", encoding="utf-8") as f:
+            for req in chunk:
+                f.write(json.dumps(req, ensure_ascii=False) + "\n")
+        jsonl_paths.append(jsonl_path)
 
-    print(f"  {len(all_requests):,} batch requests written to {BATCH_JSONL}")
-
-    print("\n[3/3] Submitting to OpenAI Batch API...")
+    # --- Submit and wait, one at a time ---
+    print(f"\n[3/3] Submitting batches sequentially...")
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    batch_ids = []
 
-    with open(BATCH_JSONL, "rb") as f:
-        uploaded = client.files.create(file=f, purpose="batch")
-    print(f"  File uploaded: {uploaded.id}")
+    for chunk_idx, jsonl_path in enumerate(jsonl_paths):
+        chunk_size = len(chunks[chunk_idx])
+        print(f"\n  {'='*50}")
+        print(f"  Batch {chunk_idx+1}/{len(chunks)} ({chunk_size:,} requests)")
+        print(f"  {'='*50}")
 
-    batch = client.batches.create(
-        input_file_id=uploaded.id,
-        endpoint="/v1/chat/completions",
-        completion_window="24h",
-        metadata={"description": "DDDS topic extraction -- full run"},
-    )
+        # --- Submit with retry ---
+        batch_obj = None
+        for attempt in range(120):
+            try:
+                with open(jsonl_path, "rb") as f:
+                    uploaded = client.files.create(file=f, purpose="batch")
 
-    print(f"\n{'='*60}")
-    print(f"  Batch Submitted")
-    print(f"{'='*60}")
-    print(f"  Batch ID:  {batch.id}")
-    print(f"  Status:    {batch.status}")
-    print(f"  Requests:  {len(all_requests):,}")
-    print(f"\n  Check status:")
-    print(f"    python \"{Path(__file__).name}\" --mode status --batch-id {batch.id}")
-    print(f"\n  Download results:")
-    print(f"    python \"{Path(__file__).name}\" --mode download --batch-id {batch.id}")
-    print(f"{'='*60}")
+                batch_obj = client.batches.create(
+                    input_file_id=uploaded.id,
+                    endpoint="/v1/chat/completions",
+                    completion_window="24h",
+                    metadata={"description": f"DDDS topic extraction -- part {chunk_idx+1}/{len(chunks)}"},
+                )
+                print(f"  Submitted: {batch_obj.id}")
+                break
+
+            except Exception as e:
+                if "enqueued" in str(e).lower() or "limit" in str(e).lower():
+                    print(f"  Enqueue limit hit, retrying in 60s... (attempt {attempt+1})")
+                    time.sleep(60)
+                else:
+                    raise
+
+        if not batch_obj:
+            print(f"  [!] Failed to submit batch {chunk_idx+1} after 120 attempts. Stopping.")
+            break
+
+        batch_ids.append(batch_obj.id)
+
+        # Save incrementally
+        ids_path = OUTPUT_DIR / "batch_ids.txt"
+        with open(ids_path, "w") as f:
+            f.write("\n".join(batch_ids))
+
+        # --- Poll until complete ---
+        while True:
+            batch_obj = client.batches.retrieve(batch_obj.id)
+            completed = batch_obj.request_counts.completed
+            total = batch_obj.request_counts.total
+            failed = batch_obj.request_counts.failed
+            pct = 100 * completed / max(total, 1)
+
+            timestamp = datetime.now().strftime("%H:%M:%S")
+            bar_len = 20
+            filled = int(bar_len * completed / max(total, 1))
+            bar = "█" * filled + "░" * (bar_len - filled)
+
+            status_line = (
+                f"  [{timestamp}]  {bar}  {pct:5.1f}%  "
+                f"({completed:,}/{total:,})"
+            )
+            if failed:
+                status_line += f"  [{failed:,} failed]"
+            status_line += f"  ({batch_obj.status})"
+            print(status_line)
+
+            if batch_obj.status == "completed":
+                print(f"  Batch {chunk_idx+1} complete!")
+                break
+
+            if batch_obj.status in ("failed", "expired", "cancelled"):
+                print(f"  [!] Batch {chunk_idx+1} {batch_obj.status}. Retrying submission...")
+                # Retry the whole batch
+                batch_obj = None
+                for attempt in range(120):
+                    try:
+                        with open(jsonl_path, "rb") as f:
+                            uploaded = client.files.create(file=f, purpose="batch")
+                        batch_obj = client.batches.create(
+                            input_file_id=uploaded.id,
+                            endpoint="/v1/chat/completions",
+                            completion_window="24h",
+                            metadata={"description": f"DDDS topic extraction -- part {chunk_idx+1}/{len(chunks)} (retry)"},
+                        )
+                        # Update stored batch ID
+                        batch_ids[-1] = batch_obj.id
+                        with open(ids_path, "w") as f:
+                            f.write("\n".join(batch_ids))
+                        print(f"  Resubmitted: {batch_obj.id}")
+                        break
+                    except Exception as e:
+                        if "enqueued" in str(e).lower() or "limit" in str(e).lower():
+                            print(f"  Enqueue limit hit, retrying in 60s... (attempt {attempt+1})")
+                            time.sleep(60)
+                        else:
+                            raise
+
+                if not batch_obj:
+                    print(f"  [!] Failed to resubmit batch {chunk_idx+1}. Stopping.")
+                    break
+                continue
+
+            time.sleep(WATCH_INTERVAL)
+
+    # --- All batches done, download ---
+    print(f"\n\n  All {len(batch_ids)} batches complete. Downloading results...\n")
+    run_download(None)
 
 
 # ---------------------------------------------------------------------------
 # MODE: STATUS
 # ---------------------------------------------------------------------------
 
-def run_status(batch_id: str):
+def run_status(batch_id: str | None):
     """Prints current batch job status."""
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-    batch = client.batches.retrieve(batch_id)
+    batch_ids = load_batch_ids(batch_id)
 
-    print(f"\n  Batch ID:    {batch.id}")
-    print(f"  Status:      {batch.status}")
-    print(f"  Requests:    {batch.request_counts.completed}/{batch.request_counts.total} completed")
-    if batch.request_counts.failed:
-        print(f"  Failed:      {batch.request_counts.failed}")
-    if batch.completed_at:
-        print(f"  Completed:   {batch.completed_at}")
+    if not batch_ids:
+        print("  [!] No batch IDs found. Run --mode batch first, or pass --batch-id.")
+        return
+
+    for i, bid in enumerate(batch_ids):
+        batch = client.batches.retrieve(bid)
+        print(f"\n  Batch {i+1}/{len(batch_ids)}")
+        print(f"  Batch ID:    {bid}")
+        print(f"  Status:      {batch.status}")
+        print(f"  Requests:    {batch.request_counts.completed}/{batch.request_counts.total} completed")
+        if batch.request_counts.failed:
+            print(f"  Failed:      {batch.request_counts.failed}")
+        if batch.completed_at:
+            print(f"  Completed:   {batch.completed_at}")
+
+
+# ---------------------------------------------------------------------------
+# MODE: WATCH
+# ---------------------------------------------------------------------------
+
+def load_batch_ids(batch_id: str | None) -> list[str]:
+    """Loads batch IDs from file or uses the provided single ID."""
+    ids_path = OUTPUT_DIR / "batch_ids.txt"
+    if batch_id:
+        return [batch_id]
+    if ids_path.exists():
+        return [line.strip() for line in ids_path.read_text().splitlines() if line.strip()]
+    return []
+
+
+def run_watch(batch_id: str | None):
+    """Polls all batch statuses every WATCH_INTERVAL seconds, auto-downloads on completion."""
+    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    batch_ids = load_batch_ids(batch_id)
+
+    if not batch_ids:
+        print("  [!] No batch IDs found. Run --mode batch first, or pass --batch-id.")
+        return
+
+    print(f"  Watching {len(batch_ids)} batch(es)")
+    print(f"  Polling every {WATCH_INTERVAL}s (Ctrl+C to stop)\n")
+
+    while True:
+        all_completed = True
+        any_failed = False
+        timestamp = datetime.now().strftime("%H:%M:%S")
+
+        for i, bid in enumerate(batch_ids):
+            batch = client.batches.retrieve(bid)
+            completed = batch.request_counts.completed
+            total = batch.request_counts.total
+            failed = batch.request_counts.failed
+            pct = 100 * completed / max(total, 1)
+
+            bar_len = 20
+            filled = int(bar_len * completed / max(total, 1))
+            bar = "█" * filled + "░" * (bar_len - filled)
+
+            status_line = (
+                f"  [{timestamp}] Batch {i+1}: {bar}  {pct:5.1f}%  "
+                f"({completed:,}/{total:,})"
+            )
+            if failed:
+                status_line += f"  [{failed:,} failed]"
+            status_line += f"  ({batch.status})"
+            print(status_line)
+
+            if batch.status in ("failed", "expired", "cancelled"):
+                any_failed = True
+            elif batch.status != "completed":
+                all_completed = False
+
+        print()
+
+        if any_failed:
+            print("  [!] One or more batches failed. Check OpenAI dashboard.")
+            return
+
+        if all_completed:
+            print("  All batches complete! Downloading results...\n")
+            run_download(None)
+            return
+
+        time.sleep(WATCH_INTERVAL)
 
 
 # ---------------------------------------------------------------------------
 # MODE: DOWNLOAD
 # ---------------------------------------------------------------------------
 
-def run_download(batch_id: str):
-    """Downloads batch results and merges with sentence data."""
+def run_download(batch_id: str | None):
+    """Downloads results from all batches and merges with sentence data."""
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    batch_ids = load_batch_ids(batch_id)
 
-    batch = client.batches.retrieve(batch_id)
-    if batch.status != "completed":
-        print(f"  [!] Batch not complete. Status: {batch.status}")
-        print(f"  Run --mode status to check progress.")
+    if not batch_ids:
+        print("  [!] No batch IDs found. Run --mode batch first, or pass --batch-id.")
         return
 
-    print("[1/3] Downloading batch results...")
-    content = client.files.content(batch.output_file_id)
-    raw_text = content.text
+    print(f"[1/3] Downloading results from {len(batch_ids)} batch(es)...")
+    all_raw_lines = []
 
+    for i, bid in enumerate(batch_ids):
+        batch = client.batches.retrieve(bid)
+        if batch.status != "completed":
+            print(f"  [!] Batch {i+1} ({bid}) not complete. Status: {batch.status}")
+            continue
+
+        content = client.files.content(batch.output_file_id)
+        raw_text = content.text
+        lines = [l for l in raw_text.strip().split("\n") if l.strip()]
+        all_raw_lines.extend(lines)
+        print(f"  Batch {i+1}: {len(lines):,} responses downloaded")
+
+        if batch.error_file_id:
+            error_content = client.files.content(batch.error_file_id)
+            error_path = OUTPUT_DIR / f"topic_batch_errors_{i+1}.jsonl"
+            with open(error_path, "w", encoding="utf-8") as f:
+                f.write(error_content.text)
+            print(f"  Errors saved: {error_path}")
+
+    # Save combined raw output
     raw_path = OUTPUT_DIR / "topic_batch_raw.jsonl"
     with open(raw_path, "w", encoding="utf-8") as f:
-        f.write(raw_text)
-    print(f"  Raw output saved: {raw_path}")
-
-    if batch.error_file_id:
-        error_content = client.files.content(batch.error_file_id)
-        error_path = OUTPUT_DIR / "topic_batch_errors.jsonl"
-        with open(error_path, "w", encoding="utf-8") as f:
-            f.write(error_content.text)
-        print(f"  Errors saved: {error_path}")
+        f.write("\n".join(all_raw_lines))
+    print(f"  Combined raw output: {raw_path} ({len(all_raw_lines):,} responses)")
 
     print("\n[2/3] Parsing results...")
     all_label_rows = []
     failed_requests = 0
 
-    for line in raw_text.strip().split("\n"):
+    for line in all_raw_lines:
         obj = json.loads(line)
         custom_id = obj["custom_id"]
 
@@ -601,10 +787,26 @@ def run_download(batch_id: str):
         elif "MD" in section:
             section = "MD&A"
 
-        for r in results:
+        # Flatten any nested lists
+        flat_results = []
+        for item in results:
+            if isinstance(item, list):
+                flat_results.extend(item)
+            else:
+                flat_results.append(item)
+
+        for r in flat_results:
+            if isinstance(r, str):
+                try:
+                    r = json.loads(r)
+                except (json.JSONDecodeError, TypeError):
+                    failed_requests += 1
+                    continue
+            if not isinstance(r, dict):
+                failed_requests += 1
+                continue
+
             label = r.get("label", "other")
-            if label not in VALID_LABELS:
-                label = "other"
 
             all_label_rows.append({
                 "ticker":           ticker,
@@ -662,15 +864,16 @@ def run_download(batch_id: str):
 def main():
     parser = argparse.ArgumentParser(description="DDDS Risk Topic Extraction Pipeline")
     parser.add_argument("--mode",
-                        choices=["extract", "batch", "status", "download"],
+                        choices=["extract", "batch", "status", "watch", "download"],
                         required=True,
                         help="extract: HTML->sentences | batch: submit to API | "
-                             "status: check job | download: retrieve results")
+                             "status: check job | watch: auto-poll + download | "
+                             "download: retrieve results")
     parser.add_argument("--batch-id", type=str, default=None,
-                        help="Batch job ID (required for status/download)")
+                        help="Batch job ID (required for status/watch/download)")
     args = parser.parse_args()
 
-    print(f"\n[DDDS] Risk Topic Extraction Pipeline Test")
+    print(f"\n[DDDS] Risk Topic Extraction Pipeline")
     print(f"  Model:      {MODEL}")
     print(f"  Batch size: {BATCH_SIZE}")
     print(f"  Mode:       {args.mode}")
@@ -683,15 +886,12 @@ def main():
         run_batch()
 
     elif args.mode == "status":
-        if not args.batch_id:
-            print("  [!] --batch-id required for status mode")
-            return
         run_status(args.batch_id)
 
+    elif args.mode == "watch":
+        run_watch(args.batch_id)
+
     elif args.mode == "download":
-        if not args.batch_id:
-            print("  [!] --batch-id required for download mode")
-            return
         run_download(args.batch_id)
 
 
