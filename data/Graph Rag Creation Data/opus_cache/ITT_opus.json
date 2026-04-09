@@ -1,0 +1,93 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "4177731b9571d9e3",
+        "current": "f1298eb1ce29ea94",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The two passages appear to be extracted from different sections or contexts within the filing rather than representing a deliberate replacement of one disclosure with another. The prior period mentions 'We manufacture components that are integral to the operation of systems and manufacturing processes in these key markets,' which is standard business description language, while the current period mentions the Svaneh\u00f8j acquisition description. Both filings retain the same restructuring note opening boilerplate. This looks like a block-matching artifact rather than a genuine removal of operational detail.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "a18d6140468db63e",
+        "current": "59120f5c4af54cb0",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period explicitly disclosed mitigation strategies \u2014 'supplier and customer negotiations, diversification strategies and pricing actions' \u2014 along with a candid caveat that these may not be effective. The current period retains only the generic first sentence about uncertainty in global trade policy and supply chain dynamics, entirely deleting the specific mitigation language. This removal reduces investors' ability to assess how management is addressing tariff and supply chain risks, which is particularly material given the escalating trade tensions described elsewhere in the filing.",
+      "investigation_action": "Analyst should inquire on earnings calls whether ITT's tariff mitigation strategies (supplier negotiations, diversification, pricing actions) have changed or failed, and why the specific disclosure was removed. Review whether tariff-related cost impacts are quantified elsewhere in the filing or have been absorbed into margin compression."
+    },
+    {
+      "flag_number": 3,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8dc13b0a2cc482e2",
+        "peer": "86a784fdca9c8cb4"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening flag is inverted \u2014 it suggests FLS is the one with deficient disclosure, not ITT. ITT actually provides extensive, detailed accounting disclosure including the LIFO-to-FIFO change, quantified restatement impacts, purchase price allocation tables, and critical accounting estimates discussion. FLS's brief mention of Audit Committee review is simply a different level of disclosure for a different company. This flag does not indicate any disclosure degradation by ITT.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f8a5715a61894823",
+        "peer": "a2d4ec8f50819391"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, the screening flag is inverted \u2014 ITT provides far more detailed disclosure than FLS on tax risks (Pillar Two, OBBBA, jurisdictional examinations in six named countries), environmental liabilities (quantified at $50.6M non-current), and litigation contingencies. FLS offers only a single sentence about evaluating the OBBBA. If anything, ITT is the more transparent filer here. This does not represent a disclosure degradation concern for ITT.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ca9eb9ff15bcbd8c",
+        "peer": "ee0897a31e8690bd"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "FLS provides detailed quantified foreign currency risk disclosure ($697.3M notional in forwards, $16.0M sensitivity, specific P&L impacts), while ITT's risk factors section discusses tariffs and trade policy but does not address foreign exchange exposure in the passages provided. ITT is a significant global manufacturer with substantial non-USD operations, so the absence of quantified FX risk discussion in this section is notable. However, ITT does disclose foreign currency derivative contracts elsewhere in its filing (Note on derivatives shows gains/losses on FX contracts), so this may reflect organizational differences in where FX risk is discussed rather than omission.",
+      "investigation_action": "Verify whether ITT provides quantified FX sensitivity analysis and hedging program details in other sections of the 10-Q (e.g., quantitative disclosures about market risk, derivatives footnotes). If not, this represents a meaningful gap versus peers that should be raised with management."
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Of five flags screened, only one represents a genuine disclosure degradation signal \u2014 the removal of specific tariff mitigation strategies from the supply chain risk factor. The peer divergence flags were largely inverted (ITT actually discloses more than FLS on most topics), and the temporal operational flag appears to be a block-matching artifact. ITT's overall disclosure quality remains relatively strong compared to peers.",
+    "top_concerns": [
+      "Removal of specific supply chain/tariff mitigation strategies (supplier negotiations, diversification, pricing actions) from risk factors without explanation",
+      "Verify whether FX risk quantification appears elsewhere in the filing or represents a genuine disclosure gap versus peers",
+      "Monitor whether the tariff mitigation language removal correlates with deteriorating gross margins or supply chain disruptions in upcoming quarters"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 1,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "ITT",
+    "model": "claude-opus-4-6",
+    "input_tokens": 7019,
+    "output_tokens": 1502,
+    "timestamp": "2026-04-09T12:08:08.458641"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "regulatory_legal",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "599216a983dac8a8",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period text references a $5.75 million legal settlement and associated legal reserve that were one-time items from a prior comparison period. These items naturally fall out of the discussion as the filing periods roll forward and those items are no longer in the year-over-year comparison window. This is a routine temporal change in MD&A variance explanations, not a disappearance of a risk category.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "830fb2d8934dd779",
+        "current": "f6f55f378837d26f",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period filing provided granular detail on legal settlements and accruals\u2014specifically a $4.5 million Metal Coatings accrual and a $5.75 million AIS settlement\u2014while the current period condenses all legal matters into a single catchall phrase: 'certain legal settlements, accruals, and retirement and other severance expenses, and restructuring charges.' While some of this reduction is attributable to the prior-year items rolling off the comparison period, the current period filing does not disclose whether any new legal settlements or accruals occurred, which could represent meaningful obfuscation if material items exist.",
+      "investigation_action": "Analyst should review the notes to financial statements for any new legal accruals or contingencies in the current quarter, and cross-reference the 'Cash items' line in segment reconciliation tables to determine if material legal costs are being bundled without adequate disclosure."
+    },
+    {
+      "flag_number": 3,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "d192bb83b2884af7",
+        "current": "5a4b7c8199321741",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period provided a detailed, multi-factor breakdown of corporate expense increases totaling $7.4 million (quarter) and $13.4 million (nine months), including specific dollar amounts for legal settlements ($3.5 million), descriptions of severance for executive management, incentive expense drivers, stock-based compensation, and AVAIL JV transition fees. The current period replaces all of this with a single sentence referencing only the Executive Retiree LTI Program ($1.8 million) and a vague 'increase in employee benefits expense.' This is a significant reduction in granularity on corporate overhead drivers, which is a key area for monitoring management compensation and discretionary spending.",
+      "investigation_action": "Analyst should request or investigate the full magnitude of corporate SGA expense changes in the current period, whether additional severance or executive compensation actions occurred beyond the $1.8 million disclosed, and whether legal expenses are now being buried in other line items rather than disclosed separately."
+    },
+    {
+      "flag_number": 4,
+      "topic": "liquidity_solvency",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cb6cbd5de5ad6944",
+        "peer": "aaafd58e17fa6493"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted\u2014the screening reason actually criticizes GFF for providing minimal liquidity disclosure while noting that AZZ provides detailed, substantive disclosure. AZZ's passage includes specific liquidity figures ($309.4 million total liquidity, $306.3 million revolver availability, $3.0 million cash, $13.7 million letters of credit, $273.2 million AVAIL JV distribution, and detailed cash flow drivers). There is no disclosure degradation concern for AZZ here; this is a peer shortcoming, not a target company issue.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f825dd7dff0d08e0",
+        "peer": "29f62e5af7b8d67b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, this flag is inverted\u2014AZZ provides superior disclosure compared to MTRN. AZZ details its greenfield aluminum coil coating facility with specific capital commitment figures ($121.8 million total, $113.6 million paid, $3.2 million in the quarter, $5.0 million remaining), the take-or-pay contract supporting 75% of output, and the $165.8 million AVAIL JV gain. MTRN provides only generic capex guidance and boilerplate dividend language. There is no disclosure degradation signal for AZZ.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d382b272feb643c8",
+        "peer": "f219e05b6f345330"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "AZZ's outlook section acknowledges geopolitical and regulatory developments with vague language\u2014'it is difficult to predict future North American economic activity' and 'the impact that political or regulatory developments may have on us'\u2014without specifying tariffs, trade policy, raw material cost volatility, or legislative changes like the OBBBA that MTRN extensively enumerates. Given AZZ's exposure to steel/zinc pricing, tariff-sensitive industrial markets, and energy costs, the lack of specificity is notable. However, AZZ may address some of these risks in its annual 10-K Risk Factors section rather than the quarterly MD&A.",
+      "investigation_action": "Analyst should review AZZ's most recent 10-K for comprehensive risk factor discussion of tariffs, raw material costs, and geopolitical exposure. If the 10-K is similarly vague, this would be a more significant concern. Also monitor whether AZZ's next filing addresses the OBBBA tax provisions and tariff impacts given their galvanizing business's zinc and steel exposure."
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "AZZ's disclosure quality remains generally strong, with detailed liquidity, capital commitment, and operational disclosures that compare favorably to peers. The primary concern is a reduction in granularity around corporate expense drivers and legal cost disclosures in the current quarterly filing, which may reflect legitimate period-over-period comparability changes but warrants monitoring. The geopolitical/macro outlook section is relatively thin compared to peers given AZZ's industrial exposure.",
+    "top_concerns": [
+      "Reduced granularity in corporate SGA expense breakdown\u2014prior filing itemized multiple drivers with dollar amounts while current filing provides minimal detail",
+      "Legal settlement and accrual disclosures condensed into catchall 'cash items' category without quantitative transparency",
+      "Vague geopolitical and regulatory risk discussion in MD&A outlook despite exposure to tariff-sensitive industrial markets and commodity pricing"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 2,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "AZZ",
+    "model": "claude-opus-4-6",
+    "input_tokens": 4223,
+    "output_tokens": 1920,
+    "timestamp": "2026-04-09T11:48:34.979302"
+  }
+}

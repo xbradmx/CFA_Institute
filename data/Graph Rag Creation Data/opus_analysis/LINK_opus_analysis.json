@@ -1,0 +1,205 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "c27ff7661faa43d6",
+        "current": "5cd31635de846f0b",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period included a specific breakdown of other income (expense) with dollar amounts ($6,000 interest income, $1,000 FX losses for Q1 2025; $14,000 interest income, $18,000 FX gains for Q1 2024). The current period filing removes this entire paragraph, leaving only the boilerplate language about preferred stock and potential future financing. While this data may appear in financial statement line items, the MD&A narrative discussion was eliminated, reducing qualitative context around income composition trends.",
+      "investigation_action": "Verify whether the other income (expense) breakdown appears elsewhere in the current 10-Q (e.g., notes to financial statements). If not, ask management why this detail was removed, particularly given the apparent shift from FX gains to FX losses which could signal emerging currency exposure."
+    },
+    {
+      "flag_number": 2,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "bd6ba6ec6fdeb204",
+        "current": "e0d2a4db1d92d103",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period provided a specific strategic narrative about relocating R&D from Singapore to Camarillo, California, establishing a 'Global Product Development and Materials Science Center.' The current period replaces this with a generic expense table and boilerplate definition of R&D costs. The removal of the strategic R&D narrative eliminates insight into the company's organizational direction and investment thesis around its product development capabilities.",
+      "investigation_action": "Determine whether the R&D relocation to Camarillo is complete or if there were setbacks. The 28.8% decrease in R&D spending ($510K to $363K) combined with the removal of strategic R&D narrative could signal a material reduction in innovation investment that management is not explicitly addressing."
+    },
+    {
+      "flag_number": 3,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "8e520bca54720bf0",
+        "current": "21cdbce31afe4a21",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained extensive detail about product technologies (force-sensing, HMI platforms), specific applications (vehicle entry, collision detection, biological monitoring), and the 2022 SPEC/KWJ acquisition for gas and environmental sensing. The current period condenses all of this into a single vague sentence: 'Our R&D team focuses both on internal design development...and on custom design development.' This is a significant reduction in product and market visibility that removes an investor's ability to understand the company's competitive positioning and product portfolio breadth.",
+      "investigation_action": "Investigate whether any product lines (particularly the gas/environmental sensing business from the SPEC/KWJ acquisition) have been discontinued, divested, or materially underperformed. The removal of all product-specific language is a red flag that warrants direct inquiry to management about the status of each previously disclosed product platform."
+    },
+    {
+      "flag_number": 4,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "c8155ac583ffab49",
+        "current": "c9ede3a068d7e2c0",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included the RSU vesting schedule table with weighted-average grant-date fair value ($4.35), specific unrecognized compensation cost ($114,000), and the death/disability severance provisions for Mr. Bronson. The current period drops the RSU detail table and the death/disability termination provisions while retaining the good-reason/without-cause and change-in-control provisions. However, some of the missing RSU detail may appear in updated notes elsewhere in the filing (the current period does reference 31,250 RSUs), and the death/disability provisions may be considered less material. The addition of BKF Capital dual-role disclosures for both Bronson and Hoffman is notable new information.",
+      "investigation_action": "Confirm whether the RSU vesting table and unrecognized compensation cost disclosure appear in the full notes to financial statements. Verify that Mr. Bronson's death/disability severance terms remain unchanged by cross-referencing the employment agreement filed as an exhibit."
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "dc731ab47e5b8a7a",
+        "peer": "ad8e270077bbcdc8"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "LINK has meaningful international revenue exposure (Asia/Middle East: $793K and Europe: $2,455K for H1 2025, representing over 50% of total revenue) and manufacturing/supply chain relationships abroad, yet provides zero discussion of tariffs, trade policy, or geopolitical risks in its MD&A. TACT, a close peer, provides extensive and specific disclosure about Thailand tariffs (19%), trade policy uncertainty, and foreign exchange impacts. LINK's silence on these topics despite clear geographic exposure is a material gap\u2014the tax-only discussion in the flagged block is not a substitute for operational trade risk disclosure.",
+      "investigation_action": "Determine LINK's manufacturing footprint and supplier locations, particularly in countries subject to recent tariff actions. Assess whether LINK's gross margin trajectory has been impacted by tariffs and whether the company has passed through or absorbed any tariff-related costs. Probe management on why no tariff or trade risk discussion is included."
+    },
+    {
+      "flag_number": 6,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "66dec8b79725b90a",
+        "peer": "1db70aa6bf97ed48"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "TACT specifically discloses that tariffs 'will impact certain goods that are assembled and imported from our contract manufacturer in Thailand' and that they passed 5% price increases to customers. LINK's flagged block only shows boilerplate cost accounting policies and lease costs, with no discussion of cost pressures from tariffs, input cost inflation, or supply chain disruptions. However, the flagged LINK block is from accounting policies rather than the MD&A cost discussion section, so the comparison may be imperfect. Still, given LINK's international operations and the absence of any tariff/cost pressure discussion anywhere in the filing, this is concerning.",
+      "investigation_action": "Review LINK's full MD&A for any discussion of gross margin drivers, input cost trends, or supply chain cost pressures. Compare LINK's gross margin trends (45.0% Q2 2025 vs. 45.0% Q2 2024) to determine whether cost pressures are being absorbed without disclosure."
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cda9c28734f19e6a",
+        "peer": "4381cb02dec2cf45"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LINK actually provides substantial IP indemnification disclosure, including details about development and supply agreements, manufacturing service agreements, and the unlimited nature of these indemnities. TACT's disclosure about IP risks from Asian outsourcing is more risk-factor oriented, but LINK's approach of disclosing indemnification commitments in the legal/contingencies section is a legitimate alternative structure. LINK also explicitly states it is not party to any legal proceedings. The difference reflects disclosure style rather than evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "238b692f7ddc9535",
+        "peer": "eb4e8543f13eb311"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually flags TACT as the less transparent party, noting LINK provides 'detailed quantitative revenue data and customer concentration disclosures.' LINK's block includes comprehensive revenue breakdowns by geography, customer concentration percentages, and accounts receivable concentration data. This flag appears to be a false positive where LINK is the more transparent party.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "fc8df2e0e2ce0065",
+        "peer": "92a682225871574f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags WETH as the less transparent party, not LINK. LINK provides detailed cash flow disclosure including preferred stock dividend payments ($200K per half-year), capital expenditure details ($34K), and clear statements about dividend policy expectations. This flag is actually pointing to LINK's disclosure strength, not weakness. The peer comparison is also questionable given the very different business profiles (WETH appears to be a China-based company with RMB-denominated commitments).",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a29c01dea91284e4",
+        "peer": "eae4096fbe2b6bcf"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags WETH (Company B) as the less transparent party for providing only a brief statement about redoing an audit, while LINK provides extensive and detailed accounting policy disclosures. LINK's disclosure is comprehensive, covering revenue recognition (ASC 606 five-step model), stock-based compensation (Black-Scholes methodology), lease accounting, fair value hierarchy, and tax policy. This flag does not indicate any disclosure degradation by LINK.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "66dec8b79725b90a",
+        "peer": "f8d9bd9cf39d8870"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The peer block from WETH contains only a generic statement about a stock repurchase program, which is entirely unrelated to cost or margin pressure. This appears to be a poorly matched comparison. LINK's block shows detailed lease cost breakdowns. The peer (WETH) is also a very different type of company (Chinese operations, different industry subsector), making the comparison uninformative for assessing LINK's disclosure quality on cost/margin topics.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 12,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1abe4c8aef75da5d",
+        "peer": "70d16a2205fb9e53"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "WETH's flagged block discusses auditor dismissal risks impacting capital market access, which reflects WETH's unique situation (BF Borgers dismissal). LINK's block contains specific quantitative details about borrowing rates (9.5% incremental borrowing rate), imputed interest ($156K), and acquisition price (GB\u00a3250,000). The two companies face fundamentally different financing situations, and LINK's disclosure is not deficient\u2014it provides the relevant details for its actual financing structure. LINK currently has no debt, so extended debt risk discussion would be unnecessary.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 13,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "dc8b897b7cf58a2b",
+        "peer": "8bc7aa8b41c83562"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason again flags WETH as the less transparent party. LINK provides extensive financial detail including full equity reconciliation tables, EPS calculations, RSU details, deferred tax asset analysis, goodwill rollforward, and accrued liabilities breakdowns. WETH's block is merely a boilerplate repurchase program disclaimer. This flag does not indicate any LINK disclosure degradation.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "LINK exhibits genuine temporal disclosure degradation in three key areas: removal of other income/expense detail, elimination of strategic R&D narrative, and wholesale stripping of product/technology descriptions from MD&A. However, the majority of peer divergence flags were false positives\u2014many actually highlighted LINK as the more transparent party relative to poorly matched peers. The genuine concerns center on whether the company is becoming less forthcoming about its operational strategy and product portfolio at a time when it remains unprofitable (H1 2025 net loss of $705K).",
+    "top_concerns": [
+      "Complete removal of product technology descriptions, application details, and acquisition-related product information from MD&A (Flag 3) \u2014 may signal product line problems or strategic pivot being concealed",
+      "Absence of any tariff, trade policy, or geopolitical risk discussion despite over 50% of revenue derived from international markets (Flag 5) \u2014 material gap versus industry peers",
+      "Removal of strategic R&D narrative about Camarillo facility combined with 28.8% R&D spending decline (Flag 2) \u2014 may indicate significant retrenchment in innovation investment"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 2,
+    "dismissed_count": 8
+  },
+  "_meta": {
+    "ticker": "LINK",
+    "model": "claude-opus-4-6",
+    "input_tokens": 13581,
+    "output_tokens": 3663,
+    "timestamp": "2026-04-09T12:12:06.758786"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "828a76d4d9b066f2",
+        "current": "44c362f2bd2db3b5",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period filing included specific dollar amounts for income tax expense ($40K vs $200K quarterly, $174K vs $321K year-to-date), detailed deferred tax asset/liability changes ($255K increase in DTA, $87K increase in DTL), and substantive explanations for tax expense variations including R&D credits and capitalized R&D expenses. The current period filing strips all of this out entirely \u2014 there is no income tax expense discussion, no deferred tax asset/liability disclosure, and no explanatory narrative. This is not a matter of different reporting periods having less to say; Q1 filings should still include basic tax expense figures and deferred tax movements.",
+      "investigation_action": "Request from SOTK management why income tax expense amounts and deferred tax asset/liability detail were omitted from the Q1 FY2026 filing. Review the financial statements themselves to see if tax figures are embedded there, and compare the level of MD&A tax discussion in prior Q1 filings to determine if this is an anomalous omission."
+    },
+    {
+      "flag_number": 2,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "149f00833f02bbe5",
+        "current": "307db1ee9f1029cd",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed a specific, material California sales tax liability: notification from the state, an $86K collection from customers, a $138K accrual for estimated taxes/penalties/interest, and confirmation that all necessary returns had been filed. The current period replaces this with entirely unrelated boilerplate about deferred tax assets from budget legislation and a future ASU effective date. There is no update on the resolution of the California sales tax matter \u2014 whether the accrual was sufficient, whether penalties were assessed, or whether the matter is closed. This disappearance of a known contingent liability without closure disclosure is a significant red flag.",
+      "investigation_action": "Directly inquire with SOTK management about the status and resolution of the California sales tax liability. Determine whether the $138K accrual was adequate, whether additional amounts were paid, and why no update was provided in the current filing. Check the balance sheet for changes in accrued liabilities that might indicate a quiet resolution or expansion of the liability."
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "44c362f2bd2db3b5",
+        "peer": "367bf487d89fd6f9"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "TRT provides substantial discussion of deferred tax asset realizability, management's assessment methodology, GILTI accounting, ETR drivers, and the impact of lower deferred tax assets in Singapore operations. SOTK's corresponding disclosure contains only a net unrealized loss figure, equipment purchase amounts, and generic ASU boilerplate. While some divergence is expected given different business profiles, SOTK's near-total absence of tax discussion in MD&A \u2014 particularly given the detailed disclosure it provided in prior periods (Flag 1) \u2014 suggests this is disclosure degradation rather than a legitimate business difference.",
+      "investigation_action": "Compare SOTK's effective tax rate and deferred tax positions across recent quarters to identify whether there are unexplained movements that would normally warrant MD&A discussion. Benchmark against TRT and other peers to establish the expected level of tax-related MD&A disclosure for companies of similar size and complexity."
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c98de0705facd451",
+        "peer": "95d9e88aa16390d8"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "SOTK does mention tariffs, international sales (31% outside US/Canada), and inflationary/supply chain pressures in its forward-looking statement risk factors, but only as a list of generic considerations. TRT provides granular detail on currency impact ($235 unrealized exchange loss), US-China trade tensions shifting demand, CHIPS Act implications, and specific tariff impacts. However, SOTK's international exposure profile (31% non-US/Canada) is materially different from TRT's heavy Asian operations, and some divergence is expected. SOTK's mention of tariffs and the customer payment modification due to 'a shift in their production plans from overseas to the United States' actually hints at tariff impact without elaborating, which is the more concerning aspect.",
+      "investigation_action": "Investigate whether SOTK's customer payment modification linked to reshoring production plans reflects broader tariff-driven demand disruption. Assess SOTK's exposure to customers with significant Asian manufacturing operations and whether tariff impacts on those customers could cascade to SOTK's revenue."
+    },
+    {
+      "flag_number": 5,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1b4c594836cfbf7a",
+        "peer": "c4ddc15d2b5a8a85"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "TRT's detailed warranty disclosure reflects its specific business model of selling customized reliability testing equipment where warranty obligations are material and require separate performance obligation treatment under ASC 606. SOTK manufactures ultrasonic nozzle systems and coating solutions, which likely have a fundamentally different warranty risk profile. The comparison of promotional product descriptions against warranty policy disclosures is not an apples-to-apples comparison. Warranty disclosures are typically found in financial statement notes rather than MD&A, and this flag conflates marketing language with risk disclosure in a misleading way.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f45f04f93d12f051",
+        "peer": "ccace6bb7bb6139f"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "TRT discloses specific supply chain disruptions ($745 quarterly revenue decline from supply chain delays), inventory management challenges, short lead time issues, and inflationary cost pressures with concrete detail. SOTK provides only generic distribution network language and a cryptic reference to a customer requesting a payment modification due to 'a shift in their production plans from overseas to the United States,' which appears to be a tariff/reshoring-related supply chain disruption described without transparency. The customer payment timing change could indicate a material contract renegotiation or cash flow impact that is being understated.",
+      "investigation_action": "Investigate the specifics of the customer payment modification mentioned in SOTK's filing \u2014 the size of the order, the magnitude of payment deferrals, and whether this customer represents a significant portion of revenue or backlog. Assess whether SOTK's supply chain for components faces similar disruptions to those reported by TRT and other industrial peers."
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "SOTK's Q1 FY2026 filing shows significant disclosure degradation compared to its own prior filing, particularly the complete removal of income tax expense detail, deferred tax asset/liability discussion, and the California sales tax liability update. The combination of temporal degradation (Flags 1-2) reinforced by peer divergence (Flag 3) creates a pattern consistent with deliberate reduction in transparency rather than routine editorial changes. The most concerning aspect is the disappearance of a known contingent liability (California sales tax) without any resolution disclosure.",
+    "top_concerns": [
+      "Complete removal of income tax expense amounts, deferred tax asset/liability detail, and explanatory tax narrative from MD&A compared to prior period",
+      "Disappearance of California sales tax liability disclosure ($138K accrual, $86K customer collections) with no update on resolution or status",
+      "Understated discussion of customer payment modification related to reshoring/tariff impacts, which may signal material contract or cash flow disruption"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 2,
+    "dismissed_count": 1
+  },
+  "_meta": {
+    "ticker": "SOTK",
+    "model": "claude-opus-4-6",
+    "input_tokens": 5186,
+    "output_tokens": 2154,
+    "timestamp": "2026-04-09T12:30:55.288541"
+  }
+}

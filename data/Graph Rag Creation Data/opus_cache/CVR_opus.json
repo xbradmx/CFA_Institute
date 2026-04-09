@@ -1,0 +1,93 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "76423d7ede206a63",
+        "current": "b9e494f3df59dd26",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed precise dollar amounts ($3,798,658 vs. $4,629,190), an exact decline ($830,532 / 17.9%), and specific causal factors ('slowdown in North American vehicle production and continued volatility across the Midwest automotive manufacturing sector'). The current period block replaces this entirely with a generic product description of riveting machines at the Tyrone facility that contains zero quantitative information about automotive segment performance. This is a clear removal of material quantitative detail about what the company itself identifies as its 'primary market.'",
+      "investigation_action": "Analyst should demand updated automotive segment revenue figures for Q2 2025 vs. Q2 2024, investigate whether the automotive sales decline accelerated (making omission motivated), and check whether the 10-Q's revenue discussion elsewhere provides comparable segment-level granularity or if it has been systematically stripped."
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c9a8dba6e279f8d0",
+        "peer": "9ce747aa06deb2ea"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason states that NNBR is downplaying risk relative to CVR, meaning the flag is about the peer's deficiency, not CVR's. CVR actually provides extensive and specific disclosure here \u2014 including a $1,100,000 contingent liability settlement, $1,775,433 valuation allowance on deferred tax assets, $9.456M federal NOL carryforwards, a disclosed material weakness, and language about 'strategic actions aimed at improving liquidity and ensuring business continuity.' CVR is the more transparent filer on this topic. The NNBR excerpt is a single sentence about intangible asset amortization with no relevance to financial sustainability.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "950c72928715c385",
+        "peer": "8f2ac6b2b58c91ed"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "CVR's human capital discussion is limited to announcing a new SVP of Sales and Marketing and a generic intention to 'remain actively engaged with current and potential customers.' There is no discussion of workforce size, turnover, headcount changes, or labor cost pressures, despite being a Midwest manufacturer facing automotive production declines. NNBR at least discloses headcount reductions driving a $1.4M SGA decrease. However, the peer comparison is modest \u2014 NNBR's disclosure is itself minimal \u2014 and CVR is a much smaller company where a single hire may be proportionally significant. The concern is real but the gap is not dramatic.",
+      "investigation_action": "Analyst should probe whether CVR has undertaken workforce reductions in response to the automotive downturn flagged in Flag 1, and whether labor costs or availability at the Midwest facilities are impacting margins. Check the annual 10-K for fuller human capital disclosures."
+    },
+    {
+      "flag_number": 4,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1d35cd22fc782b15",
+        "peer": "856f2fabdd3dee32"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags SPXC for being less detailed than CVR, not CVR for being opaque. CVR is actually commendably transparent on this topic: it discloses a material weakness in inventory valuation controls dating to 2023, states disclosure controls were 'not effective,' and details remediation plans including 'timely review and update of new accounting standards and guidance applicable to inventory valuation' and 'subsequent review and reconciliation of variance accounts.' SPXC's more generic disclosure is appropriate for a company that may not have a material weakness. The flag is inverted \u2014 CVR is the more forthcoming filer here.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b9e494f3df59dd26",
+        "peer": "d9d2886cf0c1d0e7"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "CVR is a small Midwest manufacturer with concentrated exposure to the automotive sector and has already disclosed a 17.9% automotive sales decline in the prior period (Flag 1), yet its current filing provides no discussion of supply chain risks, raw material sourcing challenges, or tariff/geopolitical impacts. SPXC, a larger and more diversified industrial peer, explicitly discusses 'actions to address potential material sourcing challenges' and monitoring 'availability of certain raw materials.' CVR's current block is a generic product description with no risk content whatsoever. Given CVR's concentration in automotive fasteners and assembly equipment, the absence of any supply chain risk discussion is notable.",
+      "investigation_action": "Analyst should investigate CVR's raw material sourcing (steel, fastener inputs), exposure to tariffs on imported materials, whether automotive OEM customers are adjusting orders due to their own supply chain disruptions, and whether the omission correlates with deteriorating input cost dynamics the company prefers not to quantify."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "CVR exhibits a genuine disclosure degradation pattern on supply chain topics, with specific quantitative detail about its automotive segment sales decline (17.9%, $830K) removed between Q1 and Q2 filings and replaced with generic product descriptions. The company is commendably transparent on accounting/audit issues (disclosing a material weakness) and financial sustainability risks, but the selective removal of automotive performance metrics and absence of supply chain risk discussion \u2014 despite concentrated automotive exposure \u2014 raises concerns about management's willingness to quantify deteriorating end-market conditions.",
+    "top_concerns": [
+      "Removal of specific automotive segment revenue figures and percentage declines between Q1 and Q2 filings, suggesting potential acceleration of the sales downturn that management prefers not to disclose",
+      "Complete absence of supply chain risk discussion despite being a Midwest manufacturer with concentrated automotive exposure during a period of tariff uncertainty and production volatility",
+      "Unremediated material weakness in inventory valuation internal controls persisting since 2023, combined with going-concern indicators ('strategic actions aimed at improving liquidity and ensuring business continuity') and $9.5M in federal NOL carryforwards"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 1,
+    "dismissed_count": 2
+  },
+  "_meta": {
+    "ticker": "CVR",
+    "model": "claude-opus-4-6",
+    "input_tokens": 4513,
+    "output_tokens": 1801,
+    "timestamp": "2026-04-09T11:55:27.410276"
+  }
+}

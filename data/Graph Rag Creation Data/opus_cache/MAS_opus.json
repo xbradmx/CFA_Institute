@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "b27ba651363453ad",
+        "current": "5e6f765a20d28df9",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period filing included a full quantitative warranty liability rollforward table with beginning balance ($81M), accruals ($9M), settlements ($10M), and ending balance ($82M) across two periods. The current filing retains only the single boilerplate sentence about product safety regulations. This is a material removal of specific dollar-amount disclosure that investors use to assess warranty exposure trends and product quality risks.",
+      "investigation_action": "Verify whether the warranty rollforward table was relocated to the notes to condensed consolidated financial statements (e.g., a separate Note) rather than removed entirely. If it is truly absent from the entire Q2 filing, request an explanation from IR as to why this quantitative disclosure was dropped, and monitor whether warranty accruals are growing relative to settlements."
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ceabcd3420bf3bf1",
+        "peer": "6c778c51da0bd31d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason claims MAS provides 'minimal and generic discussion' but the actual extracted text shows MAS offering substantial detail: specific percentage impacts from tariffs, commodity costs, selling price increases, Kichler divestiture effects, and segment-level operating profit drivers. BW (the peer) is a fundamentally different business (power/energy equipment) with different cost structures. MAS's disclosure on cost and margin pressures is actually quite thorough and specific.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "58d53053ad6762cf",
+        "peer": "98e6262bf8d1c7c7"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "MAS's litigation disclosure is largely boilerplate, listing generic categories of matters (advertising, contract, employment, etc.) without quantifying any specific exposures, reserves, or settlement activity. While the statement that outcomes are 'remote' provides some comfort, BW discloses a specific $6.5M legal settlement and discusses OBBB regulatory interpretation impacts with more specificity. However, this could reflect genuinely different litigation profiles rather than obfuscation. MAS's use of 'remote' likelihood language warrants attention since it is the lowest threshold under ASC 450.",
+      "investigation_action": "Review MAS's full Note L to condensed consolidated financial statements (referenced but not included here) to determine if substantive detail on specific legal matters exists there. Compare the 'remote' characterization against any recent product recall activity or class action filings involving MAS brands."
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8869139007eff2d5",
+        "peer": "3af2fc6588466346"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The MAS text provided here specifically addresses the supplier finance program mechanism, which is a narrow disclosure obligation (ASU 2022-04). MAS addresses supply chain risks extensively elsewhere in the filing, including detailed discussion of elevated commodity costs, tariff impacts on its Plumbing Products segment, and sourcing changes (visible in Flag 2 and Flag 7 extracts). BW is a completely different type of industrial company (power generation equipment) with distinct supply chain dynamics. The comparison is not apples-to-apples.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3aa83a963e6bb4a5",
+        "peer": "f89c05e296b4507f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 the screening reason flags OFLX for providing minimal disclosure while MAS provides detailed, specific information. Since we are evaluating MAS's disclosure quality, this flag actually shows MAS performing well: it details adoption timelines, specifies that ASU 2023-09 and ASU 2023-07 do not impact financial position, discusses the ERP system upgrade, and confirms effective disclosure controls. This is a positive signal for MAS, not a degradation concern.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f009dc088d9d1510",
+        "peer": "1623d2a66b06b673"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag again shows MAS as the stronger discloser, providing extensive detail on the 2022 Credit Agreement ($1.0B commitment, covenants of 4.0x net leverage and 2.5x interest coverage, $46M outstanding at 5.551%, aggregate debt fair value of $2.7B vs. $3.0B carrying value, share repurchase details). OFLX has a simple $15M line of credit with no borrowings. The comparison reflects genuine scale and complexity differences, not disclosure evasion by MAS.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3516f8a496b1c0e5",
+        "peer": "45486b6c416cf9ed"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies OFLX as the weaker discloser, not MAS. MAS provides substantive discussion of tariff impacts (particularly China-related tariffs on Plumbing Products), macroeconomic conditions affecting residential repair/remodel activity, and a comprehensive list of forward-looking risk factors. This is a positive indicator for MAS's geopolitical risk disclosure. OFLX's limited foreign currency commentary reflects its smaller international footprint rather than MAS disclosure weakness.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5e6f765a20d28df9",
+        "peer": "952e168f8dc92d26"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag concerns OFLX's lack of product safety disclosure compared to MAS, not a deficiency in MAS's filing. MAS explicitly acknowledges product safety regulations, recalls, and direct liability claims. OFLX (Omega Flex) manufactures flexible piping products with a different product liability profile. The flag does not indicate any disclosure degradation by MAS; rather, MAS is the more transparent party in this comparison.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "MAS's disclosure quality is generally strong, with detailed quantitative breakdowns of operating results, segment performance, debt terms, and risk factors. The only genuine concern is the removal of the warranty liability rollforward table from the Q2 2025 filing, which eliminated specific dollar-amount tracking of warranty accruals, settlements, and balances. The majority of peer comparison flags actually demonstrate MAS as the superior discloser relative to its comparators.",
+    "top_concerns": [
+      "Removal of the quantitative warranty liability rollforward table from Q2 2025 filing \u2014 verify whether this was relocated to notes or genuinely eliminated",
+      "Boilerplate litigation disclosure using 'remote' likelihood characterization \u2014 confirm Note L contains adequate detail on specific material matters",
+      "Monitor whether warranty-related disclosures continue to thin in future filings, which could signal emerging product quality issues being obscured"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 1,
+    "dismissed_count": 6
+  },
+  "_meta": {
+    "ticker": "MAS",
+    "model": "claude-opus-4-6",
+    "input_tokens": 7673,
+    "output_tokens": 2179,
+    "timestamp": "2026-04-09T12:13:53.290543"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "regulatory_legal",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "5e81205f1b9eebb1",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed sentence is a single boilerplate line about cash requirements including personnel costs and litigation settlements. This is a generic liquidity disclosure, not a specific litigation risk or quantified legal exposure. It likely was consolidated or slightly repositioned in the filing rather than deliberately omitted to hide material information.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "b326176f9731039b",
+        "current": "36ff262fa38761e7",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason claims the litigation settlement language was 'replaced' by tax discussion, but these appear to be entirely different sections of MD&A that were matched incorrectly. The prior text about cash requirements for litigation is a liquidity discussion, while the current text covers tax rate variability \u2014 they are not substitutes for each other. The litigation language likely appears elsewhere or was dropped as a minor boilerplate item (same as Flag 1).",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "6cde695729763571",
+        "current": "bb1eedf15f45e96a",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing disclosed specific dollar amounts for Russia operations ($113M cash, $131M other current assets, $72M PP&E, $53M liabilities as of March 31, 2025), but the current filing's matched text contains no Russia-specific financial detail \u2014 it instead discusses generic items like foreign exchange losses and amortization. This is a material quantitative disclosure that disappeared from the Risk Factors section. Notably, the MD&A section (as seen in Flag 4's target text) does contain updated Russia figures ($103M cash, $151M other current assets, $78M PP&E, $67M liabilities as of June 30, 2025), which partially mitigates the concern but does not explain why it was removed from Risk Factors specifically.",
+      "investigation_action": "Verify whether the Russia operations financial detail was intentionally relocated from Risk Factors to MD&A only, and assess whether the removal from Risk Factors dilutes the prominence of this material geopolitical exposure. Monitor whether the Russia asset balances (which grew from $263M net to $265M net) continue to be disclosed in future filings."
+    },
+    {
+      "flag_number": 4,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "07ae80d1b21271e4",
+        "peer": "25811ad98ba0b697"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is about DNOW allegedly downplaying risks relative to WFRD, not about WFRD degrading its own disclosure. WFRD provides detailed Russia exposure and Argentina Blue Chip Swap mechanism disclosures because it has material operations in those countries. DNOW does not have comparable Russia or Argentina operations, so the divergence reflects genuine business differences rather than disclosure evasion by either party. The flag is misdirected for the purpose of monitoring WFRD's disclosure quality.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8502ab1481cb1ab8",
+        "peer": "da7987daa8e66afd"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag highlights that DNOW provides less granular revenue risk disclosure than WFRD, but WFRD is the company being monitored and its own disclosure is exceptionally detailed \u2014 providing segment-level revenue breakdowns, geographic attribution of declines, product-line impact percentages, and forward-looking activity guidance. DNOW also provides substantive rig count data and revenue figures by segment. The divergence largely reflects differences in business complexity (WFRD has four reportable segments across many more geographies) rather than disclosure evasion. WFRD's disclosure quality on this topic is strong.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6fa51d34c1dc1aba",
+        "peer": "9d8b1d126e90c68d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag claims NOV is downplaying supply chain risks relative to WFRD, but this is about NOV's disclosure, not WFRD's. WFRD provides substantive discussion of trade disputes, supply chain challenges, and geopolitical disruptions. The peer text shown for NOV is simply a rig count statistic that was likely pulled from a different section \u2014 it does not represent NOV's complete supply chain disclosure. This flag does not indicate any degradation in WFRD's own filings.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "bad877f0f735faf7",
+        "peer": "f3195ad630f6569f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag notes that NOV provides only a generic boilerplate statement about furnishing debt instruments on request while WFRD provides detailed debt disclosures. However, this reflects WFRD's strong disclosure practices \u2014 WFRD details its $1.54B of 2030 Senior Notes, interest payments, factoring arrangements, credit agreement structure, and guarantees. The NOV excerpt is clearly from the Exhibits section, not from its substantive debt discussion. This flag does not indicate any degradation in WFRD's disclosure.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "WFRD's disclosure quality remains robust overall, with exceptionally detailed segment-level revenue attribution, geographic breakdowns, Russia exposure quantification, and comprehensive debt financing disclosures. The only potentially genuine concern is the apparent removal of specific Russia financial figures from the Risk Factors section, though these figures do appear in the MD&A section. The majority of flags were either misdirected peer comparisons or minor boilerplate changes.",
+    "top_concerns": [
+      "Monitor whether Russia operations financial detail ($103M cash, $151M other current assets, $78M PP&E, $67M liabilities) continues to appear in MD&A and whether its removal from Risk Factors signals a deliberate de-emphasis of this geopolitical exposure",
+      "Track whether litigation settlement language reappears in future filings or if its absence signals a shift away from disclosing legal cost obligations in liquidity discussions",
+      "Watch for any future reduction in the granular segment and geographic revenue attribution that currently distinguishes WFRD's disclosure quality from peers"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 0,
+    "dismissed_count": 6
+  },
+  "_meta": {
+    "ticker": "WFRD",
+    "model": "claude-opus-4-6",
+    "input_tokens": 9691,
+    "output_tokens": 1963,
+    "timestamp": "2026-04-09T12:42:35.944424"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "e8f2a4b907feccbe",
+        "current": "14ca01073d86e0a4",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period included specific commitments about warehouse capabilities enhancing next-day delivery, significant investment in digital solutions, leadership team strengthening, and an explicit assurance about 'ample capacity to meet our customer needs.' The current period strips all of this to a single generic sentence about improving 'overall service, production efficiencies and safety.' The removal of the capacity assurance language ('continue to ensure we have ample capacity to meet our customer needs') is particularly notable as it eliminates a forward-looking commitment that investors would track.",
+      "investigation_action": "Analyst should probe whether the removal of the 'ample capacity' language signals emerging capacity constraints or delivery issues, and whether the digital investment and leadership initiatives mentioned previously have stalled or been deprioritized. Request management commentary on next-day delivery capabilities and customer service metrics."
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1b05ec591196b8fe",
+        "peer": "9081774d61026916"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason claims LCUT is downplaying financial sustainability risks relative to SSD, but this flag is supposed to evaluate SSD's disclosure quality. SSD actually provides highly detailed disclosure including specific capex ranges ($140-$160M), operating margin targets (\u226520%), growth targets (250 bps above housing starts), effective tax rate ranges, and shareholder return data ($447.7M returned). SSD's disclosure here is exemplary, not degraded. The peer divergence reflects LCUT's weaker disclosure and different business circumstances (goodwill impairment), not an SSD problem.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c1b9c425ef069bd0",
+        "peer": "02ab9988bddb5971"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason states LCUT is downplaying cost/margin risks compared to SSD, meaning SSD is the better discloser here. SSD provides extensive detail on tariff impacts, price increases effective June 2, 2025, specific margin movements (gross margin 35.7% vs 35.9%, 47.1% vs 47.2%), steel price trends, and labor/freight/warehouse cost pressures. This flag identifies a peer's disclosure weakness, not a degradation in SSD's own disclosure quality.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d9bbe6bf207aaa74",
+        "peer": "5a65ac5737e543e7"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "SSD provides only two sentences of boilerplate legal disclosure ('from time to time, the Company is involved in various legal proceedings'), while LCUT discloses a detailed EPA Superfund matter with quantified remediation costs ($7.3M for OU-1, $17.3M for OU-2) and a $6.4M legal settlement gain. However, SSD and LCUT operate in fundamentally different industries (construction products vs. housewares/silversmithing), so LCUT's specific environmental liability at a Puerto Rico manufacturing facility is not necessarily indicative that SSD faces similar risks. Still, SSD's legal disclosure is notably sparse for a manufacturing company with operations across multiple jurisdictions.",
+      "investigation_action": "Analyst should verify whether SSD faces any environmental liabilities at its manufacturing facilities, particularly given its facility expansions in Columbus, OH and Gallatin, TN. Review prior 10-K filings for any previously disclosed legal matters that may have been dropped from quarterly filings."
+    },
+    {
+      "flag_number": 5,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2f1c2d97dcaa6db2",
+        "peer": "760f100eaab72231"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason identifies LCUT as the company with minimal supply chain disclosure, not SSD. SSD explicitly discusses reducing reliance on outsourced finished goods and component products through facility investments. LCUT's disclosure that 'inventory consists principally of finished goods sourced from third-party suppliers' actually reveals high supply chain dependency with minimal risk discussion. This flag points to LCUT's disclosure gap, not SSD's.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "14ca01073d86e0a4",
+        "peer": "4b513c6aef871fa6"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "HLMN quantifies its geographic sourcing exposure (approximately 33% China, 33% North America, 33% other) and explicitly discusses tariff mitigation via alternative suppliers, while SSD provides only a generic statement about reducing reliance on outsourced products. SSD does not disclose what percentage of its products are sourced internationally, its exposure to tariff-affected supply chains for fasteners and anchors, or specific geographic sourcing breakdowns. Given that SSD acknowledges tariffs affecting 'a portion of our fastener and anchors sales' in its cost/margin discussion, the absence of quantified supply chain geography is a meaningful gap.",
+      "investigation_action": "Analyst should request clarity on SSD's geographic sourcing breakdown, particularly for fasteners and mechanical anchors that are subject to tariffs. Determine what percentage of SSD's COGS is exposed to international sourcing and tariff risk, and whether the company has diversified its supplier base."
+    },
+    {
+      "flag_number": 7,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c1b9c425ef069bd0",
+        "peer": "3a93427b106327d9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies HLMN as providing minimal tariff-related cost pressure disclosure compared to SSD's detailed discussion. SSD provides extensive quantitative detail on margin impacts, price increase timing, steel cost trends, and segment-level margin movements. The screening reason explicitly states HLMN is 'downplaying a clearly material risk' \u2014 this is a HLMN disclosure concern, not an SSD degradation signal.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2f1c2d97dcaa6db2",
+        "peer": "c28ed9c8fbe82a68"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "This flag substantially overlaps with Flag 6 but uses a different HLMN block. HLMN discloses that it imports 'a majority of its products' with a 33/33/33 geographic split and discusses active supplier diversification to mitigate tariffs. SSD's single-sentence disclosure about reducing reliance on outsourced products lacks comparable specificity on import dependency, geographic concentration, or tariff mitigation actions for its supply chain. However, SSD is primarily a domestic manufacturer (steel-based construction products) with a different supply chain profile than HLMN, which is an importer of finished goods, so the comparison has limited applicability.",
+      "investigation_action": "Analyst should assess the degree to which SSD's fastener and anchor product lines rely on imported components versus domestic manufacturing, and whether the company's facility expansion projects are partly motivated by tariff-driven reshoring. Cross-reference with tariff disclosures elsewhere in the filing."
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "SSD generally provides strong, detailed financial disclosure with specific margin figures, capex ranges, and operational metrics that exceed most peers. The one genuine temporal degradation flag involves the removal of specific capacity assurance and investment initiative language from facility expansion discussions. Several peer divergence flags were mis-oriented, actually highlighting SSD's superior disclosure relative to peers rather than SSD's shortcomings.",
+    "top_concerns": [
+      "Removal of 'ample capacity to meet customer needs' language and digital investment/leadership commitments from facility expansion discussion (Flag 1) \u2014 may signal emerging capacity or execution concerns",
+      "Absence of quantified geographic sourcing breakdown and tariff exposure for imported product lines (fasteners/anchors), despite acknowledging tariff impacts elsewhere in the filing (Flags 6, 8)",
+      "Minimal legal/regulatory disclosure for a multi-jurisdiction manufacturer with active facility construction projects (Flag 4)"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 3,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "SSD",
+    "model": "claude-opus-4-6",
+    "input_tokens": 9835,
+    "output_tokens": 2422,
+    "timestamp": "2026-04-09T12:31:45.202914"
+  }
+}

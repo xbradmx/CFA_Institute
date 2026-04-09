@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "87f804444c1eebe3",
+        "current": "43fd4d85fdbb1ee0",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included a detailed enumeration of specific adjustments comprising non-GAAP measures (e.g., 'amortization of intangible assets related to acquisitions, impairment, restructuring and reorganization charges, acquisition costs, including transaction costs and the amortization of the inventory step-up, property losses and recoveries, actuarial gains and losses'). The current period truncates this to simply listing the non-GAAP measure names without defining their components. However, this is a common 10-Q practice of abbreviating definitions that are fully disclosed in the 10-K, and the current filing explicitly references no changes to critical accounting policies from the 10-K. This is a borderline case because the detail reduction is real but may be editorially defensible.",
+      "investigation_action": "Verify that the full non-GAAP reconciliation definitions remain unchanged in the most recent 10-K filing and confirm that no new adjustment categories have been introduced in the current quarter that would require fresh disclosure."
+    },
+    {
+      "flag_number": 2,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "c18d34bb2d9e820a",
+        "current": "f35ced92092c10ac",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period specifically mentioned 'industrial drivetrain services, which return equipment to like-new condition' and explicitly referenced potential restructuring, repositioning, or divestiture of 'underperforming product lines or assets.' The current period replaces this with generic language about a 'continuous improvement culture' focused on 'increasing efficiency, lowering costs, eliminating waste.' The removal of the specific language about restructuring or divesting underperforming assets could signal that the company is obscuring ongoing operational challenges, though it could also reflect that the prior disclosure was boilerplate that was consolidated.",
+      "investigation_action": "Investigate whether any restructuring, repositioning, or divestiture actions are underway or planned for the Industrial Motion segment, particularly the drivetrain services business, and whether the removal of this language correlates with declining margins in that product line."
+    },
+    {
+      "flag_number": 3,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "43fd4d85fdbb1ee0",
+        "peer": "0bb4fffdca3582ab"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted \u2014 it flags ZBRA as less transparent, not TKR. TKR actually provides a reasonable critical accounting policies section stating no significant changes from its 10-K. ZBRA's disclosure focuses on new accounting pronouncements (ASU 2023-09 and ASU 2024-03), which is a different disclosure requirement. These are fundamentally different companies (industrial bearings vs. enterprise technology) with different accounting complexity profiles, making this peer comparison of limited value.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "186fa7f58a873be5",
+        "peer": "cb72f6956191d3f2"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "TKR actually provides robust financial sustainability disclosure including specific capital expenditure guidance (3.5% of sales), pension contribution figures ($27.3 million YTD, ~$36 million full year), adjusted EBITDA reconciliation with detailed line items, and a net debt to adjusted EBITDA ratio of 2.3x. The flag appears to be criticizing ZBRA relative to TKR, not TKR's own disclosure quality. TKR's disclosure on this topic is quite detailed and transparent.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "656cc22cd1e70448",
+        "peer": "bd2e05265d6ed0f1"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag actually highlights that TKR is being MORE transparent about revenue risks \u2014 explicitly disclosing '2025 full-year revenues to be down 2.0% to 0.5% compared to 2024,' naming specific declining sectors (auto/truck, heavy industries, off-highway), and acknowledging tariff impacts. The screening reason flags ZBRA for not acknowledging downside risks, but ZBRA is in a different industry experiencing genuine demand recovery. This is not a TKR disclosure degradation issue; TKR is performing well on this dimension.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "809a1fc24f4e6304",
+        "peer": "a2d4ec8f50819391"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags FLS for providing only a minimal statement about OBBBA, while TKR provides detailed disclosure. This is a flag about FLS's disclosure quality, not TKR's. TKR's own disclosure is substantive, mentioning 'permanent extension of certain expiring provisions of the Tax Cuts and Jobs Act of 2017, modifications to the international tax framework and the restoration of favorable tax treatment for certain business provisions,' along with multiple effective dates. TKR is not the company with the disclosure concern here.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "TKR (Timken) demonstrates generally strong disclosure quality across most dimensions, with detailed revenue guidance, specific capital allocation metrics, and comprehensive EBITDA reconciliations. The two temporal flags identify real but modest reductions in specificity \u2014 truncation of non-GAAP definitions and removal of operational restructuring language \u2014 that are consistent with common 10-Q editorial shortcuts rather than deliberate obfuscation. The four peer divergence flags largely confirm TKR's superior transparency relative to peers rather than identifying TKR disclosure concerns.",
+    "top_concerns": [
+      "Monitor whether the removal of specific language about restructuring/divesting underperforming product lines in Industrial Motion correlates with undisclosed operational deterioration in drivetrain services",
+      "Confirm that full non-GAAP measure definitions in the 10-K remain consistent and no new adjustment categories are being introduced without adequate quarterly disclosure",
+      "Track the net debt to adjusted EBITDA ratio (currently 2.3x, up from 2.0x) and whether leverage trajectory warrants more detailed disclosure of covenant compliance and refinancing plans"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 2,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "TKR",
+    "model": "claude-opus-4-6",
+    "input_tokens": 6621,
+    "output_tokens": 1864,
+    "timestamp": "2026-04-09T12:35:32.526225"
+  }
+}

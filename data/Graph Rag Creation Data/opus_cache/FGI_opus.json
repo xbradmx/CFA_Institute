@@ -1,0 +1,177 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "30b051290778957c",
+        "peer": "95e6cc3f191dd821"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag compares FGI's forward-looking strategic statements to BW's detailed financial statements showing losses, divestitures, and impairments. BW is a much larger, more complex company with fundamentally different financial circumstances (accumulated deficit of $1.7B, multiple divestitures, discontinued operations). The divergence reflects genuine business differences rather than FGI downplaying risks. FGI does in fact disclose its own material financial sustainability challenges extensively elsewhere (going concern, covenant breaches, Nasdaq delisting risk).",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b2b8b99a83a83cb1",
+        "peer": "53b838ddd29024a6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "FGI is a small-cap company with a relatively simple operational structure that relies heavily on outsourced manufacturing partners in Asia. BW is a much larger industrial company with unionized workforces, frozen pension plans, and restructuring activities. The difference in human capital disclosure reflects genuine differences in business complexity and workforce composition rather than deliberate obfuscation by FGI.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "81cda987ce4650ee",
+        "peer": "f89c05e296b4507f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason has the direction reversed \u2014 it flags OFLX as potentially downplaying accounting risks, not FGI. FGI actually provides detailed disclosure on critical accounting policies, non-GAAP measures with reconciliations, and references to its 10-K. OFLX's brief ASU evaluation statements are typical for a smaller company with simpler accounting. This is not a disclosure degradation signal for FGI.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3c7cf53536ffa662",
+        "peer": "1623d2a66b06b673"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason again flags OFLX as potentially downplaying debt risk, not FGI. FGI provides highly detailed and transparent disclosure about its credit facilities, covenant breaches, lender negotiations, interest rates, and outstanding balances. OFLX has no borrowings and is in compliance with all covenants. The divergence reflects fundamentally different financial positions. FGI's disclosure on this topic is actually commendably transparent.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "14014dcae7703eb3",
+        "peer": "45486b6c416cf9ed"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies OFLX as potentially downplaying geopolitical/tariff risks, not FGI. FGI provides extensive, specific discussion of tariff uncertainties and their adverse impacts on its business. OFLX manufactures primarily in the U.S. and U.K., so its exposure to import tariffs is fundamentally different from FGI, which sources from China, Vietnam, and Cambodia. This reflects genuine business differences.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "827035b1c48a4c89",
+        "peer": "f18e2c8f12bbc409"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, the flag direction points at OFLX's lack of supply chain risk discussion, not FGI's. FGI acknowledges supply chain and inflation pressures as headwinds and discusses its mitigation through manufacturing partnerships. OFLX manufactures in its own U.S. and U.K. facilities, giving it a fundamentally different supply chain risk profile. This is a legitimate business difference.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5c8c8d7d4327f98e",
+        "peer": "0f59ab056fe13c4b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "FGI explicitly states that products manufactured primarily in Asia are subject to reciprocal tariffs that could 'materially adversely impact our profitability, results of operations and financial condition.' This is transparent and specific disclosure. The flag is again directed at OFLX's silence on tariff-related cost pressures, which is explained by OFLX's domestic manufacturing base. No FGI disclosure degradation signal here.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1dabe9da0f5c2932",
+        "peer": "3f74bf162affcd36"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason claims FGI is 'downplaying' its covenant non-compliance, but the actual FGI text is remarkably forthcoming: it explicitly states non-compliance with the debt coverage ratio, describes the waiver request process, acknowledges the risk of amounts becoming immediately due and payable, and details the potential for different terms or increased costs. OFLX's clean compliance status simply reflects a different financial position. FGI's disclosure on this topic is transparent and detailed.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "325dd883d03e940d",
+        "peer": "24ea02f2bc7bd716"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This is a duplicate of Flag 5 at the Risk Factors level. FGI provides extensive, specific tariff risk disclosure including escalation dynamics, reciprocal tariff details, and material adverse impact language. OFLX's silence on tariffs reflects its domestic manufacturing base. No FGI disclosure degradation signal.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "liquidity_solvency",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "151fa9f2b6b8f908",
+        "peer": "2267ee4143f272e8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "FGI provides exceptionally detailed and transparent liquidity/solvency disclosure, including going concern doubt language, Nasdaq delisting risk, reverse stock split details, covenant breach specifics, and the explicit acknowledgment that 'we may need to scale back or discontinue certain or all of our initiatives to reduce costs or ultimately seek bankruptcy protection.' OFLX's simpler disclosures reflect its fundamentally healthier financial position. This is the opposite of disclosure degradation \u2014 FGI is being highly transparent about severe financial stress.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "954de0d1e42475cd",
+        "peer": "133edadf0e2502c3"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "FGI explicitly acknowledges that tariff-driven pricing changes 'could reduce demand for our products or make our products less competitive,' directly addressing the revenue risk. OFLX's lack of tariff discussion reflects its different business model (domestic manufacturing, flexible metal hose segment). The flag again points at OFLX's silence, not any FGI deficiency.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "All 11 flags are peer divergence comparisons where FGI consistently provides more detailed and transparent disclosure than its peers on the flagged topics. FGI is notably forthcoming about severe financial distress including going concern doubt, covenant breaches, Nasdaq delisting risk, and tariff impacts. The screening layer appears to have misdirected several flags, identifying OFLX's silence as the concern while attributing the flag to FGI, and the peer comparisons largely reflect genuine business model differences (domestic vs. Asian-sourced manufacturing, different financial health profiles) rather than disclosure evasion.",
+    "top_concerns": [
+      "No disclosure degradation concerns identified \u2014 all flags reflect peer business model differences or misdirected screening",
+      "While not a disclosure quality issue, FGI's underlying financial health is severely stressed (going concern, covenant breaches, Nasdaq delisting risk) and warrants close monitoring on an operational basis",
+      "Future filings should be monitored for any softening of the currently transparent going concern and covenant breach language, which would represent genuine disclosure degradation"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 0,
+    "dismissed_count": 11
+  },
+  "_meta": {
+    "ticker": "FGI",
+    "model": "claude-opus-4-6",
+    "input_tokens": 12874,
+    "output_tokens": 2613,
+    "timestamp": "2026-04-09T12:00:53.938325"
+  }
+}

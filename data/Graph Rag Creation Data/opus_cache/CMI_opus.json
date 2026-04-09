@@ -1,0 +1,121 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "4bd78b16e852e03f",
+        "current": "05d92b06215dd450",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period filing included specific language about tariff compliance risks, noting potential 'significant resources and data management systems,' 'fines and penalties,' and 'reputational harm.' The current period strips this entirely, leaving only a boilerplate cross-reference to Legal Proceedings in Note 11. However, this tariff compliance language appears to have been relocated to the Risk Factors section (as evidenced by block c6a380f31e49471a in Flag 6 containing nearly identical language), which mitigates the concern somewhat but makes it less prominent in the Legal Proceedings section.",
+      "investigation_action": "Verify whether the tariff compliance risk language was fully preserved in the Risk Factors section of the current 10-Q or whether substantive detail was lost in the move. Check if any pending tariff-related enforcement actions or compliance issues have emerged."
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6aaf290b8c0450ab",
+        "peer": "cf2ce0ddb456ca1f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is about BWXT's allegedly insufficient disclosure relative to CMI, but the screening is evaluating the wrong direction for a CMI-focused analysis. CMI is the target company here and its disclosure is highly detailed and specific, covering tariffs, currency impacts, regulatory settlements, and segment-level demand. BWXT's minimal disclosure reflects its fundamentally different business model as a U.S. government nuclear contractor with limited international commercial exposure, making direct comparison inappropriate. CMI's own disclosure quality is strong on this topic.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a216e9a56d91ad09",
+        "peer": "2562a96a0e66ceeb"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag again identifies BWXT as the potential disclosure laggard, not CMI. CMI provides substantive supply chain discussion including specific risks ('reduced global movement of goods impacting freight activity'), mitigation actions ('proactively taking steps in our supply chain'), and details on supply chain financing programs. BWXT operates in a fundamentally different supply chain environment as a nuclear components supplier to government programs. CMI's own supply chain disclosure is adequate and specific.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "dfe6b59459c77ea8",
+        "peer": "c3f2da4515861b9b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies Brunswick Corporation (BC) as potentially downplaying financial sustainability risks relative to CMI's detailed disclosures. CMI provides excellent specificity: pension funding at 115% globally, 117% for U.S. plans, $22 million in anticipated contributions, $79 million net periodic pension cost, 10% dividend increase, $1.4-1.5 billion capex guidance, and $551 million remaining JV commitment. This reflects strong CMI disclosure quality. The divergence reflects genuine business differences\u2014BC has a different capital structure and does not have comparable pension obligations.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6aaf290b8c0450ab",
+        "peer": "489fe7f4527b5167"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "CMI provides highly detailed geopolitical and macro risk disclosure including specific tariff impact quantification ('net impact of tariff costs and related recoveries was immaterial'), currency impact percentages ('2 percent'), named currencies (Brazilian real, Indian rupee), segment-level effects, and a dedicated 'Uncertain Tariff Environment' section. BC's disclosure, while more generic, includes a lengthy list of risk factors and notes it is monitoring 'recently implemented tariffs.' The divergence reflects CMI's greater global manufacturing complexity and higher quality disclosure rather than any degradation at CMI.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c6a380f31e49471a",
+        "peer": "2f517e12d73eea31"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies BC as potentially downplaying cost/margin pressure relative to CMI. CMI's disclosure is exemplary on this topic\u2014it separately evaluates tariff-related costs from other drivers, provides segment-level EBITDA variance analysis with specific dollar amounts (e.g., Engine EBITDA decreased $45 million), identifies specific cost drivers (material costs, pricing, FX), and states tariff costs 'increased during the second quarter' with forward-looking expectations. BC's single sentence is indeed thin, but CMI is the company being monitored and its disclosure is strong.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ea79ff06d008325d",
+        "peer": "449609fac68e0055"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "CMI provides comprehensive financial sustainability disclosures including specific pension funding percentages (115% global, 117% U.S., 109% U.K.), investment returns (4.6% U.S., -0.8% U.K.), dividend amounts ($502 million paid, 10% increase to $2.00/share), capex guidance ($1.4-1.5 billion), JV contributions ($255 million made, $551 million remaining), and stock repurchase authorization details. BC's single boilerplate sentence is thin by comparison but this reflects BC's disclosure quality, not CMI's. CMI's disclosure is among the most detailed in its peer set.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "CMI's disclosure quality is strong across virtually all dimensions reviewed. The company provides detailed, specific, and quantified disclosures on tariff impacts, supply chain risks, geopolitical exposures, cost/margin drivers, pension funding, and capital allocation. The only notable finding is the removal of tariff compliance risk language from the Legal Proceedings section, which appears to have been relocated to Risk Factors rather than eliminated entirely.",
+    "top_concerns": [
+      "Verify that tariff compliance risk language removed from Legal Proceedings (Flag 1) is fully preserved in Risk Factors section and not substantively weakened",
+      "Monitor whether CMI's characterization of tariff impacts as 'immaterial' remains accurate as tariff costs are expected to 'increase from second quarter levels'",
+      "Track the $551 million remaining Amplify Cell Technologies JV commitment and whether government incentive assumptions remain on track"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 1,
+    "dismissed_count": 6
+  },
+  "_meta": {
+    "ticker": "CMI",
+    "model": "claude-opus-4-6",
+    "input_tokens": 10608,
+    "output_tokens": 2004,
+    "timestamp": "2026-04-09T11:52:49.377914"
+  }
+}

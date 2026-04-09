@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "c1f4adfa7e50cdbe",
+        "current": "1d9d6838ae779bfa",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The current period replaces specific tariff rates (145% China, 10% other) and a precise gross impact figure ($20.0) with updated but less precise figures (55% China, 15% other, net impact of 'approximately $5.0 to $10.0'). The shift from a single-point gross impact estimate to a vague range of net impact makes period-over-period comparison difficult and obscures how much mitigation is assumed. Additionally, the detailed segment-level net sales decreases with specific currency breakdowns ($19.3 Banking, $35.0 Retail, with currency impacts quantified) were replaced with a single generic line about 'market headwinds.' However, tariff rates did genuinely change between quarters, and the insertion of a lengthy generic risk-factor list in lieu of focused tariff discussion is a meaningful dilution of specificity.",
+      "investigation_action": "Request from DBD management a bridge from gross tariff impact to the $5-10 net impact range, including specific mitigation actions and their estimated dollar contributions. Also request segment-level revenue decomposition with currency vs. organic detail comparable to Q1."
+    },
+    {
+      "flag_number": 2,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "53e3d189e14d8090",
+        "current": "43f58c7cfa6e8be0",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period explicitly stated 'presence in more than 100 countries with approximately 21,000 employees worldwide' and included a description of R&D investment in 'hardware and software innovations.' The current period strips both of these, leaving only a generic expense statement about transitioning personnel and consultant fees. While employee count and geographic presence are typically disclosed in the 10-K rather than every 10-Q, the removal of R&D context alongside headcount in a quarter where restructuring charges are elevated ($36.3M YTD with severance accruals rising from $15.9 to $20.2) could signal an effort to reduce visibility into workforce reductions.",
+      "investigation_action": "Monitor whether the next filing restores employee count disclosure, and compare current headcount to the 21,000 figure. Investigate whether the continuous improvement initiative is resulting in material headcount reductions not being transparently communicated."
+    },
+    {
+      "flag_number": 3,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a067914e400a1e22",
+        "peer": "7f12d83a2fd2102a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening flag suggests DBD may be 'downplaying or concealing accounting risks' because peer NATL disclosed misstatements requiring revisions. However, there is no evidence DBD has similar misstatements to disclose. DBD states 'disclosure controls and procedures were effective as of June 30, 2025' and provides standard but appropriate language about accounting policies. A peer having restatement issues does not mean DBD is concealing similar problems\u2014this reflects genuine business differences. DBD's disclosure on this topic appears standard and appropriate for a company without identified misstatements.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "201b972e730b097f",
+        "peer": "7b4e793a51c57211"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening flag is inverted\u2014it actually suggests DBD provides *more* detailed quantitative disclosure than peer NATL on goodwill, intangible assets, restructuring charges, and severance accruals. DBD includes granular tables for goodwill by segment, intangible asset categories with weighted-average lives, restructuring charges by cost line, and severance accrual rollforwards. This is robust, not degraded disclosure. The flag appears to be a false positive generated because the system detected divergence, but the divergence favors DBD's disclosure quality.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f28d652eb1c46ccc",
+        "peer": "ba5a8473f971edae"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason itself notes that DBD provides 'detailed, quantified, and specific discussion of indirect tax contingencies and legal proceedings' including a $56.1M aggregate risk estimate and detailed resolution of German appraisal proceedings, while VYX is the company with minimal disclosure. This flag is pointing at the peer (VYX) as the weaker discloser, not DBD. DBD's legal and regulatory disclosure is thorough and includes quantified contingency exposure, specific case outcomes, and status updates.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "00df594a4c4b528b",
+        "peer": "41f9c80d8f5e2715"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag notes that VYX provides less supply chain risk disclosure than DBD, meaning DBD is actually the stronger discloser here. DBD explicitly addresses tariff mitigation through 'sourcing of alternative parts, supplier negotiations, price adjustments and productivity improvements.' The divergence reflects VYX's transition to an ODM model (which fundamentally changes its supply chain exposure) rather than a DBD disclosure deficiency. This is a false positive from DBD's perspective.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "DBD's disclosure quality is generally strong, with detailed quantitative tables for restructuring, goodwill, intangibles, legal contingencies, and AOCI. The only substantive concerns are the dilution of tariff impact specificity (shifting from a precise gross figure to a vague net range) and the removal of employee count and R&D context in the Q2 filing. Four of six flags were false positives or inverted peer comparisons where DBD was actually the stronger discloser.",
+    "top_concerns": [
+      "Tariff impact disclosure shifted from specific gross impact ($20.0) to a vague net range ($5-10), obscuring the magnitude and composition of mitigation efforts",
+      "Employee headcount and R&D investment descriptions dropped from Q2 filing during a period of elevated restructuring and severance activity",
+      "The lengthy generic risk factor list inserted in MD&A may be designed to bury the reduced specificity of tariff and macro discussion"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 2,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "DBD",
+    "model": "claude-opus-4-6",
+    "input_tokens": 7547,
+    "output_tokens": 1889,
+    "timestamp": "2026-04-09T11:56:11.560183"
+  }
+}

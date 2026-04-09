@@ -1,0 +1,233 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "cost_margin_pressure",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "563c359ba2f9ecc3",
+        "current": "7c36517acfb066e3",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period explicitly discussed AI-related investment costs including 'proprietary datasets and machine learning models,' 'attribution or remuneration to creators of training data,' and 'appropriate protections, safeguards, and policies,' which were replaced with a vague reference to 'additional costs associated with increased compliance burdens and new contract negotiations with third parties.' However, the AI investment language appears to have been relocated elsewhere in the filing (it appears in the current period under Flag 13's target text). The stock repurchase price volatility language was also removed.",
+      "investigation_action": "Verify whether the AI investment cost discussion was fully relocated to another section of the 10-Q, and assess whether the removal of stock repurchase price volatility commentary coincides with any change in repurchase activity or pricing dynamics."
+    },
+    {
+      "flag_number": 2,
+      "topic": "liquidity_solvency",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "970fd6f1d81a9434",
+        "current": "6f0e182dcb9fa251",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed specific dollar amounts including the $1.2B Existing Repurchase Program, the $1.5B New Repurchase Program, $787.1M repurchased in Q1 2025, a remaining authorization of $133.9M, and an additional $100.0M repurchased in April 2025. The current period replaces all of this with a single generic sentence about having 'adopted stock repurchase programs.' This is a significant reduction in quantitative transparency on a topic material to capital allocation. Notably, Flag 13's target text shows this detail does appear elsewhere in the filing under financial sustainability, which partially mitigates the concern.",
+      "investigation_action": "Confirm whether the detailed repurchase program figures ($921.0M and $62.0M repurchased, $1.4B remaining as shown in Flag 13) appear in the appropriate MD&A liquidity section or only in a less prominent location. Assess whether this restructuring obscures the information from analysts scanning the liquidity section."
+    },
+    {
+      "flag_number": 3,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "716fdb43bc4dceca",
+        "current": "0573d9a8498353d6",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "Several material passages were removed without replacement: (1) the discussion of large customers' purchasing power and favorable terms ('lower prices, bundled upgrades, extended warranties, acceptance terms, indemnification terms'), (2) the explicit credit risk disclosure for channel partners ('One or more of these channel partners could delay payments or default on credit extended to them'), and (3) detailed language about indebtedness covenants and restrictions. The current period retains only generic distributor credit risk language and drops the customer purchasing power discussion entirely. The sentence about 'Circumstances may arise in which we need, or desire, to raise additional capital' is weaker than the prior multi-sentence treatment.",
+      "investigation_action": "Investigate whether ANET has experienced any channel partner payment delays or customer concentration changes. The removal of large-customer purchasing power risk language is notable given ANET's significant customer concentration (hyperscale cloud providers); verify whether this risk has been addressed elsewhere or simply dropped."
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "5fdbb3ee38bd6668",
+        "current": "45e3a6aec3ca79d7",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The current period filing is extremely long and retains most of the prior period's regulatory/legal risk discussion, including the WSOU litigation details, IP risk factors, GDPR/CCPA disclosure, anti-corruption laws, and export controls. The current filing actually adds new content including NIS2, DORA, OBBB Act, and expanded China export control details. Some passages were condensed or reorganized (e.g., removing the sentence about patent portfolio size comparison), but the overall substance appears comparable or enhanced. The removal of specific state privacy law enumerations (Florida, Montana, Oregon, Texas, etc.) and some IP risk sub-details represents minor condensation rather than obfuscation.",
+      "investigation_action": "Verify that the state privacy law enumeration and certain IP risk details (e.g., 'patent portfolios of most of our competitors are larger than ours') were not deliberately removed to downplay known concerns. Monitor whether any new IP disputes emerge that could explain the editorial choices."
+    },
+    {
+      "flag_number": 5,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a717e143f652772b",
+        "peer": "479b9b01d103ae68"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ANET's brief statement listing 'revenue recognition, inventory valuation and contract manufacturer/supplier liabilities, income taxes and loss contingencies' as significant estimates is a standard 10-Q approach for interim filings, particularly when a company has already provided detailed critical accounting policies in its 10-K. FFIV's more detailed disclosure reflects its own business circumstances including equity investments without readily determinable fair values and recent acquisitions requiring fair value measurements. The difference reflects business model and transaction complexity rather than disclosure evasion by ANET.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "77125103768df833",
+        "peer": "529ed7901c2436e7"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ANET does not have a revolving credit facility or any outstanding debt, so there is nothing comparable to disclose relative to FFIV's Revolving Credit Agreement details. ANET is a debt-free company that funds operations and buybacks from working capital and cash flow. The divergence reflects a genuine business difference \u2014 FFIV had a $350M credit facility (now expired) while ANET has no such arrangements. ANET's disclosure about its repurchase programs is the most analogous financing activity disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "07f3a88c39655ff8",
+        "peer": "bc6f304157df135e"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is incorrectly oriented \u2014 it suggests FFIV is the one downplaying geopolitical risks relative to ANET's detailed disclosure. Since we are evaluating ANET (the target company), and ANET provides extensive, detailed geopolitical risk disclosure including specific references to the OBBB Act, Pillar Two, Russia/Ukraine sanctions, China export controls, and bilateral trade negotiations, this flag actually demonstrates strong disclosure quality by ANET. The peer divergence reflects FFIV's weaker disclosure, not ANET's.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "liquidity_solvency",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6f0e182dcb9fa251",
+        "peer": "da9bb7cc6fc29e49"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The target block for ANET contains only generic boilerplate about stock repurchase programs, while FFIV provides detailed cash and investment totals ($1,442.0M), operating cash flow figures ($741.6M), lease obligation schedules, and explicit liquidity sufficiency statements. However, this may reflect the specific block selected rather than ANET's overall filing \u2014 Flag 13's text shows ANET does disclose specific repurchase amounts ($921.0M, $62.0M) and remaining authorization ($1.4B). The concern is whether ANET provides adequate quantitative liquidity discussion in its MD&A comparable to FFIV's comprehensive treatment.",
+      "investigation_action": "Review ANET's complete MD&A liquidity section to confirm whether cash balances, operating cash flows, and a liquidity sufficiency statement are provided with specificity comparable to peers. If the quantitative detail exists but was not captured in this block, the concern is mitigated."
+    },
+    {
+      "flag_number": 9,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a90a019e705e7b0e",
+        "peer": "1069b50112b1532e"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The blocks compared are not meaningfully comparable. ANET's block discusses natural disaster and catastrophic event risks, while FFIV's discusses warranty obligations and restructuring plans. FFIV's warranty disclosure reflects its specific product warranty policies and recent restructuring activities \u2014 business-specific items that ANET may address elsewhere. ANET provides extensive operational risk discussion across its filing including supply chain, manufacturing, and product quality risks. The flag conflates dissimilar disclosure topics.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "fa44a29ab824e1c5",
+        "peer": "a5242fc617e89c4e"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually flags FFIV as potentially downplaying risks while noting that ANET provides detailed qualitative risk disclosures. ANET's disclosure discusses multiple revenue risk factors including customer reluctance, export licensing delays, stock price volatility, and quarter-end sales concentration. This is a robust risk discussion. The comparison to FFIV's quantitative revenue data and deferred revenue metrics reflects different but complementary disclosure approaches rather than ANET deficiency. ANET would separately provide its revenue figures in its financial statements.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4dfaecd16cdc89ae",
+        "peer": "4af6acc9fff89a72"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is incorrectly oriented \u2014 the screening reason notes that FFIV provides only generic purchase commitment details while ANET explicitly addresses significant supply chain disruptions from geopolitical, natural disaster, and health epidemic risks. ANET's supply chain disclosure is the more detailed of the two, discussing export controls affecting component sourcing from China, semiconductor supply risks, and manufacturing concentration in earthquake-prone regions. This demonstrates strong supply chain disclosure by ANET.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 12,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7c36517acfb066e3",
+        "peer": "e99abc4f5cf39e5f"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "ANET's block provides only two sentences \u2014 one about compliance costs and one about share repurchase tax \u2014 while EXTR provides granular cost breakdowns including specific dollar amounts for personnel costs, contractor costs, overhead, and distribution changes across multiple line items. ANET's gross margins are industry-leading, so it has less cost pressure to discuss, but the lack of any quantitative MD&A discussion of cost drivers (e.g., component costs, tariff impacts, manufacturing costs) in the sampled block is notable given the current tariff and supply chain environment. ANET may provide this detail elsewhere in its MD&A results discussion.",
+      "investigation_action": "Review ANET's complete MD&A results of operations section for quantitative discussion of cost of revenue drivers, gross margin trends, and operating expense changes. If specific cost driver analysis is present elsewhere, this flag is mitigated."
+    },
+    {
+      "flag_number": 13,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a469c8d31a3980b9",
+        "peer": "5d928ccf4870f6af"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is incorrectly oriented \u2014 the screening reason indicates EXTR is downplaying financial sustainability risks relative to ANET's detailed discussion. ANET provides extensive detail including tax uncertainty, AI investment requirements, dividend policy, and specific stock repurchase figures ($921.0M and $62.0M repurchased, $1.4B remaining). EXTR's single sentence about control system design costs is the weaker disclosure. ANET's financial sustainability disclosure is robust and this flag actually confirms adequate ANET disclosure on this topic.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 14,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "07f3a88c39655ff8",
+        "peer": "2999d95f0598be79"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, ANET is the company with superior disclosure here. ANET provides detailed discussion of the OBBB Act, Pillar Two, Russia/Ukraine sanctions, China-U.S. trade negotiations, semiconductor export controls, and Taiwan-China risks, while EXTR provides only generic geopolitical risk statements. This flag confirms ANET's strong geopolitical risk disclosure rather than identifying a deficiency.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 15,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "20ffc3a222fdc650",
+        "peer": "f372dd69c95cfcde"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is again oriented to identify EXTR as the weaker discloser. ANET's regulatory/legal disclosure is comprehensive, covering GDPR with specific penalty thresholds (4% of revenue or \u20ac20M), CCPA/CPRA, NIS2, DORA, India's Digital Personal Data Protection Act, AI regulation, FCPA, export controls, and environmental laws. EXTR provides only brief mentions of tax code changes and litigation risk. ANET's disclosure quality on regulatory/legal topics is strong relative to this peer.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Most flagged peer divergences are incorrectly oriented, actually confirming ANET's superior disclosure quality relative to peers FFIV and EXTR. The two genuine concerns relate to temporal changes: the removal of specific stock repurchase quantitative detail from the liquidity section (Flag 2) and the deletion of channel partner credit risk and customer purchasing power risk language (Flag 3). The remaining flags are either dismissed as business differences, incorrectly oriented comparisons, or borderline concerns that likely reflect editorial reorganization rather than deliberate obfuscation.",
+    "top_concerns": [
+      "Removal of specific channel partner credit risk language and large-customer purchasing power discussion from debt/financing risk factors, potentially obscuring concentration and counterparty risks",
+      "Reduction of quantitative stock repurchase program detail in the liquidity section, with specific dollar amounts and timelines potentially relocated to less prominent filing locations",
+      "Replacement of specific AI investment cost driver language with vague compliance burden references in the cost/margin discussion, warranting verification of where AI cost detail now appears"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 4,
+    "dismissed_count": 9
+  },
+  "_meta": {
+    "ticker": "ANET",
+    "model": "claude-opus-4-6",
+    "input_tokens": 38560,
+    "output_tokens": 4214,
+    "timestamp": "2026-04-09T11:45:08.679082"
+  }
+}

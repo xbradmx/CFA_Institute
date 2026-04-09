@@ -1,0 +1,121 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "83e3acc2d8f0ce5b",
+        "current": "2895e492d20cb1db",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period disclosed a specific $0.5 million accelerated amortization expense tied to the HCEE workforce intangible asset with a defined useful life ending June 2025. The current period removes this entirely, leaving only the generic critical accounting policies paragraph. However, since the useful life ended in June 2025 and this filing covers the period through June 28, 2025, the asset is now fully amortized, which provides a legitimate reason for the removal \u2014 the disclosure may simply be no longer relevant rather than obfuscatory.",
+      "investigation_action": "Verify in the balance sheet and notes whether the HCEE workforce intangible asset is fully amortized as of Q2 2025, and confirm no residual impairment or write-off charges were incurred that would warrant continued disclosure."
+    },
+    {
+      "flag_number": 2,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "65b3b6164fd797b2",
+        "current": "4319032d8cab6e6a",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period provided substantial detail on restructuring activities: the Hydraulics segment's two Regional Operational Centers of Excellence (Mishawaka and Sarasota), specific restructuring cost figures ($0.3M and $1.4M for respective quarters), plans to move production to Tijuana, and a detailed cash flow explanation including $4.8M of insurance proceeds from the Italian facility fire. The current period strips out the U.S. CoE descriptions entirely, removes all dollar amounts for restructuring costs and insurance proceeds, and eliminates the Tijuana production discussion. This represents a material reduction in transparency on ongoing operational restructuring and cash flow drivers.",
+      "investigation_action": "Request updated restructuring cost figures for Q2 2025, the status of Tijuana production transfer plans, and whether the Hydraulics segment CoE consolidation in Mishawaka and Sarasota is generating expected efficiencies or encountering issues that prompted the disclosure reduction."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "452547d99aa693cf",
+        "current": "e111877e68fdd3db",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing stated specifically that 'the Company does not expect the implementation of Pillar Two to have a material impact on its consolidated effective tax rate for 2025' and committed to monitoring developments. The current filing reduces this to a single generic sentence: 'The Company continues to evaluate the impact of Pillar Two legislation and application of safe harbors.' The removal of the explicit no-material-impact assessment is notable \u2014 it could indicate that the company's assessment has changed or become uncertain, or it could reflect a deliberate move to avoid committing to a forward-looking statement as more jurisdictions enact Pillar Two legislation.",
+      "investigation_action": "Ask management directly whether their Pillar Two assessment has changed and whether any jurisdictions where they operate have enacted top-up taxes that could affect the 2025 effective tax rate. Review the tax rate in the current quarter for any unexplained increases."
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b799093709d1d908",
+        "peer": "c59c9c9be51f0bac"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is about CXT's disclosure being less detailed than HLIO's, but the task is to evaluate HLIO's disclosure quality. HLIO is actually the more transparent party here, providing specific tariff rates (up to 55% on China imports, up to 10% on China exports), quantified export figures ($29.5M quarterly, $57.8M YTD), and detailed industry condition reporting. The peer divergence reflects CXT's potential shortcoming, not HLIO's. Additionally, CXT (Crane NXT) may have genuinely different tariff exposure given its product mix.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b799093709d1d908",
+        "peer": "dd81496489eef4e9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Similar to Flag 4, HLIO is the more detailed discloser in this comparison, providing specific tariff rates, dollar-denominated export breakdowns by country, and industry-specific trend data. MWA's comparatively generic disclosure reflects its own disclosure choices, not a problem with HLIO. MWA (Mueller Water Products) operates in water infrastructure, which has materially different tariff and trade exposure than HLIO's hydraulics business, making direct peer comparison less informative.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e111877e68fdd3db",
+        "peer": "761bc15f28ebde96"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "MWA discloses extensive legal proceedings including PRP designations, CBP customs duty disclosures ($9.0M settlement), environmental indemnification obligations, and product liability cases. HLIO's regulatory/legal disclosure in the flagged block is limited to Pillar Two tax commentary only. While this could reflect genuinely lower litigation exposure for HLIO (a hydraulics components manufacturer vs. MWA's water infrastructure business with legacy environmental liabilities), the absence of any legal proceedings or contingencies discussion in HLIO's MD&A warrants verification \u2014 even small industrials typically have some product liability or regulatory matters.",
+      "investigation_action": "Review HLIO's notes to financial statements for any legal contingencies or commitments disclosures, and compare to the MD&A to ensure consistency. Check whether HLIO has previously disclosed any product liability, environmental, or customs matters that may have been dropped."
+    },
+    {
+      "flag_number": 7,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "22783cd385670220",
+        "peer": "6f4ab758cfbb0bcf"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "HLIO's supply chain disclosure is reduced to a single sentence \u2014 'We import goods into the U.S. primarily from Mexico, Italy and China' \u2014 with no discussion of supply chain risks, disruption mitigation, or dual-sourcing strategies. Given that HLIO elsewhere in this filing discusses tariffs of up to 55% on Chinese imports and paused Tijuana production plans, the absence of supply chain risk discussion in this section is conspicuous. MWA provides more context on supply chain disruptions (Israel facility, tariff mitigation). While MWA has unique Israel-related exposure, the general lack of supply chain risk discussion from a company that imports from three countries subject to active tariff regimes is notable.",
+      "investigation_action": "Investigate whether HLIO has diversified its sourcing from China given 55% tariff exposure, whether the Italian supply chain (Roncolo/Rivolta) faces any disruption risks, and whether the company has a formal supply chain risk management framework that should be disclosed."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "HLIO shows a pattern of reducing specificity in its temporal disclosures \u2014 removing restructuring cost figures, insurance proceeds details, intangible asset amortization specifics, and Pillar Two tax impact assessments between Q1 and Q2 2025 filings. While some removals have plausible explanations (e.g., fully amortized assets), the cumulative pattern of stripping quantitative detail from operational and financial discussions warrants monitoring. Notably, HLIO's geopolitical and tariff disclosures remain strong relative to peers, suggesting selective rather than systematic disclosure degradation.",
+    "top_concerns": [
+      "Removal of restructuring cost figures and detailed operational restructuring narrative (Hydraulics CoE, Tijuana plans, insurance proceeds) without apparent consolidation elsewhere",
+      "Deletion of Pillar Two no-material-impact assessment \u2014 potential signal that tax exposure has increased or become uncertain",
+      "Minimal supply chain risk discussion despite material import exposure to tariff-affected countries (China at 55% tariffs, Mexico, Italy)"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 4,
+    "dismissed_count": 2
+  },
+  "_meta": {
+    "ticker": "HLIO",
+    "model": "claude-opus-4-6",
+    "input_tokens": 8190,
+    "output_tokens": 2317,
+    "timestamp": "2026-04-09T12:05:40.502788"
+  }
+}

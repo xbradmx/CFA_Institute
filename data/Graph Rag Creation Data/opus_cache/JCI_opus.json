@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "23cced41cfeb5782",
+        "current": "c83396d2e2863a81",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period included two critical sentences that were removed: (1) 'These actions have historically been successful in offsetting some, but not all, of the impact of these trends' \u2014 an admission of incomplete effectiveness \u2014 and (2) 'it is uncertain as to whether the actions taken or contemplated to be taken by the Company will be effective in mitigating the impact of current and future trade restrictions.' The removal of the uncertainty caveat and the deletion of the monitoring statement ('The Company continues to actively monitor and evaluate...') reduces transparency about management's own assessment of mitigation effectiveness, particularly during a period of escalating tariff activity.",
+      "investigation_action": "Analysts should probe management on quarterly calls about the actual effectiveness of tariff mitigation actions, specifically requesting quantification of tariff cost absorption vs. pass-through, and why the uncertainty language was removed when the tariff environment has arguably worsened."
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c192ac237968e9b6",
+        "peer": "829578b4de5b54f9"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "JCI's disclosure is a single generic sentence ('This could cause our products to be more expensive for customers, which could reduce the demand for, or attractiveness of, such products') that provides zero quantification of cost pressures, margin impacts, or mitigation strategies. LII, a direct peer in the HVAC/building solutions space, provides granular basis-point margin walk-throughs, dollar amounts of tariff impacts by segment ($17M, $19M, etc.), commodity exposures (steel, aluminum, copper), and explicit forward guidance on pricing gains overcoming tariffs. Given JCI operates in the same industry with similar input cost exposures, this level of vagueness in its Risk Factors represents a material disclosure gap.",
+      "investigation_action": "Request from JCI a detailed margin bridge showing the impact of tariffs and commodity inflation by segment (Building Solutions North America, Global Products, etc.), comparable to what LII provides, and benchmark JCI's pricing realization against LII's disclosed 350 bps favorable mix/price."
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c1f91f02743679f3",
+        "peer": "92eda755c6ecba40"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 it suggests LII is downplaying risk relative to JCI, not that JCI is degrading its disclosure. JCI's discussion of insurance coverage adequacy and cybersecurity-related liabilities (referencing the September 2023 cybersecurity incident) is company-specific and reflects a known material event. LII's lack of similar disclosure reflects the absence of a comparable cybersecurity incident, not disclosure evasion. The peer comparison blocks from LII (share repurchase data, tax law evaluation) are not topically related to the insurance/liability discussion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "311495308d800dd1",
+        "peer": "932f6ddbba923dfe"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is also inverted \u2014 it calls out LII for lacking geopolitical/trade risk disclosure relative to JCI. JCI actually provides extensive and specific discussion of tariffs, trade restrictions, and geopolitical tensions across multiple jurisdictions. The LII peer blocks cited (seasonal demand factors, FX gains/losses, tax rates) are not substantively comparable. JCI's disclosure on this topic is robust, and the divergence reflects JCI's significantly larger global manufacturing footprint versus LII's more U.S.-centric operations.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b6d9757794480623",
+        "peer": "afd147ed134a04d6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, this flag is inverted \u2014 it flags LII for lacking human capital risk disclosure while JCI provides detailed discussion of labor challenges, skilled trade worker shortages, and talent development needs. JCI's disclosure here is actually quite thorough and specific, covering manufacturing labor, skilled trades, digital talent, and leadership pipeline. LII's SG&A line items mentioning 'higher employee-related costs' are financial statement disclosures, not risk factor comparators. The divergence reflects different business models (JCI has a large field services workforce) rather than JCI disclosure degradation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "510f9ecfe9859d74",
+        "peer": "e8676579fccdc57d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 it notes LII lacks data privacy and cybersecurity regulatory risk disclosure while JCI provides detailed discussion. JCI's extensive disclosure here is directly tied to its September 2023 cybersecurity incident and its larger security products business, making it company-specific and appropriate. LII's generic legal proceedings boilerplate reflects a different risk profile, not disclosure evasion by either party. JCI is not degrading its disclosure on this topic; if anything, it is being appropriately transparent about ongoing cyber-related legal and regulatory exposure.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "Of the six flags screened, only two represent genuine disclosure concerns for JCI. The temporal change in supply chain risk language (Flag 1) shows deliberate removal of uncertainty caveats and effectiveness assessments during a period of heightened tariff risk, which is a meaningful signal. The peer comparison on cost/margin pressure (Flag 2) reveals JCI provides materially less quantitative detail than LII on tariff and inflation impacts. The remaining four flags were incorrectly oriented \u2014 they flagged LII's relative lack of disclosure on topics where JCI actually provides robust discussion, reflecting the screening layer's directional errors.",
+    "top_concerns": [
+      "Removal of supply chain mitigation effectiveness uncertainty language in MD&A during an escalating tariff environment, suggesting management may be obscuring incomplete risk offsets",
+      "Lack of quantified cost/margin pressure disclosure (tariff dollar impacts, basis-point margin bridges by segment) compared to peer LII, despite operating in the same industry with similar exposures",
+      "Pattern of softening forward-looking risk language while maintaining backward-looking action descriptions, creating an impression of control without acknowledging ongoing uncertainty"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 0,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "JCI",
+    "model": "claude-opus-4-6",
+    "input_tokens": 5466,
+    "output_tokens": 1895,
+    "timestamp": "2026-04-09T12:09:16.700851"
+  }
+}

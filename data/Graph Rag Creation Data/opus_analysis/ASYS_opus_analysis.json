@@ -1,0 +1,163 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "regulatory_legal",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "39604b78adf4a588",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed text describes the effective tax rate reconciliation for the six months ended March 31, 2025. The current filing covers nine months ended June 30, 2025, so the six-month tax rate discussion would naturally be replaced by the corresponding nine-month period discussion. This is a routine temporal update between quarterly filings rather than an omission of material regulatory/legal disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "7bdfd0a702e6f505",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The removed warranty accrual language included a specific assertion that warranty costs have been 'within expectations' and that accruals were 'sufficient for all systems sold through March 31, 2025,' along with a forward-looking caveat. Removing this from Risk Factors eliminates a useful comfort statement and the associated uncertainty disclosure. However, warranty accrual policies may still be discussed in the notes to financial statements, and the language was somewhat boilerplate.",
+      "investigation_action": "Verify whether warranty accrual discussion appears elsewhere in the current 10-Q notes to financial statements. If entirely absent, inquire whether warranty experience has deteriorated or if claims have increased, particularly given the Entrepix integration and customer disputes noted elsewhere."
+    },
+    {
+      "flag_number": 3,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "77e9a209348fdeae",
+        "current": "d78fc0d6d70f9826",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The sentence 'Our 2023 acquisition of Entrepix bolstered our offerings in the CMP technology space and incorporated wafer cleaning into our existing capital equipment product lines' was removed entirely. Given that ASYS recorded $2.6 million in intangible asset impairment and wrote off all goodwill in the Semiconductor Fabrication Solutions segment (which includes Entrepix), the removal of this positive narrative about the acquisition could be an attempt to minimize attention on a deteriorating acquisition. The Entrepix acquisition has clearly underperformed expectations.",
+      "investigation_action": "Investigate the current operational status of Entrepix within the Semiconductor Fabrication Solutions segment. Assess whether the removal of acquisition-related narrative signals further strategic changes such as potential divestiture, restructuring, or additional write-downs."
+    },
+    {
+      "flag_number": 4,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "ca5065a391da8744",
+        "current": "e3a373d082b555f9",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "Several substantive disclosures were removed: (1) the 'Use of Estimates' paragraph explaining management estimates and assumptions, (2) specific language about the Loan Agreement fair value being classified as Level 2, (3) the ASU 2023-09 effective date and application method language, (4) the detailed goodwill impairment methodology paragraphs including income approach/market approach weighting and specific valuation methodologies. While some condensation is normal between quarterly filings, the removal of fair value methodology for the loan agreement and the detailed impairment testing methodology is notable given that ASYS just recorded $20.4 million in goodwill impairment and $2.6 million in intangible impairment. Removing the detailed methodology description right after major impairments reduces an analyst's ability to assess the rigor of these estimates.",
+      "investigation_action": "Request clarification on why detailed impairment methodology language was removed from the current filing. Verify whether the discount rates, growth assumptions, and valuation approaches used for the March 2025 impairment tests are disclosed elsewhere. Assess whether the condensed disclosure meets SEC requirements given the materiality of the impairments."
+    },
+    {
+      "flag_number": 5,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a0b535c1bb65c0c7",
+        "peer": "4cd1c8b33afc940b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "VELO (Velo3D) is a pre-revenue/early-stage 3D printing company with severe financial constraints that prevent it from securing normal supplier credit terms, hence its detailed supply chain risk disclosure about paying premiums and unfavorable terms. ASYS is a more established industrial equipment maker that discusses supply chain resiliency as a growth opportunity for customers relocating outside China. The divergence reflects fundamentally different business situations rather than ASYS downplaying supply chain risks. ASYS also notes a specific $4.9 million shipping delay from a customer dispute, demonstrating some candor about operational disruptions.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "970689bafb4d7979",
+        "peer": "53e6d035a4191159"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted \u2014 it suggests VELO is downplaying risk while ASYS provides extensive detail. In fact, ASYS provides extremely detailed disclosure on its goodwill and intangible asset impairments, including specific dollar amounts ($20.4M goodwill, $2.6M intangibles), detailed methodology, and segment-level breakdowns. VELO's brief dilution statement reflects its different capital structure concerns as a cash-burning early-stage company. This flag does not indicate any disclosure degradation by ASYS; rather, ASYS is being more transparent than its peer on financial sustainability.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e0dcf8597138019a",
+        "peer": "e013a2bea84dac00"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "ASYS has significant geopolitical exposure \u2014 18% of revenues from China, 21% from Taiwan, and maintains RMB-denominated cash balances \u2014 yet provides only a single generic sentence noting markets 'can be subject to tariffs and sourcing restrictions driven by geopolitical tensions.' The company does not discuss specific tariff impacts, export control risks, or the implications of U.S.-China tensions for its semiconductor equipment business. Given that ASYS explicitly cited 'geopolitical tensions' as a factor in lowering guidance for Q2 FY2025, the lack of detailed Risk Factor disclosure on this topic is inconsistent with the company's own acknowledgment of its materiality. While VELO has different international operations, the comparison highlights that ASYS's geopolitical risk disclosure is thin relative to its actual exposure.",
+      "investigation_action": "Assess the specific impact of U.S. tariffs and export controls on ASYS's semiconductor equipment shipments to China and Taiwan. Investigate whether any products are subject to BIS export licensing requirements. Request management commentary on how geopolitical tensions have specifically affected order patterns, pricing, and customer behavior across regions."
+    },
+    {
+      "flag_number": 8,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2b2f76518366b0d6",
+        "peer": "8789a4b137e91bd1"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "ASYS provides only a standard four-sentence boilerplate legal proceedings paragraph, while VELO offers extensive disclosure on anti-corruption laws (FCPA), export controls (ITAR, EAR), and OFAC sanctions compliance. ASYS sells semiconductor capital equipment internationally, including to China (18% of revenue), which would typically expose a company to export control and sanctions compliance risks similar to those VELO describes. However, ASYS is a smaller company with a narrower product line, and its quarterly filing may reference the annual 10-K for comprehensive risk factors. The lack of any mention of export controls in the 10-Q is notable but may not represent degradation versus the prior period.",
+      "investigation_action": "Review ASYS's most recent 10-K to verify whether export control and sanctions compliance risks are discussed in annual Risk Factors. If not, this represents a more significant gap. Assess whether any ASYS products require export licenses for shipment to China-based customers."
+    },
+    {
+      "flag_number": 9,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "92c5b8e488424d32",
+        "peer": "a316b8d7a6206e6f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason correctly notes that ASYS is actually more transparent than VELO on this topic, explicitly disclosing lowered guidance, specific market weaknesses (mature node semiconductor market, high inventory, tepid demand, geopolitical tensions), quantifiable financial impacts, and detailed geographic revenue breakdowns. The flag essentially validates ASYS's disclosure quality on revenue and future performance rather than identifying a degradation concern. This is a misidentified flag.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ce52d8a1ff480483",
+        "peer": "95d9e88aa16390d8"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "TRT provides detailed, quantified disclosure on foreign currency impacts (specific unrealized exchange losses of $235 and $135), government grants by jurisdiction and amount, tariff impacts on downstream demand, and strategic implications of U.S.-China trade tensions including demand shifting from China to Malaysia and Thailand. ASYS, despite having 53% of revenue from Asia including 18% from China and maintaining RMB cash balances, provides only a brief mention that markets 'can be subject to tariffs and sourcing restrictions' and that RMB exchange rates impact cash balances. ASYS notably cited 'geopolitical tensions' in its guidance reduction but does not quantify FX impacts, discuss specific tariff exposure, or describe how trade tensions are shifting customer demand patterns \u2014 all of which would be material given its revenue concentration.",
+      "investigation_action": "Request quantification of foreign currency translation and transaction impacts on ASYS results. Investigate whether ASYS's China revenue decline (from 20% to 18%) reflects trade tension-related demand shifts. Assess exposure to the April 2025 tariff changes and any customer order deferrals related to tariff uncertainty."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "ASYS shows selective disclosure thinning in two key areas: geopolitical/macro risk disclosure is conspicuously minimal relative to the company's significant China/Taiwan exposure and its own admission that geopolitical tensions contributed to a guidance reduction, and the detailed impairment methodology language was removed from accounting notes immediately after recording $23 million in combined goodwill and intangible impairments. The removal of Entrepix acquisition narrative alongside full impairment of that segment's goodwill adds to the pattern. However, ASYS is commendably transparent on financial results, impairment amounts, and forward guidance, which partially offsets these concerns.",
+    "top_concerns": [
+      "Inadequate geopolitical and tariff risk disclosure relative to 53% Asia revenue concentration and acknowledged impact on guidance \u2014 a clear gap versus peers and the company's own materiality acknowledgments",
+      "Removal of detailed impairment testing methodology (discount rates, valuation approaches, growth assumptions) from notes immediately following $20.4M goodwill and $2.6M intangible impairment charges",
+      "Disappearance of Entrepix acquisition narrative concurrent with full goodwill write-off of the Semiconductor Fabrication Solutions segment, potentially signaling undisclosed strategic reassessment"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 3,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "ASYS",
+    "model": "claude-opus-4-6",
+    "input_tokens": 12795,
+    "output_tokens": 3235,
+    "timestamp": "2026-04-09T11:47:09.471618"
+  }
+}

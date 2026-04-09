@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "72bbbf193218a4e6",
+        "current": "86a784fdca9c8cb4",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period explicitly listed five critical accounting policies (Revenue Recognition, Deferred Taxes, Reserves for Contingent Loss, Pension and Postretirement Benefits, and Valuation of Goodwill/Intangibles), stated no significant changes occurred, described the currency translation methodology, and provided management's fair presentation assertion. The current period strips all of this, leaving only generic language about estimates possibly changing materially. Removing the enumerated critical policies and the affirmative assessment of fair presentation is a meaningful reduction in transparency.",
+      "investigation_action": "Confirm whether the critical accounting policies list and management's fair presentation assertion appear elsewhere in the Q2 10-Q or were genuinely dropped; inquire with IR whether any of the five listed policies experienced changes that prompted the removal."
+    },
+    {
+      "flag_number": 2,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "a13ebb39f39d615c",
+        "current": "13b11717378ab531",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period included the full regulatory-required disclosure: the definition of disclosure controls and procedures, the CEO/CFO effectiveness conclusion ('were effective as of March 31, 2025'), and the statement that no changes in internal control over financial reporting occurred during the quarter. The current period only states that an evaluation was carried out as of June 30, 2025, but omits the effectiveness conclusion and the changes-in-ICFR statement. These are SEC-required disclosures under Item 4 of Form 10-Q; their absence is a red flag.",
+      "investigation_action": "Check the full 10-Q filing on EDGAR to determine if the effectiveness conclusion and changes-in-ICFR statement appear elsewhere in the document; if genuinely absent, this is a potential filing deficiency that should be escalated and could signal internal control issues."
+    },
+    {
+      "flag_number": 3,
+      "topic": "revenue_future_performance",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "5480cdfc8951030a",
+        "current": "4406ca638bf346be",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed specific dollar amounts for foreign currency net gains/losses \u2014 $(11.4) million for Q1 2025 and $1.3 million for Q1 2024 \u2014 along with their income statement line item classification. The current period removes all quantitative FX data entirely, leaving only the boilerplate Annual Report reference. For a company with significant international operations and exposure to hyperinflationary currencies like Argentina, stripping this quantitative detail is a material reduction in disclosure.",
+      "investigation_action": "Review the full Q2 10-Q financial statements and notes for whether FX gain/loss figures are disclosed elsewhere; if not, request the data from IR and assess whether the omission coincides with deteriorating FX impacts the company prefers not to highlight."
+    },
+    {
+      "flag_number": 4,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6a676fb66a108cdc",
+        "peer": "f1298eb1ce29ea94"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 it flags ITT for being less detailed than FLS, but the system is supposed to be monitoring FLS. FLS actually provides robust operational disclosure including its 152 QRCs, operational excellence program, lean manufacturing, six sigma, and the CORE complexity reduction initiative. The peer comparison here shows FLS is the more transparent company on this topic, not less.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a2d4ec8f50819391",
+        "peer": "f8a5715a61894823"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "FLS provides only a single sentence on the OBBBA, stating it is 'currently evaluating the impact' and deferring to the September quarter. ITT, by contrast, provides extensive detail on Pillar Two, tax jurisdiction examinations, environmental liabilities with specific dollar amounts, and legal contingencies. While FLS may have legitimate reasons for a briefer disclosure (e.g., different exposure profile), the stark contrast on a broadly applicable tax law change that affects all multinationals is notable and warrants attention.",
+      "investigation_action": "Review FLS's full 10-Q for tax-related disclosures and environmental/legal contingency detail elsewhere in the filing; compare FLS's effective tax rate discussion and Pillar Two commentary to peers; ask IR for specifics on OBBBA impact timing and magnitude."
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "73ae9448960bac64",
+        "peer": "c119d427f91f3d9f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is again inverted \u2014 it is ITT that provides minimal supply chain disclosure ('greater complexity and uncertainty...not experienced a material impact...continuing to evaluate'), while FLS provides extensive detail on its Flowserve Business System, global supply chain improvements, tariff mitigation strategies, and a comprehensive list of forward-looking risk factors. FLS is the more transparent party here on supply chain matters.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a2d4ec8f50819391",
+        "peer": "5d78ba138f47407e"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "FLS's single-sentence OBBBA disclosure again contrasts unfavorably, this time against IDEX (IEX), which provides discussion of Pillar Two legislation, pending legal/regulatory proceedings with a materiality assessment, discrete tax items, and state tax law changes. FLS's deferral of OBBBA analysis to Q3 is not inherently problematic \u2014 it was signed just July 4 \u2014 but the lack of any broader regulatory/legal contingency discussion in the extracted block is a concern when peers provide substantially more context.",
+      "investigation_action": "Verify whether FLS provides litigation contingency disclosures, environmental liability detail, and Pillar Two commentary in other sections of the 10-Q; if absent, this represents a meaningful gap versus industrial peers."
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "73ae9448960bac64",
+        "peer": "0637de8b29f9991b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag notes that IEX provides only a minimal one-line supply chain statement while FLS provides extensive detail. FLS is again the more transparent company in this comparison. The screening reason correctly identifies IEX as potentially downplaying risk, but the DDDS is evaluating FLS, and FLS's disclosure is robust with specific initiatives, regional booking data, and a comprehensive risk factor list.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "FLS shows genuine disclosure degradation in its Q2 2025 10-Q compared to Q1, particularly around critical accounting policies, disclosure controls effectiveness conclusions, and foreign currency quantitative detail \u2014 all of which were present in the prior quarter and appear to have been stripped. The peer comparison flags are mostly inverted (FLS is actually more detailed than peers on operational and supply chain topics), though FLS's regulatory/legal disclosure on the OBBBA is notably thin versus peers.",
+    "top_concerns": [
+      "Removal of CEO/CFO effectiveness conclusion on disclosure controls and changes-in-ICFR statement \u2014 potential SEC filing deficiency that could signal internal control issues",
+      "Elimination of critical accounting policies enumeration and fair presentation assertion from MD&A, reducing visibility into which accounting judgments management considers most significant",
+      "Dropping specific foreign currency gain/loss dollar amounts ($11.4M loss in Q1) without apparent replacement, potentially obscuring FX headwinds"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 2,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "FLS",
+    "model": "claude-opus-4-6",
+    "input_tokens": 7090,
+    "output_tokens": 2291,
+    "timestamp": "2026-04-09T12:01:29.326272"
+  }
+}

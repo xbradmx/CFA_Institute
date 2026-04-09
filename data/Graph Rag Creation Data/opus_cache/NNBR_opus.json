@@ -1,0 +1,163 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "520a20b8cd93fba2",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing contained a specific statement about actively working with suppliers to minimize supply shortage impacts on manufacturing capabilities, and this language was removed entirely from MD&A. While it is a single sentence and relatively general, its removal during a period of elevated tariff and supply chain uncertainty (which NNBR itself acknowledges elsewhere in the filing) is notable. The disappearance could indicate either that supply issues have genuinely resolved or that the company prefers not to draw attention to ongoing challenges.",
+      "investigation_action": "Verify whether supply chain issues have materially improved by reviewing inventory levels, lead times, and any commentary on earnings calls. Ask management directly whether supply shortages remain a factor in manufacturing operations."
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "4466133bf4ea3615",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "This is the same sentence as Flag 1 but appearing in Risk Factors, suggesting it was a duplicated boilerplate statement across sections. Its removal from Risk Factors is slightly more concerning than from MD&A, as Risk Factors are specifically intended to alert investors to ongoing vulnerabilities. However, the identical text suggests this may have been a copy-paste item rather than a substantively developed risk disclosure.",
+      "investigation_action": "Check whether supply chain risk is addressed elsewhere in the current Risk Factors section, including under the tariff and macroeconomic disclosures. Confirm with management whether supply constraints have been fully resolved."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "53b37c4cbf4cb9b8",
+        "current": "2fcb945a21f01b68",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained specific detail about (1) unfavorable tax rate impacts from accrual of tax on non-permanently reinvested foreign earnings and limited tax benefits in certain jurisdictions, and (2) an IRS refund claim filed in 2021 under the CARES Act. The current filing drops both of these disclosures entirely, retaining only the generic legal proceedings cross-reference. The IRS refund claim disappearance is particularly notable\u2014there is no indication of resolution, and the removal of this specific receivable item without explanation could obscure a material contingency or write-off.",
+      "investigation_action": "Determine the status and amount of the 2021 IRS CARES Act refund claim\u2014whether it was received, denied, or written off. Review the notes to financial statements for any changes in other receivables. Confirm whether the tax rate discussion was relocated to a different section of the current filing."
+    },
+    {
+      "flag_number": 4,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "da3b2cd361bfda80",
+        "peer": "1d35cd22fc782b15"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "CVR's extensive disclosure about a material weakness in inventory valuation is specific to CVR's own internal control deficiency, not an industry-wide issue that NNBR would necessarily share. NNBR's generic reference to critical accounting estimates in its annual report is standard 10-Q practice when no material changes have occurred. The screening reason conflates a peer-specific problem with an industry disclosure norm. If NNBR does not have a material weakness, it is not required to disclose one.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9ce747aa06deb2ea",
+        "peer": "c9a8dba6e279f8d0"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The NNBR text flagged ('decreases in intangible assets due to amortization') is a routine balance sheet explanation that has been incorrectly matched to CVR's extensive financial sustainability disclosures. CVR's discussion of valuation allowances, contingent liabilities, and strategic liquidity actions reflects CVR's own financial distress indicators (e.g., $1.78M valuation allowance on deferred tax assets), which are company-specific. The comparison is not meaningful as an indicator of NNBR disclosure evasion\u2014these are different companies with different financial profiles.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8f2ac6b2b58c91ed",
+        "peer": "950c72928715c385"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "NNBR discloses a $1.4M decrease in SG&A due to 'lower compensation expense related to lower headcount' without providing any context on the nature of headcount reductions (voluntary, restructuring, attrition), affected functions, or strategic human capital plans. While CVR's disclosure about a new SVP hire is also minimal, NNBR's terse mention of reduced headcount during a period of declining sales and ongoing cost restructuring warrants more context. For an industrial company undergoing footprint consolidation, human capital strategy is material.",
+      "investigation_action": "Inquire about the magnitude and nature of headcount reductions, whether key functional areas (engineering, sales, operations) are affected, and whether reductions are part of the announced consolidation actions or reflect broader organizational stress."
+    },
+    {
+      "flag_number": 7,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "712ef6c189e404c4",
+        "peer": "e45aa0236831f068"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted\u2014the screening reason actually criticizes the peer (SPXC) for being less detailed than NNBR on cost/margin pressures. NNBR provides substantive disclosure on cost of sales changes, raw material price volatility, tariff uncertainty, and inability to predict cost recovery timing. This is a case where NNBR is the more transparent company, not the less transparent one. The flag does not identify a disclosure degradation issue at NNBR.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4fde46d3a8073a13",
+        "peer": "1618a82e91adec64"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "NNBR's financial sustainability disclosure is limited to brief tax rate impact commentary and a general tariff warning, while SPXC provides extensive detail on goodwill impairment risk, pension obligations, environmental liabilities with specific dollar amounts, and debt structures. While SPXC is a significantly larger, more complex company with acquisitions driving much of this disclosure, NNBR\u2014which carries goodwill, has foreign operations, and faces tariff-driven uncertainty\u2014could reasonably be expected to provide more granular financial sustainability discussion, particularly around debt covenants and going concern considerations given declining revenues.",
+      "investigation_action": "Review NNBR's debt covenants and leverage ratios, goodwill impairment testing assumptions, and whether the company has conducted interim impairment assessments given declining sales volumes. Assess whether the lack of detail on financial sustainability reflects genuine stability or deliberate understatement."
+    },
+    {
+      "flag_number": 9,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a8fb7c1936762c46",
+        "peer": "2bec463f837b30c1"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is again inverted\u2014NNBR actually provides extensive, detailed disclosure on geopolitical and macroeconomic risks, including specific references to tariffs on imports from Mexico and China, potential trade war impacts, foreign currency risk, and material adverse effect warnings. The screening reason criticizes SPXC for being less detailed than NNBR. This flag identifies no disclosure degradation at NNBR; in fact, NNBR's geopolitical risk disclosure appears robust.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2fcb945a21f01b68",
+        "peer": "c944f8e22c08dcf4"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "NNBR's legal proceedings disclosure consists of a single boilerplate sentence cross-referencing Note 11, with no substantive detail on the nature, magnitude, or potential financial impact of any pending legal matters. SPXC, by contrast, provides extensive detail on specific litigation settlements (including dollar amounts), environmental remediation at 16 owned sites and 9 third-party sites with accruals of $27.1M, uncertain tax positions, and self-insurance reserves. While SPXC is larger and more complex, NNBR operates manufacturing facilities across multiple countries and faces tariff-related regulatory risk, yet provides virtually no substantive legal or regulatory detail. The combination of this minimal disclosure with the temporal removal of the IRS refund claim (Flag 3) creates a pattern of diminishing regulatory/legal transparency.",
+      "investigation_action": "Review Note 11 directly for any substantive legal proceedings detail. Investigate whether NNBR has any pending environmental liabilities at its manufacturing sites, product liability claims, or regulatory disputes. Compare Note 11 detail between current and prior quarters to assess whether legal disclosures have been reduced in the notes as well."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "NNBR shows a pattern of thinning disclosure in specific areas\u2014particularly the removal of the IRS refund claim and tax rate detail from the regulatory/legal section, the elimination of supply chain commentary during a period of elevated trade uncertainty, and notably sparse legal proceedings disclosure compared to peers. While several peer divergence flags were false positives (including two inverted flags where NNBR was actually more transparent), the temporal changes and disappeared topics represent legitimate disclosure degradation signals that warrant monitoring.",
+    "top_concerns": [
+      "Disappearance of IRS CARES Act refund claim disclosure without explanation of resolution\u2014potential unrecognized write-off or material contingency",
+      "Removal of supply chain risk language from both MD&A and Risk Factors during a period of heightened tariff and trade uncertainty",
+      "Minimal, boilerplate-only legal proceedings disclosure that provides no substantive detail on pending matters, nature of claims, or potential financial exposure"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 3,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "NNBR",
+    "model": "claude-opus-4-6",
+    "input_tokens": 13958,
+    "output_tokens": 2966,
+    "timestamp": "2026-04-09T12:17:05.022133"
+  }
+}

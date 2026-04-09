@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9d38b45e7affc7e7",
+        "peer": "b799093709d1d908"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "AREB's only macroeconomic disclosure is one generic sentence stating results 'may be impacted positively and negatively by certain general macroeconomic and industry wide conditions,' with no mention of tariffs, trade policy, or supply chain disruption. HLIO provides extensive quantification including tariff rates up to 55% on Chinese imports, dollar amounts for exports to China, and specific operational responses such as pausing Tijuana production shifts. However, AREB is a micro-cap company with a fundamentally different business model (branded safes and beer) and likely far less international exposure than HLIO, which is a global hydraulics manufacturer exporting to 40+ countries. The divergence is partly explained by genuine business differences, but AREB still sources safes (likely from China) and should be disclosing tariff exposure.",
+      "investigation_action": "Determine where AREB sources its safes and products (likely China-manufactured), and whether tariffs of up to 55% on Chinese imports are materially impacting COGS. Ask management directly about tariff pass-through strategy and whether any supply chain disruption has occurred."
+    },
+    {
+      "flag_number": 2,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a9c4d7b752c354a1",
+        "peer": "2d1332e730907d58"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "AREB's passage about being 'an advocate for the 2nd Amendment' is clearly a brand positioning statement, not a human capital disclosure section. HLIO's extensive discussion of restructuring, leadership transitions, and associated costs reflects the reality of a large, multi-facility global company with hundreds of employees. AREB is a micro-cap company with a minimal workforce. The peer comparison is not meaningful here given the vast difference in scale and organizational complexity. This is a business difference, not disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9d38b45e7affc7e7",
+        "peer": "dd81496489eef4e9"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "This flag reinforces Flag 1. MWA provides detailed discussion of tariff impacts on inflation, foreign currency effects quantified in dollar terms, and anticipates that 'inflation will continue to rise, particularly for purchased parts, due to new tariffs enacted after March 2025.' AREB's single generic sentence about macroeconomic conditions offers no specificity whatsoever. While MWA is a much larger company with Israeli operations and complex FX exposure, AREB sells physical products (safes, apparel) that are likely subject to import tariffs and material cost inflation, making the absence of any tariff or inflation discussion notable.",
+      "investigation_action": "Investigate AREB's supply chain for safes and other physical products to determine tariff exposure. Review whether gross margins have compressed in recent quarters, which could indicate undisclosed cost pressures from tariffs or inflation."
+    },
+    {
+      "flag_number": 4,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a9c4d7b752c354a1",
+        "peer": "a40665e232bcf308"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "MWA is a large-cap company with $5.1 million in strategic reorganization charges, formal stock-based compensation plans, leadership transitions, and workforce investments at multiple manufacturing facilities. AREB is a micro-cap company where this level of human capital disclosure complexity simply does not exist. The comparison is structurally invalid due to the enormous scale difference. The flagged AREB passage is a brand statement, not an attempt to discuss or avoid discussing human capital.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d4cafc1cc7e41a3a",
+        "peer": "c6f042e88d99f6af"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "AREB's disclosure is purely promotional, describing product features like '75 minutes of fire protection at 1200 degrees Fahrenheit' and biometric safes, with zero discussion of product liability risks, warranty costs, manufacturing quality issues, or supply chain risks. For a company selling gun safes\u2014products where failure directly implicates personal safety and creates significant product liability exposure\u2014the complete absence of any operational risk, warranty, or product liability discussion is a material disclosure gap. MWA's detailed treatment of warranty accruals, manufacturing inefficiencies, and cybersecurity incidents demonstrates the kind of operational risk disclosure expected for physical product manufacturers.",
+      "investigation_action": "Investigate AREB's product liability exposure and whether any warranty claims or product safety incidents have occurred. Review whether the company carries adequate product liability insurance and whether any safe failures have resulted in litigation. Assess whether the omission of warranty accrual methodology represents a financial reporting gap."
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6043fa91b7146039",
+        "peer": "761bc15f28ebde96"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "AREB's regulatory disclosure consists entirely of listing state-level safe storage laws as a marketing opportunity ('reasons gun owners should own a gun safe') and mentioning cannabis dispensary insurance requirements. There is no discussion of AREB's own regulatory compliance obligations, product safety standards, ATF or firearms-related regulations, import/customs compliance, or any legal proceedings. MWA provides extensive disclosure of legal proceedings, environmental liabilities, customs duty correction ($9.0 million CBP assessment), product liability lawsuits, and indemnification obligations. While MWA is larger, AREB operates in the firearms accessories and cannabis-adjacent space\u2014both heavily regulated industries\u2014making the absence of any substantive regulatory or legal risk disclosure a genuine red flag.",
+      "investigation_action": "Investigate AREB's compliance with ATF regulations, firearms product safety standards, state safe storage laws (which create both opportunity and liability), and any cannabis-related regulatory requirements. Determine if AREB has faced or could face customs/import compliance issues given likely Chinese-sourced products. Check for any undisclosed litigation or regulatory actions."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "AREB's MD&A reads more like marketing material than regulatory disclosure, with promotional product descriptions and brand positioning statements substituting for substantive risk discussion. The company provides essentially no disclosure on tariff/trade impacts, product liability, warranty costs, or regulatory compliance despite operating in the firearms accessories and cannabis-adjacent sectors\u2014both heavily regulated. While some peer divergence is explained by AREB's micro-cap scale versus much larger peers, the absence of any operational risk, product safety, or legal/regulatory discussion is a genuine disclosure quality concern.",
+    "top_concerns": [
+      "Complete absence of product liability, warranty, and operational risk disclosure for a company selling safety-critical firearms products (gun safes, concealed carry products)",
+      "No regulatory or legal risk disclosure despite operating in firearms accessories and cannabis-adjacent industries subject to extensive federal, state, and local regulation",
+      "Zero tariff or supply chain cost disclosure despite likely reliance on Chinese-manufactured safes subject to tariffs up to 55%"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 2,
+    "dismissed_count": 2
+  },
+  "_meta": {
+    "ticker": "AREB",
+    "model": "claude-opus-4-6",
+    "input_tokens": 6835,
+    "output_tokens": 2050,
+    "timestamp": "2026-04-09T11:45:53.922397"
+  }
+}

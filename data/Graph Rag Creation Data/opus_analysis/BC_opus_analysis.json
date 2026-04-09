@@ -1,0 +1,233 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "24153a728a941de4",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The removed text contained specific quantitative detail ('sales growth of 2 percent,' 'same day or next day deliveries') about the Engine P&A distribution network's performance. However, this is Q1 commentary that would naturally be replaced by Q2 commentary in the subsequent filing. The disappearance is concerning only if equivalent Q2 distribution performance metrics were not provided elsewhere.",
+      "investigation_action": "Verify whether the Q2 filing's MD&A section for Engine P&A provides equivalent segment performance detail and distribution network metrics; if not, this represents a meaningful reduction in operational transparency."
+    },
+    {
+      "flag_number": 2,
+      "topic": "accounting_audit",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "916caa5a730c857f",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed text is standard boilerplate stating there were no material changes in critical accounting policies and referencing the 10-K. This is routine language that companies commonly vary between quarters. The Q2 filing likely addresses accounting policies in the notes to financial statements rather than in a separate Risk Factors paragraph.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "debt_financing",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "718f584976d150bb",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The Q1 filing contained highly specific debt figures ($2,484.1M total debt, 57% debt-to-capitalization, $997.0M borrowing capacity, $380.0M CP Program borrowings, loss on early extinguishment of 2049 Notes) that appear to have been entirely removed rather than updated for Q2. These are material quantitative disclosures for a company with significant leverage. The absence of updated debt metrics in the Q2 MD&A/Risk Factors is a meaningful degradation.",
+      "investigation_action": "Check whether equivalent debt balance, debt-to-capitalization, CP Program utilization, and credit facility capacity figures appear in the Q2 filing's financial statements or liquidity discussion sections; if absent from all sections, this is a significant transparency concern given BC's elevated leverage."
+    },
+    {
+      "flag_number": 4,
+      "topic": "liquidity_solvency",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "a52f22d6e6a0fdb3",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained a comprehensive free cash flow table (with specific figures: -$13.4M operating cash, -$44.4M free cash flow), a detailed total liquidity table ($1,284.5M), cash bridge analysis, and a forward-looking statement about debt covenant cushion. The complete absence of these quantitative liquidity disclosures in the Q2 filing represents a major degradation. Statements like 'Based on our anticipated earnings generation throughout the year, we expect to maintain sufficient cushion against the existing debt covenants' are particularly important for a leveraged industrial company.",
+      "investigation_action": "Urgently verify whether the Q2 filing contains any equivalent cash flow, liquidity, or debt covenant compliance discussion; if the covenant cushion statement and liquidity tables were removed entirely, this could signal deteriorating financial flexibility that management does not want to highlight."
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "9f88bcf9301fb8d3",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed text consists of two brief statements: one about Pillar Two tax effects being immaterial and one about no material changes in environmental regulation. These are standard 'no change' affirmations that companies may include or omit between quarters depending on editorial practice. The substantive content is minimal and simply references the 10-K.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "revenue_future_performance",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "dad33859176e5e43",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The Q1 filing contained extensive segment-level performance detail including specific net sales change decompositions (volume, price/mix, currency, acquisitions) for each of four segments, international sales percentages, adjusted operating earnings reconciliations with dollar figures and margin basis point changes, and forward-looking context about dealer ordering patterns. The complete disappearance of this level of segment detail from the Q2 filing is a severe degradation. This is core MD&A content that is essentially required for a multi-segment industrial company.",
+      "investigation_action": "This is the highest-priority concern \u2014 confirm whether the Q2 10-Q MD&A contains any equivalent segment-level revenue decomposition, operating earnings reconciliation, and international sales metrics. If truly absent, this represents a fundamental failure of MD&A disclosure quality that could warrant direct engagement with IR."
+    },
+    {
+      "flag_number": 7,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "92f1f075c51d011d",
+        "current": "c3f2da4515861b9b",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained a detailed GAAP-to-adjusted reconciliation table with specific dollar amounts (e.g., $56.3M GAAP operating earnings, $72.1M adjusted, restructuring charges of $1.1M vs. $13.5M) and explicit capital strategy targets ('approximately $150 million of capital expenditures,' 'approximately $80 million' share repurchases). The current period replaces these with vague language: 'Management is constantly evaluating capital strategy and may choose to increase share repurchases.' Dropping specific capex and buyback targets while using non-committal language is a classic disclosure degradation pattern.",
+      "investigation_action": "Press IR on why specific capex and share repurchase targets were removed; determine whether the absence reflects a genuine strategic pivot or an attempt to reduce accountability for capital allocation commitments."
+    },
+    {
+      "flag_number": 8,
+      "topic": "cost_margin_pressure",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "ae05c91e9f407016",
+        "current": "2f517e12d73eea31",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period provided granular gross margin bridge analysis (lower absorption -240 bps, warranty costs -130 bps, sales-related -50 bps, FX -40 bps, offset by labor +200 bps), segment-level earnings drivers, and the consolidated net sales change decomposition. The current period retains only a single generic sentence about price recovery limitations. This is an extraordinary reduction in margin transparency \u2014 removing quantified margin drivers eliminates investors' ability to assess cost pressures and operational efficiency.",
+      "investigation_action": "This is a critical concern for supply chain monitoring \u2014 determine whether the Q2 filing contains any equivalent margin bridge or cost driver analysis. If absent, model the company's cost structure using peer disclosures and request explanation from management."
+    },
+    {
+      "flag_number": 9,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "e932812d6538f450",
+        "current": "449609fac68e0055",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This flag overlaps substantially with Flag 7 but is assessed from the Risk Factors section. Specific restructuring charges ($1.1M and $13.5M), the explicit free cash flow definition framework, and concrete capital strategy targets ($150M capex, $80M buybacks) were all replaced by a single generic adverse-effect boilerplate sentence. The pattern of removing every specific dollar amount and commitment is consistent across multiple sections, reinforcing the obfuscation signal.",
+      "investigation_action": "Same as Flag 7 \u2014 this corroborates a systematic pattern of removing quantitative commitments from the filing. Track whether the 10-K restores this level of detail or whether the degradation persists."
+    },
+    {
+      "flag_number": 10,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "26c04b1c6852b425",
+        "current": "8cebd017da0fe7dd",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing contained specific currency exposure detail ('approximately 23 percent of annual net sales transacted in a currency other than the U.S. dollar,' specific currency exposures), a comprehensive risk factor list, and the full quantitative/qualitative market risk discussion. The current filing retains the core tariff risk factor language but removes the currency exposure quantification and the detailed risk enumeration. However, some of this content (the comprehensive risk list, market risk disclosures) may be structured differently in a Q2 filing that cross-references the 10-K and Q1 update. The tariff-specific content was substantively preserved.",
+      "investigation_action": "Verify whether currency exposure percentages and the quantitative market risk disclosures appear elsewhere in the Q2 filing; if the 23-24% international sales figure and specific currency exposures were dropped entirely, this is a meaningful loss of risk quantification."
+    },
+    {
+      "flag_number": 11,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "253ccae7f579a875",
+        "current": "c1f24864be3f0494",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included specific performance metrics for the distribution network ('sales growth of 2 percent,' 'same day or next day deliveries') alongside the mitigation limitations language. The current period retains only the generic mitigation constraints sentence. This parallels Flag 1 and suggests the distribution network's positive performance narrative was removed while the cautionary language was kept, which could indicate performance deterioration.",
+      "investigation_action": "Compare Engine P&A segment discussion in Q2 filing to assess whether distribution network performance metrics were simply relocated or truly eliminated; deteriorating distribution performance could be an early supply chain warning signal."
+    },
+    {
+      "flag_number": 12,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c3f2da4515861b9b",
+        "peer": "28721aa8d30e56ff"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags PSIX for having minimal discussion, not BC. BC actually provides more detail than PSIX on this topic. Additionally, PSIX is a much smaller company (Power Solutions International) with a very different business model and scale, making the peer comparison of limited relevance. The flag is essentially backwards \u2014 it identifies the peer as potentially under-disclosing, not BC.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 13,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "489fe7f4527b5167",
+        "peer": "890ca5fde35119f9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Similar to Flag 12, this flag identifies PSIX as having minimal tariff disclosure compared to BC, not the other way around. BC provides substantially more detailed geopolitical risk disclosure than PSIX. The peer comparison actually shows BC is more transparent on this topic. PSIX's generic language ('recent tariff costs associated with its supply chain products') is the concern here, not BC's disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 14,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c3f2da4515861b9b",
+        "peer": "442faa3e7574f0ba"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "BWXT discloses $190.3M in underfunded pension/postretirement obligations and $13.3M in expected contributions, while BC's current filing shows no equivalent pension obligation discussion. BC is known to have postretirement benefit obligations (referenced in 'other postretirement benefit costs' in the geopolitical/macro passages). The absence of quantified pension/postretirement obligation detail in BC's MD&A, while not necessarily indicative of obfuscation (it may be in the footnotes), represents a potential gap in financial sustainability disclosure relative to industrial peers.",
+      "investigation_action": "Review BC's condensed consolidated financial statement notes for pension/postretirement obligation quantification; if absent from both MD&A and footnotes, this is a legitimate gap that should be raised with management."
+    },
+    {
+      "flag_number": 15,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "489fe7f4527b5167",
+        "peer": "cf2ce0ddb456ca1f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies BWXT as having minimal geopolitical disclosure compared to BC, which is the opposite of a disclosure degradation concern for BC. BWXT is a defense contractor with fundamentally different geopolitical exposures (U.S. government budget risk vs. consumer trade/tariff risk). BC's extensive geopolitical disclosure is appropriate for its international consumer products business. The peer comparison reflects genuine business model differences.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "Brunswick's Q2 2025 10-Q filing shows a systematic pattern of removing quantitative detail across multiple critical disclosure areas. Specific dollar amounts for debt, liquidity, free cash flow, segment revenue decomposition, margin bridges, capital expenditure targets, and share repurchase commitments that were present in Q1 have been replaced with generic or vague language. This pattern is consistent across MD&A and Risk Factors sections, suggesting deliberate editorial reduction rather than isolated omissions.",
+    "top_concerns": [
+      "Complete removal of segment-level revenue decomposition, margin bridge analysis, and adjusted operating earnings reconciliation tables from MD&A \u2014 this eliminates core analytical visibility into BC's four-segment business performance (Flag 6, Flag 8)",
+      "Disappearance of detailed liquidity tables, free cash flow analysis, debt metrics, and debt covenant cushion commentary \u2014 particularly concerning given BC's 57% debt-to-capitalization ratio and $2.5B total debt (Flag 3, Flag 4)",
+      "Replacement of specific capital strategy targets ($150M capex, $80M buybacks) with non-committal language about management 'constantly evaluating' \u2014 signals potential capital allocation uncertainty or desire to reduce accountability (Flag 7, Flag 9)"
+    ],
+    "genuine_count": 6,
+    "borderline_count": 4,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "BC",
+    "model": "claude-opus-4-6",
+    "input_tokens": 11625,
+    "output_tokens": 4045,
+    "timestamp": "2026-04-09T11:49:45.943770"
+  }
+}

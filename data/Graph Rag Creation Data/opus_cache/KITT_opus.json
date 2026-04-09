@@ -1,0 +1,149 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "f8fba610bdcc9133",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed text describes ROV and Aquanaut collaboration capabilities, which is product marketing language rather than substantive supply chain disclosure. This is more of an operational/product description than a supply chain risk or dependency discussion. Its removal does not eliminate any material supply chain metrics, sourcing details, or vendor dependency information.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "5727ffadd7a940e2",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The removed text specifically disclosed that the Company purchases materials and equipment from foreign vendors with transactions denominated in local currencies, which is a material supply chain and FX risk disclosure. Removing this from Risk Factors eliminates investor awareness of foreign currency exposure and foreign supplier dependency. This is a substantive risk factor removal, not a routine editorial change.",
+      "investigation_action": "Determine whether KITT still has foreign-sourced materials and equipment procurement; if so, investigate why the FX and foreign supplier risk factor was dropped and whether the risk has been consolidated elsewhere in the 10-K or simply omitted."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "52c777b3f4c7fcc3",
+        "current": "74a3d1b35cb57fd8",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained detailed disclosure of the Registration Rights Agreement including specific timelines (15 business days, 60/120-day effectiveness deadlines), specific filing/effectiveness dates (August 7, 2023; September 12, 2023), and cashless exercise provisions tied to registration failures. The current period replaces all of this with a vague reference to 'certain amendments' and 'certain covenants' without any concrete timelines, deadlines, or commitments. The systematic removal of specific dates, deadlines, and holder remedies is consistent with obfuscation of obligations to SPA holders.",
+      "investigation_action": "Investigate the status of registration obligations under the amended agreements, whether any registration deadlines have been missed triggering liquidated damages or cashless exercise rights, and obtain the full Amendment and Exchange Agreement to understand what 'certain covenants' actually require."
+    },
+    {
+      "flag_number": 4,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "38b33b2af2dce41d",
+        "current": "3fe2f48bf015537b",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The current period does retain many of the key valuation assumptions and fair value figures (e.g., November 2024 Debentures at specific stock prices, volatility, and risk-free rates; SPA Warrants at $96,322; Private Warrants assumptions). However, several specific items from the prior period are missing: the November 2024 Debentures comparative fair values ($3,307,758 and $2,583,832), the Private Warrants comparative values ($12,861 and $7,884), the Flexible Consulting related-party amounts ($297,684 and $220,000), legal fees of $190,000, and the original SPA Warrant initial fair value of $20,949,110. Some omissions may reflect that Q2 filing naturally updates Q1 figures, but the loss of related-party transaction detail and certain comparative data points is concerning.",
+      "investigation_action": "Verify whether the Flexible Consulting related-party disclosure appears elsewhere in the Q2 filing, confirm that all Level 3 fair value rollforward tables are complete, and check whether the comparative Private Warrant and November 2024 Debenture valuations are disclosed in other notes."
+    },
+    {
+      "flag_number": 5,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "6277de8cc7df208d",
+        "current": "944525ff5b8c557b",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained specific product detail about the Olympic Arm (fully electric subsea manipulator with patented electric actuators replacing hydraulic systems) and, critically, a description of the company's risk monitoring process for long-term contracts (identifying risks at outset, quarterly monitoring of technical/schedule/cost risks). The current period replaces all of this with a single sentence business description. The removal of the quarterly contract risk monitoring disclosure from Risk Factors is particularly concerning as it eliminates transparency around how the company manages execution risk on its contracts.",
+      "investigation_action": "Confirm whether the Olympic Arm product line is still active and generating revenue; investigate whether the quarterly contract risk monitoring process is still in place and why disclosure of this internal control was removed from the filing."
+    },
+    {
+      "flag_number": 6,
+      "topic": "cybersecurity_technology",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "633557de31af7cd1",
+        "peer": "d7c92f6755dfb2d2"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag is misdirected \u2014 it suggests EKSO is downplaying cybersecurity risk compared to KITT, but KITT's passage is a product description of its ToolKITT software platform, not a cybersecurity risk disclosure. EKSO manufactures physical exoskeletons with a fundamentally different technology profile. The two companies operate in different segments of robotics (ocean autonomous systems vs. medical exoskeletons), making direct cybersecurity disclosure comparison inappropriate. Neither company's excerpt addresses cybersecurity risk specifically.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "74a3d1b35cb57fd8",
+        "peer": "26a42a189a3fe046"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "EKSO's regulatory reimbursement risk (Medicare/CMS DME reimbursement) is specific to medical device companies selling into the healthcare system. KITT operates in ocean robotics and subsea services, which does not involve CMS reimbursement. The regulatory risk profiles are fundamentally different business-driven differences, not disclosure evasion by KITT. The peer comparison is not meaningful for this specific risk category.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "944525ff5b8c557b",
+        "peer": "92adec12cbe9cba4"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "While the specific warranty liability rollforward that EKSO provides is driven by its business model (selling physical exoskeleton devices with standard warranty terms), KITT also manufactures and sells/leases physical robotic systems (ROVs, Olympic Arms, Aquanaut) that would reasonably carry warranty obligations. KITT's current period text is merely a one-line business description with no discussion of product warranty or operational risk. The absence of any warranty disclosure or product quality risk discussion for a hardware manufacturer is notable, though this may reflect KITT's earlier stage and service-oriented revenue model.",
+      "investigation_action": "Investigate whether KITT has product warranty obligations on its robotic systems, whether any warranty accruals exist on the balance sheet, and whether the SeaTrepid acquisition brought in warranty liabilities from its ROV fleet."
+    },
+    {
+      "flag_number": 9,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "74035c45697017bd",
+        "peer": "71ab090327c8d80b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag incorrectly characterizes KITT as providing 'minimal and generic disclosure' when in fact KITT's passage is extremely detailed \u2014 it includes specific fair value assumptions (stock prices, volatility, risk-free rates), acquisition details ($14.4M SeaTrepid for $10.65M goodwill), contingent consideration terms ($5.5M earnout tied to $4M revenue target), full valuation allowance disclosure, and Monte Carlo simulation parameters. TAYD's passage is the comparatively sparse one. KITT actually provides robust financial sustainability disclosure in this excerpt.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "KITT shows a pattern of removing substantive disclosures between its Q1 and Q2 10-Q filings, particularly around Registration Rights Agreement specifics (replaced with vague 'certain amendments' language), foreign supplier/FX risk factors, and contract risk monitoring processes. While some peer comparison flags are inappropriate due to business model differences, the temporal disappearance of concrete obligations and risk management disclosures warrants attention.",
+    "top_concerns": [
+      "Removal of specific RRA timelines, deadlines, and holder remedies replaced with vague 'certain amendments and certain covenants' language \u2014 investigate whether registration obligations have been breached or renegotiated",
+      "Disappearance of foreign supplier and FX risk factor disclosure without explanation \u2014 determine if the underlying exposure still exists",
+      "Removal of quarterly contract risk monitoring process disclosure and Olympic Arm product detail from Risk Factors \u2014 assess whether this reflects reduced transparency around execution risk on long-term contracts"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 2,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "KITT",
+    "model": "claude-opus-4-6",
+    "input_tokens": 11118,
+    "output_tokens": 2596,
+    "timestamp": "2026-04-09T12:10:13.519474"
+  }
+}

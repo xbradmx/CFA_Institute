@@ -1,0 +1,149 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "caf684d1e510cbcf",
+        "peer": "8cd17650f4c1603f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted \u2014 it flags DGII for lacking disclosure relative to ATEN, not ATEN for lacking disclosure. ATEN actually provides detailed, quantified dividend information ($0.06/share, $4.3M and $8.8M paid, $11.7M contractual obligations). This flag identifies no disclosure deficiency in ATEN.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3c24f0afae6c5b3c",
+        "peer": "5e4005b43aa9017b"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "ATEN's MD&A litigation disclosure is genuinely minimal \u2014 just two sentences of boilerplate acknowledging litigation exists and that adverse outcomes could be material. DGII quantifies a specific $6.3 million litigation reserve. However, the peer comparison is somewhat misleading: DGII's quantification arose from a specific one-time litigation event in a prior period, and ATEN may not have comparable pending matters. The brevity of ATEN's disclosure is still notable for a company of its size operating globally.",
+      "investigation_action": "Review ATEN's Part II Item 1 Legal Proceedings section and 10-K risk factors for any ongoing litigation matters; check if any material contingencies are disclosed in the notes to financial statements that would warrant more detailed MD&A discussion."
+    },
+    {
+      "flag_number": 3,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "500e349f019a8860",
+        "peer": "9023733043ec840a"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "ATEN's MD&A contains only the single sentence 'We outsource the manufacturing of our hardware products to original design manufacturers' with no discussion of supply chain risks, concentration, or current conditions. While ATEN is primarily a software/cybersecurity company with a smaller hardware component than LTRX or DGII, the lack of any supply chain risk commentary in the MD&A is thin given it does sell hardware appliances and has disclosed tariff risks in Risk Factors (Flag 4). The DGII peer reference is only a passing mention, but the contrast is still notable.",
+      "investigation_action": "Assess what percentage of ATEN's revenue comes from hardware appliances versus software/services; review the Risk Factors section for more detailed supply chain disclosure that may offset the MD&A brevity; ask management about ODM concentration risk."
+    },
+    {
+      "flag_number": 4,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3e7d66dad2926b1e",
+        "peer": "c6a8c00a99074286"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags DGII for lacking tariff/cost disclosure relative to ATEN, not the other way around. ATEN actually provides a specific and relevant discussion of tariff impacts on its supply chain costs. This flag does not identify a disclosure deficiency in the target company ATEN.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "812e8ac2be2377b7",
+        "peer": "1b5ae9ee68eafc55"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LTRX disclosed a material weakness in its own IT general controls specific to its circumstances \u2014 this is a company-specific deficiency, not an industry-wide issue that ATEN should be expected to mirror. ATEN's disclosure states 'There have been no material changes to the Company's other critical accounting policies and estimates during the six months ended June 30, 2025,' which is standard. The absence of a material weakness disclosure by ATEN simply means ATEN does not have one, not that it is concealing one.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3c24f0afae6c5b3c",
+        "peer": "82a4ae2f96b9547a"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "ATEN's MD&A legal disclosure consists of only two generic sentences, while LTRX provides extensive detail on data privacy (GDPR, CCPA), IP litigation risks, FCPA compliance, environmental regulations, and AI regulation risks. While LTRX is a much more hardware-focused, distribution-dependent company, ATEN also operates globally, handles customer data through its cybersecurity products, and faces similar regulatory exposures. ATEN's MD&A is notably sparse on these topics, though more detailed discussion may appear in its Risk Factors or 10-K.",
+      "investigation_action": "Cross-reference ATEN's 10-K Risk Factors for data privacy, GDPR, IP, and export control disclosures; assess whether the 10-Q MD&A brevity is offset by adequate annual filing disclosure or whether this represents a persistent pattern of under-disclosure on regulatory risk."
+    },
+    {
+      "flag_number": 7,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "500e349f019a8860",
+        "peer": "2b2de28f5a9b97f9"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The contrast is stark: ATEN provides a single sentence on outsourced manufacturing while LTRX provides pages of detailed supply chain risk disclosure covering single-source components, contract manufacturer dependencies, logistics providers, and pandemic impacts. However, much of this differential reflects genuine business differences \u2014 LTRX is far more hardware-dependent with complex component sourcing, while ATEN derives a larger share of revenue from software and services. Still, ATEN does sell hardware appliances and the single-sentence disclosure is thin for a 10-Q MD&A.",
+      "investigation_action": "Determine ATEN's hardware revenue mix and assess whether the company's 10-K Risk Factors provide adequate supply chain detail; engage management on ODM concentration and component sourcing risks for hardware appliance products."
+    },
+    {
+      "flag_number": 8,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "fdf8956df49e45fa",
+        "peer": "da0463f70c088f6c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The ATEN passage cited is a narrow, specific statement about restrictions on repurchasing its 2030 Notes \u2014 this is a convertible note covenant disclosure, not a comprehensive regulatory risk discussion. Comparing this single sentence to LTRX's entire Risk Factors section on regulatory/legal matters is a category error. ATEN's Risk Factors section would contain its own regulatory risk disclosures elsewhere; this particular block was not intended to cover the same ground as the LTRX passages cited.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "fdb42a1c2b4848a4",
+        "peer": "694aa5fc0d41cb5e"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ATEN's Risk Factors passage actually does address supply chain and tariff risk \u2014 the cited sentence discusses supplier-switching complications and trade practice disruptions. The comparison to LTRX's extensive supply chain Risk Factors reflects LTRX's fundamentally different business model with heavy hardware/component dependency, single-source ICs, and contract manufacturing in Asia. ATEN's more concise treatment in Risk Factors is proportionate to its lower hardware exposure. This reflects genuine business differences rather than disclosure evasion.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Most flags result from the screening layer comparing ATEN's disclosure to peers with fundamentally different business models (LTRX is heavily hardware-dependent; DGII had a one-time litigation reserve). Several flags were inverted, actually identifying the peer as the weaker discloser. ATEN's MD&A is legitimately brief on supply chain and litigation topics, but this appears proportionate to its software-heavy business model rather than evidence of systematic obfuscation.",
+    "top_concerns": [
+      "ATEN's MD&A litigation disclosure is minimal (two boilerplate sentences) \u2014 verify that adequate detail exists in Legal Proceedings and financial statement notes",
+      "Single-sentence supply chain disclosure in MD&A warrants confirmation that Risk Factors and 10-K provide adequate detail on ODM concentration and component risks",
+      "Regulatory risk disclosure in the 10-Q MD&A is sparse given ATEN's global operations and cybersecurity product exposure to data privacy regulations \u2014 verify 10-K coverage"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 4,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "ATEN",
+    "model": "claude-opus-4-6",
+    "input_tokens": 12933,
+    "output_tokens": 2523,
+    "timestamp": "2026-04-09T11:47:19.458952"
+  }
+}

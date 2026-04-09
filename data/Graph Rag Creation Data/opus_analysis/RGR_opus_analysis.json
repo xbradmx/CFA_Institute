@@ -1,0 +1,121 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "0e2de4c54e079d80",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing explicitly warned that tariffs 'could lead to increased demand and pricing on domestic materials, which could result in an increase to the Company's cost of products sold and a reduction in its gross margin.' This is a specific, operationally meaningful risk disclosure linking tariffs to domestic material pricing and margin compression. Its removal in the current period\u2014when tariff risks have arguably intensified rather than abated\u2014is a meaningful disclosure reduction.",
+      "investigation_action": "Analyst should examine Q2 2025 gross margin trends and COGS composition to determine whether domestic material cost inflation is occurring and whether the removal of this risk factor coincides with actual margin deterioration the company prefers not to highlight."
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "a65314d1fd8624da",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained a standalone risk factor titled 'The Company's business may be adversely affected by tariffs, trade sanctions or similar government actions' with specific language about tariffs increasing COGS or reducing the ability to sell products globally. Removing an entire named risk factor on tariffs during a period of heightened U.S. trade policy activity is a significant disclosure degradation. This is not a routine editorial consolidation\u2014the topic is entirely absent from the current filing's risk factors.",
+      "investigation_action": "Analyst should verify whether any tariff-related risk language was relocated elsewhere in the filing (e.g., notes or other risk factors), check whether RGR has material export sales or import exposure, and assess whether management addressed tariff impacts on earnings calls."
+    },
+    {
+      "flag_number": 3,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "48b17b736b683791",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This passage specifically warned that 'trade measures and retaliations may directly impair its business by increasing trade-related costs or disrupting established supply chains.' The removal of supply chain disruption risk language is consistent with the broader pattern of eliminating all tariff-related risk disclosures (Flags 1 and 2). Taken together, these three disappearances represent the wholesale removal of a coherent risk category rather than isolated editorial changes.",
+      "investigation_action": "Analyst should investigate RGR's supplier concentration, any recent supply chain disruptions, and whether the Anderson Manufacturing acquisition (noted in Flag 5) was partially motivated by supply chain concerns the company no longer wishes to disclose."
+    },
+    {
+      "flag_number": 4,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "7bf942ce5d30ebe9",
+        "current": "86be38c54067f5f9",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing stated 'The Company finances, and intends to continue to finance, all of these activities with funds provided by operations and current cash and cash equivalents,' providing a clear affirmative statement about self-funding. The current filing drops this sentence while retaining the credit facility and debt issuance language. While this could be a routine edit, the removal of a forward-looking commitment to self-finance during a quarter that likely involved significant cash outflows for the Anderson Manufacturing acquisition could signal a shift in financing strategy the company is not yet ready to disclose.",
+      "investigation_action": "Analyst should review cash flow statements for the current quarter, assess whether the Anderson acquisition required or will require external financing, and monitor whether the $40M credit facility sees any draws in subsequent quarters."
+    },
+    {
+      "flag_number": 5,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "a5c32dc8d8568665",
+        "current": "d56f63c64d2a3751",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing disclosed specific operational planning methodology\u2014using 'estimated unit sell-through' and 'inventory levels at independent distributors' as key production planning metrics. The current filing replaces this with vague language about 'strategic initiatives to enhance operational and market positioning' and discusses the Anderson acquisition in general terms. However, this may reflect a legitimate restructuring of the MD&A section to highlight the acquisition rather than deliberate obfuscation of production planning details, which may appear elsewhere in the filing.",
+      "investigation_action": "Analyst should verify whether the production planning methodology disclosure was moved elsewhere in the current filing and whether the shift to vague 'strategic initiative' language persists in future filings, which would confirm a pattern of reduced operational transparency."
+    },
+    {
+      "flag_number": 6,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "015441c0065e42c8",
+        "peer": "54de4408f901d0e8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "SWBI disclosed a material weakness because it actually had one\u2014a specific deficiency in its legal expense accrual controls. RGR's boilerplate on non-GAAP measures and statement that it has not adjusted critical accounting policies is standard disclosure for a company that has not identified a material weakness. The divergence reflects genuinely different circumstances at the two companies rather than RGR downplaying internal control risks. There is no evidence RGR has a similar issue it is concealing.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7d6575ce926b5564",
+        "peer": "cd452116bc894681"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "NPK provides granular quantification of tariff impacts\u2014specifically citing '$4,629,000' gross profit decline in Housewares reflecting 'Trump administration's tariffs that went into effect on goods deemed to have been shipped from the Orient after January 31, 2025' and listing tariffs explicitly among risk factors. RGR's forward-looking statement boilerplate mentions only generic 'firearms control and environmental legislation' without any reference to tariffs, trade policy, or geopolitical risks\u2014especially notable given that Flags 1-3 show these topics were actively removed from risk factors. This peer comparison reinforces the pattern of deliberate tariff risk disclosure removal.",
+      "investigation_action": "Analyst should assess RGR's actual tariff exposure (both direct imports and indirect through domestic material pricing), compare tariff discussion across at least three filing cycles, and probe management on tariff impacts during earnings calls or investor conferences."
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "RGR exhibits a clear pattern of systematically removing an entire category of tariff and trade-related risk disclosures (Flags 1-3) from its 10-Q risk factors during a period of heightened U.S. trade policy activity, which is corroborated by peer divergence showing competitors quantifying material tariff impacts. Additionally, the company removed a forward-looking self-financing commitment and replaced specific operational planning metrics with vague strategic language, suggesting a broader shift toward less transparent disclosure.",
+    "top_concerns": [
+      "Wholesale removal of tariff/trade risk disclosures (cost margin pressure, geopolitical macro, supply chain) from risk factors during a period of active U.S. tariff escalation",
+      "Removal of self-financing commitment language coinciding with the Anderson Manufacturing acquisition, potentially signaling undisclosed changes in capital allocation strategy",
+      "Replacement of specific production planning metrics (sell-through data, distributor inventory) with vague 'strategic initiative' language reducing operational visibility"
+    ],
+    "genuine_count": 4,
+    "borderline_count": 2,
+    "dismissed_count": 1
+  },
+  "_meta": {
+    "ticker": "RGR",
+    "model": "claude-opus-4-6",
+    "input_tokens": 4408,
+    "output_tokens": 2131,
+    "timestamp": "2026-04-09T12:26:20.827004"
+  }
+}

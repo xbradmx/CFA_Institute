@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "676c9e03bf0722a7",
+        "current": "28721aa8d30e56ff",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained a specific, material disclosure that the Company records a 'full valuation allowance against deferred tax assets,' which signals significant doubt about the realizability of tax benefits and implicitly about future profitability. This was replaced with a purely aspirational, marketing-style statement about 'growth phase' and 'stronger balance sheet' that contains no quantitative or risk-oriented content whatsoever. The removal of the valuation allowance disclosure\u2014without any indication it was resolved or moved elsewhere\u2014is a textbook example of replacing a negative material fact with vague optimism.",
+      "investigation_action": "Verify whether the full valuation allowance against deferred tax assets still exists by reviewing the balance sheet and tax footnotes in the current 10-Q. If it persists but was simply removed from MD&A, this represents a deliberate disclosure degradation that should be flagged to management and in supplier risk assessments."
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "28721aa8d30e56ff",
+        "peer": "442faa3e7574f0ba"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "BWXT discloses specific long-term benefit obligations ($190.3 million underfunded, $13.3 million expected contributions), which represents the kind of quantitative financial sustainability disclosure one expects from industrial companies. PSIX's statement is entirely qualitative and aspirational. However, BWXT's pension obligations may not be directly comparable to PSIX's financial situation\u2014PSIX is a smaller company that may not have material pension obligations. The concern is less about pension parity and more about the general pattern that PSIX's MD&A lacks any substantive discussion of financial risks or obligations.",
+      "investigation_action": "Review PSIX's balance sheet for any underfunded pension or long-term obligations and assess whether the company's MD&A omits discussion of material liabilities. Confirm whether the lack of financial risk disclosure reflects genuine simplicity of the balance sheet or deliberate omission."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "674765032a533fa2",
+        "peer": "3cf499c14be38443"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted\u2014it flags BWXT as potentially downplaying regulatory risk relative to PSIX, not the other way around. PSIX actually provides more specific disclosure here by naming EPA, CARB, and MEE as relevant regulatory bodies and referencing legal settlements. BWXT operates in a nuclear environment with different regulatory frameworks. This flag does not indicate disclosure degradation by PSIX; if anything, PSIX is more transparent on this topic than its peer.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ed4d0ac8dd21493f",
+        "peer": "2562a96a0e66ceeb"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag actually highlights that PSIX provides more substantive supply chain disclosure than BWXT, discussing manufacturing capacity expansion, tariff risk mitigation, strategic sourcing, and supply chain agility. The screening reason correctly notes that BWXT is the less transparent party. This is not a disclosure degradation signal for PSIX\u2014it reflects positively on PSIX's transparency relative to a peer on supply chain matters.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "28721aa8d30e56ff",
+        "peer": "c3f2da4515861b9b"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "BC provides detailed quantitative disclosure including $7.9 million and $21.4 million in restructuring charges, explicit discussion of free cash flow as a metric, and candid acknowledgment of capital allocation decisions. PSIX's corresponding disclosure is a single sentence of generic aspiration with no metrics, no risk acknowledgment, and no quantitative context. For a company that\u2014per Flag 1\u2014still likely carries a full valuation allowance against deferred tax assets, the absence of any substantive financial sustainability discussion in MD&A is a significant divergence from peer norms.",
+      "investigation_action": "Compare PSIX's full MD&A to BC's for completeness of financial discussion. Specifically assess whether PSIX discloses cash flow metrics, restructuring or impairment activity, or any quantitative measures of financial health. The combination of the valuation allowance disappearance (Flag 1) and this peer gap suggests a pattern of minimizing financial risk disclosure."
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "674765032a533fa2",
+        "peer": "492231207a5b5c38"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason again flags the peer (BC) as potentially less transparent than PSIX, not the reverse. BC states 'no material changes in environmental regulatory requirements,' which is a standard and acceptable disclosure. PSIX names specific regulatory bodies and mentions legal settlements. This flag does not represent disclosure degradation by PSIX and the peer comparison actually favors PSIX's transparency on this topic.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "PSIX exhibits a concerning pattern in financial sustainability disclosure, with the most significant signal being the removal of the explicit full valuation allowance disclosure and its replacement with aspirational language (Flag 1). This temporal degradation is reinforced by peer comparison showing PSIX's MD&A lacks the quantitative financial detail provided by comparable companies (Flag 5). However, several flags were false positives generated by the screening layer incorrectly flagging peers as less transparent than PSIX, and PSIX actually demonstrates reasonable transparency on regulatory and supply chain topics.",
+    "top_concerns": [
+      "Removal of full valuation allowance disclosure from MD&A without explanation\u2014verify whether the allowance still exists and why it was dropped from the narrative",
+      "Absence of any quantitative financial sustainability metrics in MD&A compared to peers who disclose restructuring charges, cash flow metrics, and specific obligations",
+      "Overall MD&A tone shift from factual risk acknowledgment to purely aspirational language, which may indicate management is attempting to reshape the narrative ahead of a capital raise or strategic transaction"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 1,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "PSIX",
+    "model": "claude-opus-4-6",
+    "input_tokens": 2824,
+    "output_tokens": 1859,
+    "timestamp": "2026-04-09T12:25:00.717054"
+  }
+}

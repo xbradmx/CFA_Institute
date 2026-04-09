@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "03f7a63e77cfb222",
+        "current": "fb3a21570236c8ba",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included specific disclosures about billings being discontinued as a key metric, a detailed free cash flow definition with comparability caveats, standalone selling price methodology details, and valuation allowance assessment criteria. The current period drops the billings/free cash flow metric discussion (understandable as billings was announced to be discontinued) but also removes several sentences about valuation allowance assessment ('we consider all available evidence, including past operating results, estimates of future taxable income, and the feasibility of tax planning strategies'). However, the current period adds new substantive disclosure on business combinations, contingent consideration, and the OBBB tax law impact, partially offsetting losses. The net effect is a modest reduction in granularity on some accounting policies offset by new disclosure on acquisitions.",
+      "investigation_action": "Verify whether the removed free cash flow and billings definitions are disclosed elsewhere in the filing (e.g., earnings release or supplemental data). Monitor whether the simplified valuation allowance language masks any changes in deferred tax asset recoverability assumptions."
+    },
+    {
+      "flag_number": 2,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "346b33423ed53231",
+        "current": "9d069174ec2f2dd3",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period disclosed a $184.4 million accrual for the Centripetal Networks verdict ($151.5 million plus estimated interest), while the current period reports a post-trial judgment of $113.6 million plus statutory interest 'currently on appeal' but does not disclose the current accrual amount. The prior period also disclosed $204.4 million in litigation-related charges in G&A, while the current period notes a partial release of $38.8 million but does not state the remaining accrual balance. Additionally, the loss contingencies section dropped the sentence 'We accrue for loss contingencies when it is probable that an asset has been impaired or a liability has been incurred and the amount of loss can be reasonably estimated,' which is a standard but important accounting policy statement. The reduction in the Centripetal judgment from $151.5M to $113.6M is a factual update, but the omission of the current accrual balance reduces transparency.",
+      "investigation_action": "Request clarity on the current Centripetal accrual balance following the post-trial reduction and appeal status. Verify whether the $38.8 million partial release corresponds to the Centripetal matter specifically and what remaining litigation exposure exists. Check the notes to financial statements for the complete loss contingency accrual."
+    },
+    {
+      "flag_number": 3,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "5029b86667c90ef7",
+        "current": "9903b304fb5722a3",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The 2025 Notes matured on June 1, 2025, as explicitly stated in the current filing. The removal of detailed repayment risk language ('If all of the note holders decided to convert their 2025 Notes, we would be obligated to pay the $1.0 billion principal amount') and the associated risk factor about inability to raise funds for conversion/repurchase is entirely appropriate because the obligation has been extinguished. The current filing retains disclosure about the 2025 Warrants, which remain outstanding and could have dilutive effect. This is a legitimate editorial revision reflecting changed circumstances, not obfuscation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "7661f40bb094796d",
+        "current": "e29d03a92c1755bd",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "This flag substantially overlaps with Flag 2 regarding the Centripetal Networks litigation disclosure change. The prior period disclosed '$151.5 million, plus statutory interest, for which we have accrued $184.4 million' while the current period reports '$113.6 million, plus statutory interest, which is currently on appeal' without stating the accrual amount. The addition of CyberArk acquisition risk factors is appropriate new disclosure. However, the removal of the specific accrual figure from the risk factors section, combined with the same omission in MD&A (Flag 2), represents a consistent pattern of reducing quantitative visibility into litigation exposure. The current filing also drops the sentence about the Notes-related anti-takeover provisions (appropriate given maturity) but retains them under Delaware law provisions.",
+      "investigation_action": "Same as Flag 2 \u2014 confirm the current Centripetal accrual in the financial statement notes and assess whether the appeal creates downside risk beyond the $113.6M judgment amount. Monitor whether the company has reversed any portion of the prior accrual through earnings."
+    },
+    {
+      "flag_number": 5,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a111adea5aaa2546",
+        "peer": "f30f1565a3306e8c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "PANW and XRX (Xerox) are fundamentally different businesses \u2014 PANW is a high-growth cybersecurity platform company while XRX is a legacy print/document technology company undergoing significant restructuring ('Reinvention'). XRX's cost disclosures focus on restructuring charges, inventory write-downs from exiting production print manufacturing, and outsourcing. PANW's extensive cost/margin discussion reflects its business model (cloud hosting costs, subscription mix shifts, CyberArk acquisition synergies, tariff impacts). The peer distance of 4.18 confirms these are not close comparables. The divergence reflects genuine business differences, not disclosure evasion by XRX.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "cybersecurity_technology",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "dab02598fd4408c2",
+        "peer": "9edc39ed22dd8327"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "PANW is a pure-play cybersecurity company whose entire business IS cybersecurity \u2014 its extensive disclosure of cybersecurity products, threat landscape, and risk management is its core business description, not a risk disclosure per se. XRX is a print/document technology company for which cybersecurity is an operational risk, not a product line. The peer excerpt shows XRX has an executive responsible for information security, and its cybersecurity disclosure would appropriately appear in different sections (e.g., Item 1C Cybersecurity). Comparing PANW's product descriptions to XRX's organizational structure is not a meaningful disclosure divergence.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "926ecaee3f8355a5",
+        "peer": "8fee0909ee973d65"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "PANW and XRX operate in entirely different product categories \u2014 PANW develops next-generation firewalls, cloud security platforms, and AI-powered security operations, while XRX manufactures printers and provides document management services. XRX's product risk disclosure would focus on print technology lifecycle, declining print volumes, and service contract economics, which are fundamentally different operational challenges. The peer comparison is not meaningful given the 4.18 distance score and completely different product portfolios. XRX's mention of donating PARC to SRI and product warranty disclosures are appropriate for its business context.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6625b0b4ffdd1b98",
+        "peer": "4a45ad716970ee53"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "PANW's detailed supply chain disclosure reflects its reliance on a primary EMS provider (Flex) for hardware manufacturing with sole-source components concentrated in Asia, creating genuine concentration risk warranting extensive disclosure. XRX is a large-scale manufacturer with diversified supply chains and its own manufacturing facilities, presenting fundamentally different supply chain characteristics. XRX's supplier finance program disclosure represents a different aspect of supply chain management. The comparison is inappropriate given the vastly different business models and the 4.18 peer distance.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "The majority of flagged changes reflect either legitimate business developments (2025 Notes maturity eliminating related risk disclosures) or inappropriate peer comparisons (PANW vs. XRX, which are fundamentally different businesses despite being grouped together). The only substantive concern is the reduced quantitative transparency around the Centripetal Networks litigation accrual, where the prior filing disclosed a specific $184.4 million accrual but the current filing omits the accrual amount while reporting the reduced $113.6 million judgment on appeal.",
+    "top_concerns": [
+      "Centripetal Networks litigation accrual amount no longer disclosed in risk factors or MD&A despite the matter remaining active on appeal \u2014 verify current accrual in financial statement notes",
+      "Removal of certain accounting policy details (valuation allowance assessment criteria, loss contingency accrual policy statement) from MD&A that may reduce transparency on judgment-intensive areas",
+      "Monitor whether the $38.8 million partial release of litigation accrual in fiscal 2025 fully corresponds to the Centripetal post-trial judgment reduction or includes other matters"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 3,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "PANW",
+    "model": "claude-opus-4-6",
+    "input_tokens": 49569,
+    "output_tokens": 2650,
+    "timestamp": "2026-04-09T12:21:03.999742"
+  }
+}

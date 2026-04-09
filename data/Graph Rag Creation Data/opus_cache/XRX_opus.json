@@ -1,0 +1,177 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "33fbcf39926d5d0a",
+        "current": "644372a5f760a510",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period filing included a full detailed reconciliation table for Adjusted Net (Loss) Income and EPS with specific dollar amounts for each adjustment line item (e.g., 'Inventory-related impact...7/36', 'Restructuring and related costs, net (1)/39', 'Deferred tax asset valuation allowance (4)/50'). The current period replaces this with a list of adjustment categories ('Inventory-related impact - exit of certain production print manufacturing operations', 'Divestitures', 'Reinvention-related costs') without any corresponding dollar amounts or a reconciliation table. This is a significant degradation in the specificity of non-GAAP reconciliation disclosure, which is material for understanding earnings quality.",
+      "investigation_action": "Request the complete non-GAAP reconciliation table from IR; verify whether the full reconciliation appears elsewhere in the Q2 10-Q filing; compare the magnitude of excluded items quarter-over-quarter to assess if larger adjustments are being obscured."
+    },
+    {
+      "flag_number": 2,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "d837fc7079dbbe13",
+        "current": "802ca4b698a70881",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period disclosed specific regulatory milestones for the Lexmark acquisition ('clearance of HSR in the US, anti-trust clearance in the UK and Canada,' 'Ninestar shareholder vote and Chinese securities exchange approval'). The current period no longer discusses pending regulatory approvals, instead referencing the OBBBA tax law change and historical HP Inc. legal settlement insurance proceeds. This likely reflects the Lexmark acquisition having closed or progressed past those milestones rather than deliberate obfuscation, but the absence of any update on remaining regulatory conditions or post-close integration regulatory matters is notable.",
+      "investigation_action": "Confirm whether the Lexmark acquisition has closed and all regulatory conditions have been satisfied; if not, investigate why pending conditions are no longer discussed; check whether post-acquisition regulatory integration risks are disclosed elsewhere."
+    },
+    {
+      "flag_number": 3,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "7875e505adcf16df",
+        "current": "e867f7a0bedb7d10",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period provided substantive context including that 'Revenues from Print Services and Financing, which is more than 60% of total Print revenue, has minimal reliance on imported products,' details about revenue composition impacts ('lower paper sales as a result of the sale of our European paper business and lower supplies revenue'), and disclosure of 'embedded operating leases within certain supply chain contracts for warehouses.' The current period strips all of this down to a single sentence about Lexmark's Juarez facility. The removal of revenue composition details and embedded lease disclosures represents a material reduction in supply chain transparency.",
+      "investigation_action": "Inquire with IR about the current revenue mix reliance on imports and whether embedded operating lease disclosures have been moved elsewhere; assess whether tariff exposure has changed materially with the Lexmark integration and whether the reduced disclosure is masking increased import dependence."
+    },
+    {
+      "flag_number": 4,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c8bf2b10751a7e25",
+        "peer": "4f42f27fa88ea1c9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "XRX actually provides detailed quantified restructuring disclosures with a full breakout table showing severance costs, asset impairments, reversals, and other line items by quarter. The peer comparison to Fortinet is inappropriate \u2014 FTNT is a cybersecurity company with fundamentally different operations and no comparable restructuring program. XRX is being more transparent here, not less; the screening reason inverts the actual finding.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e867f7a0bedb7d10",
+        "peer": "3484856052c4143d"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "XRX provides only a single sentence about Lexmark's Juarez facility being USMCA-compliant, with no discussion of purchase commitments, supplier concentration, inventory management challenges, or tariff impacts on its broader supply chain. FTNT, despite being in a different sector, provides $714.4 million in quantified purchase commitments and extensive discussion of supply chain management risks. Given XRX's complex global manufacturing and distribution operations and the current tariff environment, the absence of any quantified supply chain commitments or risk discussion is a notable gap, consistent with the temporal degradation identified in Flag 3.",
+      "investigation_action": "Request disclosure of non-cancelable purchase commitments and supplier concentration metrics; investigate XRX's exposure to tariffs on components and finished goods beyond the USMCA-compliant Lexmark facility; assess whether the post-Lexmark combined supply chain has materially different risk characteristics."
+    },
+    {
+      "flag_number": 6,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "efff22b1d240bed0",
+        "peer": "707754cbefbed4ef"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "XRX's single sentence is a standard forward-looking statement disclaimer about independent auditor review of projections, which is boilerplate rather than a substantive accounting risk disclosure. FTNT provides extensive risk factor discussion on critical accounting estimates, internal controls effectiveness, and accounting standard changes. While the two companies have different business models (hardware/services vs. subscription security), XRX's lack of any accounting risk factor discussion in its 10-Q risk factors section, given the complexity of its lease accounting, non-GAAP adjustments, and the Lexmark acquisition accounting, represents a meaningful gap.",
+      "investigation_action": "Review XRX's full 10-K risk factors for accounting and audit risk disclosures; investigate whether the Lexmark acquisition has introduced new critical accounting estimates (purchase price allocation, goodwill, intangible asset valuations) that warrant risk factor disclosure in interim filings."
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8d1e7a97c951a33f",
+        "peer": "383819e4fc81f75b"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "XRX's geopolitical risk disclosure is limited to three generic sentences \u2014 one about Lexmark's Asian operations, one about general foreign country risks, and one about inflation's effect on interest rates. Given that XRX now has significant operations in Asia through Lexmark (including Shenzhen, China manufacturing), is exposed to U.S.-China trade tensions and tariffs, and has a complex global supply chain, this minimal disclosure is inadequate. FTNT's exhaustive treatment, while partly reflecting its different business model, illustrates the level of specificity that investors and peers expect in the current geopolitical environment. XRX's failure to address tariff impacts beyond USMCA, China-related risks for Lexmark operations, or currency exposure in detail is a meaningful omission.",
+      "investigation_action": "Investigate XRX's actual tariff exposure on Lexmark products manufactured in China; assess currency hedging strategy for newly acquired Asian operations; request specifics on how U.S.-China trade tensions affect Lexmark's Shenzhen operations and broader supply chain."
+    },
+    {
+      "flag_number": 8,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "989a7bca35ab3443",
+        "peer": "1ad9af42f9d61a65"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "XRX's human capital disclosure is limited to collective bargaining agreement details for Lexmark's 563 non-U.S. employees and a mention of a union registration in Shenzhen. It lacks discussion of integration-related talent retention risks, key person dependencies, or the challenges of combining two large workforces during the Reinvention program. While FTNT's much more extensive disclosure partly reflects tech-sector labor market dynamics, XRX's ongoing restructuring program and major acquisition integration create significant human capital risks (retention of critical Lexmark personnel, potential work stoppages, cultural integration) that are not adequately addressed.",
+      "investigation_action": "Investigate retention rates for key Lexmark technical and sales personnel post-acquisition; assess whether restructuring-related headcount reductions have created capacity constraints; review any workforce integration challenges or union activity beyond what is disclosed."
+    },
+    {
+      "flag_number": 9,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c8bf2b10751a7e25",
+        "peer": "b830bd0be30a9f96"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags LOGI for downplaying restructuring risks relative to XRX, but this is a peer comparison where XRX is the target company. XRX actually provides a highly detailed restructuring cost breakdown table with multiple line items and footnotes. LOGI's generic mitigation steps reflect a different business situation \u2014 LOGI is not undergoing a comparable restructuring program. This flag does not indicate disclosure degradation by XRX.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e867f7a0bedb7d10",
+        "peer": "6168138c713bc873"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "LOGI discloses $368.7 million in non-cancelable purchase commitments for inventory, while XRX provides only the single-sentence Lexmark Juarez facility statement with no quantification of purchase commitments whatsoever. Given that XRX now operates a combined entity with significant manufacturing operations (including Lexmark's global supply chain), the absence of any purchase commitment disclosure is a material gap. This reinforces the pattern identified in Flags 3 and 5 where XRX's supply chain disclosures have been systematically thinned.",
+      "investigation_action": "Request quantified purchase commitment data for XRX's combined operations; compare to historical XRX standalone purchase commitments to assess whether the Lexmark acquisition has increased or obscured supply chain exposure."
+    },
+    {
+      "flag_number": 11,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0bfc44fa9c58b6cb",
+        "peer": "a1c9b65fe447d401"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags LOGI for not disclosing acquisition integration risks comparable to XRX's Lexmark-related disclosures. This is not a disclosure degradation signal for XRX \u2014 rather, XRX is providing detailed risk factor discussion about the Lexmark acquisition's synergy realization uncertainties. LOGI's brief OBBBA tax comment is unrelated and does not represent a peer comparison on the same topic. XRX's disclosure here is actually robust.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "XRX exhibits a clear pattern of supply chain disclosure degradation across multiple flags (Flags 3, 5, 10), with detailed revenue composition, purchase commitment, and embedded lease disclosures being stripped down to a single sentence about Lexmark's Juarez facility. This is compounded by the removal of specific non-GAAP reconciliation dollar amounts (Flag 1) and minimal geopolitical risk disclosure despite significantly expanded international operations through the Lexmark acquisition (Flag 7). The pattern is consistent with a company obscuring the complexity and risk profile of its post-acquisition combined operations.",
+    "top_concerns": [
+      "Systematic thinning of supply chain disclosures (purchase commitments, revenue import reliance, embedded leases) precisely when Lexmark acquisition has materially expanded supply chain complexity and tariff exposure",
+      "Removal of specific non-GAAP reconciliation dollar amounts replaced with categorical lists, obscuring the magnitude of individual adjustments to earnings",
+      "Inadequate geopolitical and macroeconomic risk disclosure given newly acquired significant China/Asia operations through Lexmark, during a period of elevated U.S.-China trade tensions"
+    ],
+    "genuine_count": 4,
+    "borderline_count": 3,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "XRX",
+    "model": "claude-opus-4-6",
+    "input_tokens": 12913,
+    "output_tokens": 3419,
+    "timestamp": "2026-04-09T12:44:24.042580"
+  }
+}

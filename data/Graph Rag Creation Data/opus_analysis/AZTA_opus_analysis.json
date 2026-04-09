@@ -1,0 +1,149 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "a90200d04cdbd8dc",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing explicitly discussed BIOSECURE Act risk, third-party manufacturing dependence in China, and the potential for material adverse effects from supply chain disruption. This specific, material risk factor has been entirely removed in the current filing without any apparent replacement or explanation. Given that the BIOSECURE Act remains a live legislative risk and AZTA's China manufacturing exposure has not disappeared, this removal is concerning.",
+      "investigation_action": "Verify whether AZTA has reduced or eliminated its China manufacturing dependence, or whether BIOSECURE Act risk has been consolidated into another risk factor. If neither, inquire with management about the rationale for removing this disclosure and assess whether the company is attempting to minimize investor awareness of this exposure."
+    },
+    {
+      "flag_number": 2,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "b8f80e64a2dec96a",
+        "current": "0359ad0720dc89dc",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period provided a detailed segment-level breakdown of SG&A expenses with dollar amounts and percentages of revenue for both SMS and Multiomics segments plus Corporate, across multiple periods. The current period collapses this into a single aggregate statement about a $2.9 million increase. However, this could partially reflect the transition from a 6-month to a 9-month cumulative reporting period in a Q3 10-Q, where the detailed quarterly breakdowns may appear elsewhere in the filing.",
+      "investigation_action": "Check whether the segment-level SG&A detail appears in other sections of the Q3 10-Q (e.g., in the operating income tables or notes). If the detail has genuinely been removed rather than relocated, this represents a meaningful reduction in transparency around cost allocation across segments."
+    },
+    {
+      "flag_number": 3,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "a56ff884cf632f0e",
+        "current": "5d6c08b79468891b",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period specifically identified transformation costs as relating to 'one time asset write downs associated with changes in technology, one time inventory write downs relating to restructuring actions taken in the period, and third-party consulting costs associated with process and systems re-design.' The current period replaces this with duplicated boilerplate language about 'simplifying, standardizing, streamlining, and optimizing' without any specificity on cost composition. The literal duplication of identical paragraphs also suggests careless editing or deliberate padding to obscure the removal of detail.",
+      "investigation_action": "Request a breakdown of transformation cost categories for the current period. Determine whether asset and inventory write-downs are continuing and whether their removal from disclosure indicates these charges have concluded or are being obscured. The duplicated boilerplate text is a red flag for disclosure quality."
+    },
+    {
+      "flag_number": 4,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c0d0ff8f3edb63c6",
+        "peer": "50d518b81348e1b8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "AZTA explicitly states it had 'no outstanding debt on our balance sheet' as of June 30, 2025, while ACMR has extensive borrowings across multiple Chinese banks totaling $278 million. The divergence reflects genuinely different capital structures \u2014 AZTA is debt-free and investing in marketable securities, while ACMR is heavily leveraged. There is no obligation for AZTA to disclose debt covenants or borrowing details when it has no debt.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "404ffacda904c5da",
+        "peer": "7890c0da3766dddc"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "ACMR has massive, specific China regulatory exposure (BIS Entity List, HFCA Act, STAR Market listing, customs investigations, mainland China operating permits), which justifies its extensive disclosure. AZTA's China exposure is more limited, but the company does have China operations (as evidenced by the $6.5 million tax expense from repatriating cash from a China subsidiary and the disappeared BIOSECURE Act risk factor). The single line about 'governance-related matters' is inadequate if AZTA faces meaningful China regulatory risk. Combined with Flag 1's removal of the BIOSECURE Act risk, this suggests a pattern of minimizing China-related regulatory disclosure.",
+      "investigation_action": "Assess the full scope of AZTA's China operations, including revenue exposure, manufacturing footprint, and regulatory requirements. Determine whether the company faces any of the same regulatory risks (export controls, data security, BIOSECURE Act) that would warrant more specific disclosure beyond a footnote reference to 'governance-related matters.'"
+    },
+    {
+      "flag_number": 6,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "bedcf2e4d0fb29fd",
+        "peer": "af389d35aa0db46c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is backwards \u2014 the screening reason suggests ACMR may be downplaying risks that AZTA discloses. In fact, AZTA provides extensive and commendable disclosure on two material weaknesses (cash flow statement classification errors and account reconciliation failures), ongoing remediation efforts, and the Chief Accounting Officer departure. ACMR's brief disclosure simply reflects that it has no material weaknesses to report. This flag does not indicate AZTA is degrading its disclosure; rather, AZTA is appropriately transparent about serious internal control issues.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f4c8755dd4e1b571",
+        "peer": "d2c52417a6341799"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason indicates ACMR may be downplaying risks relative to AZTA's detailed disclosure. AZTA actually provides robust detail on restructuring costs by segment, stock-based compensation plans, performance conditions, and the CAO departure. ACMR's single sentence about stock-based compensation valuation uncertainty is the less transparent party. This flag does not identify a disclosure degradation at AZTA \u2014 it shows AZTA is the more transparent company on this topic.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c66401a0fb8d38f1",
+        "peer": "381bc1988b06c5c3"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "VECO explicitly warns about tariff-related cost pressures on imported materials and domestic supplier costs, while AZTA makes no mention of tariffs despite generating 37-39% of revenue internationally and having supply chain exposure in China (per the disappeared BIOSECURE Act risk factor). AZTA attributes gross margin improvement to 'operational efficiencies' without addressing potential tariff headwinds. Given the current trade environment and AZTA's international footprint, the complete absence of tariff discussion is notable.",
+      "investigation_action": "Determine AZTA's exposure to tariffs on components and materials imported from China and other countries. Assess whether the company's improving margins could be masking tariff costs absorbed elsewhere or whether the tariff impact is genuinely immaterial. Ask management directly about tariff exposure in the current trade environment."
+    },
+    {
+      "flag_number": 9,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5393c6f21329b44b",
+        "peer": "bd53d8a71502a119"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "AZTA has growing international revenue (39% of Q3 revenue, up from 34%), a China subsidiary from which it is repatriating cash (triggering a $6.5 million tax charge), and a disappeared BIOSECURE Act risk factor \u2014 yet its MD&A discussion of geopolitical risk is limited to generic language about 'worldwide economic conditions' and foreign exchange. VECO explicitly discusses tariff impacts, declining China engagement, and trade dynamics. AZTA's disclosure of a change in 'indefinite reinvestment assertion' regarding its China subsidiary suggests a strategic shift that warrants far more geopolitical context than provided.",
+      "investigation_action": "Investigate the strategic rationale behind AZTA's decision to repatriate cash from its China subsidiary and the change in reinvestment assertion. Determine whether this signals a reduction in China operations and how it relates to the removed BIOSECURE Act risk factor. Assess whether AZTA is strategically de-emphasizing China risk disclosures while simultaneously reducing its China footprint."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "AZTA displays a concerning pattern of reducing disclosure specificity around China-related risks and operational cost details. The removal of the BIOSECURE Act supply chain risk factor, the elimination of transformation cost breakdowns, and the absence of tariff/geopolitical discussion \u2014 all while the company is actively repatriating China subsidiary cash \u2014 suggest a coordinated effort to minimize investor attention on China exposure. The company's two ongoing material weaknesses in internal controls add to the disclosure quality concern, though the company is at least transparent about those issues.",
+    "top_concerns": [
+      "Removal of BIOSECURE Act and China supply chain risk factor concurrent with cash repatriation from China subsidiary, suggesting undisclosed strategic repositioning",
+      "Elimination of transformation cost specificity (asset write-downs, inventory write-downs, consulting costs) replaced with duplicated boilerplate language",
+      "Absence of tariff and geopolitical risk discussion despite 39% international revenue and active China operations, in contrast to peers who explicitly address these risks"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 3,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "AZTA",
+    "model": "claude-opus-4-6",
+    "input_tokens": 18003,
+    "output_tokens": 2762,
+    "timestamp": "2026-04-09T11:48:20.496657"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "05c2c3814948e340",
+        "current": "5820c8e9184df3e6",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included a specific forward-looking statement: 'We expect that, for the foreseeable future, general and administrative expenses will increase in dollars, as we incur additional costs associated with growing our business, operating ACM Research, as a public company in the United States and operating ACM Shanghai as a public company in mainland China.' This concrete outlook language was entirely removed in the current period, leaving only the generic stock-based compensation valuation paragraph. While this could reflect routine quarterly editing of boilerplate, the removal of a commitment to disclose expected cost trajectory is notable.",
+      "investigation_action": "Verify whether the G&A expense growth outlook was relocated elsewhere in the current 10-Q or whether management has stopped providing this forward-looking guidance entirely; ask management on next earnings call whether the cost growth trajectory has changed."
+    },
+    {
+      "flag_number": 2,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "208e220ff7c79c90",
+        "current": "af389d35aa0db46c",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period included multiple substantive paragraphs that were removed: the detailed definition of 'Shipments' as a non-GAAP metric (distinguishing first-tool vs. repeat-tool revenue recognition), the explanation of why management excludes stock-based compensation from adjusted EBITDA, the disclosure of the CEO/CFO evaluation concluding disclosure controls were effective, and the explicit statement about resource constraints in control design. The current period retains only skeletal headings ('Critical Accounting Policies and Estimates,' 'Adjusted EBITDA,' 'Changes in Internal Control') with minimal substance. The removal of the shipment revenue recognition methodology and the disclosure controls effectiveness conclusion are particularly significant as they provide investors with insight into how the company recognizes revenue on first-tool evaluations.",
+      "investigation_action": "Determine whether the shipment metric methodology and disclosure controls effectiveness conclusion appear elsewhere in the Q2 filing; request management confirm that disclosure controls remain effective and that revenue recognition policy for first-tool shipments is unchanged."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "90c0e73d5d2bde5b",
+        "current": "aca9e1c3c1e0d790",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained a vague statement about ACM Lingang milestones: 'We cannot guarantee that ACM Lingang will achieve the missed milestones in 2025, or even if it does achieve the milestones in 2025, that it will not face penalties related to the original or updated agreements.' The current period replaces this with significantly more detailed disclosure, including specific quantitative penalty thresholds (RMB 157.6 million / $22.2 million in annual total taxes by July 2027, with 20% liquidated damages if shortfall is within 80% of target). Additionally, the current period adds specific tax rates for each of ACMR's four China subsidiaries (15%, 25%, 25%, 25%) and effective tax rate explanations that were absent before. This is actually an improvement in the current period. However, the prior period also contained detailed language about disclosure controls effectiveness that was removed in the current period, and the screening reason about 'removing quantitative tax rates' appears inverted \u2014 the current period actually added them.",
+      "investigation_action": "While the Lingang penalty detail improved, monitor the status of ACM Lingang's milestone achievement and whether supplementary land grant agreements are finalized; track the Seoul Customs Office investigation of ACM Korea which is a new disclosure in the current period."
+    },
+    {
+      "flag_number": 4,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "50d518b81348e1b8",
+        "peer": "c0d0ff8f3edb63c6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags AZTA for 'downplaying' debt financing risks, but AZTA explicitly states 'As of June 30, 2025, we had no outstanding debt on our balance sheet.' The divergence reflects genuinely different capital structures \u2014 ACMR has $278 million in outstanding borrowings across multiple Chinese bank facilities while AZTA is debt-free and investing in marketable securities. ACMR's extensive debt disclosure is appropriate to its financial position, and AZTA's brevity reflects its actual zero-debt status, not disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7890c0da3766dddc",
+        "peer": "404ffacda904c5da"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "AZTA (Azenta) is a US-based life sciences company with fundamentally different regulatory exposures than ACMR, which operates extensively in mainland China, is subject to BIS Entity List restrictions, PCAOB inspection risks, and Chinese government regulatory oversight. The peer's single-line disclosure ('Includes expenses related to governance-related matters') is clearly insufficient context to evaluate their regulatory risk posture, but the divergence reflects genuinely different business models and geographies rather than disclosure evasion by AZTA.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "af389d35aa0db46c",
+        "peer": "bedcf2e4d0fb29fd"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The screening reason is inverted \u2014 it suggests ACMR is downplaying internal control risks relative to AZTA. AZTA disclosed two material weaknesses (cash flow statement controls and account reconciliation controls) with detailed remediation plans, while ACMR's current filing provides only the bare minimum: 'There were no changes in our internal control over financial reporting.' However, per Flag 2, ACMR removed the prior period's explicit CEO/CFO effectiveness conclusion. The absence of the effectiveness conclusion in the current period, combined with the skeletal internal controls disclosure, raises a question about whether ACMR is being forthcoming. If ACMR truly has no material weaknesses, the disclosure is adequate but thin; the concern is the removal of the prior period's affirmative effectiveness statement.",
+      "investigation_action": "Confirm whether ACMR's CEO/CFO concluded that disclosure controls were effective as of June 30, 2025; verify this conclusion is stated elsewhere in the filing and was not intentionally omitted."
+    },
+    {
+      "flag_number": 7,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9d20b721e7bc0040",
+        "peer": "3da2dcdc971eac7e"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This is a duplicate of Flag 4. AZTA has zero outstanding debt and discloses this fact clearly. ACMR has extensive Chinese bank borrowings with detailed covenant disclosures. The divergence reflects fundamentally different capital structures, not disclosure evasion by either party. ACMR's own disclosure of $674.5 million in maximum borrowing capacity and $278 million outstanding, with specific loan covenants including the Private Offering-linked acceleration clause, is actually commendably detailed.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "79e146d64047f50f",
+        "peer": "a226cc72821ab17c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ACMR (semiconductor wet-cleaning equipment) and AZTA (life sciences automation/biorepository) operate in completely different product markets. ACMR discloses its product lines (wet-cleaning, advanced packaging tools for DRAM, 3D NAND, foundry/logic chips) while AZTA discusses restructuring and warranty costs for life sciences equipment. The divergence in product-risk disclosure reflects entirely different business operations, not disclosure evasion by AZTA. The screening reason incorrectly implies these companies face comparable product operational risks.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7890c0da3766dddc",
+        "peer": "c04878a5a3843c6a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ACLS (Axcelis Technologies) is a US-based ion implantation equipment company with a fundamentally different international regulatory exposure profile than ACMR, which has subsidiaries on the BIS Entity List, dual-listed operations in China, and PCAOB-related delisting risks. ACLS's brief tax disclosure referencing the OBBBA legislation is appropriate to its simpler regulatory posture. The divergence reflects genuine business differences \u2014 ACMR operates primarily in and through mainland China while ACLS does not have comparable Chinese subsidiary structures requiring this level of regulatory disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d002ffb1a0115d5a",
+        "peer": "a68df065fa61fb4e"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag is directed at ACLS's allegedly sparse supply chain disclosure relative to ACMR. However, ACMR's supply chain is uniquely exposed given its BIS Entity List status, reliance on related-party suppliers (Ninebell, Shengyi), and strategic inventory buildup ($648 million, up from $598 million). ACLS operates with a different manufacturing footprint and supply chain structure. ACMR's own supply chain disclosure is actually quite robust and detailed, and ACLS's briefer mention of tariff mitigation through global supply chain reflects its different risk profile rather than evasion.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "ACMR's temporal disclosure changes between Q1 and Q2 2025 show a pattern of removing explanatory detail from accounting and control sections \u2014 most notably the shipment revenue recognition methodology, the CEO/CFO disclosure controls effectiveness conclusion, and the G&A expense growth outlook. However, the regulatory/legal disclosures actually improved with more quantitative detail on Lingang penalties and tax rates. Most peer divergence flags reflect genuinely different business models rather than disclosure degradation.",
+    "top_concerns": [
+      "Removal of shipment metric methodology and disclosure controls effectiveness conclusion from MD&A (Flag 2) \u2014 these are substantive deletions that reduce investor visibility into revenue recognition practices and control environment",
+      "Confirm whether CEO/CFO disclosure controls effectiveness conclusion was relocated or intentionally omitted in Q2 2025 filing (Flags 2 and 6)",
+      "Monitor ACM Korea Seoul Customs Office investigation \u2014 newly disclosed in current period, still in preliminary stages with uncertain outcome"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 2,
+    "dismissed_count": 7
+  },
+  "_meta": {
+    "ticker": "ACMR",
+    "model": "claude-opus-4-6",
+    "input_tokens": 24305,
+    "output_tokens": 3074,
+    "timestamp": "2026-04-09T11:43:30.031341"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "0e625f59500942c7",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing included a specific statement about capital intensity and significant lead times for customized, built-to-order products, which is relevant to cost and margin pressure. However, the flagged text is a single sentence rather than a comprehensive risk factor discussion, and it may have been consolidated or reworded elsewhere in the current Risk Factors section. The disappearance is notable given TGEN's ongoing losses and the relevance of capital intensity to their business model.",
+      "investigation_action": "Check whether the full Risk Factors section of the 2025-08-13 filing addresses capital intensity and lead time risks elsewhere; if not, ask management why this disclosure was dropped while the company continues to report operating losses."
+    },
+    {
+      "flag_number": 2,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "bb99f32ccf93743e",
+        "current": "65e566898c91148e",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period included a detailed G&A expense breakdown with specific dollar amounts ($2,928,135 vs $2,848,568), line-item variances (e.g., $267,613 payroll increase, $137,727 facility cost decrease, $75,000 recovery, $79,006 litigation reserve reduction), while the current period text on this topic was reduced to a single sentence about hiring eight Aegis employees. The detailed expense analysis would typically appear in MD&A for the current period's comparable discussion but appears to be missing from the flagged current block.",
+      "investigation_action": "Verify whether the Q2 2025 filing includes a detailed G&A expense discussion elsewhere in MD&A; if the line-item breakdowns for Q2 G&A are truly absent, this represents a meaningful reduction in operating expense transparency that should be raised with management."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "7dec8fafb76c7815",
+        "current": "bff917ac90497fa2",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening matched the wrong current-period block. The current filing's MD&A (visible in Flag 5's target text, block d3288355eca9c4c4) clearly contains an 'Impact of Anti-fossil Fuel Sentiment' section discussing NYC regulatory push and its impact on cogeneration sales, as well as scope 2 emissions and the post-2024 election political environment. The topic was not removed; the automated matching simply linked to an unrelated passage about the Aegis Assumption Agreement and factory relocation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "revenue_future_performance",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "04e63ceedfeda560",
+        "current": "e4fb422a9f25dae9",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The backlog disclosure changed in two notable ways: (1) the current period backlog of $6,215,443 consists entirely of purchase orders with no 'firm verbal commitment' category, whereas the prior period split backlog between purchase orders ($9,091,587) and verbal commitments ($430,428); and (2) the Vertiv Agreement description was softened from specifying exclusive/non-exclusive rights to emphasizing 'commercially reasonable efforts' and budget establishment. The backlog change could reflect a genuine shift (no verbal-commitment projects existed at period end) rather than obfuscation. However, backlog declined from $9.5M to $6.2M\u2014a 35% drop\u2014which warrants scrutiny alongside the disclosure change. The Vertiv language shift adds more hedging around a key growth partnership.",
+      "investigation_action": "Ask management to explain the 35% backlog decline and whether the elimination of the verbal-commitment backlog category reflects a policy change or actual absence of such projects; also clarify the status of the Vertiv supply agreement negotiations and any DTx chiller orders received through the partnership."
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d3288355eca9c4c4",
+        "peer": "60deb65d10ed9f91"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is about AIRJ being less detailed than TGEN, not about TGEN's own disclosure degradation. TGEN is the more transparent party here, providing specific discussion of anti-fossil fuel sentiment, geopolitical tensions, and tariff exposure. AIRJ is a pre-revenue technology company (AirJoule) with fundamentally different business characteristics, making the comparison inapt. This flag does not indicate disclosure degradation by TGEN.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e4fb422a9f25dae9",
+        "peer": "db10d130a2ebb134"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag highlights that AIRJ has no revenue and only generic forward-looking statements compared to TGEN's detailed revenue and backlog disclosures. This reflects AIRJ's pre-commercial stage business rather than any disclosure deficiency by TGEN. TGEN provides granular revenue breakdowns by segment, dollar-amount comparisons, and specific backlog figures. The peer comparison is not meaningful for assessing TGEN's disclosure quality.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cf9a3d6ec4570e13",
+        "peer": "9c61ab465d63b2b0"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is about AIRJ's less detailed supply chain disclosure compared to TGEN. TGEN provides specific discussion of COVID supply chain impacts, component shortages, tariff exposure, and the Vertiv partnership for procurement. AIRJ is a pre-revenue startup relying on partnerships (CATL US, GE Vernova). The divergence reflects genuine business model differences, not disclosure evasion by TGEN. TGEN is the more transparent filer on this topic.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "598285b62ecdcb3f",
+        "peer": "6aaffb87f10ed356"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "AAON provides extensive disclosure on intangible assets ($80.4M net), goodwill ($81.9M), amortization schedules, warranty accruals ($23.8M), tax impacts, PSU compensation costs ($5.9M), and a $220M capex program, while TGEN's investing activities disclosure is limited to $277,989 in capex and a $42,956 NCI distribution. While AAON is a much larger company with more complex balance sheet items requiring more disclosure, TGEN's minimal discussion of capital allocation, depreciation, and financial sustainability is thin given the company's ongoing losses ($2.1M net loss for H1 2025) and capital-intensive business model.",
+      "investigation_action": "Review TGEN's balance sheet for deferred maintenance on assets, assess whether the minimal capex ($278K for 6 months) is adequate for a capital-intensive manufacturer, and evaluate the sustainability of current cash reserves given continued operating losses."
+    },
+    {
+      "flag_number": 9,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d3288355eca9c4c4",
+        "peer": "a7a2408bee39129b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag suggests AAON is downplaying geopolitical risks compared to TGEN, but AAON actually provides extensive macro discussion including tariff surcharges (6.0% on AAON products), data center demand, interest rate impacts, and a comprehensive forward-looking risk factor list. The differences reflect legitimate business-specific disclosures: TGEN focuses on natural gas pricing and anti-fossil fuel regulation because it sells gas-fired cogeneration, while AAON focuses on construction cycles, tariffs, and HVAC market dynamics. Neither company is deficient relative to its own risk profile.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Most flags were either false positives from peer comparisons with inappropriate comparables (AIRJ is a pre-revenue company) or mismatched text blocks. The two substantive temporal concerns\u2014potential removal of detailed G&A expense breakdowns and the backlog disclosure simplification\u2014warrant verification but may reflect normal quarterly variation rather than systematic obfuscation. TGEN generally maintains detailed MD&A disclosures with specific dollar amounts and segment-level commentary.",
+    "top_concerns": [
+      "Verify whether detailed G&A expense line-item breakdowns were omitted from the Q2 2025 MD&A or simply not captured in the flagged block",
+      "Investigate the 35% backlog decline from $9.5M to $6.2M and the elimination of the verbal-commitment backlog subcategory",
+      "Assess whether minimal capex ($278K in H1 2025) is sustainable for a capital-intensive manufacturer reporting continued operating losses"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 3,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "TGEN",
+    "model": "claude-opus-4-6",
+    "input_tokens": 12733,
+    "output_tokens": 2660,
+    "timestamp": "2026-04-09T12:35:27.825997"
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "4df7e2be04e75071",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This is standard MD&A operating expense commentary that changes quarter to quarter based on the specific drivers of that period's results. The Q2 filing discussed Q2/H1 expense drivers (headcount-related expenses, infrastructure costs), and the Q3 filing would naturally discuss Q3/H1-adjusted drivers with different language. This is not a disappearance of a disclosure topic but rather period-specific narrative that rotates with each quarter's results.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "0964feda2ebff02d",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing contained highly detailed discussion of gross margin volatility factors including 'continued industry-wide global product pricing pressures,' 'increased competition,' 'potential increases in the cost of components,' tariff impacts, and 'shifts in the mix of products and services.' This is substantive risk factor language covering cost/margin pressure. However, 10-Q risk factors are often incorporated by reference to the 10-K, and quarterly filings sometimes trim or consolidate risk factors. The absence needs to be verified against whether the current filing references risk factors elsewhere or if this content migrated to the 10-K.",
+      "investigation_action": "Verify whether the current 10-Q incorporates 10-K risk factors by reference or whether this margin pressure disclosure was genuinely removed. If removed, assess whether Apple is experiencing margin compression it prefers not to highlight."
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "a3fc623a7abc0687",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flagged text is a single boilerplate sentence about insurance coverage being potentially insufficient. This is generic risk language that is immaterial on its own and likely part of a broader risk factor paragraph. Its absence in the current filing is most likely due to consolidation or editorial cleanup rather than any substantive effort to obscure financial sustainability risks.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "d097a196579cfe40",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This is highly material and specific risk factor content that included detailed discussion of tariff impacts: 'Beginning in the second quarter of 2025, new U.S. Tariffs were announced, including additional tariffs on imports from China, India, Japan, South Korea, Taiwan, Vietnam and the EU.' The passage also disclosed that the 'ultimate impact remains uncertain' and discussed retaliatory measures and COVID-19 pandemic risk. Removing this extensive, time-specific geopolitical risk disclosure \u2014 particularly when the tariff environment has not resolved \u2014 represents a significant reduction in transparency on a topic directly material to Apple's supply chain and cost structure.",
+      "investigation_action": "Confirm whether this tariff/geopolitical risk language was moved elsewhere in the filing or incorporated by reference. If genuinely removed, investigate whether Apple is downplaying ongoing tariff exposure, especially given its heavy manufacturing dependence on China, Vietnam, and India. Assess whether tariff impacts are being absorbed into margins without disclosure."
+    },
+    {
+      "flag_number": 5,
+      "topic": "liquidity_solvency",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "57b721427bea06e3",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flagged text consists of two generic concluding sentences about business interruption consequences ('substantial recovery time, significant expenditures to resume operations, and lose significant sales'). These are standard risk factor tail sentences that are immaterial standing alone and were likely part of a broader risk factor that may have been restructured. This does not represent meaningful liquidity or solvency disclosure degradation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "c02953564edf558c",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This passage contained specific and material operational risk disclosures including: manufacturing locations 'prone to earthquakes and other natural disasters,' climate change intensifying extreme weather, risk of 'fire, power shortages, nuclear power plant accidents and other industrial accidents,' and critically, that 'the Company's operations are also subject to the risks of industrial accidents at its suppliers and contract manufacturers.' Removing discussion of physical plant and supplier operational risks is a substantive disclosure reduction, especially for a company with concentrated outsourced manufacturing.",
+      "investigation_action": "Determine whether operational/supply chain risk factors were consolidated elsewhere in the current filing or the 10-K. If removed, investigate whether Apple has experienced any supplier incidents or operational disruptions it prefers not to highlight, and whether this omission correlates with any change in insurance or contingency disclosures."
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "a63fd270e5b147f2",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing specifically disclosed that 'the U.S. Department of Commerce has initiated an investigation under Section 232 of the Trade Expansion Act of 1962... into, among other things, imports of semiconductors, semiconductor manufacturing equipment, and their derivative products, including downstream products that contain semiconductors.' This is a highly specific, named regulatory proceeding directly relevant to Apple's supply chain. Additionally, ESG/stakeholder litigation risk language was removed. The disappearance of a named regulatory investigation from risk factors is a clear disclosure degradation signal.",
+      "investigation_action": "Investigate the current status of the Section 232 semiconductor investigation and whether it has been resolved or remains pending. If still active, the removal of this disclosure is a red flag. Also verify whether ESG-related legal exposure has changed or if Apple is simply choosing not to disclose it."
+    },
+    {
+      "flag_number": 8,
+      "topic": "revenue_future_performance",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "8685aad6f66f3133",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing disclosed important performance risk factors including 'the Company generates a significant portion of its net sales from a single product and a decline in demand for that product could significantly impact quarterly net sales' \u2014 a reference to iPhone concentration risk. It also disclosed seasonal patterns and the impact of new product introductions on results. While these are somewhat recurring disclosures, the acknowledgment of single-product revenue concentration is material information that investors rely on. Its absence from the current filing warrants verification.",
+      "investigation_action": "Confirm whether revenue concentration and seasonality risk factors are included elsewhere in the current 10-Q or incorporated by reference from the 10-K. If removed, assess whether iPhone revenue share has changed and whether Apple is reducing transparency around product concentration risk."
+    },
+    {
+      "flag_number": 9,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "d5b4c3fdb002e81c",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This is among the most material disclosures flagged. The prior filing specifically named manufacturing locations ('China mainland, India, Japan, South Korea, Taiwan and Vietnam'), disclosed reliance on 'single or limited sources for the supply and manufacture of many critical components,' and stated that 'geopolitical tensions or conflict could result in significant disruptions.' For a company whose entire hardware business depends on outsourced manufacturing, removing explicit supply chain geographic concentration and single-source dependency risk disclosure is a significant transparency reduction.",
+      "investigation_action": "Verify whether supply chain risk factors were consolidated into the annual 10-K or appear elsewhere in the current filing. If genuinely absent, this is a high-priority concern \u2014 investigate whether Apple is diversifying its supply chain in ways that would make prior disclosures misleading, or conversely, whether it is obscuring continued concentration risk. Cross-reference with any supplier audit or geographic diversification updates."
+    },
+    {
+      "flag_number": 10,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "445bfb05c1983e9d",
+        "current": "0bebb0f5f3c8e183",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing disclosed specific figures: 'remaining availability was $40.8 billion as of March 29, 2025,' a new '$100 billion' authorization, and a specific dividend increase from '$0.25 to $0.26 per share.' The current filing strips these to 'the Company has authorized share repurchase programs' with no remaining authorization amount and no reference to the $100 billion program. Removing the remaining buyback capacity figure and the newly announced authorization amount is a clear reduction in quantitative specificity. While the dividend rate and quarterly buyback amount are still disclosed, the overall program size and remaining capacity are important for understanding capital allocation commitments.",
+      "investigation_action": "Determine the remaining share repurchase authorization as of June 28, 2025 \u2014 this should be calculable from cash flow statements. Investigate whether Apple is deliberately obscuring the pace at which it is consuming its buyback authorization, and whether there is any change in capital return strategy that would explain the reduced disclosure."
+    },
+    {
+      "flag_number": 11,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0bebb0f5f3c8e183",
+        "peer": "f0f6cf565c07ee71"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "Dell provides significantly more detail on capital allocation strategy, including specific capex figures, dividend payment amounts, investing activity breakdowns, and explicit statements about maintaining investment grade credit ratings. Apple's current disclosure is notably more terse. However, Apple and Dell have very different business models and capital structures \u2014 Apple generates enormous free cash flow with minimal capex relative to revenue, while Dell has a more complex financing structure including leasing and as-a-Service offerings that necessitate more detailed disclosure. The divergence is partly explained by business model differences, but Apple's current period reduction in buyback authorization details (flagged separately) amplifies this concern.",
+      "investigation_action": "Compare Apple's capital return disclosure depth to its own historical practice and to closer mega-cap tech peers (Microsoft, Alphabet). If Apple is an outlier in reducing capital allocation detail, this may signal a strategic shift in capital return policy that management prefers not to telegraph."
+    },
+    {
+      "flag_number": 12,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0bebb0f5f3c8e183",
+        "peer": "ecb74b93c1cf19e8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually notes that SMCI is less detailed than Apple, stating SMCI 'provides only generic, boilerplate discussion on financial estimates and capital expenditures without substantive detail on financial sustainability, while AAPL discloses active, quantifiable capital return programs.' This flag is inverted \u2014 it is flagging SMCI's weaker disclosure relative to Apple, not Apple's disclosure degradation. Additionally, SMCI and Apple are fundamentally different companies (server/rack manufacturer vs. consumer electronics giant) making this peer comparison of limited value for assessing Apple's disclosure quality.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "Apple's Q3 2025 10-Q shows a significant pattern of risk factor disclosure removal compared to the Q2 2025 filing. Multiple material risk categories \u2014 including supply chain geographic concentration, tariff/geopolitical exposure, operational risks, regulatory investigations (Section 232 semiconductor probe), and margin pressure factors \u2014 appear to have been stripped from the filing. Additionally, the capital return program disclosure was made less specific by removing the remaining buyback authorization amount and the $100 billion program reference. While some of these removals may reflect 10-Q risk factor incorporation by reference from the 10-K, the breadth and specificity of what was removed \u2014 particularly named countries, named investigations, and quantified authorization amounts \u2014 suggests a deliberate reduction in disclosure granularity.",
+    "top_concerns": [
+      "Disappearance of supply chain geographic concentration disclosure naming specific countries (China, India, Vietnam, Taiwan, etc.) and single-source dependency risk \u2014 critical for a hardware company with concentrated outsourced manufacturing",
+      "Removal of specific tariff risk disclosure that named the Section 232 semiconductor investigation and country-specific tariff impacts during an active and escalating trade policy environment",
+      "Elimination of quantitative share repurchase authorization details ($40.8B remaining, $100B new program) replaced with generic language about 'authorized share repurchase programs' \u2014 reduces visibility into capital allocation trajectory"
+    ],
+    "genuine_count": 5,
+    "borderline_count": 3,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "AAPL",
+    "model": "claude-opus-4-6",
+    "input_tokens": 6821,
+    "output_tokens": 3543,
+    "timestamp": "2026-04-09T11:42:22.225059"
+  }
+}

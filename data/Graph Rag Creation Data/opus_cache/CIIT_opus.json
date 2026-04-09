@@ -1,0 +1,121 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "d25c268d3fceea3b",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed text is a single sentence describing a routine aspect of Roshing's logistics operations (arranging transport from port of loading to port of destination). This is generic operational boilerplate rather than a specific metric or material risk disclosure. It likely was consolidated or simplified as part of routine editorial revision in the quarterly filing.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "ec4dd0abbf543c63",
+        "current": "e28054a86d7e0dc8",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained two critical sentences that were removed: (1) 'We will realize the value of these assets... only if the offering is placed successfully' and (2) 'We have accrued the payments as assets because we anticipate a successful offering.' These disclosed a direct contingency between asset valuation and offering success, as well as an aggressive accounting treatment of accruing payments as assets based on anticipated offering success. Removing this language eliminates visibility into the contingent nature of asset valuations and the accounting rationale, which is a material disclosure degradation.",
+      "investigation_action": "Investigate whether the referenced assets are still on the balance sheet, whether the offering referenced was completed or is still pending, and whether the accounting treatment of accruing payments as assets remains in place without the previously disclosed contingency language."
+    },
+    {
+      "flag_number": 3,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "02cc9fb849a61d25",
+        "peer": "194195248c4868cd"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is structured as INTZ underreporting relative to CIIT, but the analysis is focused on CIIT. CIIT actually provides extensive, detailed, and quantified disclosure on cost and margin pressures \u2014 including specific dollar amounts, percentage changes (gross margins declining from 12.61% to 2.98%), and granular breakdowns of G&A expense increases. CIIT's disclosure here is commendably detailed and this flag does not indicate a CIIT disclosure problem. INTZ and CIIT also operate in quite different industries (cybersecurity vs. logistics).",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "079bbbff0c1245d1",
+        "peer": "b47af84297570279"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "CIIT provides substantive geopolitical and macro risk disclosure covering Hong Kong regulatory conditions, trade war risks, and tariff impacts. The peer INTZ operates in a fundamentally different business (cybersecurity/DoD contracting) with different geopolitical exposure. The divergence reflects genuine business differences, not CIIT disclosure evasion. In fact, CIIT is the stronger discloser here.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7a30a0d24f7ed73a",
+        "peer": "1b5ae9ee68eafc55"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "CIIT states that 'there was no accounting estimate we made that was subject to a high degree of uncertainty and was critical to our results' \u2014 yet in Flag 2 we see the company previously disclosed contingent asset valuations tied to offering success. The absence of any critical accounting estimate discussion is noteworthy for a company that recently IPO'd, has a 2.98% gross margin, and has been accruing payments as assets based on anticipated offering success. While LTRX's material weakness is company-specific and the comparison is imperfect, CIIT's generic boilerplate on accounting estimates may be understating actual estimation uncertainty.",
+      "investigation_action": "Review whether the company's auditor has flagged any going concern qualifications, and examine balance sheet items for assets that may rely on judgment-heavy valuations, particularly the accrued payments referenced in prior filings."
+    },
+    {
+      "flag_number": 6,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "673852afacd79b7d",
+        "peer": "ea8d91ba3bcbb6c4"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "CIIT's human capital disclosure consists of a two-sentence biographical note about its CEO. For a small company heavily dependent on the relationships and expertise of its founder/CEO \u2014 particularly one operating in Hong Kong logistics where personal relationships drive vendor and customer access \u2014 the lack of any discussion of key-person dependency risk is a notable gap. LTRX provides extensive discussion of key personnel risk, retention challenges, and the impact of losing key staff. While CIIT is much smaller, the single-point-of-failure risk around the CEO is arguably even more acute.",
+      "investigation_action": "Assess the degree of key-person dependency on Shufang Gao, determine whether key customer and vendor relationships are contractually held by the company versus personally by the CEO, and check whether D&O insurance and succession planning are addressed elsewhere in filings."
+    },
+    {
+      "flag_number": 7,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "da58746bded4d491",
+        "peer": "2b2de28f5a9b97f9"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "CIIT is a global logistics company that explicitly does not own transportation assets ('Roshing currently does not own or operate any transportation assets'), meaning it is entirely dependent on third-party carriers and vendors. Yet the supply chain risk disclosure is virtually nonexistent \u2014 limited to three fragmentary sentences. LTRX, while in a different industry, provides extensive supply chain risk detail. Given CIIT's own cost/margin analysis shows vendor costs are rising faster than revenue (gross margins collapsing from 13% to 3%), the absence of substantive supply chain risk disclosure is a meaningful gap that appears inconsistent with the company's own operational reality.",
+      "investigation_action": "Investigate CIIT's vendor concentration \u2014 how many carriers and freight forwarders it relies on, whether any single vendor represents a material portion of capacity, and whether contracts are short-term or spot-based. Assess whether the margin compression disclosed in MD&A is being driven by structural supply chain pricing power issues that are not being adequately risk-disclosed."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "CIIT shows one clear instance of material disclosure degradation (removal of contingent asset valuation and offering-dependency language) and several areas where disclosure is thin relative to the company's actual risk profile. While some peer comparison flags are dismissed due to genuine business differences, the company's supply chain and human capital disclosures are notably sparse for a logistics company with collapsing margins that owns no transportation assets and appears heavily dependent on a single executive.",
+    "top_concerns": [
+      "Removal of contingent asset valuation language and offering-dependency disclosure (Flag 2) \u2014 potential obfuscation of balance sheet risk",
+      "Near-absent supply chain risk disclosure despite asset-light model with 100% vendor dependency and severe margin compression from rising vendor costs (Flag 7)",
+      "Minimal human capital and key-person risk disclosure for a company apparently dependent on one executive's relationships and industry expertise (Flag 6)"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 3,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "CIIT",
+    "model": "claude-opus-4-6",
+    "input_tokens": 6226,
+    "output_tokens": 2098,
+    "timestamp": "2026-04-09T11:52:01.888913"
+  }
+}

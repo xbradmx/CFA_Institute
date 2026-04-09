@@ -1,0 +1,93 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "revenue_future_performance",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "4cd507dc878f0bf3",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing contained a specific risk factor discussing tariff impacts on demand and manufacturing costs, including retaliatory tariffs on U.S.-made goods and their potential material adverse effects. Removing this language from the current filing is notable given that tariff and trade policy uncertainty has arguably intensified rather than abated. However, it is possible this risk was consolidated into a broader trade/tariff risk factor elsewhere in the filing, which cannot be confirmed from the provided excerpt alone.",
+      "investigation_action": "Verify whether tariff-related risk language was moved or consolidated elsewhere in the current 10-Q risk factors section. If fully removed, assess whether EPAC's tariff exposure has materially changed or whether this represents deliberate downplaying of a known risk."
+    },
+    {
+      "flag_number": 2,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "91336150623df603",
+        "current": "4b75c991f2f70ab9",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing explicitly stated that 'Management has evaluated the accounting estimates used in the preparation of the Company's condensed consolidated financial statements and related notes and believe those estimates to be reasonable and appropriate.' This affirmative management assertion was entirely removed in the current filing, which now begins directly with the description of critical estimates without any management evaluation statement. Removing an explicit management endorsement of the reasonableness of accounting estimates is a meaningful reduction in transparency, particularly if the company is facing any estimation uncertainty (e.g., goodwill, inventory, receivables).",
+      "investigation_action": "Investigate whether there have been any changes to key accounting estimates (e.g., goodwill impairment assumptions, allowance for doubtful accounts, inventory reserves) that might explain management's reluctance to reaffirm reasonableness. Review whether auditor communications or audit committee disclosures flag any estimation concerns."
+    },
+    {
+      "flag_number": 3,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b95e7819d3e1cabd",
+        "peer": "3be34a209df07347"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies LIQT as being less detailed than EPAC on geopolitical/macro risks, but the flag is about EPAC's disclosure quality, not LIQT's. EPAC is the target company here and is providing specific, quantified currency and acquisition impacts ($1M currency, $5M DTA acquisition) as well as detailed tax rate discussion. EPAC's disclosure is actually the stronger of the two, and the peer divergence does not indicate any disclosure degradation at EPAC.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "bcf07af987c37e1e",
+        "peer": "c75e7d429825e2de"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag highlights that EPAC discusses specific shipment delays impacting sales while LIQT provides minimal supply chain detail. Again, EPAC is the target company and is providing more detailed disclosure than its peer. The EPAC passage references a prior-period event (temporary shipment delays in fiscal 2024 Q2 with recovery in Q3), which is contextual and informative. There is no indication of disclosure degradation at EPAC; if anything, EPAC is more transparent than LIQT. The business model differences between these companies also explain divergence.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9ff2b76a5bc3f46f",
+        "peer": "5902d60bce169048"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "EPAC provides specific, quantifiable information about personnel cost drivers ('higher personnel charges,' '$19 million year-over-year variance' with detailed attribution), while MOG-A offers only generic language about talent development. The peer divergence again shows EPAC as the more transparent discloser. The flag is essentially praising EPAC's disclosure quality relative to MOG-A, and MOG-A's distance metric of 0.408 suggests limited comparability. No disclosure degradation signal at EPAC.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "EPAC's disclosure quality appears generally strong, with specific quantified impacts on currency, acquisitions, and personnel costs that exceed peer disclosure levels. The two substantive concerns are the removal of the management assertion on accounting estimate reasonableness (Flag 2, genuine) and the potential disappearance of tariff-related risk language (Flag 1, borderline). The three peer divergence flags all show EPAC as the more transparent company and should be dismissed.",
+    "top_concerns": [
+      "Removal of management's explicit affirmation that accounting estimates are 'reasonable and appropriate' \u2014 investigate whether estimation uncertainty has increased",
+      "Potential removal of tariff/trade risk factor language despite ongoing trade policy uncertainty \u2014 verify whether consolidated elsewhere or truly eliminated",
+      "Monitor whether future filings continue to erode management assertions or risk factor specificity as a pattern"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 1,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "EPAC",
+    "model": "claude-opus-4-6",
+    "input_tokens": 2293,
+    "output_tokens": 1518,
+    "timestamp": "2026-04-09T11:58:14.203588"
+  }
+}

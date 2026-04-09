@@ -1,0 +1,163 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "0057554d7a44cfa9",
+        "current": "fe72e5d46027bc15",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The current period removes several descriptive paragraphs that were present in the prior period, including the standalone selling prices sub-header discussion ('Our device sales arrangements contain multiple products and services, most often including the device(s) and service'), the detailed lease accounting discussion (inception determination, fixed vs. variable payments, right-of-use asset adjustments), the warranty review language ('At least annually, we review and update our estimates'), and the useful lives discussion. However, the bulleted list of critical accounting estimates remains intact, and some of the removed detail (lease accounting, business combinations) appears in condensed form. This is a moderate reduction in explanatory detail rather than removal of material categories.",
+      "investigation_action": "Verify whether the removed detail on warranty cost estimation methodology, lease accounting specifics (fixed vs. variable payments), and standalone selling price validation processes is disclosed elsewhere in the notes to the financial statements for the current period."
+    },
+    {
+      "flag_number": 2,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "44bfd95c3b9828f5",
+        "current": "ec35f0aecd6fa441",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The changes in share quantities and exercise prices (e.g., 9,800,000 shares becoming 653 thousand shares, $0.4239 becoming $6.36) are explained by EKSO executing a reverse stock split between the two filing periods. The prior period reported pre-split figures while the current period reports post-split figures, which is standard practice. The net proceeds remain consistent ($5.0 million for September 2024 Offering, $3.9 million for January 2024 Offering). The current filing actually adds new detail such as the Stockholder Approval Date of May 16, 2025 and specific exercise expiration date of May 16, 2030, as well as new language about actively seeking financing in the near term.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "4bdf04d1e91f732f",
+        "current": "26a42a189a3fe046",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period included a Q1-specific variance explanation ('General and administrative expenses increased $0.3 million, or 13%') which is naturally absent from the Q2 filing because the Q2 filing would present its own quarterly and year-to-date expense variances in a different section. In Flag 10's current period block, EKSO discloses 'General and administrative expenses increased $0.5 million, or 13%, for the six months ended June 30, 2025,' demonstrating the metric was not removed but rather appears in the appropriate section of the Q2 filing. The Medicare reimbursement discussion remains unchanged.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "37a878f30de95eb1",
+        "current": "df9fec583e15ae07",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included a Level 3 fair value hierarchy table showing warrant liabilities at $0 (March 31, 2025) and $1 (December 31, 2024), a roll-forward table of Level 3 changes, and detailed Black-Scholes assumptions for 2021 Warrants (current share price $0.40, conversion price $12.81, volatility 88.2%, etc.). The current period retains Black-Scholes assumptions for June 2020 Investor Warrants and Placement Agent Warrants but the 2021 Warrants valuation assumptions table appears missing from the current filing excerpt, and the fair value hierarchy summary table is absent. However, the December 2019 Warrants and June 2020 Placement Agent Warrants expired during Q2 2025 (shown as N/A for June 30, 2025), and the 2021 Warrants are nearing expiration (February 2026), which may explain reduced detail as liabilities become immaterial. The effective interest rate disclosures were actually enhanced with both quarterly and six-month comparisons.",
+      "investigation_action": "Confirm whether the 2021 Warrants Black-Scholes assumptions and Level 3 roll-forward table are disclosed in another section of the Q2 10-Q, and assess whether the warrant liabilities have become immaterial enough to justify reduced tabular disclosure."
+    },
+    {
+      "flag_number": 5,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "b3806fa293c99960",
+        "current": "a8afd40ebf09d869",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The current period filing provides comprehensive debt disclosure including the BoC Term Loan details, Promissory Note scheduled principal payments table (2025: $625, 2026: $1,250, 2027: $937), effective interest rates for both three-month and six-month periods, detailed warrant descriptions for all outstanding warrants, and ATM Agreement activity. The share count and exercise price differences reflect the reverse stock split as noted in Flag 2. The current period actually adds the new urgency language about 'seeking additional financing and evaluating financing alternatives in the near term.' The BoC Term Loan principal payment schedule appears to have been removed, but the loan's $2,000 principal and August 2026 maturity are still disclosed, and the current filing adds six-month interest expense detail.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "a9b3f3b3291105fe",
+        "current": "2f145585122ada82",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The current period removes several material disclosures: (1) the detailed discussion of inflationary environment impacts ('Difficult and challenging economic conditions, including an increasingly inflationary environment, has led to increased price-based competition'), (2) the specific list of international risk factors (protectionist laws, foreign exchange controls, repatriation risks, multiple conflicting laws, etc.), (3) the statement 'We are actively monitoring developments in trade policies and are prepared to take necessary actions to mitigate these risks,' and (4) specific legislative/regulatory detail about 'U.S. presidential executive orders, Congressional inquiries, and proposed and enacted federal and state legislation.' These were replaced with a cursory 'Risk Factors' reference stating no material changes except one new risk about federal funding cuts. The FX gain/loss amounts are actually provided in the current period ($1.3M Q2, $2.0M H1), but the removal of the comprehensive international risk factor enumeration and tariff mitigation discussion is a meaningful reduction in transparency.",
+      "investigation_action": "Investigate whether the detailed international risk factors and tariff mitigation plans were consolidated into the Annual Report's risk factors section or were genuinely removed. Assess whether the removal of the active monitoring/mitigation language on trade policy coincides with any actual adverse tariff or trade policy developments affecting EKSO's supply chain."
+    },
+    {
+      "flag_number": 7,
+      "topic": "cybersecurity_technology",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d7c92f6755dfb2d2",
+        "peer": "633557de31af7cd1"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The comparison is fundamentally flawed. The EKSO block cited ('Gains and losses on revaluation of warrants are primarily driven by changes in our stock price...') has nothing to do with cybersecurity. KITT's passage describes its autonomous software platform (ToolKITT), which is a product description, not a cybersecurity risk disclosure. EKSO manufactures physical exoskeleton devices with different technology risk profiles than an autonomous ocean robotics company. The absence of software platform description in EKSO's MD&A does not indicate cybersecurity risk suppression.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "26a42a189a3fe046",
+        "peer": "74a3d1b35cb57fd8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is identifying that KITT provides less regulatory detail than EKSO, not that EKSO is deficient. EKSO actually provides substantive disclosure about Medicare reimbursement processes and references specific risk factors about coverage policies. KITT (Nauticus Robotics) operates in ocean robotics and has fundamentally different regulatory exposure than a medical device company. The peer comparison is misdirected \u2014 it flags the peer's deficiency rather than the target company's.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "92adec12cbe9cba4",
+        "peer": "944525ff5b8c557b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies that EKSO provides more detailed product warranty and operational risk disclosure than KITT, which is the opposite of a disclosure degradation signal for EKSO. EKSO's detailed warranty reconciliation table ($628K balance as of June 30, 2025), warranty cost methodology, and supply chain risk discussion actually represent strong disclosure practice. KITT (Nauticus Robotics) is a pre-revenue ocean robotics developer with a fundamentally different operational profile.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "bca5e15e5de34822",
+        "peer": "71ab090327c8d80b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag correctly identifies that EKSO provides more detailed financial sustainability disclosure than TAYD (Taylor Devices), but this is actually a positive signal for EKSO's disclosure quality, not a concern. EKSO discusses deferred tax asset realizability, intangible asset impairment ($180K), going concern considerations, and G&A expense variances. TAYD is a very different business (industrial shock absorbers) with different capital needs. The flag is misdirected \u2014 it highlights the peer's relative lack of disclosure rather than any deficiency in EKSO's filing.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Most of the flagged changes are attributable to a reverse stock split adjusting share counts and exercise prices, normal quarterly reporting differences between Q1 and Q2, and peer comparisons that are either misdirected or compare fundamentally different businesses. The one genuine concern relates to the removal of detailed international risk factors, tariff mitigation language, and inflationary environment discussion from the risk factors section. EKSO's core financial disclosures (debt schedules, warrant terms, expense variances) remain substantively intact.",
+    "top_concerns": [
+      "Removal of detailed international risk factors, tariff mitigation plans, and inflationary environment discussion from risk factors section (Flag 6)",
+      "Moderate reduction in critical accounting estimates explanatory detail, particularly around warranty methodology and lease accounting (Flag 1)",
+      "Potential omission of 2021 Warrants Black-Scholes assumptions table and Level 3 fair value hierarchy summary from financial statement notes (Flag 4)"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 2,
+    "dismissed_count": 7
+  },
+  "_meta": {
+    "ticker": "EKSO",
+    "model": "claude-opus-4-6",
+    "input_tokens": 32307,
+    "output_tokens": 3169,
+    "timestamp": "2026-04-09T11:58:05.023811"
+  }
+}

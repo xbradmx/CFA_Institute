@@ -1,0 +1,149 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "6293fb0781297820",
+        "current": "4f42f27fa88ea1c9",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained extensive product architecture detail including the three solution pillars (Secure Networking, OT Security), specific technology descriptions (proprietary ASIC technology, FortiOS operating system supporting 'over 30 functions'), and performance differentiators (encrypted traffic inspection, lower power consumption, streaming video). The current period strips all of this down to a brief mention of FortiCare Elite response times and hosting arrangements. The removal of specific product capability descriptions\u2014particularly the ASIC competitive advantage and the '50+ products across three solution pillars' framework\u2014represents a material reduction in disclosure specificity that investors use to assess competitive positioning.",
+      "investigation_action": "Determine whether the product architecture detail was relocated elsewhere in the 10-Q (e.g., business description section) or truly removed. If removed, assess whether this coincides with competitive erosion in ASIC-based firewall differentiation or a strategic pivot away from hardware emphasis that management may be obscuring."
+    },
+    {
+      "flag_number": 2,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "548d9c745edb2e46",
+        "current": "c63ee9dde6350a3b",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "While the prior period text is substantially longer, careful comparison shows the vast majority of substantive risk categories remain in the current period: GDPR, CCPA, environmental/EU RoHS, conflict minerals, export controls, government sales risks, FortiManager vulnerability, tax audits in UK/Canada/Germany, IP/patent risks, open-source risks, anti-takeover provisions, and Sarbanes-Oxley compliance are all present in both periods. The main differences are minor editorial consolidations (e.g., removal of a few transitional sentences, condensation of some redundant passages about channel partner compliance). The removal of the explicit mention of 'As of December 2024, we are an active participant in the Framework' and a few sentences about insurance and product liability are minor trims rather than substantive topic deletions. This is largely routine boilerplate revision between quarterly filings.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "revenue_future_performance",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "b229b0128920274d",
+        "current": "27a3beae5c935716",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period disclosed that 'one distributor accounted for 28% of our total net accounts receivable as of March 31, 2025' and 'Six distributor customers...accounted for 64% of our total net accounts receivable.' The current period drops the single-distributor 28% concentration figure entirely and only discloses that six distributors accounted for 63% of net AR as of June 30, 2025. Additionally, several sentences about channel partner management commitments ('We cannot ensure that we will retain these channel partners') and specifics about the channel optimization model were removed or softened. The loss of the single-distributor concentration percentage is a meaningful reduction in quantitative specificity.",
+      "investigation_action": "Investigate whether the single largest distributor's AR concentration changed materially (improved or worsened) and whether the removal of this specific metric is an attempt to obscure growing concentration risk. Request updated distributor-level concentration data from IR and monitor whether the 10-K restores this detail."
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3484856052c4143d",
+        "peer": "e867f7a0bedb7d10"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is evaluating the peer (XRX) against FTNT, but these are fundamentally different businesses in different industries. FTNT is a cybersecurity hardware/software company with complex semiconductor supply chains and $714.4M in purchase commitments, while XRX (Xerox/Lexmark) is a print/document technology company with different supply chain dynamics. The XRX passage specifically addresses USMCA compliance for a Juarez manufacturing facility, which is a narrow, relevant disclosure for their particular tariff exposure. The divergence reflects genuine business model differences rather than disclosure evasion by either party.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "707754cbefbed4ef",
+        "peer": "efff22b1d240bed0"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The XRX passage is a standard auditor disclaimer typically found in forward-looking financial projections sections, not a substantive accounting risk disclosure. It is boilerplate language stating the auditor has not examined certain projections. Comparing this to FTNT's detailed internal controls and critical accounting estimates discussion is not a valid apples-to-apples comparison\u2014they serve different disclosure purposes in different sections. FTNT's more extensive disclosure reflects its complex revenue recognition model (multi-year ratable services), not a deficiency in XRX's accounting risk disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "383819e4fc81f75b",
+        "peer": "8d1e7a97c951a33f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "FTNT and XRX operate in fundamentally different industries with different geopolitical exposure profiles. FTNT manufactures hardware in Taiwan, sells encryption-regulated products globally, and sells to government agencies requiring security clearances\u2014all of which necessitate granular geopolitical risk disclosure. XRX/Lexmark's brief mention of expansion into new geographies and inflation effects on borrowing costs is proportionate to its different business model. The peer comparison is not informative because the difference reflects genuine business differences rather than disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1f59597aef4cb326",
+        "peer": "338d900d62f2fc4d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LOGI (Logitech) is a consumer electronics company with a very different financial risk profile than FTNT, a cybersecurity platform company with significant deferred revenue, real estate expansion, and complex intercompany tax structures. LOGI's focused discussion of TRAF reform and Pillar Two minimum tax impacts is appropriate for its Swiss-headquartered structure. The extensive FTNT disclosure on insurance gaps, real estate capex, restructuring, and SaaS transition costs reflects FTNT-specific business complexities rather than a disclosure gap at LOGI. These companies are not close enough peers for this comparison to be meaningful.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "383819e4fc81f75b",
+        "peer": "02829e080711a9f8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This is the same FTNT geopolitical risk block compared to LOGI's tax-focused passage. LOGI's disclosure addresses tax law changes and OECD Pillar Two impacts relevant to its Swiss-headquartered corporate structure. FTNT's extensive geopolitical discussion reflects its Taiwan manufacturing dependency, export-controlled encryption products, and government sales exposure. The divergence is driven by genuinely different business models\u2014LOGI primarily manufactures consumer peripherals in China and Southeast Asia without the same export control, encryption, and government procurement sensitivities. Not a valid peer comparison for disclosure quality purposes.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "27a3beae5c935716",
+        "peer": "a1c9b65fe447d401"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The LOGI passage cited is a single sentence about the OBBBA tax impact assessment, which is not a revenue/future performance disclosure\u2014it is a narrow tax policy comment. FTNT's extensive revenue variability risk factors reflect its enterprise B2B channel model with quarterly lumpiness, multi-year deferred revenue, government procurement cycles, and distributor concentration\u2014none of which are comparable to LOGI's consumer hardware business model. The screening layer misidentified the LOGI passage as a revenue performance disclosure when it is actually a tax policy statement. The comparison is not informative.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Of the nine flags raised, only one represents a genuine disclosure degradation (removal of specific product architecture and competitive differentiator details from MD&A) and one is borderline (removal of single-distributor AR concentration percentage). The remaining seven flags are dismissed\u2014the temporal regulatory/legal flag reflects routine editorial revision, and all six peer divergence flags compare FTNT to poorly matched peers (XRX and LOGI) where differences reflect genuine business model distinctions rather than disclosure evasion. FTNT's overall disclosure quality remains robust with extensive risk factor detail.",
+    "top_concerns": [
+      "Removal of specific product architecture details (ASIC technology, 50+ products, three solution pillars) from MD&A may signal reduced confidence in hardware differentiation or an attempt to obscure competitive positioning shifts",
+      "Disappearance of single-distributor AR concentration percentage (previously 28%) warrants monitoring for potential channel concentration risk obfuscation",
+      "Monitor whether product-level detail reappears in the 10-K annual filing or represents a permanent disclosure reduction trend"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 1,
+    "dismissed_count": 7
+  },
+  "_meta": {
+    "ticker": "FTNT",
+    "model": "claude-opus-4-6",
+    "input_tokens": 49858,
+    "output_tokens": 2719,
+    "timestamp": "2026-04-09T12:02:02.013212"
+  }
+}

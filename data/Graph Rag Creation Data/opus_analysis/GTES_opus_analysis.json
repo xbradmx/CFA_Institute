@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "5a50f21059d61a2b",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing disclosed a specific $2.3 million in restructuring costs related to Mexico production relocation and operational reorganization. The disappearance of this disclosure from the current 10-Q could reflect that the Q2 filing covers a different quarter where restructuring activity was minimal, which is a legitimate reason. However, if restructuring is ongoing, the absence of any mention\u2014even to confirm completion or wind-down\u2014is a transparency gap, particularly given the specificity of the prior period's disclosure.",
+      "investigation_action": "Verify whether Mexico production relocation and restructuring activities are complete or ongoing. Check if restructuring charges appear in the financial statements without corresponding MD&A narrative. Ask management about the status of Mexico operations reorganization on the next earnings call."
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "141797a915f73a55",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained specific supply chain risk language noting that 'a significant amount of our manufacturing functions and sources of raw materials and components are from emerging markets such as China, India and Eastern Europe' and that 'recent tariff policies have been volatile, making it difficult for us and our vendors to predict or act to mitigate negative impacts.' This is highly material disclosure for an industrials company with global supply chains. The removal of this specific risk factor language from the current filing\u2014at a time when tariff uncertainty has arguably increased\u2014is inconsistent with the risk environment and represents a meaningful reduction in transparency.",
+      "investigation_action": "Determine whether supply chain risk language was consolidated into the annual report cross-reference or genuinely removed. Assess GTES's current manufacturing footprint exposure to China and other tariff-affected regions. Monitor whether competitors are maintaining or increasing supply chain risk disclosures."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "916ef04bca879fed",
+        "current": "994d2012678186f4",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period provided granular discrete tax item breakdowns: a $6.0 million benefit on stock option exercises, $5.2 million in deferred tax asset realizability charges, $1.0 million in unrecognized tax benefits, and a total discrete tax expense of $0.1 million net\u2014plus comparable detail for the prior year quarter ($11.7 million total with specific components). The current period replaces all of this with the statement that 'the net impact of discrete items was nominal' for the six months ended June 29, 2024, and then pivots to generic Pillar Two and OBBBA legislative descriptions. The current period's tax discussion for Q2 2025 appears to lack any quantitative breakdown of discrete items, which is a significant degradation in disclosure specificity.",
+      "investigation_action": "Request detailed discrete tax item breakdowns for the current quarter from IR. Assess whether changes in deferred tax asset realizability are ongoing but now undisclosed. Compare effective tax rate walk disclosures with prior quarters to identify if material items are being obscured."
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "9a70935d5dad6064",
+        "current": "9f6e16e96fc74526",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing included highly detailed 'Other expenses (income)' tables with specific dollar amounts ($2.2M interest income, $2.1M FX loss on net debt, $1.0M hyperinflation remeasurement, etc.), specific currency impact quantification by segment ($16.9M for Power Transmission, $9.8M for Fluid Power), and extensive geopolitical risk narratives. The current filing replaces this with a generic forward-looking risk factor list and cross-references to the prior 10-Q and 10-K. However, some of this appears to be a structural difference\u2014the current filing's Risk Factors section cross-references the prior quarter's more detailed filing, which is a common practice for subsequent quarterly filings. The financial data in the current period does include some FX-related figures in the comprehensive income statement and notes, though the MD&A narrative is substantially less detailed.",
+      "investigation_action": "Confirm whether the detailed geopolitical and FX impact disclosures appear elsewhere in the current 10-Q (e.g., in segment discussion or notes). Assess whether the cross-reference to the prior quarter's risk factors is adequate given the evolving tariff environment. Track whether the next 10-K restores full detail."
+    },
+    {
+      "flag_number": 5,
+      "topic": "revenue_future_performance",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "f4850017994ab4e1",
+        "current": "dea9e21a598af26a",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This is the most significant degradation flag. The prior filing provided extraordinarily detailed segment performance: Power Transmission net sales of $527.2M with 22.1% EBITDA margin, 2.1% core sales growth, automotive replacement up 5.8%, industrial OEM up 12.0%, personal mobility up 40.4%; Fluid Power at $320.4M with 22.0% EBITDA margin, automotive replacement up 14.7%, industrial OEM down 10.4%, industrial end markets down 2.4%. The current filing replaces all of this with the single sentence 'Interim period results are not necessarily indicative of the results to be expected for the full fiscal year.' This is a dramatic reduction in disclosure granularity that strips investors of the ability to assess channel-level and end-market trends. Even if some data appears in the financial statements, the removal of MD&A narrative context around segment performance drivers is a material disclosure degradation.",
+      "investigation_action": "Urgently determine whether detailed segment MD&A discussion appears elsewhere in the current 10-Q or whether it was genuinely omitted. If omitted, escalate as a significant disclosure quality concern. Compare with prior Q2 filings to determine if this is a seasonal pattern or a new development. Engage IR to understand the rationale for removing channel-level and end-market growth metrics."
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8d0ece96bea4c596",
+        "peer": "36f24ca0405950fb"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "GTES's supply chain disclosure is limited to two sentences: that replacement sales are broadly correlated with industrial activity, and that they are 'taking actions to mitigate the impact of tariffs through price increases and adjustments to our supply chain and operations.' ZBRA, while also somewhat boilerplate, provides more structured risk identification including supplier dependency, manufacturing in non-U.S. countries, and ability to purchase sufficient materials. However, ZBRA's disclosure is itself largely a generic risk factor list rather than substantive analysis, so the peer divergence is moderate. The more concerning issue is GTES's brevity relative to its significant emerging market manufacturing exposure (China, India, Eastern Europe) disclosed in prior filings but now absent.",
+      "investigation_action": "Compare GTES's supply chain disclosures against closer industrial peers (e.g., Parker Hannifin, Roper Technologies) rather than ZBRA to get a more relevant benchmark. Assess whether GTES's two-sentence treatment adequately conveys the risks given its global manufacturing footprint."
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "GTES's current 10-Q filing shows a pattern of significant disclosure degradation across multiple dimensions. The most concerning flags are the elimination of detailed segment-level revenue and margin analysis (replaced by a single boilerplate sentence), the removal of granular discrete tax item breakdowns, and the disappearance of specific supply chain risk language at a time of heightened tariff uncertainty. Taken together, these changes suggest a deliberate reduction in transparency rather than routine editorial revision.",
+    "top_concerns": [
+      "Complete removal of segment-level revenue, EBITDA, core sales growth, and channel/end-market performance metrics from MD&A narrative",
+      "Disappearance of specific supply chain risk disclosures referencing China, India, and Eastern Europe manufacturing exposure during a period of escalating tariff volatility",
+      "Elimination of detailed discrete tax item quantification replaced with vague generic descriptions"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 3,
+    "dismissed_count": 0
+  },
+  "_meta": {
+    "ticker": "GTES",
+    "model": "claude-opus-4-6",
+    "input_tokens": 7116,
+    "output_tokens": 2304,
+    "timestamp": "2026-04-09T12:04:15.062389"
+  }
+}

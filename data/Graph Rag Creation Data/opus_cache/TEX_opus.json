@@ -1,0 +1,121 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "d1e2baff8448a9b8",
+        "current": "5a8351189533c952",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This is a false positive caused by comparing passages from different sections of the filing. The prior period block contains the contingency accounting policy, while the current period block is from a completely different part of the MD&A discussing non-GAAP measures. Notably, Flag 3 confirms that the contingency accounting policy language ('For contingencies and uncertainties other than income taxes, when it is probable a loss will be incurred...') is still present in the current filing at block 8bed333c5d8128d2. The policy was not removed\u2014the screening algorithm compared mismatched sections.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f5a9819cbcaa06d6",
+        "peer": "7ad081b8d09af13d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening logic is inverted\u2014it claims TEX (Company B) provides minimal disclosure, but TEX actually provides more detailed human capital disclosure than HY. TEX discusses safety priorities, specific SG&A compensation impacts ($26M and $48M increases), ESG acquisition integration costs, and restructuring costs. HY's peer passage is a single sentence about Nuvera cost integration. TEX is the more transparent party here.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8bed333c5d8128d2",
+        "peer": "dc5c7754da5bade9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening logic is again inverted. TEX (the target company) provides extensive regulatory and legal disclosure covering EU Pillar Two Directive, OECD GloBE rules, the OBBBA tax legislation, environmental compliance, contingency accounting policies, and insurance coverage. The peer (HY) provides only a single sentence about restructuring charges. TEX is actually the more detailed discloser on this topic, not the less transparent one.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f5a9819cbcaa06d6",
+        "peer": "fddd4c8cf5097998"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason states WFRD may be downplaying workforce risks, but the subject company under review is TEX, which provides detailed human capital disclosure including safety commitments, specific compensation cost impacts from the ESG acquisition, and restructuring costs. WFRD's single sentence about personnel costs and litigation is the sparser disclosure. This flag does not indicate a TEX disclosure problem.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8bed333c5d8128d2",
+        "peer": "36ff262fa38761e7"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "TEX provides highly detailed regulatory disclosure covering specific legislation (EU Pillar Two, OBBBA), effective dates, and the nature of tax law changes. WFRD provides generic tax variability language. The screening reason correctly identifies WFRD as less detailed, but this flag is about TEX's disclosure quality\u2014and TEX is the superior discloser. No degradation signal for TEX.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c29aa1d7cad27145",
+        "peer": "bb1eedf15f45e96a"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "TEX discloses tariff risk but the passage is a single conditional sentence ('If we become unable to recover...it could materially and adversely affect our business') without quantifying current tariff exposure, the proportion of costs being recovered, or specific product lines affected. While WFRD's lack of tariff discussion likely reflects genuine business differences (oilfield services vs. equipment manufacturing with significant cross-border supply chains), TEX's own disclosure is thin given tariffs are clearly material to their operations. The risk factor language is boilerplate conditional rather than informative.",
+      "investigation_action": "Request from TEX management the current dollar magnitude of tariff costs, percentage being recovered through pricing, and which segments/geographies are most exposed. Monitor whether future filings quantify tariff impacts in the MD&A results discussion."
+    },
+    {
+      "flag_number": 7,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "de314573190ce52a",
+        "peer": "e07d58c1e3ce4f4e"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening identifies WFRD as having narrower human capital disclosure than TEX, which is a WFRD issue, not a TEX disclosure degradation issue. TEX's risk factor language about hiring, training, and retaining qualified personnel in developing markets with language, cultural, or regulatory barriers is a standard but reasonable risk disclosure. WFRD's equity award vesting discussion is from a completely different context. No TEX degradation signal.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "The overwhelming majority of flags are false positives generated by the screening layer\u2014most peer divergence flags actually show TEX as the more detailed discloser, and the temporal flag was caused by mismatched section comparison (the contingency policy language is confirmed present in the current filing). The only actionable item is that TEX's tariff risk disclosure, while present, lacks quantitative specificity given the likely materiality of tariff impacts to an equipment manufacturer with global supply chains.",
+    "top_concerns": [
+      "Tariff risk disclosure lacks quantification despite being identified as potentially material to business, financial condition, and results of operations",
+      "Monitor whether ESG acquisition integration costs and restructuring charges receive more granular disclosure as integration progresses",
+      "Verify that the OBBBA tax legislation impacts (R&D capitalization, accelerated depreciation, interest expense limitations) are quantified in future filings"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 1,
+    "dismissed_count": 6
+  },
+  "_meta": {
+    "ticker": "TEX",
+    "model": "claude-opus-4-6",
+    "input_tokens": 4772,
+    "output_tokens": 1831,
+    "timestamp": "2026-04-09T12:34:28.744883"
+  }
+}

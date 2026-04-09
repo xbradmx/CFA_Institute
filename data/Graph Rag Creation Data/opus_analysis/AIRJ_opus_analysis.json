@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "493a06175be477c6",
+        "current": "4708491fb2161543",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period filing contained extensive detail on critical accounting estimates including the Black-Scholes model assumptions, Monte Carlo simulation parameters (e.g., '$50.0 million of Annualized EBITDA per production line'), Earnout Shares valuation methodology, derivative classification under ASC 815, equity method investment accounting, warrant classification, and income tax methodology. The current period collapses all of this into a single sentence: 'There have been no material changes to the critical accounting policies as disclosed in Part I\u2014Item 2.' While cross-referencing the annual report is permissible, the prior Q1 filing provided these details in the 10-Q itself, and the current filing strips out all quantitative specificity on valuation methodologies while only retaining the $333.5 million IP gain and new Earnout Shares fair value change figures.",
+      "investigation_action": "Verify whether the detailed critical accounting estimates disclosures still appear in the 10-K annual report as referenced; assess whether the removal of Monte Carlo simulation parameters, WACC assumptions, and derivative classification details from the quarterly filing limits the ability to track changes in key valuation inputs quarter-over-quarter."
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "60deb65d10ed9f91",
+        "peer": "d3288355eca9c4c4"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "AIRJ provides only a generic one-sentence reference to risk factors in the 10-K, while TGEN discusses specific geopolitical impacts including tariff exposure to Chinese/European suppliers, energy price effects from Ukraine/Middle East conflicts, and anti-fossil fuel regulatory sentiment. However, AIRJ is a pre-revenue/early-stage company (emerging growth company status) with a fundamentally different operational profile than TGEN, which has active energy production and cogeneration operations. The lack of specificity may partly reflect AIRJ's limited current operational exposure, though as they plan to leverage partnerships with CATL (Chinese entity), geopolitical risks are arguably material.",
+      "investigation_action": "Investigate whether AIRJ's CAMT joint venture with CATL US creates material tariff, CFIUS, or geopolitical risks that should be disclosed in the quarterly filing given the current U.S.-China trade environment; check the 10-K for any such discussion."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ea862fbb4abca781",
+        "peer": "bff917ac90497fa2"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually notes that AIRJ provides more detailed disclosure than TGEN on legal and regulatory matters, including specific legal proceedings language, JOBS Act exemptions, and patent licensing details. The flag appears to be inverted \u2014 it suggests TGEN is the one potentially downplaying risks, not AIRJ. AIRJ's disclosure on this topic relative to this specific peer is adequate or even more comprehensive.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "60deb65d10ed9f91",
+        "peer": "a7a2408bee39129b"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "AAON provides extensive discussion of tariff impacts (implementing a 6.0% surcharge on products), macroeconomic conditions affecting construction markets, interest rate sensitivity, and forward-looking risk factors covering trade policy. AIRJ's single generic sentence referencing the 10-K is notably thin given that AIRJ has a joint venture with a CATL subsidiary (a major Chinese company) and plans to scale manufacturing \u2014 both activities highly exposed to current tariff and trade policy uncertainty. The gap is material: AIRJ faces arguably greater geopolitical risk than AAON given its Chinese partnership, yet discloses far less.",
+      "investigation_action": "Determine whether tariffs on Chinese imports affect AIRJ's CAMT joint venture supply chain, manufacturing equipment, or component sourcing; review the 10-K risk factors to assess whether the annual filing adequately covers trade policy risks that should be updated in quarterly filings given rapidly changing tariff environment."
+    },
+    {
+      "flag_number": 5,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "18750708cd2019ab",
+        "peer": "dc600c8237ff49d0"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "AAON discusses tight labor markets, retention challenges, increasing headcount costs, and specific compensation programs, while AIRJ's only human capital disclosure is an executive severance plan. However, AIRJ is a pre-commercial company that likely has a much smaller workforce than AAON's large manufacturing operation, so the scope of human capital risk is naturally different. The concern is that as AIRJ scales toward commercialization and manufacturing (leveraging CAMT), workforce risks will become material, and the complete absence of any workforce discussion beyond executive golden parachutes could indicate insufficient forward-looking disclosure.",
+      "investigation_action": "Assess AIRJ's current headcount growth trajectory and planned manufacturing staffing needs; determine whether the company's reliance on CAMT/CATL for manufacturing management effectively outsources human capital risk disclosure responsibility."
+    },
+    {
+      "flag_number": 6,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "14d8ace3b6dd6e8f",
+        "peer": "46e3c415ecb22def"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "AAON is a mature manufacturer with active product sales, warranty obligations, and ERP implementation disruptions \u2014 all of which require detailed operational disclosure. AIRJ is a pre-commercial company whose product ('AirJoule produces pure distilled water from air') is still in the process of scaling to commercialization. The absence of warranty provisions and ERP-related production disruption disclosures reflects a genuine business difference: AIRJ does not yet have products in the market generating warranty claims or manufacturing systems experiencing ERP transitions.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ea862fbb4abca781",
+        "peer": "a19dba2fca81b56e"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "AAON provides detailed discussion of tax examination exposure, NMTC compliance requirements with recapture risk, R&D tax credit methodology, IRC Section 174 capitalization impacts, the OBBBA tax law changes, and related party transactions with specific dollar amounts. AIRJ's legal/regulatory disclosure is limited to generic boilerplate about legal proceedings and JOBS Act exemptions. While some divergence is explained by AIRJ's emerging growth company status and simpler operations, the complete absence of any tax-related risk discussion or discussion of the OBBBA (which affects all corporations) is notable.",
+      "investigation_action": "Verify whether AIRJ has material deferred tax assets, NOL carryforwards, or R&D tax credit positions that warrant more specific disclosure; assess impact of OBBBA provisions on AIRJ's tax position."
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9c61ab465d63b2b0",
+        "peer": "84e0b502ec4ba4e3"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "AAON provides extensive supply chain disclosure including specific raw material dependencies (steel, copper, aluminum), tariff pass-through risks, refrigerant transition supply constraints, vendor relationship management, and purchase commitments. AIRJ's supply chain discussion is limited to vague references to 'mature supply chains' through partnerships and notes that CATL US provides 'supply chain support' to CAMT. Given that AIRJ's manufacturing strategy depends heavily on a Chinese-affiliated entity (CATL) for supply chain management at a time of extreme U.S.-China trade tension, the absence of any discussion of supply chain concentration risk, tariff exposure, or raw material sourcing is a significant gap.",
+      "investigation_action": "Investigate the CAMT joint venture's supply chain dependencies \u2014 whether key materials or components are sourced from China; assess whether AIRJ's reliance on CATL for supply chain management creates concentration risk and tariff exposure that should be explicitly disclosed; review the CAMT operating agreement for supply chain obligations and risk allocation."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "AIRJ shows a pattern of thin disclosure that partly reflects its pre-commercial, emerging growth company status but also reveals concerning gaps, particularly the collapse of detailed critical accounting estimates into a single cross-reference sentence (Flag 1) and the near-total absence of supply chain and geopolitical risk discussion despite a major Chinese-affiliated joint venture (Flags 4, 8). The peer divergence flags are partially explained by business maturity differences, but several gaps appear to exceed what stage-of-company differences would justify.",
+    "top_concerns": [
+      "Removal of detailed critical accounting estimates from quarterly MD&A including Monte Carlo simulation parameters, derivative classification details, and valuation methodology specifics (Flag 1)",
+      "Absence of supply chain risk disclosure despite heavy reliance on CATL/CAMT joint venture for manufacturing scale-up in current U.S.-China tariff environment (Flag 8)",
+      "No geopolitical or tariff risk discussion despite partnership with Chinese-affiliated entity CATL US being central to commercialization strategy (Flag 4)"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 3,
+    "dismissed_count": 2
+  },
+  "_meta": {
+    "ticker": "AIRJ",
+    "model": "claude-opus-4-6",
+    "input_tokens": 11507,
+    "output_tokens": 2655,
+    "timestamp": "2026-04-09T11:43:22.467785"
+  }
+}

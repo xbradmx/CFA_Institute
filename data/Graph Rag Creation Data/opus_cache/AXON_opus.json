@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "c18e94db9048dc39",
+        "current": "6dc776be64e135d9",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Comparing the prior and current period texts closely, the vast majority of the risk factor language is identical or near-identical. The screening reason claims 'multiple specific quantitative details and concrete examples' were removed, but the current filing actually adds new language (e.g., new AI data training risk paragraph about third-party providers, additional open-source software consequences, new ESG political controversy language). Minor differences like the removal of a sentence about the 2027 Notes induced conversion expense or the Sarbanes-Oxley paragraph reflect events that are no longer current rather than obfuscation. The ATF audit sentence was removed but the substantive regulatory risk language around TASER 10 CED compliance remains intact.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6825ef975d964c6f",
+        "peer": "54de4408f901d0e8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The peer divergence here reflects genuinely different situations: SWBI identified and disclosed a material weakness in internal controls related to legal expense accruals, which is a company-specific issue. AXON's disclosure of immaterial prior period corrections with generic language about estimates is appropriate if AXON has not identified a material weakness. There is no evidence that AXON has a similar internal control deficiency that it is concealing. The two companies have fundamentally different accounting control situations, not comparable disclosure gaps.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5836eba9155864af",
+        "peer": "8bac9dd249459777"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 the screening reason actually flags SWBI for being less detailed than AXON, not the other way around. AXON provides extensive quantitative detail on net income drivers including tax benefits, unrealized gains/losses, and effective tax rate changes. This reflects AXON's more complex financial structure (strategic investments, convertible notes) compared to SWBI's simpler business model. There is no disclosure degradation by AXON here; if anything, AXON is the more transparent party.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "193a5ad6725cf2c0",
+        "peer": "02a88ef92cc41995"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "SWBI explicitly quantifies a 120 basis point tariff impact on gross margin, while AXON provides no comparable discussion of tariff exposure despite having international supply chain and manufacturing operations. AXON's MD&A block shown here focuses on investment gains/losses and FX impacts but does not address tariff or trade policy impacts on cost of goods. Given AXON's international footprint and hardware manufacturing, the absence of any tariff impact discussion is notable, though AXON's product mix (more software/SaaS) may genuinely create less tariff exposure than a firearms manufacturer.",
+      "investigation_action": "Analyst should review AXON's COGS and gross margin trends for evidence of tariff-related cost pressures, examine the Risk Factors section for any tariff/trade policy discussion, and assess whether AXON's supply chain sourcing geography creates meaningful tariff exposure that should be disclosed."
+    },
+    {
+      "flag_number": 5,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "dcebbf29faea99d6",
+        "peer": "b86fa5318dd294c3"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 it flags SWBI for insufficient human capital disclosure compared to AXON. AXON provides detailed, quantified headcount and compensation information showing $18.9M, $35.7M, and $34.7M increases in salary/benefits across segments. The SWBI passage shown is a single sentence about personnel knowledge deficiencies in a control context, not an MD&A human capital discussion. This is a peer business model difference (SWBI is smaller with a manufacturing focus) rather than an AXON disclosure issue.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "193a5ad6725cf2c0",
+        "peer": "7d6575ce926b5564"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is again inverted \u2014 it suggests RGR is downplaying risks compared to AXON. AXON provides detailed quantitative breakdowns of foreign currency losses, investment valuations, and other income/loss items. RGR provides boilerplate forward-looking statements. This is not an AXON disclosure degradation issue; AXON is the more transparent party in this comparison. The difference reflects AXON's more complex balance sheet and international operations versus RGR's primarily domestic manufacturing business.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d60127b0dca893b5",
+        "peer": "96ff8f46a8955777"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The AXON block cited (d60127b0dca893b5) is a narrow tax-related passage about IRC Section 162(m) and unrecognized tax benefits \u2014 it is not the appropriate comparison point for AXON's regulatory/legal disclosures. AXON's extensive regulatory and legal risk disclosures appear in the Risk Factors section (as seen in Flag 1), which includes detailed ATF compliance, firearms regulation, AI regulation, and export control discussions. The screening algorithm appears to have matched an unrepresentative AXON MD&A passage against RGR's regulatory discussion, creating a false impression that AXON lacks regulatory disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6cf727ce4aeba7fd",
+        "peer": "b1b29008079dbe5b"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The AXON MD&A passage cited contains only a cursory mention of 'supplier prepayments' with no substantive supply chain risk discussion, while RGR details specific raw material dependencies, distribution channel structure (14 domestic, 44 export, 26 law enforcement distributors), and raw material supply constraints. AXON manufactures complex hardware (CEDs, body cameras, drones) with electronic components that inherently carry supply chain concentration risks. However, AXON's Risk Factors section (visible in Flag 1) does mention supply chain disruption related to forced labor/sanctions legislation, and the full 10-K likely contains more supply chain detail. The MD&A excerpt may not represent AXON's complete supply chain disclosure.",
+      "investigation_action": "Analyst should review AXON's full 10-K Risk Factors and business description sections for supply chain detail, assess component concentration risk (e.g., semiconductor sourcing for body cameras and drones), and compare inventory/prepayment trends for signs of supply chain stress not discussed in the MD&A."
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "The majority of flagged items reflect either screening algorithm mismatches (comparing unrepresentative text blocks), inverted peer comparisons (where AXON is actually the more transparent party), or legitimate business model differences between AXON and its peers. The temporal change in Flag 1 shows near-identical risk factor language with minor updates reflecting current events. The only potentially actionable items relate to AXON's limited MD&A discussion of tariff impacts and supply chain dependencies, which merit further investigation but do not suggest systematic disclosure degradation.",
+    "top_concerns": [
+      "Absence of tariff/trade policy impact quantification in MD&A despite international manufacturing operations (Flag 4)",
+      "Limited supply chain dependency and concentration risk discussion in MD&A relative to hardware manufacturing complexity (Flag 8)",
+      "Monitor whether immaterial prior period corrections (Flag 2) evolve into more significant restatement activity in future periods"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 2,
+    "dismissed_count": 6
+  },
+  "_meta": {
+    "ticker": "AXON",
+    "model": "claude-opus-4-6",
+    "input_tokens": 20338,
+    "output_tokens": 2353,
+    "timestamp": "2026-04-09T11:47:58.307668"
+  }
+}

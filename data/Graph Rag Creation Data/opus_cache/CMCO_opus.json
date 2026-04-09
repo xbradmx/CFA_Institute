@@ -1,0 +1,205 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "878ee02f356599d9",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained highly specific and material language about inability to pass raw material price increases to customers, tariff impacts on steel/aluminum, and explicit risk to Mexican manufacturing operations from trade restrictions. This entire risk factor\u2014covering pricing power, tariff exposure, and margin pressure\u2014has been removed from the current filing during a period when tariffs and trade policy uncertainty are arguably more relevant than ever. The removal of phrases like 'our profitability could be adversely affected' and specific mention of Mexican manufacturing tariff risk is a significant disclosure reduction.",
+      "investigation_action": "Verify whether CMCO's current gross margins show pressure from raw material costs and tariffs; check if this risk was consolidated into another risk factor or truly eliminated. Request management commentary on tariff impact to Mexican operations specifically."
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "afd0dec730ef6593",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The disappeared text is a single sentence risk factor header about trade war impacts on financial condition, results of operations, and cash flows. While this is a material topic, the sentence itself is a boilerplate concluding statement that likely accompanied the more detailed tariff/trade risk language in Flag 1. Its disappearance is concerning primarily in conjunction with Flag 1 rather than on its own.",
+      "investigation_action": "Assess whether this was simply the concluding sentence of the trade war risk factor captured in Flag 1, and whether the combined removal of the entire risk factor warrants engagement with management."
+    },
+    {
+      "flag_number": 3,
+      "topic": "geopolitical_macro",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "2c97d61de2093c10",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This block contained extensive, specific language about geopolitical risks including references to the 'new U.S. presidential administration' implementing tariffs on China/Canada/Mexico, retaliatory tariffs, labor unrest, geopolitical conflicts, and the explicit statement that non-U.S. operations (approximately 43% of sales per Flag 6) are subject to special risks. The removal of detailed enumeration of international operating risks\u2014including exchange controls, political instability, and foreign receivables collection risk\u2014represents a meaningful reduction in disclosure on risks that remain highly relevant given CMCO's global footprint.",
+      "investigation_action": "Determine whether any updated geopolitical or international operations risk language exists elsewhere in the 10-Q. Assess CMCO's current exposure to tariff regimes on imports from China and Mexico, and whether the Monterrey facility expansion increases this exposure."
+    },
+    {
+      "flag_number": 4,
+      "topic": "liquidity_solvency",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "0d9823357087dc21",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The disappeared text is a single generic concluding sentence ('Any of these factors, individually or together, could have a material adverse effect on our business, financial condition, results of operations and cash flows') that is standard boilerplate appearing at the end of risk factor discussions. This is not substantive liquidity/solvency disclosure but rather a catch-all concluding clause. Its removal likely reflects the removal of the parent risk factor it was appended to.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "8655b043261f9bd8",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The removed sentence disclosed that 'in some foreign jurisdictions, we may be subject to laws limiting the right and ability of entities organized or operating therein to pay dividends or remit earnings to affiliated companies unless specified conditions are met.' While this is a somewhat generic statement, it addresses a real risk for a company with ~43% international sales\u2014namely dividend repatriation restrictions that could affect consolidated cash flows. Its removal reduces transparency on capital mobility constraints.",
+      "investigation_action": "Investigate whether CMCO faces any current restrictions on repatriation of earnings from key foreign jurisdictions (Japan, China, or other markets relevant to the Kito Crosby integration). Check if this risk was moved to the 10-K rather than the quarterly filing."
+    },
+    {
+      "flag_number": 6,
+      "topic": "revenue_future_performance",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "ecdd38332a6ae94b",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing disclosed that 'approximately 43% of our net sales were derived from non-U.S. markets' in fiscal 2024, providing a specific quantitative benchmark for international revenue exposure, followed by 'These factors may adversely affect our future profits.' Removing this percentage eliminates a key metric investors use to gauge CMCO's sensitivity to currency, tariff, and geopolitical risks. However, this figure may still be available in the annual 10-K filing or in segment disclosures.",
+      "investigation_action": "Verify whether the international revenue percentage is disclosed elsewhere in the current 10-Q or recent 10-K. If not, this represents removal of a material quantitative metric that contextualizes multiple other risk factors."
+    },
+    {
+      "flag_number": 7,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "d54ac54be2850d44",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The removed text contained highly specific and material supply chain risk language including: escalation of trade tensions, retaliatory measures by foreign governments, specific mention of importing hoists from Asia and selling to ~50 countries, and the strategic initiative to expand sourcing in lower-cost countries including China, Mexico, Hungary, and Malaysia with explicit reference to the 'new facility in Monterrey, Mexico.' This detailed supply chain geography and strategy disclosure has been entirely eliminated. In the current tariff environment, removing specifics about supply chain exposure to China, Mexico, and Asia is a significant transparency reduction.",
+      "investigation_action": "Press management on current supply chain geographic exposure, particularly the share of components sourced from China and products manufactured in Mexico. Assess whether the Monterrey facility relocation (referenced in Flag 9's prior period) has increased tariff exposure."
+    },
+    {
+      "flag_number": 8,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "455ca6931238be71",
+        "current": "462869abe213198b",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed specific dollar amounts for restructuring charges ($3,567,000 in fixed asset impairment and inventory obsolescence, $3,268,000 in ROU lease asset impairment, $1,093,000 in severance/retention costs) and stated specific operational initiatives to 'reduce lead-times, improve on-time deliveries, reduce warranty costs, and improve material and factory productivity.' The current period replaces this with the vague statement 'We are working to achieve these strategic initiatives through business simplification, operational excellence, and profitable growth initiatives'\u2014corporate buzzwords that convey no measurable commitments. The specific impairment and severance figures have been dropped entirely.",
+      "investigation_action": "Request updated restructuring cost figures for the current quarter and status of the Charlotte-to-Monterrey relocation. Ask management to quantify progress on the specific initiatives (lead-times, warranty costs, productivity) that were previously disclosed with specificity."
+    },
+    {
+      "flag_number": 9,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "7f1252f38b8c554d",
+        "current": "e13bad0d793b9b44",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained specific, material operational disclosures: the July 2024 announcement of relocating North American linear motion operations from Charlotte, NC to Monterrey, Mexico; the February 2025 announcement of consolidating Precision Conveyance into Hartland, WI; and the LATAM Precision Conveyance consolidation into Hartland and Monterrey. It also acknowledged 'some availability issues for select raw materials and components.' The current period replaces all of this with generic language about 'specific initiatives to reduce lead-times' without naming the relocations, timelines, or ongoing supply issues. This is a clear reduction in the specificity of supply chain and operational restructuring disclosure.",
+      "investigation_action": "Determine the current status and cost profile of the Charlotte-to-Monterrey and Precision Conveyance consolidation projects. Ask whether supply availability issues have resolved or worsened, and why the specific relocation disclosures were removed."
+    },
+    {
+      "flag_number": 10,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0b531251b94c20d5",
+        "peer": "c695e0639386927f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually flags MTW for less disclosure than CMCO, not the other way around. CMCO is the target company here and provides detailed, substantive disclosure on goodwill impairment, pension obligations, asbestos liabilities, capital expenditure plans, and dividend declarations. This flag is identifying a peer (MTW) as less transparent, which is not a degradation signal for CMCO itself. CMCO's disclosure on these financial sustainability topics is robust.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9fedbf399a363eb1",
+        "peer": "0f4c85726b382e40"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies MTW as having minimal disclosure compared to CMCO's extensive regulatory and legal disclosures. CMCO provides detailed, quantified discussion of asbestos liabilities, product liability reserves, the Monsanto/PCB indemnification matter, Italian tax assessments, environmental matters, and the HSR Act review for the Kito Acquisition. This is not a disclosure degradation signal for CMCO; rather, CMCO is the more transparent party here. The peer comparison is reversed from what would indicate CMCO risk.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 12,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e13bad0d793b9b44",
+        "peer": "7c530503aab907cd"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "While this flag primarily identifies MTW as less detailed than CMCO on supply chain matters, CMCO's current supply chain disclosure (as documented in Flag 9) has itself been significantly reduced from the prior period. CMCO's current text\u2014'specific initiatives to reduce lead-times' and 'working with our supply base to prioritize shipments'\u2014is now only marginally more detailed than MTW's generic tariff mention. The convergence toward vague language is noteworthy in the context of the temporal degradation already identified.",
+      "investigation_action": "Consider this in conjunction with Flags 7 and 9\u2014CMCO's supply chain disclosure has degraded toward a level of vagueness that is now approaching peer minimums, which reinforces the temporal degradation concern."
+    },
+    {
+      "flag_number": 13,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9fedbf399a363eb1",
+        "peer": "f633a60fb4137fcd"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Like Flags 10 and 11, this flag identifies a peer (ASTE) as having less detailed disclosure compared to CMCO's extensive legal and regulatory disclosures. ASTE provides only a single generic sentence about monitoring compliance with governmental actions, while CMCO discloses detailed litigation, asbestos liabilities, environmental matters, and the HSR review. This reflects CMCO's superior transparency, not its degradation. Different business profiles (ASTE is a smaller, less complex company) likely explain the divergence.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "CMCO has removed substantial risk factor language from its 10-Q covering tariff/trade exposure, raw material cost pass-through risk, international operations risks, supply chain geography specifics, and restructuring details. The most concerning pattern is the systematic elimination of specific references to Mexican manufacturing operations, China sourcing, tariff impacts, and detailed restructuring cost disclosures\u2014all replaced with vague strategic language\u2014during a period of heightened trade policy uncertainty. The peer divergence flags are largely false positives (CMCO is more transparent than peers), but the temporal and disappeared-topic flags reveal genuine disclosure degradation.",
+    "top_concerns": [
+      "Removal of all tariff/trade risk language and Mexican manufacturing exposure disclosure (Flags 1, 3, 7) during a period of active U.S. tariff escalation\u2014potential obfuscation of material cost/margin risks",
+      "Replacement of specific restructuring costs ($7.9M in impairment/severance) and named facility relocations (Charlotte-to-Monterrey, Precision Conveyance consolidation) with vague 'business simplification' language (Flags 8, 9)",
+      "Elimination of quantitative international revenue exposure metric (43% non-U.S. sales) and dividend repatriation restriction disclosure (Flags 5, 6) that contextualize the company's sensitivity to geopolitical and currency risks"
+    ],
+    "genuine_count": 5,
+    "borderline_count": 4,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "CMCO",
+    "model": "claude-opus-4-6",
+    "input_tokens": 15863,
+    "output_tokens": 3764,
+    "timestamp": "2026-04-09T11:53:27.923426"
+  }
+}

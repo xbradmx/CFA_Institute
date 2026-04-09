@@ -1,0 +1,121 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "liquidity_solvency",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "01be9b60495c7b6b",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing disclosed a specific data point \u2014 $16.2 million in outstanding letters of credit and no borrowings under the ABL Agreement \u2014 which provided useful liquidity context. The removal of this sentence from the current 10-Q means readers lose a quick snapshot of credit facility utilization. However, this information is typically available in the financial statement footnotes, so the disappearance from the Risk Factors section may reflect consolidation rather than deliberate obfuscation.",
+      "investigation_action": "Verify whether ABL facility utilization details (letters of credit outstanding and borrowings) are disclosed in the notes to the condensed consolidated financial statements in the current 10-Q. If absent there as well, escalate as a genuine liquidity transparency concern."
+    },
+    {
+      "flag_number": 2,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "9156af7c3f81ef41",
+        "current": "5b0d40f7f4badab7",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The current period replaces the detailed discussion with a cross-reference to 'Part II Item 7' of the annual report, which is a standard and accepted practice for interim 10-Q filings. The prior period's language stating 'no material changes to judgments, assumptions and estimates' and 'discussed with the audit committee' is largely boilerplate affirmation. The removal of the statement about new standards not having a material impact is minor, as the current period still references FASB pronouncements. This is a routine editorial change consistent with SEC guidance allowing condensed MD&A in quarterly filings.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "e561e6053d2ec600",
+        "current": "167e789a61e2759d",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed specific dollar amounts: '$0.3 million' in foreign currency exchange losses and a detailed breakdown of accumulated other comprehensive loss moving from '$79.5 million to $74.0 million' (a $5.5 million decrease). The current period removes the FX loss dollar figure entirely and omits the AOCI dollar amounts, providing only percentage changes in exchange rates. This is a meaningful reduction in quantitative disclosure that makes it harder to assess the magnitude of currency exposure and realized FX impacts.",
+      "investigation_action": "Request or locate the specific FX loss figure for the period and the AOCI balance as of June 30, 2025. Determine whether the omission of the realized FX loss figure is masking a material increase in currency losses during the six-month period."
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "f9224e48c79797e7",
+        "current": "5af351d01ce32bc7",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period text is merely a section header ('Contingencies and Other Obligations') with no visible substantive detail in the excerpt provided, while the current period replaces it with an actual sentence describing pending claims and lawsuits. The current text, while generic, is more descriptive than a bare header. Without evidence that specific contingency details (dollar amounts, case names, or reserve information) were removed, this appears to be a routine restatement of standard litigation boilerplate rather than a reduction in disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9442156592c4759d",
+        "peer": "874d4ad3c4f25d99"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason states OIS is 'downplaying' impairment and restructuring risks, but the target company text actually provides extensive, highly granular disclosure of impairment charges ($10.0 million goodwill, $1.4 million lease impairment), facility consolidation costs ($4.6 million, $3.2 million, $2.3 million), and restructuring actions with after-tax per-share impacts. OIS is the more transparent discloser here. It is FET (the peer) that provides less detail. This flag appears to have been generated in error \u2014 OIS's disclosure on this topic is robust.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e9733bffb764d6a1",
+        "peer": "89e7fbf5f2fd6e97"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies SEI as the less transparent company, not OIS. OIS provides extensive, detailed disclosure of tariff impacts, OPEC+ production decisions, sanctions, the OBBBA tax reform, and currency translation effects with specific dollar amounts and percentage changes. SEI's disclosure is a brief, generic mention. Since OIS is the target company being monitored and it is the stronger discloser on this topic, this flag does not indicate disclosure degradation at OIS.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0b2f5853c078e6a9",
+        "peer": "c260940db8e9c626"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, this flag identifies SEI as the less transparent company. OIS provides detailed disclosure of facility consolidations, service exits, headcount reductions, and associated charges with specific dollar amounts across multiple segments and time periods. SEI provides a single sentence about turbine offerings. The screening layer incorrectly flagged this as an OIS disclosure concern when OIS is clearly the superior discloser. Additionally, SEI (Solaris Energy Infrastructure) has a materially different business model focused on distributed power, making the operational comparison less relevant.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "OIS (Oil States International) generally maintains robust and detailed disclosure across its SEC filings. The majority of flagged items were either routine editorial changes, cross-references to the annual report consistent with 10-Q conventions, or peer comparison flags where OIS was actually the more transparent discloser. The only genuine concern is the removal of specific dollar amounts related to foreign currency exchange losses and accumulated other comprehensive loss balances.",
+    "top_concerns": [
+      "Removal of specific FX loss dollar amounts and AOCI balance details in the current 10-Q's foreign currency risk discussion (Flag 3)",
+      "Potential removal of ABL facility utilization details (letters of credit and borrowing levels) from the Risk Factors section \u2014 verify if relocated to footnotes (Flag 1)",
+      "Monitor whether the pattern of removing quantitative specifics from the Risk Factors and quantitative risk sections continues in future filings"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 1,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "OIS",
+    "model": "claude-opus-4-6",
+    "input_tokens": 6943,
+    "output_tokens": 1999,
+    "timestamp": "2026-04-09T12:18:57.180478"
+  }
+}

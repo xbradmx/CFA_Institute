@@ -1,0 +1,149 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "41ea93f0153f764c",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing disclosed specific Infrastructure segment backlog of $1,369.9 million broken down into $939.0 million under contracts and $430.9 million under letters of intent as of March 31, 2025. This quantitative backlog detail is absent from the current Q2 filing. While it's possible this was consolidated elsewhere or the company chose to disclose backlog only in certain quarters, the removal of a specific dollar-denominated backlog figure reduces visibility into the Infrastructure segment's pipeline.",
+      "investigation_action": "Verify whether DBMG backlog data appears elsewhere in the current 10-Q or in the company's earnings materials. If not, request management commentary on current backlog levels and whether the omission signals any deterioration in project pipeline."
+    },
+    {
+      "flag_number": 2,
+      "topic": "cybersecurity_technology",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "11d9dcf6f2a9ecd5",
+        "current": "df1eeb57938dad74",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior filing's language about cybersecurity-related legal matters ('actions or claims relating to sensitive data, including proprietary business information...cyber-attacks, data breaches') appears in the current filing's Commitments and Contingencies section (block 73c122aea2f6c50a), where the exact same language is reproduced verbatim. The current-period passage about liability insurance coverage is simply a different section discussing insurance policies. The cybersecurity risk discussion was not removed but is located in a different part of the filing.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "9e0e0c685a384ae4",
+        "current": "cc5af4ff98fea539",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The current filing actually provides more detailed debt disclosure than the prior filing, not less. The current period includes extensive new information about the August 4, 2025 refinancing transactions, the new 10.50% Senior Secured Notes due 2027, new 9.5% Convertible Senior Secured Notes, the DBMG Credit Agreement refinancing, and updated debt schedules with specific dollar amounts, interest rates, maturity dates, and covenant details. The going concern language is substantially preserved. The screening algorithm appears to have been confused by structural reorganization of the same content across filing sections.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "83585efacfe44682",
+        "current": "0df20b56691422fa",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing included specific descriptions of DBMG's capabilities through GrayWolf Industrial and Aitken Manufacturing, as well as detailed variance explanations referencing 'a plant closure' and 'termination of a few networks and individual markets' at the Spectrum segment. The current filing removes the subsidiary-level capability descriptions and provides less granular variance explanations. The omission of Spectrum segment network termination details and the reduction in Infrastructure operational specifics reduces transparency on segment-level drivers.",
+      "investigation_action": "Ask management whether GrayWolf Industrial and Aitken Manufacturing continue to operate as described, and whether the Spectrum network terminations disclosed in the prior quarter have continued or accelerated. The loss of these operational details makes it harder to assess segment trajectory."
+    },
+    {
+      "flag_number": 5,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cc5af4ff98fea539",
+        "peer": "70d3b0f7a02f1466"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason states that TPCS (the peer) is 'downplaying' debt risk compared to VATE. However, the peer comparison is inverted for DDDS purposes \u2014 VATE is actually providing extensive, detailed debt disclosure including going concern warnings, specific dollar amounts, interest rates, and refinancing details. TPCS's briefer disclosure reflects its much smaller debt profile ($5.7 million vs. $641 million). The divergence reflects genuine business differences in scale and capital structure complexity, not disclosure evasion by VATE.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7f7263d6fd7f6f38",
+        "peer": "ab297f22fa038f70"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag concerns the peer TPCS allegedly downplaying geopolitical risks compared to VATE. VATE's more detailed discussion of tax reform (One Big Beautiful Bill Act), OECD Pillar Two, and foreign currency impacts reflects its multinational operations with Infrastructure subsidiaries operating internationally. TPCS, while defense-focused, is a small domestic manufacturer. The divergence reflects different business models and geographic footprints rather than any disclosure degradation by VATE.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "73c122aea2f6c50a",
+        "peer": "ffde8e1edefb0e01"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag concerns the peer TPCS allegedly under-disclosing regulatory and legal risks compared to VATE. VATE's extensive legal disclosures (Schuff Steel litigation, tax examinations, cybersecurity-related claims) reflect its larger, more complex operations with active litigation. TPCS's brief ITAR and certification disclosures are appropriate for a small defense manufacturer without pending material litigation. This is not a VATE disclosure degradation issue.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cc5af4ff98fea539",
+        "peer": "fea25a0812ad5b12"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "PRLB (Proto Labs) is a debt-free company with $90.4 million in cash, making debt financing disclosure irrelevant for it. VATE's extensive debt disclosure reflects its $641.3 million of principal indebtedness and going concern doubts. The screening algorithm incorrectly flagged PRLB for 'downplaying' a risk it simply does not have. This reflects genuine business differences, not disclosure evasion by either party.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "liquidity_solvency",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cb3c3ec0252057f7",
+        "peer": "16104ea4371942cd"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening correctly identifies that VATE has substantial going concern doubt while PRLB has strong liquidity, but the flag's own reasoning acknowledges VATE 'is actively revealing a material liquidity risk that PRLB is not downplaying but simply not exposed to.' VATE is actually being transparent about its going concern issues, disclosing the minimum liquidity covenant non-compliance that was subsequently cured. This is the opposite of disclosure degradation \u2014 it is forthright disclosure of distress.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "VATE (INNOVATE Corp.) maintains extensive, highly detailed disclosure across its complex multi-segment capital structure, going concern status, and operational risks. The company's current Q2 2025 10-Q actually provides more disclosure than the prior quarter in many areas, particularly around the August 4, 2025 refinancing transactions. The two borderline flags relate to the disappearance of a specific backlog figure and reduced operational detail for certain subsidiaries, but neither rises to the level of systematic obfuscation.",
+    "top_concerns": [
+      "Disappearance of specific DBMG Infrastructure backlog dollar amounts ($1,369.9 million) that were disclosed in the prior quarter \u2014 verify if this is disclosed elsewhere or represents a deliberate omission",
+      "Reduced operational detail on subsidiary capabilities (GrayWolf Industrial, Aitken Manufacturing) and Spectrum segment network termination specifics",
+      "Ongoing going concern risk with minimum liquidity covenant near-breach requiring post-quarter cure through $2.9 million securities liquidation \u2014 monitor whether covenant compliance becomes increasingly marginal"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 2,
+    "dismissed_count": 7
+  },
+  "_meta": {
+    "ticker": "VATE",
+    "model": "claude-opus-4-6",
+    "input_tokens": 100544,
+    "output_tokens": 2454,
+    "timestamp": "2026-04-09T12:38:46.559009"
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "658e4568f51e870c",
+        "current": "54ec8dcbf614bbf7",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained an extraordinarily detailed enumeration of six specific material weaknesses (control environment, segregation of duties, debt/equity instruments, inventory, contract assets/liabilities, IT general controls), along with specific accounts affected across multiple historical periods and concrete remediation steps including hiring plans and third-party engagements. The current period strips all of this out entirely\u2014no mention of material weaknesses, no disclosure controls effectiveness conclusion, no remediation status. This is a critical omission for a company whose disclosure controls were concluded 'not effective' just one quarter prior.",
+      "investigation_action": "Verify whether the material weaknesses have been remediated or are still outstanding by reviewing the full 10-Q filing's Item 4 (Controls and Procedures) section; request management confirmation on remediation status and timeline; assess whether the omission from MD&A violates SEC disclosure requirements."
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "0a5ef51a400f2135",
+        "current": "f46a313f4daaa20e",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed specific tariff percentages (25% on Canada, 10% on energy, 25% on Mexico, 10% on China), specific dollar amounts ($155 billion Canadian countermeasures), specific dates (March 4, 2025 enactment, April 2, 2025 pause), and detailed discussion of potential global trade war consequences. The current period collapses all of this into two generic sentences about 'increasing component costs' and a duplicated sentence. This represents removal of material quantitative detail on a topic directly impacting the company's cost structure.",
+      "investigation_action": "Determine actual tariff exposure on VELO's supply chain components; ask management why specific tariff details were removed given the situation has evolved (not resolved); assess whether current tariff rates are actually impacting component costs and by how much."
+    },
+    {
+      "flag_number": 3,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "0d9115a97fd489ab",
+        "current": "422a455a2cd3d759",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period included a detailed 'Remediation Measures for Remaining Material Weaknesses' section specifying concrete actions: hiring additional accounting and IT personnel, engaging third-party controls consultants, designing segregation of duties controls, and implementing journal entry review controls. It also disclosed the need for 'significant cost cutting measures, including further reductions in force.' The current period replaces this with generic expense category descriptions and quantitative period-over-period changes without any mention of remediation activities or workforce risk. The simultaneous disappearance of both remediation commitments and RIF risk disclosure is concerning.",
+      "investigation_action": "Determine current headcount in finance/accounting/IT relative to prior periods; verify whether remediation hiring occurred or was abandoned due to cost-cutting; assess whether the RIF risk has materialized and whether it has impacted the company's ability to remediate internal control weaknesses."
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "94077f2b3a98c4fa",
+        "current": "a89fc66e8f705c0f",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained extensive regulatory and legal risk disclosure covering FCPA, Bribery Act, OFAC, DDTC, BIS, ITAR, EAR, with specific discussion of Trump's executive order pausing FCPA enforcement, heightened risk from foreign operations, and compliance policies. It also included specific quantitative thresholds for emerging growth company and smaller reporting company status ($1.235 billion revenue, $250 million market value, $700 million, $100 million). The current period retains only a brief mention of emerging growth company status and climate change boilerplate, dropping the entire compliance risk discussion and all quantitative thresholds. This is a material reduction in legal risk disclosure for a company operating internationally in defense-adjacent markets.",
+      "investigation_action": "Confirm whether the regulatory/compliance risk factors are still present in the Risk Factors section of the same filing; if so, the MD&A removal is less concerning but still notable; if not, this represents a serious disclosure gap that should be escalated."
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "6d613dd4e7f4c7a2",
+        "current": "e013a2bea84dac00",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "In the Risk Factors section, the prior period included specific tariff percentages (25% Canada, 10% energy, 25% Mexico, 10% China), the $155 billion Canadian countermeasure figure, specific enactment and pause dates, and discussion of broader global trade war risk. The current period replaces all specifics with vague language about 'the ultimate impact of these trade measures' and 'various factors, including whether and when such trade measures are implemented.' Given that tariffs have since been implemented and are no longer speculative, the removal of concrete figures while retaining vague uncertainty language appears designed to obscure rather than clarify.",
+      "investigation_action": "Determine what tariff rates currently apply to VELO's imports and exports; quantify the actual cost impact on components; assess whether the deliberately vague language is inconsistent with the company's actual knowledge of tariff impacts at the filing date."
+    },
+    {
+      "flag_number": 6,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "82219faf2dadb748",
+        "peer": "64573f9f4a669893"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag suggests ASYS is downplaying debt risk relative to VELO, but the two companies have fundamentally different debt profiles. ASYS fully repaid its loan agreement in Q4 FY2024 and has only $0.2 million in finance lease obligations. VELO has $22 million in outstanding principal including notes bearing 30-60% annual interest rates. ASYS's minimal debt disclosure accurately reflects its minimal debt position. This is a genuine business difference, not disclosure evasion by either party.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ba637d613bdc2191",
+        "peer": "d78fc0d6d70f9826"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ASYS and VELO operate in different manufacturing niches\u2014ASYS focuses on thermal processing and semiconductor fabrication solutions while VELO produces metal additive manufacturing printers. ASYS's generic statement about 'business continuity and resiliency' reflects a different operational risk profile; its products (reflow ovens, CMP consumables) face different supply chain and manufacturing challenges than VELO's laser powder bed fusion systems. The difference in disclosure depth reflects genuine business differences rather than concealment.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "55b5cd70921c42a3",
+        "peer": "841ebbe7771f73b6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ASYS repaid its $12 million term loan in Q4 FY2024 and terminated the loan agreement. Its remaining debt is $0.2 million in finance leases with $6,000 in quarterly interest expense. VELO has $22 million in outstanding debt at rates of 30-60% and explicitly states it needs additional financing to fund operations and payroll. ASYS's minimal debt risk disclosure accurately reflects its near-zero debt position. The screening reason incorrectly characterizes ASYS as having 'significant debt obligations.'",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "53e6d035a4191159",
+        "peer": "970689bafb4d7979"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted\u2014it claims VELO is downplaying financial sustainability risks relative to ASYS. However, ASYS's extensive disclosure relates to goodwill impairments ($20.4 million) and intangible asset write-downs specific to its acquisition-driven business model. VELO's dilution risk statement addresses a different financial sustainability concern. These are different companies with different financial sustainability challenges. VELO's extensive going concern and financing disclosures elsewhere in the filing address its sustainability risks; the single sentence flagged here is not the entirety of VELO's disclosure on this topic.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e013a2bea84dac00",
+        "peer": "e0dcf8597138019a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag suggests ASYS is downplaying geopolitical risks relative to VELO, but VELO is the target company under review, not ASYS. VELO actually provides more disclosure than ASYS on this topic. ASYS's minimal geopolitical disclosure may reflect its primarily domestic operations and different international exposure profile. This flag does not identify a disclosure degradation issue at VELO\u2014rather it identifies VELO as the more transparent of the two on this topic.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cb3755a1ee37ff06",
+        "peer": "5f6006708247d846"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "VELO explicitly discloses the risk of further reductions in force and employee attrition, which is appropriate given its financial distress. ASYS discloses standard severance arrangements. The flag suggests ASYS is downplaying human capital risk, but this is a peer comparison flag where VELO is actually the more transparent company. The different disclosure levels reflect genuinely different workforce situations\u2014VELO is in cost-cutting mode while ASYS appears more stable.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 12,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8789a4b137e91bd1",
+        "peer": "2b2f76518366b0d6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies ASYS as having less detailed regulatory/legal disclosure than VELO, but VELO is the target company being monitored. VELO provides extensive anti-corruption and export control risk disclosure, which is appropriate for a company serving defense and aerospace customers with international operations. ASYS's boilerplate legal disclosure reflects its different regulatory exposure. This does not represent a disclosure issue at VELO.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 13,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f46a313f4daaa20e",
+        "peer": "95d9e88aa16390d8"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "TRT provides significantly more granular geopolitical disclosure including specific currency impacts ($235 unrealized exchange loss), government grant amounts ($22, $93), CHIPS Act discussion, and detailed commentary on China-U.S. trade tensions affecting demand shifts. VELO's current period MD&A contains only generic boilerplate about macroeconomic conditions and a duplicated sentence about component costs. While TRT has greater direct international exposure (China, Singapore, Malaysia, Thailand), VELO also has international operations and defense-sector customers, making the absence of specific tariff impact quantification notable\u2014especially when viewed alongside Flags 2 and 5 showing prior-period specifics were removed.",
+      "investigation_action": "Request from VELO management specific quantification of tariff impacts on component costs and any currency exposure; compare the level of specificity in VELO's current disclosure to what peers with similar international exposure are providing."
+    },
+    {
+      "flag_number": 14,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ba637d613bdc2191",
+        "peer": "c4ddc15d2b5a8a85"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag suggests TRT is downplaying operational/product risks relative to VELO, but these companies operate in fundamentally different product spaces\u2014VELO makes metal 3D printers using laser powder bed fusion while TRT provides reliability testing services and equipment. TRT's warranty and product complexity disclosures are appropriate for its business model. VELO's more detailed operational disclosure reflects its more complex manufacturing challenges. This reflects genuine business differences.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 15,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a89fc66e8f705c0f",
+        "peer": "36dc5f7d56585099"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag suggests TRT is downplaying climate change regulatory risk relative to VELO. However, VELO's climate change disclosure is itself boilerplate language listing generic categories of potential impact without any company-specific detail. TRT, a testing services company operating in Asia, has a different environmental regulatory profile than a U.S.-based metal 3D printing company. The absence of climate risk disclosure at TRT does not indicate disclosure evasion at either company.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "VELO3D shows a clear pattern of disclosure degradation between its Q1 2025 (filed May 2025) and Q2 2025 (filed August 2025) 10-Q filings. The most alarming changes involve the complete removal of detailed material weakness descriptions and remediation plans from MD&A despite these weaknesses remaining unremediated, the stripping of specific tariff figures and geopolitical risk details that were previously disclosed, and the disappearance of comprehensive regulatory compliance risk discussion. These changes occur in the context of a company facing severe financial distress with 30-60% interest rate debt and explicit near-term financing needs.",
+    "top_concerns": [
+      "Complete removal of material weakness details and remediation plans from MD&A (Flag 1) despite disclosure controls being deemed 'not effective' just one quarter prior\u2014raises serious questions about whether weaknesses persist unremediated without disclosure",
+      "Systematic removal of specific tariff percentages, dollar amounts, and dates across both MD&A and Risk Factors (Flags 2, 5), replaced with deliberately vague language, at a time when tariff impacts should be more quantifiable not less",
+      "Disappearance of detailed regulatory compliance risk discussion (Flag 4) including FCPA, ITAR, OFAC references from a company serving defense/aerospace customers with international operations, combined with removal of remediation hiring commitments (Flag 3) that are essential to addressing known internal control failures"
+    ],
+    "genuine_count": 5,
+    "borderline_count": 1,
+    "dismissed_count": 9
+  },
+  "_meta": {
+    "ticker": "VELO",
+    "model": "claude-opus-4-6",
+    "input_tokens": 20824,
+    "output_tokens": 4243,
+    "timestamp": "2026-04-09T12:39:56.766821"
+  }
+}

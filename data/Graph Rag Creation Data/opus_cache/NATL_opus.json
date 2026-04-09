@@ -1,0 +1,121 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "c050490a50ca2ae9",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior text is a single sentence about 'optimized machine footprint drives lower operational costs' \u2014 this reads like a promotional/strategic statement rather than a substantive risk factor. Its removal from Risk Factors is not a meaningful loss of risk disclosure and may simply reflect editorial cleanup of a misplaced positive claim in a risk section.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "3f28a271b38cd5c2",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior text about 'shift of orders from the first quarter to the second quarter' is a timing-specific operational comment relevant to Q1 results. In the current Q2 filing, the company actually acknowledges this shift occurred (Flag 7 text mentions 'expected shift of orders from the first quarter to the second quarter'). The sentence was not suppressed \u2014 it was period-specific and the topic was addressed in the current period's revenue discussion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "8a565a5483f7faa0",
+        "current": "00974248636557f7",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing included specific quantitative FX impact disclosures \u2014 'foreign currency fluctuations had an unfavorable impact of 2%' repeated across multiple revenue lines \u2014 while the current filing removes all percentage-level FX impact quantification. Additionally, the prior period's 'currently analyzing the impacts of the tariffs' was replaced with softer 'continues to actively monitor' language, and the new assertion that tariff impact 'was not material in the second quarter' lacks supporting detail. The removal of all specific FX percentage impacts is a clear reduction in quantitative disclosure specificity.",
+      "investigation_action": "Request specific FX impact percentages by segment for Q2 2025 and the analytical basis for the company's assertion that tariff impacts were 'not material' \u2014 ask for dollar quantification of tariff-related cost increases absorbed or passed through."
+    },
+    {
+      "flag_number": 4,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "7a7233e2c77e35c9",
+        "current": "2915bf3af0ae4ac8",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing included detailed definitions of Adjusted EBITDA (listing each addback component) and Adjusted gross margin/SGA methodologies, while the current filing replaces these with a single cryptic note that 'Prior to 2025, our calculations of Adjusted EBITDA did not exclude the other (income) expense line item.' This is concerning because the company appears to have changed its non-GAAP calculation methodology while simultaneously reducing the transparency of the full definition. The addition of derivative accounting language in place of non-GAAP definitions suggests possible section reorganization, but the net effect is reduced clarity on how key performance metrics are calculated.",
+      "investigation_action": "Verify whether the full Adjusted EBITDA and adjusted margin definitions are disclosed elsewhere in the Q2 10-Q, and determine the quantitative impact of the methodology change (excluding other income/expense) on reported Adjusted EBITDA figures for comparability."
+    },
+    {
+      "flag_number": 5,
+      "topic": "cybersecurity_technology",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "11be6779c669f777",
+        "current": "a2f2a8c324bfdfc2",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason incorrectly categorizes this as a cybersecurity topic \u2014 the removed text about derivatives and hedging of foreign currency exposures is a financial instruments disclosure, not a cybersecurity matter. Moreover, the derivatives language about non-designated hedging instruments appears to have migrated to the accounting section (Flag 4 current text includes 'For these derivatives we recognize gains and losses in the same period as the remeasurement losses and gains of the related foreign currency-denominated exposures'). This is a section reorganization, not a content removal.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "b5aae92ad5259d8f",
+        "current": "601183c97759ee51",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing included detailed disclosure about financial instruments \u2014 sensitivity analysis methodology, fair value estimation, non-exchange traded contracts, and the statement that hedge portfolio changes would be 'substantially offset by increases or decreases in the underlying exposures.' The current filing removes all of this, replacing it with the vague 'We believe that the reserves for potential losses are adequate.' The removal of the sensitivity analysis framework and hedge effectiveness discussion materially reduces an investor's ability to assess the company's market risk exposure. The international pension contribution also changed from $2M to $7M (a 250% increase) without explanation.",
+      "investigation_action": "Investigate why the sensitivity analysis and hedging effectiveness disclosures were removed; request the quantitative market risk analysis that supports the vague 'reserves are adequate' statement; and clarify the 250% increase in international pension plan contributions from $2M to $7M."
+    },
+    {
+      "flag_number": 7,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "fd13573c737a4df2",
+        "peer": "9988f784101042a3"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening flag is backwards \u2014 it flags NATL (Atleos) as the subject but the actual disclosure concern is with VYX (Voyix), which provides only a generic cross-reference. NATL actually provides extensive, granular segment-level revenue disclosure with dollar amounts, percentages, and forward-looking commentary. NATL's disclosure quality on this topic is strong, not degraded. The peer comparison here validates NATL's transparency rather than raising concerns about it.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "Atleos (NATL) shows two genuine areas of disclosure degradation: the removal of specific FX impact percentages across revenue lines and the elimination of financial risk sensitivity analysis/hedging effectiveness disclosures. While some flags reflect legitimate section reorganization or period-specific editorial changes, the pattern of removing quantitative specificity on market risk and currency impacts warrants monitoring, particularly given the evolving tariff environment and the company's assertion that tariff impacts were 'not material' without supporting quantification.",
+    "top_concerns": [
+      "Removal of all segment-level foreign currency impact percentages (previously 2% across multiple revenue lines) with no quantitative replacement in Q2 filing",
+      "Elimination of sensitivity analysis framework and hedging effectiveness disclosures, replaced with vague 'reserves are adequate' language, reducing visibility into market risk exposure",
+      "Change in Adjusted EBITDA calculation methodology (now excluding other income/expense) accompanied by reduced transparency on the full non-GAAP definition and component addbacks"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 1,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "NATL",
+    "model": "claude-opus-4-6",
+    "input_tokens": 8367,
+    "output_tokens": 2039,
+    "timestamp": "2026-04-09T12:16:02.433872"
+  }
+}

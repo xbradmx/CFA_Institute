@@ -1,0 +1,177 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "9e93317774fd1ce7",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed text is minor operational detail about packaging design for Amazon and a generic caveat about risk mitigation effectiveness. This is routine editorial trimming of illustrative examples rather than removal of material disclosure. The caveat language ('may not be effective and may have long-term adverse effects') is standard boilerplate that likely appears elsewhere in risk factors.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "34cb446be8680c21",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The removed language specifically addressed adverse impacts on 'sales, cost, or gross margin' and the risk that altering operations in response to tariffs could increase 'capital and operating costs.' While this is somewhat generic, its removal from risk factors during a period of active tariff disruption is notable. However, the current filing's MD&A does reference tariff mitigation through 'higher average selling prices' and margin improvements, which partially addresses the topic from a different angle.",
+      "investigation_action": "Verify whether cost/margin pressure language was consolidated into the tariff-specific risk factor referenced in the Q1 10-Q or whether it was simply dropped. Monitor gross margin trends for signs of unacknowledged cost absorption."
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "8d17d671ee613e64",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed sentence is a single generic cautionary statement ('Such efforts may also take time to implement or to have an effect and may result in adverse financial results or fluctuations'). This is standard risk factor boilerplate. Given CRSR still provides detailed discussion of valuation allowances and deferred tax asset realizability in the current filing, this does not represent a meaningful reduction in financial sustainability disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "c3e68f1d43cedf6b",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "A substantial, multi-paragraph risk factor on trade policy changes\u2014covering U.S.-China trade tensions, tariff imposition, retaliatory actions, supply chain disruption, and consumer confidence impacts\u2014was removed from the Q2 filing's risk factors. The current filing's MD&A references this risk factor only by cross-referencing the Q1 10-Q ('see Part II Item 1A of our Quarterly Report on Form 10-Q for the quarter ended March 31, 2025'), meaning readers of the Q2 filing alone would not see this material risk discussion. Given that CRSR manufactures in Taiwan, China, and Vietnam and tariffs remain volatile, removing this risk factor from the current filing while relying on a cross-reference to a prior quarterly filing is a significant reduction in standalone disclosure completeness.",
+      "investigation_action": "Confirm whether CRSR's cross-reference approach to tariff risk factors complies with SEC guidance on incorporation by reference in 10-Q filings. Assess whether the removal signals management's belief that tariff risk has diminished or is an attempt to reduce the prominence of this disclosure during an active tariff environment."
+    },
+    {
+      "flag_number": 5,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "844d1390b054bef3",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This is the same generic cautionary sentence flagged in Flag 1 ('our ongoing efforts to address these risks may not be effective and may have long-term adverse effects on our operations and operating results that we may not be able to reverse'). It appears to be standard boilerplate that was trimmed. Its disappearance from risk factors does not represent a material reduction in operational disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "18c6fcee4f718232",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The removed text explicitly identified manufacturing concentration risk in 'Taiwan, China and Vietnam' and reliance on 'raw materials and other components.' This is material supply chain disclosure for a hardware company with significant overseas manufacturing. While the current MD&A mentions these countries in the tariff context, removing the dedicated risk factor language about manufacturing facility concentration and raw material dependency reduces the specificity of supply chain risk disclosure. This is particularly concerning given ongoing geopolitical tensions around Taiwan and China.",
+      "investigation_action": "Determine if this supply chain concentration risk factor was consolidated elsewhere or simply dropped. Cross-check against the 10-K for the complete risk factor set. Monitor for any shifts in manufacturing footprint that might explain the removal."
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "5b8c5a9466fd1b4d",
+        "current": "cb7cc991250947ab",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing provided specific quantitative sensitivity metrics: a '$1.5 million' impact from a 100 basis point interest rate change and a '$1.7 million' impact from a 10% FX rate change. The current filing drops the interest rate sensitivity entirely and reports a dramatically lower FX sensitivity of only '$0.6 million' without explaining the reduction. Additionally, the prior filing stated the company was 'actively monitoring' and evaluating potential impacts; the current filing adds hedging language like 'there can be no assurances that we will continue to be successful in mitigating' but removes specific quantitative anchors that investors rely on. The cross-reference to the Q1 filing for tariff risk factors ('see Part II Item 1A of our Quarterly Report on Form 10-Q for the quarter ended March 31, 2025') effectively outsources material risk disclosure to a prior filing rather than restating it.",
+      "investigation_action": "Request management explanation for the removal of interest rate sensitivity disclosure and the significant reduction in FX sensitivity ($1.7M to $0.6M). Determine if debt was paid down or hedging strategy changed materially. Evaluate whether the cross-reference approach to tariff risk is a one-time editorial choice or a pattern of reducing standalone filing completeness."
+    },
+    {
+      "flag_number": 8,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a23fe074ba6649ea",
+        "peer": "7deeb14299025191"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags ALOT for lacking deferred tax asset/valuation allowance disclosure compared to CRSR. However, this reflects CRSR's specific financial circumstances (cumulative loss position, full valuation allowance recorded in 2024) rather than a disclosure deficiency by either party. ALOT and CRSR are very different businesses (distance 0.617675 suggests weak peer match), and ALOT would only need similar disclosure if it faced similar DTA realizability issues. CRSR's own disclosure on this topic is actually quite detailed and transparent.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "afdaa6f7ff2b2035",
+        "peer": "0ca4f3b680c7aafa"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is about ALOT's supply chain disclosure being thinner than CRSR's. CRSR provides extensive supply chain detail because it operates a complex, multi-country manufacturing network for consumer electronics\u2014a fundamentally different supply chain profile than ALOT (a specialty printing company). The peer distance of 0.617675 confirms these are weak comparables. CRSR's own supply chain disclosure in MD&A remains robust, detailing mitigation strategies, inventory build-up for tariffs, and manufacturing flexibility.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a23fe074ba6649ea",
+        "peer": "258c281e481d1884"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Similar to Flag 8, this flags MITK for not discussing valuation allowances and DTA realizability. MITK's excerpt discusses share repurchases and convertible notes\u2014different financial topics entirely. The absence of DTA discussion in MITK likely reflects that MITK does not face the same cumulative loss/valuation allowance situation as CRSR. This is a genuine business difference, not disclosure evasion. CRSR's own disclosure on this topic remains appropriately detailed.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cb7cc991250947ab",
+        "peer": "1a21d55523607c98"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "MITK is a software/fintech company with fundamentally different exposure to tariffs and physical supply chain disruptions than CRSR, a hardware manufacturer sourcing from Taiwan, China, and Vietnam. MITK's minimal geopolitical discussion reflects its business model (software/SaaS), not disclosure evasion. The peer distance of 0.622699 confirms these are weak comparables. CRSR's own geopolitical/macro disclosure is the subject under review and is addressed in other flags.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "CRSR shows a concerning pattern of removing standalone risk factor disclosures on trade policy, supply chain concentration, and cost/margin pressure from its Q2 2025 filing, while cross-referencing the Q1 2025 filing for tariff-related risks. The removal of specific quantitative sensitivity metrics (interest rate and FX impact figures) further reduces the analytical utility of the current filing. However, CRSR's MD&A continues to provide meaningful operational discussion of tariff mitigation, inventory strategy, and margin dynamics, partially offsetting the risk factor removals.",
+    "top_concerns": [
+      "Removal of comprehensive geopolitical/trade policy risk factor from Q2 filing, replaced only by cross-reference to Q1 filing, reducing standalone disclosure completeness during an active tariff environment",
+      "Disappearance of interest rate sensitivity disclosure and significant unexplained reduction in FX sensitivity metric ($1.7M to $0.6M) without explanation of underlying changes",
+      "Removal of supply chain manufacturing concentration risk factor identifying Taiwan, China, and Vietnam dependency during a period of elevated geopolitical risk to those regions"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 1,
+    "dismissed_count": 7
+  },
+  "_meta": {
+    "ticker": "CRSR",
+    "model": "claude-opus-4-6",
+    "input_tokens": 8323,
+    "output_tokens": 3038,
+    "timestamp": "2026-04-09T11:54:31.040734"
+  }
+}

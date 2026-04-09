@@ -1,0 +1,163 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "ab0c6495a39362bd",
+        "current": "197f604e2e2eed5c",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason claims specific dollar amounts and detailed risk factors were removed, but the current period actually substantially expanded geopolitical disclosure. The current filing adds a dedicated 'Tariffs' section with specific references to the April 2, 2025 tariff implementation (10% to 125%), the 90-day pause, retaliatory actions, PHMSA approval delays, and DOGE impacts. The prior period's inflation statement ('NTIC anticipates earnings will continue to be adversely affected') was generic, and the forward-looking risk factor list is largely unchanged between periods with minor additions (e.g., Middle East conflicts, energy prices). The removal of the inflation seasonality statement is offset by its retention elsewhere in the current filing. Overall, disclosure quality improved rather than degraded.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "27f0b9e278c4039c",
+        "current": "32eed3bff0a33893",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period disclosed specific cumulative undistributed earnings figures ($24,096,958 and $23,465,685) on which U.S. income and foreign withholding taxes had not been recognized. The current period excerpt contains no equivalent disclosure of these dollar amounts, replacing it with generic regulatory risk language about environmental laws, PHMSA approvals, and tax regulation changes. While this specific tax figure may appear elsewhere in the financial statement notes (which we cannot confirm from the excerpts), its absence from the blocks provided is notable given its materiality to understanding NTIC's tax exposure on joint venture earnings.",
+      "investigation_action": "Verify whether the undistributed earnings figures and associated deferred tax position are disclosed elsewhere in the current 10-Q notes. If not, inquire about the change in tax recognition policy and whether any repatriation of joint venture earnings is planned."
+    },
+    {
+      "flag_number": 3,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6e1ec43d6d137110",
+        "peer": "b786823e43d4277a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ACU disclosed a specific material weakness related to IT general controls (logical security and privileged access management) that is unique to its own internal systems and operations. The absence of a similar disclosure by NTIC does not suggest concealment \u2014 material weaknesses are company-specific findings. NTIC provides standard interim financial statements with management's opinion that adjustments are normal and recurring, along with detailed accounting policy disclosures including a prior-period reclassification correction, which actually demonstrates transparency. The peer divergence reflects genuine business differences rather than disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "daaece44e4826678",
+        "peer": "88ff59060f664b78"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 the screening reason actually criticizes ACU for minimal disclosure while noting NTIC provides detailed product risk discussion. Since we are evaluating NTIC's disclosure quality, NTIC is the stronger discloser here. ACU's single line on product returns reflects a fundamentally different business model (Acme United is a consumer products/cutting instruments company). This does not indicate any disclosure degradation at NTIC.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3384187d2d243a7a",
+        "peer": "4e8d9f1e6cb82bfb"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag criticizes ACU for minimal legal disclosure relative to NTIC. NTIC actually provides robust contingency disclosure including its accounting policy for legal liabilities, reasonable estimate methodology, and ERC monitoring. ACU states it has no pending material legal proceedings, which is a straightforward factual representation. The divergence reflects different litigation profiles rather than disclosure evasion by either party. NTIC's disclosure is adequate and not degraded.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a4fe48a81bef742f",
+        "peer": "1623d2a66b06b673"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag highlights that OFLX provides minimal debt disclosure while NTIC provides extensive detail. Since NTIC is the target company being evaluated, this is actually a positive signal \u2014 NTIC discloses specific borrowing amounts ($7,369,949), interest rates (6.65% weighted average), covenant details, maturity dates, and recent amendments. OFLX has no borrowings outstanding on its $15M line of credit, making extensive disclosure unnecessary. The divergence reflects genuine differences in capital structure utilization, and NTIC's disclosure is strong.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "531e7bdfb5117aed",
+        "peer": "45486b6c416cf9ed"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "NTIC provides extensive geopolitical and macro risk disclosure including specific tariff ranges, currency exposures across six currencies, joint venture dependency risks, and PHMSA regulatory delays. OFLX operates with much more limited international exposure (U.K. and France subsidiaries only) and reports specific FX gain/loss amounts. The divergence reflects NTIC's far more complex international operations via joint ventures across Asia and Europe. NTIC's disclosure is robust, not degraded.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c0f5ca6332667b57",
+        "peer": "f18e2c8f12bbc409"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag notes OFLX provides generic manufacturing location disclosure while NTIC explicitly identifies supply chain disruptions and inflation as factors adversely affecting earnings. NTIC's disclosure is the stronger one here, mentioning 'key external factors include the availability of primary raw materials and sub-contractor production lead times.' The peer comparison reflects different supply chain complexity levels \u2014 OFLX manufactures at three owned facilities while NTIC relies on global sub-contractors and joint ventures. No disclosure degradation at NTIC.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a68b52efac68836a",
+        "peer": "0f59ab056fe13c4b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "NTIC provides highly detailed cost and margin disclosure including COGS as percentage of sales (61.6% and 62.5%), specific operating expense growth rates, tariff mitigation strategies (price increases, supplier diversification, manufacturing optimization), and commodity exposure to plastic and bioplastic resins. OFLX's minimal disclosure reflects a different cost structure and reporting approach. This flag actually demonstrates NTIC's disclosure strength rather than any degradation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "197f604e2e2eed5c",
+        "peer": "24ea02f2bc7bd716"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This is largely duplicative of Flag 7, comparing NTIC's extensive geopolitical/tariff disclosure against OFLX's minimal currency translation boilerplate. NTIC provides specific tariff percentages (10% to 125%), names the April 2, 2025 implementation date, discusses retaliatory actions, PHMSA delays from DOGE, and China dumping concerns. OFLX's limited international footprint (U.K. and France only with British Pound and Euro exposure) justifies less extensive disclosure. NTIC's disclosure is exemplary for a company of its international complexity.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "NTIC's disclosure quality is generally strong and appears to have improved in the current period, particularly with the addition of a dedicated tariffs section containing specific policy details, dates, and percentage ranges. The vast majority of flags were peer divergence comparisons where NTIC was actually the stronger discloser. The only notable concern is the potential removal of specific undistributed earnings dollar amounts from the current filing excerpts, though this may be a function of the text sampling rather than actual omission.",
+    "top_concerns": [
+      "Verify that cumulative undistributed earnings figures ($24M+) and associated deferred tax position are still disclosed in the current period financial statement notes",
+      "Monitor the noted inconsistency in the Credit Agreement margin rate (2.35% in notes vs. 2.15% in MD&A) which could indicate a drafting error",
+      "Track PHMSA approval timeline given disclosed regulatory delays from political climate and DOGE actions, which could materially affect oil & gas segment revenue"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 1,
+    "dismissed_count": 9
+  },
+  "_meta": {
+    "ticker": "NTIC",
+    "model": "claude-opus-4-6",
+    "input_tokens": 19643,
+    "output_tokens": 2679,
+    "timestamp": "2026-04-09T12:18:06.692612"
+  }
+}

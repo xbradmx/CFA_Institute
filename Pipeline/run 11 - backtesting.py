@@ -1,6 +1,6 @@
 """
-DDDS - Backtesting Framework
-==============================
+DDDS - Backtesting Framework (v5 — Annual, Li (2008) Aligned)
+===============================================================
 Tests the core hypothesis: disclosure degradation detected by DDDS
 predicts future earnings persistence problems.
 
@@ -10,43 +10,42 @@ Methodology follows Li (2008):
 
 Regression model
 ----------------
-    Earnings(t+1) = α + β1·Earnings(t) + β2·Flagged(t) + β3·Flagged(t)·Earnings(t) + ε
+    Earn(t+1) = α + β1·Earn(t) + β2·LOF(t) + β3·LOF(t)·Earn(t)
+                  + β4·ln(Assets) + Year_FE + ε
 
 Where:
-    Earnings(t)          : current period earnings (EPS or ROA)
-    Earnings(t+1)        : next period earnings
-    Flagged(t)           : 1 if DDDS flagged the company in period t, 0 otherwise
-    Flagged·Earnings(t)  : interaction term — key test variable
+    Earn(t)     : current-year scaled operating earnings (OI / Assets)
+    Earn(t+1)   : next-year scaled operating earnings
+    LOF(t)      : Linguistic Obfuscation Factor (continuous, company-year mean)
+    LOF×Earn(t) : interaction — KEY TEST VARIABLE
+    ln(Assets)  : size control
+    Year_FE     : fiscal year fixed effects
 
-Interpretation:
-    β1 > 0               : earnings persistence (baseline)
-    β3 < 0               : DDDS-flagged companies show lower earnings persistence
-                           This is the confirmation of the system's predictive validity
+Key test: β3 (LOF × Earnings interaction)
+    Profitable:  β3 < 0 → obfuscation hides transitory profits (Li's main finding)
+    Loss-making: β3 > 0 → obfuscation hides persistent losses  (predicted but NOT
+                           found by Li; a significant result here is a novel finding)
 
-The regression is run across three subsamples following Li (2008):
-    1. Full sample
-    2. Profitable companies only (Earnings(t) > 0)
-    3. Loss-making companies only (Earnings(t) < 0)
+LOF scores are aggregated to company-fiscal-year level (mean across all
+filings within that fiscal year: 10-K and 10-Q combined).
 
-Data sources
-------------
-    - Flagged companies : data/findings/*_findings.json  (Run 8 output)
-    - Earnings data     : SEC EDGAR XBRL API (company facts)
-                          Falls back to yfinance if XBRL data unavailable
-    - Company universe  : DDDS/company_universe_cache.json  (SECAPISCRAPER output)
-                          OR data/passages.csv  (Run 1 output)
+All companies are US Industrials (SIC 3400-3599), so sector demeaning
+is unnecessary.
+
+Data sources:
+    - LOF scores:      DDDS pipeline output (score CSVs from run 6)
+    - Financial data:  SEC EDGAR XBRL (primary) + yfinance (gap-fill)
 
 Usage
 -----
-    python run_11_backtest.py
-    python run_11_backtest.py --findings-dir data/findings --signal-threshold MEDIUM
-    python run_11_backtest.py --earnings-metric ROA
-    python run_11_backtest.py --skip-fetch   # use cached earnings data only
+    python run_11_-_backtesting.py
+    python run_11_-_backtesting.py --scores-dir data/analyst_outputs
+    python run_11_-_backtesting.py --skip-fetch
 """
 
 import argparse
-import json
 import os
+import re
 import time
 import warnings
 from pathlib import Path
@@ -55,6 +54,7 @@ import numpy as np
 import pandas as pd
 import requests
 from dotenv import load_dotenv
+from scipy import stats as scipy_stats
 
 load_dotenv()
 warnings.filterwarnings("ignore")
@@ -62,127 +62,183 @@ warnings.filterwarnings("ignore")
 # ---------------------------------------------------------------------------
 # CONFIG
 # ---------------------------------------------------------------------------
-FINDINGS_DIR      = os.environ.get("FINDINGS_DIR", "data/findings")
-UNIVERSE_CACHE    = "DDDS/company_universe_cache.json"
-PASSAGES_CSV      = "data/passages.csv"
-EARNINGS_CACHE    = "data/backtest/earnings_cache.csv"
-OUTPUT_DIR        = "data/backtest"
+SCORES_DIR     = os.environ.get("SCORES_DIR", "data/analyst_outputs")
+UNIVERSE_FILE  = "company_filing_summary.xlsx"
+DATA_CACHE     = "data/backtest/annual_financials_v5.csv"
+OUTPUT_DIR     = "data/backtest"
+OUTPUT_XLSX    = "data/backtest/backtest_results.xlsx"
 
-# Which signals count as flagged (configurable via --signal-threshold)
-SIGNAL_HIERARCHY  = ["HIGH", "MEDIUM", "LOW"]
+EDGAR_HEADERS  = {"User-Agent": os.environ.get(
+    "EDGAR_USER_AGENT", "DDDS Research brad@lancaster.ac.uk"
+)}
+EDGAR_FACTS    = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json"
+EDGAR_DELAY    = 0.12
 
-# Earnings metric: "EPS" or "ROA"
-EARNINGS_METRIC   = "EPS"
+MIN_SENTENCES  = 10
+WINSORIZE_PCT  = 0.01
 
-# EDGAR XBRL API
-EDGAR_HEADERS     = {"User-Agent": os.environ.get("EDGAR_USER_AGENT", "DDDS Research brad@lancaster.ac.uk")}
-EDGAR_FACTS_URL   = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json"
-REQUEST_DELAY     = 0.12   # SEC rate limit: 10 req/s, target 8/s
-
-# Regression periods — align with your filing window
-PERIOD_T          = "2024"   # period when DDDS flags are generated
-PERIOD_T1         = "2025"   # period where earnings persistence is tested
-# ---------------------------------------------------------------------------
+REGRESSION_SPECS = [
+    ("Vague",    "vague_both",    "Vague (delta-baseline) — MD&A + Risk Factors"),
+    ("Complex",  "complex_both",  "Complex (delta-baseline) — MD&A + Risk Factors"),
+    ("Combined", "combined_both", "Combined (Vague + Complex)"),
+]
 
 
-# ---------------------------------------------------------------------------
-# STEP 1 — LOAD FLAGGED COMPANIES FROM RUN 8 FINDINGS
-# ---------------------------------------------------------------------------
+# ===================================================================
+# STEP 1 — PARSE DDDS SCORE CSVs
+# ===================================================================
 
-def load_flagged_companies(findings_dir: str, signal_threshold: str) -> dict[str, dict]:
+def _parse_filename(filename: str) -> dict | None:
+    m = re.match(
+        r"^(.+?)_(10-[KQ])_(\d{4}-\d{2}-\d{2})_(.+?)_ddds_scores\.csv$",
+        filename,
+    )
+    if not m:
+        return None
+    return {
+        "ticker":      m.group(1),
+        "filing_type": m.group(2),
+        "filing_date": m.group(3),
+        "accession":   m.group(4),
+    }
+
+
+def _parse_score_csv(filepath: Path) -> dict | None:
+    meta = _parse_filename(filepath.name)
+    if not meta:
+        return None
+
+    try:
+        lines = filepath.read_text(encoding="utf-8-sig").splitlines()
+    except Exception:
+        return None
+
+    header_idx = None
+    for i, line in enumerate(lines):
+        if line.strip().startswith("Section,Sentences") or \
+           line.strip().startswith("Section\tSentences"):
+            header_idx = i
+            break
+    if header_idx is None:
+        return None
+
+    delim = "," if "," in lines[header_idx] else "\t"
+    sections = {}
+    for i in range(header_idx + 1, min(header_idx + 10, len(lines))):
+        line = lines[i].strip()
+        if not line or line.startswith("SENTENCE"):
+            break
+        parts = line.split(delim)
+        if len(parts) >= 6:
+            name = parts[0].strip()
+            try:
+                sents = int(parts[1].strip())
+                vague = float(parts[3].strip())
+                compl = float(parts[5].strip())
+            except (ValueError, IndexError):
+                continue
+            sections[name] = {"sentences": sents, "vague": vague, "complex": compl}
+
+    mda  = sections.get("MD&A")
+    risk = sections.get("Risk Factors")
+    row  = {**meta}
+
+    row["vague_mda"]   = mda["vague"]   if mda  and mda["sentences"]  >= MIN_SENTENCES else np.nan
+    row["complex_mda"] = mda["complex"] if mda  and mda["sentences"]  >= MIN_SENTENCES else np.nan
+    row["vague_risk"]  = risk["vague"]  if risk and risk["sentences"] >= MIN_SENTENCES else np.nan
+    row["complex_risk"]= risk["complex"]if risk and risk["sentences"] >= MIN_SENTENCES else np.nan
+
+    return row
+
+
+def load_scores(scores_dir: str) -> pd.DataFrame:
+    path = Path(scores_dir)
+    if not path.exists():
+        print(f"  [!] Scores directory not found: {scores_dir}")
+        return pd.DataFrame()
+
+    files = list(path.glob("*_ddds_scores.csv"))
+    print(f"  Found {len(files)} score files")
+
+    rows, errors = [], 0
+    for f in files:
+        r = _parse_score_csv(f)
+        if r:
+            rows.append(r)
+        else:
+            errors += 1
+    if errors:
+        print(f"  [!] {errors} files failed to parse")
+
+    df = pd.DataFrame(rows)
+    if df.empty:
+        return df
+
+    df["vague_both"]    = df[["vague_mda", "vague_risk"]].mean(axis=1)
+    df["complex_both"]  = df[["complex_mda", "complex_risk"]].mean(axis=1)
+    df["combined_both"] = df["vague_both"] + df["complex_both"]
+
+    df["filing_date_dt"] = pd.to_datetime(df["filing_date"])
+
+    print(f"  Parsed {len(df)} filings across {df['ticker'].nunique()} companies")
+    print(f"  With both sections >={MIN_SENTENCES} sentences: {df['vague_both'].notna().sum()}")
+    return df
+
+
+# ===================================================================
+# STEP 2 — MAP FILINGS TO FISCAL YEARS & AGGREGATE
+# ===================================================================
+
+def _filing_to_fiscal_year(dt: pd.Timestamp, ftype: str) -> int:
     """
-    Reads all *_findings.json from findings_dir.
+    Map a filing date to the fiscal year it reports on.
+    Most SIC 3400-3599 firms have Dec 31 fiscal year ends.
 
-    Returns dict keyed by identifier:
-        {
-            "identifier": str,
-            "signal":     str  (HIGH / MEDIUM / LOW),
-            "flagged":    int  (1 or 0),
-            "flags_count": int
-        }
+    10-K filed Jan-Jun  -> reports on prior FY (filed ~60-90 days after Dec 31)
+    10-K filed Jul-Dec  -> reports on current FY (non-Dec FY end)
+    10-Q filed Jan-Mar  -> reports on prior FY quarter (Q3/Q4)
+    10-Q filed Apr-Dec  -> reports on current FY quarter (Q1-Q3)
     """
-    threshold_idx = SIGNAL_HIERARCHY.index(signal_threshold)
-    qualifying    = set(SIGNAL_HIERARCHY[:threshold_idx + 1])
-
-    pattern = Path(findings_dir).glob("*_findings.json")
-    flagged = {}
-
-    for path in pattern:
-        try:
-            with open(path) as f:
-                findings = json.load(f)
-        except Exception as e:
-            print(f"  [!] Failed to load {path.name}: {e}")
-            continue
-
-        identifier = findings.get("company", {}).get("identifier", "")
-        signal     = findings.get("deep_analysis", {}).get(
-            "overall_signal", {}
-        ).get("signal_strength", "LOW")
-
-        if not identifier:
-            continue
-
-        flagged[identifier] = {
-            "identifier":  identifier,
-            "name":        findings.get("company", {}).get("name", ""),
-            "signal":      signal,
-            "flagged":     1 if signal in qualifying else 0,
-            "flags_count": findings.get("flags_count", 0),
-        }
-
-    print(f"  Findings loaded: {len(flagged)} companies")
-    print(f"  Flagged (>= {signal_threshold}): {sum(v['flagged'] for v in flagged.values())}")
-    return flagged
+    if ftype == "10-K":
+        return dt.year - 1 if dt.month <= 6 else dt.year
+    else:
+        return dt.year - 1 if dt.month <= 3 else dt.year
 
 
-# ---------------------------------------------------------------------------
-# STEP 2 — LOAD COMPANY UNIVERSE
-# ---------------------------------------------------------------------------
-
-def load_universe() -> dict[str, str]:
+def aggregate_to_company_year(scores_df: pd.DataFrame) -> pd.DataFrame:
     """
-    Loads CIK → ticker mapping from the SECAPISCRAPER cache or passages CSV.
-    Returns dict: {ticker: cik}
+    Aggregate per-filing LOF scores to one observation per company-year.
+    Uses mean across all filings within a fiscal year.
     """
-    # Try SECAPISCRAPER cache first
-    if Path(UNIVERSE_CACHE).exists():
-        with open(UNIVERSE_CACHE) as f:
-            cache = json.load(f)
-        mapping = {v["ticker"]: k for k, v in cache.items() if v.get("ticker")}
-        print(f"  Universe loaded from SECAPISCRAPER cache: {len(mapping)} companies")
-        return mapping
+    df = scores_df.copy()
+    df["fiscal_year"] = df.apply(
+        lambda r: _filing_to_fiscal_year(r["filing_date_dt"], r["filing_type"]),
+        axis=1,
+    )
 
-    # Fall back to passages CSV
-    if Path(PASSAGES_CSV).exists():
-        df      = pd.read_csv(PASSAGES_CSV, usecols=["identifier"])
-        tickers = df["identifier"].dropna().unique().tolist()
-        # Without CIK we can't call XBRL API — return ticker as key, None as value
-        mapping = {t: None for t in tickers}
-        print(f"  Universe loaded from passages CSV: {len(mapping)} companies")
-        print(f"  [!] No CIK data available — XBRL fetch will be skipped, yfinance used instead")
-        return mapping
+    lof_cols = ["vague_both", "complex_both", "combined_both"]
+    agg = df.groupby(["ticker", "fiscal_year"]).agg(
+        n_filings=("filing_type", "count"),
+        **{col: (col, "mean") for col in lof_cols},
+    ).reset_index()
 
-    print(f"  [!] No universe found at '{UNIVERSE_CACHE}' or '{PASSAGES_CSV}'")
-    return {}
+    print(f"  Aggregated to {len(agg)} company-year observations")
+    print(f"  Fiscal years covered: {sorted(agg['fiscal_year'].unique())}")
+    print(f"  Companies: {agg['ticker'].nunique()}")
+    return agg
 
 
-# ---------------------------------------------------------------------------
-# STEP 3 — FETCH EARNINGS DATA
-# ---------------------------------------------------------------------------
+# ===================================================================
+# STEP 3 — FETCH ANNUAL FINANCIAL DATA (EDGAR + YFINANCE)
+# ===================================================================
 
-def fetch_earnings_xbrl(cik: str, metric: str) -> dict[str, float]:
+def _edgar_annual(cik: str) -> dict[int, dict]:
     """
-    Fetches earnings data from SEC EDGAR XBRL API for a single company.
-
-    Returns dict: {period_label: value}
-    Period labels are annual: "2023", "2024", "2025"
-
-    For EPS: uses EarningsPerShareBasic or EarningsPerShareDiluted
-    For ROA: uses NetIncomeLoss / Assets (computed from separate facts)
+    Fetch annual Operating Income and Total Assets from EDGAR XBRL.
+    Returns {year: {oi: float, assets: float}}.
     """
-    url  = EDGAR_FACTS_URL.format(cik=str(cik).zfill(10))
-    time.sleep(REQUEST_DELAY)
+    url = EDGAR_FACTS.format(cik=str(cik).zfill(10))
+    time.sleep(EDGAR_DELAY)
 
     try:
         resp = requests.get(url, headers=EDGAR_HEADERS, timeout=15)
@@ -192,181 +248,259 @@ def fetch_earnings_xbrl(cik: str, metric: str) -> dict[str, float]:
     except Exception:
         return {}
 
-    us_gaap = facts.get("facts", {}).get("us-gaap", {})
+    gaap = facts.get("facts", {}).get("us-gaap", {})
 
-    if metric == "EPS":
-        # Try diluted first, fall back to basic
-        for concept in ["EarningsPerShareDiluted", "EarningsPerShareBasic"]:
-            data = us_gaap.get(concept, {})
-            units = data.get("units", {})
-            entries = units.get("USD/shares", [])
-            if entries:
-                return _extract_annual_values(entries)
-        return {}
+    # Operating income: flow item, must have duration ~350-380 days
+    oi = {}
+    for concept in ["OperatingIncomeLoss", "OperatingIncome"]:
+        entries = gaap.get(concept, {}).get("units", {}).get("USD", [])
+        for e in entries:
+            if e.get("form", "") not in ("10-K", "10-K/A"):
+                continue
+            start, end, val = e.get("start", ""), e.get("end", ""), e.get("val")
+            if not start or not end or val is None:
+                continue
+            try:
+                days = (pd.Timestamp(end) - pd.Timestamp(start)).days
+            except Exception:
+                continue
+            if 300 <= days <= 400:
+                year = int(end[:4])
+                if year not in oi:
+                    oi[year] = float(val)
+        if oi:
+            break
 
-    elif metric == "ROA":
-        # Net Income / Total Assets
-        ni_entries  = (us_gaap.get("NetIncomeLoss", {})
-                              .get("units", {}).get("USD", []))
-        ast_entries = (us_gaap.get("Assets", {})
-                               .get("units", {}).get("USD", []))
-        ni_vals  = _extract_annual_values(ni_entries)
-        ast_vals = _extract_annual_values(ast_entries)
-
-        roa = {}
-        for period in set(ni_vals) & set(ast_vals):
-            if ast_vals[period] and ast_vals[period] != 0:
-                roa[period] = ni_vals[period] / ast_vals[period]
-        return roa
-
-    return {}
-
-
-def _extract_annual_values(entries: list) -> dict[str, float]:
-    """
-    Extracts annual (12-month) period values from XBRL entries.
-    Returns dict: {"2023": value, "2024": value, ...}
-    """
-    annual = {}
-    for entry in entries:
-        # Annual filings: form is 10-K and period covers 12 months
-        form = entry.get("form", "")
-        if form not in ("10-K", "10-K/A"):
+    # Total assets: instant item (no duration)
+    assets = {}
+    for e in gaap.get("Assets", {}).get("units", {}).get("USD", []):
+        if e.get("form", "") not in ("10-K", "10-K/A"):
             continue
-        end_date = entry.get("end", "")
-        if not end_date:
+        end, val = e.get("end", ""), e.get("val")
+        if not end or val is None:
             continue
-        year = end_date[:4]
-        val  = entry.get("val")
-        if val is not None:
-            # Keep the most recent 10-K value for each year
-            if year not in annual:
-                annual[year] = float(val)
+        year = int(end[:4])
+        if year not in assets:
+            assets[year] = float(val)
 
-    return annual
+    result = {}
+    for year in set(oi) & set(assets):
+        if assets[year] and assets[year] != 0:
+            result[year] = {"oi": oi[year], "assets": assets[year]}
+    return result
 
 
-def fetch_earnings_yfinance(ticker: str, metric: str) -> dict[str, float]:
+def _yfinance_annual(ticker: str) -> dict[int, dict]:
     """
-    Fallback earnings fetch using yfinance.
-    Returns dict: {"2023": value, "2024": value, ...}
+    Fetch annual Operating Income and Total Assets from yfinance.
+    Returns {year: {oi: float, assets: float}}.
     """
     try:
         import yfinance as yf
+    except ImportError:
+        return {}
+
+    try:
         stock = yf.Ticker(ticker)
-        info  = stock.info
-
-        if metric == "EPS":
-            # yfinance trailing EPS
-            eps = info.get("trailingEps")
-            if eps is not None:
-                return {PERIOD_T: float(eps)}
-
-        elif metric == "ROA":
-            roa = info.get("returnOnAssets")
-            if roa is not None:
-                return {PERIOD_T: float(roa)}
-
+        inc = stock.income_stmt
+        bal = stock.balance_sheet
     except Exception:
-        pass
+        return {}
 
-    return {}
+    if inc is None or bal is None or inc.empty or bal.empty:
+        return {}
+
+    def _find(df, names):
+        for n in names:
+            if n in df.index:
+                return df.loc[n]
+        return None
+
+    oi_row = _find(inc, [
+        "Operating Income", "OperatingIncome",
+        "Operating Income Loss", "OperatingIncomeLoss",
+    ])
+    assets_row = _find(bal, ["Total Assets", "TotalAssets"])
+
+    if oi_row is None or assets_row is None:
+        return {}
+
+    result = {}
+    for dt in assets_row.index:
+        try:
+            a = float(assets_row[dt])
+            if pd.isna(a) or a == 0:
+                continue
+        except (TypeError, ValueError):
+            continue
+
+        try:
+            o = float(oi_row[dt]) if dt in oi_row.index and pd.notna(oi_row[dt]) else None
+        except (TypeError, ValueError):
+            o = None
+        if o is None:
+            continue
+
+        year = dt.year
+        result[year] = {"oi": o, "assets": a}
+
+    return result
 
 
-def load_or_fetch_earnings(
-    universe: dict[str, str],
-    flagged: dict[str, dict],
-    metric: str,
+def fetch_all_financials(
+    tickers: list[str],
+    ticker_to_cik: dict[str, str],
     skip_fetch: bool,
 ) -> pd.DataFrame:
     """
-    Loads earnings data from cache if available, otherwise fetches from EDGAR XBRL.
-
-    Returns DataFrame with columns:
-        identifier, name, flagged, signal, earnings_t, earnings_t1
+    Fetch annual financials for all tickers.
+    Strategy: EDGAR XBRL first, yfinance fills any gaps.
+    Returns DataFrame: ticker, year, soe, ln_assets.
     """
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    cache_path = Path(EARNINGS_CACHE)
+    cache = Path(DATA_CACHE)
 
-    if skip_fetch and cache_path.exists():
-        print(f"  Loading cached earnings data from {cache_path}")
-        return pd.read_csv(cache_path)
+    if skip_fetch and cache.exists():
+        print(f"  Loading cached data from {cache}")
+        return pd.read_csv(cache)
 
-    print(f"  Fetching earnings ({metric}) for {len(universe)} companies...")
-    rows = []
-    total = len(universe)
+    print(f"  Fetching annual data for {len(tickers)} companies...")
+    print(f"  Strategy: EDGAR XBRL (primary) + yfinance (gap-fill)\n")
 
-    for i, (ticker, cik) in enumerate(universe.items()):
-        print(f"  [{i+1}/{total}] {ticker}", end=" ... ")
+    all_rows = []
+    edgar_count, yf_count, fail_count = 0, 0, 0
 
-        # Get earnings data
-        if cik:
-            earnings = fetch_earnings_xbrl(cik, metric)
-        else:
-            earnings = {}
+    for i, ticker in enumerate(tickers):
+        print(f"  [{i+1}/{len(tickers)}] {ticker}", end=" ... ")
 
-        # Fallback to yfinance if XBRL returned nothing
-        if not earnings:
-            earnings = fetch_earnings_yfinance(ticker, metric)
-            source = "yfinance"
-        else:
-            source = "XBRL"
+        cik = ticker_to_cik.get(ticker)
+        edgar_data = _edgar_annual(cik) if cik else {}
+        yf_data = _yfinance_annual(ticker)
 
-        earnings_t  = earnings.get(PERIOD_T)
-        earnings_t1 = earnings.get(PERIOD_T1)
+        # Merge: EDGAR priority, yfinance fills gaps
+        all_years = set(edgar_data.keys()) | set(yf_data.keys())
 
-        if earnings_t is None and earnings_t1 is None:
-            print(f"no data ({source})")
+        if not all_years:
+            print("no data")
+            fail_count += 1
             continue
 
-        flag_data = flagged.get(ticker, {
-            "name":        ticker,
-            "signal":      "NONE",
-            "flagged":     0,
-            "flags_count": 0,
-        })
+        company_rows = []
+        for year in sorted(all_years):
+            if year in edgar_data:
+                d, src = edgar_data[year], "edgar"
+            elif year in yf_data:
+                d, src = yf_data[year], "yfinance"
+            else:
+                continue
 
-        rows.append({
-            "identifier":  ticker,
-            "name":        flag_data.get("name", ticker),
-            "flagged":     flag_data["flagged"],
-            "signal":      flag_data["signal"],
-            "flags_count": flag_data["flags_count"],
-            "earnings_t":  earnings_t,
-            "earnings_t1": earnings_t1,
-            "source":      source,
-        })
-        print(f"t={earnings_t}, t+1={earnings_t1} ({source})")
+            if d["assets"] == 0:
+                continue
 
-    df = pd.DataFrame(rows)
+            company_rows.append({
+                "ticker":    ticker,
+                "year":      year,
+                "soe":       d["oi"] / d["assets"],
+                "ln_assets": np.log(abs(d["assets"])),
+                "source":    src,
+            })
 
-    # Cache for future runs
-    df.to_csv(cache_path, index=False)
-    print(f"\n  Earnings data cached to {cache_path}")
+        all_rows.extend(company_rows)
+        e_n = sum(1 for r in company_rows if r["source"] == "edgar")
+        y_n = sum(1 for r in company_rows if r["source"] == "yfinance")
+
+        parts = [f"edgar:{e_n}"] if e_n else []
+        if y_n:
+            parts.append(f"yf:{y_n}")
+        print(f"{len(company_rows)} years ({' '.join(parts)})")
+
+        if e_n:
+            edgar_count += 1
+        if y_n:
+            yf_count += 1
+
+    df = pd.DataFrame(all_rows)
+    if not df.empty:
+        df.to_csv(cache, index=False)
+        print(f"\n  Cached to {cache}")
+        print(f"  EDGAR: {edgar_count} companies | yfinance gap-fill: {yf_count} | failed: {fail_count}")
+        print(f"  Total company-years: {len(df)}")
     return df
 
 
-# ---------------------------------------------------------------------------
-# STEP 4 — EARNINGS PERSISTENCE REGRESSION (LI 2008)
-# ---------------------------------------------------------------------------
+# ===================================================================
+# STEP 4 — BUILD REGRESSION DATASET
+# ===================================================================
 
-def run_regression(df: pd.DataFrame, subsample: str = "full") -> dict:
+def build_regression_dataset(
+    lof_df: pd.DataFrame,
+    fin_df: pd.DataFrame,
+) -> pd.DataFrame:
     """
-    Runs the Li (2008) earnings persistence regression on a subsample.
-
-    Model:
-        Earnings(t+1) = α + β1·Earnings(t) + β2·Flagged + β3·Flagged·Earnings(t) + ε
-
-    Returns dict with regression results.
+    Merge company-year LOF with annual financials.
+    Creates Earn(t) and Earn(t+1) for each company-year.
     """
-    try:
-        from sklearn.linear_model import LinearRegression
-        from sklearn.metrics import r2_score
-    except ImportError:
-        raise ImportError("scikit-learn required: pip install scikit-learn")
+    fin_lookup = {}
+    for _, row in fin_df.iterrows():
+        fin_lookup[(row["ticker"], int(row["year"]))] = {
+            "soe":       row["soe"],
+            "ln_assets": row["ln_assets"],
+        }
 
-    # Filter to complete cases
-    sub = df.dropna(subset=["earnings_t", "earnings_t1"]).copy()
+    rows = []
+    for _, obs in lof_df.iterrows():
+        ticker = obs["ticker"]
+        fy     = int(obs["fiscal_year"])
+
+        t_data  = fin_lookup.get((ticker, fy))
+        t1_data = fin_lookup.get((ticker, fy + 1))
+
+        if t_data is None:
+            continue
+
+        row = obs.to_dict()
+        row["earnings_t"]  = t_data["soe"]
+        row["ln_assets"]   = t_data["ln_assets"]
+        row["earnings_t1"] = t1_data["soe"] if t1_data else np.nan
+        rows.append(row)
+
+    df = pd.DataFrame(rows)
+    if df.empty:
+        return df
+
+    for col in ["earnings_t", "earnings_t1"]:
+        valid = df[col].dropna()
+        if len(valid) > 20:
+            lo = valid.quantile(WINSORIZE_PCT)
+            hi = valid.quantile(1 - WINSORIZE_PCT)
+            df[col] = df[col].clip(lower=lo, upper=hi)
+
+    n_complete = df.dropna(subset=["earnings_t", "earnings_t1", "ln_assets"]).shape[0]
+
+    print(f"\n  Regression dataset: {len(df)} company-years")
+    print(f"  With Earn(t):      {df['earnings_t'].notna().sum()}")
+    print(f"  With Earn(t+1):    {df['earnings_t1'].notna().sum()}")
+    print(f"  Complete cases:    {n_complete}")
+    return df
+
+
+# ===================================================================
+# STEP 5 — REGRESSION ENGINE
+# ===================================================================
+
+def run_regression(
+    df: pd.DataFrame,
+    lof_col: str,
+    subsample: str = "full",
+) -> dict:
+    """
+    Li (2008) earnings persistence regression with cluster-robust SEs.
+
+    Earn(t+1) = a + b1*Earn(t) + b2*LOF + b3*LOF*Earn(t)
+                  + b4*ln(Assets) + Year_FE + e
+    """
+    required = ["earnings_t", "earnings_t1", lof_col, "ln_assets", "fiscal_year"]
+    sub = df.dropna(subset=required).copy()
 
     if subsample == "profitable":
         sub = sub[sub["earnings_t"] > 0]
@@ -374,305 +508,354 @@ def run_regression(df: pd.DataFrame, subsample: str = "full") -> dict:
         sub = sub[sub["earnings_t"] < 0]
 
     n = len(sub)
-    if n < 10:
+    n_firms = sub["ticker"].nunique() if n > 0 else 0
+
+    if n < 15:
         return {
-            "subsample": subsample,
-            "n":         n,
-            "error":     f"Insufficient observations ({n}) for regression",
+            "subsample": subsample, "n": n, "n_firms": n_firms,
+            "error": f"Insufficient observations ({n})",
         }
 
-    # Construct design matrix
-    X = pd.DataFrame({
-        "earnings_t":          sub["earnings_t"],
-        "flagged":             sub["flagged"].astype(float),
-        "flagged_earnings_t":  sub["flagged"].astype(float) * sub["earnings_t"],
-    })
-    y = sub["earnings_t1"]
+    y     = sub["earnings_t1"].values
+    earn  = sub["earnings_t"].values
+    lof   = sub[lof_col].values
+    inter = lof * earn
+    lna   = sub["ln_assets"].values
 
-    # OLS via numpy (avoids statsmodels dependency, easy to interpret)
-    X_mat = np.column_stack([np.ones(n), X.values])
+    core = [np.ones(n), earn, lof, inter, lna]
+    core_labels = ["a", "b1_Earn", "b2_LOF", "b3_LOFxEarn", "b4_lnAssets"]
+
+    # Year FE (only if 3+ years in subsample)
+    years = sub["fiscal_year"].values
+    unique_years = sorted(np.unique(years))
+    fe_cols, fe_labels = [], []
+    if len(unique_years) >= 3:
+        for yr in unique_years[1:]:
+            d = (years == yr).astype(float)
+            if 0 < d.sum() < n:
+                fe_cols.append(d)
+                fe_labels.append(f"FE_{yr}")
+
+    X = np.column_stack(core + fe_cols) if fe_cols else np.column_stack(core)
+    labels = core_labels + fe_labels
+    k = X.shape[1]
+
+    # Rank check — drop FE columns if needed
+    rank = np.linalg.matrix_rank(X)
+    while rank < k and fe_labels:
+        fe_cols.pop()
+        fe_labels.pop()
+        X = np.column_stack(core + fe_cols) if fe_cols else np.column_stack(core)
+        labels = core_labels + fe_labels
+        k = X.shape[1]
+        rank = np.linalg.matrix_rank(X)
+
+    # OLS
     try:
-        coeffs, residuals, rank, sv = np.linalg.lstsq(X_mat, y.values, rcond=None)
+        coeffs, _, _, _ = np.linalg.lstsq(X, y, rcond=None)
     except np.linalg.LinAlgError as e:
-        return {"subsample": subsample, "n": n, "error": str(e)}
+        return {"subsample": subsample, "n": n, "n_firms": n_firms, "error": str(e)}
 
-    alpha, beta1, beta2, beta3 = coeffs
+    resid = y - X @ coeffs
+    ss_res = np.sum(resid ** 2)
+    ss_tot = np.sum((y - y.mean()) ** 2)
+    r2 = 1 - ss_res / ss_tot if ss_tot > 0 else 0.0
+    adj_r2 = 1 - (1 - r2) * (n - 1) / (n - k) if n > k else r2
 
-    # R-squared
-    y_pred  = X_mat @ coeffs
-    ss_res  = np.sum((y.values - y_pred) ** 2)
-    ss_tot  = np.sum((y.values - y.values.mean()) ** 2)
-    r2      = 1 - ss_res / ss_tot if ss_tot > 0 else 0.0
+    # Cluster-robust SEs
+    tickers_arr = sub["ticker"].values
+    unique_tickers = np.unique(tickers_arr)
+    n_clusters = len(unique_tickers)
 
-    # Standard errors (OLS)
-    dof     = n - X_mat.shape[1]
-    if dof > 0:
-        mse     = ss_res / dof
-        try:
-            cov     = mse * np.linalg.inv(X_mat.T @ X_mat)
-            se      = np.sqrt(np.diag(cov))
-        except np.linalg.LinAlgError:
-            se = np.full(4, np.nan)
-    else:
-        se = np.full(4, np.nan)
+    try:
+        XtX_inv = np.linalg.inv(X.T @ X)
+    except np.linalg.LinAlgError:
+        dof_fallback = n - k
+        mse = ss_res / dof_fallback if dof_fallback > 0 else np.nan
+        cov = mse * np.linalg.pinv(X.T @ X)
+        se = np.sqrt(np.maximum(np.diag(cov), 0.0))
+        n_clusters = 0
+        XtX_inv = None
 
-    # T-statistics
+    if XtX_inv is not None:
+        meat = np.zeros((k, k))
+        for t in unique_tickers:
+            mask = tickers_arr == t
+            X_g = X[mask]
+            e_g = resid[mask]
+            score = X_g.T @ e_g
+            meat += np.outer(score, score)
+
+        corr = (n_clusters / (n_clusters - 1)) * ((n - 1) / (n - k)) \
+               if n_clusters > 1 else 1.0
+        cov = corr * XtX_inv @ meat @ XtX_inv
+        se = np.sqrt(np.maximum(np.diag(cov), 0.0))
+
+    dof = min(n_clusters - 1, n - k) if n_clusters > 1 else n - k
+
     with np.errstate(divide="ignore", invalid="ignore"):
         t_stats = np.where(se > 0, coeffs / se, np.nan)
 
-    # Two-tailed p-values (approximate using normal distribution for large n)
-    from scipy import stats as scipy_stats
-    p_vals = [2 * (1 - scipy_stats.t.cdf(abs(t), df=dof)) if not np.isnan(t) else np.nan
-              for t in t_stats]
+    p_vals = [
+        2 * (1 - scipy_stats.t.cdf(abs(t), df=dof)) if not np.isnan(t) else np.nan
+        for t in t_stats
+    ]
 
-    return {
+    result = {
         "subsample":  subsample,
         "n":          n,
-        "alpha":      round(float(alpha),  4),
-        "beta1":      round(float(beta1),  4),   # earnings persistence
-        "beta2":      round(float(beta2),  4),   # DDDS flag effect on level
-        "beta3":      round(float(beta3),  4),   # DDDS flag effect on persistence ← key
-        "se_alpha":   round(float(se[0]),  4),
-        "se_beta1":   round(float(se[1]),  4),
-        "se_beta2":   round(float(se[2]),  4),
-        "se_beta3":   round(float(se[3]),  4),
-        "t_beta3":    round(float(t_stats[3]), 3) if not np.isnan(t_stats[3]) else None,
-        "p_beta3":    round(float(p_vals[3]),  4) if not np.isnan(p_vals[3]) else None,
+        "n_firms":    n_firms,
+        "n_clusters": n_clusters,
         "r2":         round(r2, 4),
-        "hypothesis_supported": (
-            float(beta3) < 0 and
-            p_vals[3] is not None and
-            float(p_vals[3]) < 0.10
-        ),
+        "adj_r2":     round(adj_r2, 4),
+        "dof":        dof,
+        "n_year_fe":  len(fe_labels),
     }
 
+    for i, label in enumerate(core_labels):
+        result[f"coeff_{label}"] = round(float(coeffs[i]), 6)
+        result[f"se_{label}"]    = round(float(se[i]), 6)
+        result[f"t_{label}"]     = round(float(t_stats[i]), 4) if not np.isnan(t_stats[i]) else None
+        result[f"p_{label}"]     = round(float(p_vals[i]), 6) if not np.isnan(p_vals[i]) else None
 
-# ---------------------------------------------------------------------------
-# STEP 5 — DESCRIPTIVE STATISTICS
-# ---------------------------------------------------------------------------
+    b3 = float(coeffs[3])
+    p3 = float(p_vals[3]) if not np.isnan(p_vals[3]) else 1.0
+    sig = p3 < 0.10
 
-def compute_descriptives(df: pd.DataFrame) -> dict:
-    """
-    Computes descriptive statistics comparing flagged vs non-flagged companies.
-    """
-    flagged     = df[df["flagged"] == 1]
-    non_flagged = df[df["flagged"] == 0]
+    if subsample == "loss":
+        result["expected_sign"] = "b3 > 0"
+        result["hypothesis_supported"] = sig and b3 > 0
+    else:
+        result["expected_sign"] = "b3 < 0"
+        result["hypothesis_supported"] = sig and b3 < 0
 
-    def stats(series):
-        return {
-            "n":      int(series.dropna().count()),
-            "mean":   round(float(series.dropna().mean()), 4) if series.dropna().count() > 0 else None,
-            "median": round(float(series.dropna().median()), 4) if series.dropna().count() > 0 else None,
-            "std":    round(float(series.dropna().std()), 4) if series.dropna().count() > 0 else None,
-        }
-
-    return {
-        "total_companies":         len(df),
-        "flagged_count":           len(flagged),
-        "non_flagged_count":       len(non_flagged),
-        "signal_distribution":     df["signal"].value_counts().to_dict(),
-        "flagged_earnings_t":      stats(flagged["earnings_t"]),
-        "non_flagged_earnings_t":  stats(non_flagged["earnings_t"]),
-        "flagged_earnings_t1":     stats(flagged["earnings_t1"]),
-        "non_flagged_earnings_t1": stats(non_flagged["earnings_t1"]),
-        "complete_cases":          int(df.dropna(subset=["earnings_t", "earnings_t1"]).shape[0]),
-    }
+    return result
 
 
-# ---------------------------------------------------------------------------
-# STEP 6 — OUTPUT AND REPORTING
-# ---------------------------------------------------------------------------
+# ===================================================================
+# STEP 6 — OUTPUT
+# ===================================================================
 
-def print_results(descriptives: dict, results: list[dict], metric: str,
-                  signal_threshold: str):
-    """Prints the full backtesting report to console."""
+def print_summary(all_results: dict):
+    print(f"\n{'='*92}")
+    print(f"  DDDS BACKTESTING — Li (2008) Annual Earnings Persistence")
+    print(f"  Earn(t+1) = a + b1*Earn(t) + b2*LOF + b3*LOF*Earn(t) + b4*ln(Assets) + Year_FE")
+    print(f"  Cluster-robust SEs by ticker | DoF = min(G-1, N-k)")
+    print(f"{'='*92}")
+    print(f"\n  {'Spec':<18} {'Sub':<12} {'N':>5} {'Firms':>5} {'Expected':>8} "
+          f"{'b3':>10} {'t(b3)':>8} {'p(b3)':>8} {'Adj R2':>7} {'H0':>4}")
+    print(f"  {'-'*87}")
 
-    print(f"\n{'='*65}")
-    print(f"  DDDS BACKTESTING REPORT — Li (2008) Earnings Persistence Test")
-    print(f"{'='*65}")
-    print(f"  Earnings metric:      {metric}")
-    print(f"  Signal threshold:     >= {signal_threshold} (flagged)")
-    print(f"  Period t:             {PERIOD_T}")
-    print(f"  Period t+1:           {PERIOD_T1}")
+    for _, lof_col, description in REGRESSION_SPECS:
+        results = all_results.get(lof_col, [])
+        label = description.split(" — ")[0].strip() if " — " in description else description
 
-    print(f"\n  SAMPLE")
-    print(f"  {'─'*40}")
-    print(f"  Total companies:      {descriptives['total_companies']}")
-    print(f"  Flagged:              {descriptives['flagged_count']}")
-    print(f"  Non-flagged:          {descriptives['non_flagged_count']}")
-    print(f"  Complete cases:       {descriptives['complete_cases']}")
-    print(f"\n  Signal distribution:")
-    for sig, count in descriptives["signal_distribution"].items():
-        print(f"    {sig:<10} {count}")
+        for r in results:
+            if "error" in r:
+                print(f"  {label:<18} {r['subsample']:<12} {r['n']:>5} "
+                      f"{r.get('n_firms',''):>5} {'':>8} {'ERROR':>10}")
+                label = ""
+                continue
 
-    print(f"\n  DESCRIPTIVE STATISTICS ({metric})")
-    print(f"  {'─'*40}")
-    print(f"  {'':20} {'Flagged':>12} {'Non-Flagged':>12}")
-    for period, label in [("earnings_t", f"Period t ({PERIOD_T})"),
-                           ("earnings_t1", f"Period t+1 ({PERIOD_T1})")]:
-        fg  = descriptives[f"flagged_{period}"]
-        nfg = descriptives[f"non_flagged_{period}"]
-        fn  = fg.get("mean")
-        nn  = nfg.get("mean")
-        print(f"  {label:<20} "
-              f"{f'{fn:.4f}' if fn is not None else 'N/A':>12} "
-              f"{f'{nn:.4f}' if nn is not None else 'N/A':>12}")
+            h0 = "Y" if r.get("hypothesis_supported") else "N"
+            b3 = f"{r['coeff_b3_LOFxEarn']:.6f}"
+            t3 = f"{r['t_b3_LOFxEarn']:.3f}" if r.get("t_b3_LOFxEarn") is not None else "N/A"
+            p3 = f"{r['p_b3_LOFxEarn']:.4f}" if r.get("p_b3_LOFxEarn") is not None else "N/A"
 
-    print(f"\n  REGRESSION RESULTS — Li (2008) Model")
-    print(f"  Earnings(t+1) = α + β1·E(t) + β2·FLAG + β3·FLAG·E(t) + ε")
-    print(f"  {'─'*60}")
-    print(f"  {'Subsample':<18} {'N':>5} {'β1':>8} {'β2':>8} {'β3':>8} "
-          f"{'t(β3)':>8} {'p(β3)':>8} {'R²':>6} {'H0':>5}")
-    print(f"  {'─'*60}")
+            print(f"  {label:<18} {r['subsample']:<12} {r['n']:>5} {r['n_firms']:>5} "
+                  f"{r.get('expected_sign',''):>8} {b3:>10} {t3:>8} {p3:>8} "
+                  f"{r['adj_r2']:>7.4f} {h0:>4}")
+            label = ""
 
-    for r in results:
-        if "error" in r:
-            print(f"  {r['subsample']:<18} {r['n']:>5}  ERROR: {r['error']}")
-            continue
+        print(f"  {'-'*87}")
 
-        supported = "✓" if r.get("hypothesis_supported") else "✗"
-        p_str     = f"{r['p_beta3']:.4f}" if r['p_beta3'] is not None else "N/A"
-        t_str     = f"{r['t_beta3']:.3f}" if r['t_beta3'] is not None else "N/A"
-
-        print(f"  {r['subsample']:<18} {r['n']:>5} "
-              f"{r['beta1']:>8.4f} {r['beta2']:>8.4f} {r['beta3']:>8.4f} "
-              f"{t_str:>8} {p_str:>8} {r['r2']:>6.4f} {supported:>5}")
-
-    print(f"  {'─'*60}")
-    print(f"\n  KEY TEST: β3 (FLAG × Earnings interaction)")
-    print(f"  Hypothesis: β3 < 0 and statistically significant (p < 0.10)")
-    print(f"  If confirmed: DDDS flags predict lower future earnings persistence")
-    print(f"  consistent with Li (2008) obfuscation findings.\n")
-
-    full = next((r for r in results if r["subsample"] == "full"), None)
-    if full and "error" not in full:
-        if full.get("hypothesis_supported"):
-            print(f"  RESULT: Hypothesis SUPPORTED ✓")
-            print(f"  β3 = {full['beta3']:.4f} (p = {full['p_beta3']:.4f})")
-            print(f"  DDDS-flagged companies show significantly lower earnings")
-            print(f"  persistence, validating the system's predictive signal.")
-        else:
-            print(f"  RESULT: Hypothesis NOT confirmed at p < 0.10 in full sample.")
-            print(f"  β3 = {full.get('beta3', 'N/A')} (p = {full.get('p_beta3', 'N/A')})")
-            print(f"  Check subsamples and consider expanding the flagged universe.")
-
-    print(f"\n{'='*65}\n")
+    print(f"\n  Li (2008) predictions:")
+    print(f"    Profitable: b3 < 0 -> more complex reports hide transitory good news")
+    print(f"    Loss:       b3 > 0 -> more complex reports hide persistent bad news")
+    print(f"    (Li found significance only for profitable firms; loss result is novel)")
+    print(f"{'='*92}\n")
 
 
-def save_results(descriptives: dict, results: list[dict], df: pd.DataFrame,
-                 metric: str, signal_threshold: str):
-    """Saves full results to JSON and the enriched DataFrame to CSV."""
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+def write_excel(all_results: dict, reg_df: pd.DataFrame, output: str):
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, Alignment, PatternFill
 
-    output = {
-        "config": {
-            "metric":           metric,
-            "signal_threshold": signal_threshold,
-            "period_t":         PERIOD_T,
-            "period_t1":        PERIOD_T1,
-        },
-        "descriptives":  descriptives,
-        "regressions":   results,
-        "reference":     "Li, F. (2008). Annual report readability, current earnings, "
-                         "and earnings persistence. Journal of Accounting and Economics, "
-                         "45(2-3), pp.221-247.",
-    }
+    wb = Workbook()
+    wb.remove(wb.active)
 
-    json_path = os.path.join(OUTPUT_DIR, "backtest_results.json")
-    with open(json_path, "w") as f:
-        json.dump(output, f, indent=2, default=str)
-    print(f"  Results saved to: {json_path}")
+    hdr_font = Font(name="Arial", bold=True, size=10, color="FFFFFF")
+    hdr_fill = PatternFill("solid", fgColor="4472C4")
+    body     = Font(name="Arial", size=10)
+    title_f  = Font(name="Arial", bold=True, size=13)
+    note_f   = Font(name="Arial", size=9, italic=True)
+    sig_fill = PatternFill("solid", fgColor="C6EFCE")
+    no_fill  = PatternFill("solid", fgColor="FFC7CE")
 
-    csv_path = os.path.join(OUTPUT_DIR, "backtest_data.csv")
-    df.to_csv(csv_path, index=False)
-    print(f"  Full dataset saved to: {csv_path}")
+    core = ["a", "b1_Earn", "b2_LOF", "b3_LOFxEarn", "b4_lnAssets"]
+
+    for sheet_name, lof_col, desc in REGRESSION_SPECS:
+        results = all_results.get(lof_col, [])
+        ws = wb.create_sheet(title=sheet_name)
+
+        ws["A1"] = "DDDS Backtesting — Li (2008) Annual Earnings Persistence"
+        ws["A1"].font = title_f
+        ws["A2"] = f"LOF: {desc}"
+        ws["A2"].font = Font(name="Arial", size=11, italic=True)
+        ws["A3"] = "Earn(t+1) = a + b1*Earn(t) + b2*LOF + b3*LOF*Earn(t) + b4*ln(Assets) + Year FE"
+        ws["A3"].font = body
+
+        row = 5
+        headers = ["Subsample", "N", "Firms", "Clusters", "DoF", "Adj R2", "Year FEs", "Expected"]
+        for c in core:
+            headers += [f"Coeff({c})", f"SE({c})", f"t({c})", f"p({c})"]
+        headers.append("H0 Supported")
+
+        for ci, h in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=ci, value=h)
+            cell.font, cell.fill = hdr_font, hdr_fill
+            cell.alignment = Alignment(horizontal="center")
+
+        for r in results:
+            row += 1
+            if "error" in r:
+                ws.cell(row=row, column=1, value=r["subsample"]).font = body
+                ws.cell(row=row, column=2, value=r["n"]).font = body
+                ws.cell(row=row, column=6, value=f"ERROR: {r['error']}").font = body
+                continue
+
+            vals = [r["subsample"], r["n"], r["n_firms"], r["n_clusters"],
+                    r["dof"], r["adj_r2"], r["n_year_fe"], r.get("expected_sign", "")]
+            for c in core:
+                vals += [r.get(f"coeff_{c}"), r.get(f"se_{c}"),
+                         r.get(f"t_{c}"), r.get(f"p_{c}")]
+            vals.append("Yes" if r.get("hypothesis_supported") else "No")
+
+            for ci, v in enumerate(vals, 1):
+                cell = ws.cell(row=row, column=ci, value=v)
+                cell.font = body
+                if isinstance(v, float):
+                    cell.number_format = "0.0000"
+
+            h0_cell = ws.cell(row=row, column=len(headers))
+            h0_cell.fill = sig_fill if r.get("hypothesis_supported") else no_fill
+
+        row += 2
+        notes = [
+            f"Cluster-robust SEs by ticker. DoF = min(G-1, N-k). "
+            f"Earnings winsorized at {WINSORIZE_PCT:.0%}/{1-WINSORIZE_PCT:.0%}. "
+            f"Sections < {MIN_SENTENCES} sentences excluded. "
+            f"LOF aggregated to company-year mean. All firms SIC 3400-3599.",
+
+            "H0: Profitable b3<0 (Li's main finding); Loss b3>0 (predicted by Li, "
+            "not confirmed in original paper — significant result here is novel).",
+
+            "Li, F. (2008). Annual report readability, current earnings, and earnings "
+            "persistence. JAE 45(2-3), 221-247.",
+
+            "Data: EDGAR XBRL (primary) + yfinance (gap-fill). "
+            "LOF = DDDS Linguistic Obfuscation Factor from fine-tuned FinBERT classifiers.",
+        ]
+        for note in notes:
+            ws.cell(row=row, column=1, value=note).font = note_f
+            row += 1
+
+        for ci in range(1, len(headers) + 1):
+            ws.column_dimensions[ws.cell(row=5, column=ci).column_letter].width = 14
+
+    # Data sheet
+    dws = wb.create_sheet(title="Data")
+    export = ["ticker", "fiscal_year", "n_filings",
+              "vague_both", "complex_both", "combined_both",
+              "earnings_t", "earnings_t1", "ln_assets"]
+    cols = [c for c in export if c in reg_df.columns]
+
+    for ci, c in enumerate(cols, 1):
+        cell = dws.cell(row=1, column=ci, value=c)
+        cell.font, cell.fill = hdr_font, hdr_fill
+
+    for ri, (_, dr) in enumerate(reg_df.iterrows(), 2):
+        for ci, c in enumerate(cols, 1):
+            v = dr[c]
+            dws.cell(row=ri, column=ci, value=None if pd.isna(v) else v).font = body
+
+    os.makedirs(os.path.dirname(output), exist_ok=True)
+    wb.save(output)
+    print(f"  Results saved to: {output}")
 
 
-# ---------------------------------------------------------------------------
+# ===================================================================
 # MAIN
-# ---------------------------------------------------------------------------
+# ===================================================================
 
 def main():
-    parser = argparse.ArgumentParser(description="DDDS Backtesting Framework — Li (2008)")
-    parser.add_argument(
-        "--findings-dir", default=FINDINGS_DIR,
-        help="Directory of *_findings.json files from Run 8"
+    parser = argparse.ArgumentParser(
+        description="DDDS Backtesting — Li (2008) Annual Earnings Persistence"
     )
-    parser.add_argument(
-        "--signal-threshold", default="MEDIUM",
-        choices=["HIGH", "MEDIUM", "LOW"],
-        help="Minimum signal level to count as flagged (default: MEDIUM)"
-    )
-    parser.add_argument(
-        "--earnings-metric", default=EARNINGS_METRIC,
-        choices=["EPS", "ROA"],
-        help="Earnings measure for regression (default: EPS)"
-    )
-    parser.add_argument(
-        "--skip-fetch", action="store_true",
-        help="Skip EDGAR/yfinance fetch and use cached earnings data only"
-    )
+    parser.add_argument("--scores-dir", default=SCORES_DIR)
+    parser.add_argument("--skip-fetch", action="store_true",
+                        help="Use cached financial data only")
+    parser.add_argument("--output", default=OUTPUT_XLSX)
     args = parser.parse_args()
 
-    print(f"\n[DDDS] Backtesting Framework — Li (2008) Earnings Persistence")
-    print(f"  Findings dir:     {args.findings_dir}")
-    print(f"  Signal threshold: >= {args.signal_threshold}")
-    print(f"  Earnings metric:  {args.earnings_metric}")
-    print(f"  Period t:         {PERIOD_T}")
-    print(f"  Period t+1:       {PERIOD_T1}\n")
+    print(f"\n[DDDS] Backtesting v5 — Li (2008) Annual Earnings Persistence")
+    print(f"  Scores:  {args.scores_dir}")
+    print(f"  Output:  {args.output}\n")
 
-    # Step 1 — load flagged companies
-    print("[1/5] Loading DDDS findings...")
-    flagged = load_flagged_companies(args.findings_dir, args.signal_threshold)
-    if not flagged:
-        print(
-            f"  [!] No findings found in '{args.findings_dir}'.\n"
-            f"      Run graph_rag.py (Run 8) first to generate findings.\n"
-            f"      Continuing with universe only — all companies treated as non-flagged."
-        )
-
-    # Step 2 — load universe
-    print("\n[2/5] Loading company universe...")
-    universe = load_universe()
-    if not universe:
-        print("  [!] No universe found. Cannot proceed without company list.")
+    # 1: Load DDDS scores
+    print("[1/5] Loading DDDS scores...")
+    scores_df = load_scores(args.scores_dir)
+    if scores_df.empty:
+        print("  [!] No scores loaded.")
         return
 
-    # Step 3 — fetch earnings
-    print(f"\n[3/5] Fetching {args.earnings_metric} data from SEC EDGAR XBRL API...")
-    df = load_or_fetch_earnings(universe, flagged, args.earnings_metric, args.skip_fetch)
+    # 2: Aggregate to company-year
+    print("\n[2/5] Aggregating LOF scores to company-year...")
+    lof_df = aggregate_to_company_year(scores_df)
 
-    if df.empty:
-        print("  [!] No earnings data retrieved. Check EDGAR API connectivity.")
+    # 3: Fetch financials
+    print("\n[3/5] Loading universe & fetching annual financials...")
+    if not Path(UNIVERSE_FILE).exists():
+        print(f"  [!] Universe file not found: {UNIVERSE_FILE}")
         return
 
-    print(f"\n  Dataset: {len(df)} companies with earnings data")
-    complete = df.dropna(subset=["earnings_t", "earnings_t1"])
-    print(f"  Complete cases (both periods): {len(complete)}")
+    univ = pd.read_excel(UNIVERSE_FILE)
+    if "Ticker" not in univ.columns or "CIK" not in univ.columns:
+        print("  [!] Universe file missing Ticker/CIK columns")
+        return
 
-    # Step 4 — descriptives
-    print("\n[4/5] Computing descriptive statistics...")
-    descriptives = compute_descriptives(df)
+    univ = univ.dropna(subset=["Ticker", "CIK"])
+    ticker_to_cik = {
+        row["Ticker"]: str(int(row["CIK"]))
+        for _, row in univ.iterrows()
+    }
+    print(f"  Universe: {len(ticker_to_cik)} companies with CIK")
 
-    # Step 5 — regressions across three subsamples
-    print("\n[5/5] Running Li (2008) earnings persistence regressions...")
-    results = []
-    for subsample in ["full", "profitable", "loss"]:
-        r = run_regression(df, subsample)
-        results.append(r)
-        n = r.get("n", 0)
-        if "error" not in r:
-            print(f"  {subsample:<12} n={n:<4} β3={r['beta3']:.4f}  "
-                  f"p={r.get('p_beta3', 'N/A')}  "
-                  f"{'✓' if r.get('hypothesis_supported') else '✗'}")
-        else:
-            print(f"  {subsample:<12} n={n:<4} ERROR: {r['error']}")
+    tickers = lof_df["ticker"].unique().tolist()
+    fin_df = fetch_all_financials(tickers, ticker_to_cik, args.skip_fetch)
+    if fin_df.empty:
+        print("  [!] No financial data retrieved.")
+        return
 
-    # Output
-    print_results(descriptives, results, args.earnings_metric, args.signal_threshold)
-    save_results(descriptives, results, df, args.earnings_metric, args.signal_threshold)
+    # 4: Build regression dataset
+    print("\n[4/5] Building regression dataset...")
+    reg_df = build_regression_dataset(lof_df, fin_df)
+    if reg_df.empty:
+        print("  [!] Empty regression dataset.")
+        return
 
-    print("[Done] Backtesting complete.")
+    # 5: Run regressions
+    print("\n[5/5] Running regressions (3 specs x 3 subsamples)...")
+    all_results = {}
+    for _, lof_col, _ in REGRESSION_SPECS:
+        spec_results = []
+        for sub in ["full", "profitable", "loss"]:
+            r = run_regression(reg_df, lof_col, sub)
+            spec_results.append(r)
+        all_results[lof_col] = spec_results
+
+    print_summary(all_results)
+    write_excel(all_results, reg_df, args.output)
+    print("[Done]\n")
 
 
 if __name__ == "__main__":

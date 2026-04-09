@@ -1,0 +1,191 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "ad144022ad66089f",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing disclosed specific SG&A dollar amounts ($10,971,000 vs $9,043,000), percentage of net revenues (25% vs 22%), and attributed the 21% increase to 'increased personnel costs.' The absence of this line-item discussion in the current filing removes a key metric that analysts use to track cost trends and workforce-related spending. However, this content may have been relocated to a different section of MD&A or consolidated into a broader cost discussion not shown here.",
+      "investigation_action": "Verify whether SG&A breakdown and personnel cost commentary appear elsewhere in the 2025 10-K. If absent entirely, request management clarification on the removal of this quantitative discussion and the current trajectory of personnel costs."
+    },
+    {
+      "flag_number": 2,
+      "topic": "regulatory_legal",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "83b9e2cb4dcf456f",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing included a detailed ETR reconciliation table showing the effective tax rate (18% vs 16%), specific dollar amounts for research tax credits ($408,000), FDII deduction ($142,000), and stock option costs ($49,000). This level of detail is valuable for modeling tax exposure. However, such reconciliation tables are often required in the notes to financial statements rather than MD&A, so this content may have been consolidated into the financial statement notes rather than eliminated.",
+      "investigation_action": "Check whether the ETR reconciliation and related tax provision detail appear in the notes to the consolidated financial statements. If not, this represents a meaningful reduction in tax transparency that should be flagged to management."
+    },
+    {
+      "flag_number": 3,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "b7f65fcd29829361",
+        "current": "ecbcaaa24b3ce7ba",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The current filing removed multiple substantive disclosures: (1) the entire accounts receivable valuation methodology including description of the collection assessment process, reversals, and write-off procedures; (2) specific inventory obsolescence provision amounts ($386,000 and $295,000); and (3) the detailed performance obligation and revenue recognition methodology including definitions of performance obligations, contract cost components (labor, material, overhead), and the over-time recognition criteria. The current filing collapses these into a single vague sentence about the inventory allowance and truncated revenue recognition boilerplate. This is a clear reduction in quantitative and qualitative detail on critical accounting estimates.",
+      "investigation_action": "Request from management why the accounts receivable valuation policy, specific inventory obsolescence provision amounts, and detailed revenue recognition methodology were removed from the critical accounting policies section. Verify whether these appear in notes or elsewhere; if not, this is a material disclosure degradation requiring escalation."
+    },
+    {
+      "flag_number": 4,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "9eae9eaf7cb5810b",
+        "current": "eaff8c40af596bec",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "Two specific quantitative items were removed: (1) the state investment tax credit carryforward of approximately $470,000 expiring through May 2029, and (2) the capital expenditure commitment of approximately $1,360,000 as of May 31, 2024. The current period provides updated capex figures ($2,602,000 vs $1,149,000) and updated deferred tax asset information ($2,848,000, $13.6M required taxable income) but conspicuously omits the forward-looking commitment amount and the tax credit carryforward. Additionally, the Pumpkin Mounts IP acquisition disclosure ($300,000) from the prior year is absent without an updated equivalent. The removal of the capex commitment figure is particularly notable as it eliminates visibility into near-term capital obligations.",
+      "investigation_action": "Inquire about the current level of capital expenditure commitments and whether the state investment tax credit carryforwards have been fully utilized or still exist. The omission of the commitment figure removes a forward-looking indicator that analysts depend on for cash flow modeling."
+    },
+    {
+      "flag_number": 5,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ecbcaaa24b3ce7ba",
+        "peer": "0189bec3c92e627b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "KITT's extensive material weakness and restatement disclosures are specific to KITT's own internal control failures, including restatements of multiple quarterly periods and identified deficiencies in controls over complex transactions and user access. TAYD's lack of similar disclosures does not indicate obfuscation\u2014it reflects a genuinely different internal control posture. Not every company in a sector should be expected to disclose material weaknesses; such disclosures are only required when they exist. The screening reason incorrectly assumes industry-wide control issues.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "144cab106a835020",
+        "peer": "fae1709331374034"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "TAYD's debt disclosure is minimal\u2014a $10M demand line of credit with M&T Bank and a notable increase in credit loss allowance from $29,000 to $564,000 related to a $751,000 overdue balance on a structural project. While KITT has a vastly more complex capital structure, the notable aspect here is that TAYD discloses a nearly 20x increase in credit loss allowance tied to a single receivable but provides very little context about the underlying project or counterparty risk. The demand nature of the credit line (no committed facility) also warrants more discussion about liquidity risk. The peer comparison is imperfect due to vastly different business models, but TAYD's own disclosure is thin relative to the credit risk signal embedded in the $751,000 overdue balance.",
+      "investigation_action": "Investigate the structural project generating the $751,000 overdue balance\u2014identify the customer, project status, and collection prospects. Also assess whether the demand credit facility creates liquidity risk if the bank declines to extend credit during a downturn."
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8d5e08ccdaf34097",
+        "peer": "d1bfaeacedb81ca4"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "TAYD provides only a single generic sentence listing 'fluctuations in general business cycles and changing economic conditions' among a list of boilerplate risks, while KITT (an ocean robotics company) provides detailed government budget, tariff, and geopolitical conflict disclosures. The peer comparison is weakened by the fact that KITT has significant government/defense exposure driving its specific disclosures. However, TAYD does have international sales and structural project activity, and the complete absence of any discussion of tariffs, trade policy, or currency risk\u2014particularly in the current tariff environment\u2014is a notable gap for a US industrial company.",
+      "investigation_action": "Assess TAYD's international revenue exposure and supply chain import dependencies. If the company sources materials internationally or sells meaningfully outside the US, the absence of tariff and trade policy risk discussion should be raised with management."
+    },
+    {
+      "flag_number": 8,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b5c6c461247010f2",
+        "peer": "4e8d41c9d6d86a62"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "KITT is a pre-revenue/early-stage ocean robotics company with extensive operational risks related to unproven products, manufacturing scale-up, battery safety, product recalls, and third-party manufacturing. Its risk disclosures reflect a fundamentally different risk profile from TAYD, which appears to be an established manufacturer of structural/electronic products. TAYD's brief mention of inventory obsolescence risk is appropriate given that it is not facing the same product development and commercialization uncertainties. The peer comparison overstates the divergence by comparing companies at very different stages of operational maturity.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "333e66b5a9876810",
+        "peer": "fd6bca3ca54e1b7a"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "TAYD's supply chain disclosure is limited to noting that 'the level of inventory will fluctuate from time to time' and that sales concentration shifts are 'attributable to normal changes in structural project activity.' While KITT's extensive third-party supplier and single-source dependency disclosures reflect its unique early-stage business, TAYD as an industrial manufacturer likely has meaningful supplier dependencies and component sourcing risks that are not addressed at all in the provided text. The current tariff and trade environment makes this gap more concerning for any US industrial company.",
+      "investigation_action": "Determine TAYD's key supplier dependencies, single-source components, and exposure to import tariffs. If material, the absence of any supply chain risk discussion should be raised as a disclosure gap."
+    },
+    {
+      "flag_number": 10,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8d5e08ccdaf34097",
+        "peer": "97624daf296148ab"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "EKSO provides detailed and specific geopolitical/macro disclosures including tariff impacts, trade tensions with China, Middle East/Ukraine conflicts, currency risk, healthcare regulatory changes, and government shutdown risks. While EKSO has a more complex international footprint (Americas, EMEA, APAC) and medical device regulatory exposure that drives much of this disclosure, TAYD's single generic sentence on economic risks is notably thin for any US industrial company in the current environment. This is a duplicate of the concern raised in Flag 7 and reinforces the pattern of minimalist macro risk disclosure.",
+      "investigation_action": "Same as Flag 7\u2014assess TAYD's international and tariff exposure and evaluate whether the boilerplate risk language is adequate given the company's actual business exposures."
+    },
+    {
+      "flag_number": 11,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b5c6c461247010f2",
+        "peer": "d6b2a2b418755e83"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "EKSO is a medical device company subject to FDA regulatory requirements, product recall risks, 510(k) clearance processes, and extensive product liability considerations that are fundamentally different from TAYD's business. The extensive operational/product risk disclosures by EKSO reflect the regulatory and safety requirements of the medical device industry, not a standard that should be applied to a general industrial manufacturer. TAYD's inventory obsolescence disclosure addresses the product risk most relevant to its business model.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 12,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "333e66b5a9876810",
+        "peer": "f1d7e10d4a104f21"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "EKSO provides detailed supply chain disclosure including specific manufacturing locations (San Rafael, Brecksville), contract manufacturing partners, dual-sourcing strategies, single-source supplier risks, and tariff/trade policy impacts on component sourcing. While EKSO's medical device context drives some of this specificity, the disclosure of manufacturing locations, sourcing strategies, and component shortage risks represents a level of supply chain transparency that is notably absent from TAYD's filing. For an industrial manufacturer, some discussion of sourcing strategy, key materials, and trade policy impact would be expected.",
+      "investigation_action": "Same as Flag 9\u2014investigate TAYD's manufacturing footprint, key material inputs, and supplier concentration. If the company has meaningful single-source dependencies or import exposure, the lack of disclosure is a concern."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "TAYD shows a clear pattern of disclosure thinning in its temporal filings, with the most concerning changes being the removal of specific quantitative detail from critical accounting policies (inventory obsolescence amounts, accounts receivable methodology) and the disappearance of capital expenditure commitments and tax credit carryforward information. Peer comparisons are less conclusive due to genuine business model differences with KITT and EKSO, but they reinforce a pattern of minimalist risk disclosure for a US industrial company, particularly around supply chain, tariff, and geopolitical exposures.",
+    "top_concerns": [
+      "Removal of specific inventory obsolescence provision amounts, accounts receivable valuation methodology, and detailed revenue recognition policies from critical accounting estimates (Flag 3)",
+      "Disappearance of capital expenditure commitment amounts and state tax credit carryforward detail, reducing forward-looking financial visibility (Flag 4)",
+      "Near-20x increase in credit loss allowance ($29K to $564K) tied to a single $751K overdue structural project receivable with minimal context provided (Flag 6)"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 7,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "TAYD",
+    "model": "claude-opus-4-6",
+    "input_tokens": 23631,
+    "output_tokens": 3657,
+    "timestamp": "2026-04-09T12:34:53.297597"
+  }
+}

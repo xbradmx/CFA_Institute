@@ -1,0 +1,177 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "041f63922bf25ed2",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained specific, material language about costs of goods imported from China increasing 'substantially' due to tariffs, the risk of relocating manufacturing to 'costlier' locations, and the inability to guarantee cost offsets. Removing this entire discussion from Risk Factors in the current period\u2014at a time when tariff pressures have arguably intensified\u2014is a meaningful reduction in transparency about a core margin risk for a company heavily dependent on Chinese manufacturing.",
+      "investigation_action": "Analyst should examine whether CRCT's gross margins on Products segment have deteriorated and whether the company has disclosed tariff cost impacts elsewhere in the filing or earnings calls. Request management commentary on current tariff exposure and cost mitigation progress."
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "672f249cb5f4fe32",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "An extensive, multi-paragraph discussion of China-specific geopolitical risks\u2014including specific references to $550 billion in tariffs, Entity List additions, Taiwan semiconductor dependency, Section 232 investigations, and executive orders\u2014has been entirely removed from the current Risk Factors. This is highly material given CRCT's disclosed reliance on Chinese contract manufacturers and components. The removal of this level of specificity, particularly regarding escalating U.S.-China trade tensions, represents a significant disclosure degradation.",
+      "investigation_action": "Analyst should determine whether this risk discussion was relocated to the 10-K or another section, and if not, press management on why China-specific geopolitical risks were de-emphasized. Evaluate whether CRCT has reduced its China manufacturing exposure or if the removal is simply obfuscation."
+    },
+    {
+      "flag_number": 3,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "2faf8951d3e706d0",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flagged text is not actually about human capital\u2014it discusses strategic adaptation risk in the face of trade policy uncertainty ('we may incorrectly anticipate the outcomes, miss out on business opportunities'). This appears to be a tail-end paragraph of the broader geopolitical/tariff risk factor already captured in Flag 2. Its disappearance is part of the same wholesale removal of trade policy risk language rather than a separate human capital disclosure concern.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "f89dd0c56dd2bc39",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "Specific regulatory details\u2014Entity List additions, semiconductor export control regime changes since 2022, Section 232 investigations into critical minerals, and the December 2024 Department of Commerce final rules on ICTS transactions\u2014have all been removed. These are concrete, identifiable regulatory actions with direct bearing on CRCT's supply chain and operations in China. Dropping these specifics eliminates investors' ability to assess the company's regulatory exposure.",
+      "investigation_action": "Analyst should verify whether any of these regulatory developments (particularly the ICTS final rules and Entity List actions) have directly impacted CRCT's suppliers or contract manufacturers. Inquire whether the company received any regulatory inquiries or compliance obligations under these regimes."
+    },
+    {
+      "flag_number": 5,
+      "topic": "revenue_future_performance",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "9d065767c270b9f3",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed text is a single concluding sentence ('These risks could adversely affect our revenue, reduce our profitability and negatively impact our business') that serves as generic boilerplate summarizing the impact of the broader risk factors discussed above. Its removal is a consequence of the larger risk factor blocks being deleted rather than a standalone disclosure degradation on revenue or future performance.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "25d36680d1b00abd",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "Critical supply chain disclosures have been removed, including: dependence on three contract manufacturers (one wholly-owned by a Chinese parent company), limited sources of supply for components sourced from China, risks of supply chain interruptions, and the explicit statement that if 'China-based suppliers...are unable to supply the components...our business would be materially and adversely affected.' This is core operational risk information for a hardware company with concentrated Chinese supply chain exposure. Removing it meaningfully degrades an investor's ability to assess supply chain vulnerability.",
+      "investigation_action": "Analyst should verify whether CRCT has diversified its contract manufacturing base away from the Chinese-owned manufacturer and whether component sourcing has shifted. Examine inventory levels and days-on-hand for signs of pre-building ahead of potential disruptions."
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "1b5383e1279ed17f",
+        "current": "3d77704bb200284d",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The MD&A section previously contained extensive, specific discussion of China tariffs ($550 billion figure), Taiwan semiconductor dependency, Entity List restrictions, export controls, and executive orders\u2014mirroring the Risk Factors content. The current period collapses this into brief generic references to 'trade wars, heightened, scheduled or threatened tariffs' and adds one operationally informative but narrow statement about tariff uncertainty accelerating accessories/materials demand. The replacement is dramatically less specific and removes all concrete details about the regulatory and geopolitical landscape affecting the company.",
+      "investigation_action": "Analyst should compare the MD&A tariff discussion to earnings call transcripts to determine if management is providing this detail verbally instead. Assess whether the demand pull-forward mentioned in current text is masking underlying weakness and whether tariff cost absorption is affecting margins."
+    },
+    {
+      "flag_number": 8,
+      "topic": "liquidity_solvency",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "5b97fc555f97713d",
+        "current": "c09e63c45c06f1c9",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included the sentence 'To the extent that current and anticipated future sources of liquidity are insufficient to fund our future business activities and requirements, we may be required to seek additional equity or debt financing,' which has been removed. The company's liquidity position actually improved (cash up from $252.1M to $298.1M), which may explain the removal. However, the retained language still references inability to raise capital and adverse effects, creating an odd disconnect without the bridging sentence. The removal could reflect improved liquidity confidence rather than obfuscation.",
+      "investigation_action": "Monitor whether future filings restore this language if liquidity tightens. Verify that the improved cash balance is not driven by temporary working capital effects such as the tariff-driven demand pull-forward mentioned in Flag 7."
+    },
+    {
+      "flag_number": 9,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "2ca0e0294aa63e94",
+        "current": "806385bd0e663822",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The Legal Proceedings section previously included five paragraphs of specific regulatory risk discussion covering Entity List additions, semiconductor export control changes, Section 232 investigations, Chinese telecommunications bans, and December 2024 ICTS final rules. The current period retains only generic litigation boilerplate. This is not a routine editorial change\u2014it is the wholesale removal of specific, actionable regulatory risk information from a section where investors would look for such detail. The content overlaps with Risk Factors removals (Flags 2, 4), suggesting a coordinated effort to reduce China-related regulatory disclosure.",
+      "investigation_action": "Analyst should determine whether CRCT has received any inquiries, subpoenas, or compliance notices related to ICTS rules, Entity List restrictions, or export controls. The coordinated removal across multiple sections warrants direct engagement with management or investor relations."
+    },
+    {
+      "flag_number": 10,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "235e45340fb6ec83",
+        "peer": "5ec453fe06cd4c8a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag is actually identifying CRCT as more transparent than VECO on supply chain risks, noting that CRCT 'explicitly discusses active global supply chain challenges affecting costs' while VECO offers only generic statements. This is not a disclosure degradation signal for CRCT\u2014it is the opposite. VECO and CRCT also operate in different product markets (semiconductor equipment vs. consumer crafting hardware), making direct peer comparison of supply chain disclosure less meaningful.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "806385bd0e663822",
+        "peer": "c04878a5a3843c6a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The peer text from ACLS discusses tax legislation (OBBBA, Tax Cuts and Jobs Act) rather than legal proceedings risk. CRCT's legal proceedings disclosure is standard boilerplate stating no material pending litigation, which is appropriate if the company genuinely has no material proceedings. The peer comparison is inapt\u2014ACLS's text is about tax rate impacts, not legal risk disclosure. The real concern about CRCT's regulatory disclosure reduction is better captured in Flags 4 and 9.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "CRCT has systematically removed extensive, specific disclosure about China-related supply chain risks, tariff exposure, geopolitical risks, and regulatory developments across both Risk Factors and MD&A sections in its most recent 10-Q. The removals are coordinated across multiple filing sections and eliminate concrete details (e.g., $550 billion in tariffs, Taiwan semiconductor dependency, Entity List risks, specific executive orders) that were present just one quarter earlier, replacing them with generic or no language. This pattern is consistent with deliberate disclosure reduction rather than routine editorial revision, particularly concerning given the escalating U.S.-China trade environment.",
+    "top_concerns": [
+      "Wholesale removal of China-specific geopolitical, tariff, and trade restriction risk disclosures from both Risk Factors and MD&A despite ongoing and escalating U.S.-China trade tensions",
+      "Elimination of supply chain concentration risk details including dependence on Chinese-owned contract manufacturer and China-sourced components, removing investors' ability to assess operational vulnerability",
+      "Coordinated removal of specific regulatory risk information (Entity List, ICTS rules, export controls, Section 232 investigations) from Legal Proceedings section, suggesting possible intent to minimize visibility of regulatory exposure"
+    ],
+    "genuine_count": 6,
+    "borderline_count": 1,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "CRCT",
+    "model": "claude-opus-4-6",
+    "input_tokens": 7250,
+    "output_tokens": 3081,
+    "timestamp": "2026-04-09T11:53:53.776460"
+  }
+}

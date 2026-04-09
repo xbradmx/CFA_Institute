@@ -1,0 +1,163 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "cybersecurity_technology",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "0951a6470da4fbf8",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed sentence is a single product capability description about software enabling 'real-time people and object detection, classification, and tracking.' This is marketing-style product description language that may have been consolidated into other product descriptions or simply edited for brevity. It does not represent a material risk disclosure or quantitative metric removal. The current filing still discusses perception software platforms (Gemini, BlueCity) which cover similar functionality.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "f7d1ad03de3f6459",
+        "current": "2ac39f1e48087763",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing provided a detailed comparative table with specific dollar amounts ($14,985 vs $13,806 thousand), percentage changes (9%), and attribution ('increase in compensation expenses for employees engaged in research and product development function'). The current period replaces this with generic descriptions of what R&D expenses 'consist of' and a vague attribution ('Company's continuing investment in the research and development of new product offerings') without any dollar figures, percentage changes, or specific cost drivers. This is a clear reduction in quantitative specificity for a material expense line.",
+      "investigation_action": "Request from OUST the specific dollar amounts and year-over-year changes for R&D expenses in the current quarter, and understand why the comparative expense table was removed from the MD&A discussion. Verify whether this data appears elsewhere in the filing or if it has been entirely omitted."
+    },
+    {
+      "flag_number": 3,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "acf3c3338ea3d985",
+        "current": "928554ffd2f6397b",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained extensive product-specific detail: four named sensor models (OSDome, OS0, OS1, OS2), resolution options (128/64/32 channels), the REV7 generation launch, L3 chip details, solid-state DF sensor development status, L4 prototype validation testing status, and Chronos chip fabrication/testing status. The current filing strips nearly all of this, retaining only references to Gemini and BlueCity while removing all sensor model names, resolution specifications, chip development milestones, and product pipeline status updates. This represents a significant degradation in product roadmap transparency that is material for evaluating technology competitiveness and execution risk.",
+      "investigation_action": "Investigate whether the removal of L4 prototype and Chronos chip development status updates signals delays or setbacks in the product roadmap. Ask management for current status of these programs and why specific model/specification details were removed from the filing."
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d213a30f7271f59a",
+        "peer": "c7e57d7e735b0aa6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason states that RR (the peer) provides only generic supply chain risk statements while OUST provides detailed disclosure. This flag is inverted\u2014OUST is the company with stronger disclosure here, naming Benchmark and Fabrinet as manufacturing partners, identifying Thailand manufacturing concentration, and discussing tariff mitigation. RR is a robotics company with a fundamentally different supply chain model. The divergence reflects genuine business differences rather than OUST disclosure degradation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "de99aba053eb578f",
+        "peer": "753ed234f0f04f10"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason incorrectly frames SERV as downplaying risks. The comparison is between OUST's MD&A critical accounting estimates section (which appropriately states no significant changes from the annual report, a standard 10-Q practice) and SERV's full accounting policy footnotes. These are different sections of the filing serving different purposes. OUST's statement that 'there have been no significant changes to our critical accounting policies and estimates since the filing of our 2024 Annual Report' is standard 10-Q language that incorporates the annual report by reference.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "449e846e2d237cc4",
+        "peer": "b667b334625ebbf0"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason suggests SERV is downplaying tax asset risks compared to OUST. However, OUST actually provides detailed and transparent disclosure about its full valuation allowance on deferred tax assets, which is appropriate for a pre-profitability company. SERV's disclosure about capital expenditures addresses a different topic entirely. There is no evidence of OUST degrading its disclosure here\u2014OUST is being forthcoming about its tax position. The peer comparison is not apples-to-apples.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d213a30f7271f59a",
+        "peer": "4d8439f25af3e687"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, this flag highlights that SERV provides only a two-sentence boilerplate supply chain disclosure while OUST provides detailed supplier names, manufacturing locations, and tariff discussion. The divergence reflects SERV's weaker disclosure, not OUST's. OUST's supply chain disclosure is detailed and specific. Additionally, SERV is a robotics-as-a-service company with a fundamentally different manufacturing model than a lidar hardware company like OUST.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5b8928517df26489",
+        "peer": "2d924bebf4aad881"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "OUST provides only a single sentence about SOX 404(a) internal control requirements in its Risk Factors, while SERV provides extensive accounting policy detail in its financial statement footnotes. While the comparison is somewhat mismatched (Risk Factors vs. accounting policies), the flag raises a valid concern: OUST's Risk Factors section appears to contain minimal discussion of accounting and internal control risks. For a company with complex accounting (merger-related goodwill, valuation allowances, stock-based compensation), a brief mention of SOX requirements without further context about specific internal control challenges could be considered thin.",
+      "investigation_action": "Review OUST's full 10-K Risk Factors for more detailed internal control and accounting risk discussion. Assess whether the company has historically disclosed material weaknesses and whether the brevity in the 10-Q is consistent with prior quarterly filings."
+    },
+    {
+      "flag_number": 9,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7d9373523929ea82",
+        "peer": "fd591757974711fd"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason suggests OUST is downplaying financial sustainability risks with a generic statement about public company reporting strain. However, this is a single risk factor excerpt being compared against SERV's extensive financial statement footnotes covering goodwill, impairment testing, and tax policies. These are fundamentally different sections of the filing. OUST's full filing (as shown in Flag 6) actually contains detailed disclosures about valuation allowances and deferred tax assets, indicating the company is not hiding financial sustainability concerns.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "355aca7ae9406541",
+        "peer": "73a770d2ba4a41f1"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag highlights that OUST provides detailed geopolitical and tariff risk disclosure (naming specific countries, U.S. Tariffs, Thailand manufacturing exposure, mitigation efforts) while SERV provides minimal discussion limited to the OBBBA tax law and foreign currency translation. Once again, OUST has the stronger disclosure. The divergence reflects SERV's weaker disclosure practices, not any degradation by OUST. OUST's geopolitical risk discussion is actually exemplary in specificity.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "OUST shows two genuine disclosure degradation signals: the removal of specific quantitative expense detail from MD&A (Flag 2) and significant stripping of product roadmap specifics including development milestone updates for L4 prototypes and Chronos chip (Flag 3). However, the majority of peer divergence flags were incorrectly oriented\u2014they actually highlight OUST's stronger disclosure relative to peers on supply chain, geopolitical, and financial sustainability topics. The core concerns are concentrated in temporal changes between the Q1 and Q2 10-Q filings.",
+    "top_concerns": [
+      "Removal of specific R&D expense dollar amounts and year-over-year comparisons from MD&A, replaced with generic descriptions\u2014could signal cost pressures or desire to obscure spending trajectory",
+      "Elimination of product pipeline detail including L4 prototype validation status, Chronos chip testing status, and all sensor model specifications\u2014may indicate development delays or strategic repositioning",
+      "Pattern of reducing operational specificity in the most recent filing while maintaining adequate risk factor disclosure suggests selective information management in forward-looking operational sections"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 1,
+    "dismissed_count": 7
+  },
+  "_meta": {
+    "ticker": "OUST",
+    "model": "claude-opus-4-6",
+    "input_tokens": 11771,
+    "output_tokens": 2762,
+    "timestamp": "2026-04-09T12:20:45.227206"
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "cybersecurity_technology",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "57beae0c71f06426",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing contained specific forward-looking language about 'accelerating the integration of advanced AI capabilities into both the software and hardware layers' and scaling sales and marketing efforts for RaaS adoption. Removing this from the current MD&A eliminates visibility into the company's AI integration strategy and RaaS commercialization progress. However, this could reflect a legitimate editorial decision to consolidate strategic discussion elsewhere or avoid making forward-looking claims that haven't materialized.",
+      "investigation_action": "Ask management whether AI integration milestones have been met or delayed, and whether the omission reflects a change in strategic direction or simply editorial consolidation. Check if RaaS adoption metrics are reported elsewhere in the filing."
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "5fb4813b327731ed",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained a direct, unambiguous statement: 'These tariffs have, and will continue to have, an adverse effect on our results of operations and profit margins.' This explicit admission of ongoing tariff-driven margin pressure has been removed entirely from the Risk Factors section. Given that the tariff environment has not materially improved and the company still sources from China, removing this disclosure without explanation is a clear reduction in transparency on a material cost risk.",
+      "investigation_action": "Determine whether tariff exposure has actually been mitigated (e.g., through reshoring or supplier changes) or whether the company is simply removing an uncomfortable disclosure. Request updated tariff impact estimates and compare to the prior 1-5% COGS impact figure."
+    },
+    {
+      "flag_number": 3,
+      "topic": "geopolitical_macro",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "06991681fff8a324",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained highly specific and quantitative tariff risk disclosure including exact tariff rates ('54% tariff,' '145%'), specific executive order dates (April 2 and April 9, 2025), and explicit warnings about China trade war escalation. All of this granular detail has been removed from Risk Factors. The current filing (per Flag 6) replaces this with a generic one-line reference to 'increases in tariffs' without any specificity. This is a textbook example of replacing concrete risk quantification with vague language.",
+      "investigation_action": "Press management on why specific tariff rate disclosures and China-specific risk language were removed. Verify whether the company's China sourcing exposure has changed. The 90-day pause referenced in the prior filing would have expired, making the omission even more concerning."
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "4c0a1ef4a8b87d39",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing explicitly stated 'Some of our products are currently assembled by suppliers in China, although our flagship ADAM and Scorpion robot systems are assembled at our Las Vegas headquarters.' This sentence provided critical supply chain geography detail that directly relates to tariff exposure. Its removal from Risk Factors, combined with the simultaneous removal of tariff-specific disclosures (Flags 2, 3), creates a pattern of systematically reducing visibility into the company's China supply chain dependency.",
+      "investigation_action": "Determine whether China assembly has actually been eliminated or whether the company is obscuring ongoing China exposure. Cross-reference with customs/import data if available. Ask management directly about current manufacturing geography for non-flagship products."
+    },
+    {
+      "flag_number": 5,
+      "topic": "cost_margin_pressure",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "abd6442df9aa1239",
+        "current": "bc3636bd6d6208f9",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior MD&A contained specific quantitative disclosures including 'the estimated impact of current tariffs on cost of our goods sold is approximately 1 percent to 5 percent,' detailed bullet-point risk factors on competition, recession risk, China supply chain, inflationary pressures, and rising interest rates, as well as specific dollar and percentage changes for each expense line item with granular explanations. The current filing strips out the tariff COGS impact estimate entirely, removes the competitive and inflationary risk bullets, and while it provides some period-over-period figures, the explanatory detail is materially reduced. The removal of the 1-5% tariff impact figure is particularly notable as a concrete metric that investors relied upon.",
+      "investigation_action": "Request an updated tariff COGS impact estimate. Inquire why the structured risk bullet points (competition, recession, China supply, inflation, interest rates) were removed from MD&A. Evaluate whether the reduced granularity in expense explanations correlates with deteriorating cost performance."
+    },
+    {
+      "flag_number": 6,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "b0f00671a5ee8303",
+        "current": "5f5993fba77810bf",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior MD&A contained an extensive, detailed discussion of tariff risks including specific tariff rates (54%, 145%), exact executive order dates, explicit mention of domestic manufacturing mitigation strategies, and direct warnings about China trade war escalation. The current filing reduces this entire section to a single generic mention of 'increases in tariffs' within a laundry list of macroeconomic factors, and adds boilerplate references to Ukraine and Middle East conflicts. The specific mitigation language ('We have implemented domestic manufacturing and supply chain strategies to mitigate exposure') is also gone, removing accountability for prior commitments.",
+      "investigation_action": "Demand that management provide current tariff exposure quantification. Verify whether the domestic manufacturing strategy referenced in the prior filing was actually implemented. The disappearance of both the risk and the mitigation strategy suggests potential obfuscation."
+    },
+    {
+      "flag_number": 7,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "298c4a9d8cc3265f",
+        "current": "d81c252eba646c4d",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained a specific product development commitment: 'The new robot currently under development is expected to be introduced by the end of calendar year 2025' with detailed design attributes including 'scalability, adaptability, and deployment efficiency' and 'modular construction.' The current filing replaces this with a vague obsolescence risk statement and unrelated mentions of an NVIDIA partnership and Titan robot deployments. The specific timeline commitment and design details for the new-generation robot have been entirely removed, which is concerning as we approach the stated end-of-2025 deadline.",
+      "investigation_action": "Ask management whether the new-generation robot is still on track for end of calendar year 2025 introduction. The removal of a specific timeline commitment often signals a delay. Inquire about current development status and whether the modular design approach is still being pursued."
+    },
+    {
+      "flag_number": 8,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "25b1cf7f3cf1dc85",
+        "current": "4116ffc0fd8fdb17",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing disclosed the $430,000 ACSS settlement with specific dates, party names, and the underlying engagement letter dispute. The current filing reduces this to a vague reference to 'ongoing legal matters' and removes the specific settlement amount and details. However, this could be a legitimate editorial change since the settlement was already executed and fully disclosed in the prior quarter \u2014 the company may have viewed it as stale information. The prior filing also stated 'there is no litigation currently pending' which is also now removed.",
+      "investigation_action": "Verify whether the ACSS settlement has been fully paid and resolved. Investigate what 'ongoing legal matters' refers to in the current filing, as this vague language could indicate new undisclosed litigation. Check whether the removal of the 'no pending litigation' statement signals new legal exposure."
+    },
+    {
+      "flag_number": 9,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5f5993fba77810bf",
+        "peer": "95e27729cea1695b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is about the peer (KITT) potentially downplaying geopolitical risks relative to RR. KITT is a marine robotics/offshore wind company with Brazil operations, which has a fundamentally different geopolitical exposure profile than RR's China manufacturing dependency. KITT's disclosure of foreign currency transaction losses and Brazil-specific tax issues reflects its actual risk geography. The divergence reflects genuine business differences rather than disclosure evasion by either party.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5f5e4ec5977eb6e3",
+        "peer": "054b15490c4c4ed4"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies KITT as potentially underreporting human capital risks relative to RR. However, RR's labor shortage discussion is integral to its value proposition \u2014 it sells robots that address labor shortages \u2014 making this a marketing/business model description rather than a risk disclosure per se. KITT operates in a different segment (marine robotics/offshore services) with different human capital dynamics. The 268.7% G&A increase at RR is company-specific and not indicative of an industry-wide issue KITT should be disclosing. The divergence reflects legitimate business differences.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4116ffc0fd8fdb17",
+        "peer": "74a3d1b35cb57fd8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "KITT's boilerplate litigation disclosure ('From time to time, we may be subject to litigation') is standard for companies without material active litigation. RR's increased legal and compliance costs are specific to RR's growth trajectory and public company transition. The peer divergence does not indicate that KITT is downplaying material legal risks \u2014 their disclosure reflects a different litigation posture. Different companies legitimately have different levels of legal activity.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 12,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b3a6141dabd71111",
+        "peer": "71ab090327c8d80b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag compares RR's detailed tax position and investment income discussion with TAYD's minimal capex disclosure. However, the two companies are at fundamentally different stages \u2014 RR recently raised capital through Class B stock and warrant exercises, generating investment income from treasury management, while TAYD appears to be a more mature operation with straightforward capital expenditure reporting. The divergence reflects different financial circumstances rather than disclosure evasion by either party. TAYD's capex commitment disclosure of $2,017,000 is actually reasonably specific.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "RR has systematically removed specific, quantitative disclosures related to its China supply chain exposure, tariff impacts (previously estimated at 1-5% of COGS, with tariff rates of 54-145% cited), and a concrete new product launch timeline (end of calendar year 2025). The pattern across Flags 2-7 is consistent and coordinated \u2014 tariff rates, supply chain geography, cost impact estimates, and mitigation strategies all disappeared simultaneously, replaced with generic boilerplate language. This represents a material degradation in disclosure quality on topics directly affecting the company's cost structure and operational risk profile.",
+    "top_concerns": [
+      "Complete removal of China supply chain and tariff exposure disclosures (specific tariff rates of 54-145%, COGS impact estimate of 1-5%, and China assembly acknowledgment) without explanation or evidence of actual risk mitigation",
+      "Disappearance of the specific new-generation robot introduction timeline ('by end of calendar year 2025') as the deadline approaches, potentially signaling a product delay",
+      "Systematic replacement of structured, quantitative risk discussions with generic boilerplate language across both Risk Factors and MD&A sections, suggesting coordinated disclosure reduction"
+    ],
+    "genuine_count": 6,
+    "borderline_count": 2,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "RR",
+    "model": "claude-opus-4-6",
+    "input_tokens": 8820,
+    "output_tokens": 3481,
+    "timestamp": "2026-04-09T12:27:34.959711"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "38f9b257d7a9440b",
+        "current": "88613525507b8b66",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed a specific, actionable item \u2014 a signed letter of intent with a new counterparty to replace the HTEC put option with a concrete date (May 1, 2025). The current period filing entirely drops this disclosure and replaces it with extensive boilerplate merger agreement language related to the Baker Hughes transaction, with no update on the HTEC put option resolution, the identity of the counterparty, or the financial terms. This is a material omission: the HTEC put option was a specific financial obligation and its resolution (or lack thereof) has direct balance sheet implications.",
+      "investigation_action": "Analyst should determine the current status of the HTEC put option and the replacement counterparty arrangement \u2014 whether it was completed, lapsed, or is still pending \u2014 and assess any financial exposure from I Squared Capital's exercise rights that may now be obscured by the merger-related disclosure."
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ab7321573e36c86d",
+        "peer": "547c109b6693fe14"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually flags ACA as the company potentially downplaying geopolitical risks, not GTLS. GTLS provides explicit, detailed discussion of Russia-Ukraine conflict, U.S.-China tensions, tariff impacts, and Middle East energy policy uncertainty. GTLS is the more transparent filer on this topic. The divergence reflects GTLS's stronger disclosure, not a deficiency.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "88613525507b8b66",
+        "peer": "afc68fa6f920e114"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ACA's detailed discussion of OBBBA impacts on wind and solar tax credits is specific to ACA's wind tower business, which is directly affected by the PTC and AMP credit phase-outs. GTLS mentions OBBBA and its 'significant tax provisions, including extensions of prior tax cuts and revisions to the international tax framework' but does not have the same direct exposure to wind/solar credits. The divergence reflects genuine business differences in how OBBBA affects each company, not disclosure evasion by GTLS.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "837c800dfe1c574e",
+        "peer": "ac93c84d36f63e40"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags ACA as potentially downplaying supply chain risks relative to GTLS, not the other way around. GTLS explicitly mentions Middle East unrest straining global supply chains and discusses the Flowserve supply agreement. GTLS is the more transparent filer here. This flag does not indicate disclosure degradation at GTLS.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "30b5efa1f99f91ef",
+        "peer": "c5a80603a977a66c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags VMI as potentially downplaying critical accounting estimates relative to GTLS, not the reverse. GTLS provides a reasonable discussion of critical accounting estimates including goodwill, indefinite-lived intangible assets, business combinations, revenue recognition, and income taxes. The VMI block is simply a non-GAAP measure reference, a completely different disclosure context. No disclosure degradation is indicated at GTLS.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "71d7c8019b079aeb",
+        "peer": "024335eae1a805c1"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "VMI discloses specific severance payments ($1.0 million and $10.6 million) tied to organizational realignment programs, while GTLS provides only a generic list of corporate functions including human resources. Given that GTLS is in the midst of a major pending merger with Baker Hughes, which typically involves significant workforce planning and potential restructuring, the absence of any discussion of employee retention costs, severance provisions, or workforce-related merger integration risks is notable. The forward-looking risk factors do mention 'potential difficulties in employee retention' but no quantification or current-period impact is disclosed.",
+      "investigation_action": "Analyst should investigate whether GTLS has incurred or accrued any severance, retention bonuses, or other human capital costs in connection with the Baker Hughes merger, and whether such costs are being embedded in other line items without separate disclosure."
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "88613525507b8b66",
+        "peer": "6c2ec1cdb9be95f9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags VMI as potentially downplaying legal risk relative to GTLS's extensive merger-related legal disclosure. These are entirely different types of legal disclosures: GTLS is describing a pending transformative merger agreement, while VMI is discussing a specific litigation matter in Brazil. The comparison is not apples-to-apples and reflects different business circumstances rather than disclosure evasion by either party.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "837c800dfe1c574e",
+        "peer": "baac04705cd8bcef"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason again flags VMI as potentially downplaying supply chain risk relative to GTLS. GTLS provides explicit supply chain commentary including Middle East disruption risks. VMI's supplier finance program disclosure is a different topic altogether. This flag does not indicate any disclosure degradation at GTLS.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Of the eight flags, most peer divergence flags were incorrectly oriented \u2014 they flagged peers as potentially less transparent than GTLS rather than identifying GTLS disclosure degradation. The one genuine concern is the disappearance of specific HTEC put option/counterparty disclosure, replaced by voluminous but generic Baker Hughes merger boilerplate. A borderline concern exists around the lack of human capital cost quantification during a major pending merger. Overall, GTLS's disclosure quality appears adequate, with the primary concern being that merger-related disclosure may be crowding out or obscuring pre-existing operational disclosures.",
+    "top_concerns": [
+      "Disappearance of specific HTEC put option replacement counterparty disclosure and timeline, with no update on resolution or financial exposure",
+      "Lack of quantified human capital and retention cost disclosures despite pending transformative merger with Baker Hughes",
+      "Risk that extensive merger boilerplate may be displacing or obscuring ongoing operational risk disclosures in future filings"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 1,
+    "dismissed_count": 6
+  },
+  "_meta": {
+    "ticker": "GTLS",
+    "model": "claude-opus-4-6",
+    "input_tokens": 8918,
+    "output_tokens": 2102,
+    "timestamp": "2026-04-09T12:04:46.359009"
+  }
+}

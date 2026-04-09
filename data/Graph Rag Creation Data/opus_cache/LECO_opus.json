@@ -1,0 +1,93 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "9a33eb60368181fe",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flagged text is a standard SG&A expense variance explanation mentioning 'reductions in employee costs' as a driver. This is routine MD&A cost commentary that changes quarter-to-quarter based on what the material drivers were. In the Q2 filing, the SG&A drivers likely differed and thus warranted different explanatory language. This is not a disappearance of human capital disclosure but rather normal period-to-period variation in expense discussion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "b7d24cad3e6d5378",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained detailed and specific geopolitical risk language including references to Russia-Ukraine, Middle East conflicts, 2025 U.S. tariff actions, and retaliatory trade measures with a statement that the company 'has taken actions to address the impact.' Removing this entire risk factor in the subsequent quarter\u2014when tariff uncertainty has arguably intensified\u2014is a significant disclosure reduction. The specificity of the tariff language ('In 2025, the U.S. government announced a series of tariffs') made this a material and timely risk factor whose removal is inconsistent with the evolving macro environment.",
+      "investigation_action": "Verify whether the geopolitical/tariff risk factor was consolidated into another section of the 10-Q or the annual 10-K risk factors. If truly removed, ask management why tariff risk disclosure was dropped during a period of escalating trade tensions, and assess whether the company's tariff mitigation actions have been sufficient to warrant de-emphasis."
+    },
+    {
+      "flag_number": 3,
+      "topic": "liquidity_solvency",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "59cd9660f77ca557",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This risk factor explicitly warned that tariffs and retaliatory actions 'could adversely affect our financial condition, results of operations and access to capital markets' and flagged risks to 'collection of accounts receivable and our expected cash flow generation.' Removing this language while the tariff environment remains uncertain and potentially worsening is a meaningful disclosure reduction. The prior text specifically linked demand risk to liquidity and capital market access, which is a substantive risk connection that investors would want maintained.",
+      "investigation_action": "Determine whether this liquidity/solvency risk was merged with other risk factors or dropped entirely. Review LECO's current liquidity position, credit facility covenants, and accounts receivable trends to assess whether the risk has genuinely abated or is being obscured. Cross-reference with the company's debt maturity schedule and any changes to credit facility terms."
+    },
+    {
+      "flag_number": 4,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "37cdd744d3be4155",
+        "peer": "9ce747aa06deb2ea"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason correctly identifies that LECO provides detailed rationalization charges, capital allocation, and share repurchase discussion while NNBR provides almost nothing. However, the flag is about NNBR's potential under-disclosure, not LECO's. LECO is the target company being monitored, and its disclosure is actually robust and specific\u2014detailing dollar amounts for rationalization charges by segment, capex guidance of $100-120M, dividend amounts, and share repurchase authorization. This flag does not indicate disclosure degradation by LECO.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1df497a646b42175",
+        "peer": "2fcb945a21f01b68"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, the divergence identified is NNBR's sparse legal disclosure versus LECO's detailed asbestos litigation reporting. LECO provides highly specific data: approximately 1,236 active plaintiff claims, historical resolution statistics (57,150 dismissed, 23 defense verdicts, etc.), and qualitative context. LECO's disclosure is exemplary for this risk category. The divergence reflects NNBR's potential under-disclosure and LECO's different litigation exposure profile (asbestos-related legacy claims), not LECO disclosure degradation.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "LECO appears to have removed two substantive and interrelated risk factors between its Q1 and Q2 10-Q filings that addressed geopolitical/tariff risk and the linked liquidity/capital markets impact. This removal is concerning given that the tariff environment has not materially improved. However, LECO's operational and financial disclosures (rationalization charges, capital allocation, legal proceedings) remain detailed and specific, suggesting this may be an isolated editorial decision rather than a systematic transparency decline.",
+    "top_concerns": [
+      "Removal of specific tariff and trade policy risk factor language during a period of ongoing and potentially escalating trade tensions",
+      "Disappearance of explicit linkage between demand disruption risk and liquidity/capital market access concerns",
+      "Need to verify whether dropped risk factors were consolidated elsewhere in the filing or genuinely eliminated"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 0,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "LECO",
+    "model": "claude-opus-4-6",
+    "input_tokens": 2795,
+    "output_tokens": 1547,
+    "timestamp": "2026-04-09T12:10:43.523394"
+  }
+}

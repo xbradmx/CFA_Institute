@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "76c9bdbb9dc87544",
+        "current": "a98ee9587ed18f0f",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period explicitly disclosed that payments are contingent on 'non-financial post combination service conditions' under retention agreements, providing investors with material detail about the conditionality and nature of these obligations. The current period removes this sentence entirely, leaving only the headline commitment figure without explaining what triggers payment. This is a meaningful reduction in transparency on a $13 million contingent obligation.",
+      "investigation_action": "Analyst should inquire whether the service conditions have already been met (making the disclosure moot) or whether management is deliberately obscuring the contingent nature of these payments. Review the 10-K for full retention agreement terms and monitor whether the $13 million becomes unconditional."
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f10cb475d7987cc1",
+        "peer": "bc19fde7df2ccde9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is framed as INVX potentially downplaying geopolitical risks relative to DNOW, but the entity under analysis is DNOW, and DNOW's disclosure on this topic is actually quite robust. DNOW provides extensive discussion of tariffs, geopolitical conflicts, commodity price volatility, and foreign exchange impacts. The divergence reflects DNOW's significantly larger international footprint and its pending MRC Global merger, which are legitimate business differences rather than a DNOW disclosure issue.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6d2a843655f6295c",
+        "peer": "ba56b26ea4c6b6a7"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies INVX as providing minimal cost/margin pressure discussion compared to DNOW, but the entity under analysis is DNOW, and DNOW's disclosure is the more detailed of the two. DNOW provides specific commodity price changes, steel pricing data, and cost of products figures. The peer comparison actually shows DNOW in a favorable disclosure light. INVX's minimal discussion reflects its different business model (downhole tools vs. distribution).",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "db77c7bb31d51648",
+        "peer": "9ec1046c111c2791"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, this flag highlights INVX's minimal geopolitical discussion versus DNOW's extensive disclosure. DNOW provides detailed quantitative sensitivity analysis ($1 million impact from 10% FX change), discusses tariff monitoring, and addresses Ukraine/Middle East conflicts. The divergence reflects DNOW's much larger international operations (~20% non-US revenue) versus INVX's more limited geographic exposure. This is not a DNOW disclosure concern.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5538a447727f3d88",
+        "peer": "e5243c6bb7cc645c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag compares DNOW's extensive merger integration risk disclosure against INVX's single sentence about equipment rental. DNOW's detailed discussion of MRC Global integration risks is appropriate given the pending transaction and is not a disclosure deficiency \u2014 it is actually a positive sign of transparency. The comparison is apples-to-oranges since INVX has a small acquisition (DWS) versus DNOW's transformative merger.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "47ef96986d5e6786",
+        "peer": "2424d5436ece8823"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "DNOW provides detailed supply chain discussion including product categories, inventory management strategy, and energy transition opportunities. INVX's single sentence about a Vietnam-based manufacturing entity reflects its fundamentally different business model as a downhole tool manufacturer versus DNOW's role as a large-scale distributor. The divergence reflects legitimate business differences, and DNOW's disclosure is the more comprehensive of the two.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e1987401a5503d27",
+        "peer": "00ad2101242ceaf4"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "WHD explicitly quantifies 'elevated tariff expenses on goods imported from Vietnam and China' and identifies 'escalated tariff cost impacts on product margins' as a direct driver of reduced operating income. By contrast, DNOW states only that 'costs and other effects associated with the tariffs remain uncertain' without disclosing whether tariffs are currently impacting margins. Given DNOW's role as a major pipe and valve distributor sourcing globally, the absence of any quantification or acknowledgment of current tariff impacts \u2014 while a close peer explicitly calls them out \u2014 suggests DNOW may be downplaying an active cost headwind.",
+      "investigation_action": "Analyst should directly ask DNOW management on earnings calls or in diligence whether tariffs are currently impacting product costs and gross margins, and request quantification of tariff-related cost absorption. Compare gross margin trends quarter-over-quarter to assess whether margin compression is occurring undisclosed."
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "47ef96986d5e6786",
+        "peer": "14ede44119cda67a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag suggests WHD is downplaying supply chain risks relative to DNOW, but the entity under review is DNOW, whose supply chain disclosure is detailed and includes product categories, inventory management, and energy transition opportunities. WHD's briefer disclosure reflects its different business model as a service company with manufacturing operations. This is not a DNOW disclosure concern.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "DNOW's disclosure quality is generally strong, with detailed commodity price data, foreign exchange sensitivity analysis, and extensive merger integration risk discussion. The two genuine flags \u2014 removal of retention payment conditionality language and vague tariff impact disclosure relative to peers \u2014 are worth monitoring but do not constitute a broad pattern of disclosure degradation. Most peer divergence flags actually reflect DNOW providing more detail than peers rather than less.",
+    "top_concerns": [
+      "Tariff impact disclosure: DNOW describes tariff effects as 'uncertain' while peer WHD explicitly quantifies elevated tariff expenses impacting margins \u2014 investigate whether DNOW is absorbing material tariff costs without disclosure",
+      "Retention payment conditionality: The removal of service condition details for $13 million in acquisition-related retention payments should be clarified \u2014 are conditions already met or is conditionality being obscured?",
+      "MRC Global integration execution: While well-disclosed as a risk, the sheer volume of integration risk factors warrants close monitoring of actual integration progress and cost realization"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 0,
+    "dismissed_count": 6
+  },
+  "_meta": {
+    "ticker": "DNOW",
+    "model": "claude-opus-4-6",
+    "input_tokens": 7040,
+    "output_tokens": 2117,
+    "timestamp": "2026-04-09T11:56:54.958802"
+  }
+}

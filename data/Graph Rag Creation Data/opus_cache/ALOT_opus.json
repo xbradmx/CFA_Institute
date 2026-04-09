@@ -1,0 +1,149 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "revenue_future_performance",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "01ed0e9a2ee189fd",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period text is standard boilerplate language that simply cross-references risk factors in the 10-K annual report. This is a routine reference paragraph that many companies include or omit depending on whether there are material changes to risk factors during the quarter. Its absence does not indicate removal of substantive risk disclosure about revenue or future performance.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "780b407b0566eb6c",
+        "current": "db2fd6dd73a9c115",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The current period removes the specific description of translation methodology ('assets and liabilities...at the exchange rate prevailing at the balance sheet date, and at an average exchange rate for the reporting period for revenue and expense accounts') and eliminates the hypothetical 10% sensitivity analysis that quantified impact at less than $0.1 million. While the removed amounts are immaterial, the elimination of a quantitative sensitivity disclosure without explanation reduces transparency on how management assesses FX risk. The transactional loss figure was retained at less than $0.1 million.",
+      "investigation_action": "Ask management why the hypothetical FX sensitivity analysis was removed and whether the impact has increased beyond the previously disclosed threshold, particularly given operations in Denmark, China, and the Eurozone."
+    },
+    {
+      "flag_number": 3,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3653fd15fc1a19d8",
+        "peer": "09a02d39efae7ad5"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "EVLV's extensive disclosure of material weaknesses, restatements, and ongoing SEC investigations reflects its own severe and company-specific accounting problems. ALOT's disclosure states that management concluded controls are effective, which is the standard affirmative conclusion required by SEC rules. There is no evidence ALOT is concealing similar issues; the divergence reflects genuinely different circumstances rather than disclosure evasion. These companies operate in entirely different product markets (specialty printing vs. security screening) despite being peers by some metric.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1730d7f86237d4fb",
+        "peer": "4e1c9eca1d53d554"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "ALOT discloses a 10% global workforce reduction, CEO resignation, and a new CEO appointment, yet provides no discussion of human capital risks, succession planning challenges, integration of new leadership, or the impact of workforce reduction on operational capacity. The passage simply lists these events factually without any risk assessment or forward-looking commentary. While the peer comparison to EVLV is somewhat apples-to-oranges, ALOT's own facts\u2014CEO departure, significant layoffs, and MTEX integration challenges\u2014warrant more substantive human capital risk discussion than what is provided.",
+      "investigation_action": "Investigate the circumstances of the CEO's resignation, the new CEO's strategic direction, retention risk among remaining employees following the 10% workforce reduction, and whether the restructuring has impacted ALOT's ability to execute on MTEX integration and product development."
+    },
+    {
+      "flag_number": 5,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "91d29b15e328e6f0",
+        "peer": "5407e70105dd4571"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "ALOT acknowledges that 'the integration of MTEX has been more time-consuming and resource-intensive than we originally anticipated' but provides no specifics on the nature of the difficulties, expected timeline to resolution, or financial impact beyond the $0.1M inventory step-up and $0.6M transaction costs from the prior year quarter. For a company that has announced restructuring actions including realignment of the MTEX operation in Portugal and is now engaged in arbitration with the MTEX sellers, the operational risk discussion is notably thin. The peer comparison to EVLV is less relevant given vastly different products, but ALOT's own disclosures suggest operational risks warrant more detailed treatment.",
+      "investigation_action": "Probe the specific challenges with MTEX integration, the expected cost and timeline of the Portugal realignment, and whether MTEX is meeting original revenue and margin expectations. Also investigate the relationship between MTEX integration difficulties and the arbitration proceedings."
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0ca4f3b680c7aafa",
+        "peer": "1ef4a8c636d6ca4f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ALOT's supply chain disclosure mentions inventory levels and the reason for the increase (ink supply obligations). EVLV's extensive supply chain risk disclosure reflects its unique reliance on a single contract manufacturer (Columbia Tech) and complex hardware supply chain for security screening systems. ALOT is a specialty printing company with a fundamentally different supply chain profile. The peer divergence reflects genuine business differences rather than disclosure evasion. ALOT's risk factors in its 10-K would be a more appropriate place to evaluate supply chain risk completeness.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7587846794959320",
+        "peer": "7e332534d90c181d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This is essentially the same comparison as Flag 3, comparing ALOT's standard controls disclosure to EVLV's extensive material weakness and restatement disclosures. ALOT's statement that controls are effective is the standard affirmative conclusion per SEC requirements. EVLV's problems are company-specific and extraordinary. There is no indication that ALOT is concealing similar control deficiencies.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "db2fd6dd73a9c115",
+        "peer": "acbc6982c766bdaa"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "ALOT operates subsidiaries in the U.K., Canada, Denmark, China, France, Germany, and Portugal, yet its geopolitical/macro disclosure is limited to FX translation risk with no discussion of tariffs, trade restrictions, or other macroeconomic factors. Given the current tariff environment\u2014particularly relevant for a company with manufacturing/operations in China and multiple European countries\u2014the absence of any tariff or trade policy risk discussion is notable. While EVLV's disclosure is more detailed partly due to its own specific circumstances, ALOT's multinational footprint warrants at least some acknowledgment of tariff and trade policy risks in the current environment.",
+      "investigation_action": "Investigate ALOT's exposure to U.S.-China tariffs and EU trade policies, particularly for goods or components sourced from or sold to China and Europe. Determine whether tariff impacts are addressed elsewhere in the filing or the annual 10-K, and whether the MTEX Portugal operation faces any tariff-related headwinds."
+    },
+    {
+      "flag_number": 9,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9271082492cbc37b",
+        "peer": "7f0407152d31da3c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ALOT provides a detailed, specific disclosure of its active arbitration proceedings related to the MTEX acquisition, including timeline, procedural status, and expected resolution timeline. The comparison to EVLV's extensive legal risk disclosure is misleading\u2014EVLV faces SEC enforcement actions, class action lawsuits, derivative suits, FTC settlements, and DOJ inquiries, which are company-specific problems of extraordinary scale. ALOT's legal disclosure is proportionate to its known legal exposure and provides specific procedural detail including hearing dates and expected ruling timeline.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Most flags stem from peer comparisons to EVLV, a company experiencing extraordinary accounting and legal crises that are not indicative of industry norms. The one temporal change (Flag 2) involving removal of an FX sensitivity analysis is minor but noteworthy. The more substantive concerns relate to ALOT's thin qualitative discussion of human capital disruption and MTEX integration challenges despite material events (CEO departure, 10% workforce reduction, arbitration with MTEX sellers).",
+    "top_concerns": [
+      "Insufficient discussion of human capital risks given CEO resignation, leadership transition, and 10% workforce reduction",
+      "Thin operational risk disclosure on MTEX integration challenges and Portugal realignment despite ongoing arbitration with sellers",
+      "Removal of FX sensitivity analysis and absence of tariff/trade policy risk discussion despite multinational operations including China"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 4,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "ALOT",
+    "model": "claude-opus-4-6",
+    "input_tokens": 25403,
+    "output_tokens": 2543,
+    "timestamp": "2026-04-09T11:44:24.547909"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "1c1b11f413cbd576",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained a specific risk factor addressing supply chain component quality and delivery risks, including explicit mention of consequences like 'increased repair and replacement costs' and impact on 'business and reputation, operating results, cash flow, and financial condition.' This risk factor was removed entirely in the current filing without apparent consolidation elsewhere. Given the current tariff environment and supply chain disruption across the industrials sector, removing this specific risk disclosure is concerning.",
+      "investigation_action": "Verify whether this risk factor was consolidated into another section of the current 10-Q or simply dropped. Ask management whether any supply chain quality or component sourcing issues have emerged that would make this risk more, not less, relevant. Monitor warranty/repair expense trends in financials."
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "7efe8293a57caa0f",
+        "current": "12e31b33a9e31048",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing disclosed specific dollar amounts for investing activities ($15.7M total, $11.2M property/equipment, $4.6M software development) with year-over-year comparisons, while the current filing retains only the generic statement about 'significant investments in research and development' without any quantitative detail. However, this may simply reflect a different section of the MD&A being extracted, as investing activity cash flow details are typically presented in a dedicated cash flows discussion that may exist elsewhere in the filing. The absence of the specific figures in this passage is nonetheless notable.",
+      "investigation_action": "Confirm whether the investing activities cash flow detail appears elsewhere in the current 10-Q (e.g., in the cash flow statement or a separate liquidity section). If absent from the MD&A entirely, this represents a meaningful reduction in narrative context around capital allocation priorities and should be flagged to management."
+    },
+    {
+      "flag_number": 3,
+      "topic": "revenue_future_performance",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "523c42b6d79b35c0",
+        "current": "bbc829f2bc1120aa",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing included the specific sentence 'certain of our competitors may be better positioned than us to withstand or react to tariffs or other restrictions on global trade and as a result, we may lose market share to such competitors,' which was removed from the current filing. This is a material competitive risk disclosure directly relevant to the current tariff environment. Removing this language while tariff uncertainty remains elevated (as acknowledged in OMCL's own MD&A discussing 145% China tariffs reduced to 30%) suggests deliberate softening of competitive risk disclosure at precisely the time it is most relevant.",
+      "investigation_action": "Probe management on whether the competitive risk from tariffs has actually diminished or whether this deletion reflects a desire to downplay competitive vulnerability. Assess whether competitors have gained market share due to tariff-related cost advantages. Review whether this language appeared in the company's most recent 10-K."
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "12ee15f898c8cd1f",
+        "peer": "62057085b8373251"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "SCKT explicitly acknowledges that 'concerns over potential tariff disruptions caused a significant slowdown in distributor inventory purchases, leading to reduced bookings in Q2 and impacting our gross shipments,' providing quantifiable business impact. OMCL, by contrast, describes the tariff situation in factual/chronological terms ('monitoring ongoing developments,' 'no assurance that we will be able to offset any increased costs') but does not disclose specific impacts on bookings, orders, or costs. However, OMCL is a significantly larger company in a different sub-market (healthcare medication management vs. barcode scanners), and its tariff exposure profile may genuinely differ. OMCL does acknowledge the risk but lacks specificity about actual impact to date.",
+      "investigation_action": "Ask management to quantify the actual cost impact of tariffs on COGS and margins for the quarter. Determine what percentage of components are sourced from China or other tariff-affected jurisdictions. Monitor gross margin trends for signs of unacknowledged tariff absorption."
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d4e8ad381f6fc2a9",
+        "peer": "0d67e4dd9c7d7763"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flagged OMCL text ('These amounts are associated with agreements that are enforceable and legally binding') appears to be a narrow statement about purchase commitments, not a comprehensive legal disclosure section. OSS's detailed litigation and indemnity disclosures reflect a Commitments and Contingencies note, which OMCL almost certainly has in its own financial statements but was not captured in this comparison. The peer divergence here reflects a comparison of different disclosure sections rather than a genuine gap in OMCL's legal risk reporting. OMCL, as a larger healthcare technology company, likely has extensive legal disclosures in its notes to financial statements.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9014ee99ef49fb1d",
+        "peer": "7960480b8910394e"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "OSS provides detailed, quantifiable supply chain disclosures including vendor concentration percentages (40% and 52% from top vendors), specific mentions of 'increased supplier pricing, long lead-times, unavailability or limited supplies,' and tariff-specific supply chain language. OMCL's extracted text is notably sparse \u2014 'We purchase components from a variety of suppliers and use contract manufacturers' with minimal elaboration. However, OMCL does address supply chain risks more extensively in its Risk Factors (as seen in Flag 1's prior filing text about component sourcing), so this may partially reflect section-level extraction differences. Combined with the disappearance of the operational/product supply chain risk factor in Flag 1, there is a pattern of reduced supply chain transparency.",
+      "investigation_action": "Review the full Risk Factors and notes to financial statements in OMCL's current 10-Q to assess total supply chain disclosure. Request vendor concentration data and lead-time trends from management. Evaluate whether OMCL's contract manufacturer reliance creates hidden single-source risks not disclosed."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "OMCL shows a pattern of reduced disclosure specificity in the current filing period, particularly around supply chain risks and competitive vulnerability to tariffs \u2014 topics that are becoming more material industry-wide. The removal of the tariff-related competitive risk sentence (Flag 3) and the supply chain component quality risk factor (Flag 1) are the most concerning, as both deletions occur during a period of elevated tariff uncertainty that the company itself acknowledges in its MD&A.",
+    "top_concerns": [
+      "Removal of specific tariff-related competitive risk language (competitors better positioned to withstand tariffs) at a time when tariff exposure is elevated",
+      "Disappearance of supply chain component quality and delivery risk factor from Risk Factors section without clear consolidation elsewhere",
+      "Lack of quantified tariff impact disclosure in MD&A despite detailed chronological description of tariff changes affecting the company's sourcing"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 3,
+    "dismissed_count": 1
+  },
+  "_meta": {
+    "ticker": "OMCL",
+    "model": "claude-opus-4-6",
+    "input_tokens": 5097,
+    "output_tokens": 2077,
+    "timestamp": "2026-04-09T12:19:42.129266"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "65b263fa79dc0fd7",
+        "current": "ed22edc594da060c",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained four specific, enumerated strategic elements: (1) a highly variable cost structure with core/temporary workforce, (2) enterprise-wide lean production, (3) pre-season order program incentivizing early distributor orders, and (4) a vertically integrated business model. All four were replaced with a single vague sentence about 'effective management of our assets.' This is a clear removal of granular operational disclosure that investors use to assess PLOW's ability to manage its highly seasonal business, and the replacement language is meaningfully less informative.",
+      "investigation_action": "Investigate whether PLOW has experienced changes to its variable cost structure, workforce flexibility, lean operations, or pre-season order program that management may be seeking to obscure. Check whether temporary workforce ratios, pre-season order volumes, or vertical integration strategy have deteriorated. Ask management directly why these specific strategies were removed from the filing."
+    },
+    {
+      "flag_number": 2,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "70c2fc41384dd6a1",
+        "peer": "ab08451c0edefc75"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "GENC explicitly states it 'had no long-term or short-term debt outstanding at June 30, 2025 or September 30, 2024,' which is a clear factual disclosure rather than evasion. The divergence between PLOW's extensive debt discussion and GENC's absence of debt discussion reflects genuinely different capital structures, not disclosure evasion by either party. PLOW is actually providing appropriately detailed debt financing disclosure for a leveraged company.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ed22edc594da060c",
+        "peer": "f05ceb7c2cf2eea8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "GENC (Gencor Industries) manufactures heavy machinery for hot-mix asphalt plants and related equipment, which has a fundamentally different seasonality and product lifecycle profile than PLOW's snow and ice control equipment. The peer passages shown discuss revenue recognition for custom equipment and product warranty estimation, which are appropriate disclosures for GENC's business. The lack of snow-related seasonality disclosure by GENC reflects genuine business differences, not disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ed22edc594da060c",
+        "peer": "f3250b9d34ff404d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The peer passage from ASTE (Astec Industries) discusses restructuring charges and asset gains, which is unrelated to the seasonality topic flagged. ASTE manufactures road construction and aggregate processing equipment, which faces different seasonal dynamics than PLOW's snow and ice control business. The absence of snow-related seasonality disclosure from ASTE reflects a legitimate business difference. Furthermore, ASTE likely addresses its own seasonality elsewhere in its filing rather than in a restructuring charges section.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "The single genuine flag represents a meaningful degradation in PLOW's operational strategy disclosure, where four specific cost management and business model strategies were compressed into a single vague sentence. The three peer divergence flags were false positives driven by comparing companies with fundamentally different business models and capital structures. The temporal change in Flag 1 is concerning because it removes the type of granular operational detail that investors rely on to assess PLOW's ability to navigate its inherently seasonal and weather-dependent business.",
+    "top_concerns": [
+      "Removal of specific cost management strategies (variable workforce, lean production, pre-season orders, vertical integration) from MD&A without explanation \u2014 potential signal of operational challenges",
+      "Determine whether pre-season order program participation has declined, which could indicate weakening distributor confidence or channel dynamics",
+      "Assess whether PLOW's variable cost structure or workforce flexibility has been compromised, reducing its ability to manage seasonal demand swings"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 0,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "PLOW",
+    "model": "claude-opus-4-6",
+    "input_tokens": 3231,
+    "output_tokens": 1241,
+    "timestamp": "2026-04-09T12:21:28.533923"
+  }
+}

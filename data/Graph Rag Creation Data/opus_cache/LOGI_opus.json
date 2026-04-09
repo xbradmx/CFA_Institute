@@ -1,0 +1,163 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "efef5081a2f90dbd",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior passage is a routine MD&A variance explanation noting that G&A expenses increased due to 'higher personnel-related costs to support business growth.' This is a quarter-specific line-item explanation, not a standing human capital disclosure. Its absence in the current filing simply means the variance driver changed or was immaterial in the new period. This is normal quarter-over-quarter MD&A variation, not disclosure degradation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "9bf506afbeb0b5d5",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained specific language about trade tariffs increasing the price of products or components, limiting product imports, creating adverse tax consequences, and diminishing customer demand\u2014all directly relevant to cost and margin. Given that tariff risks have intensified rather than diminished since the prior period, removing this specific risk factor rather than updating it is a concerning signal. The passage addressed a distinct margin-impact vector separate from the broader trade policy risk factor in Flag 7.",
+      "investigation_action": "Verify whether tariff-related cost/margin pressure disclosure was consolidated into another risk factor or the MD&A in the current filing. If not, press management on why this specific margin impact language was removed when tariff exposure has increased. Assess whether gross margin guidance or commentary has also become less specific."
+    },
+    {
+      "flag_number": 3,
+      "topic": "cybersecurity_technology",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "2fe04367a1cb5ca3",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained substantive disclosure about personal data collection, processing risks, security breaches, and third-party data storage vulnerabilities. For a consumer electronics company that collects user data through its devices and software ecosystem, cybersecurity and data privacy are material risk categories. Complete removal of this risk factor from the 10-Q without explanation is a meaningful disclosure gap, especially given ongoing regulatory expansion (GDPR enforcement, state privacy laws).",
+      "investigation_action": "Check whether cybersecurity risk disclosure was moved to the 10-K only or consolidated under a different risk heading. If entirely absent, this warrants engagement with management given Logitech's expanding software/SaaS presence and data collection through products like video conferencing and gaming peripherals."
+    },
+    {
+      "flag_number": 4,
+      "topic": "debt_financing",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "cfac6e08b7207e99",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing disclosed specific details about the $750 million revolving credit facility entered in January 2025, associated financial covenants, interest rate risk exposure, and refinancing uncertainty. Removing this entire risk factor is notable because the credit facility presumably remains outstanding. Investors lose visibility into covenant compliance risks and the company's assessment of its ability to refinance. The specificity of the prior disclosure\u2014naming the $750M facility and covenant restrictions\u2014makes its disappearance more concerning than a generic boilerplate removal.",
+      "investigation_action": "Confirm the status of the $750M credit facility and whether any draws have been made. Verify whether debt/financing risk disclosure appears elsewhere in the current filing (e.g., notes to financial statements). If the risk factor was simply dropped while the facility remains in place, this is a material disclosure gap that warrants direct inquiry."
+    },
+    {
+      "flag_number": 5,
+      "topic": "liquidity_solvency",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "1f9b1aab9dca71cb",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This passage specifically addressed the risk that covenant breaches could trigger acceleration of indebtedness and that repayment ability depends on market conditions and future performance. This is directly connected to Flag 4's credit facility disclosure and represents the downside scenario discussion. Removing both the debt risk factor and the associated liquidity/solvency risk creates a compounded disclosure gap where investors lose visibility on both the existence of material debt obligations and the consequences of non-compliance.",
+      "investigation_action": "This should be investigated alongside Flag 4. Assess whether the company's liquidity position has changed materially and whether management is deliberately de-emphasizing leverage risk. Review the financial statements for any changes in credit facility utilization or covenant metrics."
+    },
+    {
+      "flag_number": 6,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "a761212d40474d5b",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The flagged text appears to be a continuation/conclusion of the debt covenant risk discussion (referencing 'compliance with this covenant may restrict our strategic or operational flexibility'). Its removal is likely a consequence of the broader deletion of the debt/financing risk factor rather than a separate independent decision to remove operational risk disclosure. The '39' at the beginning suggests a page number artifact. While the content about restricted strategic flexibility is meaningful, it is essentially derivative of Flags 4 and 5.",
+      "investigation_action": "Assess this in conjunction with Flags 4 and 5 as part of the broader debt-related disclosure removal pattern. No separate investigation needed beyond the debt/covenant inquiry."
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "7b06511ea32c857d",
+        "current": "02829e080711a9f8",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained an extensive, highly specific trade policy risk factor naming China, Canada, Mexico, discussing tariff expansion, retaliatory policies, trade wars, and their impact on operations, costs, and financial results\u2014all directly material given Logitech's principally overseas manufacturing base. This was replaced with a generic tax risk discussion about OECD BEPS/Pillar Two and effective tax rate fluctuations, which is a completely different risk category. The trade policy risk has not been updated or refined\u2014it has been substituted with unrelated content. This is particularly concerning given that tariff uncertainty has escalated significantly since the prior filing period.",
+      "investigation_action": "This is the most significant flag. Determine whether trade/tariff risk disclosure exists anywhere else in the current 10-Q. If Logitech has removed its detailed tariff risk factor at a time when U.S.-China tariffs have materially escalated and the company manufactures principally in affected countries, this represents a serious disclosure degradation. Press management on tariff exposure quantification, supply chain repositioning plans, and pricing pass-through assumptions."
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6168138c713bc873",
+        "peer": "afdaa6f7ff2b2035"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "LOGI provides a specific $368.7 million purchase commitment figure, which is actually a useful quantitative disclosure. CRSR's disclosure is more narrative about supply chain flexibility and tariff-driven inventory pre-builds but is not clearly superior in substance\u2014it's more operational commentary than risk quantification. However, given that LOGI has removed its trade policy risk factor (Flag 7) and does not appear to discuss tariff-related inventory or supply chain mitigation strategies, the lack of contextual supply chain narrative around the purchase commitment figure is a valid concern.",
+      "investigation_action": "Review whether LOGI provides any qualitative discussion of supply chain mitigation strategies, tariff-driven inventory pre-builds, or manufacturing location diversification elsewhere in the filing. The $368.7M commitment figure alone without context on tariff exposure is insufficient given current trade policy risks."
+    },
+    {
+      "flag_number": 9,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "644037da774f8c9b",
+        "peer": "644372a5f760a510"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason has the comparison backwards\u2014it suggests XRX is the one with weaker disclosure, but the flag is ostensibly about LOGI. In reality, LOGI's disclosure of critical accounting estimates is thorough, naming specific areas (customer incentives, sales returns, inventory valuation, uncertain tax positions), describing the estimation process, and confirming no material changes. XRX's passage is about non-GAAP reconciliation methodology, which is a different disclosure topic entirely. This is not a valid peer divergence flag for LOGI.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6168138c713bc873",
+        "peer": "e867f7a0bedb7d10"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason again appears directionally confused\u2014it flags XRX as having minimal disclosure compared to LOGI, but the analysis is supposed to evaluate LOGI's disclosure quality. LOGI actually provides a specific dollar amount ($368.7M) for purchase commitments while XRX provides a single sentence about Lexmark's Juarez facility. If anything, LOGI has the more substantive disclosure here. This flag does not indicate disclosure degradation at LOGI.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "Logitech appears to have systematically removed multiple material risk factors from its 10-Q filing, including detailed trade/tariff risk disclosure (at a time of escalating U.S.-China tariffs), debt/financing risk with specific credit facility details, cybersecurity/data privacy risk, and liquidity/covenant compliance risk. The pattern of removal across interconnected risk categories\u2014particularly trade policy and debt\u2014is consistent with deliberate disclosure reduction rather than routine editorial revision.",
+    "top_concerns": [
+      "Complete removal of detailed trade/tariff risk factor despite Logitech's principal manufacturing in tariff-affected countries and escalating U.S.-China trade tensions (Flag 7)",
+      "Disappearance of $750M credit facility risk factor including covenant compliance and refinancing risk disclosure, with no apparent replacement (Flags 4, 5, 6)",
+      "Removal of cybersecurity and data privacy risk factor for a company with growing software/data collection footprint (Flag 3)"
+    ],
+    "genuine_count": 5,
+    "borderline_count": 2,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "LOGI",
+    "model": "claude-opus-4-6",
+    "input_tokens": 4806,
+    "output_tokens": 2901,
+    "timestamp": "2026-04-09T12:13:05.327414"
+  }
+}

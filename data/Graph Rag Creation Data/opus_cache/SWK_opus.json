@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "f2b980a4dccf90f9",
+        "current": "5ad1b8f3fb00bddc",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period filing included detailed GAAP-to-Non-GAAP reconciliation tables with specific dollar amounts for gross profit, SG&A, earnings before income taxes, income taxes, net earnings, and diluted EPS for both Q1 2025 and Q1 2024. The current period replaces this with a single sentence noting 'Non-GAAP adjustments totaled $74.6 million for the six months ended June 28, 2025,' omitting the line-by-line reconciliation tables and quarterly breakouts. This loss of granularity makes it significantly harder for analysts to decompose the quality of earnings and track Non-GAAP adjustment trends quarter-over-quarter.",
+      "investigation_action": "Request the detailed quarterly Non-GAAP reconciliation tables from IR; verify whether the full reconciliation is available elsewhere in the filing or supplemental materials; assess whether the aggregation to six-month periods obscures deterioration in any individual line item's Non-GAAP adjustments."
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "2b08ee59fcd69b49",
+        "current": "2d8f990a6b95dc26",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed specific tariff mitigation actions including 'a high-single digit U.S. Tools & Outdoor price increase in April, with plans to introduce a second price increase effective the beginning of the third quarter' and quantified a negative $0.75 EPS impact from tariffs net of mitigations. The current period replaces this with vague language about 'continuing to execute its plan with the objective to position the business for success' and provides only a gross annualized tariff figure of ~$800 million without a net EPS impact estimate. The removal of the specific net EPS impact and concrete pricing action timeline is a material reduction in forward-looking transparency, especially given the tariff exposure appears to have grown substantially.",
+      "investigation_action": "Press management on the updated net EPS impact estimate from tariffs after mitigations; clarify whether the second price increase was implemented and its realized impact; determine why the company shifted from a specific net impact figure to only a gross annualized number, and whether the omission signals worse-than-expected mitigation effectiveness."
+    },
+    {
+      "flag_number": 3,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "eb6d4e8c6e0834e8",
+        "peer": "2eaf2429df4c95c1"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag is raised because SSD (Simpson Strong-Tie) provides less debt disclosure than SWK, but this reflects genuine business differences rather than disclosure evasion. SSD has a much simpler capital structure with a single $450M revolving facility and $376.9M term loan with no outstanding revolver draws, while SWK has $1.1 billion in commercial paper, multiple credit facilities totaling $4.75 billion, and complex hedging arrangements. SSD's minimal disclosure is proportional to its minimal debt complexity; this is not a case of SWK peer divergence suggesting SWK is hiding something.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ebfbba532773bc71",
+        "peer": "14ca01073d86e0a4"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies SSD as providing less supply chain detail than SWK, but the screening is oriented in the wrong direction for monitoring SWK as the target company. SWK is actually the more transparent discloser here, providing extensive quantified detail on its $1.5 billion supply chain transformation, tariff mitigation guiding principles, and segment-level impacts. The peer's vagueness does not indicate SWK disclosure degradation. If anything, SWK's disclosure is commendable relative to peers.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d9219a6c1e3fffcb",
+        "peer": "2f1c2d97dcaa6db2"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Similar to Flag 4, this flag is oriented to highlight SSD's relative lack of supply chain risk disclosure compared to SWK's detailed Risk Factors discussion. SWK provides extensive, specific disclosure on rare earth mineral restrictions, port disruptions, inventory optimization risks, and China/Taiwan/South Korea sourcing dependencies. The peer divergence does not indicate SWK is degrading its disclosure; rather, SWK appears to be an industry leader in supply chain risk transparency.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8f82642fc85f9686",
+        "peer": "8817f903c1987436"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag suggests SNA provides minimal regulatory/legal disclosure compared to SWK, but this again reflects SWK being the more transparent party. SWK discloses a $142.3 million environmental remediation reserve, detailed Pillar Two analysis, OBBBA tax reform implications, and transition tax liabilities. SNA's disclosure is simpler and less detailed, but this peer divergence does not indicate any degradation by SWK. The two companies also have different legal/regulatory exposure profiles \u2014 SWK has a significant environmental remediation matter (Centredale) that SNA does not.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c6355520b28222c8",
+        "peer": "0970705595710f47"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The flag identifies that SWK's Risk Factors contain only a generic statement about potential market share loss to competitors \u2014 'Certain of the Company's competitors may be better positioned than the Company to withstand or react to these kinds of changes' \u2014 while SNA provides extensive quantified segment-level revenue performance data. However, the comparison is somewhat misaligned: SNA's detailed revenue data comes from MD&A (operational results), while SWK's passage is from Risk Factors (forward-looking risks). That said, SWK's Risk Factor language is notably vague given the company is actively experiencing tariff-related shipment disruptions and a 3% organic revenue decline disclosed elsewhere in the filing, suggesting the Risk Factors section could be more forthcoming about realized competitive pressures.",
+      "investigation_action": "Review whether SWK's MD&A provides sufficient quantified segment-level revenue detail to compensate for the vague Risk Factors language; assess whether SWK is losing market share to competitors with better tariff positioning, particularly in Tools & Outdoor."
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d9219a6c1e3fffcb",
+        "peer": "43b8f4e342916792"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This is a near-duplicate of Flags 4 and 5, again comparing SWK's detailed supply chain risk disclosure against a peer (SNA this time) that provides minimal discussion. SWK's Risk Factors include specific, material disclosures about rare earth mineral export restrictions, sourcing concentration in China/Taiwan/South Korea, and port/logistics risks. The flag correctly identifies that SNA's disclosure is thin relative to its $997.7 million inventory position, but this does not indicate any disclosure degradation by SWK, which is the company being monitored.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "SWK exhibits two genuine temporal disclosure degradation signals: the removal of detailed quarterly Non-GAAP reconciliation tables in favor of aggregated six-month summaries, and the replacement of specific tariff mitigation details (net EPS impact of -$0.75, specific price increase timelines) with vague strategic language despite the gross tariff exposure growing to ~$800 million annualized. The six peer divergence flags are largely false positives \u2014 SWK is generally the more transparent discloser relative to SSD and SNA. The temporal changes are concerning because they coincide with a period of elevated tariff uncertainty and potential earnings pressure.",
+    "top_concerns": [
+      "Removal of quarterly Non-GAAP reconciliation detail \u2014 may obscure deteriorating quality of earnings or growing adjustments in Q2 2025",
+      "Elimination of specific net tariff EPS impact estimate and concrete price increase timelines \u2014 previously disclosed -$0.75 net impact replaced with only a gross $800M figure, potentially masking worsening mitigation effectiveness",
+      "Vague forward-looking language on competitive positioning and revenue risks given active organic revenue declines and tariff-related shipment disruptions"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 1,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "SWK",
+    "model": "claude-opus-4-6",
+    "input_tokens": 12092,
+    "output_tokens": 2543,
+    "timestamp": "2026-04-09T12:32:43.230083"
+  }
+}
