@@ -293,36 +293,40 @@ def _compute_earnings_persistence(
         direction = "n/a"
         change_pct = None
 
-    # Persistence β — OLS autocorrelation over all available quarters
-    all_soe = [s for _, s in rows]
-    beta = None
-    if len(all_soe) >= 4:
-        x = all_soe[:-1]
-        y = all_soe[1:]
-        mx, my = sum(x) / len(x), sum(y) / len(y)
-        cov   = sum((xi - mx) * (yi - my) for xi, yi in zip(x, y))
-        var_x = sum((xi - mx) ** 2 for xi in x)
-        if var_x > 0:
-            beta = round(cov / var_x, 3)
-
-    if beta is None:
-        persistence_label = "N/A"
-    elif beta > 0.60:
-        persistence_label = "HIGH"
-    elif beta > 0.30:
-        persistence_label = "MODERATE"
+    # Persistence: normalise the absolute change by the company's own
+    # pre-filing earnings volatility (std dev).  This benchmarks the move
+    # against what was historically normal for *this* company, which is the
+    # defensible approach — a 30% swing means something different for a
+    # cyclical industrial vs a steady compounder.
+    #   < 0.5σ  →  HIGH     (change within half a historical std dev)
+    #   < 1.0σ  →  MODERATE
+    #   ≥ 1.0σ  →  LOW      (moved more than one historical std dev)
+    pre_soe = [s for _, s in pre]
+    if (soe_at_filing is not None and soe_latest is not None and len(pre_soe) >= 2):
+        import statistics as _stats
+        hist_std = _stats.stdev(pre_soe)
+        if hist_std > 0:
+            sigma_move = abs(soe_latest - soe_at_filing) / hist_std
+            if sigma_move < 0.5:
+                persistence_label = "HIGH"
+            elif sigma_move < 1.0:
+                persistence_label = "MODERATE"
+            else:
+                persistence_label = "LOW"
+        else:
+            # Zero historical variance — any change is meaningful
+            persistence_label = "HIGH" if change_pct is not None and abs(change_pct) < 5 else "LOW"
     else:
-        persistence_label = "LOW"
+        persistence_label = "N/A"
 
     return {
-        "profitable":         profitable,
-        "soe_at_filing":      round(soe_at_filing, 4) if soe_at_filing is not None else None,
-        "soe_latest":         round(soe_latest,    4) if soe_latest    is not None else None,
-        "n_post_quarters":    len(post),
-        "direction":          direction,
-        "change_pct":         change_pct,
-        "persistence_beta":   beta,
-        "persistence_label":  persistence_label,
+        "profitable":        profitable,
+        "soe_at_filing":     round(soe_at_filing, 4) if soe_at_filing is not None else None,
+        "soe_latest":        round(soe_latest,    4) if soe_latest    is not None else None,
+        "n_post_quarters":   len(post),
+        "direction":         direction,
+        "change_pct":        change_pct,
+        "persistence_label": persistence_label,
     }
 
 
@@ -1390,18 +1394,14 @@ class DDDSApp(ctk.CTk):
 
             # Persistence
             plabel = ep.get("persistence_label", "N/A")
-            pbeta  = ep.get("persistence_beta")
-            p_clr  = {
-                "HIGH": GREEN, "MODERATE": AMBER, "LOW": RED
-            }.get(plabel, TXT3)
-            p_txt  = f"{plabel}" + (f" ({pbeta:.2f})" if pbeta is not None else "")
-            ax.text(col_x[4], y_row + row_h * 0.35, p_txt,
+            p_clr  = {"HIGH": GREEN, "MODERATE": AMBER, "LOW": RED}.get(plabel, TXT3)
+            ax.text(col_x[4], y_row + row_h * 0.35, plabel,
                     fontsize=7, fontfamily="Consolas", color=p_clr,
                     va="center", transform=ax.transAxes)
 
         self._rankings_subtitle.set_text(
-            f"Top {n}  ·  earnings persistence β (OLS autocorrelation)"
-            f"  ·  SOE = standardised operating earnings / assets"
+            f"Top {n}  ·  persistence = |ΔSOE| / σ(pre-filing SOE)"
+            f"  ·  HIGH <0.5σ  MODERATE <1.0σ  LOW ≥1.0σ"
         )
 
     def _draw_right_stats(self, ax, data, ys, PLOT_BG, GRID_CLR):
