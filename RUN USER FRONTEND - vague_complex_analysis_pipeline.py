@@ -1,4 +1,5 @@
 # =============================================================================
+# currently does not run full files propperly, however backend will
 # DDDS — Desktop Analyst Interface
 # Disclosure Degradation Detection System | The Transparency Project
 # Lancaster University | CFA AI Investment Challenge 2026

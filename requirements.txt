@@ -57,9 +57,11 @@ python-docx>=1.1.0      # Automated two-page investment memo generation
 
 # ── Visualisation (Run 10) ───────────────────────────────────────────────────
 geopandas>=0.14.0       # Geographic heatmap rendering
-geodatasets>=2023.12.0  # Boundary data for US state/county maps
-matplotlib>=3.8.0       # Plot rendering
-shapely>=2.0.0          # Geometric operations for geographic layers
+geodatasets>=2023.12.0  # World country boundary data (Natural Earth) for choropleth map
+matplotlib>=3.8.0       # Plot rendering (TkAgg backend)
+shapely>=2.0.0          # Geometric operations and spatial indexing for hover detection
+# Note: Run 10 reads *_ddds_scores.csv files from data/analyst_outputs/
+# (populated by RUN USER BACKEND). csv, io, glob are stdlib — no extra installs needed.
 
 # ── Orchestration ─────────────────────────────────────────────────────────────
 prefect>=2.14.0         # Pipeline orchestration and run scheduling
@@ -69,4 +71,5 @@ python-dotenv>=1.0.0    # .env credential management (Neo4j password, API keys, 
 
 # ── Backtesting (Run 11) ─────────────────────────────────────────────────────
 scipy>=1.12.0           # p-value calculation in Li (2008) earnings persistence regression
+statsmodels>=0.14.0     # OLS regression with HAC-robust standard errors (Li 2008 framework)
 yfinance>=0.2.0         # Fallback earnings fetch if XBRL data unavailable
