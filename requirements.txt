@@ -21,6 +21,13 @@
 #   Run 10  — Geographic risk heatmap
 #   Run 11  — Backtesting (Li 2008 earnings persistence regression)
 #   RUN USER BACKEND - vague_complex_analysis_pipeline.py — Standalone analyst tool (wraps Runs 1 + 6)
+#   analyst_frontend - complete intergration of all features
+#   analyst_backend - complete intergration of all features
+
+
+# ──────────────────────────────────── analyst_frontend, analyst_backend ───────────────────────
+
+yfinance==0.2.52
 
 # ── NLP / Model Training (Runs 5, 6, RUN USER BACKEND analyst_pipeline) ───────────────────────
 torch>=2.0.0
