@@ -112,40 +112,53 @@ def load_filing_trend(ticker: str) -> list[dict]:
     return sorted(results, key=lambda x: x["date"])
 
 
-def load_sector_trend() -> list[dict]:
+def load_sector_and_rankings(top_n: int = 10) -> tuple[list[dict], list[dict]]:
     """
-    Aggregate mean scores across every filing, bucketed into calendar quarters.
-    Returns list of dicts sorted by quarter, each with mean/std vague & complex.
+    Single pass over all CSVs. Returns:
+      sector_data  — quarterly mean/std scores for the Sector Trends tab
+      rankings     — top_n companies by mean vague_prob for the Rankings tab
     """
     import statistics
     from collections import defaultdict
 
-    buckets: dict = defaultdict(lambda: {"vague": [], "complex": []})
+    # Per-quarter buckets (filing-level means, for sector trend)
+    q_buckets: dict = defaultdict(lambda: {"vague": [], "complex": []})
+    # Per-company: track most-recent filing only (date + raw sentence scores)
+    c_latest: dict = {}   # ticker -> {"date": datetime, "path": Path}
 
+    # First pass: sector trend buckets + find each company's latest filing date
     for path in sorted(_OUTPUTS_DIR.glob("*_ddds_scores.csv")):
         m = _FILING_RE.match(path.name)
         if not m:
             continue
-        date = datetime.strptime(m.group("date"), "%Y-%m-%d")
-        q_month  = ((date.month - 1) // 3) * 3 + 1
-        q_start  = datetime(date.year, q_month, 1)
+        ticker = m.group("ticker")
+        date   = datetime.strptime(m.group("date"), "%Y-%m-%d")
+        q_month = ((date.month - 1) // 3) * 3 + 1
+        q_start = datetime(date.year, q_month, 1)
 
         rows = _parse_ddds_csv(path)
         if not rows:
             continue
         vp = [r["vague_prob"]   for r in rows]
         cp = [r["complex_prob"] for r in rows]
-        buckets[q_start]["vague"].append(sum(vp) / len(vp))
-        buckets[q_start]["complex"].append(sum(cp) / len(cp))
 
-    results = []
-    for q_start in sorted(buckets):
-        vl = buckets[q_start]["vague"]
-        cl = buckets[q_start]["complex"]
+        # Sector trend: store filing-level means per quarter
+        q_buckets[q_start]["vague"].append(sum(vp) / len(vp))
+        q_buckets[q_start]["complex"].append(sum(cp) / len(cp))
+
+        # Rankings: keep track of the most recent filing per company
+        if ticker not in c_latest or date > c_latest[ticker]["date"]:
+            c_latest[ticker] = {"date": date, "path": path}
+
+    # Build sector trend list
+    sector = []
+    for q_start in sorted(q_buckets):
+        vl = q_buckets[q_start]["vague"]
+        cl = q_buckets[q_start]["complex"]
         al = [(v + c) / 2 for v, c in zip(vl, cl)]
         n  = len(vl)
         q_num = (q_start.month - 1) // 3 + 1
-        results.append({
+        sector.append({
             "quarter_start": q_start,
             "label":         f"Q{q_num} '{q_start.strftime('%y')}",
             "mean_vague":    sum(vl) / n,
@@ -155,7 +168,162 @@ def load_sector_trend() -> list[dict]:
             "std_complex":   statistics.stdev(cl) if n > 1 else 0.0,
             "n_filings":     n,
         })
-    return results
+
+    # Build rankings: parse only each company's most recent filing
+    _KEY_SECTIONS = {"MD&A", "Risk Factors"}
+    raw_rankings = []
+    for ticker, info in c_latest.items():
+        rows = _parse_ddds_csv(info["path"])
+        if not rows:
+            continue
+        # Only score companies with ≥50 sentences across MD&A + Risk Factors
+        key_rows = [r for r in rows if r["section"] in _KEY_SECTIONS]
+        if len(key_rows) < 50:
+            continue
+        vl = [r["vague_prob"]   for r in key_rows]
+        cl = [r["complex_prob"] for r in key_rows]
+        mean_v = sum(vl) / len(vl)
+        mean_c = sum(cl) / len(cl)
+        raw_rankings.append({
+            "ticker":       ticker,
+            "filing_date":  info["date"].strftime("%Y-%m-%d"),
+            "mean_vague":   mean_v,
+            "mean_complex": mean_c,
+            "mean_avg":     (mean_v + mean_c) / 2,
+            "vague_pct":    sum(1 for v in vl if v >= 0.5) / len(vl) * 100,
+            "n_sentences":  len(vl),   # MD&A + Risk Factors sentences only
+        })
+
+    # Build one top-10 list per metric; enrich the union (price + earnings)
+    top_vague   = sorted(raw_rankings, key=lambda x: -x["mean_vague"])[:top_n]
+    top_complex = sorted(raw_rankings, key=lambda x: -x["mean_complex"])[:top_n]
+    top_both    = sorted(raw_rankings, key=lambda x: -x["mean_avg"])[:top_n]
+
+    # Union keyed by ticker so we only fetch each company once
+    enrich_map: dict = {e["ticker"]: e
+                        for lst in [top_vague, top_complex, top_both]
+                        for e in lst}
+
+    # Fetch stock price change from filing date → today for each unique company
+    try:
+        import yfinance as yf
+        from datetime import date, timedelta
+        today    = date.today()
+        tomorrow = (today + timedelta(days=1)).strftime("%Y-%m-%d")
+        for entry in enrich_map.values():
+            try:
+                hist = yf.Ticker(entry["ticker"]).history(
+                    start=entry["filing_date"],
+                    end=tomorrow,
+                    auto_adjust=True,
+                )
+                if hist.empty or len(hist) < 2:
+                    raise ValueError("insufficient history")
+                p0 = float(hist["Close"].iloc[0])
+                p1 = float(hist["Close"].iloc[-1])
+                entry["price_change_pct"] = round((p1 - p0) / p0 * 100, 1)
+                entry["price_at_filing"]  = round(p0, 2)
+                entry["price_today"]      = round(p1, 2)
+            except Exception:
+                entry["price_change_pct"] = None
+                entry["price_at_filing"]  = None
+                entry["price_today"]      = None
+    except ImportError:
+        for entry in enrich_map.values():
+            entry["price_change_pct"] = None
+
+    # Load quarterly earnings and compute persistence for each unique company
+    _qe_path = _ROOT / "data" / "backtest" / "quarterly_earnings_yfinance.csv"
+    quarterly_by_ticker: dict = {}
+    if _qe_path.exists():
+        from collections import defaultdict as _dd
+        _qb: dict = _dd(list)
+        with open(_qe_path, encoding="utf-8") as _f:
+            for _row in csv.DictReader(_f):
+                try:
+                    _qb[_row["ticker"]].append(
+                        (_row["quarter_key"], float(_row["soe"]))
+                    )
+                except (ValueError, TypeError):
+                    pass
+        quarterly_by_ticker = {t: sorted(v) for t, v in _qb.items()}
+
+    for entry in enrich_map.values():
+        entry["earnings"] = _compute_earnings_persistence(
+            entry["ticker"], entry["filing_date"], quarterly_by_ticker
+        )
+
+    return sector, {"vague": top_vague, "complex": top_complex, "both": top_both}
+
+
+def _compute_earnings_persistence(
+    ticker: str, filing_date_str: str, quarterly_by_ticker: dict
+) -> dict | None:
+    """Compute profitability status and earnings persistence around the filing date."""
+    rows = quarterly_by_ticker.get(ticker, [])
+    if not rows:
+        return None
+
+    def _qkey_to_date(qk: str) -> datetime:
+        yr, q = qk.split("-Q")
+        return datetime(int(yr), (int(q) - 1) * 3 + 1, 1)
+
+    filing_dt = datetime.strptime(filing_date_str, "%Y-%m-%d")
+
+    pre  = [(k, s) for k, s in rows if _qkey_to_date(k) <= filing_dt]
+    post = [(k, s) for k, s in rows if _qkey_to_date(k) >  filing_dt]
+
+    soe_at_filing = pre[-1][1]  if pre  else (post[0][1] if post else None)
+    soe_latest    = post[-1][1] if post else (pre[-1][1] if pre else None)
+
+    profitable = (soe_at_filing or 0) > 0
+
+    # Direction: compare latest SOE to filing SOE
+    if soe_at_filing is not None and soe_latest is not None:
+        baseline = abs(soe_at_filing) if abs(soe_at_filing) > 0.002 else 0.002
+        chg = (soe_latest - soe_at_filing) / baseline
+        if chg > 0.10:
+            direction = "improving"
+        elif chg < -0.10:
+            direction = "deteriorating"
+        else:
+            direction = "stable"
+        change_pct = round(chg * 100, 1)
+    else:
+        direction = "n/a"
+        change_pct = None
+
+    # Persistence β — OLS autocorrelation over all available quarters
+    all_soe = [s for _, s in rows]
+    beta = None
+    if len(all_soe) >= 4:
+        x = all_soe[:-1]
+        y = all_soe[1:]
+        mx, my = sum(x) / len(x), sum(y) / len(y)
+        cov   = sum((xi - mx) * (yi - my) for xi, yi in zip(x, y))
+        var_x = sum((xi - mx) ** 2 for xi in x)
+        if var_x > 0:
+            beta = round(cov / var_x, 3)
+
+    if beta is None:
+        persistence_label = "N/A"
+    elif beta > 0.60:
+        persistence_label = "HIGH"
+    elif beta > 0.30:
+        persistence_label = "MODERATE"
+    else:
+        persistence_label = "LOW"
+
+    return {
+        "profitable":         profitable,
+        "soe_at_filing":      round(soe_at_filing, 4) if soe_at_filing is not None else None,
+        "soe_latest":         round(soe_latest,    4) if soe_latest    is not None else None,
+        "n_post_quarters":    len(post),
+        "direction":          direction,
+        "change_pct":         change_pct,
+        "persistence_beta":   beta,
+        "persistence_label":  persistence_label,
+    }
 
 
 def load_tickers() -> list[str]:
@@ -195,9 +363,9 @@ class DDDSApp(ctk.CTk):
 
         self._build_layout()
         self._populate_ticker_list(self._tickers)
-        # Start loading heatmap and sector trend data in background immediately
-        threading.Thread(target=self._load_heatmap,  daemon=True).start()
-        threading.Thread(target=self._load_sector,   daemon=True).start()
+        # Background loads — heatmap and sector/rankings share one CSV pass
+        threading.Thread(target=self._load_heatmap,          daemon=True).start()
+        threading.Thread(target=self._load_sector_rankings,  daemon=True).start()
 
     # ── Layout ────────────────────────────────────────────────────────────────
 
@@ -379,6 +547,7 @@ class DDDSApp(ctk.CTk):
         self._tabs.add("  Risk Heatmap  ")
         self._tabs.add("  Filing Trends  ")
         self._tabs.add("  Sector Trends  ")
+        self._tabs.add("  FinBERT Rankings  ")
 
         self._tabs.configure(command=self._on_tab_change)
 
@@ -386,6 +555,7 @@ class DDDSApp(ctk.CTk):
         self._build_heatmap_tab()
         self._build_trend_tab()
         self._build_sector_tab()
+        self._build_rankings_tab()
 
     def _on_tab_change(self):
         tab = self._tabs.get()
@@ -413,6 +583,12 @@ class DDDSApp(ctk.CTk):
         elif tab == "  Sector Trends  ":
             self._ticker_lbl.configure(
                 text="US Industrials — Sector Vagueness Trend",
+                text_color=TXT2,
+            )
+            self._signal_badge.configure(text="", fg_color="transparent")
+        elif tab == "  FinBERT Rankings  ":
+            self._ticker_lbl.configure(
+                text="US Industrials — Top 10 by FinBERT Score",
                 text_color=TXT2,
             )
             self._signal_badge.configure(text="", fg_color="transparent")
@@ -754,15 +930,19 @@ class DDDSApp(ctk.CTk):
         )
         self._sector_spinner.place(relx=0.5, rely=0.5, anchor="center")
 
-    def _load_sector(self):
-        """Background thread: parses all CSVs and renders the sector chart."""
+    def _load_sector_rankings(self):
+        """Background thread: single CSV pass → sector chart + rankings chart."""
         try:
-            data = load_sector_trend()
-            self.after(0, lambda: self._render_sector(data))
+            sector_data, rankings_dict = load_sector_and_rankings(top_n=10)
+            self.after(0, lambda: self._render_sector(sector_data))
+            self.after(0, lambda: self._render_rankings(rankings_dict))
         except Exception as exc:
+            msg = f"Data unavailable.\n{exc}"
             self.after(0, lambda: self._sector_spinner.configure(
-                text=f"Sector data unavailable.\n{exc}",
-                wraplength=500,
+                text=msg, wraplength=500,
+            ))
+            self.after(0, lambda: self._rankings_spinner.configure(
+                text=msg, wraplength=500,
             ))
 
     def _render_sector(self, data: list[dict]):
@@ -879,6 +1059,388 @@ class DDDSApp(ctk.CTk):
         canvas = FigureCanvasTkAgg(fig, master=self._sector_frame)
         canvas.draw()
         canvas.get_tk_widget().pack(fill="both", expand=True)
+
+    # ── FinBERT Rankings tab ──────────────────────────────────────────────────
+
+    def _build_rankings_tab(self):
+        tab = self._tabs.tab("  FinBERT Rankings  ")
+        tab.configure(fg_color=BG)
+
+        self._rankings_frame = ctk.CTkFrame(tab, fg_color=BG, corner_radius=0)
+        self._rankings_frame.pack(fill="both", expand=True)
+
+        self._rankings_spinner = ctk.CTkLabel(
+            self._rankings_frame,
+            text="Computing FinBERT rankings across all filings...",
+            font=ctk.CTkFont(family="Consolas", size=12),
+            text_color=TXT3,
+        )
+        self._rankings_spinner.place(relx=0.5, rely=0.5, anchor="center")
+
+    def _render_rankings(self, rankings_dict: dict):
+        from matplotlib.figure import Figure
+        from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+
+        self._rankings_spinner.place_forget()
+
+        if not any(rankings_dict.values()):
+            self._rankings_spinner.configure(text="No ranking data found.")
+            self._rankings_spinner.place(relx=0.5, rely=0.5, anchor="center")
+            return
+
+        self._rankings_all_data = rankings_dict
+        self._rankings_view     = "price"
+        self._rankings_metric   = "both"
+
+        # ── Toggle row ────────────────────────────────────────────────────────
+        toggle_row = ctk.CTkFrame(self._rankings_frame, fg_color=SURFACE,
+                                  height=38, corner_radius=0)
+        toggle_row.pack(fill="x", side="top")
+        toggle_row.pack_propagate(False)
+
+        # View toggles
+        self._rankings_toggle_btns: dict[str, ctk.CTkButton] = {}
+        for view, label in [("price", "Stock Price"),
+                             ("earnings", "Earnings Persistence"),
+                             ("stats", "Stats")]:
+            btn = ctk.CTkButton(
+                toggle_row, text=label,
+                font=ctk.CTkFont(family="Consolas", size=10),
+                fg_color=RAISED if view == "price" else "transparent",
+                hover_color=RAISED,
+                text_color=TXT if view == "price" else TXT2,
+                height=28, corner_radius=4,
+                command=lambda v=view: self._switch_rankings_view(v),
+            )
+            btn.pack(side="left", padx=(8, 2), pady=5)
+            self._rankings_toggle_btns[view] = btn
+
+        # Separator + "RANK BY" label
+        ctk.CTkLabel(toggle_row, text="│",
+                     font=ctk.CTkFont(size=16), text_color=BORDER,
+                     ).pack(side="left", padx=(12, 4))
+        ctk.CTkLabel(toggle_row, text="RANK BY",
+                     font=ctk.CTkFont(family="Consolas", size=9),
+                     text_color=TXT3).pack(side="left", padx=(0, 6))
+
+        # Metric toggles
+        self._rankings_metric_btns: dict[str, ctk.CTkButton] = {}
+        for metric, label in [("vague", "Vague"),
+                               ("complex", "Complex"),
+                               ("both", "Both")]:
+            btn = ctk.CTkButton(
+                toggle_row, text=label,
+                font=ctk.CTkFont(family="Consolas", size=10),
+                fg_color=RAISED if metric == "both" else "transparent",
+                hover_color=RAISED,
+                text_color=TXT if metric == "both" else TXT2,
+                height=28, corner_radius=4,
+                command=lambda m=metric: self._switch_rankings_metric(m),
+            )
+            btn.pack(side="left", padx=(2, 2), pady=5)
+            self._rankings_metric_btns[metric] = btn
+
+        # ── Figure with two axes ──────────────────────────────────────────────
+        fig = Figure(figsize=(13, 6), dpi=110, facecolor=BG)
+        ax_left  = fig.add_axes([0.10, 0.09, 0.52, 0.82])
+        ax_right = fig.add_axes([0.65, 0.09, 0.32, 0.82])
+
+        self._rankings_fig      = fig
+        self._rankings_ax_left  = ax_left
+        self._rankings_ax       = ax_right
+
+        from datetime import date as _date
+        self._rankings_today_str = _date.today().strftime("%Y-%m-%d")
+        self._rankings_subtitle  = fig.text(
+            0.5, 0.98, "", ha="center", va="top",
+            fontsize=8, fontfamily="Consolas", color=TXT3,
+        )
+
+        canvas = FigureCanvasTkAgg(fig, master=self._rankings_frame)
+        canvas.draw()
+        canvas.get_tk_widget().pack(fill="both", expand=True)
+        self._rankings_canvas = canvas
+
+        # Draw initial state
+        data = rankings_dict["both"]
+        self._rankings_data = data
+        self._rankings_ys   = list(range(len(data)))
+        self._draw_left_bars(ax_left, data, self._rankings_ys)
+        self._switch_rankings_view("price")
+
+    # ── Rankings helpers ──────────────────────────────────────────────────────
+
+    def _draw_left_bars(self, ax, data, ys):
+        from matplotlib.lines import Line2D
+        PLOT_BG  = "#0e1118"
+        GRID_CLR = "#1a2133"
+        CLR_VAGUE   = "#4d7fbe"
+        CLR_COMPLEX = "#c9924a"
+        CLR_AVG     = "#9b6ec4"
+        bh = 0.28
+
+        ax.cla()
+        ax.set_facecolor(PLOT_BG)
+        ax.set_axisbelow(True)
+        ax.xaxis.grid(True, color=GRID_CLR, linewidth=0.6, linestyle=":")
+        ax.spines["top"].set_visible(False)
+        ax.spines["right"].set_visible(False)
+        ax.spines["left"].set_color(GRID_CLR)
+        ax.spines["bottom"].set_color(GRID_CLR)
+        ax.tick_params(colors=TXT2, labelsize=9, length=0)
+        for lbl in ax.get_xticklabels() + ax.get_yticklabels():
+            lbl.set_fontfamily("Consolas")
+
+        n        = len(data)
+        tickers  = [d["ticker"]       for d in data]
+        vague    = [d["mean_vague"]   for d in data]
+        complex_ = [d["mean_complex"] for d in data]
+        avg      = [d["mean_avg"]     for d in data]
+
+        ax.barh([y + bh for y in ys], vague,    height=bh, color=CLR_VAGUE,
+                alpha=0.85, zorder=2)
+        ax.barh(ys,                   complex_, height=bh, color=CLR_COMPLEX,
+                alpha=0.85, zorder=2)
+        for i, (v, c) in enumerate(zip(vague, complex_)):
+            ax.text(v + 0.008, i + bh + bh / 2, f"{v:.3f}", va="center",
+                    fontsize=7.5, fontfamily="Consolas", color=CLR_VAGUE)
+            ax.text(c + 0.008, i + bh / 2,       f"{c:.3f}", va="center",
+                    fontsize=7.5, fontfamily="Consolas", color=CLR_COMPLEX)
+        ax.scatter(avg, [y + bh for y in ys], marker="D", s=28,
+                   color=CLR_AVG, zorder=5)
+        ax.axvline(0.5, color=TXT3, linewidth=0.7, linestyle=":", alpha=0.7)
+        ax.text(0.501, n - 0.1, "0.5", fontsize=7, fontfamily="Consolas",
+                color=TXT3, va="top")
+        ax.set_yticks([y + bh for y in ys])
+        ax.set_yticklabels([f"#{i+1}  {t}" for i, t in enumerate(tickers)],
+                           fontsize=9)
+        ax.invert_yaxis()
+        ax.set_xlim(0, 1.05)
+        ax.set_xlabel("Mean Score (0–1)", fontsize=8, fontfamily="Consolas",
+                      color=TXT2, labelpad=8)
+        leg = ax.legend(
+            handles=[
+                Line2D([0], [0], color=CLR_VAGUE,   linewidth=8, alpha=0.85, label="Vague"),
+                Line2D([0], [0], color=CLR_COMPLEX, linewidth=8, alpha=0.85, label="Complex"),
+                Line2D([0], [0], marker="D", color=CLR_AVG, markersize=6,
+                       linewidth=0, label="Avg"),
+            ],
+            loc="lower right", fontsize=8,
+            facecolor=SURFACE, edgecolor=BORDER, labelcolor=TXT2, framealpha=0.95,
+        )
+        for t in leg.get_texts():
+            t.set_fontfamily("Consolas")
+
+    def _switch_rankings_metric(self, metric: str):
+        self._rankings_metric = metric
+        for m, btn in self._rankings_metric_btns.items():
+            btn.configure(
+                fg_color=RAISED if m == metric else "transparent",
+                text_color=TXT   if m == metric else TXT2,
+            )
+        data = self._rankings_all_data[metric]
+        self._rankings_data = data
+        self._rankings_ys   = list(range(len(data)))
+        self._draw_left_bars(self._rankings_ax_left, data, self._rankings_ys)
+        self._switch_rankings_view(self._rankings_view)
+
+    # ── Right-panel drawing helpers ───────────────────────────────────────────
+
+    def _switch_rankings_view(self, view: str):
+        self._rankings_view = view
+
+        # Update toggle button styles
+        for v, btn in self._rankings_toggle_btns.items():
+            btn.configure(
+                fg_color=RAISED if v == view else "transparent",
+                text_color=TXT   if v == view else TXT2,
+            )
+
+        ax  = self._rankings_ax
+        ys  = self._rankings_ys
+        data = self._rankings_data
+        n   = len(data)
+
+        PLOT_BG  = "#0e1118"
+        GRID_CLR = "#1a2133"
+        ax.cla()
+        ax.set_facecolor(PLOT_BG)
+        ax.set_axisbelow(True)
+        ax.spines["top"].set_visible(False)
+        ax.spines["right"].set_visible(False)
+        ax.spines["left"].set_visible(False)
+        ax.spines["bottom"].set_color(GRID_CLR)
+        ax.tick_params(colors=TXT2, labelsize=8, length=0, left=False)
+
+        if view == "price":
+            self._draw_right_price(ax, data, ys, PLOT_BG, GRID_CLR)
+        elif view == "earnings":
+            self._draw_right_earnings(ax, data, ys, PLOT_BG, GRID_CLR)
+        elif view == "stats":
+            self._draw_right_stats(ax, data, ys, PLOT_BG, GRID_CLR)
+
+        self._rankings_canvas.draw_idle()
+
+    def _draw_right_price(self, ax, data, ys, PLOT_BG, GRID_CLR):
+        n = len(data)
+        ax.xaxis.grid(True, color=GRID_CLR, linewidth=0.6, linestyle=":")
+        for lbl in ax.get_xticklabels():
+            lbl.set_fontfamily("Consolas")
+
+        returns = [d.get("price_change_pct") for d in data]
+        colours, values = [], []
+        for r in returns:
+            if r is None:
+                colours.append(TXT3); values.append(0.0)
+            elif r >= 0:
+                colours.append(GREEN); values.append(r)
+            else:
+                colours.append(RED);   values.append(r)
+
+        ax.barh(ys, values, height=0.55, color=colours, alpha=0.85, zorder=2)
+        ax.axvline(0, color=TXT3, linewidth=0.8, zorder=3)
+
+        x_lim = max((abs(v) for v in values if v != 0), default=10) * 1.4
+        for i, (r, val) in enumerate(zip(returns, values)):
+            lbl = f"{r:+.1f}%" if r is not None else "n/a"
+            off = x_lim * 0.04
+            ax.text(val + (off if val >= 0 else -off), i, lbl,
+                    va="center", ha="left" if val >= 0 else "right",
+                    fontsize=8, fontfamily="Consolas", color=colours[i])
+
+        ax.set_xlim(-x_lim, x_lim)
+        ax.xaxis.set_major_formatter(lambda x, _: f"{x:+.0f}%")
+        ax.set_yticks(ys)
+        ax.set_yticklabels([""] * n)
+        ax.invert_yaxis()
+        ax.set_xlabel("Return since filing date", fontsize=8,
+                      fontfamily="Consolas", color=TXT2, labelpad=8)
+
+        self._rankings_subtitle.set_text(
+            f"Top {n}  ·  most recent filing per company"
+            f"  ·  price as of {self._rankings_today_str}"
+        )
+
+    def _draw_right_earnings(self, ax, data, ys, PLOT_BG, GRID_CLR):
+        n = len(data)
+        ax.axis("off")
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1)
+
+        # Column layout
+        cols  = ["Status",    "SOE@flag", "SOE now", "Chg",   "Persist"]
+        col_x = [0.01,         0.22,       0.40,      0.58,    0.76    ]
+        row_h = 0.88 / (n + 1)
+
+        # Header
+        for cx, lbl in zip(col_x, cols):
+            ax.text(cx, 0.96, lbl, fontsize=7, fontfamily="Consolas",
+                    color=TXT3, va="top", transform=ax.transAxes)
+        ax.plot([0, 1], [0.94, 0.94], color=GRID_CLR, linewidth=0.7,
+                transform=ax.transAxes)
+
+        for i, d in enumerate(data):
+            ep = d.get("earnings") or {}
+            y_row = 0.94 - (i + 1) * row_h
+
+            # Alternating row background
+            row_bg = RAISED if i % 2 == 0 else PLOT_BG
+            ax.axhspan(y_row - row_h * 0.05, y_row + row_h * 0.82,
+                       xmin=0, xmax=1, facecolor=row_bg, zorder=0)
+
+            # Status badge
+            profitable = ep.get("profitable")
+            if profitable is None:
+                status_txt, status_clr = "N/A",    TXT3
+            elif profitable:
+                status_txt, status_clr = "PROFIT",  GREEN
+            else:
+                status_txt, status_clr = "LOSS",    RED
+
+            ax.text(col_x[0], y_row + row_h * 0.35, status_txt,
+                    fontsize=7, fontfamily="Consolas", color=status_clr,
+                    va="center", transform=ax.transAxes, fontweight="bold")
+
+            # SOE @ filing
+            soe_f = ep.get("soe_at_filing")
+            ax.text(col_x[1], y_row + row_h * 0.35,
+                    f"{soe_f:+.3f}" if soe_f is not None else "—",
+                    fontsize=7.5, fontfamily="Consolas", color=TXT2,
+                    va="center", transform=ax.transAxes)
+
+            # SOE now
+            soe_n = ep.get("soe_latest")
+            soe_n_clr = (GREEN if (soe_n or 0) > 0 else RED) if soe_n is not None else TXT3
+            ax.text(col_x[2], y_row + row_h * 0.35,
+                    f"{soe_n:+.3f}" if soe_n is not None else "—",
+                    fontsize=7.5, fontfamily="Consolas", color=soe_n_clr,
+                    va="center", transform=ax.transAxes)
+
+            # Change
+            direction = ep.get("direction", "n/a")
+            chg_pct   = ep.get("change_pct")
+            dir_arrow = {"improving": "↑", "deteriorating": "↓",
+                         "stable": "→"}.get(direction, "—")
+            dir_clr   = {"improving": GREEN, "deteriorating": RED,
+                         "stable": TXT2}.get(direction, TXT3)
+            chg_txt = f"{dir_arrow} {chg_pct:+.0f}%" if chg_pct is not None else dir_arrow
+            ax.text(col_x[3], y_row + row_h * 0.35, chg_txt,
+                    fontsize=7.5, fontfamily="Consolas", color=dir_clr,
+                    va="center", transform=ax.transAxes)
+
+            # Persistence
+            plabel = ep.get("persistence_label", "N/A")
+            pbeta  = ep.get("persistence_beta")
+            p_clr  = {
+                "HIGH": GREEN, "MODERATE": AMBER, "LOW": RED
+            }.get(plabel, TXT3)
+            p_txt  = f"{plabel}" + (f" ({pbeta:.2f})" if pbeta is not None else "")
+            ax.text(col_x[4], y_row + row_h * 0.35, p_txt,
+                    fontsize=7, fontfamily="Consolas", color=p_clr,
+                    va="center", transform=ax.transAxes)
+
+        self._rankings_subtitle.set_text(
+            f"Top {n}  ·  earnings persistence β (OLS autocorrelation)"
+            f"  ·  SOE = standardised operating earnings / assets"
+        )
+
+    def _draw_right_stats(self, ax, data, ys, PLOT_BG, GRID_CLR):
+        n = len(data)
+        ax.axis("off")
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1)
+
+        cols  = ["Ticker", "Vague%", "Sentences", "Filed"  ]
+        col_x = [0.01,      0.25,     0.49,        0.72    ]
+        row_h = 0.88 / (n + 1)
+
+        # Header
+        for cx, lbl in zip(col_x, cols):
+            ax.text(cx, 0.96, lbl, fontsize=7, fontfamily="Consolas",
+                    color=TXT3, va="top", transform=ax.transAxes)
+        ax.plot([0, 1], [0.94, 0.94], color=GRID_CLR, linewidth=0.7,
+                transform=ax.transAxes)
+
+        for i, d in enumerate(data):
+            y_row  = 0.94 - (i + 1) * row_h
+            row_bg = RAISED if i % 2 == 0 else PLOT_BG
+            ax.axhspan(y_row - row_h * 0.05, y_row + row_h * 0.82,
+                       xmin=0, xmax=1, facecolor=row_bg, zorder=0)
+
+            vals = [
+                d["ticker"],
+                f"{d['vague_pct']:.1f}%",
+                f"{d['n_sentences']:,}",
+                d["filing_date"],
+            ]
+            for cx, val in zip(col_x, vals):
+                ax.text(cx, y_row + row_h * 0.35, val,
+                        fontsize=8, fontfamily="Consolas", color=TXT2,
+                        va="center", transform=ax.transAxes)
+
+        self._rankings_subtitle.set_text(
+            f"Top {n}  ·  ranked by mean vague_prob  ·  most recent filing per company"
+        )
 
 
 # ── Widget helpers ────────────────────────────────────────────────────────────
