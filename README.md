@@ -19,30 +19,37 @@ The system is organised into two pipelines: a one-time **training pipeline** tha
 ```
 CFA_Institute/
 ├── Pipeline/                        # Scoring pipeline (Runs 0-11)
-│   ├── run 0 - sec data collection for LLM.py
-│   ├── run 0a - Clean Amendments.py
-│   ├── run 1 - Topic Extraction.py
-│   ├── run 2 - peer selection.py
-│   ├── run 6 - vague_pred.py
-│   ├── run 6 - complex_pred.py
-│   ├── run 7 - graph building.py
-│   ├── run 8 - topic screening.py
-│   ├── run 9 - creating final memo.py
-│   ├── run 10 - risk heat map.py
-│   ├── run 11 - backtesting.py
+│   ├── run_00_sec_data_collection.py
+│   ├── run_00a_clean_amendments.py
+│   ├── run_01_topic_extraction.py
+│   ├── run_02_peer_selection.py
+│   ├── run_06_vague_predictions.py
+│   ├── run_06_complex_predictions.py
+│   ├── run_07_graph_building.py
+│   ├── run_08_topic_screening.py
+│   ├── run_09_opus_analysis.py
+│   ├── run_09_memo_generation.py
+│   ├── run_10_risk_heatmap.py
+│   ├── run_10_opus_memo_generation.py
+│   ├── run_11_backtesting.py
 │   ├── cache.py
 │   └── resumebatches.py
 │
 ├── training/                        # Training pipeline (one-time)
-│   ├── run 0 - sec data collection for finbert.py
-│   ├── run 2 - vague labelling.py
-│   ├── run 2 - complex labelling.py
-│   ├── run 3 - human agreement checker.py
-│   ├── run 3a - generate validation sheet.py
-│   ├── run 3b - merging human labels.py
-│   ├── run 4 - TTV script.py
-│   ├── run 5 - vague_training.py
-│   └── run 5 - training_complex.py
+│   ├── run_00_sec_data_collection.py
+│   ├── run_02_vague_labelling.py
+│   ├── run_02_complex_labelling.py
+│   ├── run_03_human_agreement_checker.py
+│   ├── run_03a_generate_validation_sheet.py
+│   ├── run_03b_merge_human_labels.py
+│   ├── run_04_ttv_split.py
+│   ├── run_05_train_vagueness.py
+│   └── run_05_train_complexity.py
+│
+├── scrapers/                        # Standalone data collection scripts
+│   ├── 8k_scraper.py
+│   ├── edgar_api.py
+│   └── sec_api_scraper.py
 │
 ├── data/
 │   ├── Filings by company/          # Raw HTML filings (Run 0 output)
@@ -60,9 +67,9 @@ CFA_Institute/
 │   ├── vagueness_model/             # Training checkpoints (vagueness)
 │   └── complexity_model/            # Training checkpoints (complexity)
 │
-├── RUN USER BACKEND - vague_complex_analysis_pipeline.py
-├── RUN USER FRONTEND - vague_complex_analysis_pipeline.py
-├── RUN USER - regional heatmap - analyst outputs.py
+├── analyst_backend.py
+├── analyst_frontend.py
+├── analyst_heatmap.py
 ├── requirements.txt
 ├── .env                             # Not committed — see Setup below
 └── README.md
@@ -132,7 +139,7 @@ All scripts below are in the `training/` folder. Run them from the project root.
 Downloads one 10-K and one 10-Q per company from SIC 3400-3599 filed before June 2023, providing a minimum 16-month separation from the scoring window to prevent data leakage.
 
 ```powershell
-python "training/run 0 - sec data collection for finbert.py"
+python "training/run_00_sec_data_collection.py"
 ```
 
 Output: `data/training_sentences/training_sentences.csv`
@@ -144,14 +151,14 @@ Output: `data/training_sentences/training_sentences.csv`
 Submits two independent Batch API jobs per classifier. Only sentences where both runs agree are carried forward. Run both vagueness and complexity labelling.
 
 ```powershell
-python "training/run 2 - vague labelling.py"
-python "training/run 2 - complex labelling.py"
+python "training/run_02_vague_labelling.py"
+python "training/run_02_complex_labelling.py"
 ```
 
 Batch jobs are asynchronous. Monitor progress with:
 
 ```powershell
-python "training/run 2 - vague labelling.py" --mode status
+python "training/run_02_vague_labelling.py" --mode status
 ```
 
 If a batch was interrupted, resume from where it left off:
@@ -163,8 +170,8 @@ python "Pipeline/resumebatches.py"
 To replay from the included cache without re-submitting:
 
 ```powershell
-python "training/run 2 - vague labelling.py" --use-cached
-python "training/run 2 - complex labelling.py" --use-cached
+python "training/run_02_vague_labelling.py" --use-cached
+python "training/run_02_complex_labelling.py" --use-cached
 ```
 
 Output: `data/labelled/vagueness/labelled.csv`, `data/labelled/complexity/labelled.csv`
@@ -176,7 +183,7 @@ Output: `data/labelled/vagueness/labelled.csv`, `data/labelled/complexity/labell
 Stratifies 300 consensus sentences per classifier (150 per class) into a formatted Excel annotation sheet for human review. The sheet is split across three annotators at 100 sentences each.
 
 ```powershell
-python "training/run 3a - generate validation sheet.py"
+python "training/run_03a_generate_validation_sheet.py"
 ```
 
 Output: `data/validation/validation_annotation_sheet.xlsx`
@@ -190,7 +197,7 @@ Output: `data/validation/validation_annotation_sheet.xlsx`
 Merges the three completed annotation sheets into a single labelled CSV and applies the `human_validated` flag used in downstream stratification.
 
 ```powershell
-python "training/run 3b - merging human labels.py"
+python "training/run_03b_merge_human_labels.py"
 ```
 
 ---
@@ -200,7 +207,7 @@ python "training/run 3b - merging human labels.py"
 Computes Cohen's Kappa for all three pairwise annotator combinations and for GPT-4o against the human majority vote. A Kappa of at least 0.9 across all pairings is required before proceeding.
 
 ```powershell
-python "training/run 3 - human agreement checker.py"
+python "training/run_03_human_agreement_checker.py"
 ```
 
 ---
@@ -210,7 +217,7 @@ python "training/run 3 - human agreement checker.py"
 Constructs a 3,000-sentence dataset per classifier. All 300 human-validated rows are guaranteed to be included. The remaining 2,700 are stratified-sampled from the GPT-labelled pool. Applies a 70/15/15 split stratified jointly on label and `human_validated`.
 
 ```powershell
-python "training/run 4 - TTV script.py"
+python "training/run_04_ttv_split.py"
 ```
 
 Output: `data/training/vagueness/train.csv`, `val.csv`, `test.csv`  
@@ -223,8 +230,8 @@ Output: `data/training/complexity/train.csv`, `val.csv`, `test.csv`
 Fine-tunes two binary classifiers independently from the finbert checkpoint. Training uses weighted cross-entropy for class imbalance, macro F1 as the best-model selection criterion, and early stopping with patience of 2.
 
 ```powershell
-python "training/run 5 - vague_training.py"
-python "training/run 5 - training_complex.py"
+python "training/run_05_train_vagueness.py"
+python "training/run_05_train_complexity.py"
 ```
 
 Output: `outputs/vagueness_model/`, `outputs/complexity_model/`
@@ -244,13 +251,13 @@ The scoring pipeline applies the trained classifiers to the live filing universe
 Downloads the 2 most recent 10-K filings and 3 most recent 10-Q filings per company in SIC 3400-3599 within the October 2024 to September 2025 window. Amendments are automatically excluded. The company universe is cached after the first run.
 
 ```powershell
-python "Pipeline/run 0 - sec data collection for LLM.py"
+python "Pipeline/run_00_sec_data_collection.py"
 ```
 
 On subsequent runs, reuse the cached universe to skip the ~19-minute rebuild:
 
 ```powershell
-python "Pipeline/run 0 - sec data collection for LLM.py" --use-cached
+python "Pipeline/run_00_sec_data_collection.py" --use-cached
 ```
 
 Output: `data/Filings by company/{TICKER}/10-K/` and `10-Q/`  
@@ -263,13 +270,13 @@ Output: `company_filing_summary.xlsx`
 Removes any amendment files (10-K-A, 10-Q-A) and enforces that every company folder contains exactly 2 x 10-K and 3 x 10-Q. Companies that fail this check are removed from the universe.
 
 ```powershell
-python "Pipeline/run 0a - Clean Amendments.py" --data-dir "data/Filings by company"
+python "Pipeline/run_00a_clean_amendments.py" --data-dir "data/Filings by company"
 ```
 
 To preview changes without deleting anything:
 
 ```powershell
-python "Pipeline/run 0a - Clean Amendments.py" --data-dir "data/Filings by company" --dry-run
+python "Pipeline/run_00a_clean_amendments.py" --data-dir "data/Filings by company" --dry-run
 ```
 
 ---
@@ -282,22 +289,22 @@ Run in sequence:
 
 ```powershell
 # Step 1: Extract sentences from all filings
-python "Pipeline/run 1 - Topic Extraction.py" --mode extract
+python "Pipeline/run_01_topic_extraction.py" --mode extract
 
 # Step 2: Submit Batch API job for topic labelling
-python "Pipeline/run 1 - Topic Extraction.py" --mode batch
+python "Pipeline/run_01_topic_extraction.py" --mode batch
 
 # Step 3: Monitor until complete (auto-polls every 60 seconds)
-python "Pipeline/run 1 - Topic Extraction.py" --mode watch
+python "Pipeline/run_01_topic_extraction.py" --mode watch
 
 # Step 4: Download results and merge into final CSV
-python "Pipeline/run 1 - Topic Extraction.py" --mode download
+python "Pipeline/run_01_topic_extraction.py" --mode download
 ```
 
 To use the included cached results and skip the batch submission entirely:
 
 ```powershell
-python "Pipeline/run 1 - Topic Extraction.py" --mode download --use-cached
+python "Pipeline/run_01_topic_extraction.py" --mode download --use-cached
 ```
 
 Output: `data/Graph Rag Creation Data/topic_labelled.csv`
@@ -309,13 +316,13 @@ Output: `data/Graph Rag Creation Data/topic_labelled.csv`
 Constructs a point-in-time peer group for each company filing using Euclidean distance across three normalised financial metrics: market capitalisation, trailing twelve-month revenue, and total assets. Peer candidates are identified via tiered SIC grouping (4-digit first, falling back to 3-digit then 2-digit). The five closest peers are written to CSV and later ingested into the Neo4j graph as `PEER_OF` edges.
 
 ```powershell
-python "Pipeline/run 2 - peer selection.py" --input-dir "data/Filings by company"
+python "Pipeline/run_02_peer_selection.py" --input-dir "data/Filings by company"
 ```
 
 On subsequent runs, reuse cached financial data from yfinance:
 
 ```powershell
-python "Pipeline/run 2 - peer selection.py" --use-cached
+python "Pipeline/run_02_peer_selection.py" --use-cached
 ```
 
 Output: `data/Graph Rag Creation Data/peer_selections.csv`
@@ -327,12 +334,12 @@ Output: `data/Graph Rag Creation Data/peer_selections.csv`
 Runs batch inference with the fine-tuned classifiers on all sentences in `topic_labelled.csv`. Both classifiers must be run.
 
 ```powershell
-python "Pipeline/run 6 - vague_pred.py" \
+python "Pipeline/run_06_vague_predictions.py" \
     --model models/finbert_vagueness \
     --input "data/Graph Rag Creation Data/topic_labelled.csv" \
     --output data/predictions_vagueness.csv
 
-python "Pipeline/run 6 - complex_pred.py" \
+python "Pipeline/run_06_complex_predictions.py" \
     --model models/finbert_complexity \
     --input "data/Graph Rag Creation Data/topic_labelled.csv" \
     --output data/predictions_complexity.csv
@@ -364,13 +371,13 @@ Graph schema:
 | `PEER_OF` | Peer relationship with distance and SIC-level metadata |
 
 ```powershell
-python "Pipeline/run 7 - graph building.py"
+python "Pipeline/run_07_graph_building.py"
 ```
 
 To wipe the database and rebuild from scratch:
 
 ```powershell
-python "Pipeline/run 7 - graph building.py" --wipe
+python "Pipeline/run_07_graph_building.py" --wipe
 ```
 
 ---
@@ -380,19 +387,19 @@ python "Pipeline/run 7 - graph building.py" --wipe
 Queries the Neo4j graph for disclosure block pairs and screens them for degradation using GPT-4.1-mini. Two comparison layers are applied: temporal (same company, current vs prior period) and peer (same topic, current company vs each of its five peers). Disappeared topics are detected via graph traversal without any LLM call. Flagged results are written to CSV for escalation in Run 9.
 
 ```powershell
-python "Pipeline/run 8 - topic screening.py"
+python "Pipeline/run_08_topic_screening.py"
 ```
 
 To run a quick test on five random temporal pairs before the full run:
 
 ```powershell
-python "Pipeline/run 8 - topic screening.py" --test
+python "Pipeline/run_08_topic_screening.py" --test
 ```
 
 To use the LLM response cache and avoid repeated API calls on re-runs:
 
 ```powershell
-python "Pipeline/run 8 - topic screening.py" --use-cached
+python "Pipeline/run_08_topic_screening.py" --use-cached
 ```
 
 Output: `data/Graph Rag Creation Data/screening_flags.csv`
@@ -404,7 +411,7 @@ Output: `data/Graph Rag Creation Data/screening_flags.csv`
 Passes all flagged items per company to Claude Opus for deep analysis covering temporal deterioration, peer comparison, and cross-document contradictions. Generates a formatted two-page `.docx` investment memo per flagged company. All outputs include model provenance and confidence levels.
 
 ```powershell
-python "Pipeline/run 9 - creating final memo.py"
+python "Pipeline/run_09_memo_generation.py"
 ```
 
 Output: `data/memos/{TICKER}_memo.docx`
@@ -416,13 +423,13 @@ Output: `data/memos/{TICKER}_memo.docx`
 Produces a global heatmap attributing raw vagueness scores to countries based on geographic keyword matching within each scored sentence. The USA receives scores from all sentences across the universe. No demeaning is applied to this output.
 
 ```powershell
-python "Pipeline/run 10 - risk heat map.py"
+python "Pipeline/run_10_risk_heatmap.py"
 ```
 
 To export a PNG without opening the interactive window:
 
 ```powershell
-python "Pipeline/run 10 - risk heat map.py" --save outputs/heatmap.png --headless
+python "Pipeline/run_10_risk_heatmap.py" --save outputs/heatmap.png --headless
 ```
 
 Output: `outputs/heatmap.png`
@@ -434,20 +441,20 @@ Output: `outputs/heatmap.png`
 Tests the core hypothesis using the Li (2008) earnings persistence regression. Flagged companies are expected to show lower earnings persistence in the period following the flag relative to unflagged peers. The regression is run across three subsamples: full sample, profitable companies only (earnings > 0), and loss-making companies only (earnings < 0). Earnings data is pulled from the SEC EDGAR XBRL API with a yfinance fallback.
 
 ```powershell
-python "Pipeline/run 11 - backtesting.py"
+python "Pipeline/run_11_backtesting.py"
 ```
 
 Optional arguments:
 
 ```powershell
 # Set minimum signal level to count as flagged (HIGH, MEDIUM, or LOW)
-python "Pipeline/run 11 - backtesting.py" --signal-threshold MEDIUM
+python "Pipeline/run_11_backtesting.py" --signal-threshold MEDIUM
 
 # Use ROA instead of EPS as the earnings metric
-python "Pipeline/run 11 - backtesting.py" --earnings-metric ROA
+python "Pipeline/run_11_backtesting.py" --earnings-metric ROA
 
 # Use cached earnings data and skip API calls
-python "Pipeline/run 11 - backtesting.py" --skip-fetch
+python "Pipeline/run_11_backtesting.py" --skip-fetch
 ```
 
 Output: `data/backtest/backtest_results.csv`, `data/backtest/regression_summary.txt`
@@ -464,10 +471,10 @@ Accepts `.html`, `.pdf`, and `.txt` inputs. Applies both classifiers, computes d
 
 ```powershell
 # Single filing
-python "RUN USER BACKEND - vague_complex_analysis_pipeline.py" path/to/filing.html
+python analyst_backend.py path/to/filing.html
 
 # Folder of filings (mixed formats supported)
-python "RUN USER BACKEND - vague_complex_analysis_pipeline.py" path/to/folder/
+python analyst_backend.py path/to/folder/
 ```
 
 Output: `data/analyst_outputs/{TICKER}_{TYPE}_{DATE}_{ACCESSION}_ddds_scores.csv`
@@ -477,13 +484,13 @@ Output: `data/analyst_outputs/{TICKER}_{TYPE}_{DATE}_{ACCESSION}_ddds_scores.csv
 Launches a dark-mode desktop interface wrapping the analyst backend for interactive filing analysis.
 
 ```powershell
-python "RUN USER FRONTEND - vague_complex_analysis_pipeline.py"
+python analyst_frontend.py
 ```
 
 ### Regenerate the geographic heatmap from analyst outputs
 
 ```powershell
-python "RUN USER - regional heatmap - analyst outputs.py" \
+python analyst_heatmap.py \
     --analyst-outputs-dir data/analyst_outputs \
     --save outputs/heatmap.png
 ```
@@ -494,26 +501,26 @@ python "RUN USER - regional heatmap - analyst outputs.py" \
 
 ```
 Training (one-time)
-    training/run 0     collect training corpus (pre-June 2023 filings)
-    training/run 2     GPT-4o consensus labelling — vagueness + complexity
-    training/run 3a    generate human annotation sheet
+    training/run_00    collect training corpus (pre-June 2023 filings)
+    training/run_02    GPT-4o consensus labelling — vagueness + complexity
+    training/run_03a   generate human annotation sheet
     [manual step]      three annotators label independently
-    training/run 3b    merge human labels
-    training/run 3     inter-annotator agreement check (kappa >= 0.9 required)
-    training/run 4     70/15/15 train/val/test split
-    training/run 5     FinBERT fine-tuning — vagueness + complexity
+    training/run_03b   merge human labels
+    training/run_03    inter-annotator agreement check (kappa >= 0.9 required)
+    training/run_04    70/15/15 train/val/test split
+    training/run_05    FinBERT fine-tuning — vagueness + complexity
 
 Scoring
-    Pipeline/run 0     collect live filings (Oct 2024 - Sep 2025)
-    Pipeline/run 0a    clean amendments, enforce filing count per company
-    Pipeline/run 1     topic extraction (extract → batch → watch → download)
-    Pipeline/run 2     point-in-time peer selection
-    Pipeline/run 6     FinBERT inference — vagueness + complexity
-    Pipeline/run 7     build Neo4j knowledge graph
-    Pipeline/run 8     disclosure screening — GPT-4.1-mini (Tier 1)
-    Pipeline/run 9     investment memo generation — Claude Opus (Tier 2)
-    Pipeline/run 10    geographic risk heatmap
-    Pipeline/run 11    backtesting — Li (2008) earnings persistence regression
+    Pipeline/run_00    collect live filings (Oct 2024 - Sep 2025)
+    Pipeline/run_00a   clean amendments, enforce filing count per company
+    Pipeline/run_01    topic extraction (extract → batch → watch → download)
+    Pipeline/run_02    point-in-time peer selection
+    Pipeline/run_06    FinBERT inference — vagueness + complexity
+    Pipeline/run_07    build Neo4j knowledge graph
+    Pipeline/run_08    disclosure screening — GPT-4.1-mini (Tier 1)
+    Pipeline/run_09    Opus analysis + investment memo generation — Claude Opus (Tier 2)
+    Pipeline/run_10    geographic risk heatmap + memo generation
+    Pipeline/run_11    backtesting — Li (2008) earnings persistence regression
 ```
 
 ---
@@ -534,7 +541,7 @@ Cached Batch API results are included in the repository. All downstream outputs 
 
 ## Known Limitations
 
-- The analyst frontend (`RUN USER FRONTEND`) does not currently support full multi-section filing processing. The backend script processes all file types correctly and can be used directly.
+- The analyst frontend (`analyst_frontend.py`) does not currently support full multi-section filing processing. The backend script processes all file types correctly and can be used directly.
 - Section boundary detection in Run 1 uses heading pattern matching. Non-standard or heavily nested HTML filings may cause sections to be missed. Check the extraction log for any files reporting zero sentences.
 - The training corpus covers 50 randomly seeded companies, which constrains industry diversity within SIC 3400-3599.
 - Runs 7 through 11 are not integrated into the analyst frontend and must be run from the command line.
