@@ -80,9 +80,9 @@ CFA_Institute/
 ## Prerequisites
 
 - Python 3.11
-- [Neo4j Desktop](https://neo4j.com/download/) with a local DBMS running on `neo4j://127.0.0.1:7687`
 - An OpenAI API key with Batch API access
 - An Anthropic API key
+- The Neo4j AuraDB password (provided in the accompanying technical summary — no local Neo4j installation required)
 
 ---
 
@@ -101,22 +101,13 @@ Create a file named `.env` in the project root. It is excluded from version cont
 ```
 OPENAI_API_KEY=your-openai-key
 ANTHROPIC_API_KEY=your-anthropic-key
-NEO4J_URI=neo4j://127.0.0.1:7687
-NEO4J_USER=neo4j
-NEO4J_PASSWORD="your-neo4j-password"
+NEO4J_PASSWORD=see-technical-summary
 EDGAR_USER_AGENT=DDDS Research your-email@lancaster.ac.uk
 FINDINGS_DIR=data/findings
 ANALYST_OUTPUTS_DIR=data/analyst_outputs
 ```
 
-Note: if your Neo4j password contains special characters, wrap it in double quotes as shown.
-
-### 3. Configure Neo4j Desktop
-
-1. Download and install Neo4j Desktop from https://neo4j.com/download/
-2. Create a new project and add a local DBMS (Neo4j 5.x)
-3. Set a password matching the one in your `.env` file
-4. Start the DBMS before running any graph pipeline steps
+The pipeline connects to a hosted **Neo4j AuraDB** (free tier) instance containing the full pre-populated graph. The connection URI and username are pre-configured in the pipeline scripts — only `NEO4J_PASSWORD` needs to be set. The password is provided in the accompanying technical summary. No local Neo4j installation is required.
 
 ---
 
@@ -351,7 +342,7 @@ Output: `data/predictions_vagueness.csv`, `data/predictions_complexity.csv`
 
 ### Run 7 — Build Neo4j Graph
 
-Ingests `topic_labelled.csv` and `peer_selections.csv` into the Neo4j knowledge graph. Ensure Neo4j Desktop is running before executing.
+Ingests `topic_labelled.csv` and `peer_selections.csv` into the hosted Neo4j AuraDB knowledge graph. The connection is pre-configured — ensure `NEO4J_PASSWORD` is set in your `.env` before running.
 
 Graph schema:
 
@@ -481,7 +472,7 @@ Output: `data/analyst_outputs/{TICKER}_{TYPE}_{DATE}_{ACCESSION}_ddds_scores.csv
 
 ### Desktop GUI
 
-Launches a dark-mode desktop interface wrapping the analyst backend for interactive filing analysis.
+Launches a unified dark-mode desktop application. Enter any ticker from the 128-company universe to instantly view its full Opus analysis — signal strength, summary, top concerns, and per-flag reasoning with investigation actions. The **Risk Heatmap** tab shows the geographic vagueness heatmap across the full universe.
 
 ```powershell
 python analyst_frontend.py
@@ -541,7 +532,7 @@ Cached Batch API results are included in the repository. All downstream outputs 
 
 ## Known Limitations
 
-- The analyst frontend (`analyst_frontend.py`) does not currently support full multi-section filing processing. The backend script processes all file types correctly and can be used directly.
+- The analyst frontend displays pre-computed Opus analysis for the 128-company universe. Scoring new filings outside the universe requires running the full pipeline from the command line.
 - Section boundary detection in Run 1 uses heading pattern matching. Non-standard or heavily nested HTML filings may cause sections to be missed. Check the extraction log for any files reporting zero sentences.
 - The training corpus covers 50 randomly seeded companies, which constrains industry diversity within SIC 3400-3599.
-- Runs 7 through 11 are not integrated into the analyst frontend and must be run from the command line.
+- Runs 7 through 11 must be run from the command line; they are not triggered from within the frontend.

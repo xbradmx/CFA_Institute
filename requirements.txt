@@ -73,3 +73,5 @@ python-dotenv>=1.0.0    # .env credential management (Neo4j password, API keys, 
 scipy>=1.12.0           # p-value calculation in Li (2008) earnings persistence regression
 statsmodels>=0.14.0     # OLS regression with HAC-robust standard errors (Li 2008 framework)
 yfinance>=0.2.0         # Fallback earnings fetch if XBRL data unavailable
+# ── Analyst frontend ─────────────────────────────────────────────────────────
+customtkinter>=5.2.0    # Dark-mode desktop GUI for analyst_frontend.py

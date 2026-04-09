@@ -637,6 +637,82 @@ class DDDSApp:
 
 
 # ---------------------------------------------------------------------------
+# Embeddable figure builder  (used by analyst_frontend.py)
+# ---------------------------------------------------------------------------
+
+def build_figure(analyst_outputs_dir: str = None, dpi: int = 120):
+    """
+    Build and return a matplotlib Figure of the geographic risk heatmap.
+
+    Designed for embedding in a GUI via FigureCanvasTkAgg.  Does not call
+    plt.show() or open any window — the caller is responsible for display.
+
+    Parameters
+    ----------
+    analyst_outputs_dir : str, optional
+        Path to the directory containing ``*_ddds_scores.csv`` files.
+        Defaults to the ANALYST_OUTPUTS_DIR environment variable / config.
+    dpi : int
+        Figure DPI. Default 120.
+
+    Returns
+    -------
+    matplotlib.figure.Figure
+    """
+    outputs_dir = analyst_outputs_dir or ANALYST_OUTPUTS_DIR
+    iso_scores, country_detail, file_count = load_scores_from_csvs(outputs_dir)
+    apply_scores(iso_scores, demo_mode=not iso_scores)
+
+    fig, ax = plt.subplots(figsize=(14, 7), dpi=dpi, facecolor=BG_DARK)
+    ax.set_facecolor(BG_DARK)
+    ax.set_aspect("equal")
+
+    world.plot(ax=ax, color=world["colour"], linewidth=0, antialiased=True)
+    world.boundary.plot(
+        ax=ax, edgecolor=BORDER_MAP, linewidth=0.4, alpha=0.25, antialiased=True,
+    )
+    ax.set_xlim(-180, 180)
+    ax.set_ylim(-60, 85)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+
+    sm = plt.cm.ScalarMappable(cmap=RISK_CMAP, norm=plt.Normalize(0.0, 1.0))
+    sm.set_array([])
+    cbar = fig.colorbar(sm, ax=ax, fraction=0.012, pad=0.02, aspect=30)
+    cbar.set_label(
+        "MEAN RAW VAGUE_PROB", fontsize=8, color=TEXT_DIM,
+        fontfamily="Consolas", labelpad=8,
+    )
+    cbar.set_ticks([0.0, 0.25, 0.5, 0.75, 1.0])
+    cbar.set_ticklabels(["0.0", "0.25", "0.50", "0.75", "1.0"])
+    cbar.ax.tick_params(labelsize=8, colors=TEXT_DIM, length=0)
+    cbar.outline.set_edgecolor(BORDER_CLR)
+    cbar.outline.set_linewidth(0.5)
+
+    ax.add_patch(plt.Rectangle((-178, -57), 3, 4, fc=GREY_ZERO, ec="none", zorder=5))
+    ax.text(
+        -174, -54.5, "0.0 — Unscored",
+        fontsize=8, fontfamily="Consolas", color=TEXT_DIM, ha="left", va="center",
+    )
+
+    label = (
+        f"{file_count} filing(s)  ·  Score = mean raw vague_prob per geography"
+        if file_count
+        else "DEMO — synthetic scores"
+    )
+    ax.text(
+        0.01, 0.99, label,
+        transform=ax.transAxes, fontsize=7, fontfamily="Consolas",
+        color=TEXT_DIM, ha="left", va="top",
+    )
+
+    fig.tight_layout(pad=0.5)
+    return fig
+
+
+# ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
 
