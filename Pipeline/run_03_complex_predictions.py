@@ -1,22 +1,22 @@
 """
-DDDS - Vagueness Classifier Inference
-======================================
-Run the fine-tuned vagueness model on new disclosure passages.
+DDDS - Complexity Classifier Inference
+========================================
+Run the fine-tuned complexity model on new disclosure passages.
 
 Usage
 -----
 Single passage (interactive):
-    python predict.py --model outputs/vagueness_model
+    python run_03_complex_predictions.py --model outputs/complexity_model
 
 Batch from CSV:
-    python predict.py --model outputs/vagueness_model \\
-                      --input data/new_passages.csv   \\
+    python run_03_complex_predictions.py --model outputs/complexity_model \
+                      --input data/new_passages.csv    \
                       --output data/predictions.csv
 
 The input CSV must have a 'text' column.
 Output CSV will be the input CSV with two new columns appended:
-    predicted_label  : SPECIFIC or VAGUE
-    vague_prob       : model's confidence that the passage is VAGUE (0-1)
+    predicted_label  : SIMPLE or COMPLEX
+    complex_prob     : model's confidence that the passage is COMPLEX (0-1)
 """
 
 import argparse
@@ -33,7 +33,7 @@ def load_model(model_dir: str):
     model.eval()
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
-    print(f"[DDDS] Vagueness model loaded from '{model_dir}' on {device}")
+    print(f"[DDDS] Complexity model loaded from '{model_dir}' on {device}")
     return model, tokenizer, device
 
 
@@ -44,9 +44,9 @@ def predict_passage(text: str, model, tokenizer, device) -> dict:
     Returns
     -------
     {
-        "label":      "SPECIFIC" or "VAGUE",
-        "label_id":   0 or 1,
-        "vague_prob": float  (confidence score for VAGUE class)
+        "label":        "SIMPLE" or "COMPLEX",
+        "label_id":     0 or 1,
+        "complex_prob": float  (confidence score for COMPLEX class)
     }
     """
     encoding = tokenizer(
@@ -62,20 +62,20 @@ def predict_passage(text: str, model, tokenizer, device) -> dict:
     with torch.no_grad():
         outputs = model(input_ids=input_ids, attention_mask=attention_mask)
 
-    probs     = torch.softmax(outputs.logits, dim=-1).cpu().squeeze()
-    label_id  = int(torch.argmax(probs).item())
-    label     = model.config.id2label[label_id]
-    vague_prob = float(probs[1].item())
+    probs        = torch.softmax(outputs.logits, dim=-1).cpu().squeeze()
+    label_id     = int(torch.argmax(probs).item())
+    label        = model.config.id2label[label_id]
+    complex_prob = float(probs[1].item())
 
-    return {"label": label, "label_id": label_id, "vague_prob": round(vague_prob, 4)}
+    return {"label": label, "label_id": label_id, "complex_prob": round(complex_prob, 4)}
 
 
 def predict_batch(df: pd.DataFrame, model, tokenizer, device, batch_size: int = 32) -> pd.DataFrame:
     """
     Classify a DataFrame of passages, returns the DataFrame with predictions appended.
     """
-    all_labels     = []
-    all_vague_probs = []
+    all_labels        = []
+    all_complex_probs = []
 
     texts = df["text"].astype(str).tolist()
 
@@ -95,24 +95,24 @@ def predict_batch(df: pd.DataFrame, model, tokenizer, device, batch_size: int = 
         with torch.no_grad():
             outputs = model(input_ids=input_ids, attention_mask=attention_mask)
 
-        probs    = torch.softmax(outputs.logits, dim=-1).cpu()
+        probs     = torch.softmax(outputs.logits, dim=-1).cpu()
         label_ids = torch.argmax(probs, dim=-1).tolist()
 
         all_labels.extend([model.config.id2label[lid] for lid in label_ids])
-        all_vague_probs.extend([round(float(probs[j][1].item()), 4) for j in range(len(batch_texts))])
+        all_complex_probs.extend([round(float(probs[j][1].item()), 4) for j in range(len(batch_texts))])
 
         print(f"  Processed {min(i + batch_size, len(texts))}/{len(texts)} passages", end="\r")
 
     print()
     df = df.copy()
     df["predicted_label"] = all_labels
-    df["vague_prob"]      = all_vague_probs
+    df["complex_prob"]    = all_complex_probs
     return df
 
 
 def interactive_mode(model, tokenizer, device):
-    print("\n[DDDS] Vagueness Classifier  --  Interactive Mode")
-    print("  Enter a disclosure passage and get a SPECIFIC / VAGUE prediction.")
+    print("\n[DDDS] Complexity Classifier  --  Interactive Mode")
+    print("  Enter a disclosure passage and get a SIMPLE / COMPLEX prediction.")
     print("  Type 'quit' to exit.\n")
 
     while True:
@@ -121,16 +121,16 @@ def interactive_mode(model, tokenizer, device):
             break
         if not text:
             continue
-    
+
         result = predict_passage(text, model, tokenizer, device)
-        bar    = "█" * int(result["vague_prob"] * 30)
-        print(f"  Label:      {result['label']}")
-        print(f"  Vague prob: {result['vague_prob']:.4f}  |{bar:<30}|")
+        bar    = "█" * int(result["complex_prob"] * 30)
+        print(f"  Label:        {result['label']}")
+        print(f"  Complex prob: {result['complex_prob']:.4f}  |{bar:<30}|")
         print()
 
 
 def main():
-    parser = argparse.ArgumentParser(description="DDDS Vagueness Classifier Inference")
+    parser = argparse.ArgumentParser(description="DDDS Complexity Classifier Inference")
     parser.add_argument("--model",  required=True, help="Path to fine-tuned model directory")
     parser.add_argument("--input",  default=None,  help="Input CSV with 'text' column (batch mode)")
     parser.add_argument("--output", default=None,  help="Output CSV path for predictions")
@@ -146,17 +146,18 @@ def main():
         print(f"\n[DDDS] Running batch inference on {len(df)} passages...")
         df_out = predict_batch(df, model, tokenizer, device)
 
-        vague_count    = (df_out["predicted_label"] == "VAGUE").sum()
-        specific_count = (df_out["predicted_label"] == "SPECIFIC").sum()
-        print(f"\n  Results:  VAGUE={vague_count}  SPECIFIC={specific_count}")
-        print(f"  Mean vague probability: {df_out['vague_prob'].mean():.4f}")
-        print(f"  STD vague probability: {df_out['vague_prob'].std():.4f}")
-        print(f"  Min vague probability: {df_out['vague_prob'].min():.4f}")
-        print(f"  Max vague probability: {df_out['vague_prob'].max():.4f}")
-        # print(f"  Range vague probability: {df_out['vague_prob'].range():.4f}")
+        complex_count = (df_out["predicted_label"] == "COMPLEX").sum()
+        simple_count  = (df_out["predicted_label"] == "SIMPLE").sum()
+        print(f"\n  Results:  COMPLEX={complex_count}  SIMPLE={simple_count}")
+        print(f"  Mean complex probability: {df_out['complex_prob'].mean():.4f}")
+        print(f"  STD complex probability: {df_out['complex_prob'].std():.4f}")
+        print(f"  Min complex probability: {df_out['complex_prob'].min():.4f}")
+        print(f"  Max complex probability: {df_out['complex_prob'].max():.4f}")
+        # print(f"  Range complex probability: {df_out['complex_prob'].range():.4f}")
 
 
-        out_path = args.output or "data/predictions_vagueness.csv"
+
+        out_path = args.output or "data/predictions_complexity.csv"
         df_out.to_csv(out_path, index=False)
         print(f"  Saved to: {out_path}")
 

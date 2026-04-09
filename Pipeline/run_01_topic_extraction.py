@@ -10,13 +10,14 @@ grouping by company, filing, date, section, and topic.
 
 Pipeline position
 -----------------
-    run_0 (EDGAR download)
-        → **run_1 (topic extraction → topic_labelled.csv)**  ← YOU ARE HERE
-            → run_6 (FinBERT prediction)
-                → run_7 (Neo4j graph building)
+    run_00 (EDGAR download)
+        → **run_01 (topic extraction → topic_labelled.csv)**  ← YOU ARE HERE
+            → run_03 (FinBERT inference)
+                → run_04 (Neo4j graph building)
 
 Modes
 -----
+    --mode cached       FREE: load pre-computed topic_labelled.csv and print stats (no API calls)
     --mode extract      Extract sections + sentences from HTMLs → sentences CSV
     --mode batch        Prepare + submit Batch API job for topic labelling
     --mode status       Check batch job status
@@ -25,11 +26,19 @@ Modes
 
 Usage
 -----
-    python "run 1 - Topic Extraction.py" --mode extract
-    python "run 1 - Topic Extraction.py" --mode batch
-    python "run 1 - Topic Extraction.py" --mode status --batch-id batch_xxx
-    python "run 1 - Topic Extraction.py" --mode watch --batch-id batch_xxx
-    python "run 1 - Topic Extraction.py" --mode download --batch-id batch_xxx
+    python run_01_topic_extraction.py --mode cached          # FREE: view pre-computed results
+    python run_01_topic_extraction.py --mode extract
+    python run_01_topic_extraction.py --mode batch
+    python run_01_topic_extraction.py --mode status --batch-id batch_xxx
+    python run_01_topic_extraction.py --mode watch --batch-id batch_xxx
+    python run_01_topic_extraction.py --mode download --batch-id batch_xxx
+
+NOTE FOR REVIEWERS
+------------------
+Topic labelling results are pre-computed and stored in:
+    data/Graph Rag Creation Data/topic_labelled.csv  (~255 MB, ~1.4M sentences)
+
+Run with --mode cached to inspect the output without any API calls or cost.
 
 Output CSV columns
 ------------------
@@ -406,6 +415,44 @@ def run_extract():
             print(f"    {ticker} {ft} {fd}: {reason}")
     print(f"\n  Output: {SENTENCES_CSV}")
     print(f"{'='*60}")
+
+
+# ---------------------------------------------------------------------------
+# MODE: CACHED (no API calls — reads pre-computed output)
+# ---------------------------------------------------------------------------
+
+def run_cached():
+    """Loads the pre-computed topic_labelled.csv and prints stats. Zero cost."""
+    # Check both possible output locations (run_01 output vs. canonical pipeline path)
+    CANONICAL_CSV = Path("data/Graph Rag Creation Data/topic_labelled.csv")
+    csv_path = LABELLED_CSV if LABELLED_CSV.exists() else CANONICAL_CSV if CANONICAL_CSV.exists() else None
+
+    if csv_path is None:
+        print(f"\n  [!] No cached output found at {LABELLED_CSV} or {CANONICAL_CSV}")
+        print(f"      Run --mode extract then --mode batch to generate it first.")
+        return
+
+    print(f"[1/1] Loading pre-computed results from {csv_path} ...")
+    df = pd.read_csv(csv_path)
+    labelled = df[df["topic_label"].notna()]
+    other_count = (labelled["topic_label"] == "other").sum()
+
+    print(f"\n{'='*60}")
+    print(f"  Topic Extraction — Cached Results")
+    print(f"{'='*60}")
+    print(f"  Total sentences:    {len(df):,}")
+    print(f"  Labelled:           {len(labelled):,}")
+    print(f"  Unlabelled:         {len(df) - len(labelled):,}")
+    print(f"  Other:              {other_count:,} ({100*other_count/max(len(labelled),1):.1f}%)")
+    print(f"\n  Topic distribution:")
+    for topic, count in labelled["topic_label"].value_counts().items():
+        pct = 100 * count / len(labelled)
+        print(f"    {topic:<35} {count:>6,}  ({pct:>5.1f}%)")
+    print(f"\n  Companies:  {df['ticker'].nunique()}")
+    print(f"  Output:     {LABELLED_CSV}")
+    print(f"{'='*60}")
+    print(f"\n  (No API calls made — $0 cost)")
+    print(f"  Next: run_03_vague_predictions.py / run_03_complex_predictions.py\n")
 
 
 # ---------------------------------------------------------------------------
@@ -864,9 +911,10 @@ def run_download(batch_id: str | None):
 def main():
     parser = argparse.ArgumentParser(description="DDDS Risk Topic Extraction Pipeline")
     parser.add_argument("--mode",
-                        choices=["extract", "batch", "status", "watch", "download"],
+                        choices=["cached", "extract", "batch", "status", "watch", "download"],
                         required=True,
-                        help="extract: HTML->sentences | batch: submit to API | "
+                        help="cached: load pre-computed results (free, no API) | "
+                             "extract: HTML->sentences | batch: submit to API | "
                              "status: check job | watch: auto-poll + download | "
                              "download: retrieve results")
     parser.add_argument("--batch-id", type=str, default=None,
@@ -879,7 +927,10 @@ def main():
     print(f"  Mode:       {args.mode}")
     print()
 
-    if args.mode == "extract":
+    if args.mode == "cached":
+        run_cached()
+
+    elif args.mode == "extract":
         run_extract()
 
     elif args.mode == "batch":

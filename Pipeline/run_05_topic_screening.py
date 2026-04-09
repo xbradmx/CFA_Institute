@@ -1,5 +1,5 @@
 """
-DDDS - Disclosure Screening (Run 8)
+DDDS - Disclosure Screening (Run 5)
 =================================================
 Pulls disclosure block pairs from the Neo4j graph and screens for
 disclosure degradation using GPT-4.1-mini. Two comparison layers:
@@ -12,21 +12,31 @@ disclosure degradation using GPT-4.1-mini. Two comparison layers:
 Additionally detects "disappeared topics" — topics present in a prior
 filing but absent in the current one — via pure graph traversal (no LLM).
 
-Output: CSV of all flags for Opus escalation in run_9.
+Output: CSV of all flags for Opus escalation in run_06.
 
 Usage
 -----
-    python "run 8 - graph RAG.py"               # full run
-    python "run 8 - graph RAG.py" --test         # 5 random temporal pairs only
-    python "run 8 - graph RAG.py" --no-cache     # ignore cached results
-    python "run 8 - graph RAG.py" --concurrency 10
+    python run_05_topic_screening.py --use-cached           # FREE: load pre-computed results, no API calls
+    python run_05_topic_screening.py                        # full run (uses LLM cache automatically)
+    python run_05_topic_screening.py --test                 # 5 random temporal pairs only
+    python run_05_topic_screening.py --no-cache             # ignore cached results, re-run all comparisons
+    python run_05_topic_screening.py --concurrency 10
+
+NOTE FOR REVIEWERS
+------------------
+All LLM screening results are pre-computed and cached in:
+    data/Graph Rag Creation Data/screening_cache/   (~6,700 cached results)
+    data/Graph Rag Creation Data/screening_flags.csv  (final output)
+
+Run with --use-cached to load the pre-computed output directly.
+No API keys, no Neo4j connection, and zero cost.
 
 Pipeline position
 -----------------
-    run_7 (Neo4j graph building)
-        → **run_8 (GPT-4o-mini screening)**  ← YOU ARE HERE
-            → run_9 (Claude Opus escalation)
-                → run_10 (memo generation)
+    run_04 (Neo4j graph building)
+        → **run_05 (GPT-4.1-mini screening)**  ← YOU ARE HERE
+            → run_06 (Claude Opus escalation)
+                → run_07 (memo generation)
 """
 
 import argparse
@@ -504,12 +514,12 @@ def print_test_results(df: pd.DataFrame):
     print(f"  TEST RESULTS — Flag Breakdown by Company ({len(tickers)} companies)")
     print(f"{'='*70}")
     print(f"  {'Ticker':<10} {'Temporal':>10} {'Peer':>10} {'Disappeared':>13} {'Total':>8}")
-    print(f"  {'─'*51}")
+    print(f"  {'-'*51}")
 
     for ticker, temporal, peer, disappeared, total in rows:
         print(f"  {ticker:<10} {temporal:>10} {peer:>10} {disappeared:>13} {total:>8}")
 
-    print(f"  {'─'*51}")
+    print(f"  {'-'*51}")
     totals = (
         sum(r[1] for r in rows),
         sum(r[2] for r in rows),
@@ -533,7 +543,7 @@ def print_test_results(df: pd.DataFrame):
     print()
 
 
-def print_summary(df: pd.DataFrame, screener: LLMScreener):
+def print_summary(df: pd.DataFrame, screener):
     """Print final run summary with costs."""
     flagged = df[df["flagged"] == True]
 
@@ -548,7 +558,7 @@ def print_summary(df: pd.DataFrame, screener: LLMScreener):
         if len(layer_df) > 0:
             print(f"  {layer:<25} {len(layer_flagged):>5} / {len(layer_df):>6} flagged")
 
-    print(f"  {'─'*45}")
+    print(f"  {'-'*45}")
     print(f"  {'Total':<25} {len(flagged):>5} / {len(df):>6} flagged")
 
     # Unique companies flagged
@@ -579,6 +589,8 @@ def print_summary(df: pd.DataFrame, screener: LLMScreener):
 
 def main():
     parser = argparse.ArgumentParser(description="DDDS Disclosure Screening (Run 8)")
+    parser.add_argument("--use-cached", action="store_true",
+                        help="Load pre-computed results from disk — no Neo4j or API calls (free)")
     parser.add_argument("--test", action="store_true",
                         help="Test mode: 5 random temporal pairs only")
     parser.add_argument("--no-cache", action="store_true",
@@ -588,7 +600,33 @@ def main():
     parser.add_argument("--output", type=Path, default=OUTPUT_CSV)
     args = parser.parse_args()
 
-    # Validate env
+    # ------------------------------------------------------------------
+    # --use-cached: load pre-computed results from disk, no external calls
+    # ------------------------------------------------------------------
+    if args.use_cached:
+        if not args.output.exists():
+            print(f"\n  [!] No cached results found at {args.output}")
+            print(f"      Run without --use-cached to generate results first.")
+            return
+
+        print(f"\n{'='*60}")
+        print(f"  DDDS Disclosure Screening — Cached Results")
+        print(f"{'='*60}")
+        print(f"  Loading pre-computed results from {args.output} ...")
+        df = pd.read_csv(args.output)
+        print(f"  Loaded {len(df):,} rows across {df['ticker'].nunique()} companies")
+        print(f"  (No API calls made — $0 cost)\n")
+
+        class _NullScreener:
+            total_input_tokens = 0
+            total_output_tokens = 0
+
+        print_summary(df, _NullScreener())
+        print("[Done] Cached results loaded. No API calls made.")
+        print("  Next: run_06_opus_analysis.py --all --use-cached\n")
+        return
+
+    # Validate env (only needed for live runs)
     if not OPENAI_API_KEY or OPENAI_API_KEY == "your-openai-key":
         raise ValueError("OPENAI_API_KEY not set in .env")
     if not NEO4J_PASSWORD:
@@ -648,7 +686,7 @@ def main():
         escalated_tickers = company_flags.head(cutoff_idx)["ticker"].tolist()
         dropped_tickers = company_flags.tail(len(company_flags) - cutoff_idx)["ticker"].tolist()
 
-        # Save escalated flags for run_9
+        # Save escalated flags for run_06
         escalated_df = flagged_df[flagged_df["ticker"].isin(escalated_tickers)]
         escalated_path = args.output.parent / "screening_escalated.csv"
         escalated_df.to_csv(escalated_path, index=False)
@@ -663,7 +701,7 @@ def main():
         print("  Run without --test to execute full screening.")
     else:
         print("[Done] Screening complete.")
-        print("  Next: run_9 (Claude Opus escalation)\n")
+        print("  Next: run_06_opus_analysis.py (Claude Opus escalation)\n")
 
 
 if __name__ == "__main__":

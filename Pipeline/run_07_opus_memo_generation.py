@@ -1,6 +1,6 @@
 """
-DDDS - Investment Memo Generation (Run 10)
-============================================
+DDDS - Investment Memo Generation (Run 7)
+==========================================
 Reads Opus Pass 1 analysis JSONs and FinBERT prediction scores,
 calls Claude Opus 4.6 to generate structured narrative sections,
 and produces formatted two-page .docx investment memos with inline
@@ -8,10 +8,10 @@ filing citations and dual signal assessment (FinBERT + Claude).
 
 Usage
 -----
-    python "run_10_-_memo_generation.py" --all
-    python "run_10_-_memo_generation.py" --ticker AAPL
-    python "run_10_-_memo_generation.py" --all --use-cached
-    python "run_10_-_memo_generation.py" --all --dry-run
+    python run_07_opus_memo_generation.py --all
+    python run_07_opus_memo_generation.py --ticker AAPL
+    python run_07_opus_memo_generation.py --all --use-cached
+    python run_07_opus_memo_generation.py --all --dry-run
 """
 
 import argparse

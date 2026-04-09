@@ -6,7 +6,11 @@
       "Bash(python -c ':*)",
       "Bash(python -c \"import ast; ast.parse\\(open\\('analyst_frontend.py'\\).read\\(\\)\\); print\\('OK'\\)\")",
       "Bash(python -c \"import yfinance as yf; t = yf.Ticker\\('AAPL'\\); h = t.history\\(start='2025-01-01', end='2025-01-10'\\); print\\(h['Close'].iloc[0]\\)\")",
-      "Bash(python -c \"import ast; ast.parse\\(open\\('analyst_frontend.py'\\).read\\(\\)\\); print\\('syntax OK'\\)\")"
+      "Bash(python -c \"import ast; ast.parse\\(open\\('analyst_frontend.py'\\).read\\(\\)\\); print\\('syntax OK'\\)\")",
+      "Bash(python Pipeline/run_05_topic_screening.py --use-cached)",
+      "Bash(python Pipeline/run_01_topic_extraction.py --mode cached)",
+      "Bash(python Pipeline/run_05_topic_screening.py --help)",
+      "Bash(python Pipeline/run_01_topic_extraction.py --help)"
     ]
   }
 }

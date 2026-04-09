@@ -1,7 +1,7 @@
 """
-DDDS - Investment Memo Generator
-==================================
-Reads findings JSON files produced by Run 8 (graph_rag.py) and generates
+DDDS - Investment Memo Generator (Run 6b)
+==========================================
+Reads findings JSON files produced by Run 5 (topic screening) and generates
 formatted two-page investment memos as .docx files for each flagged supplier.
 
 Each memo contains:
@@ -19,13 +19,13 @@ with CFA Standard V(A) auditability requirements.
 Usage
 -----
     # Single company findings file
-    python generate_memos.py --input data/findings/AAPL_findings.json
+    python run_06_memo_generation.py --input data/findings/AAPL_findings.json
 
     # All findings in a directory
-    python generate_memos.py --input-dir data/findings
+    python run_06_memo_generation.py --input-dir data/findings
 
     # Custom output directory
-    python generate_memos.py --input-dir data/findings --output-dir data/memos
+    python run_06_memo_generation.py --input-dir data/findings --output-dir data/memos
 """
 
 import argparse

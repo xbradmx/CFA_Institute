@@ -32,17 +32,17 @@ Key design decisions:
 
 Usage
 -----
-    python "run 7 - graph building.py"
-    python "run 7 - graph building.py" --wipe
-    python "run 7 - graph building.py" --input path/to/topic_labelled.csv
+    python run_04_graph_building.py
+    python run_04_graph_building.py --wipe
+    python run_04_graph_building.py --input path/to/topic_labelled.csv
 
 Pipeline position
 -----------------
-    run_0 (EDGAR download)
-        -> run_1 (topic extraction -> topic_labelled.csv)
-            -> run_5/6 (FinBERT training + prediction)
-                -> **run_7 (Neo4j graph building)**  <- YOU ARE HERE
-                    -> run_8 (Graph-RAG analysis)
+    run_00 (EDGAR download)
+        -> run_01 (topic extraction -> topic_labelled.csv)
+            -> run_03 (FinBERT inference)
+                -> **run_04 (Neo4j graph building)**  <- YOU ARE HERE
+                    -> run_05 (disclosure screening)
 """
 
 import argparse
@@ -402,7 +402,7 @@ def load_labelled_csv(path: Path) -> pd.DataFrame:
     if not path.exists():
         raise FileNotFoundError(
             f"Input file not found: {path}\n"
-            f"Expected output of run_1 (topic extraction) at this path."
+            f"Expected output of run_01 (topic extraction) at this path."
         )
 
     df = pd.read_csv(path)
@@ -513,7 +513,7 @@ def main():
     builder.close()
 
     print("[Done] Graph built successfully.")
-    print("  Next: run_8 (Graph-RAG analysis)\n")
+    print("  Next: run_05_topic_screening.py (disclosure screening)\n")
 
 
 if __name__ == "__main__":

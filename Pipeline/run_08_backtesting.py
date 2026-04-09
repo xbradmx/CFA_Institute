@@ -33,14 +33,14 @@ All companies are US Industrials (SIC 3400-3599), so sector demeaning
 is unnecessary.
 
 Data sources:
-    - LOF scores:      DDDS pipeline output (score CSVs from run 6)
+    - LOF scores:      DDDS pipeline output (score CSVs from run_03)
     - Financial data:  SEC EDGAR XBRL (primary) + yfinance (gap-fill)
 
 Usage
 -----
-    python run_11_-_backtesting.py
-    python run_11_-_backtesting.py --scores-dir data/analyst_outputs
-    python run_11_-_backtesting.py --skip-fetch
+    python run_08_backtesting.py
+    python run_08_backtesting.py --scores-dir data/analyst_outputs
+    python run_08_backtesting.py --skip-fetch
 """
 
 import argparse

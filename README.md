@@ -18,20 +18,20 @@ The system is organised into two pipelines: a one-time **training pipeline** tha
 
 ```
 CFA_Institute/
-├── Pipeline/                        # Scoring pipeline (Runs 0-11)
+├── Pipeline/                        # Scoring pipeline (Runs 0-8)
 │   ├── run_00_sec_data_collection.py
 │   ├── run_00a_clean_amendments.py
 │   ├── run_01_topic_extraction.py
 │   ├── run_02_peer_selection.py
-│   ├── run_06_vague_predictions.py
-│   ├── run_06_complex_predictions.py
-│   ├── run_07_graph_building.py
-│   ├── run_08_topic_screening.py
-│   ├── run_09_opus_analysis.py
-│   ├── run_09_memo_generation.py
-│   ├── run_10_risk_heatmap.py
-│   ├── run_10_opus_memo_generation.py
-│   ├── run_11_backtesting.py
+│   ├── run_03_vague_predictions.py
+│   ├── run_03_complex_predictions.py
+│   ├── run_04_graph_building.py
+│   ├── run_05_topic_screening.py
+│   ├── run_06_opus_analysis.py
+│   ├── run_06_memo_generation.py
+│   ├── run_07_risk_heatmap.py
+│   ├── run_07_opus_memo_generation.py
+│   ├── run_08_backtesting.py
 │   ├── cache.py
 │   └── resumebatches.py
 │
@@ -320,17 +320,17 @@ Output: `data/Graph Rag Creation Data/peer_selections.csv`
 
 ---
 
-### Run 6 — FinBERT Inference
+### Run 3 — FinBERT Inference
 
 Runs batch inference with the fine-tuned classifiers on all sentences in `topic_labelled.csv`. Both classifiers must be run.
 
 ```powershell
-python "Pipeline/run_06_vague_predictions.py" \
+python "Pipeline/run_03_vague_predictions.py" \
     --model models/finbert_vagueness \
     --input "data/Graph Rag Creation Data/topic_labelled.csv" \
     --output data/predictions_vagueness.csv
 
-python "Pipeline/run_06_complex_predictions.py" \
+python "Pipeline/run_03_complex_predictions.py" \
     --model models/finbert_complexity \
     --input "data/Graph Rag Creation Data/topic_labelled.csv" \
     --output data/predictions_complexity.csv
@@ -340,7 +340,7 @@ Output: `data/predictions_vagueness.csv`, `data/predictions_complexity.csv`
 
 ---
 
-### Run 7 — Build Neo4j Graph
+### Run 4 — Build Neo4j Graph
 
 Ingests `topic_labelled.csv` and `peer_selections.csv` into the hosted Neo4j AuraDB knowledge graph. The connection is pre-configured — ensure `NEO4J_PASSWORD` is set in your `.env` before running.
 
@@ -362,90 +362,90 @@ Graph schema:
 | `PEER_OF` | Peer relationship with distance and SIC-level metadata |
 
 ```powershell
-python "Pipeline/run_07_graph_building.py"
+python "Pipeline/run_04_graph_building.py"
 ```
 
 To wipe the database and rebuild from scratch:
 
 ```powershell
-python "Pipeline/run_07_graph_building.py" --wipe
+python "Pipeline/run_04_graph_building.py" --wipe
 ```
 
 ---
 
-### Run 8 — Disclosure Screening (Graph-RAG Tier 1)
+### Run 5 — Disclosure Screening (Graph-RAG Tier 1)
 
-Queries the Neo4j graph for disclosure block pairs and screens them for degradation using GPT-4.1-mini. Two comparison layers are applied: temporal (same company, current vs prior period) and peer (same topic, current company vs each of its five peers). Disappeared topics are detected via graph traversal without any LLM call. Flagged results are written to CSV for escalation in Run 9.
+Queries the Neo4j graph for disclosure block pairs and screens them for degradation using GPT-4.1-mini. Two comparison layers are applied: temporal (same company, current vs prior period) and peer (same topic, current company vs each of its five peers). Disappeared topics are detected via graph traversal without any LLM call. Flagged results are written to CSV for escalation in Run 6.
 
 ```powershell
-python "Pipeline/run_08_topic_screening.py"
+python "Pipeline/run_05_topic_screening.py"
 ```
 
 To run a quick test on five random temporal pairs before the full run:
 
 ```powershell
-python "Pipeline/run_08_topic_screening.py" --test
+python "Pipeline/run_05_topic_screening.py" --test
 ```
 
 To use the LLM response cache and avoid repeated API calls on re-runs:
 
 ```powershell
-python "Pipeline/run_08_topic_screening.py" --use-cached
+python "Pipeline/run_05_topic_screening.py" --use-cached
 ```
 
 Output: `data/Graph Rag Creation Data/screening_flags.csv`
 
 ---
 
-### Run 9 — Investment Memo Generation (Graph-RAG Tier 2)
+### Run 6 — Investment Memo Generation (Graph-RAG Tier 2)
 
 Passes all flagged items per company to Claude Opus for deep analysis covering temporal deterioration, peer comparison, and cross-document contradictions. Generates a formatted two-page `.docx` investment memo per flagged company. All outputs include model provenance and confidence levels.
 
 ```powershell
-python "Pipeline/run_09_memo_generation.py"
+python "Pipeline/run_06_memo_generation.py"
 ```
 
 Output: `data/memos/{TICKER}_memo.docx`
 
 ---
 
-### Run 10 — Geographic Risk Heatmap
+### Run 7 — Geographic Risk Heatmap
 
 Produces a global heatmap attributing raw vagueness scores to countries based on geographic keyword matching within each scored sentence. The USA receives scores from all sentences across the universe. No demeaning is applied to this output.
 
 ```powershell
-python "Pipeline/run_10_risk_heatmap.py"
+python "Pipeline/run_07_risk_heatmap.py"
 ```
 
 To export a PNG without opening the interactive window:
 
 ```powershell
-python "Pipeline/run_10_risk_heatmap.py" --save outputs/heatmap.png --headless
+python "Pipeline/run_07_risk_heatmap.py" --save outputs/heatmap.png --headless
 ```
 
 Output: `outputs/heatmap.png`
 
 ---
 
-### Run 11 — Backtesting
+### Run 8 — Backtesting
 
 Tests the core hypothesis using the Li (2008) earnings persistence regression. Flagged companies are expected to show lower earnings persistence in the period following the flag relative to unflagged peers. The regression is run across three subsamples: full sample, profitable companies only (earnings > 0), and loss-making companies only (earnings < 0). Earnings data is pulled from the SEC EDGAR XBRL API with a yfinance fallback.
 
 ```powershell
-python "Pipeline/run_11_backtesting.py"
+python "Pipeline/run_08_backtesting.py"
 ```
 
 Optional arguments:
 
 ```powershell
 # Set minimum signal level to count as flagged (HIGH, MEDIUM, or LOW)
-python "Pipeline/run_11_backtesting.py" --signal-threshold MEDIUM
+python "Pipeline/run_08_backtesting.py" --signal-threshold MEDIUM
 
 # Use ROA instead of EPS as the earnings metric
-python "Pipeline/run_11_backtesting.py" --earnings-metric ROA
+python "Pipeline/run_08_backtesting.py" --earnings-metric ROA
 
 # Use cached earnings data and skip API calls
-python "Pipeline/run_11_backtesting.py" --skip-fetch
+python "Pipeline/run_08_backtesting.py" --skip-fetch
 ```
 
 Output: `data/backtest/backtest_results.csv`, `data/backtest/regression_summary.txt`
@@ -514,12 +514,12 @@ Scoring
     Pipeline/run_00a   clean amendments, enforce filing count per company
     Pipeline/run_01    topic extraction (extract → batch → watch → download)
     Pipeline/run_02    point-in-time peer selection
-    Pipeline/run_06    FinBERT inference — vagueness + complexity
-    Pipeline/run_07    build Neo4j knowledge graph
-    Pipeline/run_08    disclosure screening — GPT-4.1-mini (Tier 1)
-    Pipeline/run_09    Opus analysis + investment memo generation — Claude Opus (Tier 2)
-    Pipeline/run_10    geographic risk heatmap + memo generation
-    Pipeline/run_11    backtesting — Li (2008) earnings persistence regression
+    Pipeline/run_03    FinBERT inference — vagueness + complexity
+    Pipeline/run_04    build Neo4j knowledge graph
+    Pipeline/run_05    disclosure screening — GPT-4.1-mini (Tier 1)
+    Pipeline/run_06    Opus analysis + investment memo generation — Claude Opus (Tier 2)
+    Pipeline/run_07    geographic risk heatmap + memo generation
+    Pipeline/run_08    backtesting — Li (2008) earnings persistence regression
 ```
 
 ---
@@ -529,9 +529,9 @@ Scoring
 | Component | Estimated cost |
 |---|---|
 | GPT-4o Batch API labelling — training, 20,000 sentences | ~$4, one-time, cached in repo |
-| GPT-4.1-mini screening per quarter (Run 8) | ~$2-5 |
-| Claude Opus deep analysis per quarter (Run 9) | ~$10-20 |
-| FinBERT inference — Runs 6 and analyst backend | Free (local GPU or CPU) |
+| GPT-4.1-mini screening per quarter (Run 5) | ~$2-5 |
+| Claude Opus deep analysis per quarter (Run 6) | ~$10-20 |
+| FinBERT inference — Run 3 and analyst backend | Free (local GPU or CPU) |
 | **Full quarterly run** | **~£15-25** |
 
 Cached Batch API results are included in the repository. All downstream outputs can be reproduced from cache at no API cost.
@@ -544,4 +544,4 @@ Cached Batch API results are included in the repository. All downstream outputs 
 - The **FinBERT Rankings** earnings persistence calculation requires quarterly earnings data in `data/backtest/quarterly_earnings_yfinance.csv` (produced by Run 11). Companies not present in that file will show `N/A` for persistence. Stock price data is fetched live from yfinance at startup; tickers that are delisted or not covered will show `n/a` for price return.
 - Section boundary detection in Run 1 uses heading pattern matching. Non-standard or heavily nested HTML filings may cause sections to be missed. Check the extraction log for any files reporting zero sentences.
 - The training corpus covers 50 randomly seeded companies, which constrains industry diversity within SIC 3400-3599.
-- Runs 7 through 11 must be run from the command line; they are not triggered from within the frontend.
+- Runs 4 through 8 must be run from the command line; they are not triggered from within the frontend.

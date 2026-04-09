@@ -3,7 +3,7 @@ DDDS — Disclosure Degradation Detection System
 Region Heat Risk Map  (Desktop Application)
 
 Bloomberg-inspired dark-mode global heat map driven by raw vagueness scores
-extracted from the analyst_outputs CSV files produced by Run 9.
+extracted from the analyst_outputs CSV files produced by Run 6.
 
 Score derivation
 ----------------
@@ -25,18 +25,18 @@ Requirements
 
 Run
 ---
-    python run_10_risk_heat_map.py
-    python run_10_risk_heat_map.py --analyst-outputs-dir data/analyst_outputs
-    python run_10_risk_heat_map.py --demo
+    python run_07_risk_heatmap.py
+    python run_07_risk_heatmap.py --analyst-outputs-dir data/analyst_outputs
+    python run_07_risk_heatmap.py --demo
 
     # Export a PNG for presentations (also opens the interactive window):
-    python run_10_risk_heat_map.py --save outputs/heatmap.png
+    python run_07_risk_heatmap.py --save outputs/heatmap.png
 
     # Headless export only — no Tkinter window (ideal for CI / pre-demo prep):
-    python run_10_risk_heat_map.py --save outputs/heatmap.png --headless
+    python run_07_risk_heatmap.py --save outputs/heatmap.png --headless
 
     # Demo mode headless export:
-    python run_10_risk_heat_map.py --demo --save outputs/heatmap_demo.png --headless
+    python run_07_risk_heatmap.py --demo --save outputs/heatmap_demo.png --headless
 """
 
 import argparse

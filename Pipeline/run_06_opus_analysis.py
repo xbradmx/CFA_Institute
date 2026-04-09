@@ -1,7 +1,7 @@
 """
-DDDS - Claude Opus Escalation (Pass 1)
-========================================
-Reads the GPT-4o-mini screening flags from Run 8, retrieves the
+DDDS - Claude Opus Escalation (Run 6)
+======================================
+Reads the GPT-4.1-mini screening flags from Run 5, retrieves the
 underlying filing text from Neo4j via block_id lookups, and sends
 each company's flag bundle to Claude Opus for deep analysis.
 
@@ -11,14 +11,14 @@ Opus returns short-form reasoning per flag:
     - Signal strength rating (HIGH / MEDIUM / LOW / DISMISS)
 
 Outputs are cached per ticker to avoid redundant API calls.
-Run 9 consumes these outputs to generate investment memos.
+Run 07 consumes these outputs to generate investment memos.
 
 Usage
 -----
-    python "run 8a - opus escalation.py" --all
-    python "run 8a - opus escalation.py" --ticker NTAP
-    python "run 8a - opus escalation.py" --all --use-cached
-    python "run 8a - opus escalation.py" --all --dry-run
+    python run_06_opus_analysis.py --all
+    python run_06_opus_analysis.py --ticker NTAP
+    python run_06_opus_analysis.py --all --use-cached
+    python run_06_opus_analysis.py --all --dry-run
 """
 
 import argparse
