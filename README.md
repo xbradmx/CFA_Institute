@@ -102,7 +102,7 @@ Create a file named `.env` in the project root. It is excluded from version cont
 OPENAI_API_KEY=your-openai-key
 ANTHROPIC_API_KEY=your-anthropic-key
 NEO4J_PASSWORD=see-technical-summary
-EDGAR_USER_AGENT=DDDS Research your-email@lancaster.ac.uk
+EDGAR_USER_AGENT= your-email@emailprovider.com
 FINDINGS_DIR=data/findings
 ANALYST_OUTPUTS_DIR=data/analyst_outputs
 ```
