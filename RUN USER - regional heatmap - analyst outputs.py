@@ -25,18 +25,19 @@ Requirements
 
 Run
 ---
-    python run_10_risk_heat_map.py
-    python run_10_risk_heat_map.py --analyst-outputs-dir data/analyst_outputs
-    python run_10_risk_heat_map.py --demo
+    python "RUN USER - regional heatmap - analyst outputs.py"
+    python "RUN USER - regional heatmap - analyst outputs.py" --analyst-outputs-dir data/analyst_outputs
+    python "RUN USER - regional heatmap - analyst outputs.py" --demo
+    python "RUN USER - regional heatmap - analyst outputs.py" --analyst-outputs-dir data/analyst_outputs --save outputs/heatmap.png
 
     # Export a PNG for presentations (also opens the interactive window):
-    python run_10_risk_heat_map.py --save outputs/heatmap.png
+    python "RUN USER - regional heatmap - analyst outputs.py" --save outputs/heatmap.png
 
     # Headless export only — no Tkinter window (ideal for CI / pre-demo prep):
-    python run_10_risk_heat_map.py --save outputs/heatmap.png --headless
+    python "RUN USER - regional heatmap - analyst outputs.py" --save outputs/heatmap.png --headless
 
     # Demo mode headless export:
-    python run_10_risk_heat_map.py --demo --save outputs/heatmap_demo.png --headless
+    python "RUN USER - regional heatmap - analyst outputs.py" --demo --save outputs/heatmap_demo.png --headless
 """
 
 import argparse
@@ -46,13 +47,14 @@ import io
 import os
 import random
 import sys
-import tkinter as tk
+
 import geopandas as gpd
 import matplotlib
 matplotlib.rcParams["agg.path.chunksize"] = 10000
 # Backend is set later in parse_args — must happen before pyplot import
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
+import tkinter as tk
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -792,8 +794,6 @@ if __name__ == "__main__":
 
 
     root.protocol("WM_DELETE_WINDOW", _on_close)
-
-
 
     # Optional auto-save after the window finishes its first draw
     if args.save:
