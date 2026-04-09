@@ -102,9 +102,13 @@ Create a file named `.env` in the project root. It is excluded from version cont
 OPENAI_API_KEY=your-openai-key
 ANTHROPIC_API_KEY=your-anthropic-key
 NEO4J_PASSWORD=see-technical-summary
+NEO4J_URI=see-technical-summary
+NEO4J_USER=see-technical-summary
 EDGAR_USER_AGENT= your-email@emailprovider.com
 FINDINGS_DIR=data/findings
 ANALYST_OUTPUTS_DIR=data/analyst_outputs
+SEC_USER_AGENT= email@emailprovider.com
+
 ```
 
 The pipeline connects to a hosted **Neo4j AuraDB** (free tier) instance containing the full pre-populated graph. The connection URI and username are pre-configured in the pipeline scripts — only `NEO4J_PASSWORD` needs to be set. The password is provided in the accompanying technical summary. No local Neo4j installation is required.
