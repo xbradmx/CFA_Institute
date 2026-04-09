@@ -220,7 +220,7 @@ Output: `data/training/complexity/train.csv`, `val.csv`, `test.csv`
 
 ### Training Run 5 — Fine-Tune FinBERT
 
-Fine-tunes two binary classifiers independently from the ProsusAI/finbert base checkpoint. Training uses weighted cross-entropy for class imbalance, macro F1 as the best-model selection criterion, and early stopping with patience of 2.
+Fine-tunes two binary classifiers independently from the finbert checkpoint. Training uses weighted cross-entropy for class imbalance, macro F1 as the best-model selection criterion, and early stopping with patience of 2.
 
 ```powershell
 python "training/run 5 - vague_training.py"
