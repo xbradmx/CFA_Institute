@@ -409,30 +409,30 @@ Output: `data/memos/{TICKER}_memo.docx`
 
 ---
 
-### Run 7 — Geographic Risk Heatmap
+### Run 8 — Geographic Risk Heatmap
 
 Produces a global heatmap attributing raw vagueness scores to countries based on geographic keyword matching within each scored sentence. The USA receives scores from all sentences across the universe. No demeaning is applied to this output.
 
 ```powershell
-python "Pipeline/run_07_risk_heatmap.py"
+python "Pipeline/run_08_risk_heatmap.py"
 ```
 
 To export a PNG without opening the interactive window:
 
 ```powershell
-python "Pipeline/run_07_risk_heatmap.py" --save outputs/heatmap.png --headless
+python "Pipeline/run_08_risk_heatmap.py" --save outputs/heatmap.png --headless
 ```
 
 Output: `outputs/heatmap.png`
 
 ---
 
-### Run 8 — Backtesting
+### Run 9 — Backtesting
 
 Tests the core hypothesis using the Li (2008) earnings persistence regression. Flagged companies are expected to show lower earnings persistence in the period following the flag relative to unflagged peers. The regression is run across three subsamples: full sample, profitable companies only (earnings > 0), and loss-making companies only (earnings < 0). Earnings data is pulled from the SEC EDGAR XBRL API with a yfinance fallback.
 
 ```powershell
-python "Pipeline/run_08_backtesting.py"
+python "Pipeline/run_09_backtesting.py"
 ```
 
 Optional arguments:
