@@ -1,0 +1,79 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "financial_sustainability",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "08ca6d8f578aa72b",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flagged text is standard boilerplate language about deferred tax asset valuation methodology. This type of disclosure typically appears in annual 10-K filings with full financial statement footnotes and may not be repeated verbatim in every 10-Q. The absence of this specific sentence in a quarterly filing does not indicate removal of material information about financial sustainability; it reflects normal variation in quarterly vs. annual disclosure detail.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "fbe7fbd6653c51c7",
+        "peer": "39c1ee1a6c883375"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "NDSN reports a significant 510 basis point MFS operating margin decline and 120 basis point IPS margin decline but provides only generic attributions ('lower sales volumes,' 'lower organic sales demand') with no discussion of tariff impacts, input cost inflation, or supply chain disruptions. In contrast, ESAB explicitly quantifies tariff-related material cost increases, discusses inventory builds due to tariff uncertainty, and details gross profit decreases from higher material costs. Given that NDSN acknowledges in its 'Other Trends' section that it has 'sales and purchases that could be negatively impacted by recent tariff actions,' the absence of any quantification or detailed discussion of cost pressures underlying the material margin declines is a notable disclosure gap.",
+      "investigation_action": "Analyst should probe NDSN management on the specific drivers of the 510bp MFS margin decline and 120bp IPS margin decline, including tariff exposure on raw materials and components, whether pricing actions have been taken, and the quantified impact of trade policy changes on cost of goods sold and gross margins."
+    },
+    {
+      "flag_number": 3,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "abc6b5dffdbcda84",
+        "peer": "b2a3ed5cf60c7c5b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 the screening reason notes that SYM may be downplaying debt financing risk, while NDSN actually provides detailed and appropriate disclosure including specific interest expense figures ($26,258 vs. $18,803 quarterly), outstanding balances on term loan and revolving facilities ($280,000 and $243,000), and maturity dates. NDSN's disclosure on this topic is robust. The peer comparison reflects genuine business model differences: SYM is largely equity-financed with net cash, while NDSN carries acquisition-related debt. This is not a NDSN disclosure concern.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3e4f166ae9c63206",
+        "peer": "4f390fa850affeb1"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, this flag is inverted \u2014 SYM provides virtually no geopolitical/macro discussion while NDSN provides substantial disclosure including quantified FX translation impacts ($13,000 lower sales, $8,000 lower costs), explicit acknowledgment of tariff risks, and enumeration of specific geopolitical risks (European/Middle East conflicts, trade policy changes). NDSN's disclosure on this topic is meaningfully more detailed than its peer. The divergence reflects SYM's weaker disclosure, not a NDSN concern.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "NDSN's disclosure quality is generally adequate to strong on most topics including debt financing, FX impacts, and geopolitical risk. However, there is a notable gap in the company's discussion of cost and margin pressures: despite reporting material operating margin declines (510bp in MFS, 120bp in IPS), NDSN provides minimal detail on the underlying cost drivers and makes no mention of tariff-related cost impacts that peers in the industrial sector explicitly quantify. This selective vagueness on a topic of material financial impact warrants scrutiny.",
+    "top_concerns": [
+      "Lack of specificity on cost and margin pressure drivers behind significant MFS (510bp) and IPS (120bp) operating margin declines, particularly absence of tariff impact quantification",
+      "Disconnect between acknowledging tariff exposure in 'Other Trends' section while claiming no material impact and providing no cost quantification",
+      "Potential understatement of input cost inflation and supply chain cost pressures relative to peer disclosure standards in the industrial sector"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 0,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "NDSN",
+    "model": "claude-opus-4-6",
+    "input_tokens": 4471,
+    "output_tokens": 1337,
+    "timestamp": "2026-04-09T12:15:58.823859"
+  }
+}

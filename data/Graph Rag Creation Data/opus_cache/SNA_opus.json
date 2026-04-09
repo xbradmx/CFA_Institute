@@ -1,0 +1,79 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "59cadf02b655807d",
+        "peer": "ade726b5be1f67e8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "SNA and SSD (Simpson Strong-Tie) operate in fundamentally different product domains \u2014 Snap-on makes professional tools and diagnostic equipment while SSD manufactures structural fasteners, connectors, and adhesives. SSD's disclosure of corrosion, hydrogen embrittlement, and chemical mix risks reflects hazards unique to structural building products. SNA's generic reference to RCI operational improvement initiatives is not comparable to SSD's product defect risk disclosures, and the divergence reflects genuine business differences rather than disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "43b8f4e342916792",
+        "peer": "2f1c2d97dcaa6db2"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is internally contradictory \u2014 it claims Company B (SSD) is 'downplaying' supply chain risks while flagging SNA as the target company. The SNA passage is from a balance sheet discussion noting a $54.3 million inventory increase largely driven by FX translation, which is routine financial reporting. The SSD passage about facility improvements reducing outsourced goods reliance is also not a risk factor disclosure. This comparison lacks meaningful signal about disclosure degradation at SNA.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0970705595710f47",
+        "peer": "c6355520b28222c8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted from a disclosure degradation perspective \u2014 SNA actually provides extraordinarily detailed quantitative disclosure including segment-level revenue, operating earnings, organic growth rates, margin percentages, origination volumes, and granular commentary on geographic and product-line performance. The peer SWK provides only generic boilerplate about competitive risks. If anything, SNA is the more transparent filer here. The screening reason acknowledges SNA's detailed disclosures but frames the comparison incorrectly as a concern about SNA.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "43b8f4e342916792",
+        "peer": "d9219a6c1e3fffcb"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "SWK provides extensive, specific supply chain risk disclosures covering rare earth mineral dependence on China, port disruption risks, geopolitical tensions (South Korea, China, Taiwan), and inventory optimization challenges. SNA's filing excerpt is limited to a single inventory balance line item with no discussion of supply chain vulnerabilities. While some of SWK's risks (e.g., rare earth minerals, heavy Chinese sourcing) may be more acute given its product mix, tariff and supply chain disruption risks are industry-wide concerns that SNA likely also faces but does not appear to address in comparable detail in this section.",
+      "investigation_action": "Review SNA's full 10-Q and 10-K Risk Factors sections to determine whether supply chain risks, tariff exposure, and geographic sourcing concentration are discussed elsewhere in the filing. Assess SNA's geographic manufacturing footprint and import reliance to determine if the absence of such disclosure is material. Compare against SNA's prior-year filings for any removal or softening of supply chain risk language."
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Three of four flags are clearly dismissible due to business model differences between SNA and its compared peers, inverted screening logic, or SNA actually providing superior disclosure. The one borderline flag on supply chain risk disclosure warrants a check of SNA's full filing but likely reflects genuine differences in supply chain exposure between SNA (primarily U.S./domestic manufacturing) and SWK (heavy import reliance from China). Overall, SNA's disclosure quality appears robust, particularly in its detailed segment-level financial reporting.",
+    "top_concerns": [
+      "Verify whether SNA addresses supply chain, tariff, and geopolitical sourcing risks elsewhere in its full 10-Q/10-K filings",
+      "Monitor whether SNA's inventory build ($54.3M increase) is adequately explained by FX or signals unaddressed supply chain issues",
+      "Track SNA's organic sales declines (1.5% H1 2025) and whether forward-looking risk disclosures adequately address demand headwinds"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 1,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "SNA",
+    "model": "claude-opus-4-6",
+    "input_tokens": 6319,
+    "output_tokens": 1313,
+    "timestamp": "2026-04-09T12:30:17.172288"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "38ee6aa609558219",
+        "current": "096c7eb5a1b1b0af",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "Several specific disclosures were removed: the detailed revenue recognition criteria for each segment (manufacturing/distribution vs. real estate), the explicit mention of valuation allowance as of specific dates ('June 30, 2024 and 2023'), the Black-Scholes stock-based compensation methodology and its subjective assumptions, and the foreign currency translation adjustment discussion. However, much of this is standard accounting policy boilerplate that may have been consolidated into the notes to financial statements rather than truly eliminated. The impairment measurement language also changed subtly from 'discounted cash flow analysis' to 'undiscounted cash flow analysis,' which is a meaningful methodological change that could affect impairment recognition thresholds.",
+      "investigation_action": "Verify whether the segment-specific revenue recognition detail, stock-based compensation methodology, and valuation allowance disclosures were moved to the notes to financial statements. Critically, investigate the change from 'discounted' to 'undiscounted' cash flow analysis for impairment, as undiscounted cash flows make it harder to trigger impairment charges."
+    },
+    {
+      "flag_number": 2,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "9878bb3f71faaeed",
+        "current": "815fe8d267a524d5",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed a specific impairment indicator\u2014the 'phasing out of burn-in service contract with a customer in our Malaysia operation'\u2014along with management's specific conclusion that 'majority of the primary assets used for servicing this customer in Malaysia had either fully depreciated before contract termination or repurposed for other customers.' The current period replaces this with vague language about 'business model restructuring in one of our China operations' and generic statements about 'maintaining operational flexibility to adapt to changing market conditions.' The shift from naming specific geographies, customers, and impairment test outcomes to opaque language about 'capacity adjustments in alignment with observable demand signals' is a clear degradation in transparency.",
+      "investigation_action": "Investigate the status of the Malaysia burn-in operations post-contract termination\u2014whether assets were successfully repurposed or written off. Also probe what 'business model restructuring in one of our China operations' specifically entails and whether additional impairment indicators exist that are being obscured by vague language."
+    },
+    {
+      "flag_number": 3,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "16d505e596d5c75f",
+        "peer": "16c7eb719cef554e"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag was raised because SOTK provides less detail on debt financing than TRT. However, TRT is the target company under review, and TRT actually provides robust, granular disclosure including specific dollar amounts for lines of credit, bank loans, finance leases, interest expense, and facility-level detail. SOTK's lighter disclosure likely reflects its simpler capital structure (a single revolving credit line and equipment facility). This flag identifies a peer's potential shortcoming, not a degradation at TRT.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ca4e9f6d972043af",
+        "peer": "ba3eace881293cb8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag highlights that SOTK provides less supply chain detail than TRT. TRT is actually the more transparent company here, disclosing specific supply chain challenges including short lead times, last-minute order confirmation issues, and ongoing inflationary cost pressures. The divergence reflects TRT's more complex international supply chain (Singapore, Malaysia, China) versus SOTK's simpler domestic operations. This is not a disclosure degradation signal for TRT.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "16d505e596d5c75f",
+        "peer": "89e13dc0f590c69f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Similar to Flag 3, TRT provides detailed debt financing disclosure while CVV provides only minimal boilerplate. The screening reason correctly identifies CVV as the less transparent party, not TRT. TRT's disclosure with specific dollar amounts, year-over-year changes, interest rates, and entity-level facility details is exemplary. The peer divergence reflects CVV's potential shortcoming, not a risk at TRT.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ebb57f856adedd5c",
+        "peer": "1157860346954df8"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "TRT's regulatory/tax disclosure is limited to a few fragmented sentences\u2014mentioning the CHIPS Act, deferred tax treatment, 'uncertainties in the application of complex global tax regulations,' and IRC carryover limitations without elaboration. CVV, by contrast, provides detailed ASC 740 uncertain tax position methodology, specific mention of the IRA's 15% corporate alternative minimum tax, the Islip IDA PILOT agreement, and ERC analysis. Given TRT's multinational operations across Singapore, Malaysia, China, and the U.S., the sparse treatment of regulatory and tax risks is noteworthy, though the excerpted TRT passages may be fragmentary and fuller disclosure may exist elsewhere in the filing.",
+      "investigation_action": "Review TRT's full 10-K notes to determine whether ASC 740 uncertain tax position methodology, transfer pricing risks across its Asian operations, and the applicability of CHIPS Act incentives or IRA provisions are addressed in detail elsewhere. If not, this represents a meaningful gap for a company with complex multi-jurisdictional tax exposure."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "TRT shows one genuine disclosure degradation in its operational/impairment discussion, where specific Malaysia asset impairment test details were replaced with vague restructuring language. A borderline concern exists around the subtle change from 'discounted' to 'undiscounted' cash flow in impairment methodology and the potential thinness of regulatory/tax risk disclosure. However, TRT's debt financing and supply chain disclosures remain detailed and compare favorably to peers, suggesting the degradation is concentrated in asset impairment and operational transparency rather than being systemic.",
+    "top_concerns": [
+      "Replacement of specific Malaysia impairment test details with vague 'operational flexibility' language\u2014may signal undisclosed asset quality issues or further contract losses",
+      "Change from 'discounted' to 'undiscounted' cash flow analysis for impairment measurement, which raises the threshold for recognizing impairment charges",
+      "Thin regulatory and tax risk disclosure relative to the complexity of TRT's multinational operations across multiple Asian jurisdictions"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 2,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "TRT",
+    "model": "claude-opus-4-6",
+    "input_tokens": 7716,
+    "output_tokens": 1952,
+    "timestamp": "2026-04-09T12:37:27.679663"
+  }
+}

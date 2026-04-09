@@ -1,0 +1,93 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "95e6cc3f191dd821",
+        "peer": "30b051290778957c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason has the comparison backwards \u2014 it claims BW provides 'only generic, forward-looking statements' while the peer (FGI) discloses financial stress. In reality, BW's passage contains extensive quantitative detail: $58.5M net loss, $52.6M CTA write-off, $5.8M impairment, detailed pension obligations, specific divestiture proceeds, and comprehensive balance sheet data showing accumulated deficit of $1.73B. FGI is the entity providing only generic forward-looking statements about 'long-term growth over short-term profitability.' BW is actually the more transparent filer here.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "53b838ddd29024a6",
+        "peer": "b2b8b99a83a83cb1"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason states that FGI is downplaying human capital risks compared to BW, meaning the flag is about the peer's inadequacy, not BW's. BW actually discloses multiple human capital topics including labor union risks, ability to attract and retain skilled personnel, restructuring/severance activities, CEO compensation arrangements, and frozen pension plan details. The peer's single sentence about 'deep marketing skills' is indeed sparse, but this flag is about the peer's disclosure gap, not BW's. Since BW is the target company being monitored, this flag does not indicate disclosure degradation at BW.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b9fa784f5bf6d067",
+        "peer": "70c2489caede62fd"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, the screening reason identifies FGI (the peer) as the entity lacking warranty and operational risk disclosure, not BW. BW provides detailed warranty expense tracking with a full rollforward table ($2,748K to $2,599K), specific additions, expirations, payments, and translation effects, plus extensive product and segment descriptions. FGI provides only generic product innovation statements. This flag identifies a peer disclosure gap, not a BW disclosure degradation. Additionally, these companies appear to be in quite different product markets (industrial boilers vs. kitchen/bath products), making the comparison less meaningful.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3c10aa7ed36b68ab",
+        "peer": "1623d2a66b06b673"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason claims BW provides 'minimal and generic disclosure on debt financing risk' while OFLX offers 'detailed, active management and refinancing of substantial debt.' This is completely inverted. BW provides extraordinarily detailed debt disclosure: specific senior note tranches (8.125%, 6.50%, 8.75%), nine credit agreement amendments, detailed interest rate terms, maturity springing conditions, PBGC lien subordination, B. Riley guaranty arrangements, fair values vs. carrying values, and comprehensive interest expense breakdowns. OFLX simply notes a $15M unused credit line. The peer comparison reflects genuinely different capital structures (BW is highly leveraged; OFLX is not), not disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3af2fc6588466346",
+        "peer": "f18e2c8f12bbc409"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason claims OFLX (the peer) is downplaying supply chain risk compared to BW. BW explicitly states 'these situations have resulted in cost increases and delays or disruptions that have had, and could continue to have, an adverse impact.' OFLX provides manufacturing location descriptions without supply chain risk commentary. This is a peer divergence where the peer may be less forthcoming, but BW is the target being monitored and it is the entity providing the more substantive disclosure. The two companies also operate in different industries with different supply chain risk profiles.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "All five flags appear to be generated by a systematic misinterpretation in the screening layer, which consistently identified BW as the less transparent filer when in fact BW provides substantially more detailed disclosure than its peers across all flagged topics. BW's filings contain extensive quantitative detail on financial losses, debt restructuring, warranty expenses, pension obligations, and operational risks. The peer companies (FGI and OFLX) are the entities with comparatively sparse disclosure, and these peers also appear to operate in meaningfully different industries, undermining the relevance of the comparisons.",
+    "top_concerns": [
+      "Screening layer appears to have inverted target/peer comparison logic \u2014 all flags attributed disclosure weakness to BW when BW was actually the more transparent filer",
+      "Peer selection may need recalibration as FGI (kitchen/bath products) and OFLX (flexible hose manufacturer) are poor comparables for BW's industrial boiler and energy services business",
+      "While no disclosure degradation was identified, BW's underlying financial condition (accumulated deficit of $1.73B, stockholders' deficit of $308.7M, multiple debt amendments with springing maturities) warrants continued close monitoring for any future disclosure pullback"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 0,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "BW",
+    "model": "claude-opus-4-6",
+    "input_tokens": 13761,
+    "output_tokens": 1612,
+    "timestamp": "2026-04-09T11:49:50.396485"
+  }
+}

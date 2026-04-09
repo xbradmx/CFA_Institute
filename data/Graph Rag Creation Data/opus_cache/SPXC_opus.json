@@ -1,0 +1,93 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "209b402de3c1a26b",
+        "current": "4733f8b6fb30dc8f",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included explicit detail on the fair value hierarchy (Level 1/2/3 definitions), the Monte Carlo simulation model for PSU valuation, and a full AOCI rollforward table with specific dollar amounts (e.g., $251.0, $5.7, $4.4). The current period omits the Monte Carlo description, the fair value hierarchy definitions, and the Q1 AOCI rollforward, though the Q2 AOCI rollforward with comparable detail does appear elsewhere in the current filing. This is partially a function of the Q1 vs. Q2 filing cadence (Q2 includes six-month and Q2-quarter data rather than Q1 standalone), but the removal of the Monte Carlo valuation methodology description and fair value hierarchy definitions reduces methodological transparency.",
+      "investigation_action": "Verify whether the Monte Carlo simulation description and fair value hierarchy definitions appear in the full 10-Q filing (e.g., in the complete Note 17 or compensation notes) rather than just this extracted block. If truly removed, press management on whether PSU valuation methodology has changed."
+    },
+    {
+      "flag_number": 2,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "270dfe9d2ea7439f",
+        "current": "42b28ee7e4b5eab7",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period (Q1 10-Q) disclosed $4.3 of retention agreement compensation costs for the quarter and detailed special charges by segment for the three months ended March 29, 2025. The current period (Q2 10-Q) provides the same special charges breakdowns for both three- and six-month periods and still discloses the $46.5 total retention obligation. The specific quarterly retention cost figure ($6.6 for Q2 and $10.9 for the six months) appears in Flag 4's block, indicating it was relocated within the filing rather than removed. The omission of PSU vesting schedule detail and director award timing in Q2 is consistent with routine editorial trimming after the awards were granted and annual meeting occurred.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a4afde2de7e4b0e1",
+        "peer": "9ce747aa06deb2ea"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is oriented the wrong way for DDDS purposes \u2014 SPXC (the target company being monitored) provides robust, detailed disclosure on intangible amortization drivers, credit risk concentrations, and other income components with specific dollar amounts. NNBR's brevity likely reflects its much smaller scale and different business model (precision components vs. diversified industrials with significant M&A activity) rather than SPXC disclosure degradation. There is no signal that SPXC is reducing transparency here.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1618a82e91adec64",
+        "peer": "4fde46d3a8073a13"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Similar to Flag 3, SPXC provides extensive, granular disclosure on goodwill by segment ($1,040.9 total with acquisition-level breakdowns), intangible asset amortization schedules (~$90.0 for 2025, ~$73.0 for 2026), acquisition-specific retention costs, impairment testing methodology, pension details, and debt activity. NNBR's brief mention of tariff risks reflects its different business profile and risk landscape. This flag does not indicate disclosure degradation at SPXC; if anything, SPXC is a best-in-class discloser relative to this peer.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c944f8e22c08dcf4",
+        "peer": "2fcb945a21f01b68"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "SPXC provides highly detailed regulatory and legal disclosures including specific settlement amounts ($9.0, $8.4), environmental site counts (16 owned/controlled sites, 9 third-party sites), accrual balances ($27.1 environmental, $39.4 total), tax examination status, and Pillar Two considerations. NNBR offers only a boilerplate cross-reference. This flag highlights NNBR's potential disclosure weakness rather than any SPXC degradation. SPXC's legal/regulatory disclosure is comprehensive and specific.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "SPXC's disclosure quality remains strong and well above peer standards. The only notable change is the removal of certain valuation methodology descriptions (Monte Carlo, fair value hierarchy) between Q1 and Q2 filings, which may reflect routine editorial decisions or relocation within the filing rather than intentional obfuscation. The peer divergence flags uniformly show SPXC as the superior discloser, with no evidence of degradation.",
+    "top_concerns": [
+      "Confirm whether Monte Carlo PSU valuation methodology and fair value hierarchy definitions are disclosed elsewhere in the full Q2 10-Q filing or were genuinely removed",
+      "Monitor whether KTS and Sigma & Omega acquisition accounting estimates undergo material revisions in subsequent quarters given provisional fair values",
+      "Track retention agreement compensation cost disclosures ($46.5 total obligation) to ensure continued transparency as amortization progresses"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 1,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "SPXC",
+    "model": "claude-opus-4-6",
+    "input_tokens": 13472,
+    "output_tokens": 1643,
+    "timestamp": "2026-04-09T12:30:55.870038"
+  }
+}

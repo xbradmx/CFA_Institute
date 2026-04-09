@@ -1,0 +1,191 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "7bed9c32adc6c703",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing explicitly discussed trade measures, export controls, sanctions regimes, and their specific impacts on global supply chains including 'increasing the cost of goods, straining procurement cycles, and impacting customer demand.' This substantive risk language has been entirely removed from the current MD&A with no apparent replacement. Given the ongoing global trade environment, the removal of this disclosure is inconsistent with improving conditions and suggests deliberate omission.",
+      "investigation_action": "Analyst should review whether supply chain risks have worsened or materialized (e.g., tariff impacts, procurement cost increases) and ask management directly about the rationale for removing this disclosure. Cross-reference with cost of goods sold trends and margin compression signals."
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "60ebae3c9142ae60",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior Risk Factors filing included specific language about 'actively monitoring the global macroeconomic environment, including geopolitical conflict, the potential impact of global supply chain constraints on material inflation, and change in demand.' This entire risk discussion has disappeared from the current filing. In an environment of heightened geopolitical tensions and trade policy uncertainty, removing this risk factor rather than updating it is a red flag for disclosure degradation.",
+      "investigation_action": "Determine whether the company has experienced supply chain disruptions or cost inflation that would make this disclosure more rather than less relevant. Compare inventory levels, input cost trends, and gross margins quarter-over-quarter."
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "aad302d6dd66d031",
+        "current": "ba79bbd430d83cb7",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing provided specific, quantifiable cash usage drivers: '$12.4 million' for ERP modernization, 'consumption of working capital,' and 'lower operating performance' \u2014 all concrete and material. The current filing replaces this entirely with boilerplate aspirational language: 'We continuously strive to optimize our financial performance to achieve sustainable profitability and expand our margins.' This is a textbook example of replacing quantitative specificity with meaningless generalities, strongly suggesting obfuscation of deteriorating cash flow dynamics.",
+      "investigation_action": "Analyst should scrutinize the cash flow statement for the current period to determine actual capital expenditure levels, ERP project status, and working capital movements. Ask management why the ERP modernization spending was no longer disclosed and whether the project is on track or experiencing overruns."
+    },
+    {
+      "flag_number": 4,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "9816bab805b086da",
+        "current": "00d4f462a0e9bc63",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing included detailed descriptions of ASU 2023-09 and ASU 2024-03, including effective dates, adoption requirements, and the company's evaluation status. The current filing retains only brief references to ASU 2023-06 and ASU 2023-09 without adoption timelines, prospective/retrospective application guidance, or evaluation status. While some compression of accounting standard disclosures between quarters can be routine (especially if standards are discussed in notes), the removal of all evaluation language ('We are currently evaluating the impact') and the complete omission of ASU 2024-03 is notable.",
+      "investigation_action": "Check Note 2 in the current filing's financial statements to see if ASU 2024-03 and detailed adoption discussions were relocated there. If not, inquire whether the company has encountered implementation challenges with the new expense disaggregation standard."
+    },
+    {
+      "flag_number": 5,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "95c696b28f150761",
+        "current": "91fd7b788bcc52ee",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This flag captures the same substitution pattern as Flag 3 but in the Risk Factors section: a specific statement about cash being 'driven by capital expenditures' was replaced with the identical vague boilerplate about 'sustainable profitability and expand our margins.' The fact that this same generic sentence appears as a replacement in multiple sections suggests a deliberate strategy to strip operational specifics from the filing. The prior language, while itself brief, at least identified the driver of cash consumption.",
+      "investigation_action": "Same as Flag 3 \u2014 verify actual capex levels, whether capital spending has increased or been redirected, and why the company chose to remove even minimal specificity about cash usage drivers from Risk Factors."
+    },
+    {
+      "flag_number": 6,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ba79bbd430d83cb7",
+        "peer": "57515a323aeb4b5c"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The peer (HAYW) provides extensive financial detail including full balance sheets, equity statements, derivative positions with specific dollar amounts ($2.9M foreign exchange expense, $6.5M unrealized gains), detailed cash flow drivers, and a $450M share repurchase program. TNC's entire financial sustainability discussion in MD&A is a single aspirational sentence with zero quantitative content. While HAYW is a larger company that may naturally have more complex disclosures, TNC's statement provides absolutely no analytical value and stands in stark contrast to industry norms for MD&A.",
+      "investigation_action": "Analyst should benchmark TNC's MD&A against its own prior filings and other industrial peers to confirm the extent of disclosure thinning. Request management provide quantitative operating metrics, margin drivers, and cash flow components during earnings calls."
+    },
+    {
+      "flag_number": 7,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "690b56fd2126c489",
+        "peer": "f49474d5e8c2f943"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "HAYW provides detailed warranty reserve tables ($27.4M balance, $18.5M in six-month expenses) and specific restructuring cost breakdowns. TNC offers only generic statements about 'cost control, operational improvements, and diversifying sourcing' with no quantification. However, TNC and HAYW may have meaningfully different product liability and warranty profiles depending on product mix, so the absence of warranty detail could reflect genuine business differences rather than evasion. The concern is elevated by the broader pattern of TNC stripping specifics across multiple sections.",
+      "investigation_action": "Review TNC's 10-K for warranty reserve disclosures and compare with current 10-Q notes. If warranty reserves exist but are not discussed in MD&A, this is more concerning. Ask about product recall history and warranty cost trends."
+    },
+    {
+      "flag_number": 8,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5f3088674ce65d7a",
+        "peer": "1055371c34a6cac3"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "TNC's MD&A block flagged here is actually an accounting standards update paragraph, not a regulatory/legal discussion, which makes the comparison somewhat misaligned. HAYW has extensive litigation disclosure because it faces specific securities class actions ($22M wrongful death settlement, ongoing derivative lawsuit), which may not have parallels at TNC. However, TNC's complete silence on legal/regulatory matters in MD&A, combined with a cross-reference to the 10-K for legal proceedings (see Flag 11), raises the question of whether material developments occurred between the 10-K and current 10-Q that are not being disclosed.",
+      "investigation_action": "Check TNC's 10-K Note 16 and current 10-Q notes for any legal contingency updates. Search for any litigation or regulatory actions involving TNC on PACER or state court databases."
+    },
+    {
+      "flag_number": 9,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "91fd7b788bcc52ee",
+        "peer": "fa24940db2147dee"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "HAYW discusses specific insurance coverage sufficiency concerns and product liability risk, while TNC provides only the same generic 'sustainable profitability' statement. The underlying risk (product liability insurance adequacy) is sector-relevant for industrials. However, HAYW's specific disclosure reflects its unique litigation exposure (securities class action, wrongful death suit), and TNC may genuinely have a different risk profile. The concern is moderate given the broader pattern of TNC's disclosure thinning.",
+      "investigation_action": "Verify TNC's insurance coverage disclosures in its 10-K and check whether product liability claims or insurance cost increases have been mentioned in prior filings or earnings calls."
+    },
+    {
+      "flag_number": 10,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d432a8f007d84e6e",
+        "peer": "94a156f1bbc67ec6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The peer comparison here is weak. HAYW's AI technology risk disclosure and product recall language reflects HAYW's specific product portfolio and recent strategic investments in AI-enabled pool equipment. TNC's generic innovation statement, while uninformative, may simply reflect a different technology strategy and product profile. The screening reason incorrectly suggests TNC is 'downplaying material risks related to AI product performance and recalls' when there is no evidence TNC has comparable AI product exposure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a0c837ae216212d3",
+        "peer": "8f973605c5de8fda"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "TNC provides only a cross-reference to its 10-K for legal proceedings with no current-period update, while HAYW discloses extensive and specific litigation risks including product liability, asbestos exposure, intellectual property matters, and indemnification obligations. For an industrial company, some level of legal/regulatory risk disclosure is expected. TNC's approach of pointing only to the 10-K is technically permissible in a 10-Q but concerning if material developments have occurred. The pattern of minimal disclosure across all sections amplifies the concern.",
+      "investigation_action": "Review TNC's most recent 10-K Note 16 for baseline legal disclosures. Monitor for any new litigation filings against TNC. During next earnings call, ask whether any material legal contingencies have arisen since the 10-K filing."
+    },
+    {
+      "flag_number": 12,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5f3088674ce65d7a",
+        "peer": "7a330163f17bacd6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The comparison between TNC's accounting standards paragraph and SXI's environmental remediation charge of $0.1M is not particularly meaningful. SXI's environmental disclosure reflects its specific operations and a modest remediation charge. TNC may simply not have comparable environmental remediation obligations. The flagged TNC text is an accounting update, not a regulatory discussion, making this a misaligned comparison. SXI's own environmental disclosure is itself fairly generic ('we believe we are presently in substantial compliance').",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "TNC exhibits a clear and concerning pattern of disclosure degradation between its May 2025 and August 2025 10-Q filings. Specific dollar amounts ($12.4M ERP spend), concrete cash flow drivers, and substantive supply chain risk language were systematically replaced with a single boilerplate sentence about 'sustainable profitability.' The same generic language appears as a substitute across multiple filing sections, suggesting a deliberate effort to reduce transparency rather than routine editorial revision.",
+    "top_concerns": [
+      "Replacement of specific cash usage drivers ($12.4M ERP modernization, working capital consumption, lower operating performance) with identical boilerplate language across both MD&A and Risk Factors sections \u2014 investigate whether cash flow deterioration or project overruns are being obscured",
+      "Complete removal of supply chain risk disclosures referencing trade measures, export controls, sanctions, and procurement cycle strain at a time when these risks remain highly relevant for US industrials",
+      "Significant stripping of accounting standards adoption detail (ASU 2024-03 removed entirely, evaluation status language deleted) which may indicate implementation difficulties or a broader strategy to minimize disclosure obligations"
+    ],
+    "genuine_count": 4,
+    "borderline_count": 5,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "TNC",
+    "model": "claude-opus-4-6",
+    "input_tokens": 9983,
+    "output_tokens": 3510,
+    "timestamp": "2026-04-09T12:36:45.937410"
+  }
+}

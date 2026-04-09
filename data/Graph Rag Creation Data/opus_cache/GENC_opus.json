@@ -1,0 +1,247 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "dfd3a2989433a7c5",
+        "current": "1dae89ade6acebed",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period text contains passages from multiple quarterly filings (Q1 and Q2 10-Qs) filed simultaneously on the same day due to delinquent filing catch-up, while the current period is the Q3 10-Q. The apparent 'removal' of specific dollar amounts for contract assets, contract liabilities, income statements, balance sheets, and cash flows simply reflects that these are different quarterly periods with their own specific disclosures. The current period filing still contains the same accounting policy language and quantitative detail appropriate to its period (e.g., contract asset disclosures, lease details). This is not disclosure degradation but rather normal sequential quarterly reporting.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "055e643574a0b9aa",
+        "current": "ab08451c0edefc75",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period contains extensive detail from multiple simultaneously-filed quarterly reports (Q1 and Q2), while the current period is a single Q3 filing. The current period still discloses the key facts: no long-term or short-term debt outstanding, the letter of credit renewal intention, and the allowance methodology. The lease extension details and ROU asset amounts appear in the current period's financial sustainability block (Flag 3 current text shows $370,000 ROU asset detail). The apparent reduction is an artifact of comparing two stacked filings against one.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "42bd916ea7297e72",
+        "current": "18af148b86b6b67d",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The current period text actually contains detailed lease payment schedules (future annual minimum lease payments table with $93,000 and $347,000 by fiscal year), ROU asset and liability figures ($432,000 and $330,000), weighted average terms, and discount rates. The prior period appears inflated because it combines content from two quarterly filings. The impairment policy language and credit loss methodology are preserved in the current period. There is no material reduction in disclosure specificity.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "liquidity_solvency",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "e71e5159f9472779",
+        "current": "7d02b781adccd1ec",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The current period discloses working capital ($197.1M), operating cash flows ($3,343,000), and customer deposit balances but appears to omit the detailed marketable securities breakdown (corporate bonds, ETFs, mutual funds, government securities) that was provided in prior filings. The prior period specified '$52,270,000 in cash and cash equivalents, and $91,405,000 in marketable securities, including $31,762,000 in corporate bonds, $5,591,000 in exchange-traded funds, $1,015,000 in mutual funds, $52,821,000 in government securities.' If this granular breakdown is absent from the full Q3 filing, it represents a modest reduction in investment portfolio transparency.",
+      "investigation_action": "Verify whether the full Q3 10-Q filing contains the detailed marketable securities composition breakdown in the notes to financial statements or elsewhere. If omitted, request management clarification on investment portfolio composition changes."
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "a0b2fd66f69b912d",
+        "current": "d9b7c07142f8e844",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed specific UTB amounts ('$1,778,000 and $1,376,000'), effective tax rates ('26.0% and 23.0%'), specific backlog figures ('$27.8 million at March 31, 2025 compared to $50.4 million at March 31, 2024' and '$54.4 million at December 31, 2024'), and detailed revenue disaggregation tables. The current period retains only generic UTB language without dollar amounts and omits the effective tax rate percentages and backlog figures entirely. The removal of the revenue disaggregation table with specific dollar amounts by category is particularly notable as this is required disclosure under ASC 606.",
+      "investigation_action": "Confirm whether the revenue disaggregation table, backlog figures, UTB dollar amounts, and effective tax rate percentages appear elsewhere in the full Q3 10-Q filing. The significant backlog decline ($50.4M to $27.8M over the prior two quarters) makes the omission of updated backlog data especially concerning - request current backlog figures from management."
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "2f1feb6e857285eb",
+        "current": "a0197059bce9b472",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period named specific geopolitical events ('Russia's invasion of Ukraine,' 'conflict between Israel and Iran,' 'armed conflict involving Hamas and Israel,' 'hostilities involving Iran, and North Africa'), discussed energy price impacts, and included the statement 'As of the date of issuance of this Quarterly Report, the Company's operations have not been significantly impacted.' The current period retains only generic supply chain risk language about 'sanctions and disruptions' and supplier instability without naming specific conflicts or providing the operational impact assessment. Removing the 'not significantly impacted' statement could indicate the company no longer wants to make that affirmative representation.",
+      "investigation_action": "Investigate whether the removal of the 'operations have not been significantly impacted' statement signals that operations are now being impacted by geopolitical disruptions or tariffs. Cross-reference with any tariff-related disclosures and ask management about current supply chain conditions."
+    },
+    {
+      "flag_number": 7,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "28793a4c20bb9050",
+        "current": "b397343e2eb534cc",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior and current blocks address completely different topics - the prior block discusses fair value measurement inputs for marketable securities (interest rates, credit standing, coupon rate, etc.), while the current block discusses allowance for credit losses methodology. These are different accounting policy disclosures, not a replacement of one with the other. The fair value measurement methodology likely appears elsewhere in the notes to financial statements. This is a screening artifact from topic mismatching.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "4517441962966bb1",
+        "current": "c8ed3beca07eceb7",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period block appears to aggregate content from multiple filings including shareholders' equity statements, detailed lease tables, and segment information. The current period's lease detail, including the full ASC 842 table with ROU assets, lease liabilities, weighted average terms, discount rates, and future minimum lease payments, is provided in Flag 3's current period text (block 18af148b86b6b67d). The shareholders' equity statements are standard financial statement presentations that would appear in the financial statements section of the Q3 filing. This is a screening artifact from block fragmentation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "liquidity_solvency",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "a5ab38185c527cdd",
+        "current": "aa28d40397a3c325",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained extensive disclosure about NYSE American listing non-compliance, including specific dates (delinquent filing dates, June 10 extension request, June 24 acceptance, August 19 deadline) and detailed discussion of the compliance timeline. The current period block contains no mention of the NYSE compliance situation whatsoever. Given that the company was filing delinquent reports as recently as July 25, 2025, the complete removal of NYSE compliance status disclosure from an August 8 filing is significant - investors need to know whether the company has fully regained compliance or still faces listing risk.",
+      "investigation_action": "Determine whether GENC has fully regained NYSE American compliance by filing all delinquent reports by the August 19, 2025 deadline. If compliance has been restored, the omission may be justified but should be confirmed. If any delinquency remains, this omission is a material disclosure gap that requires immediate escalation."
+    },
+    {
+      "flag_number": 10,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "da15de75525d44c2",
+        "current": "962f12d573abd32d",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period included accounts receivable for equipment sales ($161,000 and $163,000), contract liability language, and a reference to three manufacturing facilities. The current period retains product warranty cost disclosure. The accounts receivable and contract liability figures would typically appear in the notes to financial statements rather than being removed. The manufacturing facilities reference is boilerplate that may appear in other sections. These are minor detail differences between filing periods rather than deliberate obfuscation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "d518e2c553c9d301",
+        "current": "bb52c80ef1ed7dd4",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained highly specific NYSE compliance disclosure including the June 10, 2025 extension request, June 24, 2025 acceptance, and the August 19, 2025 deadline for filing delinquent reports. It also included specific effective tax rates (26.0% and 23.0%) and references to manufacturing at three facilities. The current period retains only generic UTB language. The removal of the entire NYSE compliance narrative and specific tax rate disclosures represents a material reduction in transparency, particularly given the company's recent history of filing delinquencies.",
+      "investigation_action": "Verify whether NYSE compliance has been fully restored and whether specific effective tax rates for the nine months ended June 30, 2025 appear elsewhere in the filing. The disappearance of compliance status disclosure is concerning given the August 19 deadline was only 11 days after this filing."
+    },
+    {
+      "flag_number": 12,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "974eca3fd8185cf8",
+        "current": "ac72dbd61c90e33e",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period's forward-looking statements and risk factors specifically referenced '(i) the United States government's recent tariff announcements, (ii) the invasion by Russia into Ukraine, and (iii) the conflict between Israel and Hamas, including hostilities involving Iran.' The current period retains only generic supply chain disruption language. Notably, tariff announcements were explicitly called out in the prior period given the current trade policy environment, and their removal from the current filing is concerning. However, this may reflect consolidation of risk factors rather than intentional omission if the full 10-K risk factors are incorporated by reference.",
+      "investigation_action": "Verify whether the tariff-specific risk disclosure appears elsewhere in the Q3 filing or in incorporated-by-reference documents. Given the escalation of U.S. tariff actions in 2025, the removal of specific tariff references from a filing 13 days later warrants clarification from management about supply chain tariff exposure."
+    },
+    {
+      "flag_number": 13,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "18af148b86b6b67d",
+        "peer": "0d943593e60a8eb9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "PLOW (Douglas Dynamics) and GENC (Gencor Industries) operate in fundamentally different segments of the industrials sector - PLOW manufactures snow and ice control equipment with significant seasonality and acquisition-driven complexity, while GENC manufactures asphalt plants with a much simpler capital structure ($200M+ working capital, no debt, no acquisitions). PLOW's detailed discussion of impairment charges, dividends, capital expenditure flexibility, and Adjusted EBITDA limitations reflects its leveraged, acquisition-heavy business model. GENC's simpler disclosure reflects its simpler business, not disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 14,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f05ceb7c2cf2eea8",
+        "peer": "ed22edc594da060c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "PLOW's discussion of weather-related risks (snowfall affecting product wear and replacement cycles) is specific to the snow and ice control equipment industry. GENC manufactures asphalt plants and pavers for highway construction - weather affects GENC differently (seasonal construction slowdowns, not product wear from snowfall). GENC does disclose seasonality elsewhere. This peer divergence reflects genuine business differences rather than disclosure evasion by GENC.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 15,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d9b7c07142f8e844",
+        "peer": "bcc61624d363197d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually states that PLOW provides less disclosure than GENC on regulatory/legal risks, which is the opposite of a concern about GENC. GENC's disclosure of accounting pronouncements and tax uncertainty is more detailed than PLOW's brief mentions of legal/severance/restructuring fees. This flag appears to be incorrectly directed at GENC when the divergence, if any, is in the opposite direction.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 16,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d9b7c07142f8e844",
+        "peer": "9fedbf399a363eb1"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "CMCO discloses extensive legal contingencies including asbestos liabilities ($5.9M net estimated), product liability reserves ($4.9M), environmental remediation ($550K), complex international tax litigation, and HSR Act regulatory review for acquisitions. GENC discloses only generic UTB language. While some of this difference reflects CMCO's much larger, more complex global business (Magnetek acquisition history, international operations), the complete absence of any litigation or contingency discussion in GENC's filing is notable for an industrial manufacturer that presumably faces product liability exposure.",
+      "investigation_action": "Review GENC's 10-K for any product liability, environmental, or litigation disclosures. For an industrial equipment manufacturer, the absence of any legal contingency or product liability reserve disclosure in the 10-Q warrants verification that there are no pending claims or that such claims are truly immaterial."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "Many of the flagged changes appear to be artifacts of comparing two simultaneously-filed quarterly reports (Q1 and Q2) against a subsequent Q3 filing, inflating the apparent scope of disclosure reduction. However, two genuinely concerning patterns emerge: the complete removal of NYSE American compliance status disclosure despite the company's very recent filing delinquency history, and the omission of specific quantitative details (backlog figures, UTB amounts, effective tax rates, revenue disaggregation) that were previously disclosed and are material to investors.",
+    "top_concerns": [
+      "Disappearance of NYSE American listing compliance status disclosure (Flags 9, 11) - the company had been delinquent on filings and was operating under an August 19, 2025 deadline, yet the August 8 filing appears to omit all compliance status information",
+      "Removal of specific backlog figures, UTB dollar amounts, effective tax rates, and revenue disaggregation details (Flag 5) - particularly concerning given the significant backlog decline trend ($61.3M to $54.4M to $50.4M to $27.8M over four quarters)",
+      "Removal of specific geopolitical and tariff risk references (Flags 6, 12) and the affirmative 'operations have not been significantly impacted' statement, which may signal changing supply chain conditions"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 4,
+    "dismissed_count": 9
+  },
+  "_meta": {
+    "ticker": "GENC",
+    "model": "claude-opus-4-6",
+    "input_tokens": 35795,
+    "output_tokens": 4642,
+    "timestamp": "2026-04-09T12:03:16.535283"
+  }
+}

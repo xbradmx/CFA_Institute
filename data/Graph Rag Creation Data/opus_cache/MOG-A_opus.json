@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "03b74c752511d0bc",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing explicitly noted that 'tariffs may negatively impact demand and result in an increase in some product costs,' which is a specific cost/margin pressure disclosure. The removal of this language in the July 2025 10-Q is notable given that U.S. tariff policies have not been resolved. However, tariff-related risk may have been consolidated into broader risk factor language or the annual 10-K reference; without seeing the full current filing, this warrants further investigation.",
+      "investigation_action": "Verify whether tariff-related cost/margin impact language appears elsewhere in the July 2025 10-Q (e.g., MD&A or updated risk factors). If fully absent, press management on tariff cost absorption and margin outlook."
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "8aafb7f77ea186f9",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This is a substantial block of disclosure covering tariff escalation specifics ('Between January and April of 2025, the United States government announced additional tariffs'), defense spending trends, foreign currency impacts with a quantified $5 million sales headwind, and market driver commentary across multiple end markets. The removal of this entire section \u2014 including specific dollar-amount FX impacts and detailed geopolitical/tariff context \u2014 from the subsequent 10-Q represents a material reduction in disclosure granularity. These risks have not abated and arguably intensified.",
+      "investigation_action": "Ask management why detailed tariff, FX quantification, and defense spending commentary was removed. Check whether FX translation impacts are disclosed elsewhere in the current filing. Monitor whether the 10-K restores this detail, which would confirm the Q3 10-Q was deliberately thinned."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "ebfdf1c42a60adcd",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior text is a single sentence of generic market description for the medical segment, noting it is 'influenced by economic conditions, regulatory environments, hospital and outpatient clinic spending.' This is boilerplate market characterization rather than a specific regulatory or legal risk disclosure. Its removal does not represent the disappearance of a material risk category.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "revenue_future_performance",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "b5646f3ef9584a4d",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This block contained highly specific forward-looking revenue and demand commentary including named programs (F-35 Lightning II, Textron Bell FLRAA), market positioning statements ('growing development program order book'), aftermarket demand trends ('higher demand levels for our maintenance services and spare parts due to increased number of flight hours'), and commercial space market drivers. Removing this granular program-level and market-level demand outlook while retaining only generic language significantly degrades an analyst's ability to assess revenue trajectory and backlog quality.",
+      "investigation_action": "Determine whether program-specific commentary (F-35, FLRAA, Boeing/Airbus backlog, aftermarket trends) appears in the current MD&A or elsewhere. If absent, this is a significant reduction in forward visibility \u2014 press management on pipeline health and whether any specific programs face headwinds they are declining to disclose."
+    },
+    {
+      "flag_number": 5,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "53f5b96f038f5b91",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing specifically noted Boeing and Airbus 'working through their current supply-chain challenges,' which is relevant given MOG-A's exposure to commercial OEM production rates. However, the current MD&A (as seen in Flag 7) does contain similar language: 'Boeing and Airbus are producing widebody aircraft at rates to support their projected demand while working through their current supply-chain constraints.' This suggests the language migrated from Risk Factors to MD&A rather than being eliminated.",
+      "investigation_action": "Confirm that the MD&A supply chain language in the current filing adequately substitutes for the prior Risk Factors disclosure. If the Risk Factors section has been broadly thinned while MD&A retains only partial coverage, the net effect is still a disclosure reduction."
+    },
+    {
+      "flag_number": 6,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "04409f90d7d3fac5",
+        "peer": "f5b202a47d231da1"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted \u2014 it flags MOG-A as the company with less disclosure, but MOG-A actually provides detailed ASC 606 revenue recognition breakdowns (63% over-time, 37% point-in-time) and specific critical accounting policy categories, while peer CW provides only generic boilerplate. MOG-A's disclosure on this topic is superior to its peer. This flag appears to be a misidentification.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0e9190cd8e8789c2",
+        "peer": "117b1394b8f19a41"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "MOG-A actually provides more supply chain detail than peer CW, explicitly mentioning 'Boeing and Airbus are producing widebody aircraft at rates to support their projected demand while working through their current supply-chain constraints' and noting 'production delays certain customers are experiencing.' CW's disclosure is the sparser of the two. The screening reason incorrectly characterizes MOG-A as the less transparent party in this comparison.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "04409f90d7d3fac5",
+        "peer": "4b75c991f2f70ab9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Similar to Flag 6, MOG-A provides substantially more accounting detail than peer EPAC, which offers only a single generic sentence about critical accounting estimates. The screening reason actually highlights that MOG-A is the more transparent company. This is not a disclosure degradation signal for MOG-A.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "MOG-A shows a meaningful reduction in Risk Factors disclosure between the April and July 2025 10-Q filings, with the removal of detailed geopolitical/tariff commentary (including quantified FX impacts), program-specific revenue outlook language, and cost/margin pressure disclosures. While some content may have migrated to MD&A, the net effect is a thinner Risk Factors section at a time when tariff and macro risks remain elevated. The peer divergence flags were largely false positives, as MOG-A's accounting and supply chain disclosures are actually more detailed than its peers.",
+    "top_concerns": [
+      "Removal of detailed tariff escalation narrative and quantified FX impact ($5M sales headwind) from Risk Factors without clear relocation",
+      "Disappearance of program-specific revenue and demand commentary (F-35, FLRAA, aftermarket trends, Boeing/Airbus backlog) that provided forward revenue visibility",
+      "Thinning of Risk Factors section overall \u2014 check whether this reflects a deliberate shift to less granular quarterly disclosure or a response to emerging headwinds management prefers not to highlight"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 2,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "MOG-A",
+    "model": "claude-opus-4-6",
+    "input_tokens": 4027,
+    "output_tokens": 2228,
+    "timestamp": "2026-04-09T12:15:18.966722"
+  }
+}

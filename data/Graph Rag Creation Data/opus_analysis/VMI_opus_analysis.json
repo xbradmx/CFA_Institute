@@ -1,0 +1,93 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "3dc87e0824da7356",
+        "current": "baac04705cd8bcef",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed a specific dollar figure ($230.0 million) for fabricated steel structures imported from Mexico and discussed macroeconomic and geopolitical impacts on supply chain operations. The current period completely eliminates this quantitative detail and the entire 'Macroeconomic and Geopolitical Impacts' framing around Mexico imports, leaving only a generic supplier finance program description. This removal of a material quantitative disclosure is particularly concerning given the current tariff environment affecting US-Mexico trade in steel products.",
+      "investigation_action": "Analyst should determine whether VMI has reduced or restructured its Mexico-to-US steel imports due to tariffs, whether the $230M exposure has grown or shrunk, and whether the removal of this disclosure coincides with material margin or cost pressures that management prefers not to quantify. Cross-reference with earnings call commentary on tariff impacts."
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "baac04705cd8bcef",
+        "peer": "ac93c84d36f63e40"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually flags ACA for lacking supply chain disclosure, not VMI for disclosure degradation. VMI at least discloses a supplier finance program, while ACA provides only market demand commentary. The peer distance of 2.12 and different business profiles make this divergence more reflective of genuine business differences than VMI evasion. This flag does not indicate VMI disclosure degradation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c5a80603a977a66c",
+        "peer": "492d8448cf9844bd"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The comparison is misleading. VMI's extracted block is a single sentence referencing non-GAAP measures, which is not representative of VMI's full accounting disclosure \u2014 critical accounting estimates and recent pronouncements are typically disclosed in 10-K filings and referenced by incorporation in 10-Q filings. PRLB's extensive block includes standard boilerplate from financial statement notes (fair value hierarchy, ASU adoption timelines, diluted EPS methodology) that are standard disclosures any filer would include in their notes. The peer distance of 3.67 further suggests these are quite different companies with different disclosure conventions.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6503f72f5f04a3ca",
+        "peer": "fea25a0812ad5b12"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 the screening reason identifies PRLB as the company potentially downplaying debt disclosures, not VMI. VMI provides exceptionally detailed debt financing disclosure including specific note tranches ($450M and $305M), covenant details, leverage ratio requirements, revolving credit facility terms, and compliance status. VMI's disclosure here is robust and arguably best-in-class. PRLB's minimal disclosure reflects that it likely has minimal debt, not that VMI is deficient.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "baa6fdf4f65beb42",
+        "peer": "5ba37f936879d5e7"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is again inverted \u2014 the screening reason identifies PRLB as potentially downplaying geopolitical risks, not VMI. VMI provides substantive disclosure on macroeconomic and geopolitical uncertainties including specific FX impacts ($2.3M, $3.7M, $10.8M), trade policy uncertainty, grain price impacts, and Brazil-specific monitoring. VMI's disclosure here is detailed and specific. The divergence reflects VMI's broader international industrial exposure versus PRLB's different business model.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "Of the five flags screened, only one represents a genuine disclosure degradation concern: the complete removal of the $230M Mexico steel import quantification and associated macroeconomic impact discussion from the supply chain section. The remaining four flags were either inverted (flagging the peer rather than VMI for deficiency) or reflected legitimate business differences between dissimilar companies. However, the single genuine flag is material given the current US trade policy environment affecting steel imports from Mexico.",
+    "top_concerns": [
+      "Removal of $230M Mexico steel import quantification amid heightened tariff environment \u2014 potential obfuscation of trade policy exposure",
+      "Elimination of the entire 'Macroeconomic and Geopolitical Impacts' framing around cross-border manufacturing operations",
+      "Monitor whether future filings continue to omit Mexico import exposure or whether this detail resurfaces"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 0,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "VMI",
+    "model": "claude-opus-4-6",
+    "input_tokens": 5895,
+    "output_tokens": 1466,
+    "timestamp": "2026-04-09T12:39:19.664434"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "72f4f32033f219b7",
+        "current": "ffb23e18cd79be40",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason overstates the changes. The current period filing still provides specific dollar amounts (e.g., $875 repayment, $700 new issuance, \u20ac500 million/$589 million upcoming maturity, leverage ratio of 2.5x vs. 4.5x covenant). The removal of the $875 million 4.75% senior notes from the upcoming maturities section is because those notes were actually repaid during Q2 2025, as explicitly stated in the financing activities section. The abbreviation of covenant description language (removing the detailed EBITDA calculation methodology) is a routine simplification for a Q2 filing that cross-references the annual 10-K. The key quantitative data points\u2014leverage ratio, available capacity, upcoming maturities\u2014are all still present.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "29398e4f8e68a8ba",
+        "peer": "0f9194d08f6411dc"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually flags SLGN as the company with weaker disclosure, not CCK. CCK provides a standard critical accounting policies paragraph that cross-references its 10-K, which is typical and appropriate practice for interim filings. SLGN's passage about non-GAAP measures serves an entirely different disclosure purpose and is not comparable to a critical accounting policies discussion. This comparison is apples-to-oranges and does not indicate any disclosure degradation by CCK.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3597907f493fd878",
+        "peer": "d60e47144eaa8c24"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is identifying that CCK provides MORE disclosure than SLGN on supply chain risks, not less. CCK discusses active supply chain disruptions, raw material costs, and the Myanmar plant idling, while SLGN offers only a single generic sentence about supplier payment terms. If anything, CCK is the more transparent discloser here. The flag does not indicate disclosure degradation by CCK; it points to potential under-disclosure by the peer SLGN, which is outside the scope of monitoring CCK.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "bd5f086597bea1e0",
+        "peer": "105fe3ca0e66db09"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "BALL explicitly discloses litigation incidental to operations and designation as a potentially responsible party for hazardous waste site cleanups, while CCK's MD&A passage shown here discusses only tax rates and tax law changes with no mention of litigation or environmental liabilities. Given that CCK operates in the same packaging industry with similar environmental exposure profiles, the absence of any litigation or environmental discussion in the MD&A excerpt is notable. However, CCK likely addresses these matters in its legal proceedings section (Part II, Item 1) and notes to financial statements, which are not shown here, so this could be a sectional allocation difference rather than omission.",
+      "investigation_action": "Verify whether CCK's 10-Q includes substantive litigation and environmental liability disclosures in Part II Item 1 (Legal Proceedings) and the notes to financial statements. Cross-reference with the 10-K to confirm no material legal or environmental matters have been dropped from the filing."
+    },
+    {
+      "flag_number": 5,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3597907f493fd878",
+        "peer": "06a9e37c71405c86"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Similar to Flag 3, this flag identifies CCK as providing MORE detailed supply chain disclosure than its peer BALL, not less. CCK explicitly discusses active supply chain disruptions and inflationary pressures while BALL provides generic language about supplier concentration. This does not indicate any disclosure degradation by CCK. The Myanmar plant idling disclosure dates from June 2022 and its continued inclusion in mid-2025 is actually worth noting as potentially stale, but that is a different concern than disclosure degradation.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "The flagged items largely reflect false positives from the screening layer. CCK's temporal changes in debt financing disclosure are explained by the actual repayment of the $875 million notes during the period, not by obfuscation. The peer divergence flags predominantly show CCK providing more detailed disclosure than its peers rather than less. The only borderline concern relates to whether litigation and environmental liabilities are adequately disclosed somewhere in the filing beyond the MD&A excerpt reviewed.",
+    "top_concerns": [
+      "Confirm litigation and environmental liability disclosures exist in Part II Item 1 and notes to financial statements, given peer BALL's explicit hazardous waste site disclosures",
+      "Monitor whether the abbreviated covenant description language in interim filings becomes a pattern of progressive detail reduction in future 10-K filings",
+      "Assess whether the Myanmar plant idling disclosure (from June 2022) remains current and material or has become stale boilerplate"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 1,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "CCK",
+    "model": "claude-opus-4-6",
+    "input_tokens": 4425,
+    "output_tokens": 1554,
+    "timestamp": "2026-04-09T11:50:57.204693"
+  }
+}

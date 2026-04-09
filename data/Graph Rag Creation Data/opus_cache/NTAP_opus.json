@@ -1,0 +1,317 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "b15b4d263ddceefb",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed sentence is a single generic compliance statement about employees, contractors, and outsourced operations complying with policies and laws. This is standard boilerplate language that likely appears elsewhere in the 10-K risk factors, which the 10-Q references. It does not represent the disappearance of a material risk category or specific quantitative detail.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "4c0ea88d79f0391c",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing discussed ERP implementation progress and its expected impact on internal controls. The disappearance could indicate the ERP implementation was substantially completed (as anticipated for fiscal 2026), making the disclosure no longer necessary. However, the absence of any update on completion status or resulting control changes leaves investors without closure on a previously flagged material project.",
+      "investigation_action": "Confirm whether the ERP implementation was substantially completed as planned and whether any control deficiencies were identified during the transition. Check the 10-K for updated ERP disclosures."
+    },
+    {
+      "flag_number": 3,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "5e9a7a35d012862b",
+        "current": "a810c7cfc4b7cb44",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing contained extensive discussion of ERP implementation impacts on internal controls, management's evaluation of disclosure controls, and CEO/CFO certification conclusions. The current filing reduces this to a single sentence about no material changes to critical accounting policies. While some reduction is expected in a Q1 filing after ERP completion, the complete removal of the internal controls discussion \u2014 including the standard management evaluation language required under Rules 13a-15(e) \u2014 is notable. This content may appear elsewhere in the filing (e.g., in a separate Controls section).",
+      "investigation_action": "Verify that the internal controls evaluation, CEO/CFO certification, and changes in internal control over financial reporting disclosures appear elsewhere in the current 10-Q. If the ERP implementation is complete, confirm there are no residual control issues."
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "b9e82bcabca44990",
+        "current": "28ae72e711693f55",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained extensive, specific geopolitical risk discussion including references to Trump administration tariffs on Mexico, Canada, and China, the WTO ITA, Russia/Ukraine sanctions, retaliatory tariffs, U.S. Outbound Investments Rule, and detailed foreign currency hedging strategies. The current filing replaces all of this with a single generic reference to the 10-K risk factors. Given that tariff and trade policy risks have intensified (not diminished) between February and August 2025, the removal of this detailed discussion from MD&A represents a meaningful reduction in transparency on a clearly material topic.",
+      "investigation_action": "Review the FY2025 10-K to assess whether comparable geopolitical detail was provided there. Ask management on earnings calls about tariff exposure, manufacturing geography, and any changes in sourcing. Assess whether the reduced disclosure is designed to avoid updating investors on evolving tariff impacts."
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "5f38bc10e5aaf8ef",
+        "current": "487da66dc9636e49",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing contained detailed tax rate component explanations (stock compensation benefits, prior period adjustments, foreign tax credits), transition tax payment estimates (~$100M), and comprehensive legal/regulatory risk discussion including FCPA, data privacy, IP piracy, and antitrust laws. The current filing strips most of this away, retaining only a single sentence on stock comp tax impact and bare-bones transition tax and legal contingency language. Some simplification is normal for a Q1 vs. Q3 filing, but the removal of the $100M transition tax estimate and the detailed regulatory risk landscape is notable.",
+      "investigation_action": "Confirm whether the ~$100M transition tax was paid in fiscal 2026 as expected. Verify that detailed regulatory/legal risk discussion appears in the annual 10-K. Monitor for any new enforcement actions or regulatory developments affecting NTAP."
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "37f587c9521c1a25",
+        "current": "147e7d0137a01da6",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing explicitly warned that 'Any increase in tensions between China and Taiwan, including threats of military actions or escalation of military activities, could adversely affect our or our contract manufacturers' ability to source key supply chain components.' This specific, material geopolitical supply chain risk was removed entirely in the current filing while the underlying risk has not diminished. NetApp relies on contract manufacturers in the Asia-Pacific region for product assembly, making this a directly relevant risk that should be disclosed.",
+      "investigation_action": "Investigate NTAP's contract manufacturer concentration in Taiwan and China. Determine whether the China-Taiwan risk was relocated to the 10-K or simply dropped. Assess what proportion of key components (e.g., semiconductors, PCBs) are sourced from Taiwan-based suppliers."
+    },
+    {
+      "flag_number": 7,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "7eca1801b57ef8fe",
+        "current": "dea5d2146536068d",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing included the $1.0 billion CP program cap, the $1.1 billion off-balance sheet purchase commitments, the $100M transition tax estimate, and detailed stock repurchase program history ($17.1B cumulative authorization, 379M shares, $43.59 avg price). The current filing omits the CP program maximum amount, drops off-balance sheet purchase commitment quantification, and removes cumulative repurchase history. While the credit facility details were updated (new maturity to 2030), the removal of quantitative metrics like purchase commitments and repurchase history reduces investor visibility. Some of this may reflect the shift from Q3 to Q1 reporting.",
+      "investigation_action": "Verify whether off-balance sheet purchase commitments are disclosed elsewhere in the current 10-Q notes. Confirm that cumulative stock repurchase data is available in the 10-K. Ask about the CP program cap \u2014 the current filing mentions the program but omits the $1.0B limit."
+    },
+    {
+      "flag_number": 8,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "1a4a6e9f1c2f9f8f",
+        "current": "d3ae8d0930f7376c",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The current filing provides updated capex guidance ($125M-$175M for remainder of FY26 vs $30M-$60M previously), a new $1.1B repurchase authorization, and a remaining authorized amount of $1.2B. While the cumulative repurchase history and average price per share were removed, the company replaced them with the remaining authorization figure, which is arguably more forward-looking and useful. The shift from cumulative historical data to remaining capacity represents a change in presentation style rather than obfuscation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "f1bc332fd2fa84d4",
+        "current": "c2a5e7188bfc9ff6",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This flag captures the same removal as Flag 4 but from the Risk Factors section. The prior filing contained an extensive, highly specific geopolitical risk discussion \u2014 naming the Trump administration's tariff intentions on Mexico/Canada/China, the WTO ITA, Russia/Ukraine sanctions, U.S. Outbound Investments Rule, and detailed FX hedging discussion. The current filing replaces all of this with two sentences about investment portfolio market risk. This is a significant reduction in risk factor disclosure on a topic that has become more, not less, material since the prior filing date.",
+      "investigation_action": "This is the highest-priority concern. Determine whether the 10-K for FY2025 contains equivalent geopolitical risk language. Engage management on the actual tariff impact to date and whether any ITA exemptions have been obtained. Assess whether reduced Q1 disclosure is a deliberate strategy to minimize investor attention to tariff exposure."
+    },
+    {
+      "flag_number": 10,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "998051b0f7ca3eed",
+        "current": "d1379e9f072cb552",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing included specific language about transition tax payment uncertainty ('could change with further guidance or review'), detailed regulatory risk discussion covering FCPA, data privacy, cybersecurity, antitrust, IP protection, and risks in developing economies, plus insider trading arrangement disclosures. The current filing strips all of this to bare-bones language. The removal of the sentence about transition tax estimates potentially changing and the entire regulatory risk landscape discussion represents a material reduction in transparency. The insider trading arrangement disclosure may simply reflect no new arrangements in the current period, but the regulatory risk removal is concerning.",
+      "investigation_action": "Verify whether FCPA, data privacy, cybersecurity, and IP risk discussions appear in the FY2025 10-K. Monitor for any regulatory enforcement actions. Confirm whether the transition tax obligation has been fully settled."
+    },
+    {
+      "flag_number": 11,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "12eb2b1f72eda944",
+        "current": "cfe32ff2eb30b247",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This is the same China-Taiwan supply chain risk removal captured in Flag 6, but from the Risk Factors section. The specific language about China-Taiwan military tensions affecting contract manufacturers' ability to source components and exposure to cyberattacks was entirely removed. This is a concrete, identifiable geopolitical supply chain risk that remains highly relevant and should be disclosed.",
+      "investigation_action": "Same as Flag 6 \u2014 investigate supplier and contract manufacturer geographic concentration, particularly in Taiwan. Determine if this risk was moved to the 10-K or dropped entirely."
+    },
+    {
+      "flag_number": 12,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8eb9ec961db99e2d",
+        "peer": "135ec7a71480ef35"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening flag suggests STX is the one downplaying risks, not NTAP. NTAP provides a positive but detailed discussion of its product strategy and innovation, while STX discloses restructuring charges. These companies have very different business models \u2014 NTAP is enterprise storage software/systems while STX is a hard drive manufacturer \u2014 making direct comparison of operational risk disclosures less meaningful. NTAP's product strategy discussion is appropriate for its business.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 13,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "487da66dc9636e49",
+        "peer": "88baf8f814ad600f"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "STX's $300M BIS settlement for export control violations is company-specific and not directly comparable to NTAP. However, the comparison highlights that NTAP's legal contingency disclosure is now extremely bare \u2014 just a single sentence stating it is 'subject to various legal proceedings and claims which arise in the normal course of business.' Given that NTAP previously disclosed detailed regulatory risks (FCPA, data privacy, export controls) that have now been removed, the peer comparison reinforces concerns about NTAP's stripped-down legal/regulatory disclosure.",
+      "investigation_action": "Monitor whether NTAP faces any export control, data privacy, or anti-corruption investigations. The generic legal contingency language provides no visibility into material pending matters."
+    },
+    {
+      "flag_number": 14,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0e71befaf67205d5",
+        "peer": "9626a29858fb2ef2"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "STX (Seagate) is a vertically integrated hardware manufacturer with fixed manufacturing costs, factory utilization risks, and component sourcing challenges that require extensive cost/margin disclosure. NTAP (NetApp) operates a fundamentally different business model \u2014 primarily software, cloud services, and configured storage systems with significantly higher gross margins and different cost structures. The divergence in disclosure granularity reflects genuine business model differences rather than disclosure evasion by NTAP.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 15,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c2a5e7188bfc9ff6",
+        "peer": "a2c445b075edcf0f"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "While STX has greater manufacturing exposure in Asia (Thailand, Singapore, China), NTAP also manufactures most products outside the U.S. and derives significant international revenue. STX provides exhaustive geopolitical risk disclosure including tariffs, rare earth dependencies, export controls, climate risk, and macroeconomic conditions. NTAP's current filing provides virtually no geopolitical risk discussion in Risk Factors despite having previously disclosed extensive tariff and trade policy risks. The contrast is stark and reinforces the temporal finding that NTAP has materially reduced its geopolitical risk disclosures at a time when such risks are elevated.",
+      "investigation_action": "Compare NTAP's geopolitical exposure to peers \u2014 what percentage of products are manufactured outside the U.S., and in which countries? The gap between NTAP's disclosure and peers like STX suggests NTAP may be deliberately minimizing investor attention to tariff and trade policy exposure."
+    },
+    {
+      "flag_number": 16,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6f90e84b2b20ff81",
+        "peer": "67771fd294990e14"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "NTAP's single generic sentence referencing the 10-K for risks is a legitimate cross-reference, but the comparison to STX's extensive revenue risk discussion highlights that NTAP provides minimal forward-looking revenue risk context in the quarterly filing. STX discusses seasonal patterns, customer concentration, competitive dynamics, and demand variability at length. While business model differences account for some of this gap, NTAP's reliance on a single cross-reference sentence without any quarterly-specific revenue risk context is thin.",
+      "investigation_action": "Review NTAP's 10-K to verify that substantive revenue risk discussion exists there. Assess whether NTAP's quarterly filings historically included more revenue/demand risk discussion and whether the current filing represents a departure from that practice."
+    },
+    {
+      "flag_number": 17,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cfe32ff2eb30b247",
+        "peer": "af5d26dbad29e45b"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "STX provides extraordinarily detailed supply chain risk disclosure given its vertically integrated manufacturing model. NTAP's two-sentence purchase commitment disclosure is thin by comparison, but NTAP's business model relies more on contract manufacturers and less on internal component manufacturing. The concern is that NTAP removed its previously disclosed China-Taiwan supply chain risk without replacement, making the current disclosure even more generic relative to peers. The peer comparison amplifies the temporal finding.",
+      "investigation_action": "Assess NTAP's contract manufacturer and component supplier concentration. Determine whether NTAP uses any single-source suppliers for critical components. The stripped-down supply chain disclosure provides no visibility into these dependencies."
+    },
+    {
+      "flag_number": 18,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "28ae72e711693f55",
+        "peer": "b54d927eb357c4b1"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "WDC provides explicit discussion of recent tariff changes, noting they are 'unprecedented,' have caused 'substantial uncertainty,' and have resulted in retaliatory measures, along with discussion of impacts on customers and consumer confidence. NTAP's MD&A contains no comparable discussion despite operating in the same industry with similar international manufacturing and sales exposure. NTAP's generic reference to the 10-K risk factors is insufficient given that tariff policy has evolved materially during the quarter and peers are addressing it directly in their quarterly filings.",
+      "investigation_action": "Press management for specific tariff impact quantification \u2014 what tariff rates apply to NTAP products, which manufacturing locations are affected, and what mitigation steps (e.g., supply chain shifts, pricing actions) are being taken. The lack of any tariff discussion in a Q1 FY2026 filing is a significant gap."
+    },
+    {
+      "flag_number": 19,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c2a5e7188bfc9ff6",
+        "peer": "6c04bb026ebfe8b2"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually suggests WDC is the one providing less detail, which contradicts the broader evidence. WDC's excerpt here shows forward-looking statement disclaimers and Pillar Two tax discussion, which is relatively boilerplate. This flag appears to be a false positive from the screening layer \u2014 WDC actually provides more geopolitical detail elsewhere in its filing (as shown in Flag 18). The flag does not meaningfully add to the assessment of NTAP's disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 20,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d1379e9f072cb552",
+        "peer": "ce1f07bd071b9a53"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "WDC provides extensive legal proceeding disclosure including specific patent litigation matters with quantified damages ($262M jury award, $316M verdict, $130M settlement), detailed tax examination outcomes ($166M in expected tax savings), and adoption of new accounting standards for enhanced tax disclosure. NTAP's legal contingency section is a single sentence with no specifics. While NTAP may genuinely have fewer material legal proceedings, the complete absence of any quantitative legal or tax detail \u2014 combined with the removal of previously disclosed regulatory risk language \u2014 suggests below-industry-standard transparency.",
+      "investigation_action": "Search for any pending NTAP litigation in court databases. Review proxy statements and annual report for any legal matters not discussed in the 10-Q. The bare-minimum legal disclosure warrants verification that no material matters exist."
+    },
+    {
+      "flag_number": 21,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6f90e84b2b20ff81",
+        "peer": "1d538e3dba965d30"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "WDC provides disaggregated revenue by end market (Cloud/Client/Consumer) and geography, plus customer concentration data. NTAP likely provides similar revenue disaggregation in its financial statements and notes, which are not being compared here. The flag is comparing a cross-reference sentence in NTAP's risk factors against WDC's financial statement notes, which is not an apples-to-apples comparison. NTAP's revenue disaggregation should be assessed in its own financial statements section.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "NTAP's Q1 FY2026 10-Q filing shows a systematic pattern of disclosure reduction across multiple material risk categories. The most concerning finding is the near-complete removal of geopolitical, tariff, and trade policy risk discussions from both MD&A and Risk Factors sections \u2014 topics that were extensively disclosed in the prior quarter and have become more material, not less, in the intervening period. This is corroborated by peer comparisons showing both STX and WDC providing significantly more detailed geopolitical and supply chain risk disclosures. The concurrent removal of China-Taiwan supply chain risks, detailed regulatory/legal risk language, and internal controls discussion creates a pattern consistent with deliberate disclosure minimization rather than routine editorial revision.",
+    "top_concerns": [
+      "Complete removal of tariff, trade policy, and geopolitical risk discussion from MD&A and Risk Factors despite escalating trade tensions \u2014 previously disclosed specific references to Trump tariffs on Mexico/Canada/China, WTO ITA reliance, and Russia/Ukraine sanctions are all absent",
+      "Elimination of China-Taiwan supply chain concentration risk from both MD&A and Risk Factors, removing specific warnings about contract manufacturers' ability to source components amid geopolitical tensions",
+      "Significant stripping of regulatory/legal risk detail including FCPA, data privacy, cybersecurity, IP protection, and transition tax payment estimates, reducing legal contingency disclosure to a single generic sentence"
+    ],
+    "genuine_count": 5,
+    "borderline_count": 8,
+    "dismissed_count": 8
+  },
+  "_meta": {
+    "ticker": "NTAP",
+    "model": "claude-opus-4-6",
+    "input_tokens": 25586,
+    "output_tokens": 5896,
+    "timestamp": "2026-04-09T12:18:11.607438"
+  }
+}

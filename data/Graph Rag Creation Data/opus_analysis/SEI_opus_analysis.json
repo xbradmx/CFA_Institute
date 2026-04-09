@@ -1,0 +1,219 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "aad7e4020cc95733",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flagged text is a single generic sentence ('Such a situation could be costly and time-consuming and could distract our management from operating our business') that is standard boilerplate risk language. Its removal does not eliminate a specific operational or product risk category, and it contains no quantitative detail or material specificity. This appears to be routine editorial cleanup.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "37dee6657f4a9591",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior sentence specifically addressed tariff impacts on the supply chain and customer demand reduction. However, the current filing (see Flag 6/7 text) still contains extensive tariff and trade risk language, including 'could increase costs in our supply chain or reduce demand of our customers' products' in the current risk factors. The specific sentence was likely consolidated into the broader tariff risk factor rather than eliminated, but the slight softening from 'further retaliatory trade measures taken in response to additional tariffs' to language adding 'or uncertainty regarding such potential impacts' warrants monitoring.",
+      "investigation_action": "Verify that the supply chain tariff risk language was fully subsumed into the updated tariff risk factor section and confirm no material supply chain exposures were dropped."
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "df4e419dc52d94e5",
+        "current": "25a1d757532d0db1",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing provided granular capex breakdowns: $155M gross proceeds with $100M restricted, ~$490M total consolidated capex, ~$295M from Stateline JV, ~$195M net company capex, and $10-15M for Logistics Solutions. The current filing reduces total expected capex to ~$295M consolidated with ~$190M from Stateline but drops the explicit net company capex figure (~$195M prior), narrows the Logistics range from '$10-15 million' to 'approximately $10 million,' removes the specific allocation of the $155M proceeds breakdown (noting only '$100M was initially restricted'), and eliminates the detailed cash use itemization ($10.1M cancelled shares, $4.7M dividends, $4.6M distributions, $3.6M TRA payments). While some changes reflect updated figures mid-year, the removal of the net capex figure and specific cash use breakdown reduces transparency.",
+      "investigation_action": "Request clarification on the company's net capex obligations after Stateline's contribution, the current restriction status of the $100M from convertible proceeds, and whether the detailed cash use breakdown (tax withholding, dividends, distributions, TRA payments) has changed materially from prior disclosure."
+    },
+    {
+      "flag_number": 4,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "fa745844ad10a652",
+        "current": "cff4325ebc12ad94",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The specific sentence 'The issuance costs will be treated as a debt discount for accounting purposes, which will be amortized into interest expense over the term of the Convertible Senior Notes' was removed from the current filing. While this is a factual accounting treatment that hasn't changed, its removal reduces the specificity about how issuance costs flow through the income statement. The remaining language ('net of issuance costs') still acknowledges the costs but omits the amortization mechanism. This could be editorial streamlining given the notes are now outstanding and the treatment is established, but it reduces disclosure clarity for new readers.",
+      "investigation_action": "Confirm in the financial statement notes that the debt discount amortization treatment is still being applied and disclosed, and verify whether the issuance cost amortization amount is separately identifiable in interest expense."
+    },
+    {
+      "flag_number": 5,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cff4325ebc12ad94",
+        "peer": "70fbdab855aa5688"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is actually highlighting INVX's lack of convertible notes accounting risk disclosure relative to SEI. INVX does not have convertible senior notes, so this risk factor is not applicable to them. INVX's extensive acquisition accounting disclosures under ASC 805 and ASC 323 are appropriate for their business circumstances. The divergence reflects genuine structural differences in capital structure, not disclosure evasion by either party.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "eaba8956e6920dac",
+        "peer": "ba56b26ea4c6b6a7"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag evaluates INVX's disclosure relative to SEI, not SEI's own disclosure degradation. SEI appropriately discloses tariff and cost pressures. INVX's lack of similar tariff risk language may reflect different supply chain exposure (INVX acquired Dril-Quip with significant international manufacturing). The peer comparison does not indicate SEI is downplaying risks; rather, SEI appears to be the more transparent discloser. The INVX peer block cited is from pro forma acquisition commentary, not a comparable risk factor section.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "515299e04714e44d",
+        "peer": "9ec1046c111c2791"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "SEI provides detailed and specific geopolitical/tariff risk disclosure including baseline tariff rates, reciprocal tariffs, and demand impact mechanisms. The peer text from INVX is a sentence about effective tax rate changes, which is not a comparable disclosure. This flag evaluates whether INVX is underreporting, not whether SEI has degraded its disclosure. SEI's own geopolitical disclosure appears robust and appropriately specific.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "liquidity_solvency",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6c6bb1e5307aa2b5",
+        "peer": "9ddbedee014b1a1f"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The screening reason actually flags SEI as offering 'only generic, boilerplate risk statements about potential liquidity shortfalls' compared to INVX's quantitative covenant compliance details. SEI's convertible notes liquidity risk disclosure is extensive in enumerating scenarios (conversion, fundamental change, reclassification to current liability) but notably lacks specific quantitative measures \u2014 no cash-on-hand figures, no covenant compliance ratios, no available revolver capacity. INVX discloses specific covenant thresholds (fixed charge coverage of 1.10:1.00, Excess Availability >20%), confirms compliance, and provides a full cash flow statement. SEI's approach describes what *could* happen without quantifying current liquidity adequacy.",
+      "investigation_action": "Request SEI's current available liquidity (cash + revolver availability), covenant compliance status under its credit facility, and the specific cash obligation if convertible notes were put or converted for cash at current levels."
+    },
+    {
+      "flag_number": 9,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "632cdadcb7897434",
+        "peer": "4c20816201d78a17"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "SEI provides highly specific and detailed revenue/performance risk disclosure around Stateline, including the 900 MW / 53% concentration figure, AI demand uncertainty, customer concentration, financing needs, and management termination provisions. INVX's disclosure reflects a different business model (product/service/rental revenue mix, smaller remaining performance obligations). This flag seems to be highlighting INVX's comparative lack of concentration risk disclosure rather than any SEI degradation. SEI's disclosure here is commendably specific.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8c48ddf800133d75",
+        "peer": "cf1d1f53f59a17c6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag compares SEI's detailed human capital cost disclosure ($5.2M and $8.4M salary/benefits increases, stock-based compensation details) favorably against OIS's generic cross-reference. SEI is the more transparent discloser here. OIS's minimal 10-Q human capital discussion with a cross-reference to the 10-K is common practice for quarterly filings. This does not represent a disclosure concern for SEI.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "293d7bfa82a7a61b",
+        "peer": "f897474ef79f4ac9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "SEI provides substantive supply chain context in MD&A, discussing constrained grid infrastructure, aging transmission networks, long lead times for electrical equipment, and demand-supply dynamics. OIS's single sentence about raw materials reflects a different business (manufactured oilfield products). The comparison highlights OIS's relative thinness, not SEI disclosure degradation. SEI's own supply chain discussion is appropriately detailed.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 12,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cff4325ebc12ad94",
+        "peer": "f7cd249151e7df1f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "OIS does not have convertible senior notes and thus has no obligation to disclose related accounting risks. OIS's boilerplate about disclosure controls and recent accounting pronouncements is standard for a company without complex convertible instruments. This peer divergence reflects genuine structural differences in capital structure rather than any disclosure concern for SEI.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 13,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "515299e04714e44d",
+        "peer": "167e789a61e2759d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "SEI provides detailed and specific tariff risk disclosure with quantitative elements (10% baseline tariff rate, reciprocal tariffs) and explicit demand impact mechanisms for power generation. OIS's disclosure focuses on foreign currency risk and cross-references climate/ESG-related risks from its 10-K. The difference reflects different business models \u2014 SEI imports power generation equipment while OIS has more international manufacturing operations exposed to FX. This is not a SEI disclosure concern.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 14,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ff27d7e68fe31922",
+        "peer": "5af351d01ce32bc7"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "SEI provides highly specific legal risk disclosure, naming the Morpheus Research short-seller report, the Pirello v. Solaris putative class action filed March 28, 2025, the specific legal claims (Sections 10(b) and 20(a)), and its defense posture. OIS's single-sentence acknowledgment of pending claims is standard boilerplate. This comparison highlights SEI's commendable transparency on active litigation rather than any disclosure concern. The divergence reflects SEI having a specific material legal matter to disclose.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Most flags (10 of 14) are peer divergence comparisons where SEI is actually the more transparent discloser, making them irrelevant as degradation signals. The two genuine temporal concerns are the reduction in capital expenditure granularity (Flag 3) and the minor accounting treatment detail removal (Flag 4). Overall, SEI's disclosure quality appears strong, with detailed tariff risks, specific litigation disclosure, and quantitative operational metrics. The capex detail reduction is the only flag warranting meaningful follow-up.",
+    "top_concerns": [
+      "Reduced granularity in capital expenditure disclosures \u2014 net company capex figure dropped, Logistics range narrowed, and detailed cash use breakdown eliminated (Flag 3)",
+      "Absence of quantitative liquidity adequacy measures in convertible notes risk discussion \u2014 no cash position, covenant compliance, or revolver availability disclosed alongside extensive scenario descriptions (Flag 8)",
+      "Removal of specific accounting treatment language for convertible notes issuance cost amortization (Flag 4)"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 3,
+    "dismissed_count": 10
+  },
+  "_meta": {
+    "ticker": "SEI",
+    "model": "claude-opus-4-6",
+    "input_tokens": 11154,
+    "output_tokens": 3658,
+    "timestamp": "2026-04-09T12:28:26.544454"
+  }
+}

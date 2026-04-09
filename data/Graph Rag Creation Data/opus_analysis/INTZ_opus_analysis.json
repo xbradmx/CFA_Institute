@@ -1,0 +1,163 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "financial_sustainability",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "7afabb23edd0f917",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The 'disappeared' text is a single boilerplate sentence about estimates and actual results affecting future financial statements. This is standard MD&A language that is commonly included or excluded as part of routine editing. Moreover, similar language appears in Flag 5's target block (block 1451ddfccca0564d), suggesting this disclosure was consolidated elsewhere in the filing rather than removed entirely.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "878f265a1d0536f2",
+        "current": "194195248c4868cd",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed specific gross profit amounts ($1.3M), gross margin percentages (75.7% vs. 80.0%), and detailed product mix breakdown (INTRUSION Shield at 23.4% vs. 39.1%). The current period replaces this with the vague statement 'The gross profit margin will vary depending on product mix' and omits gross profit dollar amounts, margin percentages, and G&A expense figures entirely. This is a clear removal of quantitative specificity on a material topic for a company of this size.",
+      "investigation_action": "Request from INTZ the specific gross profit margin, dollar amounts, and INTRUSION Shield revenue mix percentages for Q2 2025. Determine whether the margin compression trend evident in the prior quarter has accelerated, which would explain motivation to obscure these figures."
+    },
+    {
+      "flag_number": 3,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "d915cc757d330ee1",
+        "current": "b47af84297570279",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained an explicit risk warning about government sales, including 'potential disruption to appropriation and spending patterns' and 'the government's reservation of the right to cancel contracts and purchase orders for its convenience.' The current filing replaces this with a revenue explanation about a DoD contract with no accompanying risk disclosure. This is particularly concerning because the company is now more dependent on government revenue (a new DoD contract), making these risks more material, not less.",
+      "investigation_action": "Investigate the size and duration of the DoD contract awarded in H2 2024, the proportion of total revenue it represents, and why government contract risk language was removed at the same time government revenue increased. Check if Risk Factors section elsewhere in the filing retains this language."
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "86f5c85a8e441e2f",
+        "peer": "da58746bded4d491"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is actually backwards \u2014 it flags CIIT for lacking supply chain disclosure, not INTZ. INTZ does discuss government-related supply chain risks. Furthermore, CIIT (a logistics company) and INTZ (a cybersecurity company) have fundamentally different business models, making peer comparison on supply chain disclosure largely irrelevant. The peer distance is also extremely close (0.000374), suggesting this may be an artifact of the matching algorithm rather than a meaningful comparator.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1451ddfccca0564d",
+        "peer": "1b5ae9ee68eafc55"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LTRX explicitly discloses a known material weakness in IT general controls that it identified in fiscal 2023. There is no evidence that INTZ has a comparable material weakness. INTZ's boilerplate on critical accounting policies is standard for a company without identified material weaknesses. The peer divergence here reflects a genuine business difference \u2014 LTRX has a specific problem it must disclose \u2014 rather than INTZ concealing a similar issue.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "194195248c4868cd",
+        "peer": "fcd0cba7ad6a1529"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "LTRX provides extensive forward-looking risk discussion about pricing pressure, inventory write-downs, component cost fluctuations, and margin compression \u2014 all risks that are relevant to INTZ as a hardware/software cybersecurity vendor. INTZ's current MD&A states only that 'The gross profit margin will vary depending on product mix' without quantifying current margins, discussing pricing trends, or addressing inventory risks. Combined with the temporal degradation identified in Flag 2, this reinforces that INTZ is providing materially less granular cost/margin disclosure than would be expected.",
+      "investigation_action": "Benchmark INTZ's margin disclosure against other small-cap cybersecurity/network security peers beyond LTRX. Assess whether INTZ faces similar pricing pressure from competitors or component cost increases that should be disclosed."
+    },
+    {
+      "flag_number": 7,
+      "topic": "cybersecurity_technology",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c0a8a700bc354931",
+        "peer": "07a0a3f82b2b6a88"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "INTZ is a cybersecurity company whose core product is designed to protect against cyberattacks, yet the flagged text is purely promotional product description without acknowledging that INTZ itself faces cybersecurity risks to its own operations and data. LTRX provides extensive disclosure on threats from AI, ransomware, data breaches, and reputational harm. While INTZ may address cybersecurity risks in its Risk Factors section (not shown here), the MD&A excerpt is notably silent on operational cybersecurity risks for a company in this sector.",
+      "investigation_action": "Review INTZ's full 10-Q Risk Factors section to confirm whether cybersecurity operational risks are disclosed there. If not, this would be a significant gap for a company whose entire value proposition is cybersecurity protection."
+    },
+    {
+      "flag_number": 8,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b47af84297570279",
+        "peer": "feb00ef42065e5e4"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "INTZ holds a DoD contract and its only geopolitical/macro disclosure is a single sentence about consulting revenue from that contract. LTRX extensively discusses tariffs, geopolitical conflicts, manufacturing transitions out of China, currency risks, and macroeconomic conditions. Given INTZ's dependence on government appropriations and its operation in the cybersecurity sector (which is directly affected by geopolitical tensions and government spending priorities), the absence of any macro/geopolitical risk discussion is a notable gap. This is reinforced by Flag 3's finding that prior government risk language was removed.",
+      "investigation_action": "Assess what proportion of INTZ's revenue and pipeline depends on U.S. government contracts subject to appropriations risk, DOGE spending cuts, or continuing resolution impacts. Review whether current tariff environment affects any hardware components INTZ uses in its Shield product."
+    },
+    {
+      "flag_number": 9,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "644d86ee28906729",
+        "peer": "82a4ae2f96b9547a"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "INTZ's regulatory/legal disclosure consists only of noting reduced legal expenses from resolved litigation and a securities exemption reference. LTRX provides extensive discussion of data privacy laws (GDPR, CCPA), export compliance (FCPA), IP litigation risks, environmental regulations, and AI regulation. While LTRX is a larger, more international company with different regulatory exposure, INTZ as a cybersecurity company handling network traffic data likely faces some data privacy and export control obligations that go unmentioned. However, the comparison is somewhat strained given the significant difference in business scale and international operations.",
+      "investigation_action": "Verify whether INTZ's cybersecurity products involve processing, storing, or transmitting customer data that would trigger data privacy obligations. Also assess whether INTRUSION Shield sales to government entities require export control compliance that should be disclosed."
+    },
+    {
+      "flag_number": 10,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "86f5c85a8e441e2f",
+        "peer": "2b2de28f5a9b97f9"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "LTRX provides extraordinarily detailed supply chain risk disclosure covering single-source components, contract manufacturer dependencies, logistics providers, and natural disaster risks. INTZ's only supply chain-adjacent disclosure references government contract cancellation risk. If INTZ manufactures or assembles hardware appliances for INTRUSION Shield, it likely has component sourcing and manufacturing dependencies that are not disclosed. However, if INTZ is primarily a software/SaaS provider, supply chain risks may be genuinely less material.",
+      "investigation_action": "Determine whether INTRUSION Shield is delivered as a physical hardware appliance or purely as software/cloud service. If hardware is involved, investigate component sourcing, single-source dependencies, and manufacturing arrangements that should be disclosed."
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "INTZ shows a clear pattern of disclosure degradation in its Q2 2025 10-Q filing. The most concerning signal is the simultaneous removal of specific gross profit figures, margin percentages, and product mix data (Flag 2) combined with the elimination of government contract risk language at precisely the time when government revenue dependence is increasing (Flag 3). Peer comparison further reveals that INTZ's disclosure on cost pressures, geopolitical risks, and cybersecurity operational risks is materially thinner than comparable companies, suggesting a systematic pattern of underreporting risks.",
+    "top_concerns": [
+      "Removal of specific gross margin percentages, dollar amounts, and INTRUSION Shield product mix data from MD&A, replaced with vague language about variability \u2014 potential signal of accelerating margin deterioration",
+      "Elimination of government contract risk disclosure coinciding with increased DoD contract revenue dependence \u2014 creates a significant gap in risk transparency for what appears to be a growing revenue concentration",
+      "Minimal geopolitical, regulatory, and supply chain risk disclosure despite operating in cybersecurity sector with government contracts, diverging significantly from industry peer practices"
+    ],
+    "genuine_count": 4,
+    "borderline_count": 3,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "INTZ",
+    "model": "claude-opus-4-6",
+    "input_tokens": 11230,
+    "output_tokens": 2937,
+    "timestamp": "2026-04-09T12:07:32.464702"
+  }
+}

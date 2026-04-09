@@ -1,0 +1,177 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "ccbb493df31c3857",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior text mentions brass customer demand decreasing due to powder shortage. Given that POWW sold its Ammunition Manufacturing Business to Olin Winchester in the current period, removing supply chain commentary specific to ammunition manufacturing is expected and legitimate\u2014the business was divested. The repeated identical sentence also suggests a data extraction artifact.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "4bfeb7edffb52766",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing disclosed that management attention and resources were diverted due to the restatement, Special Committee Investigation, SEC investigation, and material weakness remediation. While the share repurchase program expired (February 2025) making that disclosure moot, the risk that management diversion could 'adversely impact operations' remains relevant given that the SEC investigation is ongoing and material weaknesses persist. Dropping this risk factor without replacement is concerning.",
+      "investigation_action": "Confirm whether the management diversion risk is addressed elsewhere in the current filing's risk factors or if it was silently removed. Assess whether the SEC investigation status has changed materially enough to justify dropping this disclosure."
+    },
+    {
+      "flag_number": 3,
+      "topic": "liquidity_solvency",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "210fb5ecd459ddbd",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained highly specific and material disclosure that the SEC Staff appeared to be investigating and would likely recommend enforcement action across five specific categories including share-based compensation valuation, perquisite disclosure, related party transactions, and Adjusted EBITDA calculation. This detailed SEC investigation risk disclosure appears to have been removed from the Risk Factors section. Even if the company settled the Delaware Litigation, the SEC investigation is a separate matter and the removal of this specific, granular risk disclosure is a significant reduction in transparency.",
+      "investigation_action": "Determine the current status of the SEC enforcement investigation. Verify whether any Wells Notice has been issued since the prior filing. Check if this SEC investigation risk disclosure was relocated to another section of the filing or truly removed."
+    },
+    {
+      "flag_number": 4,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "6749ab2ecf5b2020",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The share repurchase program expired February 2025, making its disclosure moot. The management diversion risk is flagged separately in Flag 2. These are stale disclosures that were appropriately removed given the expiration of the buyback program and the company's corporate transformation following the ammunition business sale.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "3668a6f4085bc6f5",
+        "current": "1c717331aaceacb8",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing contained extensive detail on the Construction Loan ($11.625M, 4.5% rate, $64,620 monthly payments, debt service coverage ratio of 1.25:1.00, maturity October 2026) and Revolving Loan terms. The current filing removes Construction Loan details entirely (consistent with the Manitowoc facility sale) but replaces it with new debt from the Delaware Litigation settlement\u2014$51M in aggregate notes plus a 7M share warrant\u2014with less granular disclosure of covenants and default provisions than was provided for the prior facilities. The current filing does disclose key terms (interest rates, maturity, annual prepayments of $2.95M) but omits covenant details, default remedies, and detailed cash flow impact that were standard in prior periods.",
+      "investigation_action": "Review the actual Note 1 and Note 2 exhibits (10.6, 10.7) for covenant terms, cross-default provisions, and acceleration triggers. Assess the dilution risk from the 7M share Warrant at $1.81 and the potential Additional Warrant for 13M shares at $1.00. Model the $51M note obligations against the company's remaining cash flows from the Marketplace segment alone."
+    },
+    {
+      "flag_number": 6,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "756fd8016c9d7aa8",
+        "current": "15ece8b20f971942",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained highly detailed material weakness remediation initiatives including specific actions across segregation of duties, related party transaction policy, organizational enhancements (CFO hire, VP of Accounting hire), significant and unusual transaction processes, and a statement that 'when fully implemented and operational, [these efforts] will effectively remediate the material weaknesses.' The current filing strips nearly all of this specificity, replacing it with high-level bullet points like 'reinforced and continue to reinforce the importance of adherence' and noting the CFO and VP hires as completed but removing the comprehensive list of other remediation steps, timelines, and the explicit confidence statement about remediation effectiveness. This is a meaningful reduction in transparency on a critical governance topic.",
+      "investigation_action": "Determine whether any material weaknesses have been remediated as of the current filing date. Request management commentary on the specific status of each previously disclosed remediation initiative. Assess whether the leadership turnover (CEO resignation, new CEO appointment) has disrupted remediation progress."
+    },
+    {
+      "flag_number": 7,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "c7f5e67718cb0569",
+        "current": "9f3de0abe6f5cc46",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior filing discussed Manitowoc facility capacity, ammunition product lines (AP, HAPI rounds), military sales, and ammunition-related capital expenditures. The current filing notes these operations were sold as part of the Ammunition Manufacturing Business divestiture to Olin Winchester for $75M. The replacement text appropriately describes the segment as discontinued operations and notes increased corporate costs from winding down. The removal of ammunition operational detail is a natural consequence of the divestiture, not disclosure degradation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "931f78a2ccb4496c",
+        "current": "a1cd719f0e0ed7cb",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing explicitly disclosed that the restatement 'required, and may continue to require, a significant amount of management time and accounting, financial and legal resources' and detailed the Special Committee Investigation's impact. The current filing's corresponding section contains only exhibit listing boilerplate (SOX certifications, XBRL). The restatement-related risks remain live\u2014material weaknesses are not yet remediated, the SEC investigation is still pending\u2014yet the risk factor discussion appears to have been entirely removed rather than updated. This represents a material reduction in risk factor transparency.",
+      "investigation_action": "Verify whether restatement and accounting risk factors were consolidated into the annual 10-K and cross-referenced, or truly dropped from the quarterly filing. Assess whether the company's risk factor section in the current 10-Q contains any reference to ongoing restatement costs and management diversion."
+    },
+    {
+      "flag_number": 9,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "0272cf7ae8766b5d",
+        "current": "ed5f82d2ab7a196a",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing contained specific risk factors about the share repurchase program ($30M authorization, Board extensions, detailed repurchase methodology) and the Special Committee Investigation's resource demands. The current filing replaces these with exhibit references to Sunflower loan amendments and settlement agreements. While the repurchase program has expired and the Delaware Litigation has settled (making some removals legitimate), the substitution of substantive risk discussion with mere exhibit cross-references reduces the reader's ability to understand remaining risks without reviewing multiple incorporated documents.",
+      "investigation_action": "Review whether the current 10-Q's Risk Factors section contains updated discussion of risks from the $51M settlement notes obligation and the ongoing SEC investigation, or if these topics are only discoverable through exhibit review."
+    },
+    {
+      "flag_number": 10,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "85fa46cc8f3f29cc",
+        "current": "25ac3e49cded13d3",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained critical, specific disclosure that the SEC Staff was 'investigating and likely will recommend that the SEC bring an enforcement action' across five enumerated categories, and discussed the potential consequences including injunctions, civil penalties, and additional legal fees. The current filing replaces this entire risk discussion with settlement agreement exhibit references that relate to the Delaware Litigation (a separate matter from the SEC investigation). The SEC investigation risk disclosure\u2014arguably the most material legal risk facing the company\u2014appears to have been removed without explanation or update. This is a significant and concerning reduction in transparency on an active regulatory matter.",
+      "investigation_action": "Urgently determine the current status of the SEC investigation. Confirm whether a Wells Notice has been issued. Check if the SEC investigation disclosure was moved elsewhere in the current filing. If truly removed, this should be flagged to portfolio management as a potential red flag for undisclosed enforcement risk."
+    },
+    {
+      "flag_number": 11,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "dcbe894310900757",
+        "peer": "b2232fadaa2b193d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening flag suggests WRAP is downplaying legal risks compared to POWW, but POWW's extensive legal disclosures reflect company-specific matters (Delaware Litigation settlement, SEC investigation, DCP breach of contract suit) that are unique to POWW's circumstances. WRAP operates in a fundamentally different product space (restraint devices vs. ammunition/marketplace) with different regulatory and litigation profiles. The peer comparison is not meaningful\u2014POWW's disclosures are more extensive because POWW has dramatically more active legal proceedings, not because WRAP is being evasive.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "POWW/Outdoor Holding Company shows a pattern of material disclosure reduction coinciding with a transformative period\u2014the sale of its ammunition business, settlement of the Delaware Litigation with $51M in notes and equity warrants, CEO turnover, and an ongoing SEC enforcement investigation. Most concerning is the apparent removal of detailed SEC investigation risk disclosures that previously warned of likely enforcement action across five specific categories, combined with reduced transparency on material weakness remediation progress. While some disclosure changes are legitimately explained by the ammunition business divestiture, the removal of SEC investigation details and internal control remediation specifics cannot be attributed to business changes.",
+    "top_concerns": [
+      "Removal of detailed SEC investigation risk disclosure that previously identified five specific areas of likely enforcement action\u2014this is the most critical transparency gap given the investigation remains unresolved",
+      "Significant reduction in material weakness remediation detail, including removal of specific initiatives, timelines, and confidence statements, occurring simultaneously with CEO turnover that could disrupt remediation progress",
+      "New $51M note obligations and dilutive warrant issuances from the Delaware Litigation settlement disclosed with less covenant and default detail than was standard for prior debt facilities, while the company's remaining operations are limited to the Marketplace segment"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 3,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "POWW",
+    "model": "claude-opus-4-6",
+    "input_tokens": 18256,
+    "output_tokens": 3219,
+    "timestamp": "2026-04-09T12:23:33.036634"
+  }
+}

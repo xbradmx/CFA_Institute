@@ -1,0 +1,93 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "regulatory_legal",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "2df54aafd93e1b78",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The 'disappeared' text is a boilerplate strategy statement mentioning 'regulatory tailwinds' in passing, not a substantive regulatory or legal risk discussion. Moreover, this exact language appears in the current filing under the geopolitical_macro topic (block 3be34a209df07347), indicating it was reorganized rather than removed. There is no loss of material regulatory or legal disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "63faf91a65509b60",
+        "current": "3be34a209df07347",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained specific geographic operational details ('Kingdom of Denmark and China, with locations in the Copenhagen area, Hobro and Shanghai'), a concrete going-concern liquidity statement ('cash on hand...will be sufficient to cover its capital requirements and committed investments for the next 12 months'), and an explicit attribution of sales decline to 'temporary market conditions, with customers awaiting potential interest rate cuts.' The current period replaces all of this with a generic strategy statement and a vague forward-looking caveat about 'global recession, structural shift in regulation, or the escalating interest rates and tariffs.' The removal of the 12-month cash sufficiency projection and specific operational geography is a material reduction in disclosure specificity.",
+      "investigation_action": "Analyst should determine whether the 12-month liquidity sufficiency statement was relocated elsewhere in the 10-Q (e.g., liquidity section of MD&A or going concern footnote). If not, investigate whether the omission signals deteriorating cash position or uncertainty about capital adequacy. Also confirm whether China operations are still active and why the geographic detail was removed."
+    },
+    {
+      "flag_number": 3,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f5e1cdd50ca2ef4e",
+        "peer": "5902d60bce169048"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted \u2014 it flags MOG-A as potentially downplaying human capital risks, not LIQT. LIQT actually provides more specific disclosure here, citing CFO transition costs, reduction in average R&D headcount, and exit costs from a loss-making project. MOG-A's generic language is typical for a company without material workforce disruptions. This does not indicate disclosure degradation by LIQT.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c75e7d429825e2de",
+        "peer": "0e9190cd8e8789c2"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "LIQT's sole supply chain disclosure \u2014 'The products are shipped directly to customers from our production facilities in Denmark' \u2014 is extremely thin for a company that previously disclosed operations in both Denmark and China and operates in an industrial filtration sector subject to raw material and logistics risks. MOG-A, while in a different sub-sector (defense/aerospace), at least discusses production delays and supply-chain constraints affecting its customers. However, MOG-A's peer distance (0.487) is relatively high, meaning business model differences partially explain the divergence. The concern is that LIQT's single sentence provides no visibility into sourcing risks, raw material dependencies, or tariff exposure on inputs.",
+      "investigation_action": "Analyst should review whether LIQT discusses supply chain risks elsewhere in the filing (e.g., Risk Factors section) and whether the apparent cessation of China operations has implications for input sourcing. Given the tariff environment and LIQT's Denmark/China footprint, the lack of supply chain risk discussion warrants direct engagement with management."
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3be34a209df07347",
+        "peer": "b95e7819d3e1cabd"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "EPAC quantifies currency impacts with dollar amounts and percentages ('favorably impacted sales by $1 million, or 1%') and discusses specific tax rate differentials including GILTI and FDII provisions. LIQT, despite operating internationally in Denmark and China with clear FX exposure, only mentions 'lower gain on currency transactions' without any quantification and offers only generic forward-looking language about recession, tariffs, and interest rates. The prior-period filing showed LIQT was more specific about these risks; the current period is a clear step backward in specificity on a topic where the company has material exposure. The close peer distance with EPAC (0.078) strengthens this comparison.",
+      "investigation_action": "Analyst should request quantification of FX impact on revenue and margins given LIQT's Danish krona exposure. Investigate whether the vagueness on tariff impact is concealing material exposure on products shipped from Denmark or components sourced from China. Compare current quarter's FX line items in the financials to prior periods to independently assess magnitude."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "LIQT's latest 10-Q shows a meaningful reduction in disclosure specificity, particularly around liquidity/going-concern projections and quantification of FX and macroeconomic exposures. The removal of the 12-month cash sufficiency statement and geographic operational detail, combined with the lack of quantified currency impacts relative to peers, suggests the company is becoming less transparent on topics where it previously provided useful detail. Two flags are dismissed as misattributed or relocated content, but the remaining concerns are substantive.",
+    "top_concerns": [
+      "Disappearance of the 12-month cash sufficiency/liquidity adequacy statement that was present in the prior quarter filing \u2014 potential going-concern signal",
+      "Lack of quantified FX and tariff impact disclosure despite material international operations, in contrast to both prior filings and close peers",
+      "Minimal supply chain risk discussion despite operating across Denmark and China in a tariff-sensitive industrial sector"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 1,
+    "dismissed_count": 2
+  },
+  "_meta": {
+    "ticker": "LIQT",
+    "model": "claude-opus-4-6",
+    "input_tokens": 2550,
+    "output_tokens": 1718,
+    "timestamp": "2026-04-09T12:12:03.807253"
+  }
+}

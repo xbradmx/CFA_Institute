@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "61cb64d3d2aa991e",
+        "current": "cede6ba06230c1d2",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing included a specific quantitative milestone ('28.3% reduction in our Scope 1 and 2 carbon dioxide equivalent emissions as compared to our 2019 base year') and a reference to the 2023 Corporate Sustainability Report as evidence. The current filing strips both of these, leaving only the bare 2019 commitment language. This removes the only concrete progress metric available to investors, making it impossible to assess whether the company is on track toward its 50% by 2030 target. The removal of the framing sentence about the company's 'important role to play in society' also suggests a deliberate downscaling of sustainability prominence.",
+      "investigation_action": "Determine whether the 2024 Corporate Sustainability Report has been published and whether it contains updated Scope 1/2 emissions data; ask management directly whether emissions trajectory has worsened or whether the omission reflects a policy decision to reduce ESG-related disclosures in SEC filings."
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "64933406e00c209a",
+        "current": "e6e17d3777760ea9",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period included a substantive forward-looking risk monitoring statement covering 'macroeconomic environment, trade policy and tariffs, oil price volatility and changes in regulations and tax or other incentives for new energy solutions.' The current period replaces this with a boilerplate truism ('When drilling rigs are active they consume products and services produced by the oil service industry') that conveys no risk information whatsoever. Given that tariff and trade policy uncertainty has arguably increased (not decreased) between filing periods, the removal of these specific risk factors is a significant degradation rather than a reflection of diminished risk.",
+      "investigation_action": "Check whether tariff/trade policy risk language was relocated to a different section (e.g., Risk Factors or a separate market outlook paragraph); if not, press management on why specific macro risk factors were dropped during a period of heightened trade policy uncertainty."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cede6ba06230c1d2",
+        "peer": "a74753a17bc83b80"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The peer passages from NOV discuss corporate cost variances, Russian subsidiary deconsolidation charges, legal costs, and tax reserve movements \u2014 topics that are company-specific to NOV's circumstances. These are not comparable to BKR's sustainability commitment language. The screening algorithm has compared two fundamentally different disclosure topics under the 'regulatory_legal' umbrella. BKR likely discloses its legal costs and tax positions in separate, dedicated sections of its filing rather than in this sustainability paragraph.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e6e17d3777760ea9",
+        "peer": "9d8b1d126e90c68d"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "NOV provides specific rig count data (worldwide quarterly average down 6% from 1,708 to 1,597; North American count of 724 rigs vs. Q2 average of 700) to contextualize its market outlook. BKR \u2014 the world's largest oilfield services company by many measures \u2014 offers only a generic definitional statement about rig activity driving demand, with zero quantification. For a company whose revenue is directly tied to rig count, the absence of any quantitative market context in the same MD&A section is a notable divergence from peer practice and deprives investors of essential demand-side framing.",
+      "investigation_action": "Verify whether BKR provides rig count data or demand metrics elsewhere in the filing; if absent, this represents a meaningful gap relative to peers that should be flagged in engagement with the company's IR team."
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cede6ba06230c1d2",
+        "peer": "b03cdd7a67baf306"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The FTI peer passage discusses effective tax rate drivers (geographical profit mix, uncertain tax position accruals, taxes on undistributed earnings), which is standard tax footnote language, not emissions or environmental regulatory disclosure. The screening reason claims FTI 'explicitly discusses significant emissions reduction targets' but the actual peer passage contains no such content. This is a mismatched comparison where the algorithm conflated tax disclosures with environmental regulatory risk.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e6e17d3777760ea9",
+        "peer": "408e6be9b32b23c3"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "FTI provides at least a directional view on near-term oil supply dynamics ('OPEC+ as member nations restore previously curtailed production'), which gives investors context for demand outlook. BKR's generic statement about rigs consuming oilfield services is definitional rather than analytical. However, the FTI passage is itself fairly brief and high-level, so the divergence is less stark than with NOV. This is a mild signal \u2014 BKR's market outlook section appears unusually thin but the peer benchmark here is also not highly specific.",
+      "investigation_action": "Review whether BKR's full MD&A market outlook section (beyond this single block) includes OPEC+, commodity price, or other supply-demand context; if the entire section is similarly sparse, this reinforces the concern that management is deliberately reducing forward-looking market commentary."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "BKR's Q2 2025 10-Q shows a clear pattern of reducing specificity in two key areas: sustainability progress metrics and macroeconomic/supply chain risk factors. The removal of the 28.3% emissions reduction figure and the deletion of specific trade policy/tariff risk language are the most concerning temporal changes. Peer comparisons are partially undermined by mismatched content, but the NOV rig count comparison highlights a genuine gap in market context.",
+    "top_concerns": [
+      "Removal of quantitative sustainability progress (28.3% emissions reduction) without replacement \u2014 may signal stalled or reversed progress toward 2030 target",
+      "Deletion of specific macro risk factors (tariffs, trade policy, oil price volatility, regulatory changes) during a period of heightened uncertainty, replaced with generic boilerplate",
+      "Absence of quantitative market context (rig counts, demand indicators) in MD&A where peers like NOV provide specific figures"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 1,
+    "dismissed_count": 2
+  },
+  "_meta": {
+    "ticker": "BKR",
+    "model": "claude-opus-4-6",
+    "input_tokens": 2436,
+    "output_tokens": 1932,
+    "timestamp": "2026-04-09T11:49:12.782961"
+  }
+}

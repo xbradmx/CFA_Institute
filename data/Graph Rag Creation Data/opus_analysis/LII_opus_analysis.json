@@ -1,0 +1,163 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "02149abe07d31ffe",
+        "peer": "4708491fb2161543"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LII's statement that no recent accounting pronouncements are expected to have a material impact is a standard boilerplate disclosure used by mature companies with straightforward accounting. AIRJ's extensive discussion of fair value measurements, earnout liabilities, and emerging growth company provisions reflects its unique circumstances as a recently-merged SPAC with complex transaction accounting, not a comparable disclosure standard. These are fundamentally different business situations, not evidence of LII obfuscating.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3d7092b577b84b9d",
+        "peer": "4c0128427d670e1b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted \u2014 it flags AIRJ for lacking cost/margin pressure disclosure relative to LII. LII actually provides highly detailed and quantifiable disclosures on commodity price volatility, tariff impacts (specific basis point contributions to margin changes), and pricing actions. LII's disclosure is exemplary on this topic, with specific dollar amounts ($84M favorable mix/price, $17M higher product costs, etc.) and basis point breakdowns. There is no degradation signal here for LII.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7fe27d14bb5ab9cb",
+        "peer": "56f6350f700ec65e"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags AIRJ for lacking debt financing disclosures relative to LII. LII's disclosure is in fact extremely thorough \u2014 detailing the commercial paper program ($29M outstanding, $500M max), the Amended Credit Agreement ($1B revolving facility, May 2030 maturity), senior unsecured notes ($300M 2025 Notes, $300M 2027 Notes, $500M 2028 Notes), covenants, cross-default provisions, credit ratings (Baa2/BBB), and debt-to-capital ratios (57%). This is strong disclosure by LII, not a degradation signal.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c9e3155382b72ac5",
+        "peer": "60deb65d10ed9f91"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags AIRJ for providing only a generic cross-reference to risk factors versus LII's discussion. LII does mention macroeconomic demand factors and provides a table of foreign currency and other losses/gains. However, the peer comparison with AIRJ (a pre-revenue SPAC) is not meaningful for evaluating LII's disclosure quality on geopolitical risks. The more relevant comparison is with AAON in Flag 9.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d4da68a99cd3bebe",
+        "peer": "18750708cd2019ab"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The comparison between LII's SG&A cost discussion and AIRJ's executive severance plan disclosure is not meaningful \u2014 these are entirely different types of disclosures addressing different purposes. AIRJ's severance plan disclosure is a required Item 5.02 current report-type disclosure for a small company, not evidence that LII is under-disclosing human capital risks. The more relevant comparison is with AAON in Flag 10.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2f507541e3afca62",
+        "peer": "ea862fbb4abca781"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags AIRJ for providing generic legal boilerplate while LII highlights the One Big Beautiful Bill Act. LII actually does mention this specific recent regulatory development, which is a proactive disclosure. AIRJ's generic disclosures reflect its status as a pre-revenue emerging growth company with limited regulatory exposure. The comparison does not indicate LII is downplaying regulatory risks.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "566d6f8e00b39b1c",
+        "peer": "db10d130a2ebb134"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags AIRJ for minimal revenue discussion despite being pre-revenue, while LII provides detailed segment-level revenue analysis. LII's disclosure is robust, with specific percentage changes, dollar amounts, and mix/price vs. volume decomposition for both Home Comfort Solutions and Building Climate Solutions segments. This is a strong LII disclosure, not a degradation signal. The comparison with a pre-revenue company is not informative.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a8b75164fca1ee8b",
+        "peer": "6aaffb87f10ed356"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "LII's disclosure on capital allocation and financial sustainability is relatively thin in the flagged passage \u2014 it mentions $54M capex, $295M share repurchases, and $82M dividends but provides limited forward-looking context on how these significant capital returns (totaling $377M in 6 months) are sustainable alongside its 57% debt-to-capital ratio. AAON by contrast provides a specific 2025 capex estimate of $220M and discusses Board discretion over project cancellation. LII's brevity on the sustainability of aggressive shareholder returns warrants attention, though the debt position disclosures elsewhere partially compensate.",
+      "investigation_action": "Investigate whether LII provides forward-looking capital allocation guidance (capex plans, share repurchase authorization remaining, dividend coverage ratios) elsewhere in the filing or earnings calls, and assess whether the pace of $377M in 6-month shareholder returns is sustainable alongside the 57% debt-to-capital ratio and upcoming $300M note maturity in August 2025."
+    },
+    {
+      "flag_number": 9,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c9e3155382b72ac5",
+        "peer": "a7a2408bee39129b"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "This is a more meaningful peer comparison than Flag 4. AAON provides extensive, specific geopolitical and macro risk disclosure including a 6.0% tariff surcharge on all AAON branded products, detailed discussion of the tariff policy landscape, and a comprehensive forward-looking risk factors list covering trade policy, labor markets, and construction cycles. LII's MD&A mentions tariff impacts quantitatively within its margin discussion (Flags 2 passage) but the block flagged here shows only generic references to macroeconomic demand factors without a dedicated tariff/trade policy risk discussion. LII does address tariff impacts within its gross profit analysis, so the risk is not entirely absent, but the lack of a consolidated macro/tariff risk discussion section is a notable divergence from AAON's approach.",
+      "investigation_action": "Review whether LII's risk factors section (not included in this screening) contains specific tariff and trade policy disclosures comparable to AAON's. Also verify whether LII's forward guidance adequately quantifies the net tariff exposure given its Mexico manufacturing footprint and reliance on steel, aluminum, and copper."
+    },
+    {
+      "flag_number": 10,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d4da68a99cd3bebe",
+        "peer": "dc600c8237ff49d0"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "AAON provides substantive human capital disclosures including specific compensation plan details (LTIP, 2016 Plan, 2024 Plan), a 175% HSA match program, acknowledgment of tight labor market challenges, and discussion of human resource retention initiatives. LII's MD&A passages reference 'higher employee-related costs' twice without elaboration on workforce challenges, retention programs, labor market conditions, or compensation strategy. For a company with significant manufacturing operations where labor availability is an industry-wide concern, this lack of specificity in the MD&A is a notable gap, though human capital disclosures may appear elsewhere (e.g., the annual proxy or 10-K).",
+      "investigation_action": "Check LII's most recent 10-K for human capital disclosures (now required under SEC rules) and compare the depth of discussion on labor availability, retention initiatives, and compensation programs to AAON and other HVAC peers. Assess whether LII's manufacturing labor costs and availability are becoming a material risk not adequately discussed in quarterly filings."
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "The majority of flags stem from comparisons with AIRJ, a pre-revenue SPAC that is not a meaningful peer for disclosure benchmarking against LII, a mature $2.5B+ revenue industrial company. LII actually provides strong quantitative disclosures on margins, cost pressures, debt structure, and segment performance. The few borderline concerns relate to relatively thin MD&A discussion of capital allocation sustainability, geopolitical/tariff risk framing, and human capital challenges compared to closer peer AAON, though these topics may be addressed elsewhere in the filing.",
+    "top_concerns": [
+      "Capital allocation sustainability: $377M in shareholder returns over 6 months alongside 57% debt-to-capital and upcoming $300M note maturity deserves more forward-looking context",
+      "Geopolitical/tariff risk framing: LII quantifies tariff impacts in margin discussion but lacks a consolidated macro/trade policy risk section comparable to peer AAON despite significant Mexico manufacturing exposure",
+      "Human capital disclosure gap in MD&A: Generic references to 'higher employee-related costs' without discussion of labor market challenges, retention programs, or workforce strategy diverges from AAON's more detailed approach"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 3,
+    "dismissed_count": 7
+  },
+  "_meta": {
+    "ticker": "LII",
+    "model": "claude-opus-4-6",
+    "input_tokens": 16092,
+    "output_tokens": 2907,
+    "timestamp": "2026-04-09T12:11:30.099098"
+  }
+}

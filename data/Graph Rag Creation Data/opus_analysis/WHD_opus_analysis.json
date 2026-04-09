@@ -1,0 +1,191 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "8f37edd3cae04e95",
+        "current": "c82c7d0557142743",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included a detailed description of the Pressure Control segment's operations\u2014designing, manufacturing, selling, renting wellhead equipment, field services, and service center functions\u2014which is absent from the current period excerpt. However, this is a 10-Q MD&A section and the segment description likely appears elsewhere in the filing (e.g., in the business overview or notes). The current block's juxtaposition of a credit facility amendment with an unrelated Spoolable Technologies capex sentence suggests this is an artifact of block extraction rather than intentional removal.",
+      "investigation_action": "Verify whether the Pressure Control segment description appears elsewhere in the current 10-Q filing (e.g., in the business description section or in Note disclosures) before concluding information was removed."
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "422b2f203e91e17f",
+        "current": "33fc26489c3577ae",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period specifically disclosed a 40% ownership stake in a Vietnamese forging facility for $6 million, while the current period replaces this with a vague reference to 'diversification of our low cost supply chain' in the capex description. However, the current filing's Flag 5 block does mention 'the initial investment of $6.0 million related to our joint venture in Vietnam intended to diversify our manufacturing capabilities,' indicating the information was not entirely eliminated but was relocated. The MD&A capex line is nonetheless less specific than the prior period's standalone disclosure.",
+      "investigation_action": "Confirm the $6 million Vietnam JV investment is fully disclosed elsewhere in the current filing and assess whether the lack of ownership percentage detail (40%) in the current period represents a deliberate downgrade or consolidation."
+    },
+    {
+      "flag_number": 3,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "81b1d37220ad046e",
+        "current": "dd129d52cc5e09ef",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This is standard 10-Q practice. The prior period block appears to be from a Q1 10-Q which typically includes more detailed accounting policy descriptions at the start of the fiscal year, while subsequent quarters routinely state 'no changes since the annual report' and refer readers to the 10-K. The current period's statement\u2014'A discussion of our critical accounting policies and estimates is contained in our 2024 Annual Report on Form 10-K. There have not been any changes'\u2014is boilerplate and entirely normal for a Q2 filing. The detailed EPS tables, revenue recognition policies, and TRA methodology would all be in the notes to the financial statements, not the critical accounting policies section.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "409674378964888e",
+        "current": "de80051ae7970ee3",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period provided extensive quantitative detail on the Amended ABL Credit Facility: $125 million term loan, $225 million revolving commitment, specific maturity dates (February 2026 and July 2027), precise interest rate margins (2.50%/3.50% for term loan, 0.0%-0.5%/1.25%-1.75% for revolving), commitment fees (0.25%), collateral descriptions, and TRA liability methodology. The current period replaces all of this with vague statements like 'we may also have the ability to issue additional equity and debt if needed' and 'we may elect to pursue one or more debt financing transactions prior to the Closing to enhance liquidity.' This is a material reduction in transparency on the company's financing structure, particularly concerning given the pending Baker Hughes Transaction and the June 2025 amendment noted in Flag 1's current block.",
+      "investigation_action": "Request confirmation of whether the Amended ABL Credit Facility terms are disclosed in the notes to the financial statements of the current 10-Q; if not, this represents a significant gap in debt disclosure during a period of major M&A activity. Assess whether the June 2025 amendment materially changed terms that are no longer being disclosed."
+    },
+    {
+      "flag_number": 5,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "a4aba56d84c3f408",
+        "current": "bc881bf0eaadd7fd",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed specific dividend amounts ($0.13 per share, $9.0 million declared, $9.2 million paid), the $150 million share repurchase authorization with $146.3 million remaining, and detailed member distribution figures ($30.4 million to Cactus Inc., $5.1 million pro rata to other members). The current period block contains no dividend, repurchase, or distribution information whatsoever\u2014only tax legislation commentary and Baker Hughes integration risk language. This removal of concrete capital return metrics during a transformative M&A period (Baker Hughes Transaction) is concerning as it obscures the company's shareholder return commitments and liquidity allocation priorities.",
+      "investigation_action": "Verify whether dividend declarations, share repurchase activity, and member distribution disclosures appear in the notes to the financial statements of the current 10-Q. If the repurchase program has been suspended in connection with the Baker Hughes Transaction, this should be explicitly disclosed. Monitor whether capital return commitments are being deprioritized due to transaction funding needs."
+    },
+    {
+      "flag_number": 6,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8c19fc4c34094f42",
+        "peer": "a98ee9587ed18f0f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The WHD block describes corporate overhead allocation methodology, not human capital disclosure. DNOW's disclosure of $13 million in acquisition-related retention payments is specific to DNOW's 2024 acquisitions and reflects a company-specific commitment, not an industry-standard disclosure that WHD should mirror. WHD's human capital disclosures would typically appear in its 10-K, not a 10-Q MD&A section. The comparison is not apples-to-apples.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "af54d86bc7db5be8",
+        "peer": "d42507e424ccc839"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted\u2014it states DNOW provides 'near-zero substantive disclosure' while WHD discloses detailed litigation matters, but this actually suggests WHD is the more transparent company on this topic. WHD provides extensive disclosure on the Cameron patent litigation including case number, filing date, status of settlement attempts, and trial delay. The peer divergence here actually reflects well on WHD's disclosure quality rather than suggesting degradation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "17f6a364dfb639f2",
+        "peer": "3a0590a47ba0b44b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag again highlights that WHD is more detailed than DNOW on litigation and regulatory risk, which is the opposite of a disclosure degradation signal for WHD. WHD provides specific information about the Cameron patent case, Baker Hughes Transaction contingencies, and Pillar Two tax framework. DNOW's more generic disclosures relate to its own pending MRC Global merger. This comparison does not indicate WHD is underreporting; it shows WHD as the more transparent filer.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4356eaeb6529e6a4",
+        "peer": "bc19fde7df2ccde9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason states INVX is downplaying risks while WHD 'details specific tariff actions and their direct market effects.' This means WHD is providing superior disclosure on geopolitical and trade policy risks (Section 232 tariffs at 50%, Reciprocal tariffs, OPEC+ production cut unwind), not that WHD is degrading its disclosure. INVX's more generic language about 'geopolitical instability' and 'OPEC+ actions' reflects INVX's disclosure approach, not a WHD problem.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9f6d8c805e7f2f13",
+        "peer": "ba56b26ea4c6b6a7"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "WHD provides highly specific cost and margin pressure disclosures: 'elevated tariff expenses on goods imported from Vietnam and China,' a $12.0 million (22.1%) decline in Pressure Control operating income with identified causes (lower volume, tariff impacts, increased legal expenses), and $19.2 million in corporate expenses up 68.1%. INVX's minimal disclosure about 'anticipated cost reductions' from an acquisition is a fundamentally different context. This flag highlights WHD's superior transparency, not a degradation concern.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1bb5e44277986872",
+        "peer": "9ec1046c111c2791"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Same pattern as Flags 9 and 10\u2014WHD provides detailed geopolitical risk disclosure including specific tariff rates, OPEC+ production policy impacts, Pillar Two framework analysis, and Baker Hughes Transaction geographic expansion risks (Middle East, unfamiliar jurisdictions, nationalized companies). INVX's single sentence about effective tax rate changes is not comparable. This flag incorrectly suggests WHD has a disclosure problem when it is actually the more transparent filer.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 12,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c99f57eba99b3376",
+        "peer": "e5243c6bb7cc645c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "WHD provides extensive operational disclosure covering both the Pressure Control and Spoolable Technologies segments, including manufacturing locations (Bossier City, Suzhou, Vietnam), service center strategy, the Baker Hughes Transaction structure and integration risks. INVX's single sentence about renting drilling equipment reflects its different business model and scale. This peer comparison actually demonstrates WHD's strong operational transparency.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "WHD's disclosure quality is generally strong\u2014the company provides detailed operational, tariff, litigation, and margin disclosures that exceed several peers. However, two genuine concerns emerge in the temporal analysis: the apparent removal of detailed debt facility terms and specific capital return metrics (dividends, repurchases, member distributions) from the current filing period, which coincides with the transformative Baker Hughes Transaction. These removals may reflect relocation to financial statement notes rather than elimination, but warrant verification.",
+    "top_concerns": [
+      "Disappearance of detailed Amended ABL Credit Facility terms ($125M term loan, $225M revolver, specific rates and covenants) during a period of major M&A and a June 2025 credit facility amendment\u2014verify whether terms are disclosed in notes or if material changes are being obscured",
+      "Removal of specific capital return disclosures (dividend amounts per share, $150M repurchase program with $146.3M remaining, member distribution figures) during the Baker Hughes Transaction period\u2014assess whether the repurchase program has been suspended and whether capital allocation priorities have shifted",
+      "Monitor the Cameron patent litigation (SafeLink\u00ae frac flow system) where jury trial was delayed with no new date set and the company has recognized increased legal expenses and reserves, suggesting potential material exposure"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 2,
+    "dismissed_count": 8
+  },
+  "_meta": {
+    "ticker": "WHD",
+    "model": "claude-opus-4-6",
+    "input_tokens": 10994,
+    "output_tokens": 3445,
+    "timestamp": "2026-04-09T12:43:11.049710"
+  }
+}

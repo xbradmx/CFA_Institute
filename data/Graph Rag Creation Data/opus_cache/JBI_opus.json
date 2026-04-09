@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "48406266af965970",
+        "current": "435bce32943f6dcc",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The current period removed explicit references to Free Cash Flow and Net Leverage Ratio as non-GAAP measures, dropping from 'Adjusted EBITDA, Free Cash Flow, and Net Leverage Ratio \u2014 each a non-GAAP measure' to simply 'Adjusted EBITDA \u2014 a non-GAAP measure.' The detailed description of adjusted EBITDA exclusions (restructuring, acquisition related activities, impairment, loss on extinguishment) was also removed, along with the product revenue recognition timing disclosure and the sentence noting actual results could differ materially. These are substantive removals of quantitative and qualitative detail, not routine editorial changes.",
+      "investigation_action": "Verify whether JBI has stopped reporting Free Cash Flow and Net Leverage Ratio reconciliations entirely or relocated them. If these metrics are no longer disclosed, assess whether this coincides with deterioration in cash flow generation or leverage ratios, particularly given the significant revenue and earnings declines noted in the prior period."
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "6d014890b3fc148f",
+        "current": "1260b8397a99df37",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period provided a detailed quantitative summary of financial highlights including specific revenue ($210.5 vs $254.5), net income ($10.8 vs $30.7), adjusted EBITDA ($38.4 vs $66.3), EBITDA margins (18.2% vs 26.1%), cash flows, free cash flow, share repurchase amounts, and voluntary debt prepayment figures. The current period replaces all of this with generic statements about M&A strategy and capital allocation with no quantitative detail. This removal is particularly concerning given the prior period showed significant year-over-year declines (revenue down ~17%, net income down ~65%, EBITDA margin compressed 800bps), suggesting the company may be obscuring continued deterioration.",
+      "investigation_action": "Reconstruct the quarterly financial summary from the financial statements directly and compare to prior period trends. Determine whether the removal of the executive summary with specific metrics is a one-time change or reflects a pattern of reducing transparency as financial performance deteriorates."
+    },
+    {
+      "flag_number": 3,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "8a52708c027d23ff",
+        "current": "c5e85b4ba6e3ad4f",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period stated that steel coil price agreements 'are renewed annually and partially mitigate the potential impacts of short-term steel coil price fluctuations,' while the current period removes the annual renewal frequency and mitigation language. The product description and installation services detail was also removed. Given the tariff environment (25-50% steel tariffs disclosed in Flag 5), the removal of the mitigation language about steel price agreements is notable, though the core disclosure that agreements exist to lock in steel prices is retained.",
+      "investigation_action": "Investigate whether JBI's annual steel coil price agreements have been renewed under the new tariff regime and at what cost impact. The removal of the mitigation language during a period of escalating steel tariffs warrants questions about whether the agreements are still providing meaningful protection."
+    },
+    {
+      "flag_number": 4,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1260b8397a99df37",
+        "peer": "e0ab8c012f1f6881"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "VATE (INNOVATE Corp) is a fundamentally different business \u2014 a multi-segment holding company with accumulated deficits of $566M, going concern language, preferred stock with complex dividend accretion mechanics, and a stockholders' deficit. JBI is a profitable industrial manufacturer. The extensive financial sustainability disclosures from VATE reflect its unique distressed financial position (including going concern considerations), not an industry standard that JBI should match. The peer comparison is not informative due to vastly different business models and financial profiles.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "10d3da26cc0a6175",
+        "peer": "7f7263d6fd7f6f38"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is actually reversed from what the screening reason states \u2014 JBI provides detailed, specific disclosure on tariffs (citing Section 232, specific dates, 25% and 50% tariff rates, macro uncertainty impacts on revenue) while VATE provides only generic language. JBI's disclosure here is strong and substantive, not deficient. The screening reason incorrectly suggests VATE is downplaying risks relative to JBI, which is the opposite of a disclosure degradation concern for JBI.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f91d2116e01cd08b",
+        "peer": "73c122aea2f6c50a"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "JBI provides only a single generic sentence: 'We actively monitor the regulatory environment and continue to make adjustments whenever necessary.' This is extraordinarily thin for an industrial manufacturer with international operations, steel supply chain exposure to trade regulations, and tariff impacts. While VATE's extensive legal disclosure reflects its specific litigation profile, the comparison highlights that JBI's regulatory/legal disclosure in the MD&A is minimal. However, JBI may have more detailed legal proceedings disclosure in other sections of the filing (Item 1 Legal Proceedings) not captured here.",
+      "investigation_action": "Review JBI's Item 1 Legal Proceedings, Risk Factors, and Notes to Financial Statements for more detailed regulatory and legal disclosures. If regulatory discussion is limited to this single sentence across the entire filing, that warrants concern given the active tariff environment and international operations."
+    },
+    {
+      "flag_number": 7,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b146d7360dfac705",
+        "peer": "fea25a0812ad5b12"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "JBI actually provides extensive, detailed debt financing disclosure including specific principal amounts ($600M First Lien), interest rates (6.78%), maturity dates (August 3, 2030), covenant details, credit ratings from S&P (BB-) and Moody's (Ba3), voluntary prepayment amounts ($40M), and revolving credit facility terms. PRLB (Proto Labs) provides minimal debt disclosure because it appears to have minimal debt and relies primarily on cash and marketable securities. The screening reason incorrectly flags PRLB as downplaying risk; in reality, these companies have fundamentally different capital structures. JBI's debt disclosure is thorough.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1260b8397a99df37",
+        "peer": "cb347a0c522ecd52"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The block selected to represent JBI's financial sustainability disclosure (block 1260b8397a99df37) is the same generic capital allocation text flagged in Flag 2. While PRLB provides detailed segment-level financials, intangible asset breakdowns, and capex data in its notes, JBI likely provides similar detail in other sections of its filing. The concern is not that JBI lacks these disclosures entirely, but that the MD&A executive summary \u2014 previously detailed with specific metrics (see Flag 2) \u2014 has been stripped down to generic language. This flag overlaps substantially with Flag 2's temporal finding.",
+      "investigation_action": "Cross-reference with Flag 2 findings. Verify whether segment-level financials, capex data, and detailed operating metrics are still provided in JBI's financial statements and notes, even if they have been removed from the MD&A narrative overview."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "JBI shows a meaningful pattern of disclosure reduction in its Q2 2025 10-Q compared to Q1 2025, most notably the removal of specific financial highlights (revenue, net income, EBITDA, cash flow metrics) from the MD&A and the dropping of Free Cash Flow and Net Leverage Ratio as named non-GAAP measures. This is particularly concerning given that the prior period disclosed significant year-over-year performance declines. The peer comparison flags are largely uninformative due to poor peer matching, but the temporal changes represent a genuine degradation pattern.",
+    "top_concerns": [
+      "Removal of quantitative financial summary from MD&A (revenue, net income, EBITDA, margins, cash flow) during a period of significant performance deterioration \u2014 may indicate desire to reduce visibility into continued declines",
+      "Discontinuation of Free Cash Flow and Net Leverage Ratio as named non-GAAP measures, which previously provided important insights into cash generation and leverage trajectory",
+      "Removal of steel price agreement mitigation language during a period of escalating tariffs (25-50% on steel imports), potentially signaling reduced effectiveness of hedging arrangements"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 3,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "JBI",
+    "model": "claude-opus-4-6",
+    "input_tokens": 15896,
+    "output_tokens": 2582,
+    "timestamp": "2026-04-09T12:08:33.984831"
+  }
+}

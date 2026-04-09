@@ -1,0 +1,205 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "c82ab8ceba17278b",
+        "current": "e604b2e3cfa5e497",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period provided a clear, dated reference to the License and Services Agreement with Magna (February 20, 2024) and explicitly described it as a 'strategic partnership.' The current period replaces this with fragmented references to a 'production agreement' and the MSA without the same specificity on dates or strategic context. However, the current filing does describe the substance of the arrangement (Magna assisting in assembly of robotic delivery vehicles), and the shift from LSA to MSA/production agreement language may reflect an actual evolution of the contractual relationship rather than deliberate obfuscation.",
+      "investigation_action": "Confirm whether the LSA was superseded by the MSA/production agreement, and whether the strategic partnership characterization was downgraded intentionally. Ask management about the current status and scope of the Magna relationship."
+    },
+    {
+      "flag_number": 2,
+      "topic": "liquidity_solvency",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "fd617724499cd202",
+        "current": "eb594b9b9ce1ac84",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period included detailed operating lease cost breakdowns by financial statement line item ($22,777/$191,066/$68,331), supplemental cash flow information, weighted-average remaining lease terms and discount rates, and a full future minimum payment schedule totaling $2.13 million in undiscounted cash flows. The current period replaces all of this with the vague statement 'There was no outstanding liability at June 30, 2025' without explaining why these obligations disappeared or providing a reconciliation. Additionally, specific net proceeds of $35.8 million from the Offering were disclosed in the prior period but omitted from the current period's comparable context. The elimination of granular lease data is a material reduction in transparency.",
+      "investigation_action": "Investigate what happened to the operating lease portfolio between Q1 and Q2 2025 \u2014 were leases terminated, expired, or reclassified? Request the full lease schedule and supplemental balance sheet information that was previously provided. Verify whether the failed sales-leaseback with Farnam Capital was resolved."
+    },
+    {
+      "flag_number": 3,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "1e4a80bac1abaf8f",
+        "current": "73442c4cf9665228",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening flagged that the prior period's statement about reducing operating expenses and maintenance/repairs policy were removed. However, the 'lack of funds may inhibit our ability to respond to competitive pressures or unanticipated capital needs, or may force us to reduce operating expenses' language actually appears in the current period's liquidity section (Flag 2 current block). The maintenance and repairs accounting policy is standard boilerplate that may have been consolidated elsewhere in the notes. The Magna Warrant description is identical in both periods. This appears to be a reorganization of disclosures rather than removal.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b667b334625ebbf0",
+        "peer": "449e846e2d237cc4"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "OUST's disclosure about deferred tax asset valuation allowances reflects its specific tax position resulting from the Velodyne merger, which created identifiable deferred tax assets requiring valuation allowance discussion. SERV, as a pre-revenue/early-revenue company without a comparable merger-driven deferred tax asset situation, would not necessarily have the same disclosure requirement. The divergence reflects genuine business differences rather than disclosure evasion. SERV's capital expenditure discussion, while generic, addresses a different topic than tax asset valuation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2d924bebf4aad881",
+        "peer": "5b8928517df26489"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted \u2014 it claims SERV (Company B) provides only a generic statement about internal controls, but the actual target block shows SERV providing extremely detailed accounting policy disclosures covering fair value measurements, convertible instruments, lease accounting, revenue recognition, stock-based compensation, business combinations, and purchase price allocation with specific dollar amounts. OUST's single sentence about Sarbanes-Oxley Section 404(a) is far less detailed. SERV actually provides more comprehensive accounting disclosure than the peer in this comparison.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "fd591757974711fd",
+        "peer": "7d9373523929ea82"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason again appears inverted. SERV's target block contains extensive, detailed disclosures on impairment testing for long-lived assets, goodwill valuation, acquisition accounting (including specific dollar amounts for goodwill of $4.33M, intangible assets, and fair value methodology), available-for-sale securities impairment evaluation, and deferred offering costs. OUST's peer block is a single sentence about reporting obligations straining resources. SERV is clearly providing more substantive financial sustainability disclosure than the peer in this instance.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "73a770d2ba4a41f1",
+        "peer": "355aca7ae9406541"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "OUST provides specific, detailed tariff and trade policy risk disclosure referencing Thailand, Canada, China, and Mexico tariffs, supply chain mitigation efforts with Benchmark and Fabrinet, and direct revenue impact analysis. SERV only mentions the OBBBA tax law change and generic currency translation adjustments without addressing tariff or trade policy risks. Given that SERV recently acquired a foreign entity and relies on Magna (a Canadian company) for assembly, tariff and trade policy risks could be material. However, SERV's business model as a last-mile delivery robot operator is less directly exposed to international supply chain disruptions than OUST's hardware-heavy lidar manufacturing.",
+      "investigation_action": "Investigate SERV's exposure to tariffs through its Magna supply chain relationship (Magna is a Canadian company) and the recently acquired foreign subsidiary. Assess whether the company's robot components are sourced internationally and subject to tariff risk."
+    },
+    {
+      "flag_number": 8,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8c1d21b36edd2c7a",
+        "peer": "d1528da15f492591"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is again inverted. SERV provides specific quantitative human capital disclosures including stock-based compensation for RSUs ($4.02M and $7.86M for Q2 and H1 2025), warrant-related compensation ($8.6M), and stock option vesting details. OUST's peer block is a single generic sentence about resource strain. SERV is providing more detailed human capital disclosure, not less.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "liquidity_solvency",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "eb594b9b9ce1ac84",
+        "peer": "56cd21af74ffbb80"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted. SERV provides detailed liquidity disclosure including specific cash and marketable securities balances ($183.3M total, $116.7M cash, $66.6M marketable securities), going concern assessment, offering cost details ($4.2M), and equity issuance proceeds ($77.6M). OUST's peer block contains only two generic sentences about financial condition and stock price risk. SERV's liquidity disclosure is substantially more detailed than the peer's.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d16e387e818dc522",
+        "peer": "a2dcd5ecf61e2429"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason claims SERV is not addressing customer concentration risk, but the target block actually provides highly specific concentration disclosures: Magna at 39%/46% and Uber at 31%/29% of revenue for Q2/H1 2025, with Magna at 81% of accounts receivable. SERV explicitly states 'There are inherent risks whenever a large percentage of total revenues and accounts receivable are concentrated with a limited number of customers.' This is detailed, quantitative concentration risk disclosure that is arguably superior to the peer's generic trade policy language.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b667b334625ebbf0",
+        "peer": "b3a6141dabd71111"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "SERV's single sentence on future capital expenditures is genuinely vague \u2014 listing generic factors ('growth,' 'ability to attract customers,' 'market acceptance') without quantifying expected capex levels, providing a capex range or guidance, or discussing how capital will be allocated. Peer RR provides more specific context about strategic investments, investment income from treasury management, and financial flexibility. For a company with $183.3M in liquidity that is pre-profitability and recently completed an acquisition, the absence of any capital expenditure quantification or prioritization is a notable gap.",
+      "investigation_action": "Request management guidance on expected capital expenditure levels for robot fleet buildout, the acquired foreign entity integration costs, and how the $183.3M cash position is expected to be deployed across R&D, fleet expansion, and operational scaling."
+    },
+    {
+      "flag_number": 12,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6696406e4b7ed41d",
+        "peer": "4116ffc0fd8fdb17"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "SERV actually provides more substantive regulatory risk disclosure than the peer RR in this comparison. SERV discusses specific regulatory risks including caps on robot numbers, technical requirements (size/weight restrictions), and autonomy limitations that could reduce revenue and impact unit economics. RR's peer block only mentions generic public company compliance costs and an office move. The screening reason overstates the divergence \u2014 SERV addresses regulatory and IP risks in meaningful detail.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 13,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4d8439f25af3e687",
+        "peer": "c7e57d7e735b0aa6"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "SERV's supply chain disclosure is strikingly thin \u2014 just two sentences: 'Supply Chain Constraints. We cannot be sure whether global supply chain shortages will impact our future robot build plans.' This is essentially a placeholder with no specificity about which components are at risk, supplier relationships beyond Magna, inventory management, or mitigation strategies. Peer RR provides detailed discussion of raw material sourcing risks, competition for enterprise clients, inventory management processes including periodic reviews and demand forecasting, and active diversification into new service verticals. Given SERV relies heavily on Magna for assembly and is scaling robot production, the lack of supply chain detail is a material gap.",
+      "investigation_action": "Investigate SERV's full supply chain beyond Magna \u2014 who supplies key components (sensors, batteries, computing hardware)? What is the company's inventory management approach? Are there single-source dependencies? What contingency plans exist if Magna experiences disruptions? This minimal disclosure warrants direct engagement with management."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "SERV's disclosure quality is mixed. The company provides strong quantitative detail in several areas (revenue concentration, stock-based compensation, liquidity balances, acquisition accounting) but has notable gaps in supply chain risk disclosure, lease obligation transparency, and capital expenditure planning. The most concerning temporal change is the disappearance of detailed lease obligation data without adequate explanation, and the supply chain disclosure is materially weaker than peers despite SERV's dependence on a single assembly partner.",
+    "top_concerns": [
+      "Disappearance of detailed operating lease cost breakdowns and future minimum payment schedules between Q1 and Q2 2025, replaced by a vague statement of no outstanding liability without reconciliation",
+      "Minimal supply chain risk disclosure (two generic sentences) despite heavy reliance on Magna for robot assembly and active fleet scaling \u2014 significantly below peer standards",
+      "Absence of any quantified capital expenditure guidance or allocation framework despite holding $183.3M in cash/securities and being in an active fleet buildout and acquisition integration phase"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 3,
+    "dismissed_count": 8
+  },
+  "_meta": {
+    "ticker": "SERV",
+    "model": "claude-opus-4-6",
+    "input_tokens": 14776,
+    "output_tokens": 3670,
+    "timestamp": "2026-04-09T12:28:51.614474"
+  }
+}

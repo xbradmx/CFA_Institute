@@ -1,0 +1,191 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "revenue_future_performance",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "7bf8a39940c668e8",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed text is a single generic boilerplate cautionary sentence ('Should one or more of these risks or uncertainties materialize...') commonly found in forward-looking statement safe harbor language. It contains no specific metrics, dollar amounts, or substantive risk disclosure. Its removal or relocation is a routine editorial revision with no impact on disclosure quality.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "4c079fad11bfc9f1",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing contained a comprehensive enumerated list of forward-looking statement risk factors in the Risk Factors section covering acquisitions, supply chain challenges, fixed-price contract risks, tariff impacts, debt levels, restructuring, and cybersecurity. This detailed list appears to have been removed from the Risk Factors section. However, Flag 4 shows that very similar content appeared in the MD&A section of the prior filing and was partially retained (supply chain mitigation language remains). The disappearance of this specific enumerated list from Risk Factors could indicate consolidation elsewhere (e.g., incorporation by reference to the 10-K) or could represent a meaningful reduction in risk factor specificity in the quarterly filing.",
+      "investigation_action": "Verify whether this enumerated risk factor list was consolidated into the 10-K by reference or moved elsewhere in the current 10-Q. If it was simply dropped without cross-reference, this would represent a material reduction in risk disclosure for a company with active acquisition integration and tariff exposure."
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "24a5f227c8771c4a",
+        "current": "75a69171a9463904",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period explicitly stated 'The Company has incurred substantial expense and income associated with acquisitions,' which is a direct acknowledgment of material financial impact from transactions. The current period removes this sentence entirely, leaving only the forward-looking statement about treating impacts as 'special items' in non-GAAP results. Removing the backward-looking acknowledgment of substantial acquisition-related costs while retaining only the vague forward-looking non-GAAP treatment language obscures the ongoing financial burden of integration.",
+      "investigation_action": "Analyst should examine whether acquisition-related expenses have actually decreased or whether the company is simply de-emphasizing ongoing costs. Review the non-GAAP reconciliation tables to quantify what is being classified as 'special items' and whether these costs are recurring in nature despite being excluded from adjusted results."
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "5e86cf047b6a38af",
+        "current": "7c6f9b6b4a2c9370",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period MD&A contained both the supply chain mitigation language AND the full enumerated list of forward-looking risk factors (covering acquisitions, fixed-price contracts, supply chain, tariffs, debt, restructuring, cybersecurity, etc.). The current period retains only the three-sentence supply chain mitigation paragraph and adds one generic adverse impact sentence, but completely drops the detailed enumerated risk factor list. This represents a substantial reduction in the specificity and breadth of risk disclosure in the MD&A section. The new sentence 'If we are unable to continue to mitigate the effects of these supply disruptions and/or inflationary pressures, our business, results and financial condition could be adversely affected' is far less informative than the prior detailed enumeration of specific risk categories.",
+      "investigation_action": "Determine whether the detailed risk factors were relocated to another section of the current 10-Q or if they have been entirely eliminated from the quarterly filing. Given CECO's active M&A program, significant debt load from acquisitions, and tariff exposure, the removal of specific risk categories (fixed-price contract risk, integration challenges, litigation exposure) from the MD&A warrants scrutiny."
+    },
+    {
+      "flag_number": 5,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c9b625afc7183600",
+        "peer": "63c0da8eb7d9be2d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "PPIH has disclosed multiple material weaknesses in its internal controls, including issues with journal entries, MENA operations, and ITGCs, which are specific to PPIH's own control failures. CECO's management concluded its controls were effective as of June 30, 2025. The fact that a peer has material weaknesses does not mean CECO is 'downplaying' control risks\u2014these are company-specific determinations. CECO's standard disclosure of effective controls with appropriate limitations language is entirely appropriate if its controls are in fact effective. The peer comparison here reflects genuine business differences.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "75a69171a9463904",
+        "peer": "ef12b93010c0da79"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "CECO's single vague sentence about treating transaction impacts as 'special items in its future presentation of non-GAAP results' without quantification stands in contrast to PPIH's detailed disclosure of specific dollar amounts for inventory allowances ($1.0 million), lease obligations, and impairment assessments. While the two companies have different business models and financial profiles, CECO's lack of specificity about the magnitude of acquisition-related charges it expects to exclude from non-GAAP results is notable for a company that has been actively acquiring businesses. This is more of a standalone CECO disclosure quality issue than a true peer divergence concern.",
+      "investigation_action": "Request or examine CECO's non-GAAP reconciliation tables to understand the magnitude and nature of items being classified as 'special items.' Assess whether management is using non-GAAP presentation to obscure recurring acquisition-related costs."
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1c9e4535ec0b6bd6",
+        "peer": "d346075ee39ca356"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is actually noting that CECO provides MORE detailed geopolitical/macro disclosure than PPIH, not less. CECO discloses specific foreign cash balances ($26.2M and $29.7M), identifies subsidiaries across 11 countries, discusses tariff mitigation strategies, and provides a comprehensive risk factor enumeration. The screening reason itself states 'PPIH may be downplaying material risks,' making this a flag about the peer's disclosure rather than CECO's. This flag does not indicate any disclosure degradation at CECO.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "fcad7cdf940ca6b8",
+        "peer": "fe288c10f92ddc6e"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "CECO provides only a cross-reference to Note 14 for legal proceedings with no substantive discussion in the MD&A or Risk Factors sections. While cross-referencing to financial statement notes is standard practice for legal proceedings, the lack of any contextual discussion in MD&A about the nature, magnitude, or potential impact of pending legal matters is worth noting, especially given CECO's active M&A program (including the referenced Profire transaction) which typically generates legal exposure. The peer comparison to PPIH's tax and regulatory disclosure is not directly analogous, but CECO's bare cross-reference provides no qualitative context.",
+      "investigation_action": "Review Note 14 of CECO's condensed consolidated financial statements to assess whether there are material legal proceedings that warrant more prominent disclosure. Check whether prior quarters provided more substantive legal proceedings discussion."
+    },
+    {
+      "flag_number": 9,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7c6f9b6b4a2c9370",
+        "peer": "04a297b897b75f4a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag notes that CECO provides MORE supply chain disclosure than PPIH, not less. CECO discusses tariff mitigation strategies, securing alternate suppliers, and acknowledges risks from supply disruptions and inflationary pressures. PPIH's cited passage is merely about accounts receivable from contractors and manufacturers, with no supply chain risk discussion. This flag is about the peer's potential under-disclosure, not CECO's. No disclosure degradation concern for CECO.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5f2effc215c19a5c",
+        "peer": "c4f8a2df86be8b2f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This is a duplicate of Flag 5. PPIH's extensive material weaknesses in internal controls are company-specific issues resulting from its own control failures (journal entries, MENA operations, ITGCs). CECO's management evaluated and concluded controls were effective as of June 30, 2025, which is the standard and appropriate disclosure if controls are in fact effective. A peer having material weaknesses does not create a presumption that CECO should disclose weaknesses it does not have.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "da24d7e56b37ae6a",
+        "peer": "50316eb7707fe9e5"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "PPIH's cited disclosure relates to its own specific circumstances: effective tax rate changes due to income mix across jurisdictions, UAE income, executive compensation deduction limitations, and its filer status change from SRC to accelerated filer. These are company-specific regulatory/tax matters, not broadly applicable industry risks. CECO's cross-reference to Note 14 for legal proceedings is a different category entirely. The comparison is not meaningful for assessing CECO's disclosure quality.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 12,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1c9e4535ec0b6bd6",
+        "peer": "9ff8c934900ad4f7"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag notes that CECO provides MORE geopolitical/macro disclosure than FTEK, not less. The screening reason itself states 'FTEK is downplaying a material risk' compared to CECO's detailed discussion. CECO discloses specific foreign cash balances, enumerates subsidiaries in 11 countries, discusses tariff impacts, and provides detailed risk factors. This flag indicates no disclosure degradation at CECO\u2014it actually highlights CECO's relative strength in this area.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "CECO's primary disclosure concerns are temporal in nature: the removal of a detailed enumerated risk factor list from both the Risk Factors and MD&A sections of the Q2 2025 10-Q, and the deletion of an explicit acknowledgment of 'substantial expense and income associated with acquisitions.' These changes reduce the specificity and transparency of risk disclosure for a company actively integrating acquisitions and navigating tariff impacts. Most peer divergence flags were false positives, often flagging CECO as the more transparent discloser relative to peers.",
+    "top_concerns": [
+      "Removal of detailed enumerated risk factor list from both Risk Factors and MD&A sections (Flags 2 and 4), significantly reducing the specificity of disclosed risks related to acquisitions, fixed-price contracts, supply chain, debt, and restructuring",
+      "Deletion of explicit acknowledgment that the company has 'incurred substantial expense and income associated with acquisitions' while retaining only vague non-GAAP special items treatment language (Flag 3), potentially obscuring ongoing acquisition integration costs",
+      "Bare cross-reference to Note 14 for legal proceedings with no contextual discussion in MD&A (Flag 8), warranting verification that material legal matters from active M&A program are adequately disclosed"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 3,
+    "dismissed_count": 7
+  },
+  "_meta": {
+    "ticker": "CECO",
+    "model": "claude-opus-4-6",
+    "input_tokens": 13161,
+    "output_tokens": 3494,
+    "timestamp": "2026-04-09T11:52:07.107265"
+  }
+}

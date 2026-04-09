@@ -1,0 +1,163 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "972294d3b0e1841d",
+        "current": "2daeb2290e10a76a",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained specific risk language about 'acquisitions, divestitures and other strategic transactions' with detailed potential impacts including 'operating and integration inefficiencies, the incurrence of debt, contingent liabilities and amortization of expenses related to intangible assets.' The current period replaces this with vague language about 'maintaining a competitive advantage requires consistent investment with uncertain returns' and generic cost savings caveats. The removal of the entire acquisitions/divestitures risk category\u2014which addressed specific financial mechanisms of harm\u2014represents a material reduction in disclosure specificity.",
+      "investigation_action": "Determine whether DCI has recently completed or is contemplating acquisitions, divestitures, or strategic transactions that would make the removal of this risk category potentially misleading. Review MD&A and notes for any active M&A activity and check if this risk language was relocated elsewhere in the filing."
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a66cbb73d6804997",
+        "peer": "08754b9442bd8e0b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually flags PPIH as the weaker discloser, not DCI. DCI's MD&A provides extensive quantitative detail including a $62.0 million impairment, $46.6 million related to Univercells Technologies, specific pension sensitivity analysis (\u00b11% rate of return impacts of $4.0 million), and capital expenditure guidance of $65-85 million. DCI is the stronger discloser here, and the flag is effectively a peer comparison showing DCI's superior transparency.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a130c06f97a731d9",
+        "peer": "a3821ba48200d167"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies PPIH as the weaker discloser, not DCI. DCI provides detailed risk discussion of rising raw material prices, transportation costs, 'significant wage inflation' in some locations, competitive pricing pressures, and productivity improvement risks. DCI is clearly the more transparent company on cost and margin pressures. The peer comparison actually validates DCI's disclosure quality on this topic.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2daeb2290e10a76a",
+        "peer": "8c47ad61b8771aa7"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "DCI's Risk Factors section on financial sustainability contains only four generic sentences about investment uncertainty and insurance coverage, while PPIH (a smaller, less complex company) provides extensive detail on capital expenditure limits ($5.0 million cap), goodwill impairment testing with specific carrying amounts, valuation allowance releases, multi-employer pension risks, and tax position uncertainties. When read alongside Flag 1, which shows DCI removed its prior acquisition/divestiture risk detail, the remaining Risk Factors language on financial sustainability appears materially thin relative to DCI's actual complexity\u2014particularly given the $62 million impairment disclosed in MD&A.",
+      "investigation_action": "Cross-reference DCI's Risk Factors with its MD&A disclosures. The MD&A reveals significant impairments ($62M), pension obligations, and goodwill across multiple reporting units, yet the Risk Factors section does not address these specific exposures. Investigate whether DCI's Risk Factor section has been systematically pruned of financial detail that remains relevant to the business."
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4a4999be964560e8",
+        "peer": "a4df3516607a90a8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies PPIH as the weaker discloser on geopolitical and macroeconomic risks. DCI provides extensive, specific disclosure covering tariffs, trade barriers, foreign currency transactional and translational risks, and multiple categories of global operational risk. DCI's disclosure on this topic is robust and detailed. The comparison actually validates DCI's transparency rather than raising concerns about it.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6d4fa108bdeebcff",
+        "peer": "6895fa9361db2bf4"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag again identifies PPIH as the weaker discloser. DCI explicitly discusses personnel risks including talent competition, management transitions, and the link between human capital and maintaining technological advantages. PPIH only discloses compensation mechanics (stock awards, matching contributions) without addressing talent risk. DCI is clearly the stronger discloser on human capital risks.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e9fc47e789546842",
+        "peer": "cecd43a758bb3b54"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags PPIH as providing 'only generic and minimal disclosure' while DCI provides 'detailed, specific discussion.' DCI's regulatory and legal risk disclosure is comprehensive, covering GDPR, CCPA, anti-corruption, intellectual property, environmental regulations, and product liability. This comparison validates DCI's disclosure quality rather than raising concerns about it.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2daeb2290e10a76a",
+        "peer": "d2d220dd3c32f4b2"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "CECO, DCI's closest peer (rank 1, distance 3.41), provides extraordinarily detailed financial sustainability disclosures: specific goodwill carrying amounts ($269.7M vs $211.3M), detailed pension benefit cost tables with discount rates and asset allocations, deferred tax asset breakdowns by category, earn-out liability specifics, and multi-employer pension zone status. DCI's Risk Factors block contains only four sentences of generic language about investment uncertainty and insurance. While DCI's MD&A does contain more detail, the Risk Factors section\u2014which is the investor's primary risk assessment tool\u2014is conspicuously thin compared to a close peer on topics where DCI has material exposure (including the $62M impairment).",
+      "investigation_action": "Compare DCI's Risk Factors section year-over-year to determine how much financial sustainability risk detail has been stripped out. Evaluate whether DCI's Risk Factors adequately alert investors to the impairment, pension, and goodwill risks that are evident in the financial statements and MD&A. Consider whether the company is deliberately front-loading benign language in Risk Factors while burying material risk details deeper in the filing."
+    },
+    {
+      "flag_number": 9,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "92d1a92003b42d94",
+        "peer": "77087afb52b24258"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags CECO as providing 'minimal and generic discussion' while DCI provides 'detailed, specific disclosures on operational disruptions, manufacturing complexity, and related risks.' DCI's disclosure includes specific language about natural disasters, manufacturing complexity, lead times, cybersecurity, and supply chain vulnerabilities. This comparison validates DCI's operational risk disclosure quality.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e861640b5435ccfe",
+        "peer": "9a86955c77b5d18e"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag again identifies CECO as the weaker discloser. DCI provides specific supply chain risk detail including tariff impacts from Mexico, China, and the EU, single-supplier concentration risk, raw material categories (steel, filter media, petroleum-based products), and cross-border currency mismatches. CECO offers only two generic sentences. DCI is clearly the more transparent company on supply chain risks.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "DCI generally maintains strong disclosure quality across most risk categories\u2014particularly in operational, geopolitical, supply chain, and regulatory areas where it consistently outperforms peers. However, the temporal analysis reveals a concerning removal of specific acquisition/divestiture risk language, and the remaining Risk Factors section on financial sustainability is materially thin relative to both DCI's own complexity (including a $62M impairment) and its closest peer CECO's disclosures. The disconnect between DCI's detailed MD&A and its sparse Risk Factors on financial sustainability topics warrants monitoring.",
+    "top_concerns": [
+      "Removal of specific acquisition, divestiture, and strategic transaction risk language from Risk Factors between fiscal years, despite ongoing M&A activity and a $62M impairment charge",
+      "Risk Factors section on financial sustainability is conspicuously thin (4 generic sentences) compared to closest peer CECO, despite DCI having material goodwill, pension, and impairment exposures documented elsewhere in the filing",
+      "Potential pattern of migrating substantive risk disclosure out of Risk Factors into MD&A, which may reduce investor visibility into forward-looking risk assessment"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 0,
+    "dismissed_count": 7
+  },
+  "_meta": {
+    "ticker": "DCI",
+    "model": "claude-opus-4-6",
+    "input_tokens": 19300,
+    "output_tokens": 2749,
+    "timestamp": "2026-04-09T11:56:40.897126"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "ec06e2dafbee5f50",
+        "current": "9d26980c08047325",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period explicitly defined consolidated net worth under the Credit Facility as 'consolidated shareholders' equity including preferred stock but excluding the pension and other postretirement benefits balance within Accumulated other comprehensive income (loss).' The current period replaces this with the vague statement that 'financial covenants are being reported as calculated under the Credit Facility and not pursuant to U.S. GAAP,' removing the specific composition of the metric. This eliminates an investor's ability to independently verify or track the covenant metric.",
+      "investigation_action": "Verify whether the full consolidated net worth definition still appears elsewhere in the 10-Q (e.g., in the notes to financial statements or credit facility exhibit). If not, request clarification from IR on why the specific definition was removed and whether the covenant calculation methodology has changed."
+    },
+    {
+      "flag_number": 2,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "7cff4c62fee8100c",
+        "current": "0621b98e44a51213",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included explicit confirmation that 'there have been no significant changes to our critical accounting estimates since our 2024 Annual Report' along with a detailed non-GAAP financial measures discussion explaining their purpose and methodology. The current period excerpt omits both. However, these disclosures may have been relocated within the filing rather than removed entirely, as 10-Q filings can reorganize content quarter to quarter. The non-GAAP discussion in particular is typically required and likely appears elsewhere.",
+      "investigation_action": "Confirm whether the non-GAAP financial measures discussion and the critical accounting estimates confirmation statement appear in other sections of the current 10-Q. If both are genuinely absent from the entire filing, this would represent a material disclosure reduction."
+    },
+    {
+      "flag_number": 3,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "cd819a604b7369d8",
+        "current": "0caebfb3ee623445",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior block contains the definition of 'Restructuring income/costs' as a non-GAAP measure definition, while the current block describes segment responsibilities. These appear to be different sections of the filing that were incorrectly matched by the screening layer. The restructuring definition is a glossary item that likely still exists elsewhere in the current filing\u2014indeed, Flag 7's target text includes the identical restructuring definition language ('Restructuring income/costs \u2013 May include costs for employee separation, long-lived asset impairments, contract terminations').",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "b4379a6dd17b5f5d",
+        "current": "efec5328019ebaca",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included detailed product portfolio listings for both Construction Industries and Resource Industries segments, enumerating specific machine types (e.g., 'asphalt pavers; backhoe loaders; cold planers' and 'large mining trucks; electric rope shovels; draglines'). The current period excerpt lacks these product listings entirely. However, this may be a block extraction issue\u201410-Q filings for the same company often consolidate or abbreviate segment descriptions that were fully detailed in the 10-K. The Resource Industries segment description still appears in both periods.",
+      "investigation_action": "Check whether the Construction Industries segment description and detailed product portfolio listings appear elsewhere in the current 10-Q. If the full product enumeration was removed from all locations, this reduces transparency on segment scope and could mask product line changes."
+    },
+    {
+      "flag_number": 5,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "99edb9bc7a6a15bf",
+        "peer": "c695e0639386927f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag is identifying MTW's sparse disclosure relative to CAT, but this reflects a legitimate scale difference. CAT is a ~$150B+ market cap company with a complex financial services subsidiary, $4.5B in share repurchases, $2.5B in capex, and defined benefit pension plans. MTW (Manitowoc) is a much smaller crane manufacturer. The minimal MTW disclosure ('$8.3 million of lower capital expenditures') is proportionate to its business complexity. This is not disclosure evasion by either party.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e7d147b0f386d9c3",
+        "peer": "7c530503aab907cd"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "CAT's extensive supply chain discussion reflects its vastly larger and more complex global dealer-based distribution model with detailed dealer inventory tracking. MTW's single-sentence tariff/supply chain reference ('tariffs may affect demand, raise product costs, or disrupt the Company's supply chain') is sparse but reflects a simpler, predominantly domestic manufacturing base. The divergence reflects genuine business model differences rather than disclosure evasion by CAT or MTW.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a0f48a116a46f926",
+        "peer": "c1aa1dae5140f1a5"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag compares CAT's extensive margin pressure disclosure against MTW's more limited but still substantive discussion. MTW actually does discuss cost and margin pressures, including 'lower absorbed costs due to lower manufacturing volume,' 'favorable product mix,' and tariff impacts. The difference in volume of disclosure is proportionate to the difference in business scale and complexity. CAT's detailed segment-level margin decomposition is appropriate for a company with ~$65B in annual revenue across three major segments, while MTW's discussion covers its smaller business adequately.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b54db52475b841c8",
+        "peer": "8b20c18dd0a748c2"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The divergence between CAT's detailed capital allocation framework (dividend growth, $20B share repurchase authorization, mid-A rating target, $2.5B capex) and MTW's brief mention of capital expenditures and Adjusted ROIC reflects fundamental differences in financial scale and capital return programs. MTW is a much smaller company without comparable financial services operations, pension complexity, or shareholder return programs. This is not a disclosure quality concern for either company.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1cadd94bb1fa9320",
+        "peer": "8e5835c87b4f2b4a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "MTW actually provides meaningful tariff disclosure, describing the reciprocal tariff timeline, the 90-day suspension, country-specific trade deals, and stating 'the Company is assessing the impact and what measures can be taken to mitigate the effects.' While CAT quantifies its $1.3-$1.5B tariff impact in detail, MTW's lack of quantification likely reflects genuine uncertainty about the impact on its smaller, predominantly domestic manufacturing base rather than deliberate obfuscation. MTW acknowledges 'considerable uncertainty regarding industry specific exemptions' which is an honest assessment.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cf45967f2cb357f2",
+        "peer": "733825c9adacb059"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "CNH actually provides substantive margin pressure disclosure, noting cost of goods sold as a percentage of net sales increased from 77.1% to 79.4%, driven by 'lower production volumes, partially offset by improved purchasing and manufacturing costs.' CNH also discusses 'favorable net price realization' and quantifies restructuring expenses. While CAT's disclosure is more granular with segment-level price realization decomposition, CNH's discussion is appropriate for its business structure and does not represent disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8dc15effc15993c2",
+        "peer": "ea31f4a3cfcfb2dc"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "CNH acknowledges 'volatile disruptions due to a combination of factors, including geopolitical events, shifts in trade and economic policies, including the imposition of tariffs' but provides no quantification of tariff impacts, compared to CAT's $1.3-$1.5B estimate with segment-level allocation. CNH operates globally with significant exposure to trade policy changes, and its forward-looking risk factors mention tariffs extensively. However, the absence of any quantified tariff impact estimate in the MD&A is notable for a company of CNH's size and global footprint.",
+      "investigation_action": "This is a concern about CNH rather than CAT. If CNH is a monitored company, analysts should press for quantified tariff impact estimates in upcoming earnings calls or investor presentations, particularly given CNH's global manufacturing and import/export exposure."
+    },
+    {
+      "flag_number": 12,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0621b98e44a51213",
+        "peer": "f108d99c1199b71f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason suggests CAT is 'downplaying' accounting/audit risks because CNH disclosed a material weakness in internal controls over inventory management. However, the absence of a material weakness disclosure from CAT is not a red flag\u2014it simply means CAT has not identified such a deficiency. Companies are required to disclose material weaknesses when they exist; the absence of such disclosure is normal for companies without identified issues, not evidence of obfuscation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 13,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1cadd94bb1fa9320",
+        "peer": "a45dcf5aa1ce339a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag largely duplicates Flag 11, comparing CAT's detailed tariff quantification against CNH's more generic geopolitical risk language. CNH's forward-looking statements include extensive risk factor enumeration covering tariffs, trade wars, sanctions, and currency volatility. While CNH lacks CAT's specific tariff dollar quantification, both companies provide substantive geopolitical risk disclosure appropriate to their respective business models. CAT's disclosure is exemplary rather than CNH's being deficient.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 14,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "efec5328019ebaca",
+        "peer": "547214ae98ff7f3c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason incorrectly frames this as CAT downplaying operational risk because CNH discloses inventory management remediation plans for its material weakness. CNH's detailed remediation discussion (cycle count controls, full-physical inventory counts, standard operating procedures) exists because CNH has an identified material weakness that requires remediation disclosure. CAT has no comparable identified deficiency, so the absence of similar disclosure is appropriate, not evasive. CAT's segment description excerpt is simply a different type of operational content.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "CAT's disclosure quality remains strong overall, with industry-leading quantification of tariff impacts ($1.3-$1.5B), detailed segment-level margin analysis, and comprehensive capital allocation discussion. The only genuine concern is the removal of the specific consolidated net worth covenant definition, which may represent a minor disclosure reduction. Most peer divergence flags reflect CAT's superior disclosure relative to smaller or less complex peers rather than any degradation.",
+    "top_concerns": [
+      "Removal of the specific consolidated net worth definition under the Credit Facility (Flag 1) - verify whether this detail appears elsewhere in the filing or was genuinely eliminated",
+      "Potential reduction in non-GAAP financial measures discussion and critical accounting estimates confirmation (Flag 2) - confirm these sections were relocated rather than removed",
+      "Possible removal of detailed Construction Industries product portfolio listing (Flag 4) - verify whether this represents a genuine reduction in segment transparency"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 3,
+    "dismissed_count": 10
+  },
+  "_meta": {
+    "ticker": "CAT",
+    "model": "claude-opus-4-6",
+    "input_tokens": 21377,
+    "output_tokens": 3657,
+    "timestamp": "2026-04-09T11:51:12.563997"
+  }
+}

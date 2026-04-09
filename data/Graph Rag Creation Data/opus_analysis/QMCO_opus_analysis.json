@@ -1,0 +1,191 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "b36372f6fa2e69f5",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period text is a note about net loss per share and stock-based compensation instruments (performance share units, RSUs, ESPP), not a substantive human capital risk disclosure. The current filing contains a nearly identical passage under Note 8 (block 7d20a53bea467044). This is not a disappeared topic but rather a misclassification by the screening layer.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "251b5d5b5491e2ce",
+        "current": "49e658428b1824bd",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The current filing actually retains most of the granular debt detail from the prior period and adds new information (Master Assignment Agreement, May 2025 Amendment, PNC termination, updated interest rates at 14.31%/14.56%/18.56%). However, the prior filing's explicit statement that debt was 'classified as a current liability' due to covenant violation has been replaced with a forward-looking statement that the company 'expects to be in violation' of covenants for Q4 2025 and that 'management is actively seeking covenant waivers.' The waiver of SEPA proceeds repayment obligation is disclosed but with less specificity about the implications. The shift from concrete covenant breach disclosure to softer 'actively seeking' language is notable for a company in financial distress.",
+      "investigation_action": "Investigate current covenant compliance status, whether waivers have been obtained post-filing, and the implications of the PNC Credit Facility termination on August 13, 2025 for liquidity. Assess whether the Term Loan's August 2026 maturity is achievable given current cash flows and the reliance on SEPA equity sales."
+    },
+    {
+      "flag_number": 3,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "01e05fb7c5609cd6",
+        "current": "543dc1bab9f496cf",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained a detailed forward-looking statements cautionary paragraph explicitly listing 'the impact of macroeconomic and geopolitical trends and events,' supply chain management risks, competitive pressures, intellectual property risks, and international operations risks. The current period text tagged to this topic is entirely about the OBBBA tax provisions with zero mention of geopolitical or macroeconomic risks. The comprehensive risk enumeration that appeared in the prior period has disappeared from the matched section without apparent relocation, representing a meaningful reduction in risk factor disclosure.",
+      "investigation_action": "Determine whether QMCO's forward-looking statements cautionary language and geopolitical risk factors were relocated elsewhere in the 10-Q or removed entirely. Assess whether QMCO's international revenue exposure (29% EMEA, 11% APAC) warrants specific geopolitical risk disclosure, especially given tariff and trade policy uncertainty."
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "b116d45f83ec061c",
+        "current": "a307ca2ef85ba10e",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed the Arrow Electronics lawsuit with a specific $4.0 million damage claim, detailed procedural posture (summary judgment rulings, expert exclusion, trial date), and an explicit assessment that the probability of material adverse effect was 'remote.' The current period entirely omits the Arrow Electronics matter and instead discloses a new shareholder class action (10b-5 securities fraud) with 'unspecified damages' and states Quantum 'is not able to determine whether this lawsuit would have any material impact.' The disappearance of the Arrow matter without resolution disclosure and the introduction of a securities fraud action with no damage quantification or risk assessment represents a material degradation in litigation transparency.",
+      "investigation_action": "Investigate the resolution or current status of the Arrow Electronics lawsuit (trial was set for February 2025). Assess the shareholder class action's merits given the explicit mention of financial restatement for FY2025 Q3. Determine whether the restatement and securities litigation represent going-concern-level risks that should be more prominently disclosed."
+    },
+    {
+      "flag_number": 5,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7d20a53bea467044",
+        "peer": "17e12faf9480f82e"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "QMCO actually provides detailed quantitative data on cost structure\u2014restructuring charges increasing from $1.2M to $2.4M, gross margin declining from 37.4% to 35.3%, and a granular expense breakdown by category. However, unlike PSTG which discusses margin risk factors qualitatively (competitive pricing, component costs, product mix shifts), QMCO provides no forward-looking discussion of margin pressure drivers or risks in its Risk Factors section. For a company experiencing margin compression and increasing restructuring, the absence of qualitative margin risk discussion is a gap.",
+      "investigation_action": "Assess whether QMCO's 210 bps gross margin decline is structural or cyclical. Investigate the trajectory of restructuring charges and whether the $2.4M in Q1 FY2026 signals additional cost-cutting ahead. Evaluate whether the reduction in outside services spend ($13.2M to $7.7M) is sustainable or represents deferred investment."
+    },
+    {
+      "flag_number": 6,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "82c2d285874e7117",
+        "peer": "2e70c5d0f7e2a32e"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening layer's comparison is poorly calibrated. PSTG is a profitable, growing company discussing investment strategy and share repurchases, while QMCO is a distressed company with covenant violations, $104M in term loan debt, PNC facility termination, and a securities fraud class action. QMCO's financial sustainability risks are extensively documented throughout its debt and going concern disclosures rather than in the specific block flagged here. The peer comparison reflects fundamentally different business situations rather than disclosure evasion by QMCO.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "543dc1bab9f496cf",
+        "peer": "39e2d8ae7708b9fd"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "PSTG provides extensive, multi-paragraph disclosure on tariffs, trade policy changes, currency fluctuations, and international operational risks\u2014all relevant to data storage hardware companies with global supply chains and international revenue. QMCO's matched text discusses only the OBBBA tax provisions with no mention of tariffs, trade restrictions, or geopolitical risks, despite deriving 40% of revenue from international markets (EMEA 29%, APAC 11%). Given QMCO's reliance on contract manufacturers and international distributors, the absence of geopolitical/macro risk discussion is a meaningful disclosure gap relative to industry practice.",
+      "investigation_action": "Determine QMCO's tariff exposure on imported components and manufactured products. Assess whether QMCO's contract manufacturing arrangements create supply chain vulnerability to trade policy changes. Evaluate whether the omission reflects a deliberate choice to minimize risk factor disclosure given the company's distressed financial situation."
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "361cd55b6393d47a",
+        "peer": "38743d1f1cb38e86"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "QMCO's supply chain disclosure is limited to four generic sentences about working with distributors and contract manufacturers, with only a brief mention of forecast-based procurement risk. PSTG provides extensive disclosure on single-source supplier risks, component price volatility, contract manufacturer dependencies, inventory management challenges, and tariff-related logistics risks. QMCO, as a hardware company that relies on contract manufacturers and has acknowledged forecast-based purchasing obligations, faces similar supply chain risks but provides substantially less specificity. The statement that the company 'is responsible for the financial impact on the supplier or contract manufacturer of any reduction or product mix shift' hints at material exposure without quantifying it.",
+      "investigation_action": "Investigate QMCO's key supplier concentration, single-source dependencies, and outstanding purchase commitments. Assess whether the company has experienced or anticipates supply chain disruptions given its financial distress (suppliers may demand less favorable terms). Determine whether inventory write-downs or purchase commitment losses are a risk given declining revenue trajectory ($72.3M to $64.3M quarter-over-quarter)."
+    },
+    {
+      "flag_number": 9,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "930f1b7781062b03",
+        "peer": "3dd004ea949402da"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening layer has inverted the signal\u2014it flags NTAP for not discussing deferred tax assets/valuation allowances, but NTAP is a profitable company with $1.2B in authorized share repurchases and regular dividends, making such discussion unnecessary. QMCO actually provides appropriate disclosure about its full valuation allowance against U.S. deferred tax assets and the significant management judgment required. This is not a case of QMCO underperforming peers on disclosure; if anything, QMCO is more transparent on this specific topic.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7d20a53bea467044",
+        "peer": "0e71befaf67205d5"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening layer incorrectly flags this as NTAP downplaying cost/margin risks relative to QMCO, but the comparison is inverted\u2014QMCO provides more detailed cost data. The NTAP excerpt is a single generic sentence about capital requirements, which is not a comparable disclosure unit. This appears to be a poorly matched peer comparison with no actionable signal regarding QMCO's disclosure quality.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "82c2d285874e7117",
+        "peer": "d3ae8d0930f7376c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag compares QMCO's notes on goodwill, fair value, and tax benefits with NTAP's capital expenditure and dividend disclosures. The companies are in fundamentally different financial positions\u2014QMCO is distressed while NTAP is returning $1.5B+ to shareholders. QMCO's disclosure of $13M goodwill (no impairment), $9.6M in potentially recognizable tax benefits offset by $9.4M in valuation allowances, and 'no material adverse effect' from pending matters are standard notes disclosures, not evidence of financial sustainability risk obfuscation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 12,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "bf134caf098ce726",
+        "peer": "6f90e84b2b20ff81"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening layer incorrectly flags NTAP's generic cross-reference to its 10-K risk factors as evidence of NTAP downplaying revenue risks relative to QMCO's detailed revenue disaggregation. QMCO actually provides strong disclosure here with geographic breakdowns, solution-level revenue data, and year-over-year comparisons. This is a false positive where QMCO's disclosure is superior to the peer excerpt shown, and the comparison is not meaningful for assessing QMCO's disclosure quality.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "QMCO presents a mixed disclosure picture. The company provides detailed quantitative data on its complex debt structure and cost breakdowns, but has meaningful gaps in forward-looking risk discussion\u2014particularly around geopolitical/macroeconomic risks, supply chain vulnerabilities, and litigation transparency. The most concerning patterns are the disappearance of specific litigation outcomes (Arrow Electronics) coinciding with a new securities fraud class action tied to a financial restatement, and the absence of geopolitical risk disclosure despite 40% international revenue exposure. Many peer comparison flags were poorly calibrated due to the fundamental business differences between distressed QMCO and profitable peers like PSTG and NTAP.",
+    "top_concerns": [
+      "Litigation transparency: Disappearance of Arrow Electronics case details and introduction of securities fraud class action with unspecified damages linked to financial restatement, without adequate risk assessment",
+      "Geopolitical and supply chain risk omission: No substantive discussion of tariff, trade policy, or supply chain concentration risks despite 40% international revenue and reliance on contract manufacturers",
+      "Debt covenant and going concern language softening: Shift from explicit current liability classification due to covenant breach to forward-looking language about 'expected' violations and 'actively seeking' waivers, combined with PNC Credit Facility termination"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 2,
+    "dismissed_count": 7
+  },
+  "_meta": {
+    "ticker": "QMCO",
+    "model": "claude-opus-4-6",
+    "input_tokens": 23694,
+    "output_tokens": 3708,
+    "timestamp": "2026-04-09T12:26:22.183051"
+  }
+}

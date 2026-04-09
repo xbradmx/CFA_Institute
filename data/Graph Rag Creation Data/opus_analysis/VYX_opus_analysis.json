@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "da3de9ed520b4f89",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period text is a generic statement about digital adoption and investing in innovation to attract/retain customers \u2014 it is not substantive human capital disclosure (e.g., headcount, turnover, diversity metrics, compensation). This reads as a broad strategic comment that may have been editorially consolidated or simply deemed unnecessary boilerplate. Its removal does not represent a loss of material quantitative or qualitative human capital information.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "3bcf28d727336885",
+        "current": "1b762f005043e526",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing included a detailed sensitivity analysis with specific dollar figures ($6M and $8M impacts from 10% USD appreciation/depreciation), explicit description of the hedge portfolio methodology, and discussion of credit risk concentrations including counterparty risk. The current filing replaces all of this with a single vague sentence: 'We believe that the reserves for potential losses are adequate.' This is a dramatic reduction in quantitative transparency on foreign currency risk and credit risk exposure, replacing measurable data with an unsubstantiated assertion.",
+      "investigation_action": "Analyst should request from VYX the current hedge portfolio fair values and sensitivity analysis, investigate whether the hedge portfolio has materially changed in size or composition, and assess whether the removal of this disclosure coincides with deteriorating FX exposure or counterparty credit issues. Review the 10-K for whether this detail was relocated or simply eliminated."
+    },
+    {
+      "flag_number": 3,
+      "topic": "revenue_future_performance",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "8759a3138e57a3d5",
+        "current": "9988f784101042a3",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained a specific and material risk disclosure that the company engages in large transactions without collateral and that customer defaults could result in 'potentially significant losses.' This language was entirely removed in the current filing, leaving only a generic cross-reference to the annual 10-K risk factors. The removal of this specific risk factor without explanation is concerning, particularly if customer concentration or credit quality has changed. This is not a routine editorial change \u2014 it removes a concrete, decision-relevant warning.",
+      "investigation_action": "Analyst should examine whether VYX's customer concentration has changed, whether any large receivables are aging, and whether any recent credit events among key customers may have motivated the removal. Verify whether this risk factor remains in the referenced 10-K or has been dropped entirely from all filings."
+    },
+    {
+      "flag_number": 4,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9988f784101042a3",
+        "peer": "fd13573c737a4df2"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "NATL (Atleos) provides extensive segment-level revenue breakdowns with dollar amounts, percentage changes, and detailed drivers for each business line (Self-Service Banking, Network, T&T), including specific headwinds like Bitcoin transaction volume declines and macroeconomic pressures. VYX's 10-Q risk factors section contains only a generic cross-reference to the 10-K with no substantive revenue performance discussion. While some difference is expected given different business models, the absence of any segment-level revenue risk commentary in VYX's quarterly filing is a significant divergence from peer practice and deprives investors of timely information.",
+      "investigation_action": "Analyst should review VYX's MD&A section (not just risk factors) to determine if revenue segment detail exists elsewhere in the filing. If not, press management on why quarterly revenue performance drivers and risks are not being disclosed, particularly given the ongoing hardware business transition and potential tariff impacts."
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ba5a8473f971edae",
+        "peer": "f28d652eb1c46ccc"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "DBD provides detailed disclosure on indirect tax contingencies (quantified aggregate risk of $56.1M), specific legal proceedings including resolved appraisal cases in Germany, and management's assessment of litigation exposure. VYX mentions the OBBBA tax legislation and a $1M loss from discontinued operations related to environmental remediation, which is relatively sparse. However, the comparison is somewhat unfair: DBD has specific legacy litigation (German minority shareholder proceedings) that VYX may not have analogues for, and VYX's environmental remediation disclosure, while brief, is specific. The concern is whether VYX has undisclosed legal contingencies rather than that it is actively obfuscating.",
+      "investigation_action": "Analyst should review VYX's notes to the financial statements for contingency disclosures, check whether any material legal or regulatory proceedings are pending that are not reflected in MD&A, and compare the completeness of VYX's legal contingency footnotes against prior periods to determine if coverage has shrunk."
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "41f9c80d8f5e2715",
+        "peer": "00df594a4c4b528b"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "VYX is undergoing a significant hardware business transition to an ODM model with Ennoconn, which fundamentally reshapes its supply chain risk profile, yet the flagged passage provides only a factual announcement of the transition without discussing associated risks such as tariff exposure, supplier dependency, or execution risk. DBD explicitly discusses tariff mitigation strategies including alternative sourcing, supplier negotiations, and price adjustments. Given VYX is actively restructuring its hardware supply chain, the absence of supply chain risk discussion is notable. However, the flagged block may only be a partial excerpt, and additional supply chain risk detail may exist elsewhere in the filing.",
+      "investigation_action": "Analyst should search VYX's full 10-Q for any tariff, supply chain disruption, or Ennoconn transition risk disclosures. If absent, this represents a significant gap given the current tariff environment and VYX's active supply chain restructuring. Press management on concentration risk with Ennoconn and tariff exposure on imported hardware components."
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "VYX exhibits a concerning pattern of disclosure degradation in its most recent 10-Q, with the removal of specific quantitative hedge portfolio sensitivity analysis (replaced by a single vague sentence), elimination of material customer credit risk language, and sparse supply chain and revenue risk discussion despite an active hardware business transition. The combination of temporal removals and peer divergence suggests a systematic reduction in transparency rather than isolated editorial changes.",
+    "top_concerns": [
+      "Removal of hedge portfolio sensitivity analysis with specific dollar amounts, replaced by vague adequacy assertion \u2014 potential obfuscation of deteriorating FX or credit exposure",
+      "Elimination of specific large-customer collateral/default risk disclosure without explanation, potentially masking changes in customer credit quality or concentration",
+      "Minimal supply chain and tariff risk disclosure despite active hardware business transition to ODM model with Ennoconn, diverging significantly from peer practice during a period of elevated tariff uncertainty"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 2,
+    "dismissed_count": 1
+  },
+  "_meta": {
+    "ticker": "VYX",
+    "model": "claude-opus-4-6",
+    "input_tokens": 5240,
+    "output_tokens": 2022,
+    "timestamp": "2026-04-09T12:40:07.067723"
+  }
+}

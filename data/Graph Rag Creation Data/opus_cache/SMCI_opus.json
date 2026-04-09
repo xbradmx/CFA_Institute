@@ -1,0 +1,149 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "f935ab1899569bc0",
+        "current": "7a677591bc94c4ce",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed a specific dollar amount of $18.6 million in professional fees incurred through January 31, 2025, in connection with audit and compliance efforts, as well as detailed timelines (Nasdaq December 6, 2024 exception, February 25, 2025 filing deadline) and specific references to DOJ and SEC subpoenas received in late 2024. The current period eliminates this quantitative detail and the explicit DOJ/SEC subpoena disclosure, replacing it with generic references to 'circumstances discussed in Item 9.' The removal of the $18.6 million figure and the DOJ subpoena specifics from the risk factors section is a meaningful reduction in transparency on what remains an active and material regulatory matter.",
+      "investigation_action": "Analyst should track whether updated professional fee totals appear anywhere else in the filing (e.g., notes to financials), confirm the current status of DOJ and SEC investigations, and request management commentary on cumulative legal/compliance costs since the prior disclosure."
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "71d7d4f0dfdd0dde",
+        "current": "75510f677f27fe0b",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included specific detail about proactive inventory management actions ('building inventories of critical components required for our motherboards and other system printed circuit boards, as well as add to our inventories of key components such as GPUs, CPUs, memory, and solid state drives'), specific supplier concentration percentages for Ablecom/Compuware (4.3%, 6.6%, 8.3% of cost of sales), and references to specific manufacturing expansion plans (Taiwan, Netherlands, Malaysia). The current period retains the Ablecom/Compuware cost-of-sales percentages (updated to 3.3%, 4.3%, 6.6%) and supplier concentration figures (64.4% and 5.1%), but removes the granular inventory management strategy language and specific component-level detail. While some quantitative data is retained, the overall narrative is condensed and less specific about mitigation actions.",
+      "investigation_action": "Analyst should verify whether the inventory management strategy detail has been moved to MD&A or elsewhere, and probe management on any changes to buffer stock policies for GPUs, CPUs, memory, and SSDs."
+    },
+    {
+      "flag_number": 3,
+      "topic": "cost_margin_pressure",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "143f52afafd3f8d7",
+        "current": "e2c0160a54d8ec58",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included a specific disclosure about a data center lease obligation of 'over $600.0 million,' detailed discussion of inventory write-down history, inflationary cost pressures with specific examples (logistics costs, fuel prices, compensation), and the Ablecom/Compuware cost-of-sales percentages across three years. The current period reduces the data center lease obligation figure to 'over $292.0 million' (which may reflect a legitimate change in remaining obligation) and retains updated Ablecom/Compuware percentages (3.3%, 4.3%, 6.6%), but the inventory write-down discussion is shortened and the detailed inflation impact language is reduced. The change in the data center figure warrants verification rather than automatic concern.",
+      "investigation_action": "Analyst should clarify the $600M to $292M data center obligation change\u2014whether it reflects payments made, contract restructuring, or a different measurement. Also verify whether specific inventory write-down disclosures appear in the financial statement notes."
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "32461f662e300fa5",
+        "current": "6bb5455ffcaeedd2",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included specific details about the outbound investment review mechanism (October 28, 2024 Treasury final rule, Biden's August 2023 Executive Order, January 2, 2025 effective date), detailed discussion of Pillar Two with the caveat about fiscal year 2025 impact, and reference to a specific corporate venture placed on a U.S. export control list in June 2020. The current period consolidates the tax discussion into a more concise format that includes the new OBBBA enacted July 4, 2025 and notes the Malaysian 10-year tax exemption, but drops the specific outbound investment rule details and the corporate venture export control disclosure. However, some of this may reflect that the outbound investment rule is now effective and no longer 'upcoming,' and the current filing adds new relevant detail about OBBBA.",
+      "investigation_action": "Analyst should investigate the status of the corporate venture that was placed on an export control list and whether any write-downs or impairments have occurred, and assess whether the outbound investment rule has had material impact on SMCI's investment activities."
+    },
+    {
+      "flag_number": 5,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "387720efc092a0fd",
+        "current": "c7489d39910b051d",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period contained specific examples of past product quality issues ('certain vendors have provided us with defective components that failed under certain applications'), detailed discussion of manufacturing expansion challenges in Taiwan, Netherlands, and Malaysia with specific operational risks, and explicit discussion of first-generation product defect risks. The current period replaces these with more generic innovation and product development risk language ('The development of new, technologically advanced products is a complex and uncertain process') and removes the specific defect example. However, the current period does add new detail about the Leadtek investment relationship. The data center obligation changed from 'over $600.0 million' to 'over $292.0 million,' which may be legitimate but lacks explanation.",
+      "investigation_action": "Analyst should probe whether any significant product quality events occurred during FY2025 that motivated removal of the specific defect example, and investigate the Leadtek relationship and its supply chain implications."
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "d771383a8780b15c",
+        "current": "dc5f9f11a7d38823",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period included extensive detail about the delinquent SEC reporting situation: specific Nasdaq exception date (December 6, 2024), filing deadline (February 25, 2025), identification of specific Delinquent Reports (Form 10-Q for September 30, 2024 and December 31, 2024), explicit mention of Form S-8 ineffectiveness and Form S-3 limitations, DOJ and SEC subpoenas received in late 2024, and the statement that 'certain of our current and former executive officers and directors are defendants in certain legal proceedings and putative class actions.' The current period consolidates these into briefer summaries, notably dropping the explicit DOJ/SEC subpoena disclosure from the risk factors, removing the Form S-3/S-8 limitation detail, and omitting the specific reference to executive officers and directors as defendants. This pattern of reducing specificity around active regulatory and legal proceedings is concerning.",
+      "investigation_action": "Analyst should verify whether the DOJ/SEC subpoena status is disclosed in Legal Proceedings or financial statement notes, confirm the current status of proceedings naming officers and directors, and assess whether any settlements or resolutions have occurred that would justify reduced disclosure."
+    },
+    {
+      "flag_number": 7,
+      "topic": "revenue_future_performance",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "250312e8f01f65f6",
+        "current": "95e0e94ead3f43ae",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The current period actually provides more specific customer concentration data than the prior period: 'four customers account for 10% or more of our net sales in fiscal years 2025' versus 'one customer account for 10% or more of our net sales in fiscal year 2024.' The current filing also adds new risk factors ('Our sales are concentrated in a few large customers' as a standalone heading), new detail about customer cancellation and deferral risks, and retains the AI industry dependency language. While some of the prior period's granular discussion of operating result fluctuation factors was condensed, the core quantitative disclosures were updated and in some cases enhanced. The screening reason overstates the reduction in transparency.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "3891d28517e2e20d",
+        "current": "ac7dff887c5c9c7d",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included specific proactive inventory management detail ('building inventories of critical components required for our motherboards and other system printed circuit boards, as well as add to our inventories of key components such as GPUs, CPUs, memory, and solid state drives'), three years of specific supplier concentration percentages for the top two suppliers and Ablecom/Compuware, and explicit discussion of the Malaysia manufacturing expansion with Ablecom and Compuware campus development. The current period retains updated supplier concentration figures (64.4%/5.1% for FY2025) and Ablecom/Compuware campus references, but drops the Ablecom/Compuware cost-of-sales percentages from this section and reduces the specificity of inventory strategy language. This overlaps substantially with Flag 2; the key difference is the removal of the explicit three-year Ablecom/Compuware cost-of-sales figures from this particular section.",
+      "investigation_action": "Analyst should check whether Ablecom/Compuware cost-of-sales percentages appear in related-party transaction notes (they appear in Flag 3 current period as 3.3%, 4.3%, 6.6%), and assess whether the declining percentage trend signals reduced dependency or a reporting change."
+    },
+    {
+      "flag_number": 9,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "433cacea5d26eaf9",
+        "peer": "db00d74810b4806c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason incorrectly flags OMCL (the peer) as potentially 'downplaying' material weaknesses relative to SMCI. In reality, SMCI's detailed disclosure of identified material weaknesses and remediation efforts reflects its company-specific situation\u2014SMCI has well-documented accounting control issues stemming from its delinquent filing crisis. OMCL's generic boilerplate about maintaining effective internal controls under SOX Section 404 is standard disclosure for a company that has not identified material weaknesses. The divergence reflects genuine business differences (SMCI has actual material weaknesses; OMCL apparently does not), not disclosure evasion by either party.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "SMCI's FY2025 10-K shows a pattern of reducing specificity around its most sensitive disclosure areas\u2014particularly the removal of the $18.6 million professional fees figure, DOJ/SEC subpoena details, and Form S-3/S-8 limitation language related to the delinquent filing crisis. While some quantitative data was updated (supplier concentration, Ablecom/Compuware cost-of-sales), the overall trend is toward condensing detailed risk narratives into more generic summaries, particularly on regulatory and legal matters where the company remains under active scrutiny.",
+    "top_concerns": [
+      "Removal of specific DOJ/SEC subpoena disclosure and $18.6M professional fees figure from risk factors, reducing visibility into the ongoing regulatory investigation and its financial burden",
+      "Consolidation of delinquent SEC reporting risk factors with loss of specific detail about Form S-3/S-8 limitations, Nasdaq exception timeline, and executive/director defendant status in legal proceedings",
+      "Reduction of proactive inventory management strategy detail (specific component types, buffer stock approach) while the company navigates GPU supply concentration risk with top supplier at 64.4% of purchases"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 5,
+    "dismissed_count": 2
+  },
+  "_meta": {
+    "ticker": "SMCI",
+    "model": "claude-opus-4-6",
+    "input_tokens": 60219,
+    "output_tokens": 3329,
+    "timestamp": "2026-04-09T12:29:44.160075"
+  }
+}

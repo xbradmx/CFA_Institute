@@ -1,0 +1,121 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "regulatory_legal",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "05b56906c6da319e",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period text is a standard boilerplate cross-reference to risk factors in the Annual Report and subsequent SEC filings. This is routine forward-looking statement safe-harbor language that commonly appears or disappears between quarterly filings based on editorial placement. There is no substantive regulatory or legal risk disclosure that was removed.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "21f4d9bdf31d91d5",
+        "current": "1dc65e7de1b6f1ac",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period disclosed specific adjusted operating income of $325 million (15.7% margin) vs. $294 million (14.5%), and a restructuring cost range of $60-$70 million. The current period replaces these with only an adjusted EBITDA margin reference (21.8% vs 20.8%) without the corresponding dollar amounts or restructuring cost guidance. Additionally, the current period added a notable sustainability disclaimer stating that environmental/sustainability plans 'are not an indication that these statements are necessarily material to investors.' However, detailed segment-level operating metrics do appear elsewhere in the filing (as seen in Flag 6 excerpts), so the restructuring guidance may have been moved or simply not repeated in this particular passage.",
+      "investigation_action": "Verify whether the $60-$70 million restructuring cost guidance for the full year was updated, reiterated, or dropped entirely in the current 10-Q. Check if the new sustainability materiality disclaimer signals a retreat from prior ESG commitments or quantitative targets."
+    },
+    {
+      "flag_number": 3,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cf57098709be0fed",
+        "peer": "73ae9448960bac64"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "XYL's single sentence \u2014 'Typically, capital projects require longer lead production cycles and deployment schedules and delays occur from time to time' \u2014 is notably generic compared to FLS's extensive discussion of global supply chain disruptions, raw materials volatility, tariff impacts, and specific mitigation strategies. While FLS's lengthy disclosure partly reflects its broader forward-looking risk factor boilerplate, XYL's near-complete silence on supply chain dynamics in MD&A is conspicuous for a $2.3B quarterly revenue industrial company operating globally, especially amid ongoing tariff uncertainty.",
+      "investigation_action": "Ask XYL management about tariff exposure, raw material cost trends, and supply chain mitigation strategies. Review whether supply chain risks are addressed in other filing sections (e.g., Risk Factors in the 10-K) and whether the absence in MD&A represents a deliberate downplay of current quarter impacts."
+    },
+    {
+      "flag_number": 4,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c1791b6cb9ad5b50",
+        "peer": "0b4d447a327512a6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 it identifies FLS as providing less disclosure than XYL on debt financing, not XYL as the deficient party. XYL actually provides detailed interest expense figures, term loan repayment history, and discussion of capital market access risks. The screening layer flagged the wrong direction; XYL's disclosure is the more robust of the two. No disclosure degradation concern for XYL.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cc9c8723302bb062",
+        "peer": "a322d2cf1e83c352"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, this flag is inverted. XYL provides specific restructuring cost guidance ($60-$70 million), capital expenditure commentary, and detailed non-GAAP explanations, while FLS offers only a generic risk catchall. XYL is the stronger discloser here. No disclosure degradation concern for XYL on this topic relative to peers.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "24796694a50bf226",
+        "peer": "4406ca638bf346be"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is again inverted. XYL provides exceptionally detailed revenue disclosure \u2014 segment-level organic growth breakdowns, order/backlog tables by segment with dollar and percentage changes, geographic drivers, and a specific 2025 revenue outlook of 4%-5% growth. FLS provides only a generic cross-reference to its annual report. XYL's revenue and performance disclosure is exemplary, not degraded.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cf57098709be0fed",
+        "peer": "0637de8b29f9991b"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "IEX, XYL's closest peer (rank 1, distance 3.52), explicitly states it has 'taken actions, such as increasing price, reducing costs and implementing supply chain strategies to mitigate the impact of tariffs and geopolitical uncertainty.' XYL's corresponding disclosure \u2014 a single generic sentence about capital project delays occurring 'from time to time' \u2014 is strikingly thin for a global industrial company with $4.4B in H1 revenue. Given XYL's extensive global operations across emerging markets and multiple segments, the absence of any tariff, geopolitical, or supply chain mitigation discussion in MD&A represents a meaningful disclosure gap versus its nearest peer.",
+      "investigation_action": "Directly question XYL management about tariff exposure quantification, supply chain mitigation actions, and whether the company is experiencing input cost inflation. Review earnings call transcripts for any oral disclosure that should be reflected in the 10-Q but is absent. Assess whether supply chain risks could be contributing to the 380 basis point margin decline in the Measurement and Control Solutions segment."
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "XYL's disclosure quality is generally strong, with exceptionally detailed revenue, segment, and order/backlog reporting. Three of the seven flags were inverted (identifying XYL as the stronger discloser vs. peers). The two legitimate concerns are the thinness of supply chain/tariff risk discussion in MD&A relative to close peers, and the potential removal of specific restructuring cost guidance between quarters. These merit monitoring but do not constitute a pattern of systematic obfuscation.",
+    "top_concerns": [
+      "Supply chain and tariff risk disclosure is notably thin in MD&A compared to closest peers IEX and FLS, with only a single generic sentence despite significant global operations",
+      "Potential drop of $60-$70M restructuring cost guidance and specific adjusted operating income figures between Q1 and Q2 filings \u2014 verify if guidance was updated or silently removed",
+      "New sustainability materiality disclaimer language in Q2 filing may signal retreat from prior ESG commitments or quantitative environmental targets"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 2,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "XYL",
+    "model": "claude-opus-4-6",
+    "input_tokens": 7947,
+    "output_tokens": 2054,
+    "timestamp": "2026-04-09T12:44:03.886650"
+  }
+}

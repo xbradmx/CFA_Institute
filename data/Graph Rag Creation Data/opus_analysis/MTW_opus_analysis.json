@@ -1,0 +1,79 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "13991dc16e95de63",
+        "current": "cc9dadcd6b864eef",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This appears to be a block-matching error by the screening layer rather than a genuine disclosure change. The prior block contains the standard Controls and Procedures section (Item 4 of 10-Q), while the current block references an Adjusted ROIC non-GAAP definition. The Controls and Procedures disclosure is a required 10-Q element under SEC rules and would not be removed; it is almost certainly present elsewhere in the current filing. The screening algorithm likely matched unrelated text blocks.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "c15e70dfcffefedf",
+        "current": "6b790c6c5d7339a1",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period filing explicitly stated 'As of March 31, 2025, the Company was in compliance with all affirmative and negative covenants in its debt instruments, inclusive of the financial covenants pertaining to the ABL Revolving Credit Facility and 2031 Notes.' This specific covenant compliance affirmation is entirely absent from the current period filing. Critically, ABL revolving credit facility borrowings nearly doubled from $83.3 million to $156.9 million (and total debt rose from $399.0M to $470.5M), making covenant compliance more material, not less. The removal of the compliance statement concurrent with a significant leverage increase is a classic disclosure degradation pattern.",
+      "investigation_action": "Immediately verify whether the company is still in compliance with all ABL and 2031 Notes covenants, particularly any fixed charge coverage ratio or borrowing base tests that may be stressed given the $73.6 million increase in revolver borrowings. Request confirmation from IR and review the full 10-Q for any covenant compliance language that may have been relocated."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0f4c85726b382e40",
+        "peer": "f633a60fb4137fcd"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted\u2014it flags ASTE for being less specific than MTW, but we are evaluating MTW's disclosure quality, not ASTE's. MTW is actually the more transparent party here, providing specific dollar amounts ($5.3 million EPA charge, $0.6 million interest on EPA settlement). The peer divergence reflects different legal circumstances rather than disclosure evasion by MTW; ASTE may simply not have comparable EPA matters to disclose.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "6251dde17a054f97",
+        "peer": "30393dd5fa54043c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This is substantively the same comparison as Flag 3, using slightly different text blocks. Again, the flag is misdirected\u2014MTW provides more granular disclosure of its EPA legal matter than ASTE provides regarding its own legal proceedings. The divergence reflects different company-specific legal exposures. MTW's disclosure on this topic is appropriately detailed, not degraded.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "Of four flags screened, one is a genuine and material disclosure degradation signal: the removal of the covenant compliance affirmation concurrent with a near-doubling of revolver borrowings from $83.3M to $156.9M. The remaining three flags are dismissed\u2014one is a block-matching error, and two are misdirected peer comparisons where MTW is actually the more transparent discloser. The single genuine flag is, however, significant enough on its own to warrant elevated monitoring.",
+    "top_concerns": [
+      "Removal of explicit covenant compliance affirmation while total debt increased $71.5M (from $399.0M to $470.5M) and ABL borrowings nearly doubled to $156.9M\u2014potential covenant stress or breach",
+      "Rapid increase in revolver utilization ($156.9M of $325M capacity) suggesting potential working capital or operational cash flow deterioration that may stress borrowing base or financial covenants",
+      "Confirm that required Controls and Procedures disclosure (Item 4) is present in the current 10-Q filing and was not inadvertently omitted or materially modified"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 0,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "MTW",
+    "model": "claude-opus-4-6",
+    "input_tokens": 3680,
+    "output_tokens": 1306,
+    "timestamp": "2026-04-09T12:15:31.547703"
+  }
+}

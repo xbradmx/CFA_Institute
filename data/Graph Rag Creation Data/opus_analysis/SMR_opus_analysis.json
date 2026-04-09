@@ -1,0 +1,205 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "bf69e6ccb3473a43",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior text described the FEED Phase 2 contract signing as a recent event in the third quarter of fiscal 2024. In the current filing (Flag 6, block 2c057c9f64804c1c), the FEED Phase 2 content appears to have been consolidated into the regulatory/overview section of MD&A. This is a routine editorial change moving project updates rather than removing them.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "72cf4f28d68871e2",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing disclosed specific details about Phase 1 of the RoPower contract including the site location (Doicesti Power Station) and plant configuration (6-module). Removal of these specifics without updated project status language could indicate the Romania project has stalled or terms have changed. The current filing's FEED Phase 2 reference (Flag 4/6) partially addresses the RoPower relationship but omits Phase 1 completion status details.",
+      "investigation_action": "Investigate whether the RoPower/Nuclearelectrica Romania deployment remains on track and why specific Phase 1 milestones and site details were dropped from MD&A."
+    },
+    {
+      "flag_number": 3,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "07a780254897678a",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior Risk Factors filing disclosed specific risks about reliance on ENTRA1, Fluor, and strategic partners with diverging interests. While this content appears in the current Risk Factors under supply_chain (Flag 10, block 05dd72cacfd59286), the screener flagged its disappearance from the 'human_capital' topic classification. The substantive content appears to have migrated rather than disappeared, but the classification shift warrants verification that all partner-dependency risks are still fully disclosed.",
+      "investigation_action": "Verify that the strategic partner dependency risks (ENTRA1, Fluor) are fully preserved in the current filing's Risk Factors section and that no material risk language was softened during any reorganization."
+    },
+    {
+      "flag_number": 4,
+      "topic": "cost_margin_pressure",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "a4dd93a8c3d9f1ee",
+        "current": "40a9fb98ebde9364",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing disclosed the $69.3 million purchase commitment with a precise payment timeline ($24.3M in FY2025, $34.6M in FY2026, $10.4M in FY2027). The current filing refers to the same December 2024 commitment but strips out the total dollar amount and all payment timeline details, stating only that the Company 'entered into a purchase commitment for additional LLM.' Additionally, 'additional long-term commitments' are referenced without any dollar breakdown, and a new $34.8 million sales and marketing agreement is mentioned but without comparable granularity on the underlying purchase commitment. This is a clear reduction in quantitative specificity on a material cash obligation.",
+      "investigation_action": "Request updated payment schedule for the $69.3M LLM purchase commitment and details on the 'additional long-term commitments' entered into during 2025, including total amounts, counterparties, and payment timelines."
+    },
+    {
+      "flag_number": 5,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "2d231e6424769e59",
+        "current": "a3cbb55f2e35f7e5",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing included critical financial sustainability disclosures: management's plan to 'prudently manage its expenses and cash reserves,' the need to 'secure additional customer commitments to support long-term operations,' details about USTDA grant programs, and the potential $7.4 million contingent obligation to USTDA. The current filing retains only the $3.2 million restructuring charge reference, eliminating all forward-looking liquidity management language and the USTDA contingent liability quantification. The USTDA percentage-of-revenue obligation appears orphaned in the regulatory section (Flag 6) without the dollar amount context.",
+      "investigation_action": "Investigate why the going-concern-adjacent language about securing customer commitments was removed, and confirm whether the $7.4M USTDA contingent obligation still exists and where it is now disclosed in the filing."
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "f876920e65beb1d5",
+        "current": "2c057c9f64804c1c",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The current filing appropriately updated the NRC SDA timeline: the prior filing stated 'we expect the NRC will complete its review and SDA approval will be received in July of 2025,' while the current filing reports 'In May 2025, the NRC finalized their review and approved the Company's SDA application.' This is a legitimate update reflecting the completed milestone. The FEED Phase 2 sentence was relocated rather than removed. The USTDA revenue-sharing mention appears to be a displaced fragment from financial sustainability disclosures (Flag 5) rather than an intentional obfuscation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "b9ac7356f33a6684",
+        "current": "c68b8daabe75f105",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing included the specific sentence: 'If there are retaliatory tariffs imposed by countries to which we are exporting, we may not be able to pass the cost through to our customers or our products could be less competitive as compared to competitors.' This was removed in the current filing while retaining the generic tariff risk boilerplate. For a company whose entire business model depends on international nuclear plant deployments (Romania, South Korea, etc.), the removal of the specific retaliatory tariff/cost pass-through risk is material, particularly given the escalated tariff environment in 2025.",
+      "investigation_action": "Assess whether SMR has experienced or anticipates retaliatory tariff impacts on its international deployments, and why this specific risk language was removed during a period of heightened trade tensions."
+    },
+    {
+      "flag_number": 8,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2c057c9f64804c1c",
+        "peer": "f91d2116e01cd08b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is misdirected\u2014it suggests JBI is underreporting regulatory risks compared to SMR. However, SMR (NuScale) operates in nuclear energy requiring NRC design certification, while JBI (Janus International) is a building products company. The regulatory environments are fundamentally different, and SMR's extensive NRC disclosure reflects its unique nuclear licensing needs rather than a peer comparison benchmark. This is a genuine business difference, not disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1b05db4fbf8dfad7",
+        "peer": "94b033a2a830bc26"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "SMR's disclosure on capital raising constraints is notably sparse\u2014it mentions limited authorized shares and the ATM program dependency but provides no quantification of remaining runway, burn rate relative to available capital, or alternative financing options. While JBI is a very different company (leveraged, revenue-generating), the comparison highlights that SMR's capital raising risk disclosure lacks the specificity one would expect for a pre-revenue company that is entirely dependent on equity issuance. The authorized share constraint is stated without disclosing how many shares remain or what approximate capital this represents.",
+      "investigation_action": "Quantify SMR's remaining authorized share capacity in dollar terms at current prices, assess burn rate against available capital, and evaluate whether the company has disclosed alternative financing plans if stockholder approval for additional shares is not obtained."
+    },
+    {
+      "flag_number": 10,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "05dd72cacfd59286",
+        "peer": "4d2159f4f9482a2d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag actually shows SMR providing extensive, detailed supply chain risk disclosure about its dependencies on ENTRA1, Fluor, Doosan, IHI, Sarens, JGC, Samsung C&T, and GS Energy, including specific contractual terms and termination consequences. The flag appears to be comparing in the wrong direction\u2014SMR's disclosure is robust. JBI's comparatively generic disclosure reflects its simpler supply chain as a building products company rather than a nuclear technology developer.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "230f86ffc4a9f1b3",
+        "peer": "fea25a0812ad5b12"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "PRLB (Proto Labs) is a profitable, debt-light manufacturing company whose minimal debt financing disclosure reflects its actual capital structure, not disclosure evasion. SMR's ATM program and liquidity disclosures are appropriate for its pre-revenue, capital-dependent stage. The peer comparison is not meaningful given fundamentally different financial profiles. The PRLB block cited is essentially just a table of contents reference and interest income comment, not a comparable disclosure section.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 12,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a3cbb55f2e35f7e5",
+        "peer": "cb347a0c522ecd52"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "While the peer comparison with PRLB is not directly meaningful (PRLB is profitable with real assets to amortize), this flag inadvertently highlights that SMR's current financial sustainability disclosure has been reduced to a single sentence about a prior-year restructuring charge. For a pre-revenue company burning significant cash, the absence of forward-looking financial sustainability discussion is notable. The prior filing (Flag 5) contained much more substantive language about managing expenses, cash reserves, and the need for customer commitments.",
+      "investigation_action": "Assess whether SMR's drastically reduced financial sustainability discussion in the current filing is consistent with its actual cash position and burn rate, and whether the removal of forward-looking liquidity management language signals declining confidence in the path to commercialization."
+    },
+    {
+      "flag_number": 13,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2c057c9f64804c1c",
+        "peer": "735ed1a5e75e35c9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "SMR operates under NRC nuclear regulatory oversight requiring detailed design certification disclosure, while PRLB (Proto Labs) is a custom parts manufacturer whose regulatory exposure is primarily tax-related. The divergence in regulatory disclosure reflects entirely different business models and regulatory environments, not disclosure evasion by either party.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "NuScale (SMR) shows a pattern of reducing quantitative specificity in its MD&A disclosures between the Q1 and Q2 2025 10-Q filings. The most concerning changes involve the removal of a $69.3M purchase commitment payment schedule, elimination of financial sustainability language including a $7.4M USTDA contingent obligation, and the deletion of a specific retaliatory tariff risk factor\u2014all occurring during a period of heightened trade tensions and as the company remains pre-revenue and capital-constrained. While several peer comparison flags are false positives due to fundamental business differences, the temporal degradation flags paint a credible picture of reduced transparency on material financial commitments and risks.",
+    "top_concerns": [
+      "Removal of $69.3M LLM purchase commitment payment timeline and introduction of unquantified 'additional long-term commitments' without dollar breakdowns",
+      "Elimination of forward-looking financial sustainability language and $7.4M USTDA contingent obligation from MD&A despite ongoing pre-revenue cash burn",
+      "Deletion of specific retaliatory tariff cost pass-through risk language from Risk Factors during period of escalated international trade tensions"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 4,
+    "dismissed_count": 6
+  },
+  "_meta": {
+    "ticker": "SMR",
+    "model": "claude-opus-4-6",
+    "input_tokens": 10732,
+    "output_tokens": 3580,
+    "timestamp": "2026-04-09T12:30:09.825715"
+  }
+}

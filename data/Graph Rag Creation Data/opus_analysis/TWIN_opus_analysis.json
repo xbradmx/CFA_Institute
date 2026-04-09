@@ -1,0 +1,79 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "38d9034804c16c1d",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flagged prior text discusses integration challenges from a business combination, which is more accurately categorized as M&A integration risk rather than human capital disclosure. Furthermore, the current filing (Flag 2) still contains language about Katsa and Kobelt integration assumptions, suggesting this content was consolidated rather than removed. The screening layer misclassified 'management attention' language as human capital.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "49cd408a6a7a2a21",
+        "current": "cbc70bd406587789",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "Three specific risk disclosures were removed without replacement: (1) the discussion of oil price decreases and reduced demand in oil/energy markets affecting sales and profitability, (2) the detailed discussion of product disruptions having adverse effects on profitability and financial condition, and (3) the explicit caveat that insurance recovery 'may not offset the lost sales or increased costs' during production disruptions. These are concrete, quantifiable risk factors that were collapsed out while the company added 'Kobelt' to the Katsa integration language. The oil price sensitivity disclosure is particularly notable as it provided investors with sector-specific demand risk information.",
+      "investigation_action": "Analyst should determine whether TWIN's oil/energy market exposure has materially changed to justify removing that risk factor, review revenue mix by end-market to assess continued energy sector dependence, and verify whether insurance coverage terms have changed to warrant dropping the insurance recovery limitation language."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "18b82efe8005fd2b",
+        "peer": "0647e873a92e68ad"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "GHM's detailed asbestos litigation disclosure and whistleblower investigation reflect company-specific legal exposures (asbestos-containing products, Indian subsidiary misconduct) that are not necessarily applicable to TWIN's business. TWIN's disclosed text relates to credit agreement security arrangements, which is a different topic entirely. The absence of asbestos litigation or similar legal contingency disclosure likely reflects genuine business differences rather than disclosure evasion. Without evidence that TWIN has comparable legal exposures, the divergence is not meaningful.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2a6fccce8ea6fedc",
+        "peer": "80b8754536e968d0"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 the screening reason states that GTEC lacks supply chain discussion while TWIN provides it, meaning TWIN is actually the more transparent company here. TWIN explicitly discusses 'improving supply chain and operational performance,' 'general easing of supply chain constraints,' and shipping delays, which constitutes substantive supply chain disclosure. The GTEC peer text is a single sentence about a partnership announcement with no supply chain content. This flag does not indicate disclosure degradation by TWIN.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Of four flags, only one represents a genuine disclosure concern \u2014 the removal of specific oil price sensitivity, product disruption impact, and insurance recovery limitation language from Risk Factors. The remaining flags were either misclassified, reflected legitimate business differences between peers, or were inverted in their logic. TWIN's overall disclosure quality appears stable with one area warranting monitoring.",
+    "top_concerns": [
+      "Removal of oil/energy market demand sensitivity disclosure from Risk Factors without explanation, potentially obscuring material end-market concentration risk",
+      "Elimination of insurance recovery limitation language that previously warned investors of unrecoverable losses during production disruptions",
+      "Pattern of consolidating multiple specific risk factors into more generic language, reducing granularity available to investors"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 0,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "TWIN",
+    "model": "claude-opus-4-6",
+    "input_tokens": 2782,
+    "output_tokens": 1177,
+    "timestamp": "2026-04-09T12:37:51.257208"
+  }
+}

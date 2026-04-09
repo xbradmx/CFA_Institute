@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "79a54c0a565375ba",
+        "current": "c4cc6ffedfd1d829",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period filing included a detailed income tax provision table with specific dollar amounts ($4.5M vs. $7.4M), period-to-period change ($2.9M decrease, -39.2%), percentage of revenue (2.3% vs. 2.9%), effective tax rates (13.6% vs. 12.5%), and explanatory discussion of drivers (decrease in pre-tax book income, stock-based compensation). The current period filing completely removes all of this quantitative detail, collapsing the section to just two generic sentences about R&D budgets and industry investment requirements. This is not a consolidation elsewhere\u2014it is a material deletion of tax provision disclosure from the MD&A.",
+      "investigation_action": "Verify whether the income tax provision discussion was relocated to another section of the Q2 10-Q filing or notes to financial statements. If not, request clarification from management on why tax provision detail was removed, and assess whether ETR trends or pre-tax income declines are worsening."
+    },
+    {
+      "flag_number": 2,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f7a74994efd98892",
+        "peer": "d5bba51535a8b618"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ACMR and ACLS operate in different segments of the semiconductor equipment industry\u2014ACMR in wet cleaning/processing equipment and ACLS in ion implantation. Warranty liability profiles can differ substantially by product type. ACLS's block discusses R&D spending trends, which is a different topic entirely. The absence of a warranty roll-forward table in this specific MD&A block does not indicate omission\u2014ACLS likely discloses warranty accruals in the notes to financial statements, which is standard practice. This comparison conflates different disclosure locations rather than identifying genuine evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c04878a5a3843c6a",
+        "peer": "7890c0da3766dddc"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The extensive China-specific regulatory, legal, and geopolitical disclosures from ACMR reflect that company's unique corporate structure with substantial mainland China operations, a STAR Market listing, China subsidiaries on the BIS Entity List, and an active Seoul Customs Office investigation. ACLS is a U.S.-based ion implanter company (headquartered in Beverly, MA) without comparable China-domiciled operating subsidiaries or similar regulatory exposure. The ACLS block appropriately discusses U.S. tax legislation (OBBBA) and FDII deductions relevant to its own tax position. The divergence reflects genuine business differences, not disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "16514b7ce2b69e06",
+        "peer": "7f85b1c71d774945"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually flags VECO as the company with less disclosure, not ACLS. ACLS provides a thorough critical accounting estimates discussion referencing historical experience, management evaluation of estimates, and a cross-reference to the 2024 10-K. The VECO block is about amortization expense, which is a different topic entirely. This flag is incorrectly oriented\u2014ACLS is the better discloser here, and the comparison blocks are not even on the same subject matter.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "211ab80eb5bbbd14",
+        "peer": "381bc1988b06c5c3"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "VECO explicitly states 'We expect higher costs in future periods as we incur tariffs on imported materials from overseas suppliers, as well as higher costs from domestic suppliers incurring tariffs on their imports,' while ACLS makes no mention of tariffs despite operating in the same semiconductor equipment sector with global supply chains. ACLS does provide detailed margin data and explains margin drivers (favorable Purion system mix, parts/upgrades), but the complete absence of tariff impact discussion is notable given the current trade environment. However, ACLS's product gross margins actually improved year-over-year, which may legitimately explain less emphasis on cost pressures.",
+      "investigation_action": "Investigate ACLS's supply chain exposure to tariff-affected imports (components, materials from Asia). Review earnings call transcripts for any management commentary on tariff impacts. Assess whether the company's improving product margins mask underlying tariff costs that could surface in future periods."
+    },
+    {
+      "flag_number": 6,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "df8acabe20927b79",
+        "peer": "9741d02b1c84d7c8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted\u2014it identifies VECO as the weaker discloser, not ACLS. ACLS provides granular personnel cost breakdowns ($35.9M representing 61.5% of opex, with detailed period-over-period comparisons and specific drivers like variable compensation and stock-based compensation). VECO provides only a single generic sentence about R&D investment. ACLS is the stronger discloser on human capital in this comparison, so there is no concern about ACLS's disclosure quality on this topic.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Of the six flags raised, only one represents a genuine disclosure degradation concern: the removal of detailed income tax provision data from the Q2 10-Q MD&A compared to Q1. One borderline flag relates to the absence of tariff impact discussion, which warrants monitoring but may reflect ACLS's legitimately different margin trajectory. The remaining four flags are dismissed due to incorrect flag orientation (ACLS was actually the better discloser), irrelevant peer comparisons reflecting genuine business differences, or mismatched disclosure sections.",
+    "top_concerns": [
+      "Removal of detailed income tax provision table and ETR discussion from MD&A between Q1 and Q2 filings\u2014verify whether this was relocated or genuinely deleted",
+      "Absence of any tariff impact disclosure despite operating semiconductor equipment with global supply chains in a heightened tariff environment",
+      "Services gross margin deterioration (turning negative at -5.4% and -0.7%) attributed only to vague 'changes in the mix of service contracts' without further specificity"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 1,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "ACLS",
+    "model": "claude-opus-4-6",
+    "input_tokens": 7434,
+    "output_tokens": 1909,
+    "timestamp": "2026-04-09T11:42:21.621830"
+  }
+}

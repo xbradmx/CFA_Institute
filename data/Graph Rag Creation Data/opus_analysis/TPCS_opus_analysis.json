@@ -1,0 +1,177 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "966760256a52e8e0",
+        "current": "aa9a33ad2844727c",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed specific dollar amounts for SG&A changes at each subsidiary (Ranor +$101, Stadco +$35, Ranor +$22) with explanations tied to compensation, office costs, and travel. The current period replaces all of this with a single line stating 'Direct labor hours increased by 2%,' which is a fundamentally different metric (labor hours vs. SG&A cost drivers) and eliminates subsidiary-level granularity. This is a clear loss of quantitative and qualitative detail on compensation-related expenses.",
+      "investigation_action": "Request subsidiary-level SG&A breakdowns from management. Determine whether the shift away from compensation cost disclosure is masking wage inflation, headcount changes, or deteriorating cost control at Stadco specifically."
+    },
+    {
+      "flag_number": 2,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "ddf4a54bdbbcefd0",
+        "current": "80d5210bf7317028",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period explicitly quantified Stadco's operating loss increases ($340/66% quarterly, $1,272/73% nine-month) and included a clear remediation statement ('We must mitigate our recurring operating losses... efficiently increase utilization... improve the manufacturing process'). The current period completely removes all operating loss figures and the mitigation language. Given that Stadco's production issues were described as ongoing, the disappearance of these figures without explanation is a significant disclosure degradation.",
+      "investigation_action": "Analyze the current quarter's segment-level financials to determine whether Stadco's operating losses have worsened, stabilized, or improved. Press management on the status of the throughput remediation plan and why quantitative loss metrics were dropped from the narrative."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "ff06ec3aadd07b1d",
+        "current": "ffde8e1edefb0e01",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period disclosed Ranor's ISO 9001:2015 certification and specific details about a registration statement timeline (declared effective January 31, 2025). The current period drops Ranor's ISO certification and the registration statement details entirely. The registration statement removal could be seen as routine since it was already completed, but the omission of Ranor's ISO 9001:2015 certification is notable since Stadco's equivalent certifications are retained. This creates an asymmetry that could signal a lapsed certification.",
+      "investigation_action": "Confirm whether Ranor's ISO 9001:2015 certification is still active. If the certification lapsed, this could impact Ranor's ability to win contracts, particularly in the defense sector where quality certifications are often mandatory."
+    },
+    {
+      "flag_number": 4,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "c639b40fc95855f8",
+        "current": "cd8ad5b7729c442b",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This flag substantially overlaps with Flag 2 but in the Risk Factors section. The prior period disclosed Ranor's operating income increase ($34/3%), Stadco's operating loss increases ($340/66% and $1,272/73%), and a specific remediation roadmap ('We will follow that roadmap and if necessary, implement new controls'). The current period retains the general mitigation statement but removes all quantitative performance figures and the roadmap commitment. Notably, a new reference to 'inadequate segregation of duties' risk appears, suggesting potential internal control concerns that may compound the Stadco losses.",
+      "investigation_action": "Investigate the new 'inadequate segregation of duties' disclosure \u2014 determine whether this signals an identified material weakness or significant deficiency. Cross-reference with any auditor communications about internal controls at Stadco."
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "0edc954ce20908a8",
+        "current": "8765f75208337421",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period disclosed the PAGA litigation, mediation, settlement, and final court-approved resolution in extensive detail. Since the settlement was fully paid by December 12, 2024 and the court approved it on October 8, 2024, the removal of this disclosure in the current period is appropriate \u2014 the matter is fully resolved. The remaining boilerplate language ('we are not a party to any material legal or administrative proceedings') is consistent with a company that has concluded its litigation. The loan default acknowledgment removal is addressed separately under the debt-related disclosures.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3fdf075013d0ac36",
+        "peer": "e0ab8c012f1f6881"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason claims TPCS lacks substantive financial sustainability discussion, but the target passage actually includes meaningful detail: a $5,700 valuation allowance, explicit acknowledgment of recent operating losses, and recognition that negative evidence outweighs positive. VATE's passage is largely a financial statement dump rather than a more transparent narrative. TPCS's disclosure on this topic, while not extensive, is actually reasonably specific given the company's much smaller size. The peer comparison is not well-matched (VATE is a diversified holding company vs. TPCS's niche manufacturing).",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "80d5210bf7317028",
+        "peer": "0df20b56691422fa"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag is directionally reversed from a concern about TPCS \u2014 it actually suggests VATE is the one with less detailed operational disclosure. TPCS provides substantial detail about its manufacturing processes, capabilities, and quality controls. The peer comparison here validates that TPCS is at least adequately disclosing its operational capabilities. This flag does not indicate disclosure degradation at TPCS.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ffde8e1edefb0e01",
+        "peer": "73c122aea2f6c50a"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "TPCS provides only three lines of compliance/certification boilerplate (ITAR registration, AS 9100 D, ISO 9001:2015) whereas VATE has extensive legal proceedings disclosure. However, VATE is a much larger, diversified conglomerate with multiple active litigation matters. TPCS's brevity could reflect genuinely simpler legal exposure, but when combined with the temporal finding (Flag 5) showing that a resolved PAGA matter was disclosed in detail previously, the current filing's extremely terse legal disclosure warrants mild concern \u2014 especially given the unresolved covenant violations discussed in the debt section.",
+      "investigation_action": "Verify whether TPCS has any new or pending legal or regulatory matters that should be disclosed but are not. The covenant violation situation with Berkshire Bank could potentially trigger lender action that constitutes a material legal contingency."
+    },
+    {
+      "flag_number": 9,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "70d3b0f7a02f1466",
+        "peer": "fea25a0812ad5b12"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason claims PRLB is downplaying debt risk compared to TPCS, which is the opposite of a concern about TPCS. In fact, TPCS provides extensive and transparent disclosure about its covenant violations, lender rights, refinancing activities, and the risk of accelerated repayment. PRLB's minimal debt disclosure reflects its different capital structure (the peer passage references only interest income, suggesting minimal debt). This flag actually highlights that TPCS is being relatively forthcoming on debt risk.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3fdf075013d0ac36",
+        "peer": "cb347a0c522ecd52"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "PRLB is a fundamentally different business \u2014 a profitable, technology-driven digital manufacturing platform with $261M in semi-annual revenue and positive operating income, versus TPCS which is a small, loss-making defense subcontractor. PRLB's extensive quantitative disclosures reflect its larger scale and complexity, not superior transparency on comparable risks. TPCS actually discloses its $5,700 valuation allowance, operating losses, and negative evidence assessment, which is appropriate for its situation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ab297f22fa038f70",
+        "peer": "5ba37f936879d5e7"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "TPCS derives over 95% of Ranor's revenue from the defense sector and operates under ITAR, yet its geopolitical/macro risk discussion is limited to two generic sentences about raw materials, commodity prices, macroeconomic factors, and political conditions. PRLB, which has less concentrated defense exposure, provides more specific discussion of foreign currency impacts. For a company so heavily dependent on US defense spending and government contracting, the absence of any discussion about defense budget risks, sequestration, continuing resolutions, or tariff impacts on steel procurement is notable.",
+      "investigation_action": "Assess TPCS's exposure to defense budget fluctuations, potential government shutdown impacts, and tariff effects on steel and raw material costs. A company with 95%+ defense revenue should be disclosing specific risks around government contracting and procurement cycles."
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "TPCS shows a clear pattern of disclosure degradation between its prior and current 10-Q filings. The most concerning changes involve the complete removal of subsidiary-level operating loss quantification at Stadco (where losses had been growing at 66-73%), elimination of specific remediation plan details, and the replacement of detailed SG&A compensation breakdowns with a single vague labor hours metric. These temporal changes are compounded by active covenant violations with Berkshire Bank where no waiver has been granted, creating material going concern risk that contrasts with increasingly opaque operational disclosures.",
+    "top_concerns": [
+      "Complete removal of Stadco operating loss quantification ($340/66% quarterly, $1,272/73% nine-month) and remediation roadmap details despite ongoing production issues \u2014 suggests potential worsening of losses",
+      "Active Berkshire Bank covenant violations with no waiver granted, lender retaining acceleration rights, and probable future non-compliance \u2014 combined with new 'segregation of duties' risk language suggesting potential internal control deficiencies",
+      "Elimination of subsidiary-level SG&A detail (specific dollar amounts for Ranor and Stadco compensation changes) replaced by a single aggregate labor hours metric, obscuring cost management visibility"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 3,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "TPCS",
+    "model": "claude-opus-4-6",
+    "input_tokens": 16245,
+    "output_tokens": 3206,
+    "timestamp": "2026-04-09T12:36:48.011912"
+  }
+}

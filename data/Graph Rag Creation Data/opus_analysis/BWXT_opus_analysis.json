@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "395ac52e0bb19b5a",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed sentence is a single line about Kinectrics' headcount ('over 1,300 employees located across 20 sites worldwide'). This is a minor factual detail likely included in the prior quarter as context around the Kinectrics acquisition and may have been consolidated into the annual filing or another section. Its absence from a subsequent 10-Q does not represent material obfuscation of human capital risks.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "32131f8254f47438",
+        "current": "442faa3e7574f0ba",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "Several material quantitative disclosures were removed: restricted cash breakdowns ($6.5 million total, split between decommissioning and reinsurance reserves), long-term investment portfolio detail ($8.5 million fair value in mutual funds), surety bond facility terms and risks, and the discussion of cumulative catch-up adjustments on contract estimates. The pension obligation nearly doubled from ~$99.0 million to ~$190.3 million (likely reflecting the Kinectrics acquisition), yet the surrounding context about how the company manages liquidity\u2014restricted cash, investment portfolio, surety bonds\u2014was stripped out rather than updated. This is a material reduction in transparency around financial sustainability at a time when obligations are growing significantly.",
+      "investigation_action": "Investigate why restricted cash, long-term investment, and surety bond disclosures were removed coincident with the near-doubling of pension obligations. Determine whether these items are disclosed elsewhere in the filing or have been eliminated. Assess whether the surety bond facilities remain in place and whether collateral requirements have changed."
+    },
+    {
+      "flag_number": 3,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "9baac8e57467f3c7",
+        "current": "cf2ce0ddb456ca1f",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained specific and informative language about the timing of major U.S. Government awards ('typically received following Congressional approval of the budget...which starts October 1'), the relationship between annual funding approvals and total program values ('the total values of the underlying programs are significantly larger'), and detailed effective tax rate drivers. The current period collapses this into a single vague sentence: 'We are subject to the budgetary and appropriations cycle of the U.S. Government as it relates to our Government Operations segment.' This removes actionable context about contract award timing and revenue visibility that is highly material for a company where government contracts drive a substantial portion of revenue.",
+      "investigation_action": "Determine whether the removal of contract award timing and program value context is related to any changes in the government contracting pipeline or budget environment. Ask management about the current status of major program funding cycles and whether any awards have been delayed or are at risk."
+    },
+    {
+      "flag_number": 4,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "442faa3e7574f0ba",
+        "peer": "28721aa8d30e56ff"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted\u2014it suggests PSIX is deficient relative to BWXT, not that BWXT is underperforming on disclosure. BWXT actually provides explicit pension obligation figures ($190.3 million) and contribution estimates ($13.3 million). The divergence reflects genuine business model differences: PSIX (power solutions/data centers) likely does not have the same legacy defined benefit pension exposure as BWXT (nuclear operations). This is not a BWXT disclosure concern.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "773318ba980212db",
+        "peer": "0d7a3fb81cfbbad9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "BWXT provides extensive, detailed operational and product descriptions covering naval nuclear components, uranium downblending, advanced materials, nuclear weapons site management, commercial steam generators, and lifecycle services. PSIX's single-sentence disclosure about data center manufacturing is the less transparent party. This flag identifies no deficiency in BWXT's disclosure; the divergence reflects entirely different business models and complexity levels.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2562a96a0e66ceeb",
+        "peer": "ed4d0ac8dd21493f"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The flag correctly notes that BWXT's MD&A excerpt for its CANDU segment describes capabilities ('leading supplier of nuclear fuel, fuel handling systems...') but does not discuss supply chain risks or mitigation efforts, while PSIX explicitly addresses tariff risk mitigation, strategic sourcing, and supply chain agility. Given BWXT's complex nuclear supply chain involving specialized materials and international operations (including the Kinectrics acquisition with 20 global sites), the absence of supply chain risk discussion in the MD&A is notable, though it may be addressed in the Risk Factors section rather than MD&A.",
+      "investigation_action": "Check whether BWXT addresses supply chain risks in its Risk Factors section or elsewhere in the 10-Q. If not, investigate whether BWXT faces any supply chain vulnerabilities related to nuclear-grade materials, specialty metals, or tariff exposure following the Kinectrics acquisition's international footprint expansion."
+    },
+    {
+      "flag_number": 7,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "442faa3e7574f0ba",
+        "peer": "c3f2da4515861b9b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag again identifies the peer (BC/Brunswick) as the less transparent party regarding pension obligations compared to BWXT. BWXT provides specific pension obligation and contribution figures. BC's disclosure focuses on restructuring charges, free cash flow, and capital strategy\u2014reflecting different business priorities and liability profiles. This does not indicate a BWXT disclosure concern.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "773318ba980212db",
+        "peer": "3978b9b4bea74b13"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "BWXT provides highly detailed operational and product disclosure across both its Government Operations and Commercial Operations segments. BC (Brunswick) discusses segment earnings and restructuring charges in a manner consistent with its recreational products business. The divergence reflects fundamentally different business models\u2014nuclear technology vs. marine/recreation\u2014and BWXT is the more transparent party in this comparison. This flag does not identify a BWXT disclosure deficiency.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "BWXT shows two genuine temporal disclosure degradation signals: the removal of material quantitative detail around restricted cash, long-term investments, and surety bond facilities coincident with a near-doubling of pension obligations, and the replacement of specific government contract award timing and program value context with a single vague sentence. The peer divergence flags are largely misdirected, as BWXT is generally the more transparent party, though the absence of supply chain risk discussion merits monitoring.",
+    "top_concerns": [
+      "Removal of restricted cash, long-term investment, and surety bond disclosures at the same time pension obligations nearly doubled to $190.3 million\u2014investigate whether liquidity position has deteriorated or collateral requirements have changed",
+      "Replacement of specific government contract award timing and program value context with generic boilerplate\u2014may signal reduced visibility into the contracting pipeline or upcoming funding uncertainties",
+      "Absence of supply chain risk discussion in MD&A despite complex nuclear supply chain and expanded international operations through Kinectrics acquisition"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 1,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "BWXT",
+    "model": "claude-opus-4-6",
+    "input_tokens": 4473,
+    "output_tokens": 2276,
+    "timestamp": "2026-04-09T11:50:27.881508"
+  }
+}

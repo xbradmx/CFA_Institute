@@ -1,0 +1,121 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "041732ffd7ee9e5e",
+        "current": "8cd80679ce045e40",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period provided specific causal attribution for expense increases ('severance-related personnel, occupancy, and information technology costs'), while the current period block is an entirely generic risk factor bullet-point list with no mention of human capital cost drivers whatsoever. This is not a like-for-like comparison of MD&A narrative sections\u2014the current block appears to be from a risk factors summary rather than the expense discussion\u2014but the absence of equivalent specificity in the current filing is concerning if this detail was truly removed rather than relocated.",
+      "investigation_action": "Verify whether the specific expense driver language (severance, occupancy, IT costs) appears elsewhere in the current 10-Q's MD&A results of operations section. If not, ask management why granular cost attribution was dropped and whether severance activity is ongoing."
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "7e4c780bfdd3b909",
+        "current": "fa173cb206473fe6",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period explicitly disclosed reliance on 'one distributor for our products in China,' concentration of revenue in China, key personnel risk, and contract manufacturer disruption risk. The current period replaces all of these with a generic list of boilerplate risks ('Any disruption in these relationships could harm our sales'). The disappearance of China-specific single-distributor risk and supply chain disruption language is material given XPEL's significant China revenue and the current geopolitical environment. This appears to be deliberate dilution of previously specific risk disclosures.",
+      "investigation_action": "Determine whether China distributor concentration has changed (e.g., diversification to multiple distributors) or whether the risk still exists but is no longer disclosed. Cross-check the full 10-K risk factors section to see if these items were consolidated there. Press management on China revenue concentration and supplier dependency status."
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "76a17fbe6920cde4",
+        "peer": "e934673e4926b45f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "NPK recorded a specific vendor deposit impairment ($2.7M) unique to its Housewares/Small Appliances segment, which is an idiosyncratic event unrelated to XPEL's business. XPEL's goodwill disclosure follows standard GAAP requirements\u2014it states impairment is tested annually and no impairment was recognized, which is appropriate when no triggering event has occurred. The comparison reflects genuine business differences rather than disclosure evasion by XPEL.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8cd80679ce045e40",
+        "peer": "7cce68f2771e2c50"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "NPK provides dollar-level quantification of personnel cost changes by segment (e.g., '$722,000 increase in personnel costs'), while XPEL's current block provides only a generic risk factor list with no human capital discussion whatsoever. However, the XPEL block appears to be from a risk factor summary section rather than the operating expense discussion, so the comparison may be structurally misaligned. The concern is valid if XPEL's full MD&A lacks any quantification of SG&A personnel cost drivers.",
+      "investigation_action": "Review XPEL's full operating expense discussion in the current 10-Q to confirm whether personnel cost drivers are quantified elsewhere. If absent, this represents a meaningful gap versus peers in explaining headcount and compensation trends."
+    },
+    {
+      "flag_number": 5,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "fa173cb206473fe6",
+        "peer": "cb9d4d56c6b7f5bd"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually flags NPK as the party potentially downplaying supply chain risk, not XPEL. XPEL is credited with having more detailed supply chain risk disclosure. This flag does not indicate disclosure degradation by XPEL\u2014it suggests XPEL is doing comparatively better than its peer on this topic. The flag is misdirected.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "76a17fbe6920cde4",
+        "peer": "02c19081000368fd"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "RGR provides detailed capital expenditure guidance, dividend policy (40% of net income), and self-insurance disclosure, while XPEL's extracted block focuses narrowly on goodwill and fixed asset schedules without addressing capital allocation, liquidity, or forward capex expectations. The comparison is somewhat unfair as these may be in different sections of XPEL's filing, but the absence of comparable capital allocation transparency in XPEL's MD&A would be a legitimate gap for a company actively making acquisitions ($46.5M in goodwill).",
+      "investigation_action": "Review XPEL's full liquidity and capital resources section for capex guidance, dividend/buyback policy, and acquisition pipeline commentary. Compare depth of forward-looking capital allocation discussion to prior periods."
+    },
+    {
+      "flag_number": 7,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1e54dbf492f0b4d3",
+        "peer": "7d6575ce926b5564"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually credits XPEL with providing more specific geopolitical/macro disclosure than RGR, including discussion of the OBBBA tax legislation and China operations tax impact. This flag identifies RGR as the less transparent party, not XPEL. XPEL's disclosure on this topic appears adequate and more detailed than its peer.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "The most concerning finding is the temporal disappearance of specific China distributor concentration risk, China revenue risk, key personnel risk, and supply chain disruption risk language from XPEL's risk factor summary (Flag 2), replaced by generic boilerplate. The loss of specific expense driver attribution (Flag 1) compounds the picture of reduced MD&A granularity. Several peer comparison flags were misdirected or reflected structural differences rather than XPEL-specific degradation.",
+    "top_concerns": [
+      "Removal of China single-distributor dependency and revenue concentration risk language from current filing without explanation (Flag 2)",
+      "Loss of specific expense driver attribution (severance, occupancy, IT costs) replaced by generic risk factor list (Flag 1)",
+      "Potential gap in capital allocation and forward capex disclosure relative to acquisition-active peers (Flag 6)"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 2,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "XPEL",
+    "model": "claude-opus-4-6",
+    "input_tokens": 6768,
+    "output_tokens": 2016,
+    "timestamp": "2026-04-09T12:43:17.522319"
+  }
+}

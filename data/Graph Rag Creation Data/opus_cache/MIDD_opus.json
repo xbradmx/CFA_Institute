@@ -1,0 +1,121 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "f40e42bc9834478e",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing included specific quantitative detail on restructuring expenses, naming affected segments (Residential Kitchen Equipment Group and Commercial Foodservice Group) and a precise $33.7 million figure for production equipment and manufacturing facility upgrades. The complete absence of any restructuring discussion in the current MD&A removes visibility into ongoing cost restructuring activity and capex commitments. This is not a routine editorial change\u2014it removes material operational context about headcount reductions and facility consolidations.",
+      "investigation_action": "Analyst should verify whether restructuring activities have genuinely concluded or whether costs are being reclassified elsewhere in the filing. Check the notes to financial statements and segment disclosures for any restructuring charges or asset impairments in the current period, and compare capex figures to see if the $33.7 million upgrade program is still underway."
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "79140548c250b2dd",
+        "peer": "57515a323aeb4b5c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The peer comparison is fundamentally flawed. The HAYW passages are primarily balance sheet data, equity roll-forwards, and detailed notes to financial statements\u2014standard GAAP disclosures that MIDD would also have in its own financial statements section. The MIDD text shown is from MD&A commentary on pension costs and strategic outlook. The comparison conflates financial statement line items with MD&A narrative. MIDD's pension disclosure actually provides specific dollar amounts and explanations for changes, which is reasonable MD&A practice.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "14bebb2afeb9cbca",
+        "peer": "1055371c34a6cac3"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The MIDD text provided under 'regulatory_legal' contains only tax rate discussion with no legal or litigation disclosure whatsoever. Meanwhile, HAYW provides extensive detail on a $22 million wrongful death settlement, a securities class action, and a derivative lawsuit. However, HAYW's extensive litigation disclosures reflect HAYW-specific matters (securities fraud class actions, product liability), not necessarily industry-wide risks MIDD would face. The flag is borderline because we cannot confirm from the excerpts whether MIDD has comparable pending litigation that it is failing to disclose, or whether it simply has fewer active matters.",
+      "investigation_action": "Analyst should review MIDD's full 10-Q for legal proceedings (typically in notes to financial statements or Part II, Item 1) to verify whether litigation disclosures exist elsewhere in the filing. Also check the 10-K for any ongoing material legal matters that should carry forward into quarterly filings."
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "30a6aab1513e436b",
+        "peer": "0c1b1e6146f9db46"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted\u2014the screening reason states that HAYW may be downplaying supply chain risk relative to MIDD, but the task is to evaluate MIDD's disclosure quality. MIDD is actually the more transparent party here, explicitly acknowledging supply chain constraints, their negative impact on sourcing and shipments, and specific mitigation efforts including alternative and dual sourcing. MIDD's disclosure on this topic is detailed and candid, not degraded.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f00f37b84a47952f",
+        "peer": "76ee17b0bc3dcf47"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason states that SXI provides only generic boilerplate on tariffs compared to MIDD's more detailed disclosure\u2014meaning MIDD is the better discloser here. MIDD provides specific FX impacts ($8.7 million positive, $1.6 million unfavorable), identifies affected geographies (Latin America, Asia), quantifies other expense at $4.1 million and $6.4 million, and discusses tariff uncertainty with specificity. This flag actually demonstrates MIDD's disclosure strength on geopolitical/macro risks, not degradation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "14bebb2afeb9cbca",
+        "peer": "7a330163f17bacd6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag compares MIDD's tax rate disclosure against SXI's environmental remediation disclosure, which are fundamentally different topics. The screening reason suggests SXI is downplaying environmental risk relative to MIDD, but MIDD's excerpt contains zero environmental discussion\u2014it is purely about effective tax rates. The comparison is nonsensical as a disclosure degradation signal for either company. SXI's $0.1 million environmental charge is immaterial, and there is no evidence MIDD faces comparable environmental issues.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "30a6aab1513e436b",
+        "peer": "b05986cae8f36e88"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "As with Flag 4, this flag is inverted. The screening reason states SXI may be downplaying supply chain risk relative to MIDD. MIDD provides detailed, specific disclosure about ongoing supply chain constraints, naming key component distress and tariff-driven uncertainty, along with concrete mitigation strategies. MIDD is the more transparent company on this topic. SXI's two-sentence generic disclosure reflects either a genuinely different supply chain posture (regional sourcing) or lesser transparency on SXI's part\u2014neither reflects MIDD disclosure degradation.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Of the seven flags screened, only one represents a genuine disclosure concern\u2014the disappearance of specific restructuring expense detail including a $33.7 million equipment upgrade figure from the prior quarter's MD&A. The remaining six flags are largely misaligned peer comparisons, many of which actually demonstrate MIDD's superior transparency on supply chain, tariff, and FX topics relative to peers. MIDD's overall disclosure quality appears reasonable, with the primary area warranting monitoring being the restructuring activity transparency.",
+    "top_concerns": [
+      "Disappearance of restructuring expense details including the $33.7 million production equipment upgrade and segment-specific headcount reduction disclosures\u2014verify whether restructuring is complete or costs are being obscured",
+      "Confirm that legal proceedings and litigation disclosures exist in the notes or Part II of the current 10-Q, as the MD&A excerpts provided contain no litigation discussion",
+      "Monitor whether the 'internal restructuring' driving discrete tax benefits is adequately explained, as it drove a 300 basis point reduction in effective tax rate"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 1,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "MIDD",
+    "model": "claude-opus-4-6",
+    "input_tokens": 8361,
+    "output_tokens": 2061,
+    "timestamp": "2026-04-09T12:14:37.657734"
+  }
+}

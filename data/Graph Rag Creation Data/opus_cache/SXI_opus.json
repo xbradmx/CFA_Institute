@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "7db6c8a61a9c6712",
+        "current": "38b9f02100a90569",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The current period dropped the specific detail about SG&A being 'primarily impacted by increased research and development spending to drive future product initiatives' and removed the enumeration of defined benefit/contribution plans (e.g., 'two multi-employer pension plans,' 'six defined benefit plans including two in the U.S. and Japan and one each in the U.K. and Germany'). However, some of the remaining language (employee relations, benefit plans) is unchanged, and the retirement plan specifics may have been consolidated into notes to financial statements. The loss of the SG&A driver commentary is more notable as it reduces transparency on cost dynamics.",
+      "investigation_action": "Verify whether the detailed retirement plan enumeration and SG&A driver commentary was relocated to the financial statement notes or elsewhere in the filing; if not, ask management why the specificity was reduced."
+    },
+    {
+      "flag_number": 2,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "cca6284bcb503370",
+        "current": "29ecbf4b483d7067",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed specific restructuring dollar amounts ($8.2 million in FY2024, $3.8 million in FY2023) with segment-level attribution (Engraving, Electronics, Engineering Technologies, Corporate). The current block strips all quantitative detail and segment specificity, replacing it with vague language about 'narrowing of the portfolio' and 'greater management focus on driving operational disciplines.' This is a clear reduction in the granularity of restructuring cost disclosure in this section. Notably, specific shutdown cost categories (severance, stay bonuses, lease terminations, asset write-downs) also disappeared from this block.",
+      "investigation_action": "Check whether the restructuring cost quantification appears elsewhere in the current 10-K (e.g., in the segment discussion or notes); if it does, this is a relocation. If not, press management on why restructuring detail was removed during a period when restructuring activity continued at $6.9M."
+    },
+    {
+      "flag_number": 3,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "38b9f02100a90569",
+        "peer": "70fb2e7d21234871"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "SXI's human capital disclosure is strikingly thin compared to HAYW, which provides headcount, geographic breakdown, union representation percentages, retention programs, performance management processes, and named HR leadership. SXI mentions union agreements and retired executive benefits but offers no workforce size, turnover metrics, or talent strategy. However, the peer distance is 0.875 (quite far), and HAYW is a consumer-facing pool equipment company with different labor dynamics than SXI's diversified industrial portfolio, so some divergence is expected due to business model differences.",
+      "investigation_action": "Review SXI's proxy statement and any ESG/sustainability report for human capital detail; if absent there as well, flag as a governance gap and inquire about workforce metrics, retention challenges, and talent pipeline given ongoing restructuring activity."
+    },
+    {
+      "flag_number": 4,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "29ecbf4b483d7067",
+        "peer": "e37c3277d4fb711e"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "SXI's operational/product disclosure in this block is generic\u2014mentioning 'assurance type warranties' and 'narrowing of the portfolio' without quantifying warranty accruals, discussing recall risks, or detailing manufacturing disruption contingencies. HAYW provides warranty accrual methodology, recall history, ERP implementation risks, and manufacturing disruption insurance details. While the peer distance (0.875) suggests meaningfully different businesses, SXI is an active acquirer with multiple manufacturing sites, making warranty and operational disruption risks material. The lack of warranty cost quantification in the MD&A block is notable.",
+      "investigation_action": "Check SXI's notes to financial statements for warranty accrual balances and methodology; assess whether operational disruption risks and product recall risks are addressed in risk factors even if absent from MD&A."
+    },
+    {
+      "flag_number": 5,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "bc0306df7810bdef",
+        "peer": "fd96d6ef8144b105"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "HAYW's detailed internal controls disclosure reflects its specific history of identified material weaknesses in FY2021 and FY2022, which necessitate ongoing remediation disclosure under SOX requirements. SXI's generic reserve statement is a different topic altogether\u2014contingent liability reserves vs. internal controls effectiveness. The comparison conflates two distinct disclosure categories. SXI's lack of material weakness disclosure likely reflects that it has not had such issues, not that it is hiding them.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "568b69701ba102de",
+        "peer": "0b71f2728e9f0d15"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted\u2014it flags TNC as the company with deficient disclosure, not SXI. SXI's block actually provides extensive, specific cost and margin disclosure including dollar figures for gross profit ($315.2M), restructuring ($6.9M/$8.2M), acquisition costs ($21.4M/$2.6M), and detailed segment-level operating income drivers. SXI appears to be the more transparent company in this comparison. The flag essentially validates SXI's disclosure quality on this topic.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "bc0306df7810bdef",
+        "peer": "d428e3d48188eb0c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The comparison involves a single sentence from SXI about contingent liability reserves versus a single sentence from TNC about ERP implementation risks to internal controls. These are fundamentally different topics. SXI's reserve statement is standard GAAP disclosure language, and TNC's ERP risk statement reflects its specific system implementation situation. There is no evidence SXI is downplaying audit risks\u2014this is an apples-to-oranges comparison of isolated sentences.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "liquidity_solvency",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7cfd73f97c02230e",
+        "peer": "958313a583b412ab"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is again inverted\u2014it criticizes TNC for generic liquidity disclosure while SXI provides specific detail about reliance on its revolving credit facility, covenant compliance risks, and contingency if lenders reduce access. SXI's disclosure is the more detailed of the two. This flag validates SXI's transparency on liquidity rather than identifying a degradation.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "SXI's disclosure quality is generally adequate, with extensive quantitative detail on cost/margin dynamics and liquidity risks. The primary concern is the temporal removal of restructuring cost specifics and retirement plan detail from certain MD&A blocks, though these may have been relocated elsewhere in the filing. Several peer comparison flags were either inverted (flagging the peer, not SXI) or reflected genuinely different business circumstances rather than disclosure evasion.",
+    "top_concerns": [
+      "Verify whether FY2025 restructuring cost quantification ($6.9M) and segment attribution were relocated from the overview MD&A block or genuinely stripped\u2014Flag 2 temporal change",
+      "Assess whether human capital disclosure gaps (no headcount, turnover, or talent strategy metrics) represent a governance/transparency shortfall, especially given active restructuring\u2014Flag 1 and Flag 3",
+      "Confirm warranty accrual quantification and product risk disclosure exist in financial statement notes even though absent from MD&A narrative blocks\u2014Flag 4"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 3,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "SXI",
+    "model": "claude-opus-4-6",
+    "input_tokens": 8202,
+    "output_tokens": 2338,
+    "timestamp": "2026-04-09T12:33:08.067971"
+  }
+}

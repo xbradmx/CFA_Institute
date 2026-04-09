@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "56db6a9f10032bee",
+        "current": "811411241a610277",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included specific detail that 'armed conflicts in the Middle East and in Ukraine and Russia have adversely affected market demand in the Middle East and Asia, which has negatively impacted our results in our E&RW segment,' along with a quantitative sales breakdown (Volume 8.0%, Price 1.1%, Currency -2.4%). The current period drops the specific geographic conflict language and the volume/price/currency decomposition table, replacing it with a vaguer note about 'improved market conditions in the Middle East, Asia and Europe.' However, the improvement in those regions may explain why the company chose not to repeat the adverse-impact language, and the core tariff/geopolitical boilerplate is preserved. The removal of the quantitative sales decomposition is the more notable omission.",
+      "investigation_action": "Confirm whether the volume/price/currency breakdown appears elsewhere in the current 10-Q (e.g., segment discussion). If absent entirely, press management on why the quantitative decomposition was dropped and whether it signals reduced visibility into demand drivers."
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "57515a323aeb4b5c",
+        "peer": "ba79bbd430d83cb7"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening algorithm flagged TNC for providing only a generic statement about financial sustainability compared to HAYW's detailed balance sheet and equity disclosures. However, this is simply a comparison of HAYW's standard GAAP financial statements against a single sentence pulled from TNC's MD&A narrative. HAYW is providing required financial statement disclosures, not exceptional transparency. The divergence reflects the algorithm matching dissimilar passage types rather than a genuine disclosure gap at TNC.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f49474d5e8c2f943",
+        "peer": "690b56fd2126c489"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "HAYW provides detailed warranty reserve disclosures (balances, accruals, payments) as required by GAAP for its product mix of pool equipment with significant warranty obligations. TNC's generic operational statements likely reflect a different product profile and warranty exposure. The divergence is more likely attributable to genuine business differences\u2014TNC (Tennant) sells industrial cleaning equipment with a different warranty profile\u2014rather than disclosure evasion by TNC. There is no evidence HAYW's own disclosure is degrading here.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1055371c34a6cac3",
+        "peer": "5f3088674ce65d7a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag highlights that TNC provides only an ASU reference while HAYW discloses extensive litigation (securities class action, derivative suit, $22M wrongful death settlement). This comparison is essentially noting that TNC does not face similar active litigation, not that TNC is concealing comparable legal exposure. HAYW's disclosure is robust and company-specific; TNC's minimal disclosure likely reflects a genuinely different litigation profile. The peer block from TNC (an accounting standards update note) is clearly the wrong comparator for legal proceedings.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "fa24940db2147dee",
+        "peer": "91fd7b788bcc52ee"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "HAYW's disclosure about product liability insurance coverage adequacy is a standard risk factor for a pool equipment manufacturer with significant product liability exposure (including asbestos-related claims and wrongful death litigation). The TNC peer passage is an unrelated generic profitability statement. This is a false-positive topic match; the divergence reflects different business-specific risk profiles rather than TNC concealing a material insurance risk. No degradation at HAYW is implicated.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "94a156f1bbc67ec6",
+        "peer": "d432a8f007d84e6e"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "HAYW's risk factors on AI technology risks, product recalls, and defective product liability are specific to its product portfolio and operating context. TNC's generic innovation statement reflects a different emphasis but TNC would have its own product risk disclosures elsewhere in its 10-K risk factors section. This is a weak topic match comparing a risk factor passage against an MD&A strategy statement. No HAYW disclosure degradation is at issue.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8f973605c5de8fda",
+        "peer": "a0c837ae216212d3"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "HAYW provides extensive risk factor language on regulatory uncertainty for AI Technologies, product liability/recalls, asbestos exposure, and ongoing litigation. TNC's filing provides only a generic cross-reference to its 10-K for legal proceedings, which is technically permissible in a 10-Q but provides no substantive update. Given both companies operate in industrial equipment and face product liability risks, TNC's minimal disclosure could reflect less exposure or could reflect under-disclosure. This does not implicate HAYW's own disclosure quality but could be relevant if monitoring TNC as a peer.",
+      "investigation_action": "If TNC is a supplier or competitor being monitored, review TNC's most recent 10-K legal proceedings and commitments notes to verify whether the cross-reference is substantively adequate and whether any material litigation has emerged since the 10-K filing."
+    },
+    {
+      "flag_number": 8,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1055371c34a6cac3",
+        "peer": "7a330163f17bacd6"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "SXI discloses only a $0.1M environmental remediation charge and a generic statement of substantial compliance with environmental laws, while HAYW details a $22M wrongful death settlement, an active securities class action (partially surviving a motion to dismiss), and a derivative lawsuit. The difference in disclosure volume is striking, but SXI (Standex International) operates in different sub-segments (electronics, engraving, scientific) with potentially lower product liability exposure than a pool equipment manufacturer. SXI's environmental disclosure is thin but may genuinely reflect minimal exposure. This does not indicate HAYW disclosure degradation.",
+      "investigation_action": "If SXI is being monitored as a supplier, verify SXI's 10-K risk factors and legal proceedings for any omitted product liability or litigation that could be material. The minimal environmental disclosure warrants a check against EPA databases and state environmental records."
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "HAYW's own disclosures are detailed and transparent, providing specific litigation amounts, warranty reserve rollforwards, quantitative sales decompositions, and extensive risk factor language. The only temporal flag (Flag 1) involves a borderline removal of the volume/price/currency breakdown and specific conflict-impact language, which may be explained by improved conditions in affected regions. The peer divergence flags overwhelmingly reflect the screening algorithm matching dissimilar passage types or genuinely different business profiles rather than disclosure degradation at HAYW or meaningful evasion by peers.",
+    "top_concerns": [
+      "Potential removal of quantitative net sales decomposition (volume/price/currency) in the current 10-Q \u2014 verify if this detail appears elsewhere in the filing",
+      "Securities class action partially survived motion to dismiss (June 2025) and is now in mediation \u2014 monitor for any settlement accrual or disclosure softening in future filings",
+      "Warranty reserves continue to grow ($27.4M vs $24.9M prior year) \u2014 track whether accrual rates are keeping pace with product expansion"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 3,
+    "dismissed_count": 5
+  },
+  "_meta": {
+    "ticker": "HAYW",
+    "model": "claude-opus-4-6",
+    "input_tokens": 10525,
+    "output_tokens": 2335,
+    "timestamp": "2026-04-09T12:05:07.738763"
+  }
+}

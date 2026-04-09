@@ -1,0 +1,93 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "c758f90ff148f215",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing explicitly stated that 'tariffs and other duties have increased, and will likely continue to increase, the cost of our parts and components' and that 'these increased costs will negatively impact our margins.' This specific cost/margin pressure language has disappeared. However, VECO's current MD&A (Flag 5 context) does note 'we expect higher costs in future periods as we incur tariffs on imported materials,' so some cost pressure disclosure persists elsewhere in the filing, albeit without the explicit margin impact language.",
+      "investigation_action": "Verify whether cost/margin pressure disclosure was consolidated into the MD&A or another risk factor. Ask management directly about gross margin trajectory and whether tariff costs are being absorbed or passed through to customers."
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "7ecf22311f348f78",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The Q1 filing contained highly detailed, multi-paragraph risk factor disclosure specifying the 25% steel/aluminum tariff, the baseline 10% tariff, individualized reciprocal tariffs, retaliatory tariffs from China and the EU, and the competitive disadvantage to foreign-manufactured competitors. This granular, actionable risk disclosure has entirely disappeared from the Q2 Risk Factors section. The tariff landscape has not simplified since Q1 \u2014 if anything it has become more complex \u2014 making the removal of this specificity inconsistent with the evolving risk environment. While some tariff discussion appears in MD&A, the Risk Factors section should independently disclose material risks.",
+      "investigation_action": "Determine why detailed tariff risk factors were removed despite ongoing trade uncertainty. Examine whether VECO received legal or strategic advice to reduce specificity. Compare with the 10-K risk factors to see if the company is reverting to annual-only disclosure on this topic, and press management on competitive positioning vs. foreign-based rivals."
+    },
+    {
+      "flag_number": 3,
+      "topic": "revenue_future_performance",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "69cf19445bddd541",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing explicitly warned that customers 'may seek to cancel equipment orders with us, attempt to renegotiate terms in a manner unfavorable to Veeco, or cease to do business with us altogether.' This is a highly specific revenue risk disclosure. Its removal is particularly concerning given that the current MD&A (Flag 5 context) acknowledges 'engagement with customers in China has decreased quarter over quarter, and we expect a continued decline in China revenue for the second half of 2025' \u2014 meaning the risk is materializing, not dissipating. Removing this risk factor as it begins to manifest is a classic disclosure degradation pattern.",
+      "investigation_action": "Investigate the backlog and order cancellation trends, especially from Chinese customers. Ask management why the customer order cancellation/renegotiation risk factor was removed precisely when China engagement is declining. Examine whether any material order cancellations or renegotiations occurred in Q2."
+    },
+    {
+      "flag_number": 4,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "4610707d15e4213d",
+        "current": "9741d02b1c84d7c8",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period specifically attributed the R&D expense decrease to 'a decrease in personnel-related expenses as part of our continued initiative to manage costs,' providing both the driver (headcount/compensation) and the strategic context (cost management initiative). The current period replaced this with entirely generic boilerplate about 'continuous technological development and product innovation' and 'growth objectives' \u2014 language that could appear in any semiconductor equipment company's filing. This is a textbook example of replacing specific causal explanation with vague, forward-looking language that obscures the actual R&D spending dynamics.",
+      "investigation_action": "Request the specific drivers of R&D expense changes in Q2 2025. Determine whether personnel reductions or other cost-cutting measures are continuing and whether this signals underinvestment in critical R&D programs. Compare R&D as a percentage of revenue over the last several quarters."
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "bd53d8a71502a119",
+        "peer": "781ad04ba47c325a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening flag was raised because ACLS provides minimal tariff discussion compared to VECO's detailed MD&A disclosure. However, this divergence actually reflects VECO being more transparent, not less. ACLS explicitly states tariffs 'did not have a meaningful impact on our financial results,' which may reflect genuine business differences (e.g., different supply chain exposure, customer geography, or domestic manufacturing footprint). VECO's MD&A provides substantive tariff and China revenue disclosure. The flag was framed as ACLS potentially downplaying risk, which is not a disclosure degradation concern for VECO as the target company.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "VECO exhibits a concerning pattern of removing specific, material risk disclosures from its Q2 10-Q precisely as the underlying risks appear to be intensifying. Detailed tariff risk factors \u2014 including specific tariff rates, competitive disadvantage language, and customer order cancellation warnings \u2014 were dropped from Risk Factors despite the MD&A acknowledging declining China engagement and rising tariff costs. Additionally, specific R&D expense drivers were replaced with generic boilerplate, obscuring cost management trends.",
+    "top_concerns": [
+      "Removal of customer order cancellation/renegotiation risk factor (Flag 3) while simultaneously disclosing declining China customer engagement and expected revenue declines \u2014 risk is materializing as disclosure is withdrawn",
+      "Elimination of detailed tariff risk factors (Flag 2) including specific tariff rates, competitive positioning concerns, and retaliatory tariff dynamics despite no resolution of the underlying trade uncertainty",
+      "Replacement of specific R&D expense drivers (personnel cost reductions) with generic innovation boilerplate (Flag 4), potentially obscuring ongoing headcount reductions or underinvestment in R&D"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 1,
+    "dismissed_count": 1
+  },
+  "_meta": {
+    "ticker": "VECO",
+    "model": "claude-opus-4-6",
+    "input_tokens": 2926,
+    "output_tokens": 1762,
+    "timestamp": "2026-04-09T12:38:26.720295"
+  }
+}

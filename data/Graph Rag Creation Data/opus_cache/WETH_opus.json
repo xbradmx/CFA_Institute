@@ -1,0 +1,191 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "c65424719f170264",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period text is only two generic sentences: 'we have modified numerous aspects of our logistics, transportation, supply chain, purchasing, and after-sale processes' and 'The Company purchases its raw materials through various suppliers.' This is boilerplate with no specific metrics, supplier names, or quantitative detail. Its removal does not eliminate material information. The company's supply chain discussion was already minimal and largely COVID-related context.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "08a8f725b0cb011c",
+        "current": "b41e36d539f21876",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The current filing retains the vast majority of the prior period's China-related regulatory, foreign exchange, and geopolitical risk disclosures nearly verbatim. However, some specific details were removed: (1) the detailed COVID-19 discussion with specific dates and WHO declarations was condensed to a single generic sentence; (2) specific SAFE circular references (Circular 37 registration procedures, SAFE Circular 13) were reorganized but largely retained; (3) certain quantitative details like 'enterprise income tax rate of 25%' and VAT rate evolution remain in the current filing. The tariff discussion was actually expanded with more current language about recent U.S. tariffs and retaliatory measures. The condensation of COVID language is understandable given WHO's 2023 declaration. The most notable omission is the removal of certain intermediate SAFE circulars, though the substantive requirements are still described.",
+      "investigation_action": "Verify whether the removed SAFE circular details (e.g., the 2012 circular on direct investment) are still applicable to the company's operations and whether their omission affects understanding of current foreign exchange compliance obligations."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "fd1cd58453c78452",
+        "current": "af4f242711504930",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained extensive, specific legal proceedings disclosures with exact RMB and USD amounts for eight separate litigation matters (e.g., Yunqing Su equity dispute of RMB1,318,604/$185,721, Chengdu SME loan default penalties of RMB5.8M and RMB6.0M, Lifan Financial lease case of RMB22,905,807/$3.2M, Chengdu Hongxin case of RMB3,021,294/$425,540, etc.). The current filing replaces all of this with a single generic paragraph: 'We may from time to time be subject to various legal or administrative claims and proceedings arising in the ordinary course of business.' While the prior filing noted some cases were settled, two active cases (Chengdu Hongxin and Yali Co./Chunqiu Co.) had pending outcomes as of the prior report date, and their resolution status is not disclosed in the current filing. Additionally, the plan to file patent applications in 'United States, Europe, Australia, Japan, Korea, Taiwan, India and Russia by the end of 2024' was removed without update.",
+      "investigation_action": "Request status updates on the Chengdu Hongxin case (RMB3.0M) and Yali Co./Sichuan Vtouch joint liability case (RMB1.7M), which were pending at the prior filing and have now disappeared without resolution disclosure. Also inquire about the status of international patent filing plans that were targeted for end of 2024."
+    },
+    {
+      "flag_number": 4,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "2fa9b3a08da5927b",
+        "current": "9c00cd641c98aace",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The current filing actually retains and updates the warrant liability figures ($378,371 gain in FY2024 vs. $121,413 loss in FY2023) and updates the Black-Scholes model disclosures. The material weakness disclosure is retained but slightly changed: the prior period listed three weaknesses (inadequate segregation of duties, lack of formal policies, lack of risk assessment), while the current period lists two (lack of competent financial reporting personnel with U.S. GAAP understanding, lack of risk assessment procedures). The 'inadequate segregation of duties' weakness was removed without explanation of remediation. The detailed Black-Scholes assumptions table with individual warrant valuations from the prior period notes was removed from the current filing, replaced by summary-level figures. The change in auditor from B F Borgers CPA PC (which was later sanctioned by the SEC) to Enrome LLP to ST & Partners PLT is disclosed but the prior auditor's SEC sanctions are not mentioned.",
+      "investigation_action": "Inquire whether the 'inadequate segregation of duties' material weakness was remediated or simply reclassified. Investigate the implications of the auditor changes from B F Borgers (SEC-sanctioned) to Enrome LLP to ST & Partners PLT within a short period, and whether any audit adjustments or restatements resulted."
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "1c09d1c280f49003",
+        "current": "e2a7fd67f8ed62a3",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The current filing retains the core disclosures about PRC currency controls, RMB convertibility restrictions, SAFE regulations, and the functional currency framework. The COVID-19 discussion was appropriately condensed given WHO's 2023 declaration ending the public health emergency. The specific sales volume and pricing metrics were updated to current period figures (4.8% sales volume increase, 3.2% average selling price increase, 1.6% FX impact vs. prior 2.6%, 7.1%, 5.2%). The new filing also adds the One Big Beautiful Bill Act reference and updated tax information. This appears to be routine updating rather than degradation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "278e0473c76a626d",
+        "current": "45fa8c784d5f4351",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This flag overlaps substantially with Flag 3 and confirms the same concern. The prior filing disclosed specific dollar amounts for multiple legal proceedings including: the Chengdu SME enforcement (RMB5.8M + RMB6.0M), Lifan Financial case (RMB22,905,807), Chengdu Hongxin case (RMB3,021,294), Mr. Liu equity transfer (RMB324,501), Yali Co. joint liability (RMB1,656,480), and cumulative capital contributions of 'RMB346.0 million (US$51.9 million).' The current filing eliminates all case-specific detail and the cumulative capital contribution figure, replacing legal proceedings with a generic boilerplate statement. The specific withholding tax rate discussion ('reduced to 5% if treaty conditions are met') is retained but the detailed mechanics previously disclosed are condensed. The prior disclosure of accrued litigation compensation of RMB324,501 and court fee of RMB10,627 has been removed without explanation of resolution.",
+      "investigation_action": "Determine the current status and financial exposure from previously disclosed litigation matters, particularly the active Chengdu Hongxin and Yali Co. cases. Request updated disclosure on whether any contingent liabilities remain from these matters and the total amount of litigation-related accruals."
+    },
+    {
+      "flag_number": 7,
+      "topic": "revenue_future_performance",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "01d4d320dfbd0cff",
+        "current": "ca6adfa24da9f085",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The current filing actually provides comparable or improved revenue disclosure. It retains the geographic revenue breakdown table with specific dollar amounts and percentages, unit volumes by region, detailed regional growth rates (6.0% increase in Southwest China, 2.4% decrease in East China, 0.8% decrease in South China), specific driver analysis (17.9% overseas volume increase, 6.8% RMB price increase), and customer concentration data. The current filing provides updated DSO and margin metrics. The prior period's customer concentration percentages (six customers at 22.5%, 16.5%, etc.) appear in the notes rather than MD&A but remain disclosed. The current filing also adds new detail about the shift to automotive and medical touchscreens. This is routine annual updating.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0ac20cfc95c7bed6",
+        "peer": "c300f63ba3b12262"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason has the comparison inverted. WETH (the target company) actually provides extensive, detailed disclosures about its convertible notes, warrants, derivative liability treatment, Black-Scholes pricing, specific securities purchase agreements, and financing activities. TACT (the peer) provides only a generic one-sentence statement. The flag suggests WETH is deficient relative to TACT, but WETH's disclosure is substantially more detailed. The peer divergence here reflects genuine business differences \u2014 TACT's simple capital structure vs. WETH's complex convertible note and warrant structure \u2014 rather than disclosure evasion by WETH.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f1907478c483dca8",
+        "peer": "fed5156badb16499"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "WETH experienced extraordinary management turnover in FY2024: the Chairman (Fei Bai) resigned, two independent directors (Xiaojin Tang, Congjin Wang) resigned, the CFO (Yuhua Huang) resigned, and subsequently a director (Jing Chen) and another director (Jiaying Cai) resigned in 2025. Despite this level of turnover \u2014 essentially a near-complete reconstitution of the board and C-suite \u2014 WETH provides no Risk Factor discussion of key personnel dependency, succession planning risks, or retention challenges. The CEO's salary is approximately $12,857/year and the new CFO earns $5,630/month ($67,560/year), raising questions about ability to attract qualified talent. By contrast, TACT explicitly discusses risks of losing key personnel and recruitment challenges. The absence of human capital risk disclosure at WETH despite clear evidence of material personnel instability is a meaningful gap.",
+      "investigation_action": "Investigate the reasons behind the near-complete board and management turnover in 2024-2025. Assess whether the extremely low executive compensation levels (CEO at ~$13K/year) are adequate to retain qualified personnel for a Nasdaq-listed company. Determine whether the rapid succession of board changes affects governance quality and audit committee effectiveness."
+    },
+    {
+      "flag_number": 10,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "45fa8c784d5f4351",
+        "peer": "198e7725291a8800"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason incorrectly suggests WETH (Company B in the flag description) is downplaying regulatory risks relative to TACT. In reality, WETH provides extensive, multi-page disclosure of PRC regulatory risks covering CSRC filing obligations, HFCAA delisting risk, foreign exchange controls, cybersecurity review requirements, and capital flow restrictions. TACT's brief mention of gaming regulatory approvals and privacy incidents reflects its different business (food service technology in the U.S.) rather than WETH evading disclosure. The peer divergence reflects fundamentally different regulatory environments rather than disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e7fe158fe854f8af",
+        "peer": "b7c35e9a9c3f28a2"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "WETH discloses a RMB5.0M capital expenditure commitment and states that construction in progress for new facilities will be completed by end of Q4 2026, but provides limited detail on how this will be funded or the total expected cost. The company is undertaking a major facility construction project (referenced throughout the filing regarding the government-directed relocation and new facilities in Chengdu), yet the financial sustainability discussion is limited to a single commitment figure. INVE, while in a different situation (post-asset sale), at least discusses capital allocation, potential dilution, and working capital needs explicitly. WETH's $0.7M disclosed commitment appears to represent only a portion of the total construction cost, and the Nasdaq compliance issues (late filings, bid-price deficiency) suggest broader financial sustainability concerns that are not fully discussed in the risk factors.",
+      "investigation_action": "Request the total estimated cost of the new facility construction project, the expected funding sources, and timeline for completion. Assess whether current cash flows are sufficient to fund both construction and operations, particularly given the Nasdaq compliance issues."
+    },
+    {
+      "flag_number": 12,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c946fd841b61951b",
+        "peer": "add6696b6bf054d8"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "WETH's product risk disclosure is remarkably thin for a manufacturer \u2014 just three sentences stating a three-year warranty, liability limited to credit or replacement, and that returns have been historically immaterial. By contrast, INVE (a closer peer at distance 0.004) provides detailed discussion of product defect risks, manufacturing disruption scenarios, rapid technology change, and contract manufacturing quality risks. For a company that is constructing new manufacturing facilities, shifting product mix toward higher-end automotive and industrial touchscreens, and serving concentrated customers (top 10 = ~99.7% of revenue), the absence of discussion about manufacturing execution risk, product quality/defect risk in new product lines, and technology obsolescence risk is notable.",
+      "investigation_action": "Assess whether WETH's shift to higher-end automotive and industrial touchscreens introduces new quality, certification, or product liability requirements that should be disclosed. Investigate warranty claim history and product return rates as the company enters new market segments."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "WETH's most significant disclosure degradation is the removal of detailed legal proceedings disclosures \u2014 eight specific litigation matters with exact dollar amounts were replaced with generic boilerplate despite at least two cases having pending outcomes. The company also fails to disclose human capital risks despite near-complete board and management turnover in 2024-2025. However, many of the China-related regulatory disclosures were largely retained or updated, and revenue/financial disclosures remain detailed.",
+    "top_concerns": [
+      "Complete removal of specific legal proceedings disclosures (8 cases with ~$8M+ in aggregate claimed amounts) replaced by generic boilerplate, with no update on previously pending cases (Chengdu Hongxin, Yali Co.)",
+      "Absence of human capital risk disclosure despite extraordinary management turnover (Chairman, CFO, multiple directors resigned in 2024-2025) and extremely low executive compensation levels ($13K/year CEO salary)",
+      "Material weakness disclosure changed without explanation of remediation \u2014 'inadequate segregation of duties' removed, auditor changed twice in rapid succession (B F Borgers SEC-sanctioned \u2192 Enrome LLP \u2192 ST & Partners PLT), and Nasdaq compliance deficiencies (late filings, bid-price notice) suggest broader governance concerns"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 3,
+    "dismissed_count": 6
+  },
+  "_meta": {
+    "ticker": "WETH",
+    "model": "claude-opus-4-6",
+    "input_tokens": 91665,
+    "output_tokens": 4306,
+    "timestamp": "2026-04-09T12:41:53.165170"
+  }
+}

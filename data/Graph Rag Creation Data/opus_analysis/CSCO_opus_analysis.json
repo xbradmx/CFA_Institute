@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "f15cf26ff141e06d",
+        "current": "7928145454ec87eb",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing disclosed specific workforce diversity statistics (e.g., '29% women, 71% men,' '48.2% White/Caucasian, 33.5% Asian,' etc.), detailed ELT diversity metrics ('36% of our ELT are women and 43% are diverse'), 31 Inclusive Communities, the Social Justice Action Office, pay parity analytics, the CEO Action for Diversity & Inclusion Pledge, and a comprehensive Inclusion & Diversity subsection. The current filing entirely removes all of these quantitative diversity metrics, the Inclusion & Diversity subsection, the Social Justice references, the Conscious Culture framing (except one passing mention under Employee Engagement), and the pay parity discussion. This is not consolidation elsewhere \u2014 it is wholesale removal of material human capital disclosures that were previously a distinguishing feature of the filing.",
+      "investigation_action": "Investigate whether Cisco has shifted diversity reporting to a standalone ESG/CSR report, whether the removal signals a strategic de-emphasis of DEI programs (potentially related to the ~7% workforce reduction), and whether peer companies in this sector are maintaining similar disclosures. Request management commentary on why quantitative diversity metrics were dropped from the 10-K."
+    },
+    {
+      "flag_number": 2,
+      "topic": "cybersecurity_technology",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "102b0b34540c08e7",
+        "peer": "1f2515942d083f32"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The blocks provided for CSCO are cherry-picked and appear to come from financial statement notes (derivative instruments, software license updates) rather than CSCO's actual cybersecurity risk factor disclosures. The broader CSCO filing text visible in Flag 6 shows extensive cybersecurity risk disclosure including breaches, vulnerability management, digital security infrastructure, and regulatory action risks. CSCO is a major cybersecurity vendor with dedicated cybersecurity product lines and a Chief Security and Trust Officer \u2014 its cybersecurity risk disclosures elsewhere in the filing are robust. The apparent divergence is an artifact of block selection, not genuine disclosure deficiency.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3c7cf739056ca903",
+        "peer": "52660fa7bd9cb957"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason claims CSCO provides 'only generic and minimal disclosure on debt financing risks' while ANET provides detailed discussion. However, the CSCO passages provided are extraordinarily detailed: they include $24.8 billion in senior notes outstanding, $3.5 billion in commercial paper, a $5.0 billion credit facility, detailed interest rate sensitivity analyses (50 BPS scenarios), granular financing receivable credit quality tables with aging analysis, internal credit risk ratings 1-10, and specific covenant compliance disclosures. Meanwhile, ANET's passages are actually the more generic ones, discussing hypothetical future debt issuance risks. CSCO's debt/financing disclosure is materially superior to ANET's, which reflects the genuine business difference that CSCO carries significant debt while ANET does not.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1538730f335a184e",
+        "peer": "70744bca05ed8def"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason claims CSCO provides 'minimal and generic disclosure on product risks, focusing mainly on warranty liabilities,' but the CSCO block provided is narrowly selected (warranty table). The broader CSCO filing \u2014 visible across multiple flags \u2014 contains extensive product risk disclosures covering defects, bugs, product line failures, acquisition integration risks, pre-shipment testing limitations, component redesign challenges, and market acceptance risks. ANET's disclosures are more verbose but address substantially the same categories. The perceived divergence results from comparing a narrow CSCO block against a comprehensive ANET extract, not from actual disclosure deficiency.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "214147b6ab417111",
+        "peer": "f762366fd56836e5"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 it suggests FFIV is downplaying operational product risks compared to CSCO's more detailed disclosure. The CSCO passages are highly detailed, covering AI integration, product innovation, restructuring, warranty liabilities, quality control, and risk factors. FFIV's two-sentence excerpt on PCS and restructuring is simply a reflection of FFIV being a much smaller, narrower company. This flag does not indicate any disclosure degradation by CSCO; rather it is a peer comparison where CSCO is the superior discloser.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3efe802c72a20207",
+        "peer": "9c289220c730359a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is again inverted \u2014 it identifies FFIV as providing minimal disclosure compared to CSCO's extensive regulatory/legal discussion. CSCO's passages are remarkably detailed, covering IP enforcement, GDPR, CCPA, AI regulation, encryption, ESG obligations, tax authority examinations, OECD Pillar Two, counterfeit products, and specific legal dispute settlements. CSCO is the superior discloser here. The flag does not reveal any CSCO disclosure degradation; it highlights FFIV's relative brevity, which reflects a much smaller regulatory footprint.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ec1132931e00b6b3",
+        "peer": "669575ceacf8c24f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 it identifies FFIV as providing minimal supply chain disclosure relative to CSCO's extensive and specific disclosures. CSCO's supply chain discussion is among the most detailed in the filing, covering inventory purchase commitments increasing 47%, Cisco Silicon One commitments, multi-year fixed-dollar supplier agreements, noncancelable commitments, and specific mitigation strategies. CSCO is the benchmark discloser here. The comparison reflects genuine business scale differences (FFIV's $20M total purchase commitments vs. CSCO's billions). No CSCO disclosure concern exists.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1538730f335a184e",
+        "peer": "010d3610d0b1eea4"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag again identifies FFIV as the potentially deficient discloser, not CSCO. CSCO provides a detailed warranty liability table with three years of provisions, adjustments, and settlements (balance growing from $329M to $399M), plus specific warranty term ranges. FFIV provides only a brief mention of one-year hardware warranties. The divergence reflects genuine business scale differences and does not indicate any CSCO disclosure degradation.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Of the eight flags screened, only one represents a genuine disclosure degradation signal \u2014 the wholesale removal of quantitative workforce diversity metrics, detailed inclusion initiatives, pay parity analytics, and the Social Justice Action Office from the human capital section. The remaining seven flags are false positives: six peer divergence flags either reflect genuine business scale differences or are inverted (identifying the peer as the weaker discloser, not CSCO), and one cybersecurity flag results from narrow block selection rather than actual disclosure deficiency. CSCO's overall filing quality remains strong across financial, operational, and risk factor disclosures, with the notable exception of the DEI/human capital pullback.",
+    "top_concerns": [
+      "Complete removal of quantitative workforce diversity statistics (gender, ethnicity breakdowns) and ELT diversity metrics from the 10-K, raising questions about whether this reflects a strategic de-emphasis of DEI commitments or a shift to separate reporting",
+      "Elimination of the Inclusion & Diversity subsection, Social Justice Action Office references, and pay parity program details \u2014 previously prominent features of the filing \u2014 without explanation or cross-reference to alternative disclosures",
+      "Whether the ~4,200 headcount reduction (90,400 to 86,200) and the 7% workforce restructuring are connected to the reduced human capital transparency, and how this compares to peer disclosure practices in the current regulatory environment"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 0,
+    "dismissed_count": 7
+  },
+  "_meta": {
+    "ticker": "CSCO",
+    "model": "claude-opus-4-6",
+    "input_tokens": 27997,
+    "output_tokens": 2474,
+    "timestamp": "2026-04-09T11:54:52.034829"
+  }
+}

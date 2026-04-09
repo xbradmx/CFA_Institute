@@ -1,0 +1,79 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cd0c4432a5953425",
+        "peer": "a466b2efe8623d4a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag is directed at SCKT's lack of disclosure relative to OSS, but OSS is our target company and it provides highly detailed cost and margin disclosures including specific dollar amounts, percentage changes by segment, and explicit discussion of tariffs, inflation, and raw material costs. The screening reason correctly identifies that SCKT is less transparent, but this is a peer divergence flag where the peer (SCKT) is less detailed \u2014 this does not indicate disclosure degradation by OSS. OSS's disclosure here is exemplary.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f72925de72a89983",
+        "peer": "dfc74c8f6d1239cd"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "SCKT discloses a $10.7M deferred tax asset and net operating loss carryforwards because those are material to its financial position \u2014 SCKT has been unprofitable. OSS's omission of similar discussion likely reflects a genuinely different tax and profitability profile rather than disclosure evasion. The target passages from OSS discuss investment policy, stock compensation, capital expenditure planning, and non-GAAP reconciliation \u2014 topics relevant to OSS's actual circumstances. The divergence reflects business differences, not obfuscation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "99860bae2d94214c",
+        "peer": "62057085b8373251"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags SCKT for being less detailed than OSS on geopolitical risks, but OSS is our monitored target company and its disclosure is extensive and specific \u2014 citing tariffs, military conflicts in Europe and Middle East, Federal Reserve/ECB policy, German economic weakness, foreign exchange hedging, and the OBBBA tax legislation. OSS provides far more detail than its peer, which is the opposite of a disclosure degradation signal for the target company. This flag is misdirected.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0d67e4dd9c7d7763",
+        "peer": "d4e8ad381f6fc2a9"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason correctly notes that OMCL provides only a single generic sentence about enforceable agreements while OSS discloses litigation contingencies, indemnification obligations, and their potential unlimited duration. However, this divergence flags the peer (OMCL) as less transparent, not OSS. OSS's own disclosure is detailed and appropriate, including specific statements about accrual policy, indemnification scope, and management's assessment after consultation with legal counsel. No degradation by the target company is indicated.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "All four flags identify cases where peer companies (SCKT and OMCL) are less detailed than the target company (OSS), not the reverse. OSS's disclosures across cost/margin, geopolitical risk, legal contingencies, and financial sustainability topics are consistently detailed and specific with dollar amounts, percentage changes, and explicit risk acknowledgments. There is no evidence of disclosure degradation by OSS in the current filing period.",
+    "top_concerns": [
+      "No genuine disclosure degradation concerns identified for OSS \u2014 all flags were misdirected at peer shortcomings",
+      "Monitor whether OSS's detailed tariff and geopolitical risk disclosures continue in future periods, as any reduction would be a meaningful signal given current specificity",
+      "Track whether the 64.7% increase in R&D expense continues to receive adequate disclosure regarding expected returns and capitalization treatment"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 0,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "OSS",
+    "model": "claude-opus-4-6",
+    "input_tokens": 6907,
+    "output_tokens": 1184,
+    "timestamp": "2026-04-09T12:20:00.719189"
+  }
+}

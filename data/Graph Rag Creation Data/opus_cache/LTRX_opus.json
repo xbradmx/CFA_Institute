@@ -1,0 +1,205 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "d58d58e4c233e9d2",
+        "current": "cbef172495e715e8",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing specifically enumerated 14+ states that enacted comprehensive privacy legislation (Delaware, Florida, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, New Jersey, New Hampshire, Oregon, Rhode Island, Tennessee, and Texas), while the current filing replaces this with the vague phrase 'Multiple states in the U.S. have enacted such privacy laws.' Additionally, the prior period included a sentence about the adverse impact on revenues from failure to obtain certifications that was removed, and the material weakness disclosure paragraph was dropped from this section. However, the current filing added new substantive AI-related risk language and expanded ESG disclosure, which partially offsets the concern. The state-by-state specificity removal is a meaningful reduction in transparency.",
+      "investigation_action": "Verify whether the removed state privacy law enumeration and certification failure language appear elsewhere in the filing; assess whether the company faces specific compliance challenges in any of the previously named states that might motivate reducing specificity."
+    },
+    {
+      "flag_number": 2,
+      "topic": "cybersecurity_technology",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2b875a4078b6df23",
+        "peer": "15d4b9be0fa5c113"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 the screening reason correctly identifies that INTZ provides minimal cybersecurity disclosure while LTRX provides comprehensive disclosure including NIST CSF alignment, governance structure, Director of IT qualifications, and detailed risk management processes. LTRX is the better discloser here. The divergence reflects INTZ's deficiency, not LTRX's. As we are evaluating LTRX's disclosure quality, this flag does not indicate degradation at the target company.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3808917b30f39167",
+        "peer": "04f88bbb0011d6ee"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LTRX provides substantially more detailed disclosure than INTZ on financial sustainability, including specific goodwill impairment test results (fair value exceeded carrying amount by approximately 9%), valuation allowance discussion, history of losses acknowledgment, and detailed critical accounting policies. The divergence reflects INTZ's under-disclosure, not any deficiency at LTRX. LTRX's disclosure is exemplary on this topic with specific quantitative detail.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "c97295738992f066",
+        "peer": "c280c8e4be54d12f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LTRX provides detailed, specific disclosure on geopolitical risks including naming Ukraine-Russia, Middle East conflict, Red Sea hostilities, China-Taiwan tensions, and the specific transition of manufacturing out of China in response to tariffs. INTZ provides only a single sentence on government contract risks. The divergence highlights INTZ's inadequacy, not LTRX's. LTRX is the stronger discloser on this topic.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4b6723eab1aed9ad",
+        "peer": "c73c3c256481d58b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LTRX provides extensive operational and product risk disclosure including warranty terms (one to five years), software vs. hardware risk differentiation, AI adoption risks, earthquake vulnerability, and business interruption scenarios. INTZ offers only two minimal sentences. The divergence reflects genuine business model differences and INTZ's under-disclosure rather than any deficiency at LTRX.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "289e50b18d63ce38",
+        "peer": "70863c8fe06855a5"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LTRX provides comprehensive regulatory and legal risk disclosure spanning GDPR, CCPA, FCPA, export controls, environmental regulations, IP litigation, and AI regulation. INTZ provides only a brief mention of an insurance settlement for legal defense costs. This divergence again shows LTRX as the more transparent discloser. The peer comparison does not indicate any disclosure degradation at LTRX.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "02aec9dbc4a2c9d9",
+        "peer": "22c59a867e04bd4d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LTRX discloses detailed cost and margin pressures including historical ASP reductions, fixed cost structure risks, inventory obsolescence risks, and competitive pricing pressure. INTZ provides only generic statements about indirect channel competition and IP risks. LTRX is the more forthcoming discloser. The divergence reflects INTZ's under-disclosure, not LTRX deficiency.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f968195bcb24de35",
+        "peer": "ad7a6442a73be490"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LTRX provides specific detail on its amended credit facility with SVB, including the 75% U.S. cash balance requirement, asset pledge, and restrictions on financial flexibility. INTZ provides only vague statements about regulatory limitations on future financings. LTRX's disclosure is substantially more specific and transparent than the peer, so this flag does not indicate LTRX disclosure degradation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d1de6a9783310dc8",
+        "peer": "0b70ac6560590284"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LTRX transparently discloses its prior material weakness in IT general controls from fiscal 2023, the remediation efforts undertaken, and the conclusion that internal controls were effective as of June 30, 2025, while also warning about future risks. CIIT states it had no critical accounting estimates. The divergence reflects LTRX's superior transparency about a genuine historical issue, not any disclosure deficiency at LTRX. This is actually commendable disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "3808917b30f39167",
+        "peer": "e5a2468e9d94fb78"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LTRX provides extensive financial sustainability disclosure including goodwill impairment testing with a specific 9% fair value cushion, full valuation allowance on deferred tax assets, history of losses acknowledgment, and detailed critical accounting policies. CIIT provides a single sentence about needing capital expenditure. The divergence reflects genuine business complexity differences and CIIT's under-disclosure rather than any LTRX deficiency.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4b6723eab1aed9ad",
+        "peer": "430caeb5e06dc3d2"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LTRX discloses detailed operational and product risks while CIIT (a global logistics company) provides only a brief description of transport operations. These are fundamentally different businesses \u2014 LTRX is a technology/IoT hardware company while CIIT is a shipping logistics firm. The divergence reflects genuine business model differences, and LTRX is the stronger discloser. CIIT appears to be a poor peer comparison.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 12,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f04bd694c3716497",
+        "peer": "7439256957a5b068"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "LTRX provides highly detailed supply chain disclosure naming specific contract manufacturers (Hana Microelectronics, Honortone, In-Tech, Tailyn, Info-Tek, Rubytech, Marvell), geographies (Thailand, China, Taiwan), single-source dependencies, and third-party logistics risks in Hong Kong. CIIT provides only generic logistics business descriptions. LTRX is exemplary on supply chain transparency. The divergence reflects CIIT's under-disclosure and different business models.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 13,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "02aec9dbc4a2c9d9",
+        "peer": "77e3974b347efe35"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Both LTRX and CIIT provide cost and margin pressure disclosure appropriate to their respective businesses. CIIT actually provides reasonable detail on carrier rate volatility, excess cargo space costs, inflationary impacts, and tariff risks. LTRX provides similarly detailed disclosure on ASP declines, inventory obsolescence, and fixed cost leverage. Both companies appear adequately transparent on this topic; the differences reflect their distinct business models (IoT hardware vs. shipping logistics).",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "LTRX demonstrates strong overall disclosure quality across nearly all topics, with comprehensive risk factor discussion, detailed supply chain transparency, specific cybersecurity governance disclosures, and candid acknowledgment of its material weakness history. The only finding of note is a borderline reduction in specificity regarding state privacy law enumeration in the current filing, which replaced a detailed list of 14+ states with a vague 'multiple states' reference. The vast majority of peer divergence flags actually highlight LTRX as the superior discloser compared to poorly matched peers (INTZ and CIIT).",
+    "top_concerns": [
+      "Removal of specific state-by-state privacy law enumeration replaced with vague 'multiple states' language \u2014 monitor whether this signals reduced attention to privacy compliance specifics",
+      "Goodwill impairment cushion is thin at only 9% above carrying value \u2014 monitor future impairment test assumptions and results closely",
+      "History of losses combined with full deferred tax asset valuation allowance \u2014 monitor path to sustained profitability"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 1,
+    "dismissed_count": 12
+  },
+  "_meta": {
+    "ticker": "LTRX",
+    "model": "claude-opus-4-6",
+    "input_tokens": 25905,
+    "output_tokens": 3142,
+    "timestamp": "2026-04-09T12:14:08.219236"
+  }
+}

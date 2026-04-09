@@ -1,0 +1,121 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "f760bcbf67fed6c4",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior text is merely a cross-reference sentence directing readers to the annual filing's critical accounting estimates section ('described in Part II, Item 7'). It is standard for 10-Q filings to include or omit this boilerplate cross-reference depending on whether there were changes to critical accounting estimates during the quarter. This does not represent removal of substantive disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "445cdef180cb47f8",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing explicitly called out steel as 'a major component of our equipment' and linked Infrastructure Solutions revenue to asphalt-related equipment, providing useful supply chain context. Removing this language eliminates a material input cost signal for analysts monitoring raw material exposure. However, this type of contextual language sometimes migrates between sections or is considered sufficiently covered in the annual 10-K.",
+      "investigation_action": "Verify whether steel cost and asphalt-related revenue dependency disclosures appear elsewhere in the current 10-Q or in the most recent 10-K. If absent entirely, inquire whether ASTE's steel exposure profile has changed or whether commodity input sensitivity is being deliberately obscured."
+    },
+    {
+      "flag_number": 3,
+      "topic": "cybersecurity_technology",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "bcb6ac6106b1f2b9",
+        "current": "e580cf4dbb85c636",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing provided specific, trackable ERP implementation milestones: human capital module and payroll in 2023, two additional manufacturing sites in 2024. The current filing strips all of this detail, retaining only the generic statement about an ongoing 'multi-year global ERP implementation.' This removal eliminates investors' ability to monitor the progress and timeline of a significant IT transformation project that carries material internal control risk. The pattern is consistent with obfuscation rather than legitimate condensation.",
+      "investigation_action": "Ask management for a current ERP implementation status update including which modules and sites have been completed, the remaining rollout timeline, and any budget overruns or delays. Monitor subsequent filings for whether progress milestones are restored or permanently omitted."
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "d1000d62d7c39ee5",
+        "current": "30393dd5fa54043c",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained two distinct substantive elements now removed: (1) the affirmative statement that no pending litigation is expected to result in a material outcome, and (2) extensive detail on TerraSource acquisition integration risks including regulatory approvals, customer/supplier uncertainty, key personnel retention, synergy costs, and IT integration challenges. The current filing retains only the generic forward-looking caveat about future litigation. Removing the specific acquisition risk factors is particularly concerning if the TerraSource deal is still pending or recently closed, as these are material risk disclosures investors need.",
+      "investigation_action": "Determine the current status of the TerraSource acquisition \u2014 whether it has closed, been abandoned, or is still pending. If closed, verify whether integration risks materialized. If still pending, the removal of detailed acquisition risk factors is a red flag. Also investigate why the affirmative 'no material pending litigation' statement was dropped."
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "30393dd5fa54043c",
+        "peer": "6251dde17a054f97"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "MTW's EPA-related $5.3 million charge is specific to Manitowoc's own operations and historical environmental liabilities. ASTE operates in different product categories (road construction and infrastructure equipment) and there is no evidence it has comparable EPA exposure. Peer divergence on legal specifics here reflects genuine business differences rather than disclosure evasion. ASTE's generic legal boilerplate is concerning in isolation (see Flag 4) but the comparison to MTW's EPA matter is not instructive.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f3250b9d34ff404d",
+        "peer": "462869abe213198b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The blocks being compared are not analogous \u2014 ASTE's block covers restructuring charges with specific dollar figures, while CMCO's discusses product warranties, acquisitions, and strategic initiatives. These are entirely different topics within MD&A. CMCO is a larger, more diversified company that recently completed the Kito Crosby acquisition, naturally requiring more extensive operational product disclosure. The divergence reflects different business models and recent corporate activity, not disclosure evasion by ASTE.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f633a60fb4137fcd",
+        "peer": "9fedbf399a363eb1"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "CMCO provides extraordinarily detailed legal disclosures including quantified asbestos liabilities ($5.9M net), product liability reserves ($4.9M), detailed Italian tax dispute history, Monsanto PCB indemnification, and environmental matters with specific accruals. ASTE's single sentence about monitoring compliance is notably sparse by comparison. While some of this gap reflects CMCO's genuinely more complex legal profile (Magnetek legacy liabilities, larger international footprint), the contrast does highlight that ASTE provides almost no quantifiable legal contingency information, which combined with the temporal degradation in Flag 4 is worth monitoring.",
+      "investigation_action": "Review ASTE's 10-K for more detailed legal contingency disclosures and confirm whether the 10-Q's brevity is simply cross-referencing annual disclosures. Investigate whether ASTE has any material pending litigation, environmental liabilities, or product liability reserves that are not being disclosed in the quarterly filing."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "ASTE shows a pattern of disclosure thinning in its Q2 2025 10-Q, most notably the complete removal of ERP implementation milestones (Flag 3) and detailed TerraSource acquisition risk factors (Flag 4). While some flags reflect legitimate business differences from peers, the temporal degradation pattern across risk factors and operational disclosures warrants closer monitoring. The supply chain input discussion was also stripped out, though this may be addressed elsewhere.",
+    "top_concerns": [
+      "Removal of specific ERP implementation progress milestones eliminates ability to track a material multi-year IT transformation with internal control implications",
+      "Disappearance of detailed TerraSource acquisition integration risk factors \u2014 need to verify deal status and whether risks materialized",
+      "Overall thinning of legal and regulatory disclosures, including removal of the affirmative 'no material pending litigation' statement"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 2,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "ASTE",
+    "model": "claude-opus-4-6",
+    "input_tokens": 7280,
+    "output_tokens": 2048,
+    "timestamp": "2026-04-09T11:46:22.506926"
+  }
+}

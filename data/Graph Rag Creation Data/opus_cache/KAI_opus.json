@@ -1,0 +1,149 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "c828b8a8157bb8c6",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior text is a single generic sentence about using measures for 'financial and operating decision-making and for compensation purposes,' which is standard boilerplate language about non-GAAP metrics rather than substantive human capital disclosure. Its removal does not constitute the loss of meaningful human capital information such as headcount, turnover, diversity metrics, or workforce strategy. This appears to be a minor editorial revision in the non-GAAP discussion section.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "07e097e2dd2d0190",
+        "current": "aef30a8d25fc9a80",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period explicitly defined adjusted operating income, adjusted EBITDA, and adjusted EBITDA margin and detailed the specific exclusions (amortization of acquired profit in inventory and backlog, acquisition costs, other income/expense) along with the rationale for exclusions. The current period replaces all of this with a single sentence: 'The presentation of the change in organic revenue is a non-GAAP measure.' This is a material reduction in non-GAAP transparency \u2014 three measures with detailed reconciliation context were condensed to one vague reference. The limitations language and comparability caveats were also removed.",
+      "investigation_action": "Verify whether KAI stopped reporting adjusted operating income and adjusted EBITDA in the current quarter's MD&A or earnings materials. If these metrics are still used but the definitional framework was removed, this could signal an attempt to reduce scrutiny of non-GAAP adjustments during a period of declining profitability (net income fell from $31.6M to $26.6M QoQ). Check if reconciliation tables are still present elsewhere in the filing."
+    },
+    {
+      "flag_number": 3,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "bf39199dde15f6e1",
+        "peer": "fd6cd1dd8759e2e1"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags JBTM for being less specific than KAI, but KAI is the target company being monitored here \u2014 and KAI provides extensive, granular tariff and geopolitical disclosure across segments, regions, and with quantified impacts. The divergence reflects that KAI is actually the stronger discloser. JBTM's relative vagueness is a peer concern, not a KAI disclosure degradation. KAI's disclosure quality on this topic is exemplary.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "55408401b34892c3",
+        "peer": "bcbba29c80964f61"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag identifies JBTM as less detailed than KAI on revenue outlook, but KAI is the target company under review. KAI provides exceptionally detailed segment-level revenue discussion with specific dollar amounts, organic growth breakdowns, and forward-looking demand commentary. This is strong disclosure from KAI, not a degradation signal. JBTM's relative lack of detail is a separate peer-level concern and does not reflect negatively on KAI's disclosure quality.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ade9883a1d437a7e",
+        "peer": "fa3bf42cac95d9dd"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, the flag highlights JBTM's generic mitigation language versus KAI's specific discussion of quote-to-order time lengthening and customer delays into 2026. KAI is the better discloser here. The target company's disclosure is detailed and informative about supply chain and demand impacts, not degraded. The peer divergence reflects positively on KAI's transparency.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "37e8e535b6a22acf",
+        "peer": "7da5a9827e432133"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "JBTM's material weakness disclosures relate to its acquisition of Marel and pre-existing IT and journal entry control deficiencies that are specific to that integration. KAI has not made a comparable acquisition requiring such disclosure. KAI's accounting disclosures include detailed goodwill, intangible assets, revenue recognition, and tax position information. The absence of material weakness disclosure at KAI reflects genuine business differences (no comparable acquisition with unremediated control issues), not evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "be1885b5f7eadde6",
+        "peer": "3c08e4ff223f98e6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag essentially compares KAI's detailed financial disclosures (segment-level financials, compensation details, contingent consideration) against JBTM's vague statement about potential internal control implementation delays. KAI is providing robust quantitative disclosure here, including specific dollar amounts for unrecognized compensation ($13.95M), contingent consideration ($11.4M max), and full segment P&L breakdowns. This is not a degradation signal for KAI; it demonstrates strong disclosure quality.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "70b7f846db50f263",
+        "peer": "162225d1ccc1cd92"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "KAI provides detailed disclosure on uncertain tax positions, Pillar Two Rules, the OBBBA tax legislation, and litigation policies. JBTM's disclosure focuses on Sarbanes-Oxley compliance for the acquired Marel business, which is a fundamentally different regulatory topic tied to their specific acquisition. The divergence reflects different business circumstances, not KAI's disclosure degradation. KAI's regulatory and legal disclosures are thorough and specific.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "bf39199dde15f6e1",
+        "peer": "40c25ff8c9237344"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Similar to Flag 3, this compares KAI's extensive geopolitical and tariff disclosure against NVT's more generic treatment. KAI provides segment-specific, region-specific, and quantified tariff impact discussion that is far superior to NVT's boilerplate. The peer divergence here reflects NVT's relative weakness, not a KAI disclosure concern. KAI's geopolitical risk disclosure is among the most detailed one could expect from an industrial company.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "KAI (Kadant) demonstrates strong overall disclosure quality with exceptionally detailed segment-level, region-specific, and quantified commentary on tariffs, revenue trends, and financial performance. The only notable concern is the removal of non-GAAP measure definitions in the current 10-Q (Flag 2), where three explicitly defined adjusted metrics were replaced with a single vague reference to organic revenue. Most peer divergence flags actually highlight KAI as the superior discloser relative to peers JBTM and NVT.",
+    "top_concerns": [
+      "Removal of adjusted operating income, adjusted EBITDA, and adjusted EBITDA margin definitions and exclusion rationale from MD&A during a period of declining profitability \u2014 verify whether these metrics are still being reported without adequate definitional framework",
+      "Monitor whether the non-GAAP definition reduction is a one-quarter simplification or the beginning of a trend toward less transparency in non-GAAP reporting",
+      "Track whether tariff-related capital order delays extending into 2026 are adequately reflected in forward guidance and whether disclosure around order pipeline visibility changes in future filings"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 0,
+    "dismissed_count": 8
+  },
+  "_meta": {
+    "ticker": "KAI",
+    "model": "claude-opus-4-6",
+    "input_tokens": 15278,
+    "output_tokens": 2414,
+    "timestamp": "2026-04-09T12:09:47.014730"
+  }
+}

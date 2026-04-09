@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "c32e3481f9fb5160",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing contained specific language about tariff impacts on raw material costs, inability to pass costs to customers, and impairment to profitability of international production. These are material cost/margin risk disclosures that have been entirely removed in the current period despite the tariff environment remaining fluid and arguably more uncertain. The removal of language about not being able to 'fully mitigate the impact of these increased costs or pass price increases on to our customers' eliminates a concrete margin risk acknowledgment.",
+      "investigation_action": "Analyst should examine whether JBTM's gross margins and input cost trends have actually improved enough to justify removing this risk, review earnings call commentary for any discussion of tariff cost absorption, and assess whether the company has secured pricing agreements that mitigate pass-through risk."
+    },
+    {
+      "flag_number": 2,
+      "topic": "geopolitical_macro",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "aacd9054486590eb",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period contained an entire risk factor dedicated to tariffs, trade sanctions, and government actions, including specific language that 'the situation around tariffs is fluid' and 'any existing or future tariffs could have a material adverse effect on our results of operations, financial position and cash flows.' Removing this entire risk factor between May and August 2025 is highly suspect given that the US tariff environment has not materially resolved. The prior disclosure also warned about indirect effects on global economic conditions and financial markets.",
+      "investigation_action": "Analyst should verify whether this risk was consolidated into another risk factor elsewhere in the filing, examine JBTM's geographic revenue exposure to tariff-affected trade corridors, and compare to peer industrial companies' continued tariff risk disclosures in the same period."
+    },
+    {
+      "flag_number": 3,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "97706f4bb4e35ff2",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This passage specifically addressed tariff-driven supply chain risks including 'increased costs in our supply chain' and 'reduced demand for our and/or our customers' products' from retaliatory trade measures. Its disappearance is closely linked to Flags 1 and 2, and together they represent the systematic removal of an entire cluster of tariff/trade-related risk disclosures. The specificity about 'broader range of imports' and 'retaliatory trade measures taken by other countries' governments' provided investors with material risk context that is now absent.",
+      "investigation_action": "Analyst should assess whether JBTM's supply chain has genuinely diversified away from tariff-exposed sourcing, review procurement and COGS trends for signs of lingering supply chain cost pressures, and determine if peer companies in food processing equipment continue to disclose similar risks."
+    },
+    {
+      "flag_number": 4,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "720046b39280e4f0",
+        "current": "1123792a55d0fd21",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included a specific reference to the '2022/2023 restructuring plan' designed to 'optimize the overall cost structure for the Company on a global basis' with initiatives including 'streamlining operations and enhancing our general and administrative infrastructure.' The current period drops this entirely. While it is plausible that the restructuring plan has been completed and thus removed from current MD&A discussion, the absence of any concluding language confirming completion, total costs incurred, or savings achieved is notable. A completed restructuring would typically warrant at least a brief mention of outcomes.",
+      "investigation_action": "Analyst should check whether restructuring charges are still flowing through the income statement or footnotes, verify if the plan was formally concluded, and assess whether the cost savings targets were met or if the restructuring was quietly abandoned."
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "f8e3b2af20cc656d",
+        "current": "162225d1ccc1cd92",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period included two critical sentences that have been removed: one acknowledging the possibility of 'delays in implementing the appropriate internal controls and procedures relating to Marel's operations' and another detailing consequences including 'increased costs, enforcement actions, the assessment of penalties and civil suits, failure to meet reporting obligations.' These are specific, material risk acknowledgments regarding post-acquisition integration of Marel's internal controls. Additionally, the sentence about operations in various countries subjecting the company to 'legal, political, regulatory, and social requirements' was also removed. Softening Sarbanes-Oxley compliance risk disclosure for a recently acquired non-US entity is a concerning signal.",
+      "investigation_action": "Analyst should investigate the current status of Marel internal controls integration, check whether JBTM's auditor has flagged any material weaknesses or significant deficiencies, and assess whether the SEC timeline for compliance is approaching without adequate preparation."
+    },
+    {
+      "flag_number": 6,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1d573280283790e6",
+        "peer": "d8380c1678d9877f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening flagged NVT for providing only generic boilerplate compared to JBTM's detailed disclosures, but this flag is about JBTM's disclosure quality and JBTM is actually the more detailed discloser here. JBTM provides extensive non-GAAP definitions and detailed critical accounting estimates including specific methodologies (multi-period excess earnings, relief-from-royalty) and key assumptions (revenue growth rates, EBITDA margins, discount rates, attrition rates, royalty rates). This reflects JBTM's recent Marel acquisition requiring more detailed intangible asset valuation disclosure, which is a legitimate business-driven difference rather than JBTM disclosure degradation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2a6135a67816b676",
+        "peer": "f387e2262c15836b"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "NVT provides specific disclosure on Pillar II global minimum tax framework, its impact on effective tax rates, the One Big Beautiful Bill Act, and dividend payment limitations, while JBTM's MD&A passage on this topic contains only generic ESG statements with no mention of tax reform or regulatory legal risks. However, the passages compared may not be directly analogous sections \u2014 JBTM's ESG paragraph may simply be in a different part of the MD&A, and tax risk disclosures could appear elsewhere in JBTM's filing. The divergence is notable but may reflect incomplete passage matching rather than genuine evasion.",
+      "investigation_action": "Analyst should check whether JBTM addresses Pillar II, the One Big Beautiful Bill Act, and international tax reform risks elsewhere in its 10-Q, particularly in tax footnotes or other risk factors, given JBTM's significant international operations including the Marel acquisition."
+    },
+    {
+      "flag_number": 8,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1d573280283790e6",
+        "peer": "5cbac24c8132fdd0"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Similar to Flag 6, the screening identified PNR as providing only generic boilerplate on critical accounting policies compared to JBTM's detailed disclosure. JBTM is the better discloser in this comparison. PNR's generic language ('we identified the critical accounting policies that affect our more significant estimates') versus JBTM's specific methodology descriptions reflects that JBTM recently completed a major acquisition (Marel) requiring detailed intangible asset valuation disclosure. This flag does not indicate JBTM disclosure degradation.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "JBTM systematically removed an entire cluster of tariff, trade, and supply chain risk disclosures between its May and August 2025 10-Q filings despite an unchanged or worsening trade policy environment. Additionally, the company softened its Marel internal controls integration risk language by removing specific consequences of potential delays. While the company maintains strong accounting and non-GAAP disclosure practices, the pattern of removing material risk factors without explanation is a significant disclosure degradation signal.",
+    "top_concerns": [
+      "Systematic removal of all tariff/trade/supply chain risk factors (Flags 1-3) without explanation during a period of elevated trade policy uncertainty",
+      "Removal of specific Marel internal controls implementation delay risks and consequences language (Flag 5) while the integration is presumably still ongoing",
+      "Absence of restructuring plan completion disclosure or outcomes after removing the 2022/2023 restructuring plan discussion (Flag 4)"
+    ],
+    "genuine_count": 4,
+    "borderline_count": 2,
+    "dismissed_count": 2
+  },
+  "_meta": {
+    "ticker": "JBTM",
+    "model": "claude-opus-4-6",
+    "input_tokens": 4487,
+    "output_tokens": 2514,
+    "timestamp": "2026-04-09T12:08:55.915497"
+  }
+}

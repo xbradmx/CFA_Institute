@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "dee488362211e650",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing provided a detailed breakdown of inventory changes with specific dollar amounts (~$7,400 total, with ~$5,000 in-process/finished goods, ~$2,300 FX impact, ~$1,600 air handling units, ~$1,600 raw materials offset). This level of granular supply chain/inventory commentary disappearing entirely from the Q2 filing is notable. However, inventory discussion in MD&A often varies quarter-to-quarter based on materiality of changes, so the absence may reflect that the Q2 inventory movement was less significant or was addressed differently in the balance sheet discussion.",
+      "investigation_action": "Check whether the Q2 10-Q contains any inventory discussion elsewhere (e.g., in notes to financial statements or other MD&A sections). Also compare inventory balances on the balance sheet to assess whether a material change occurred that should have been discussed but was not."
+    },
+    {
+      "flag_number": 2,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "2ca6e3f5febecdfe",
+        "current": "9929d48348070265",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing disclosed a specific tax rate (15% vs. 25%) for the Chinese joint venture HTE status through 2026 and noted the revaluation of deferred income tax liabilities at that rate, contributing to a tax benefit. The current filing replaces this with a generic statement that the Corporation is 'currently evaluating the impact of OBBBA on its condensed consolidated financial statements' with no mention of the Chinese joint venture tax rate or its contribution to earnings. The removal of the specific HTE rate disclosure and its earnings impact is a meaningful reduction in transparency, as investors lose visibility into a quantifiable tax benefit driver.",
+      "investigation_action": "Confirm whether the Chinese joint venture HTE status and associated 15% tax rate remain in effect. Investigate whether OBBBA has any interaction with foreign tax credits or the China JV taxation, and whether the company is using the new legislation disclosure as cover for removing the specific China tax rate discussion."
+    },
+    {
+      "flag_number": 3,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "99e6d77300fcf2a1",
+        "current": "ea295ecf6193ef50",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "Several items were removed from the current filing: the detailed description of the non-GAAP adjusted EBITDA calculation methodology, the explanation of why management uses these measures, and the statement about valuation allowances having 'no tax effect' on certain comprehensive income items. However, much of the removed text is boilerplate non-GAAP justification language and disclosure controls effectiveness certifications that are largely standard. The current filing retains the key substantive disclosures about valuation allowances, non-GAAP limitations, and critical accounting policies. The addition of the cast roll asset group impairment analysis in the current period is actually incremental transparency. This appears to be a mix of editorial condensation and some substantive omissions.",
+      "investigation_action": "Verify whether the non-GAAP measure definitions and reconciliation tables are still present in the filing's financial tables even if the boilerplate justification was trimmed. Also investigate why the specific language about valuation allowance tax effects on comprehensive income was removed\u2014this could mask changes in the valuation allowance position."
+    },
+    {
+      "flag_number": 4,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b23eee9427fa4bd9",
+        "peer": "3c54fd8ab07a4c3c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "AP's disclosure focuses on a specific, material human capital event\u2014the UES-UK restructuring involving 168 employees with quantified severance costs ($500-$600 in additional benefits). GRC's disclosure is a general risk factor list mentioning 'loss of key personnel' and 'availability and costs of raw materials and labor' without any specific quantification. AP is actually providing more actionable, event-specific human capital information than GRC. The peer comparison here is misleading\u2014GRC's broader list is boilerplate risk factors, not substantive human capital management discussion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9929d48348070265",
+        "peer": "ec2818eb00a9e8db"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually flags the peer (GRC) as potentially downplaying regulatory risk relative to AP, not the other way around. AP provides specific disclosure about OBBBA and references litigation and environmental notes. GRC's statement of 'no material changes' is a standard and legally appropriate disclosure when there are indeed no material changes. This flag does not identify a disclosure degradation issue at AP; if anything, AP is disclosing more on this topic than the peer.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9929d48348070265",
+        "peer": "4040e61580b2a29a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Similar to Flag 5, this flag identifies GGG as providing less regulatory/legal disclosure than AP. The peer text is simply a safe harbor cautionary statement, which is standard boilerplate. AP is actually more transparent here with its OBBBA discussion and litigation/environmental cross-references. This is not a disclosure degradation signal for AP; the screening layer appears to have inverted the concern.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "AP shows one genuine disclosure reduction in removing specific Chinese joint venture HTE tax rate details (15% vs 25%) and their earnings impact, and two borderline items involving inventory commentary disappearance and accounting/non-GAAP discussion condensation. However, three of the six flags were incorrectly triggered by the screening layer\u2014the peer comparison flags actually show AP disclosing more than its peers, not less. The overall picture is one of modest editorial tightening rather than systematic obfuscation.",
+    "top_concerns": [
+      "Removal of specific Chinese joint venture HTE 15% tax rate disclosure and its quantified contribution to tax benefits\u2014investigate whether this favorable treatment is at risk or being obscured",
+      "Disappearance of detailed inventory movement commentary with specific dollar breakdowns\u2014verify whether Q2 inventory changes were immaterial or discussion was relocated",
+      "Condensation of non-GAAP methodology explanations and valuation allowance tax effect language\u2014confirm reconciliation tables and substantive detail remain in financial statement notes"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 2,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "AP",
+    "model": "claude-opus-4-6",
+    "input_tokens": 5201,
+    "output_tokens": 1896,
+    "timestamp": "2026-04-09T11:45:31.322091"
+  }
+}

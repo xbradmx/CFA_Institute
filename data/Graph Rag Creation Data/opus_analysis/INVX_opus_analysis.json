@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "277a5371552f8272",
+        "current": "2db37f53fd44bddd",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period provided specific quantitative detail on over-time accounting (6 projects, ~0.1% of total and product revenues), detailed revenue recognition methodology (percentage complete, loss recording policies), and a comprehensive critical accounting estimates section covering income taxes, business combinations, and goodwill with substantive discussion. The current period replaces all of this with a single sentence: 'there have been no significant changes to our critical accounting estimates since our Annual Report.' While referencing the Annual Report is technically permissible, removing the over-time project metrics and the entire critical accounting estimates discussion from the quarterly filing materially reduces transparency for quarterly readers who may not cross-reference the 10-K.",
+      "investigation_action": "Verify whether the Annual Report actually contains equivalent detail on over-time accounting projects and critical estimates. Monitor whether over-time project count has changed materially and whether this removal coincides with any deterioration in project economics or revenue recognition timing."
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "c143bf3463a48f2f",
+        "current": "ba56b26ea4c6b6a7",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period disclosed specific dollar amounts for the DWS investment premium ('$15.0 million more than the acquired underlying equity'), the breakdown into intangible assets ($13.0 million) and equity method goodwill ($2.0 million), and noted amortization of intangible assets to equity method earnings. The current period retains the goodwill attribution to SCF cost reductions but removes all DWS-specific dollar amounts. However, this may be explained by the fact that DWS became a wholly-owned subsidiary in November 2024, potentially consolidating this disclosure elsewhere in the filing (as seen in Flag 7's INVX block which does contain some of these figures).",
+      "investigation_action": "Confirm whether the DWS-specific dollar amounts ($15.0M premium, $13.0M intangibles, $2.0M goodwill) appear elsewhere in the current filing. If they do not, this represents a genuine reduction in cost/margin transparency for a recently completed acquisition."
+    },
+    {
+      "flag_number": 3,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "8c78e212a0b66ef1",
+        "peer": "25811ad98ba0b697"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted \u2014 it flags DNOW for providing minimal impairment discussion compared to INVX, but INVX actually provides extensive, quantified impairment disclosures ($3.4 million total, $2.9 million Mexico land/building, declining market conditions for Dril-Quip office sub-lease). DNOW states impairments 'were not material,' which is a legitimate disclosure when impairments are genuinely immaterial. This reflects genuine business differences rather than disclosure evasion by INVX.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9ec1046c111c2791",
+        "peer": "db77c7bb31d51648"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "DNOW provides extensive discussion of geopolitical risks including OPEC dynamics, tariff impacts, foreign currency exposure with quantified sensitivity ($1 million impact from 10% FX change), and detailed hedging strategy disclosure. INVX's matched block contains only a sentence about effective tax rate changes with no substantive discussion of tariffs, commodity price volatility, or foreign currency risk \u2014 despite operating globally with international revenues. For a company in the same sector with significant international operations (including Mexico, as evidenced by its impaired assets there), the complete absence of geopolitical/macro risk discussion in the 10-Q is a notable gap.",
+      "investigation_action": "Examine whether INVX's 10-K contains geopolitical/macro risk discussion that simply wasn't repeated in the 10-Q, and assess INVX's actual tariff and FX exposure given its international manufacturing footprint. The Mexico asset impairment suggests real exposure that should be disclosed."
+    },
+    {
+      "flag_number": 5,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e5243c6bb7cc645c",
+        "peer": "5538a447727f3d88"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason compares INVX's single sentence about DWS drilling equipment with DNOW's extensive merger integration risk discussion related to the MRC Global acquisition. These are fundamentally different situations \u2014 DNOW is disclosing risks related to a pending/recently announced major merger with a public company (MRC Global), while INVX's matched block is a product description, not a risk factor. INVX completed its own major merger (Dril-Quip) in September 2024 and discusses integration-related items elsewhere in its filing. The comparison is not apples-to-apples.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4c20816201d78a17",
+        "peer": "da7987daa8e66afd"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "DNOW provides detailed quantitative industry indicators (rig counts with percentage changes, WTI prices, natural gas prices, steel prices, wells completed), specific revenue and operating profit figures by segment (U.S., Canada, International), and a forward-looking outlook section tying results to commodity prices. INVX's matched blocks show some quantitative detail ($4.7 million revenue from acquisition, $1.0 million remaining performance obligations, related party revenue figures) but lack any industry-level operating environment discussion, forward-looking outlook, or segment-level performance analysis. For a company of INVX's scale and global footprint, the absence of an operating environment overview or outlook section is a meaningful gap relative to peers.",
+      "investigation_action": "Assess whether INVX provides an operating environment or outlook discussion elsewhere in the filing. If absent, this represents a significant gap in forward-looking transparency that makes it harder for analysts to assess demand trends affecting the company."
+    },
+    {
+      "flag_number": 7,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cf068603560767af",
+        "peer": "635c86360d55b8e5"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason claims INVX provides minimal disclosure while SEI provides detailed discussion, but the evidence shows the opposite. INVX provides extensive quantified disclosure on acquisition accounting ($75.1 million cash, 1,918,558 shares), goodwill deductibility, impairment testing methodology, $2.9 million impairment, $42.0 million held-for-sale assets, $100 million share repurchase program, DWS acquisition details with dollar amounts, and bargain purchase gain analysis. SEI's matched block is two sentences about convertible note accounting. The flag appears to be erroneously directed.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "9ec1046c111c2791",
+        "peer": "515299e04714e44d"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "SEI explicitly discusses tariff risks including the baseline 10% tariff on virtually all foreign countries, additional reciprocal tariffs, tariffs on certain materials, and potential negative impacts on the global economic environment and project demand. INVX's matched block again contains only the effective tax rate sentence with zero discussion of tariffs or trade policy. Given that INVX manufactures products internationally (including Mexico, where it holds assets) and sells globally, the absence of any tariff or trade risk discussion is a material omission. This corroborates Flag 4's finding and strengthens the concern.",
+      "investigation_action": "Determine INVX's tariff exposure across its supply chain and international operations. Review whether any tariff discussion appears in the 10-K risk factors but was omitted from the 10-Q. Assess whether INVX's manufacturing in Mexico and other international locations creates material tariff exposure that should be disclosed."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "INVX shows two primary disclosure concerns: (1) a meaningful temporal reduction in critical accounting estimates and over-time revenue recognition detail from the prior quarter's 10-Q, replaced by a vague reference to the Annual Report, and (2) a consistent absence of geopolitical/macro risk discussion (tariffs, FX, commodity prices) despite operating internationally, a gap confirmed by comparison with two different peers. The company's financial sustainability and acquisition-related disclosures remain relatively robust, but the pattern of omitting industry-wide risk factors and stripping quarterly accounting detail warrants monitoring.",
+    "top_concerns": [
+      "Removal of critical accounting estimates detail and over-time revenue recognition metrics from the 10-Q, reducing quarterly transparency on judgment-intensive areas",
+      "Complete absence of tariff, trade policy, and geopolitical risk discussion despite international manufacturing operations (confirmed vs. both DNOW and SEI peers)",
+      "Lack of operating environment overview or forward-looking outlook section compared to peers, making it harder to assess demand trends and market conditions affecting the company"
+    ],
+    "genuine_count": 2,
+    "borderline_count": 2,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "INVX",
+    "model": "claude-opus-4-6",
+    "input_tokens": 10347,
+    "output_tokens": 2624,
+    "timestamp": "2026-04-09T12:07:33.828892"
+  }
+}

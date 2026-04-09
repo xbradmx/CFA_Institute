@@ -1,0 +1,149 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "493b0f824b045a50",
+        "current": "b8dc8f1b292bf238",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing disclosed specific tariff rates (10% baseline and 36% reciprocal) with exact effective dates and suspension timelines, while the current filing provides only the final negotiated 19% rate with less detail on the trajectory. However, the current filing reflects a genuinely updated situation\u2014a bilateral agreement was reached\u2014so the removal of the earlier interim tariff details is partially justified by the resolution of those specific actions. The current filing also drops the explicit warning language about 'additional costs and pricing pressures, supply chain disruptions' that was present before, replacing it with a generic monitoring statement.",
+      "investigation_action": "Verify whether the 19% tariff rate is the final agreed rate or subject to further revision; assess whether the softened risk language in the current filing is consistent with TACT's actual margin impact from tariffs, especially given their MD&A disclosure of 5% ASP increases passed to customers."
+    },
+    {
+      "flag_number": 2,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5dda779a95b59193",
+        "peer": "5cd31635de846f0b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted\u2014it highlights LINK's lack of detail versus TACT's thorough disclosure. TACT is the company being monitored, and TACT provides excellent granularity on its Siena Credit Facility including the $10M revolving line, 9.25% interest rate, $3M minimum borrowing requirement, borrowing base formula, and maturity date. The peer divergence reflects LINK's different business circumstances (no active credit facility) rather than any deficiency in TACT's disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ad8e270077bbcdc8",
+        "peer": "dc731ab47e5b8a7a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "TACT provides extensive, detailed disclosure on geopolitical and tariff risks including the specific 19% Thailand tariff rate, 5% ASP increases, and forward-looking impact assessments. The peer LINK's sparse disclosure reflects its different business model and exposure profile, not a deficiency in TACT. This flag actually demonstrates TACT's superior disclosure quality on this topic.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "b8dc8f1b292bf238",
+        "peer": "759f1ac4c4535958"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, TACT provides specific tariff details (19% Thailand rate, effective date August 7, 2025) while LINK offers only generic 'fluctuating tariff rates' language. This divergence favors TACT's disclosure quality. LINK's generic language may be a concern for LINK investors, but it does not indicate any disclosure degradation by TACT.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0f7681b136c2e0c9",
+        "peer": "c9ede3a068d7e2c0"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "TACT discloses operational capacity and continuity risks related to outsourcing and human capital, while LINK's passage focuses on executive compensation and RSU grants without substantive human capital risk discussion. The comparison is between apples and oranges\u2014TACT is discussing operational outsourcing risks while LINK's block addresses compensation mechanics. The flag incorrectly frames this as a TACT issue when TACT is the one providing the more substantive disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "694d215a1832f14a",
+        "peer": "6ff1d359a3c4e6e2"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "TACT provides extensive operational risk disclosure covering the BOHA! source code acquisition risks, contract manufacturer dependency, and outsourcing strategy risks. LINK's passage covers warranty and return policies, which is a completely different topic. TACT's disclosure is detailed and specific, and the divergence reflects TACT's superior transparency rather than any disclosure deficiency on TACT's part.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4381cb02dec2cf45",
+        "peer": "cda9c28734f19e6a"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "TACT's IP risk disclosure is notably brief\u2014only three sentences covering IP infringement risk from Asian manufacturing\u2014while LINK provides extensive detail on IP indemnities, including the unlimited and perpetual nature of such obligations. Given TACT's heavy reliance on a single Thailand-based contract manufacturer with access to its proprietary technologies, the brevity of TACT's IP risk discussion relative to the materiality of the exposure warrants attention. However, TACT does at least acknowledge the core risk that Asian manufacturing weakens IP protections.",
+      "investigation_action": "Assess whether TACT has IP indemnification obligations similar to LINK's and whether these are disclosed elsewhere in the filing; evaluate whether TACT's three-sentence IP risk disclosure is adequate given its concentration of manufacturing with a single Asian contractor that has access to proprietary technology."
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5f95de38df0c5fb6",
+        "peer": "fbc0ae4f8a4c5372"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "TACT provides highly detailed supply chain disclosure including dependency on a Thailand manufacturer, raw component sourcing from Thailand and China, the impact of customer inventory destocking on sales, and the return of competitors to the market after supply chain normalization. WETH's single sentence about stabilizing chip costs is far less detailed, but this reflects a concern about WETH's disclosure, not TACT's. TACT's disclosure on this topic is exemplary.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1db70aa6bf97ed48",
+        "peer": "f8d9bd9cf39d8870"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "TACT explicitly discusses cost and margin pressures from tariffs, the BOHA! source code transition costs, and the risk of needing comparable software at significant expense. WETH's passage about a stock repurchase program is completely unrelated to cost/margin pressure. The screening algorithm appears to have matched these blocks erroneously. TACT's disclosure on cost pressures is detailed and specific.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "TACT demonstrates strong overall disclosure quality across most topics, particularly in supply chain dependency, tariff impacts, debt financing details, and operational risks. The vast majority of flagged peer divergences actually reflect TACT's superior transparency compared to its peers rather than any disclosure deficiency. The only notable findings are a modest softening of tariff risk language between filing periods and relatively thin IP risk disclosure given the company's manufacturing concentration in Asia.",
+    "top_concerns": [
+      "Monitor whether the temporal softening of tariff risk language (Flag 1) presages further reduction in specificity as the 19% Thailand tariff takes effect and impacts margins",
+      "Assess adequacy of TACT's brief IP risk disclosure given heavy reliance on a single Asian contract manufacturer with access to proprietary technology",
+      "Track whether TACT's 5% ASP increases are sufficient to offset the 19% tariff burden or whether margin compression emerges in subsequent quarters"
+    ],
+    "genuine_count": 0,
+    "borderline_count": 2,
+    "dismissed_count": 7
+  },
+  "_meta": {
+    "ticker": "TACT",
+    "model": "claude-opus-4-6",
+    "input_tokens": 8130,
+    "output_tokens": 2344,
+    "timestamp": "2026-04-09T12:33:53.279824"
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "geopolitical_macro",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "8124f6b0a95676d1",
+        "current": "4d0733b60f77ae85",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included a detailed itemized list of specific risk factors affecting financial results (e.g., 'our ability to attract and retain new customers,' 'unforeseen changes or delays in our supply chain,' specific references to 'recessionary trends, slow economic growth, political elections, inflation and high interest rates, fuel prices'). The current period replaces this with a more consolidated opening sentence about 'health crises, geopolitical tensions, trade restrictions' without the granular breakdown. However, the tariff-specific discussion is largely preserved and even slightly updated with 'Although the administration has announced several trade agreements.' The itemized list appears to have been moved to the stock volatility section in the current period, suggesting consolidation rather than removal.",
+      "investigation_action": "Verify whether the detailed itemized risk factor list was relocated to another section of the filing (e.g., the stock volatility factors section, which appears to contain many of the same items). If not fully relocated, press management on why granular risk factor itemization was condensed."
+    },
+    {
+      "flag_number": 2,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "45691f5083e487b1",
+        "current": "202b82050d5bc103",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period disclosed patent counts with a specific date ('As of March 26, 2025, we own or co-own nine issued U.S. patents and 27 issued foreign patents and have 21 pending or allowed patent applications'), while the current period updates only the date to 'May 30, 2025' with identical counts. The prior period included extensive discussion of detailed risk factor summary bullets and certain additional IP-related discussion paragraphs that appear condensed in the current period. However, the core regulatory disclosures\u2014FTC Order details, SEC investigation, SDNY voluntary document requests\u2014remain substantively identical across both periods. The apparent reduction is largely attributable to the prior extract including more of the full risk factors section, while the current extract appears to contain substantially the same content but with some paragraphs moved or consolidated.",
+      "investigation_action": "Compare the full risk factor sections side-by-side to confirm whether any specific legal proceedings, investigation updates, or IP risks were actually removed rather than reorganized. Specifically check for updates on the SEC enforcement investigation and SDNY inquiry status."
+    },
+    {
+      "flag_number": 3,
+      "topic": "revenue_future_performance",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "93ed98848de1f083",
+        "current": "1756686aeaa4104c",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period explicitly stated 'We recognize a substantial portion of our revenue ratably over the terms of our agreements with customers, which generally occurs over a four-year period,' providing a specific quantitative detail about the revenue recognition timeline. The current period removes the 'four-year period' language entirely, stating only that revenue is recognized 'ratably over the term of our agreements with customers.' Additionally, the prior period included the sentence 'We are likely to recognize the costs associated with these increased investments earlier than some of the anticipated benefits' in a specific context, while the current period replaces it with a more generic cost-recognition statement. The removal of the four-year term disclosure is a meaningful reduction in specificity that investors use to model deferred revenue.",
+      "investigation_action": "Ask management why the four-year revenue recognition period disclosure was removed\u2014has the typical contract term changed, or is this an intentional obfuscation? Review contract disclosures in the notes to financial statements for remaining performance obligation durations to cross-check."
+    },
+    {
+      "flag_number": 4,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "09a02d39efae7ad5",
+        "peer": "3653fd15fc1a19d8"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason incorrectly frames this as ALOT 'downplaying or concealing significant audit and accounting risks.' ALOT provides standard boilerplate on internal controls because it has no material weaknesses, restatements, or investigations to disclose\u2014its CEO and CFO concluded disclosure controls are effective with no changes in internal controls. EVLV's extensive disclosures reflect its unique and severe accounting problems (multi-year restatements, material weaknesses, SEC investigation). The divergence reflects genuine business differences, not peer disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4d0733b60f77ae85",
+        "peer": "8fdb64aa82cc563c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ALOT does mention tariffs and import/export regulation changes in its forward-looking risk factors list (item (l): 'changes to United States tariff and import/export regulations and potential countermeasures') and provides detailed FX risk quantification. EVLV's extensive tariff discussion reflects its specific reliance on overseas contract manufacturing, while ALOT's exposure profile differs. The divergence reflects different business models and supply chain structures rather than disclosure evasion by ALOT.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4e1c9eca1d53d554",
+        "peer": "1730d7f86237d4fb"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ALOT's disclosures reference a 10% workforce reduction, CEO resignation, new CEO appointment, and decreased employee-related expenses\u2014all substantive human capital events. EVLV's far more extensive human capital risk discussion reflects its rapid-growth stage and unique challenges (6-12 month sales force ramp-up, key-man risk for its CEO). ALOT is a more mature industrial company with different human capital dynamics. The divergence reflects genuine business model differences rather than concealment.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5407e70105dd4571",
+        "peer": "91d29b15e328e6f0"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "ALOT acknowledges that the MTEX integration 'has been more time-consuming and resource-intensive than we originally anticipated' but provides no further detail on specific risks, costs, or timeline expectations. Given that ALOT discovered potential breaches of representations and warranties from the MTEX acquisition and is involved in arbitration, the minimal disclosure of operational and integration risks is notable. While EVLV's product risk profile is fundamentally different (security screening vs. specialty printing), ALOT's brevity on integration challenges when it has active disputes suggests under-disclosure.",
+      "investigation_action": "If ALOT is a supplier, investigate the MTEX integration challenges more deeply\u2014request specifics on what representations and warranties may have been breached, what operational disruptions have occurred, and whether product quality or delivery timelines have been affected."
+    },
+    {
+      "flag_number": 8,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "202b82050d5bc103",
+        "peer": "7eda2943e84c3827"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ALOT actually provides relatively detailed and specific disclosure on its arbitration proceedings, including dates, parties, procedural status, and expected timeline. EVLV's far more extensive regulatory and legal risk discussion reflects its unique situation involving restatements, SEC investigations, FTC enforcement orders, DOJ inquiries, class actions, and derivative lawsuits. The divergence is driven by EVLV's extraordinary legal exposure, not by ALOT concealing comparable risks.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 9,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1ef4a8c636d6ca4f",
+        "peer": "0ca4f3b680c7aafa"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ALOT's brief inventory disclosure reflects a simpler supply chain model\u2014it maintains inventory primarily for ink supply obligations and mentions the balance increased modestly from $47.9M to $48.4M. ALOT's risk factors separately acknowledge 'dependence on contract manufacturers and/or single or limited source suppliers.' EVLV's extensive supply chain risk discussion reflects its specific reliance on a single contract manufacturer (Columbia Tech) and overseas component sourcing for security systems. The different levels of detail reflect different business models.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 10,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "acbc6982c766bdaa",
+        "peer": "db2fd6dd73a9c115"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ALOT provides specific quantitative FX risk disclosure (functional currencies identified, losses quantified at less than $0.1M) and mentions tariff risks in its forward-looking statements. The peer's FX section addresses transactional and translational exposure with appropriate specificity for its scale. EVLV's broader geopolitical discussion reflects its different risk profile as a company with contract manufacturing dependencies and government sales exposure. This is a business model difference, not disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "7f0407152d31da3c",
+        "peer": "9271082492cbc37b"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ALOT's arbitration disclosure is actually quite specific\u2014it identifies parties, dates, venue, procedural posture, and expected timeline ('ruling is not expected until the first half of 2026'). It also states 'Other than the above, there are no other pending or threatened legal proceedings against us that we believe to be material.' EVLV's extensive legal risk discussion is driven by its unique circumstances (restatement, SEC/DOJ investigations, FTC order, class actions). ALOT's disclosure is proportionate to its actual legal exposure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 12,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "09a02d39efae7ad5",
+        "peer": "061104cebfef8a8c"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "MITK's standard boilerplate on critical accounting estimates and reference to its 2024 Annual Report for detailed policies is appropriate for a company with no disclosed material weaknesses or restatements. EVLV's extensive accounting/audit disclosures reflect its severe and company-specific problems. These are fundamentally different companies in different situations\u2014MITK is not in the 'same industry' in a meaningful sense (digital identity verification vs. physical security screening). The divergence does not suggest MITK is concealing audit risks.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 13,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2f8d0de76b6c6252",
+        "peer": "11797401398bce92"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "MITK provides specific quantitative cost disclosures\u2014cost of revenue increased $0.5M (8%), selling and marketing up $0.8M (7%), R&D down $1.0M (10%), G&A down $1.4M (11%)\u2014with directional explanations. This is typical MD&A for a software company with improving cost structure. EVLV's extensive cost/margin pressure discussion reflects its pre-profitability hardware manufacturing business with contract manufacturer dependence. The companies have fundamentally different business models and cost structures.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 14,
+      "topic": "cybersecurity_technology",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5b59603ee16f0ea1",
+        "peer": "444671d41dad4df6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "MITK's cybersecurity discussion is oriented toward its product offering ('fraud prevention, digital identity verification, and cybersecurity markets') rather than its own operational cyber risks, which would typically be addressed in risk factors. EVLV's extensive cybersecurity risk disclosure reflects its specific exposure as a physical security company collecting biometric/screening data and processing sensitive government information. The comparison is not apples-to-apples\u2014the MITK excerpt is from its business overview, not its risk factors section.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 15,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4d0733b60f77ae85",
+        "peer": "1a21d55523607c98"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The MITK excerpt provided is a single sentence about foreign currency exchange gains, which is clearly not representative of MITK's full risk factor disclosure. MITK is a software/SaaS company with minimal physical supply chain exposure and different geopolitical risk profile than EVLV, which manufactures hardware through contract manufacturers. The comparison reflects fundamentally different business models and the screening appears to have matched a narrow excerpt from MITK's financial discussion rather than its risk factors.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 16,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "4e1c9eca1d53d554",
+        "peer": "ed0f4534670f7233"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The MITK excerpt shows standard expense line-item descriptions mentioning 'payroll, employee benefits, stock-based compensation'\u2014this is cost reporting, not the risk factors section where human capital risks would be discussed. MITK notes it is 'replacing full-time consultants with full-time employees,' which is actually a substantive operational disclosure. EVLV's extensive human capital risk discussion reflects its unique growth-stage challenges and recent management instability. The divergence reflects different company stages and the comparison uses non-equivalent filing sections.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 17,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "5407e70105dd4571",
+        "peer": "d979d18cb34dc233"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The MITK excerpt is a single sentence from its business overview describing its product ('verification and fraud detection technology is embedded directly within mobile and web applications'). This is not comparable to EVLV's detailed risk factor discussion of product failures and implementation challenges. MITK is a software company with fundamentally different operational and product risk profiles than EVLV's hardware security screening business. The screening matched incomparable sections.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 18,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "202b82050d5bc103",
+        "peer": "eca3387e0842cf18"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The MITK excerpt references regulatory compliance as a market driver ('assist them in meeting regulatory requirements') and provides tax rate detail, share repurchase program information\u2014none of which constitutes the risk factor section. EVLV's extensive legal/regulatory risk discussion reflects its unique situation (SEC investigation, FTC enforcement, DOJ inquiry, restatement litigation). MITK operates in a different regulatory environment (digital identity/fintech compliance vs. physical security/SAFETY Act). The comparison uses non-equivalent sections and reflects different business circumstances.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "EVLV's disclosure quality is actually quite high given its severe circumstances\u2014the company provides extensive, detailed risk factor disclosure covering restatements, material weaknesses, SEC/DOJ investigations, FTC enforcement, and operational risks. The one genuine finding is the removal of the specific four-year revenue recognition period from the current filing, which is a meaningful reduction in disclosure specificity. Most peer divergence flags are false positives driven by comparing fundamentally different companies (software vs. hardware, mature vs. growth-stage) or matching non-equivalent filing sections.",
+    "top_concerns": [
+      "Removal of the four-year revenue recognition period disclosure\u2014verify whether contract terms have changed or this is intentional obfuscation of a key modeling input",
+      "Potential consolidation/reorganization of the detailed itemized risk factor list for geopolitical/macro risks from a structured bullet format to more narrative form\u2014confirm all items are preserved elsewhere",
+      "Ongoing SEC enforcement investigation, DOJ inquiry, and unremediated material weaknesses remain the dominant fundamental risks regardless of disclosure quality"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 3,
+    "dismissed_count": 14
+  },
+  "_meta": {
+    "ticker": "EVLV",
+    "model": "claude-opus-4-6",
+    "input_tokens": 83820,
+    "output_tokens": 4738,
+    "timestamp": "2026-04-09T12:00:03.143756"
+  }
+}

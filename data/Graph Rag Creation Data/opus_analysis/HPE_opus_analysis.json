@@ -1,0 +1,191 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "accounting_audit",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "59c7ec1e206b3f2c",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This is standard boilerplate language about accounting estimates that references the annual 10-K for detailed discussion. It is common for 10-Q filings to vary in which boilerplate risk factors they carry forward quarter to quarter, and the substantive content (critical accounting estimates) is referenced as residing in the 10-K. No specific metrics or material disclosures were removed.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "6eac97a6edf3972d",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This is a substantial and highly detailed block of disclosure covering tariff-driven cost increases, binding long-term price commitments with vendors, excess/obsolete inventory risks, inability to pass on price increases to customers, and margin compression across distribution channels. The prior filing specifically disclosed that 'these measures have materially increased costs for certain goods imported into the United States' and discussed risks of inventory write-downs. Removing this entire category of risk disclosure is significant given that tariff and cost pressures have not abated.",
+      "investigation_action": "Analyst should verify whether HPE's gross margins are under pressure from tariffs or component cost increases, review inventory balances for signs of excess or obsolescence, and check whether this content was consolidated into another risk factor or truly dropped."
+    },
+    {
+      "flag_number": 3,
+      "topic": "debt_financing",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "76cb53ae6adb4bdc",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The removed text specifically discussed larger AI system orders requiring extended payment terms and associated credit risk, as well as variability in interest and borrowing costs. The reference to 'larger orders, including some orders for our AI systems' involving 'larger amounts of credit or longer payment terms' is a material and specific disclosure about a growing business segment. While the text is relatively brief, the AI-specific payment terms risk is highly relevant to HPE's current growth trajectory.",
+      "investigation_action": "Analyst should examine HPE's accounts receivable aging and DSO trends, particularly for AI system orders, and assess whether working capital requirements for AI orders are creating financing strain that is no longer being disclosed."
+    },
+    {
+      "flag_number": 4,
+      "topic": "financial_sustainability",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "292e23e5d582a239",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This block contains a highly specific and material disclosure: 'we recognized an impairment charge of $1.4 billion for goodwill related to the Hybrid Cloud reporting unit, which we believe was predominantly due to the discount rate used in the analysis.' Removing this entire section\u2014which also discusses ongoing goodwill impairment risk, asset impairment from divestitures, and government contract suspension risk\u2014eliminates disclosure of a concrete $1.4B impairment event and forward-looking risk of further impairments. This is a clear case of removing quantitative detail on a material event.",
+      "investigation_action": "Analyst should investigate the current carrying value of goodwill for the Hybrid Cloud reporting unit, whether further impairment risk exists given current discount rates, and why HPE chose to drop this specific quantified disclosure from the subsequent quarter's filing."
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "d5eeafb15683bb3a",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This is an extraordinarily detailed block covering tariff impacts, Russia/Ukraine conflict effects, China-U.S. trade tensions, export control restrictions, sanctions compliance, and specific geopolitical risk factors broken out in a detailed bulleted list. Given that 'sales outside the United States constituted approximately 64% of our net revenue' and the tariff environment has intensified rather than abated, removing this entire comprehensive risk discussion is highly concerning. The text specifically noted that 'current U.S. government trade policy includes the imposition of tariffs on certain foreign goods, including information and communication technology products' and discussed retaliatory countermeasures.",
+      "investigation_action": "Analyst should determine whether HPE's international revenue exposure has changed, assess current tariff impacts on HPE's product costs and pricing, and verify whether this geopolitical risk disclosure was moved to the annual 10-K reference or truly eliminated from the quarterly filing."
+    },
+    {
+      "flag_number": 6,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "9d101abea45e9ba5",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The removed text is a brief fragment about contingent worker management and single-source suppliers that appears to be a subset of a larger risk factor discussion. The content is relatively generic boilerplate about contingent workforce risks. The single-source supplier mention appears to be a bullet header that likely connects to supply chain content flagged separately. This is minor editorial trimming rather than substantive disclosure degradation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "liquidity_solvency",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "a19175902153fa16",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This block contains specific disclosures about uncollateralized trade receivables with distribution partners, risk from AI system orders requiring 'greater commitments of working capital,' potential government payment delays or terminations, and financial institution counterparty risk. The language 'considerable trade receivables that are not covered by collateral or credit insurance are outstanding with our distribution channel partners' is a specific and material admission about credit exposure. Removing this in a period of expanding AI order books and government spending uncertainty represents meaningful disclosure degradation.",
+      "investigation_action": "Analyst should review HPE's trade receivable balances, concentration risk with channel partners, and working capital trends\u2014particularly any increase in receivables tied to large AI system orders\u2014and assess whether government contract payment risks have materialized."
+    },
+    {
+      "flag_number": 8,
+      "topic": "operational_product",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "1a56f345cf4c1740",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The removed text discusses distribution management risks and the Russia/Belarus exit, including the statement 'HPE is continuing to execute on the exit of our remaining business in Russia and Belarus as planned; however, we cannot provide any assurance that such exit will be efficient or uninterrupted.' If the Russia/Belarus exit is now complete, removing this would be appropriate. However, the distribution management risk language is standard for a company with HPE's multi-channel model and its removal is notable if not replaced elsewhere.",
+      "investigation_action": "Analyst should confirm whether the Russia/Belarus exit has been completed and whether distribution channel management risks are addressed elsewhere in the current filing."
+    },
+    {
+      "flag_number": 9,
+      "topic": "regulatory_legal",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "54fdb9872f04b3a7",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This block contains extensive and specific regulatory risk disclosures including FCPA/UK Bribery Act compliance risks, government procurement compliance, qui tam litigation exposure, and notably a timely disclosure about 'the current U.S. administration has issued executive orders and taken actions to curtail certain programs that violate federal anti-discrimination laws, including requiring U.S. federal contracts to certify that they do not operate any such programs.' The discussion of potential penalties including 'termination of contracts, forfeiture of profits, suspension of payments and fines, treble damages, and suspension from future government contracting' represents material legal risk disclosure that should not simply disappear.",
+      "investigation_action": "Analyst should investigate HPE's government contract exposure, any pending qui tam litigation, compliance status with recent executive orders on DEI-related programs, and whether any government contract risks have increased since the prior filing."
+    },
+    {
+      "flag_number": 10,
+      "topic": "revenue_future_performance",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "34579d51232d282b",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This is a highly detailed and specific disclosure block that includes quantitative data ('sales outside the United States constituted approximately 64% of our net revenue in fiscal 2024'), specific operational insights about AI order cancellations and de-bookings, demand softness patterns ('we have seen demand soften unevenly across our portfolio and geographies... certain customers and sectors have been taking longer than anticipated to digest prior large orders'), and government spending risks including 'recent actions taken to reduce the size of the U.S. federal workforce.' The candid acknowledgment of order cancellation risk specifically for AI offerings and uneven demand patterns represents critical forward-looking information for analysts.",
+      "investigation_action": "Analyst should closely monitor HPE's AI order pipeline, booking-to-revenue conversion rates, government sector revenue trends, and whether the demand digestion issues mentioned in the prior filing have resolved or worsened."
+    },
+    {
+      "flag_number": 11,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "90dcd3b1845ce756",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "This is the most extensive individual block of disappeared disclosure, covering single-source supplier dependencies, component shortage risks, excess inventory risks, advance purchase commitments, distributor inventory management challenges, and supply chain diversification efforts in response to tariffs. The text includes highly specific operational details such as 'we rely on suppliers in Asia for product assembly and manufacture' and discusses the interaction between direct/indirect channels and inventory management complexity. The statement 'while we are evaluating supply chain diversification and resilience strategies to mitigate the adverse impacts of such measures, the actions we've taken or may take in the future may not be effective' is a material forward-looking caveat. Removing all of this in a period of active tariff disruption is a significant disclosure degradation.",
+      "investigation_action": "Analyst should assess HPE's current supplier concentration, inventory levels and composition, progress on supply chain diversification away from tariff-exposed geographies, and whether any single-source supplier disruptions have occurred since the prior filing."
+    },
+    {
+      "flag_number": 12,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f23379a3475f82ac",
+        "peer": "a75b8052ebc9648f"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The flag suggests HPQ is underreporting supply chain risk relative to HPE, but the comparison actually shows HPE providing reasonable MD&A disclosure about GPU/APU constraints, tariff impacts, and mitigation strategies. HPQ's disclosure, while briefer, reflects its different business mix (printing-centric single-source dependencies vs. HPE's enterprise infrastructure focus). This appears to reflect genuine business differences rather than disclosure evasion by either party. The flag was also mislabeled in its screening reason, which confusingly suggests HPQ is the one downplaying risk rather than HPE.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "HIGH",
+    "summary": "HPE's September 2025 10-Q filing has dropped virtually its entire detailed Risk Factors section relative to the June 2025 filing, eliminating extensive disclosures across at least 10 material risk categories including supply chain, geopolitical, cost/margin, revenue performance, regulatory/legal, liquidity, and financial sustainability topics. This is not selective trimming\u2014it represents a wholesale removal of detailed, specific, and in some cases quantified risk disclosures (including a $1.4B goodwill impairment reference and specific AI order cancellation risks) during a period when many of these risks have intensified rather than abated. The pattern is consistent with either a filing error, a shift to reference-only risk factors pointing to the annual 10-K, or deliberate disclosure reduction that warrants immediate investigation.",
+    "top_concerns": [
+      "Wholesale removal of detailed supply chain, cost/margin, and geopolitical risk disclosures during an active tariff disruption period, eliminating specific language about single-source suppliers, inventory write-down risks, and supply chain diversification challenges",
+      "Disappearance of the $1.4B Hybrid Cloud goodwill impairment disclosure and forward-looking impairment risk language, which may obscure ongoing asset quality concerns",
+      "Elimination of specific disclosures about AI order cancellation/de-booking risks, uneven demand digestion, extended payment terms for AI systems, and working capital strain\u2014all critical to evaluating HPE's AI growth trajectory"
+    ],
+    "genuine_count": 7,
+    "borderline_count": 2,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "HPE",
+    "model": "claude-opus-4-6",
+    "input_tokens": 9185,
+    "output_tokens": 3528,
+    "timestamp": "2026-04-09T12:06:25.160937"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "human_capital",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "1ba933a3d8489f28",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing disclosed specific R&D expense figures ($1,132,000 vs $1,208,000), a precise 6% decrease, and attributed the decline to 'a decrease in headcount, including retirements and other personnel changes' as well as equity expense impacts from grant cancellations. This quantitative and qualitative detail about workforce reductions has disappeared from the current MD&A. The current filing (Flag 3 context) replaces this with generic 'cost-cutting initiatives, particularly lower employee-related costs' without specifying headcount changes or retirements, which obscures the nature and magnitude of workforce contraction.",
+      "investigation_action": "Analyst should investigate whether SCKT is continuing headcount reductions, request specifics on total employee count trends, and assess whether the removal of headcount-specific language is masking accelerating workforce attrition or layoffs that could impair product development capacity."
+    },
+    {
+      "flag_number": 2,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "e0a8891e81d57901",
+        "current": "e98ee1cac832428c",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "Three substantive passages were removed from the Risk Factors: (1) the sentence explicitly stating 'We have been using stock options and restricted stocks as key components of our employee compensation packages,' (2) the explanation that stock-based comp is used to 'maximize long-term stockholder value,' and (3) the critical warning that 'we may decide in response to the effects of expensing stock options and restricted stocks on our operating results to reduce the number of stock options or restricted stocks granted.' Additionally, the dependency on third-party alliances sentence and the 'We depend on alliances' paragraph were removed. The retained text references stock options providing incentive and potential adverse retention effects but strips out the framing context and the specific policy risk around grant reductions.",
+      "investigation_action": "Analyst should investigate whether SCKT has already reduced equity-based compensation grants (consistent with the prior filing's mention of 'cancellation of old grants'), whether this is creating retention risk for key technical personnel, and whether the removal of this risk language signals a deliberate downplaying of compensation structure changes."
+    },
+    {
+      "flag_number": 3,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "a466b2efe8623d4a",
+        "peer": "cd0c4432a5953425"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "SCKT's MD&A uses repeatedly generic language \u2014 'cost-cutting initiatives, particularly lower employee-related costs' \u2014 across R&D, S&M, and G&A without ever mentioning inflation, tariffs, or supply chain cost pressures. OSS, a direct peer, explicitly discusses inflation impacts in both the US and Europe, tariff pass-through challenges, and provides granular cost of revenue breakdowns by segment including specific dollar changes. SCKT's gross margin declined 100bps YoY (49.9% vs 50.9%) but is attributed only vaguely to 'lower revenue' offset by 'cost control efforts and the use of lower-cost components.' The absence of any inflation or tariff discussion is notable given the current macroeconomic environment and SCKT's reliance on hardware components.",
+      "investigation_action": "Analyst should probe SCKT management on tariff exposure (particularly given component sourcing), whether the shift to 'lower-cost components' reflects quality trade-offs, and why inflation is entirely absent from their risk discussion when peers explicitly flag it as material."
+    },
+    {
+      "flag_number": 4,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "dfc74c8f6d1239cd",
+        "peer": "f72925de72a89983"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "This flag is inverted \u2014 the screening layer flagged OSS for potentially downplaying financial sustainability risks that SCKT discloses. SCKT is actually the more transparent party here, providing specific deferred tax asset values ($10,663,419) and Section 382 analysis. This flag does not indicate disclosure degradation by SCKT; rather, SCKT is the better discloser on this topic. The peer comparison actually validates SCKT's disclosure quality on this dimension.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "dfc74c8f6d1239cd",
+        "peer": "12e31b33a9e31048"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Similar to Flag 4, this flag identifies OMCL as the less transparent discloser, not SCKT. SCKT provides detailed deferred tax asset and NOL carryforward disclosure with specific dollar amounts and Section 382 analysis. OMCL's single-sentence excerpt about R&D investments is irrelevant to financial sustainability comparison. This flag does not represent a disclosure degradation concern for SCKT.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "liquidity_solvency",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "32ffd8e4839d44f2",
+        "peer": "a95006bc007451b3"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, this flag is inverted \u2014 it identifies OMCL as the less transparent discloser on liquidity/solvency risks. SCKT actually provides extensive, specific risk language covering bank covenant compliance, discretionary credit advances, potential inability to fund operations, and customer credit risk. OMCL's two-sentence excerpt is comparatively generic. SCKT is the more transparent company here, and this does not represent a disclosure degradation signal for SCKT.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "SCKT shows genuine disclosure degradation in two areas: the removal of specific headcount and workforce reduction details from MD&A, and the deletion of material risk factor language about equity compensation policy changes. The company also lacks any discussion of inflation or tariff pressures that peers explicitly flag as material. However, three of six flags were inverted peer comparisons where SCKT was actually the better discloser, moderating the overall concern.",
+    "top_concerns": [
+      "Disappearance of specific headcount reduction and retirement disclosures from MD&A, replaced with generic 'cost-cutting initiatives' language that may mask accelerating workforce contraction",
+      "Removal of risk factor language about potential stock option/RSU grant reductions and their retention impact, possibly concealing an active shift away from equity compensation",
+      "Complete absence of inflation and tariff risk discussion despite peers explicitly flagging these as material industry-wide pressures, while SCKT simultaneously reports margin compression and a shift to lower-cost components"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 0,
+    "dismissed_count": 3
+  },
+  "_meta": {
+    "ticker": "SCKT",
+    "model": "claude-opus-4-6",
+    "input_tokens": 7060,
+    "output_tokens": 1935,
+    "timestamp": "2026-04-09T12:27:07.649208"
+  }
+}

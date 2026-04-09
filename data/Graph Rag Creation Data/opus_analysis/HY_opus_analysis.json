@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "cybersecurity_technology",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "b59b89e8251c63ed",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior text is a single sentence about IT system upgrades in the Lift Truck business, not a cybersecurity disclosure. This is a routine strategic initiative mention that may have been consolidated elsewhere or simply reflects updated priorities. The absence of this sentence does not represent removal of material cybersecurity risk disclosure.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 2,
+      "topic": "cost_margin_pressure",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "53dbe5b3d8edd85e",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "This sentence specifically addressed the risk that tariff mitigation actions could be 'time-consuming and expensive' and 'impact pricing... which could impact sales and profitability.' Its removal from Risk Factors is concerning because it acknowledged that the company's own mitigation efforts carry risks. However, this appears to be part of the broader tariff risk factor block (Flag 3) that was entirely removed, so its disappearance may reflect a decision that the Q1 tariff risk factor update is no longer needed as a standalone quarterly update given ongoing 10-K disclosures.",
+      "investigation_action": "Verify whether the 10-K risk factors adequately cover the risk that tariff mitigation actions themselves could impair profitability, and check if the company has shifted to downplaying execution risk on its pricing and sourcing strategies."
+    },
+    {
+      "flag_number": 3,
+      "topic": "geopolitical_macro",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "6d8fab0b26c0b333",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "This was a substantial, highly specific risk factor update in Q1 2025 addressing escalating US-China tariffs, retaliatory measures, and broad macroeconomic impacts. The prior filing explicitly stated it was updating the 10-K risk factors; its removal in Q2 could mean the company considers the 10-K risk factors sufficient now. However, given that the MD&A in the current period (Flag 6) still extensively discusses tariff-driven cost increases, removing the dedicated risk factor update creates an inconsistency \u2014 the company is experiencing material tariff impacts but no longer flagging it as an updated risk.",
+      "investigation_action": "Ask management whether the removal of the tariff risk factor update signals a view that tariff risks have stabilized or diminished, and cross-reference with the detailed tariff cost disclosures still present in MD&A to assess consistency."
+    },
+    {
+      "flag_number": 4,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "41c70589e14c0b42",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "This sentence specifically acknowledged that trade actions 'could disrupt our supply chains, increase our costs, and have an adverse impact on the Company's business strategy, market share and operating results.' It was part of the broader tariff/trade risk factor block removed from Q2. While supply chain risks are mentioned extensively in the forward-looking cautionary language (Flag 8 target text), the explicit linkage between tariff actions and supply chain disruption in the Risk Factors section has been removed even as the company continues to experience tariff-driven cost increases.",
+      "investigation_action": "Assess whether the current filing's forward-looking statements and MD&A adequately substitute for this risk factor language, and monitor whether supply chain disruptions are worsening despite reduced risk disclosure."
+    },
+    {
+      "flag_number": 5,
+      "topic": "human_capital",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "7771b477ee0e4e40",
+        "current": "7ad081b8d09af13d",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed three specific items: savings from headcount reduction initiatives, $10-15M Nuvera cost absorption, and an explicit $15-18M estimate for Q2 2025 employee severance and impairment costs. The current period retains only the $10-15M Nuvera integration language while removing all mention of the headcount reduction savings and the $15-18M severance/impairment cost estimate. Given that Q2 2025 has now passed, the company should be reporting actual severance and impairment costs rather than removing the estimate entirely. The elimination of the specific dollar range for restructuring costs reduces transparency on a material cost item.",
+      "investigation_action": "Determine actual Q2 2025 severance and impairment charges incurred versus the $15-18M estimate, check whether these costs are disclosed elsewhere in the financial statements, and assess whether the headcount reduction program delivered the expected savings."
+    },
+    {
+      "flag_number": 6,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "e819014580550b0a",
+        "peer": "e1987401a5503d27"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually flags DNOW as the less transparent party, not HY. HY provides extensive, detailed disclosure on tariff impacts, pricing actions, margin expectations, and cost mitigation strategies. DNOW is a distribution company with a fundamentally different business model (pipe/valve/fitting distribution vs. lift truck manufacturing), so their cost exposure to tariffs differs materially. This flag does not indicate a disclosure problem at HY \u2014 in fact, HY's disclosure on this topic is exemplary.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 7,
+      "topic": "financial_sustainability",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "279257da6214580c",
+        "peer": "25811ad98ba0b697"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "Again, the screening reason flags DNOW as the less transparent party, not HY. HY provides detailed capital expenditure tables, debt-to-capitalization ratios, restructuring charges, and a 7% operating profit margin target. DNOW and HY are fundamentally different businesses (industrial distribution vs. capital-intensive manufacturing), so differing levels of capital expenditure and restructuring disclosure reflect genuine business differences rather than any disclosure deficiency at HY.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "03a5aecb48bf8a56",
+        "peer": "6fa51d34c1dc1aba"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason flags WFRD (Weatherford, an oilfield services company) as less transparent than HY on supply chain risks. HY's target text is largely boilerplate forward-looking statement cautionary language listing numerous risk factors. WFRD operates in a completely different industry with different supply chain dynamics. This comparison does not reveal any disclosure deficiency at HY; HY's supply chain disclosures are detailed and comprehensive.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "HY (Hyster-Yale) removed a substantial standalone tariff/trade risk factor that was added in Q1 2025, even as the company continues to experience significant tariff-driven cost impacts discussed extensively in MD&A. The removal of specific severance/impairment cost estimates ($15-18M) without replacing them with actual figures is a genuine transparency concern. However, the peer divergence flags are all misdirected (flagging peers, not HY) and HY's MD&A disclosures remain detailed and quantitative on most operational topics.",
+    "top_concerns": [
+      "Removal of $15-18M severance/impairment cost estimate without disclosing actual results \u2014 verify whether restructuring charges are reported in financial statements and reconcile to prior guidance",
+      "Disappearance of the detailed tariff/trade risk factor update from Q1 to Q2 despite ongoing material tariff cost impacts discussed in MD&A \u2014 assess whether 10-K risk factors provide adequate coverage",
+      "Removal of explicit acknowledgment that tariff mitigation actions themselves carry execution and profitability risk \u2014 monitor whether mitigation strategies are meeting expectations"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 3,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "HY",
+    "model": "claude-opus-4-6",
+    "input_tokens": 6506,
+    "output_tokens": 2306,
+    "timestamp": "2026-04-09T12:06:32.908748"
+  }
+}

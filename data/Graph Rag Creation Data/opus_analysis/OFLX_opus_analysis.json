@@ -1,0 +1,233 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "4dc29995ae5fe954",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior filing disclosed that 'higher amounts of materials for the CMT products were initially purchased for cost considerations and because of longer required lead times,' which signals supply chain lead-time risk. The removal of this sentence from Risk Factors could indicate the issue has been resolved or could represent a deliberate omission of supply chain vulnerability discussion. The single-sentence nature makes it minor, but in the current tariff environment, supply chain risk disclosure is particularly relevant.",
+      "investigation_action": "Verify whether CMT product supply chain lead times have normalized or whether this risk was consolidated elsewhere in the filing. Ask management about current raw material sourcing and lead-time dynamics."
+    },
+    {
+      "flag_number": 2,
+      "topic": "accounting_audit",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "aae7a1987c210cd5",
+        "current": "f89c05e296b4507f",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The prior period included descriptions of ASU 2023-07, ASU 2023-09, and ASU 2024-03 along with their effective dates and scopes. ASU 2023-07 was effective for interim periods beginning after December 15, 2024, meaning it would have been adopted by the current period and the description would no longer be needed as a 'recent pronouncement.' The remaining two ASUs still show the evaluating-impact language. This is a routine progression of accounting standards disclosure, not obfuscation.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 3,
+      "topic": "liquidity_solvency",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "5d8201cf0aa77bf6",
+        "current": "90ffbbc5344837bb",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed specific operating cash flow figures ('operating activities provided cash of $1,555,000' vs. '$2,704,000' in the prior year, 'a decrease of $1,149,000') along with the seasonal cash flow explanation. The current period retains the seasonal narrative but completely removes the specific operating cash flow comparison and the year-over-year quantification. This omission of the detailed cash flow from operations figure and period-over-period comparison is a meaningful reduction in transparency for a key liquidity metric.",
+      "investigation_action": "Pull the cash flow statement directly and compute operating cash flows for the six months ended June 30, 2025 vs. 2024. Determine whether the omission coincides with a deterioration in operating cash generation that management may not want to highlight in the narrative."
+    },
+    {
+      "flag_number": 4,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "5b09d109a914d3c4",
+        "current": "f6fbd4d2fe521d3a",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included a warranty assurance statement ('A warranty is generally included with each purchase, providing assurance that the goods comply with agreed-upon specifications') and detailed product application descriptions including residential/commercial fuel gas, double containment for automotive/marina refueling, and medical gas applications. The current period strips these entirely, retaining only the product liability reserves paragraph. The removal of product application detail reduces an investor's ability to assess end-market exposure, while the warranty language removal could obscure warranty obligation understanding.",
+      "investigation_action": "Review whether the warranty and product application descriptions were moved to the 10-K or another section of the filing. Assess whether product liability claims or warranty costs have changed materially, potentially motivating the removal of this language."
+    },
+    {
+      "flag_number": 5,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1623d2a66b06b673",
+        "peer": "3c7cf53536ffa662"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "OFLX explicitly states it has a $15 million line of credit with no borrowings outstanding and earns interest income on cash investments. FGI has $12.6 million outstanding under credit facilities, covenant breaches, and going concern issues. The divergence reflects fundamentally different capital structures and financial health, not disclosure evasion. OFLX has $50.7 million in cash with no debt \u2014 there is no debt financing risk to disclose.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "45486b6c416cf9ed",
+        "peer": "14014dcae7703eb3"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "FGI explicitly discusses tariff-related demand uncertainty and elevated tariff costs on imported goods as material risks, while OFLX's MD&A discusses only foreign currency gains/losses with no mention of tariff impacts. OFLX manufactures flexible gas piping products and sources raw materials, meaning tariff exposure on imported components (stainless steel, fittings) is plausible. The complete absence of any tariff or trade policy discussion in a 2025 filing \u2014 when virtually every industrials company is addressing this \u2014 is a notable gap.",
+      "investigation_action": "Investigate OFLX's raw material sourcing geography, particularly whether stainless steel or other inputs are imported and subject to Section 232 or reciprocal tariffs. Review whether tariff impacts are discussed in any other section of the 10-Q. Ask management directly about tariff exposure."
+    },
+    {
+      "flag_number": 7,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cf3c8357b6bcdbd3",
+        "peer": "b2b8b99a83a83cb1"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually flags FGI for downplaying human capital relative to OFLX, which is reversed from the typical concern. OFLX provides specific information about stock-based compensation, staffing costs, and expense categories. FGI's single sentence about 'deep marketing skills' is indeed thin, but this flag is about the peer being less detailed, not OFLX. OFLX's disclosure appears adequate for a company of its size.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 8,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "0f59ab056fe13c4b",
+        "peer": "5c8c8d7d4327f98e"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "FGI explicitly discusses tariffs increasing cost of goods sold and materially impacting profitability, while OFLX mentions raw material purchase obligations only in passing and notes cost considerations for CMT materials without addressing tariff-driven cost inflation. OFLX's 60.4% gross margin is high, which may explain less cost pressure, but the absence of any tariff cost discussion in 2025 when the company has raw material purchase obligations is notable. The cited OFLX text does reference cost considerations and purchase obligations but avoids any forward-looking risk framing.",
+      "investigation_action": "Analyze OFLX's gross margin trend quarter-over-quarter for signs of input cost pressure. Determine the proportion of raw materials sourced internationally and whether tariffs have begun to impact procurement costs."
+    },
+    {
+      "flag_number": 9,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "24ea02f2bc7bd716",
+        "peer": "325dd883d03e940d"
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The OFLX passage cited is boilerplate currency translation policy language from the notes, while FGI provides nine detailed sentences about tariff risks, trade tensions, reciprocal tariffs, and material uncertainty. OFLX is a manufacturer with international operations (UK, France) and raw material procurement that would reasonably be affected by the 2025 tariff environment. The Risk Factors section's complete omission of tariff, trade restriction, or geopolitical risk language is a significant disclosure gap given the current environment.",
+      "investigation_action": "Review the full Risk Factors section for any tariff or trade policy language that may not have been captured. If absent, flag this as a material disclosure gap for engagement with management and consider whether the omission violates Reg S-K requirements for known trends."
+    },
+    {
+      "flag_number": 10,
+      "topic": "liquidity_solvency",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "2267ee4143f272e8",
+        "peer": "151fa9f2b6b8f908"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "FGI faces going concern doubt, potential Nasdaq delisting, and covenant breaches \u2014 these are company-specific distress signals, not industry-wide risks. OFLX has $50.7 million in cash, no debt, and an undrawn $15 million credit facility. OFLX's disclosure of lease obligations, cash deposits, and litigation risk is appropriate for its financial position. There is no indication OFLX is hiding liquidity risk \u2014 the companies have fundamentally different financial profiles.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 11,
+      "topic": "revenue_future_performance",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "133edadf0e2502c3",
+        "peer": "954de0d1e42475cd"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "FGI explicitly warns that tariff-driven pricing changes could reduce demand and make products less competitive, impacting revenues. OFLX discloses customer concentration (>10% of receivables and sales) and geographic concentration in the U.S. but provides no discussion of how tariffs might affect demand for its flexible gas piping products. Given that OFLX's products serve construction and building end markets, which are sensitive to tariff-driven cost increases on imported materials, the absence of any forward-looking revenue risk from tariffs is a gap.",
+      "investigation_action": "Assess whether OFLX's end markets (residential/commercial construction, refueling infrastructure) are experiencing tariff-related demand softening. Review order trends and backlog if available."
+    },
+    {
+      "flag_number": 12,
+      "topic": "cost_margin_pressure",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "df03b1071560df08",
+        "peer": "6c778c51da0bd31d"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason is inverted \u2014 it states that Company B (BW) provides 'only vague, generic statements' while Company A (OFLX) 'offers detailed, specific expense breakdowns.' Indeed, OFLX provides highly granular margin and expense data including exact dollar amounts, percentages of sales, and year-over-year changes for selling, G&A, and engineering expenses. OFLX's cost/margin disclosure is actually exemplary here. BW is a very different business (power generation equipment) with a distance of 0.295, making this a weak peer comparison.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 13,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "45486b6c416cf9ed",
+        "peer": "b3170c025cbf851f"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "BW provides extensive discussion of macroeconomic conditions, tariff actions, geopolitical conflicts, and legislative impacts (One Big Beautiful Bill Act). OFLX's MD&A only addresses FX transaction gains/losses. While BW is a more distant peer (distance 0.295) and has significantly more global operations, OFLX nonetheless has UK and France subsidiaries and raw material sourcing that could be affected by tariffs and macroeconomic conditions. This reinforces the pattern seen in Flags 6 and 9 \u2014 OFLX's geopolitical/macro risk disclosure is thin relative to its operational footprint.",
+      "investigation_action": "This reinforces the tariff/geopolitical disclosure gap identified in other flags. Consolidate this concern with Flags 6 and 9 for a comprehensive engagement with OFLX management."
+    },
+    {
+      "flag_number": 14,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "cf3c8357b6bcdbd3",
+        "peer": "53b838ddd29024a6"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "BW is a significantly larger, more complex organization (distance 0.295) with union labor, restructuring activities, executive retention agreements, and frozen pension plans \u2014 all of which necessitate extensive human capital disclosure. OFLX is a much smaller specialty manufacturer. OFLX does disclose stock-based compensation, staffing costs, and expense changes. The divergence reflects genuine differences in business complexity and workforce structure, not disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 15,
+      "topic": "supply_chain",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "f18e2c8f12bbc409",
+        "peer": "3af2fc6588466346"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "BW explicitly discloses cost increases and disruptions from supply chain issues, while OFLX provides only a description of its manufacturing locations and distribution network with no acknowledgment of supply chain risks. Given Flag 1's finding that supply chain language was removed from OFLX's Risk Factors, this peer comparison reinforces a pattern of supply chain risk de-emphasis. BW is a distant peer (0.295), but the combined pattern with Flag 1 elevates this concern.",
+      "investigation_action": "Combine with Flag 1 analysis. Investigate whether OFLX has experienced any raw material procurement difficulties, lead-time extensions, or cost increases for stainless steel or other key inputs."
+    }
+  ],
+  "overall": {
+    "signal_strength": "MEDIUM",
+    "summary": "OFLX's disclosure quality is generally adequate for a small-cap specialty manufacturer, with strong cost/margin detail in MD&A. However, there is a notable and consistent gap in tariff/geopolitical risk disclosure across multiple sections \u2014 a significant omission for a 2025 filing given the pervasive tariff environment. Additionally, the removal of specific operating cash flow comparisons from the liquidity discussion and the disappearance of supply chain risk language create a pattern that warrants scrutiny.",
+    "top_concerns": [
+      "Complete absence of tariff/trade policy risk disclosure despite manufacturing operations and raw material procurement that are plausibly exposed (Flags 6, 9, 11, 13)",
+      "Removal of specific operating cash flow figures and year-over-year comparison from MD&A liquidity discussion (Flag 3)",
+      "Disappearance of supply chain lead-time risk language from Risk Factors combined with lack of any supply chain risk acknowledgment in MD&A (Flags 1, 15)"
+    ],
+    "genuine_count": 3,
+    "borderline_count": 5,
+    "dismissed_count": 7
+  },
+  "_meta": {
+    "ticker": "OFLX",
+    "model": "claude-opus-4-6",
+    "input_tokens": 12429,
+    "output_tokens": 4153,
+    "timestamp": "2026-04-09T12:19:35.914018"
+  }
+}

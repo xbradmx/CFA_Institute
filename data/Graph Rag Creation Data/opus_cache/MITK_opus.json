@@ -1,0 +1,135 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "supply_chain",
+      "layer": "disappeared_topic",
+      "block_ids": {
+        "prior": "03f559c17529377f",
+        "current": null,
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The removed language specifically discussed channel partner concentration risk and the time required to re-establish end-user relationships if a channel partner is lost. While this is not highly quantitative, it represented a concrete risk acknowledgment about distribution dependencies. Its removal could reflect a legitimate editorial consolidation (e.g., moved to a Risk Factors section) or could indicate a desire to minimize attention to channel partner dependency.",
+      "investigation_action": "Check whether channel partner risk disclosure was relocated to the Risk Factors section of the same 10-Q or if it was entirely removed. Inquire whether MITK has experienced any channel partner losses or concentration changes recently."
+    },
+    {
+      "flag_number": 2,
+      "topic": "operational_product",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "165f4769ddb8a4ff",
+        "current": "d979d18cb34dc233",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior filing cited a specific metric \u2014 'approximately 1.2 billion transactions annually' \u2014 and named the specific product (Mobile Check Deposit) along with concrete benefits (regulatory compliance, cost reduction). The current filing replaces all of this with a single generic sentence about 'verification and fraud detection technology' providing 'seamless verification.' This is a textbook example of replacing quantitative, product-specific disclosure with vague marketing language, potentially obscuring whether transaction volumes have declined or the product mix has shifted.",
+      "investigation_action": "Ask management whether Mobile Check Deposit transaction volumes have declined and why the 1.2 billion figure was removed. Assess whether the shift in language reflects a strategic de-emphasis of the legacy check deposit business in favor of identity verification products."
+    },
+    {
+      "flag_number": 3,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "eca3387e0842cf18",
+        "peer": "7eda2943e84c3827"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "ALOT (AstroNova) has specific, active arbitration proceedings related to its MTEX acquisition that require detailed disclosure. MITK's lack of comparable legal proceedings disclosure does not indicate evasion \u2014 it reflects a genuine business difference. MITK's references to regulatory compliance are contextual (product marketing), and there is no indication MITK has material pending litigation it is failing to disclose. The peer comparison is not apt given the very different business circumstances.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "accounting_audit",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "061104cebfef8a8c",
+        "peer": "09a02d39efae7ad5"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "EVLV (Evolv Technology) has extensive material weakness disclosures because it literally restated financial statements across multiple periods and is under SEC investigation \u2014 an extraordinarily distressed internal controls situation. MITK's standard boilerplate on critical accounting estimates, with a statement that 'there have been no material changes to our critical accounting estimates,' is the expected baseline disclosure for a company without such issues. This peer comparison is inapt; EVLV is an outlier, not a benchmark.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "geopolitical_macro",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "1a21d55523607c98",
+        "peer": "4d0733b60f77ae85"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "EVLV is a hardware company with physical supply chains, contract manufacturers, and direct exposure to tariffs on imported goods. MITK is primarily a software/SaaS company whose products are digital identity verification and mobile check deposit \u2014 it has minimal direct exposure to tariffs and physical supply chain disruptions. The MITK excerpt about foreign currency exchange gains is appropriately scoped to its actual exposure. The divergence reflects genuine business model differences, not disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "human_capital",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "ed0f4534670f7233",
+        "peer": "4e1c9eca1d53d554"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "MITK's disclosure is purely mechanical \u2014 describing cost categories (payroll, benefits, stock-based compensation) and explaining period-over-period variances like replacing consultants with full-time employees. There is no discussion of talent retention challenges, key employee dependencies, or competitive labor market pressures, which are relevant for a technology company in the identity verification space. While EVLV's extensive human capital risk discussion partly reflects its own specific challenges (CEO dependency, high security personnel turnover), some of these themes \u2014 retention, competition for engineering talent, key personnel risk \u2014 are industry-relevant for MITK as well. The MITK disclosure could reasonably be in Risk Factors rather than MD&A, but the complete absence of any human capital risk discussion in the excerpts provided is notable.",
+      "investigation_action": "Review MITK's annual 10-K Risk Factors section for human capital risk disclosure. Monitor for executive turnover (MITK mentions 'lower executive transition costs' suggesting recent leadership changes) and assess whether the consultant-to-employee transition signals organizational instability."
+    },
+    {
+      "flag_number": 7,
+      "topic": "operational_product",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "d979d18cb34dc233",
+        "peer": "5407e70105dd4571"
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "MITK's single-sentence product description ('Our verification and fraud detection technology is embedded directly within mobile and web applications, providing seamless verification at every touchpoint in the customer lifecycle') is remarkably thin for an MD&A section. While EVLV's extensive product risk disclosure reflects its hardware-specific challenges (product defects, false detections, implementation failures), MITK as a software company in a regulated industry should still be addressing product-specific risks such as false rejection/acceptance rates, integration challenges, or technology obsolescence. The thinness of MITK's operational product disclosure, especially given the concurrent removal of specific metrics (Flag 2), creates a pattern of reduced transparency.",
+      "investigation_action": "Cross-reference with MITK's Risk Factors for product-specific disclosures. Evaluate whether the thin MD&A product description is part of a broader pattern of reducing operational detail in the filing."
+    },
+    {
+      "flag_number": 8,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "eca3387e0842cf18",
+        "peer": "202b82050d5bc103"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "EVLV's extraordinary regulatory and legal risk disclosures stem from its specific circumstances: financial restatements, SEC enforcement proceedings, FTC settlements, shareholder derivative lawsuits, and ongoing investigations \u2014 none of which are comparable to MITK's situation. MITK operates in identity verification/fintech where regulatory compliance (KYC/AML) is a product feature rather than a litigation risk. Comparing MITK's regulatory disclosure to a company under active SEC investigation and multiple lawsuits does not reveal meaningful disclosure evasion by MITK. The screening layer appears to have flagged volume differences rather than substantive gaps.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Most flags stem from peer comparisons with EVLV, a company in acute regulatory and financial distress, making the divergence reflect business circumstances rather than disclosure evasion. The one genuinely concerning finding is the removal of the specific 1.2 billion transaction volume figure and concrete product details (Flag 2), which combined with somewhat thin MD&A product descriptions creates a modest transparency concern. However, the overall filing does not exhibit a systemic pattern of obfuscation.",
+    "top_concerns": [
+      "Removal of specific Mobile Check Deposit transaction volume (1.2 billion annually) and replacement with generic product language \u2014 may signal volume decline or strategic product de-emphasis",
+      "Thin operational and product disclosure in MD&A relative to the complexity of MITK's identity verification business",
+      "Disappearance of channel partner concentration risk language without clear relocation \u2014 warrants verification in Risk Factors"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 3,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "MITK",
+    "model": "claude-opus-4-6",
+    "input_tokens": 19947,
+    "output_tokens": 2327,
+    "timestamp": "2026-04-09T12:15:05.705012"
+  }
+}

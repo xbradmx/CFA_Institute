@@ -1,0 +1,107 @@
+{
+  "flags": [
+    {
+      "flag_number": 1,
+      "topic": "debt_financing",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "3bbf950bd4cd4bbb",
+        "current": "fea25a0812ad5b12",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "BORDERLINE",
+      "reasoning": "The prior period included specific dollar amounts for cash flows from financing activities ($21.9M total, $20.9M repurchases, $1.2M tax withholding, etc.) with period-over-period comparisons, while the current period retains only the generic boilerplate about interest income variability. However, this is a 10-Q filing and the current period block appears to be a truncated extract \u2014 the detailed financing cash flow discussion for Q2 2025 may exist elsewhere in the filing (the peer comparison in Flag 5 shows PRLB/VATE has extensive financing disclosures). The extracted passage may simply reflect a different section boundary rather than removal.",
+      "investigation_action": "Verify whether the Q2 2025 10-Q contains a complete Cash Flows from Financing Activities discussion elsewhere in MD&A. If the detailed breakdown has genuinely been removed rather than relocated, this would be a significant disclosure degradation for a company with material stock repurchase activity."
+    },
+    {
+      "flag_number": 2,
+      "topic": "regulatory_legal",
+      "layer": "temporal",
+      "block_ids": {
+        "prior": "ba33808d8f0dcb52",
+        "current": "735ed1a5e75e35c9",
+        "target": null,
+        "peer": null
+      },
+      "assessment": "GENUINE",
+      "reasoning": "The prior period disclosed the specific 8.1 percent increase in effective tax rate and attributed it to a 'one-time release of tax reserves arising from a successful audit closure in 2024 that did not repeat in 2025,' along with noting how the rate differs from the 21.0% statutory rate. The current period replaces all of this with forward-looking generalities about how the rate 'may differ from historical effective tax rates' due to foreign losses and valuation allowances, with no actual quantitative disclosure of the current period's effective tax rate or the drivers of change. This is a meaningful reduction in specificity on a topic that directly impacts earnings quality.",
+      "investigation_action": "Request or locate the actual effective tax rate for Q2 2025 and the specific drivers of any change versus the prior year period. Investigate whether the mention of 'increases in losses in foreign operations that are not eligible for tax benefits on account of valuation allowances' signals deteriorating international operations that management is obscuring by removing quantitative tax rate disclosures."
+    },
+    {
+      "flag_number": 3,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "fea25a0812ad5b12",
+        "peer": "70d3b0f7a02f1466"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason incorrectly suggests PRLB is 'downplaying material debt financing risks evident in its peer's disclosures.' TPCS (a small precision machining company) has active bank debt with covenant violations and going-concern-level issues. PRLB (Proto Labs) is a fundamentally different business that historically operates with minimal or no debt, generating interest income from cash balances. The passage about 'Defaults Upon Senior Securities' followed by Item 4 numbering is standard 10-Q formatting, not a disclosure of actual defaults. The divergence reflects genuine business model differences, not disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 4,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "735ed1a5e75e35c9",
+        "peer": "ffde8e1edefb0e01"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "The screening reason actually flags TPCS as the company with weaker disclosure (providing only boilerplate certifications), not PRLB. PRLB's discussion of tax law changes and effective tax rate impacts, while vague, is more substantive than TPCS's simple ITAR/AS9100 compliance statements. This flag is essentially backwards \u2014 it identifies TPCS as the potential concern, not PRLB. Additionally, the regulatory topics are entirely different (tax vs. manufacturing certifications), reflecting different business profiles rather than disclosure evasion.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 5,
+      "topic": "debt_financing",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "fea25a0812ad5b12",
+        "peer": "cc5af4ff98fea539"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "VATE (Innovate Corp) is a highly leveraged holding company with $641.3M in consolidated debt, going-concern disclosures, covenant violations, and complex multi-tier debt structures. PRLB (Proto Labs) is a largely debt-free digital manufacturing company that earns interest income on its cash balances. Comparing PRLB's minimal debt disclosure to VATE's extensive debt disclosure reflects fundamental business model differences \u2014 PRLB has no material debt to disclose. The 'Defaults Upon Senior Securities' reference in PRLB's passage is a standard 10-Q section header (Item 3), not an indication of actual defaults.",
+      "investigation_action": null
+    },
+    {
+      "flag_number": 6,
+      "topic": "regulatory_legal",
+      "layer": "peer",
+      "block_ids": {
+        "prior": null,
+        "current": null,
+        "target": "735ed1a5e75e35c9",
+        "peer": "73c122aea2f6c50a"
+      },
+      "assessment": "DISMISS",
+      "reasoning": "VATE's extensive legal and regulatory disclosures \u2014 including active litigation (the Schuff Steel/McCarthy case), $58.7M in uncertain tax positions, and open tax years 2002-2023 under examination \u2014 reflect a complex holding company structure with significant litigation and tax exposure. PRLB operates a simpler business model in digital manufacturing. The divergence in disclosure volume reflects genuine differences in legal and regulatory risk profiles, not PRLB concealing material risks. PRLB does disclose relevant tax-related items including valuation allowance concerns and potential tax law impacts.",
+      "investigation_action": null
+    }
+  ],
+  "overall": {
+    "signal_strength": "LOW",
+    "summary": "Of the six flags raised, only one (the removal of specific effective tax rate disclosures) represents a genuine disclosure degradation, while another (financing cash flow detail removal) is borderline and may reflect extraction artifacts rather than actual removal. The three peer-comparison flags involving TPCS and VATE are all false positives driven by fundamentally different business models \u2014 PRLB is a largely debt-free digital manufacturing company being compared against a highly leveraged holding company and a small machining firm with covenant violations.",
+    "top_concerns": [
+      "Removal of specific effective tax rate quantification and year-over-year drivers in Q2 2025, replaced with vague forward-looking language about foreign losses and valuation allowances \u2014 may signal deteriorating international operations",
+      "Potential removal of detailed cash flows from financing activities breakdown, though this requires verification that the detail was not relocated elsewhere in the filing",
+      "Forward-looking language about 'increases in losses in foreign operations that are not eligible for tax benefits on account of valuation allowances' warrants investigation into international segment performance"
+    ],
+    "genuine_count": 1,
+    "borderline_count": 1,
+    "dismissed_count": 4
+  },
+  "_meta": {
+    "ticker": "PRLB",
+    "model": "claude-opus-4-6",
+    "input_tokens": 28947,
+    "output_tokens": 1979,
+    "timestamp": "2026-04-09T12:24:34.255801"
+  }
+}
