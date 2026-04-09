@@ -620,7 +620,8 @@ class DDDSApp:
             self._last_hover = name
             clr = score_colour(score) if score > 0 else TEXT_DIM
 
-            lines = [f"{name}   vague_prob: {score:.3f}"]
+            score_str = f"{score:.3f}" if score > 0 else "No data"
+            lines = [name, f"Risk Score: {score_str}"]
             if iso and iso in self.country_detail:
                 for detail in self.country_detail[iso][:4]:
                     lines.append(f"  {detail}")

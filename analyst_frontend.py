@@ -10,10 +10,14 @@
 #   pip install customtkinter
 # =============================================================================
 
+import csv
+import io
 import json
 import os
+import re
 import sys
 import threading
+from datetime import datetime
 from pathlib import Path
 
 import customtkinter as ctk
@@ -60,6 +64,100 @@ ctk.set_default_color_theme("dark-blue")
 
 # ── Data helpers ──────────────────────────────────────────────────────────────
 
+_FILING_RE = re.compile(
+    r'^(?P<ticker>.+?)_(?P<ftype>10-[KQ])_(?P<date>\d{4}-\d{2}-\d{2})_.+_ddds_scores\.csv$'
+)
+
+def _parse_ddds_csv(path: Path) -> list[dict]:
+    with open(path, encoding="utf-8", errors="replace") as f:
+        raw = f.read()
+    marker = "SENTENCE LEVEL DETAIL"
+    idx = raw.find(marker)
+    if idx == -1:
+        return []
+    rows = []
+    reader = csv.DictReader(io.StringIO(raw[idx + len(marker):].lstrip("\r\n")))
+    for row in reader:
+        try:
+            rows.append({
+                "vague_prob":   float(row.get("vague_prob",   0)),
+                "complex_prob": float(row.get("complex_prob", 0)),
+                "section":      row.get("section", ""),
+            })
+        except (ValueError, TypeError):
+            continue
+    return rows
+
+
+def load_filing_trend(ticker: str) -> list[dict]:
+    """Return per-filing mean scores sorted by date for the given ticker."""
+    results = []
+    for path in sorted(_OUTPUTS_DIR.glob(f"{ticker}_*_ddds_scores.csv")):
+        m = _FILING_RE.match(path.name)
+        if not m or m.group("ticker") != ticker:
+            continue
+        rows = _parse_ddds_csv(path)
+        if not rows:
+            continue
+        vp = [r["vague_prob"]   for r in rows]
+        cp = [r["complex_prob"] for r in rows]
+        results.append({
+            "date":         datetime.strptime(m.group("date"), "%Y-%m-%d"),
+            "filing_type":  m.group("ftype"),
+            "mean_vague":   sum(vp) / len(vp),
+            "mean_complex": sum(cp) / len(cp),
+            "mean_avg":     (sum(vp) + sum(cp)) / (2 * len(vp)),
+            "n":            len(vp),
+        })
+    return sorted(results, key=lambda x: x["date"])
+
+
+def load_sector_trend() -> list[dict]:
+    """
+    Aggregate mean scores across every filing, bucketed into calendar quarters.
+    Returns list of dicts sorted by quarter, each with mean/std vague & complex.
+    """
+    import statistics
+    from collections import defaultdict
+
+    buckets: dict = defaultdict(lambda: {"vague": [], "complex": []})
+
+    for path in sorted(_OUTPUTS_DIR.glob("*_ddds_scores.csv")):
+        m = _FILING_RE.match(path.name)
+        if not m:
+            continue
+        date = datetime.strptime(m.group("date"), "%Y-%m-%d")
+        q_month  = ((date.month - 1) // 3) * 3 + 1
+        q_start  = datetime(date.year, q_month, 1)
+
+        rows = _parse_ddds_csv(path)
+        if not rows:
+            continue
+        vp = [r["vague_prob"]   for r in rows]
+        cp = [r["complex_prob"] for r in rows]
+        buckets[q_start]["vague"].append(sum(vp) / len(vp))
+        buckets[q_start]["complex"].append(sum(cp) / len(cp))
+
+    results = []
+    for q_start in sorted(buckets):
+        vl = buckets[q_start]["vague"]
+        cl = buckets[q_start]["complex"]
+        al = [(v + c) / 2 for v, c in zip(vl, cl)]
+        n  = len(vl)
+        q_num = (q_start.month - 1) // 3 + 1
+        results.append({
+            "quarter_start": q_start,
+            "label":         f"Q{q_num} '{q_start.strftime('%y')}",
+            "mean_vague":    sum(vl) / n,
+            "mean_complex":  sum(cl) / n,
+            "mean_avg":      sum(al) / n,
+            "std_vague":     statistics.stdev(vl) if n > 1 else 0.0,
+            "std_complex":   statistics.stdev(cl) if n > 1 else 0.0,
+            "n_filings":     n,
+        })
+    return results
+
+
 def load_tickers() -> list[str]:
     """Return sorted list of tickers that have a pre-computed Opus analysis."""
     if not _OPUS_DIR.exists():
@@ -92,11 +190,14 @@ class DDDSApp(ctk.CTk):
         self._tickers         = load_tickers()
         self._current_ticker  = None
         self._ticker_buttons: dict[str, ctk.CTkButton] = {}
+        self._trend_ticker    = None   # tracks which ticker the trend chart shows
+        self._trend_canvas    = None   # holds the current FigureCanvasTkAgg
 
         self._build_layout()
         self._populate_ticker_list(self._tickers)
-        # Start loading heatmap data in background immediately
-        threading.Thread(target=self._load_heatmap, daemon=True).start()
+        # Start loading heatmap and sector trend data in background immediately
+        threading.Thread(target=self._load_heatmap,  daemon=True).start()
+        threading.Thread(target=self._load_sector,   daemon=True).start()
 
     # ── Layout ────────────────────────────────────────────────────────────────
 
@@ -225,8 +326,14 @@ class DDDSApp(ctk.CTk):
 
         data = load_analysis(ticker)
         self._render_memo(ticker, data)
-        # Switch to memo tab automatically
-        self._tabs.set("  Investment Memo  ")
+
+        # If Filing Trends is currently open, refresh it for the new ticker
+        if self._tabs.get() == "  Filing Trends  ":
+            self._ticker_lbl.configure(text=f"{ticker} — Filing Trends", text_color=TXT2)
+            self._render_trend(ticker)
+        else:
+            # Switch to memo tab automatically
+            self._tabs.set("  Investment Memo  ")
 
     # ── Content area ──────────────────────────────────────────────────────────
 
@@ -270,9 +377,53 @@ class DDDSApp(ctk.CTk):
 
         self._tabs.add("  Investment Memo  ")
         self._tabs.add("  Risk Heatmap  ")
+        self._tabs.add("  Filing Trends  ")
+        self._tabs.add("  Sector Trends  ")
+
+        self._tabs.configure(command=self._on_tab_change)
 
         self._build_memo_tab()
         self._build_heatmap_tab()
+        self._build_trend_tab()
+        self._build_sector_tab()
+
+    def _on_tab_change(self):
+        tab = self._tabs.get()
+        if tab == "  Risk Heatmap  ":
+            self._ticker_lbl.configure(
+                text="US Industrials — Sector-Wide Geographic Risk",
+                text_color=TXT2,
+            )
+            self._signal_badge.configure(text="", fg_color="transparent")
+        elif tab == "  Filing Trends  ":
+            if self._current_ticker:
+                self._ticker_lbl.configure(
+                    text=f"{self._current_ticker} — Filing Trends",
+                    text_color=TXT2,
+                )
+                self._signal_badge.configure(text="", fg_color="transparent")
+                # Render chart if not yet built for this ticker
+                if self._trend_ticker != self._current_ticker:
+                    self._render_trend(self._current_ticker)
+            else:
+                self._ticker_lbl.configure(
+                    text="Select a company to view filing trends",
+                    text_color=TXT3,
+                )
+        elif tab == "  Sector Trends  ":
+            self._ticker_lbl.configure(
+                text="US Industrials — Sector Vagueness Trend",
+                text_color=TXT2,
+            )
+            self._signal_badge.configure(text="", fg_color="transparent")
+        else:
+            if self._current_ticker:
+                self._ticker_lbl.configure(text=self._current_ticker, text_color=TXT)
+            else:
+                self._ticker_lbl.configure(
+                    text="Select a company from the sidebar",
+                    text_color=TXT3,
+                )
 
     # ── Memo tab ──────────────────────────────────────────────────────────────
 
@@ -426,18 +577,306 @@ class DDDSApp(ctk.CTk):
         """Background thread: builds the heatmap figure, then embeds on main thread."""
         try:
             from run_10_risk_heatmap import build_figure
-            fig = build_figure(str(_OUTPUTS_DIR), dpi=110)
-            self.after(0, lambda: self._embed_heatmap(fig))
+            fig, on_hover = build_figure(str(_OUTPUTS_DIR), dpi=110)
+            self.after(0, lambda: self._embed_heatmap(fig, on_hover))
         except Exception as exc:
             self.after(0, lambda: self._heatmap_spinner.configure(
                 text=f"Heatmap unavailable.\n{exc}",
                 wraplength=500,
             ))
 
-    def _embed_heatmap(self, fig):
+    def _embed_heatmap(self, fig, on_hover):
         from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
         self._heatmap_spinner.place_forget()
         canvas = FigureCanvasTkAgg(fig, master=self._heatmap_frame)
+        canvas.draw()
+        canvas.mpl_connect("motion_notify_event", on_hover)
+        canvas.get_tk_widget().pack(fill="both", expand=True)
+
+    # ── Trend tab ─────────────────────────────────────────────────────────────
+
+    def _build_trend_tab(self):
+        tab = self._tabs.tab("  Filing Trends  ")
+        tab.configure(fg_color=BG)
+
+        self._trend_frame = ctk.CTkFrame(tab, fg_color=BG, corner_radius=0)
+        self._trend_frame.pack(fill="both", expand=True)
+
+        self._trend_placeholder = ctk.CTkLabel(
+            self._trend_frame,
+            text="Select a company from the sidebar to view filing trends.",
+            font=ctk.CTkFont(family="Consolas", size=12),
+            text_color=TXT3,
+        )
+        self._trend_placeholder.place(relx=0.5, rely=0.5, anchor="center")
+
+    def _render_trend(self, ticker: str):
+        from matplotlib.figure import Figure
+        from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+        from matplotlib.dates import DateFormatter
+        from matplotlib.lines import Line2D
+
+        # Tear down previous canvas
+        if self._trend_canvas is not None:
+            self._trend_canvas.get_tk_widget().destroy()
+            self._trend_canvas = None
+        self._trend_placeholder.place_forget()
+
+        data = load_filing_trend(ticker)
+
+        if not data:
+            self._trend_placeholder.configure(
+                text=f"No filing data found for {ticker}.",
+            )
+            self._trend_placeholder.place(relx=0.5, rely=0.5, anchor="center")
+            return
+
+        # ── Build figure ──────────────────────────────────────────────────
+        PLOT_BG   = "#0e1118"
+        GRID_CLR  = "#1a2133"
+        CLR_VAGUE   = "#4d7fbe"   # blue
+        CLR_COMPLEX = "#c9924a"   # amber
+        CLR_AVG     = "#9b6ec4"   # purple
+
+        fig = Figure(figsize=(12, 5), dpi=110, facecolor=BG)
+        ax  = fig.add_subplot(111)
+        ax.set_facecolor(PLOT_BG)
+
+        # Grid
+        ax.set_axisbelow(True)
+        ax.yaxis.grid(True, color=GRID_CLR, linewidth=0.6)
+        ax.xaxis.grid(True, color=GRID_CLR, linewidth=0.6, linestyle=":")
+        ax.spines["top"].set_visible(False)
+        ax.spines["right"].set_visible(False)
+        ax.spines["left"].set_color(GRID_CLR)
+        ax.spines["bottom"].set_color(GRID_CLR)
+        ax.tick_params(colors=TXT2, labelsize=9, length=0)
+        for lbl in ax.get_xticklabels() + ax.get_yticklabels():
+            lbl.set_fontfamily("Consolas")
+
+        dates   = [d["date"]         for d in data]
+        vague   = [d["mean_vague"]   for d in data]
+        complex_= [d["mean_complex"] for d in data]
+        avg     = [d["mean_avg"]     for d in data]
+
+        # Shaded fill under vague line (very subtle)
+        ax.fill_between(dates, vague, alpha=0.07, color=CLR_VAGUE)
+
+        # Lines
+        ax.plot(dates, vague,    color=CLR_VAGUE,   linewidth=2,   alpha=0.9, zorder=3)
+        ax.plot(dates, complex_, color=CLR_COMPLEX, linewidth=2,   alpha=0.9, zorder=3)
+        ax.plot(dates, avg,      color=CLR_AVG,     linewidth=1.5, alpha=0.9,
+                linestyle="--", zorder=3)
+
+        # Markers — circle for 10-K, triangle for 10-Q
+        for d, v, c, a in zip(data, vague, complex_, avg):
+            mk = "o" if d["filing_type"] == "10-K" else "^"
+            ms = 9  if d["filing_type"] == "10-K" else 7
+            for val, clr in [(v, CLR_VAGUE), (c, CLR_COMPLEX), (a, CLR_AVG)]:
+                ax.plot(d["date"], val, marker=mk, markersize=ms,
+                        color=clr, markeredgecolor=PLOT_BG, markeredgewidth=1.2,
+                        zorder=5)
+
+        # Risk threshold lines
+        for y, label in [(0.5, "0.5 threshold"), (0.25, ""), (0.75, "")]:
+            ax.axhline(y, color=TXT3, linewidth=0.5, linestyle=":", alpha=0.5)
+            if label:
+                ax.text(dates[0], y + 0.01, label,
+                        fontsize=7, fontfamily="Consolas", color=TXT3, va="bottom")
+
+        # Annotate each point with filing label
+        for d, v in zip(data, vague):
+            ax.annotate(
+                d["date"].strftime("%b '%y"),
+                xy=(d["date"], v),
+                xytext=(0, 12), textcoords="offset points",
+                fontsize=7, fontfamily="Consolas", color=TXT3,
+                ha="center", va="bottom",
+            )
+
+        ax.set_ylim(0, 1.05)
+        ax.yaxis.set_major_formatter(lambda x, _: f"{x:.2f}")
+        ax.xaxis.set_major_formatter(DateFormatter("%b %Y"))
+        fig.autofmt_xdate(rotation=30, ha="right")
+
+        ax.set_ylabel("Score", fontsize=9, fontfamily="Consolas", color=TXT2, labelpad=10)
+
+        # Legend
+        legend_handles = [
+            Line2D([0], [0], color=CLR_VAGUE,   linewidth=2, label="Vague Prob"),
+            Line2D([0], [0], color=CLR_COMPLEX, linewidth=2, label="Complex Prob"),
+            Line2D([0], [0], color=CLR_AVG,     linewidth=1.5, linestyle="--", label="Avg Score"),
+            Line2D([0], [0], marker="o", color=TXT3, markersize=7, linewidth=0,
+                   markeredgecolor=PLOT_BG, label="10-K"),
+            Line2D([0], [0], marker="^", color=TXT3, markersize=6, linewidth=0,
+                   markeredgecolor=PLOT_BG, label="10-Q"),
+        ]
+        leg = ax.legend(
+            handles=legend_handles,
+            loc="upper right", fontsize=8,
+            facecolor=SURFACE, edgecolor=BORDER,
+            labelcolor=TXT2, framealpha=0.95,
+        )
+        for text in leg.get_texts():
+            text.set_fontfamily("Consolas")
+
+        # Subtitle
+        fig.text(
+            0.5, 0.97,
+            f"{ticker}  ·  {len(data)} filing(s)  ·  mean scores per filing",
+            ha="center", va="top",
+            fontsize=8, fontfamily="Consolas", color=TXT3,
+        )
+
+        fig.tight_layout(rect=[0, 0, 1, 0.95], pad=1.2)
+
+        canvas = FigureCanvasTkAgg(fig, master=self._trend_frame)
+        canvas.draw()
+        canvas.get_tk_widget().pack(fill="both", expand=True)
+
+        self._trend_canvas = canvas
+        self._trend_ticker = ticker
+
+    # ── Sector trend tab ──────────────────────────────────────────────────────
+
+    def _build_sector_tab(self):
+        tab = self._tabs.tab("  Sector Trends  ")
+        tab.configure(fg_color=BG)
+
+        self._sector_frame = ctk.CTkFrame(tab, fg_color=BG, corner_radius=0)
+        self._sector_frame.pack(fill="both", expand=True)
+
+        self._sector_spinner = ctk.CTkLabel(
+            self._sector_frame,
+            text="Loading sector data across all 925 filings...",
+            font=ctk.CTkFont(family="Consolas", size=12),
+            text_color=TXT3,
+        )
+        self._sector_spinner.place(relx=0.5, rely=0.5, anchor="center")
+
+    def _load_sector(self):
+        """Background thread: parses all CSVs and renders the sector chart."""
+        try:
+            data = load_sector_trend()
+            self.after(0, lambda: self._render_sector(data))
+        except Exception as exc:
+            self.after(0, lambda: self._sector_spinner.configure(
+                text=f"Sector data unavailable.\n{exc}",
+                wraplength=500,
+            ))
+
+    def _render_sector(self, data: list[dict]):
+        from matplotlib.figure import Figure
+        from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+        from matplotlib.lines import Line2D
+        from matplotlib.patches import Patch
+
+        self._sector_spinner.place_forget()
+
+        if not data:
+            self._sector_spinner.configure(text="No filing data found.")
+            self._sector_spinner.place(relx=0.5, rely=0.5, anchor="center")
+            return
+
+        PLOT_BG     = "#0e1118"
+        GRID_CLR    = "#1a2133"
+        CLR_VAGUE   = "#4d7fbe"
+        CLR_COMPLEX = "#c9924a"
+        CLR_AVG     = "#9b6ec4"
+
+        fig = Figure(figsize=(13, 5.5), dpi=110, facecolor=BG)
+        ax  = fig.add_subplot(111)
+        ax.set_facecolor(PLOT_BG)
+
+        ax.set_axisbelow(True)
+        ax.yaxis.grid(True, color=GRID_CLR, linewidth=0.6)
+        ax.xaxis.grid(True, color=GRID_CLR, linewidth=0.6, linestyle=":")
+        ax.spines["top"].set_visible(False)
+        ax.spines["right"].set_visible(False)
+        ax.spines["left"].set_color(GRID_CLR)
+        ax.spines["bottom"].set_color(GRID_CLR)
+        ax.tick_params(colors=TXT2, labelsize=9, length=0)
+        for lbl in ax.get_xticklabels() + ax.get_yticklabels():
+            lbl.set_fontfamily("Consolas")
+
+        xs       = list(range(len(data)))
+        labels   = [d["label"]        for d in data]
+        vague    = [d["mean_vague"]   for d in data]
+        complex_ = [d["mean_complex"] for d in data]
+        avg      = [d["mean_avg"]     for d in data]
+        std_v    = [d["std_vague"]    for d in data]
+        std_c    = [d["std_complex"]  for d in data]
+        n_filings= [d["n_filings"]    for d in data]
+
+        # Std-dev bands
+        v_hi = [v + s for v, s in zip(vague,    std_v)]
+        v_lo = [v - s for v, s in zip(vague,    std_v)]
+        c_hi = [v + s for v, s in zip(complex_, std_c)]
+        c_lo = [v - s for v, s in zip(complex_, std_c)]
+        ax.fill_between(xs, v_lo, v_hi, color=CLR_VAGUE,   alpha=0.10, zorder=1)
+        ax.fill_between(xs, c_lo, c_hi, color=CLR_COMPLEX, alpha=0.10, zorder=1)
+
+        # Lines
+        ax.plot(xs, vague,    color=CLR_VAGUE,   linewidth=2.2, alpha=0.9, zorder=3)
+        ax.plot(xs, complex_, color=CLR_COMPLEX, linewidth=2.2, alpha=0.9, zorder=3)
+        ax.plot(xs, avg,      color=CLR_AVG,     linewidth=1.8, alpha=0.9,
+                linestyle="--", zorder=3)
+
+        # Markers
+        ax.scatter(xs, vague,    color=CLR_VAGUE,   s=55, zorder=5,
+                   edgecolors=PLOT_BG, linewidths=1.2)
+        ax.scatter(xs, complex_, color=CLR_COMPLEX, s=55, zorder=5,
+                   edgecolors=PLOT_BG, linewidths=1.2)
+        ax.scatter(xs, avg,      color=CLR_AVG,     s=40, zorder=5,
+                   edgecolors=PLOT_BG, linewidths=1.0)
+
+        # 0.5 threshold
+        ax.axhline(0.5, color=TXT3, linewidth=0.6, linestyle=":", alpha=0.6)
+        ax.text(xs[-1] + 0.1, 0.502, "0.5", fontsize=7, fontfamily="Consolas",
+                color=TXT3, va="bottom")
+
+        # Annotate n_filings below each quarter
+        for x, n in zip(xs, n_filings):
+            ax.text(x, -0.06, f"n={n}", ha="center", va="top",
+                    fontsize=7, fontfamily="Consolas", color=TXT3,
+                    transform=ax.get_xaxis_transform())
+
+        ax.set_xlim(-0.5, len(xs) - 0.5)
+        ax.set_ylim(0, 1.05)
+        ax.set_xticks(xs)
+        ax.set_xticklabels(labels, rotation=30, ha="right")
+        ax.set_ylabel("Mean Score", fontsize=9, fontfamily="Consolas",
+                      color=TXT2, labelpad=10)
+        ax.yaxis.set_major_formatter(lambda x, _: f"{x:.2f}")
+
+        # Legend
+        legend_handles = [
+            Line2D([0], [0], color=CLR_VAGUE,   linewidth=2, label="Vague Prob"),
+            Line2D([0], [0], color=CLR_COMPLEX, linewidth=2, label="Complex Prob"),
+            Line2D([0], [0], color=CLR_AVG,     linewidth=1.5, linestyle="--",
+                   label="Avg Score"),
+            Patch(facecolor=CLR_VAGUE,   alpha=0.20, label="±1 SD  (vague)"),
+            Patch(facecolor=CLR_COMPLEX, alpha=0.20, label="±1 SD  (complex)"),
+        ]
+        leg = ax.legend(
+            handles=legend_handles, loc="upper right", fontsize=8,
+            facecolor=SURFACE, edgecolor=BORDER, labelcolor=TXT2, framealpha=0.95,
+        )
+        for t in leg.get_texts():
+            t.set_fontfamily("Consolas")
+
+        total_filings = sum(n_filings)
+        fig.text(
+            0.5, 0.97,
+            f"US Industrials  ·  {total_filings} filings across {len(data)} quarters"
+            f"  ·  mean ± 1 SD per quarter",
+            ha="center", va="top",
+            fontsize=8, fontfamily="Consolas", color=TXT3,
+        )
+
+        fig.tight_layout(rect=[0, 0, 1, 0.95], pad=1.2)
+
+        canvas = FigureCanvasTkAgg(fig, master=self._sector_frame)
         canvas.draw()
         canvas.get_tk_widget().pack(fill="both", expand=True)
 

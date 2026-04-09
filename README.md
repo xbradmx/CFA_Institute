@@ -472,7 +472,14 @@ Output: `data/analyst_outputs/{TICKER}_{TYPE}_{DATE}_{ACCESSION}_ddds_scores.csv
 
 ### Desktop GUI
 
-Launches a unified dark-mode desktop application. Enter any ticker from the 128-company universe to instantly view its full Opus analysis — signal strength, summary, top concerns, and per-flag reasoning with investigation actions. The **Risk Heatmap** tab shows the geographic vagueness heatmap across the full universe.
+Launches a unified dark-mode desktop application built with CustomTkinter and Matplotlib. Select any ticker from the sidebar to navigate its analysis across four tabs:
+
+| Tab | What it shows |
+|---|---|
+| **Investment Memo** | Full Opus-generated analysis for the selected company: signal strength badge, executive summary, genuine / borderline / dismissed flag counts, top concerns, and per-flag reasoning cards with investigation actions. |
+| **Risk Heatmap** | Sector-wide geographic vagueness map. Countries are coloured by mean raw `vague_prob` of all sentences that mention them across the 925-filing universe. Hover over any country to see its score and sentence-count detail. This view is independent of the selected ticker. |
+| **Filing Trends** | Per-company time-series chart showing mean `vague_prob`, `complex_prob`, and their average (`avg_score`) across every scored filing for the selected ticker. Circle markers = 10-K, triangle markers = 10-Q. |
+| **Sector Trends** | Sector-wide quarterly averages of all three scores, aggregated across all 925 filings in 3-month buckets. Each data point shows the mean ± 1 standard deviation band across all companies that filed in that quarter, plus a filing count annotation (`n=`). Loaded in the background at startup. |
 
 ```powershell
 python analyst_frontend.py
@@ -532,7 +539,7 @@ Cached Batch API results are included in the repository. All downstream outputs 
 
 ## Known Limitations
 
-- The analyst frontend displays pre-computed Opus analysis for the 128-company universe. Scoring new filings outside the universe requires running the full pipeline from the command line.
+- The **Investment Memo** tab displays pre-computed Opus analysis for the 128-company universe. The **Filing Trends** and **Risk Heatmap** tabs derive directly from the 925 scored CSVs in `data/analyst_outputs/` and will reflect any new filings scored via `analyst_backend.py`. Scoring companies outside the universe still requires running the full pipeline from the command line to generate the Opus analysis JSON.
 - Section boundary detection in Run 1 uses heading pattern matching. Non-standard or heavily nested HTML filings may cause sections to be missed. Check the extraction log for any files reporting zero sentences.
 - The training corpus covers 50 randomly seeded companies, which constrains industry diversity within SIC 3400-3599.
 - Runs 7 through 11 must be run from the command line; they are not triggered from within the frontend.
