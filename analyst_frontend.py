@@ -112,19 +112,23 @@ def load_filing_trend(ticker: str) -> list[dict]:
     return sorted(results, key=lambda x: x["date"])
 
 
-def load_sector_and_rankings(top_n: int = 10) -> tuple[list[dict], list[dict]]:
+def load_sector_and_rankings(top_n: int = 10) -> tuple[list[dict], dict, dict]:
     """
     Single pass over all CSVs. Returns:
-      sector_data  — quarterly mean/std scores for the Sector Trends tab
-      rankings     — top_n companies by mean vague_prob for the Rankings tab
+      sector_data      — quarterly mean/std scores for the Sector Trends tab
+      rankings_recent  — top_n companies by mean score using most-recent filing only
+      rankings_alltime — top_n companies by mean score aggregated across ALL filings
     """
     import statistics
     from collections import defaultdict
 
     # Per-quarter buckets (filing-level means, for sector trend)
     q_buckets: dict = defaultdict(lambda: {"vague": [], "complex": []})
-    # Per-company: track most-recent filing only (date + raw sentence scores)
+    # Per-company: track most-recent filing only (date + path)
     c_latest: dict = {}   # ticker -> {"date": datetime, "path": Path}
+    # Per-company: accumulate key-section rows across ALL filings
+    _KEY_SECTIONS_SET = {"MD&A", "Risk Factors"}
+    c_all_key_rows: dict = defaultdict(list)   # ticker -> list of row dicts
 
     # First pass: sector trend buckets + find each company's latest filing date
     for path in sorted(_OUTPUTS_DIR.glob("*_ddds_scores.csv")):
@@ -149,6 +153,11 @@ def load_sector_and_rankings(top_n: int = 10) -> tuple[list[dict], list[dict]]:
         # Rankings: keep track of the most recent filing per company
         if ticker not in c_latest or date > c_latest[ticker]["date"]:
             c_latest[ticker] = {"date": date, "path": path}
+
+        # All-time: accumulate key-section sentences across every filing
+        for r in rows:
+            if r["section"] in _KEY_SECTIONS_SET:
+                c_all_key_rows[ticker].append(r)
 
     # Build sector trend list
     sector = []
@@ -194,14 +203,41 @@ def load_sector_and_rankings(top_n: int = 10) -> tuple[list[dict], list[dict]]:
             "n_sentences":  len(vl),   # MD&A + Risk Factors sentences only
         })
 
-    # Build one top-10 list per metric; enrich the union (price + earnings)
+    # Build one top-N list per metric (most-recent filing); enrich the union
     top_vague   = sorted(raw_rankings, key=lambda x: -x["mean_vague"])[:top_n]
     top_complex = sorted(raw_rankings, key=lambda x: -x["mean_complex"])[:top_n]
     top_both    = sorted(raw_rankings, key=lambda x: -x["mean_avg"])[:top_n]
 
+    # ── All-time rankings: aggregate sentences across ALL filings ─────────────
+    at_raw = []
+    for ticker, key_rows in c_all_key_rows.items():
+        if len(key_rows) < 50:
+            continue
+        vl = [r["vague_prob"]   for r in key_rows]
+        cl = [r["complex_prob"] for r in key_rows]
+        mean_v = sum(vl) / len(vl)
+        mean_c = sum(cl) / len(cl)
+        latest_info = c_latest.get(ticker, {})
+        filing_date_str = (latest_info["date"].strftime("%Y-%m-%d")
+                           if "date" in latest_info else "N/A")
+        at_raw.append({
+            "ticker":       ticker,
+            "filing_date":  filing_date_str,
+            "mean_vague":   mean_v,
+            "mean_complex": mean_c,
+            "mean_avg":     (mean_v + mean_c) / 2,
+            "vague_pct":    sum(1 for v in vl if v >= 0.5) / len(vl) * 100,
+            "n_sentences":  len(vl),
+        })
+
+    top_vague_at   = sorted(at_raw, key=lambda x: -x["mean_vague"])[:top_n]
+    top_complex_at = sorted(at_raw, key=lambda x: -x["mean_complex"])[:top_n]
+    top_both_at    = sorted(at_raw, key=lambda x: -x["mean_avg"])[:top_n]
+
     # Union keyed by ticker so we only fetch each company once
     enrich_map: dict = {e["ticker"]: e
-                        for lst in [top_vague, top_complex, top_both]
+                        for lst in [top_vague, top_complex, top_both,
+                                    top_vague_at, top_complex_at, top_both_at]
                         for e in lst}
 
     # Fetch stock price change from filing date → today for each unique company
@@ -253,7 +289,11 @@ def load_sector_and_rankings(top_n: int = 10) -> tuple[list[dict], list[dict]]:
             entry["ticker"], entry["filing_date"], quarterly_by_ticker
         )
 
-    return sector, {"vague": top_vague, "complex": top_complex, "both": top_both}
+    return (
+        sector,
+        {"vague": top_vague,    "complex": top_complex,    "both": top_both},
+        {"vague": top_vague_at, "complex": top_complex_at, "both": top_both_at},
+    )
 
 
 def _compute_earnings_persistence(
@@ -937,9 +977,9 @@ class DDDSApp(ctk.CTk):
     def _load_sector_rankings(self):
         """Background thread: single CSV pass → sector chart + rankings chart."""
         try:
-            sector_data, rankings_dict = load_sector_and_rankings(top_n=15)
+            sector_data, rankings_recent, rankings_alltime = load_sector_and_rankings(top_n=15)
             self.after(0, lambda: self._render_sector(sector_data))
-            self.after(0, lambda: self._render_rankings(rankings_dict))
+            self.after(0, lambda: self._render_rankings(rankings_recent, rankings_alltime))
         except Exception as exc:
             msg = f"Data unavailable.\n{exc}"
             self.after(0, lambda: self._sector_spinner.configure(
@@ -1081,20 +1121,22 @@ class DDDSApp(ctk.CTk):
         )
         self._rankings_spinner.place(relx=0.5, rely=0.5, anchor="center")
 
-    def _render_rankings(self, rankings_dict: dict):
+    def _render_rankings(self, rankings_recent: dict, rankings_alltime: dict):
         from matplotlib.figure import Figure
         from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
         self._rankings_spinner.place_forget()
 
-        if not any(rankings_dict.values()):
+        if not any(rankings_recent.values()):
             self._rankings_spinner.configure(text="No ranking data found.")
             self._rankings_spinner.place(relx=0.5, rely=0.5, anchor="center")
             return
 
-        self._rankings_all_data = rankings_dict
-        self._rankings_view     = "price"
-        self._rankings_metric   = "both"
+        self._rankings_data_recent  = rankings_recent
+        self._rankings_data_alltime = rankings_alltime
+        self._rankings_view         = "price"
+        self._rankings_metric       = "both"
+        self._rankings_scope        = "recent"   # "recent" | "alltime"
 
         # ── Toggle row ────────────────────────────────────────────────────────
         toggle_row = ctk.CTkFrame(self._rankings_frame, fg_color=SURFACE,
@@ -1144,6 +1186,29 @@ class DDDSApp(ctk.CTk):
             btn.pack(side="left", padx=(2, 2), pady=5)
             self._rankings_metric_btns[metric] = btn
 
+        # Separator + "SCOPE" label
+        ctk.CTkLabel(toggle_row, text="│",
+                     font=ctk.CTkFont(size=16), text_color=BORDER,
+                     ).pack(side="left", padx=(12, 4))
+        ctk.CTkLabel(toggle_row, text="SCOPE",
+                     font=ctk.CTkFont(family="Consolas", size=9),
+                     text_color=TXT3).pack(side="left", padx=(0, 6))
+
+        # Scope toggles
+        self._rankings_scope_btns: dict[str, ctk.CTkButton] = {}
+        for scope, label in [("recent", "Most Recent"), ("alltime", "All Time")]:
+            btn = ctk.CTkButton(
+                toggle_row, text=label,
+                font=ctk.CTkFont(family="Consolas", size=10),
+                fg_color=RAISED if scope == "recent" else "transparent",
+                hover_color=RAISED,
+                text_color=TXT if scope == "recent" else TXT2,
+                height=28, corner_radius=4,
+                command=lambda s=scope: self._switch_rankings_scope(s),
+            )
+            btn.pack(side="left", padx=(2, 2), pady=5)
+            self._rankings_scope_btns[scope] = btn
+
         # ── Figure with two axes ──────────────────────────────────────────────
         fig = Figure(figsize=(13, 8), dpi=110, facecolor=BG)
         ax_left  = fig.add_axes([0.10, 0.07, 0.52, 0.84])
@@ -1166,7 +1231,7 @@ class DDDSApp(ctk.CTk):
         self._rankings_canvas = canvas
 
         # Draw initial state
-        data = rankings_dict["both"]
+        data = rankings_recent["both"]
         self._rankings_data = data
         self._rankings_ys   = list(range(len(data)))
         self._draw_left_bars(ax_left, data, self._rankings_ys)
@@ -1235,6 +1300,24 @@ class DDDSApp(ctk.CTk):
         for t in leg.get_texts():
             t.set_fontfamily("Consolas")
 
+    def _active_rankings_dict(self) -> dict:
+        return (self._rankings_data_alltime
+                if self._rankings_scope == "alltime"
+                else self._rankings_data_recent)
+
+    def _switch_rankings_scope(self, scope: str):
+        self._rankings_scope = scope
+        for s, btn in self._rankings_scope_btns.items():
+            btn.configure(
+                fg_color=RAISED if s == scope else "transparent",
+                text_color=TXT   if s == scope else TXT2,
+            )
+        data = self._active_rankings_dict()[self._rankings_metric]
+        self._rankings_data = data
+        self._rankings_ys   = list(range(len(data)))
+        self._draw_left_bars(self._rankings_ax_left, data, self._rankings_ys)
+        self._switch_rankings_view(self._rankings_view)
+
     def _switch_rankings_metric(self, metric: str):
         self._rankings_metric = metric
         for m, btn in self._rankings_metric_btns.items():
@@ -1242,7 +1325,7 @@ class DDDSApp(ctk.CTk):
                 fg_color=RAISED if m == metric else "transparent",
                 text_color=TXT   if m == metric else TXT2,
             )
-        data = self._rankings_all_data[metric]
+        data = self._active_rankings_dict()[metric]
         self._rankings_data = data
         self._rankings_ys   = list(range(len(data)))
         self._draw_left_bars(self._rankings_ax_left, data, self._rankings_ys)
@@ -1320,8 +1403,9 @@ class DDDSApp(ctk.CTk):
         ax.set_xlabel("Return since filing date", fontsize=8,
                       fontfamily="Consolas", color=TXT2, labelpad=8)
 
+        scope_lbl = "all filings" if self._rankings_scope == "alltime" else "most recent filing per company"
         self._rankings_subtitle.set_text(
-            f"Top {n}  ·  most recent filing per company"
+            f"Top {n}  ·  {scope_lbl}"
             f"  ·  price as of {self._rankings_today_str}"
         )
 
@@ -1399,8 +1483,9 @@ class DDDSApp(ctk.CTk):
                     fontsize=7, fontfamily="Consolas", color=p_clr,
                     va="center", transform=ax.transAxes)
 
+        scope_lbl = "all filings" if self._rankings_scope == "alltime" else "most recent filing per company"
         self._rankings_subtitle.set_text(
-            f"Top {n}  ·  persistence = |ΔSOE| / σ(pre-filing SOE)"
+            f"Top {n}  ·  {scope_lbl}  ·  persistence = |ΔSOE| / σ(pre-filing SOE)"
             f"  ·  HIGH <0.5σ  MODERATE <1.0σ  LOW ≥1.0σ"
         )
 
@@ -1438,8 +1523,9 @@ class DDDSApp(ctk.CTk):
                         fontsize=8, fontfamily="Consolas", color=TXT2,
                         va="center", transform=ax.transAxes)
 
+        scope_lbl = "all filings" if self._rankings_scope == "alltime" else "most recent filing per company"
         self._rankings_subtitle.set_text(
-            f"Top {n}  ·  ranked by mean vague_prob  ·  most recent filing per company"
+            f"Top {n}  ·  {scope_lbl}"
         )
 
 
