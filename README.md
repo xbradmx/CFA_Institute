@@ -472,7 +472,7 @@ Output: `data/analyst_outputs/{TICKER}_{TYPE}_{DATE}_{ACCESSION}_ddds_scores.csv
 
 ### Desktop GUI
 
-Launches a unified dark-mode desktop application built with CustomTkinter and Matplotlib. Select any ticker from the sidebar to navigate its analysis across four tabs:
+Launches a unified dark-mode desktop application built with CustomTkinter and Matplotlib. Select any ticker from the sidebar to navigate its analysis across five tabs:
 
 | Tab | What it shows |
 |---|---|
@@ -480,6 +480,7 @@ Launches a unified dark-mode desktop application built with CustomTkinter and Ma
 | **Risk Heatmap** | Sector-wide geographic vagueness map. Countries are coloured by mean raw `vague_prob` of all sentences that mention them across the 925-filing universe. Hover over any country to see its score and sentence-count detail. This view is independent of the selected ticker. |
 | **Filing Trends** | Per-company time-series chart showing mean `vague_prob`, `complex_prob`, and their average (`avg_score`) across every scored filing for the selected ticker. Circle markers = 10-K, triangle markers = 10-Q. |
 | **Sector Trends** | Sector-wide quarterly averages of all three scores, aggregated across all 925 filings in 3-month buckets. Each data point shows the mean ± 1 standard deviation band across all companies that filed in that quarter, plus a filing count annotation (`n=`). Loaded in the background at startup. |
+| **FinBERT Rankings** | Top 15 companies by most extreme FinBERT scores, drawn from each company's most recent filing only. Only filings with at least 50 sentences across MD&A and Risk Factors combined are eligible. Toggle the ranking metric between **Vague**, **Complex**, and **Both** (average). The right panel has three views toggled independently: **Stock Price** (% return from filing date to today via yfinance), **Earnings Persistence** (SOE at filing date vs most recent SOE, with persistence rated HIGH / MODERATE / LOW based on the magnitude of change normalised by the company's own pre-filing earnings standard deviation), and **Stats** (vague%, sentence count, filing date). |
 
 ```powershell
 python analyst_frontend.py
@@ -539,7 +540,8 @@ Cached Batch API results are included in the repository. All downstream outputs 
 
 ## Known Limitations
 
-- The **Investment Memo** tab displays pre-computed Opus analysis for the 128-company universe. The **Filing Trends** and **Risk Heatmap** tabs derive directly from the 925 scored CSVs in `data/analyst_outputs/` and will reflect any new filings scored via `analyst_backend.py`. Scoring companies outside the universe still requires running the full pipeline from the command line to generate the Opus analysis JSON.
+- The **Investment Memo** tab displays pre-computed Opus analysis for the 128-company universe. The **Filing Trends**, **Sector Trends**, **Risk Heatmap**, and **FinBERT Rankings** tabs all derive directly from the 925 scored CSVs in `data/analyst_outputs/` and will reflect any new filings scored via `analyst_backend.py`. Scoring companies outside the existing universe still requires running the full pipeline from the command line to generate the Opus analysis JSON.
+- The **FinBERT Rankings** earnings persistence calculation requires quarterly earnings data in `data/backtest/quarterly_earnings_yfinance.csv` (produced by Run 11). Companies not present in that file will show `N/A` for persistence. Stock price data is fetched live from yfinance at startup; tickers that are delisted or not covered will show `n/a` for price return.
 - Section boundary detection in Run 1 uses heading pattern matching. Non-standard or heavily nested HTML filings may cause sections to be missed. Check the extraction log for any files reporting zero sentences.
 - The training corpus covers 50 randomly seeded companies, which constrains industry diversity within SIC 3400-3599.
 - Runs 7 through 11 must be run from the command line; they are not triggered from within the frontend.

@@ -592,7 +592,7 @@ class DDDSApp(ctk.CTk):
             self._signal_badge.configure(text="", fg_color="transparent")
         elif tab == "  FinBERT Rankings  ":
             self._ticker_lbl.configure(
-                text="US Industrials — Top 10 by FinBERT Score",
+                text="US Industrials — Top 15 by FinBERT Score",
                 text_color=TXT2,
             )
             self._signal_badge.configure(text="", fg_color="transparent")
@@ -937,7 +937,7 @@ class DDDSApp(ctk.CTk):
     def _load_sector_rankings(self):
         """Background thread: single CSV pass → sector chart + rankings chart."""
         try:
-            sector_data, rankings_dict = load_sector_and_rankings(top_n=10)
+            sector_data, rankings_dict = load_sector_and_rankings(top_n=15)
             self.after(0, lambda: self._render_sector(sector_data))
             self.after(0, lambda: self._render_rankings(rankings_dict))
         except Exception as exc:
@@ -1145,9 +1145,9 @@ class DDDSApp(ctk.CTk):
             self._rankings_metric_btns[metric] = btn
 
         # ── Figure with two axes ──────────────────────────────────────────────
-        fig = Figure(figsize=(13, 6), dpi=110, facecolor=BG)
-        ax_left  = fig.add_axes([0.10, 0.09, 0.52, 0.82])
-        ax_right = fig.add_axes([0.65, 0.09, 0.32, 0.82])
+        fig = Figure(figsize=(13, 8), dpi=110, facecolor=BG)
+        ax_left  = fig.add_axes([0.10, 0.07, 0.52, 0.84])
+        ax_right = fig.add_axes([0.65, 0.07, 0.32, 0.84])
 
         self._rankings_fig      = fig
         self._rankings_ax_left  = ax_left
