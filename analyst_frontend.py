@@ -796,12 +796,13 @@ class DDDSApp(ctk.CTk):
     def _load_heatmap(self):
         """Background thread: builds the heatmap figure, then embeds on main thread."""
         try:
-            from run_07_risk_heatmap import build_figure
+            from run_08_risk_heatmap import build_figure
             fig, on_hover = build_figure(str(_OUTPUTS_DIR), dpi=110)
             self.after(0, lambda: self._embed_heatmap(fig, on_hover))
         except Exception as exc:
+            msg = str(exc)
             self.after(0, lambda: self._heatmap_spinner.configure(
-                text=f"Heatmap unavailable.\n{exc}",
+                text=f"Heatmap unavailable.\n{msg}",
                 wraplength=500,
             ))
 
