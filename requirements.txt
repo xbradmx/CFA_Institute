@@ -25,9 +25,6 @@
 #   analyst_backend - complete intergration of all features
 
 
-# ──────────────────────────────────── analyst_frontend, analyst_backend ───────────────────────
-
-yfinance==0.2.52
 
 # ── NLP / Model Training (Runs 5, 6, RUN USER BACKEND analyst_pipeline) ───────────────────────
 torch>=2.0.0
@@ -80,5 +77,5 @@ python-dotenv>=1.0.0    # .env credential management (Neo4j password, API keys, 
 scipy>=1.12.0           # p-value calculation in Li (2008) earnings persistence regression
 statsmodels>=0.14.0     # OLS regression with HAC-robust standard errors (Li 2008 framework)
 yfinance>=0.2.0         # Fallback earnings fetch if XBRL data unavailable (Run 11); live stock price fetching for FinBERT Rankings tab (analyst_frontend.py)
-# ── Analyst frontend ─────────────────────────────────────────────────────────
+# ── Analyst_frontend, analyst_backend ─────────────────────────────────────────────────────────
 customtkinter>=5.2.0    # Dark-mode desktop GUI for analyst_frontend.py (5 tabs: Investment Memo, Risk Heatmap, Filing Trends, Sector Trends, FinBERT Rankings)
